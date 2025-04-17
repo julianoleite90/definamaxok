@@ -33,6 +33,23 @@ export default function LandingPage() {
     }
   }, [])
 
+  // Add keyframes for shine animation
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const style = document.createElement("style")
+      style.innerHTML = `
+      @keyframes shine {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+    `
+      document.head.appendChild(style)
+      return () => {
+        document.head.removeChild(style)
+      }
+    }
+  }, [])
+
   // Função para adicionar UTMs aos links de compra
   const addUtmToUrl = (baseUrl) => {
     if (typeof window === "undefined") return baseUrl
@@ -81,7 +98,8 @@ export default function LandingPage() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
-      <header className="w-full bg-black py-4 shadow-md">
+      <header className="w-full bg-gradient-to-r from-green-900 via-black to-green-900 py-4 shadow-md relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
         <div className="mx-auto max-w-5xl px-4 flex justify-center">
           <Image src="/defina-logo.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
         </div>
@@ -91,16 +109,25 @@ export default function LandingPage() {
       <section className="w-full bg-green-50 py-12 md:py-16">
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
-            <h1 className="text-[1.7rem] sm:text-[1.7rem] md:text-[1.7rem] font-bold text-green-800 mb-4 break-words">
-              Emagreça Rapido e Recupere sua Confiança com Definamax
+            <h1 className="text-[1.9rem] sm:text-[2.1rem] md:text-[2.3rem] font-bold text-green-800 mb-4 break-words leading-tight">
+              Emagreça{" "}
+              <span className="text-green-600 relative">
+                Rápido{" "}
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+              </span>{" "}
+              e Recupere sua Confiança com Definamax
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-black mb-2 break-words">
-            A fórmula eficaz que te ajuda a emagrecer de forma rápida e a se sentir confiante novamente
+              A fórmula eficaz que te ajuda a emagrecer de forma rápida e a se sentir confiante novamente
             </p>
             <div className="flex items-center mb-6">
               <div className="flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                {[1, 2, 3, 4, 5].map((star, index) => (
+                  <svg
+                    key={star}
+                    className={`w-5 h-5 text-yellow-400 fill-current ${index === 0 ? "animate-pulse" : ""}`}
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
                   </svg>
                 ))}
@@ -133,9 +160,9 @@ export default function LandingPage() {
 
             <Link
               href="#comprar"
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-white hover:bg-green-700 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              SIM! EU QUERO EMAGRECER <ArrowRight className="ml-1 h-4 w-4 sm:h-5 sm:w-5" />
+              SIM! EU QUERO EMAGRECER <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 animate-pulse" />
             </Link>
             <p className="text-sm text-gray-500 mt-2 text-center sm:text-left">Oferta válida somente na internet</p>
           </div>
@@ -175,7 +202,7 @@ export default function LandingPage() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+            <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <Shield className="h-8 w-8 text-green-600 mr-3" />
                 <h3 className="text-xl font-semibold">Emagreça com Saúde e Segurança, Sem Efeitos Indesejados</h3>
@@ -186,7 +213,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+            <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <Award className="h-8 w-8 text-green-600 mr-3" />
                 <h3 className="text-xl font-semibold">Transforme Seu Corpo e Sinta a Leveza em Semanas!</h3>
@@ -197,7 +224,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+            <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <ThumbsUp className="h-8 w-8 text-green-600 mr-3" />
                 <h3 className="text-xl font-semibold">Emagrecimento Fácil e Sem Sacrifícios na Sua Rotina</h3>
@@ -208,7 +235,7 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+            <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <CheckCircle2 className="h-8 w-8 text-green-600 mr-3" />
                 <h3 className="text-xl font-semibold">
@@ -224,7 +251,7 @@ export default function LandingPage() {
           <div className="flex justify-center mt-8">
             <Link
               href="#comprar"
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-6 py-3 text-base font-medium text-white hover:bg-green-700 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
               QUERO EMAGRECER AGORA <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -243,7 +270,10 @@ export default function LandingPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200 shadow-sm">
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200 shadow-md relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                RECOMENDADO
+              </div>
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-semibold text-green-700">Definamax Emagrecedor Natural</h3>
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
@@ -287,7 +317,10 @@ export default function LandingPage() {
               </ul>
             </div>
 
-            <div className="bg-red-50 p-6 rounded-lg border border-red-200 shadow-sm">
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200 shadow-md relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                NÃO RECOMENDADO
+              </div>
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-semibold text-red-700">Injeções de Emagrecimento</h3>
                 <X className="h-6 w-6 text-red-600" />
@@ -334,7 +367,7 @@ export default function LandingPage() {
           <div className="flex justify-center mt-10">
             <Link
               href="#comprar"
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-6 py-3 text-base font-medium text-white hover:bg-green-700 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
               ESCOLHER MEU PACOTE <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -362,7 +395,7 @@ export default function LandingPage() {
                   testimonialPage === 0 ? "opacity-100" : "opacity-0 hidden"
                 }`}
               >
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -404,7 +437,7 @@ export default function LandingPage() {
                   <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -446,7 +479,7 @@ export default function LandingPage() {
                   <p className="text-green-700 font-medium">- 25kg em 7 meses</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image src="/ana.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
@@ -489,7 +522,7 @@ export default function LandingPage() {
                   testimonialPage === 1 ? "opacity-100" : "opacity-0 hidden"
                 }`}
               >
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -531,7 +564,7 @@ export default function LandingPage() {
                   <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -573,7 +606,7 @@ export default function LandingPage() {
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -666,7 +699,7 @@ export default function LandingPage() {
             <div className="md:hidden">
               <div className="grid gap-8 grid-cols-1">
                 {/* First 3 testimonials always visible */}
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -708,7 +741,7 @@ export default function LandingPage() {
                   <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
@@ -750,7 +783,7 @@ export default function LandingPage() {
                   <p className="text-green-700 font-medium">- 25kg em 7 meses</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image src="/ana.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
@@ -789,7 +822,7 @@ export default function LandingPage() {
                 {/* Additional testimonials shown when "load more" is clicked */}
                 {showMoreTestimonials && (
                   <>
-                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
@@ -831,7 +864,7 @@ export default function LandingPage() {
                       <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                     </div>
 
-                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
@@ -873,7 +906,7 @@ export default function LandingPage() {
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
 
-                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
+                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
@@ -998,7 +1031,7 @@ export default function LandingPage() {
           <div className="flex justify-center mt-10">
             <Link
               href="#comprar"
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-6 py-3 text-base font-medium text-white hover:bg-green-700 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
               EXPERIMENTAR COM GARANTIA <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -1036,8 +1069,8 @@ export default function LandingPage() {
               <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 29,00</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg border-2 border-green-500 shadow-md relative">
-              <div className="absolute -top-3 left-0 right-0 mx-auto w-max bg-yellow-500 text-white text-xs font-bold py-1 px-3 rounded">
+            <div className="bg-white p-6 rounded-lg border-2 border-green-500 shadow-lg relative transform scale-105">
+              <div className="absolute -top-3 left-0 right-0 mx-auto w-max bg-yellow-500 text-white text-xs font-bold py-1 px-4 rounded-full shadow-md">
                 MAIS POPULAR
               </div>
               <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
@@ -1394,7 +1427,6 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                {/* Avaliações 8-10 ... (código mantido igual) */}
                 {/* Avaliação 8 */}
                 <div className="border border-gray-200 rounded-lg p-6 mb-6">
                   <div className="flex justify-between items-start mb-4">
@@ -1612,7 +1644,7 @@ export default function LandingPage() {
           <div className="flex justify-center mt-10">
             <Link
               href="#comprar"
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-6 py-3 text-base font-medium text-white hover:bg-green-700 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
               QUERO COMEÇAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -1758,31 +1790,6 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
-      {/* Botão Flutuante WhatsApp */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <a
-          href="https://wa.link/b4uu2s"
-          className="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg transition-all"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="bg-white rounded-full p-2 mr-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-green-500"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path>
-            </svg>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-medium leading-tight">Tire dúvidas com</span>
-            <span className="text-sm font-bold leading-tight">especialista</span>
-          </div>
-        </a>
-      </div>
     </main>
   )
 }
