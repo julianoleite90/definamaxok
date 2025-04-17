@@ -92,10 +92,10 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[1.7rem] sm:text-[1.7rem] md:text-[1.7rem] font-bold text-green-800 mb-4 break-words">
-              Conquiste o Corpo dos Seus Sonhos e Mais Confiança com Definamax!
+              Emagreça Rapido e Recupere sua Confiança com Definamax
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-black mb-2 break-words">
-              Você Mais Leve, Saudável e Confiante em Pouco Tempo!
+            A fórmula eficaz que te ajuda a emagrecer de forma rápida e a se sentir confiante novamente
             </p>
             <div className="flex items-center mb-6">
               <div className="flex">
