@@ -1142,7 +1142,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
-                    src="/jantes.png"
+                    src="/revi1.jpeg"
                     alt="Foto da avaliação"
                     width={100}
                     height={100}
@@ -1152,14 +1152,14 @@ export default function LandingPage() {
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                     <Image
-                      src="/flavia.png"
+                      src="/revi1.jpeg"
                       alt="Juliana."
                       width={32}
                       height={32}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-sm font-medium">Juliana M. • Cliente Verificado</span>
+                  <span className="text-sm font-medium">Renata • Cliente Verificado</span>
                 </div>
               </div>
 
@@ -1260,7 +1260,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
-                    src="/paantes.png"
+                    src="/revi3.jpeg"
                     alt="Foto da avaliação"
                     width={100}
                     height={100}
@@ -1270,7 +1270,7 @@ export default function LandingPage() {
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                     <Image
-                      src="/patricia.png"
+                      src="/revi3.jpeg"
                       alt="Patricia L."
                       width={32}
                       height={32}
@@ -1338,7 +1338,7 @@ export default function LandingPage() {
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/before-carlos.png"
+                        src="/revi5.jpeg"
                         alt="Fernando D."
                         width={32}
                         height={32}
@@ -1373,7 +1373,7 @@ export default function LandingPage() {
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
-                      src="/review-image-2.png"
+                      src="/revi6.jpeg"
                       alt="Foto da avaliação"
                       width={100}
                       height={100}
@@ -1383,7 +1383,7 @@ export default function LandingPage() {
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/triumphant-smile.png"
+                        src="/revi6.jpeg"
                         alt="Vanessa R."
                         width={32}
                         height={32}
@@ -1416,7 +1416,7 @@ export default function LandingPage() {
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/woman-success-story.png"
+                        src="/luisa.png"
                         alt="Luísa C."
                         width={32}
                         height={32}
@@ -1452,7 +1452,7 @@ export default function LandingPage() {
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/reviewer-2.png"
+                        src="/paulo.png"
                         alt="Paulo G."
                         width={32}
                         height={32}
@@ -1483,7 +1483,7 @@ export default function LandingPage() {
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
-                      src="/review-image-1a.png"
+                      src="/antes-sandra.png"
                       alt="Foto da avaliação"
                       width={100}
                       height={100}
@@ -1493,7 +1493,7 @@ export default function LandingPage() {
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/reviewer-3.png"
+                        src="/depoissandra.png"
                         alt="Sandra M."
                         width={32}
                         height={32}
@@ -1761,7 +1761,7 @@ export default function LandingPage() {
       {/* Botão Flutuante WhatsApp */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href="https://wa.me/5511912345678"
+          href="https://wa.link/b4uu2s"
           className="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg transition-all"
           target="_blank"
           rel="noopener noreferrer"
