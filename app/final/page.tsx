@@ -1597,7 +1597,7 @@ export default function LandingPage() {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg mb-2">Por que Definamax é melhor que injeções de emagrecimento?</h3>
               <p className="text-gray-700">
-                As injeções de emagrecimento como Ozempic foram desenvolvidas para diabéticos e causam vários efeitos
+                As injeções de emagrecimento foram desenvolvidas para diabéticos e causam vários efeitos
                 colaterais como náuseas severas, problemas digestivos e até pancreatite. Além disso, são extremamente
                 caras e requerem acompanhamento médico. Definamax oferece emagrecimento natural, sem efeitos colaterais
                 graves, por um preço acessível.
