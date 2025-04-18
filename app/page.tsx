@@ -110,12 +110,12 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[1.9rem] sm:text-[2.1rem] md:text-[2.3rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Emagreça{" "}
+              Emagreça mais{" "}
               <span className="text-green-600 relative">
-                Rápido{" "}
+                rápido{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              sem Dietas, Injeções ou Exercícios Fisícos
+              sem injeções perigosas nem exercícios físicos
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-black mb-2 break-words">
               A fórmula emagrecedora 100% natural que elimina a gordura e restaura a sua autoestima
