@@ -115,7 +115,7 @@ export default function LandingPage() {
                 rápido{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              sem injeções perigosas nem exercícios físicos
+              sem injeções perigosas ou dietas restritivas
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-black mb-2 break-words">
               A fórmula emagrecedora 100% natural que elimina a gordura e restaura a sua autoestima
