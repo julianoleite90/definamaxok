@@ -110,15 +110,15 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[1.9rem] sm:text-[2.1rem] md:text-[2.3rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Elimine{" "}
+              Emagreça{" "}
               <span className="text-green-600 relative">
-                Medidas{" "}
+                Rápido{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              e se sinta confiante de novo com Definamax!
+              sem Dietas, Injeções ou Exercícios Fisícos
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-black mb-2 break-words">
-              A fórmula eficaz que te ajuda a emagrecer de forma rápida e a se sentir confiante novamente
+              A fórmula emagrecedora 100% natural que elimina a gordura e restaura a sua autoestima
             </p>
             <div className="flex items-center mb-6">
               <div className="flex">
@@ -198,7 +198,7 @@ export default function LandingPage() {
       <section className="w-full py-16 bg-green-50">
         <div className="mx-auto max-w-5xl px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            Liberte-se do Peso e <span className="text-green-700">Conquiste a Confiança que Você Merece!</span>
+            Elimine a Gordura Teimosa  e<span className="text-green-700"> Recupere a sua Autoestima!</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
