@@ -1058,9 +1058,9 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Emagreça com Segurança: Natural vs. Químico</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Sua Saúde em Primeiro Lugar: Natural É Melhor Que Químico!</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Evite os Riscos das injeções de emagrecimento: Escolha Definamax para Emagrecer com Segurança!
+            Evite efeitos colaterais e problemas de saúde causados por injeções. Definamax oferece um emagrecimento natural, eficaz e sem preocupações.
             </p>
           </div>
 
@@ -1070,7 +1070,7 @@ export default function LandingPage() {
                 RECOMENDADO
               </div>
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold text-green-700">Definamax Emagrecedor Natural</h3>
+                <h3 className="text-xl font-semibold text-green-700">Definamax</h3>
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
               </div>
 
@@ -1164,7 +1164,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              ESCOLHER MEU PACOTE <ArrowRight className="ml-2 h-5 w-5" />
+              ESCOLHER MEU KIT DE EMAGRECIMENTO <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
