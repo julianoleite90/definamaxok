@@ -399,8 +399,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Perdi 19kg em 5 meses usando Definamax. Sem efeitos colaterais, sem dietas radicais. Minha
-                    ansiedade por comida diminuiu já na primeira semana!"
+                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade, diminuiu muito! Sinto que tenho mais controle agora."
                   </p>
                   <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
                 </div>
@@ -444,8 +443,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Tentei injeções antes e tive problemas estomacais terríveis. Com Definamax, perdi 25kg em 7 meses
-                    de forma constante e sustentável, sem nenhum efeito colateral."
+                    "As injeções para emagrecer me deram dores de estômago horríveis e não consegui continuar. Com Definamax, perdi 25kg em 7 meses, de forma natural e sem sentir nada de ruim, e ainda gastei bem menos!"
                   </p>
                   <p className="text-green-700 font-medium">- 25kg em 7 meses</p>
                 </div>
@@ -483,8 +481,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Depois de duas gestações, não conseguia perder peso. Com Definamax, perdi 23kg em 5 meses e
-                    recuperei minha autoestima!"
+                  "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
                   </p>
                   <p className="text-green-700 font-medium">- 23kg em 5 meses</p>
                 </div>
@@ -535,8 +532,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Comecei a tomar o Definamax há 2 meses e já perdi 15kg! Minha disposição melhorou muito e estou
-                    conseguindo fazer exercícios sem me sentir cansada."
+                    "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e tô conseguindo fazer caminhadas sem cansar tanto"
                   </p>
                   <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                 </div>
@@ -625,10 +621,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Confesso que estava cética no início, mas decidi dar uma chance. Com o Definamax, perdi 13kg no
-                    segundo mês! Minha barriga diminuiu visivelmente e minha energia aumentou."
+                  "Eu tava bem com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 13kg no segundo mês! A diferença na minha barriga é enorme e tô me sentindo muito mais ativa."
                   </p>
-                  <p className="text-green-700 font-medium">- 13kg em 2 mês</p>
+                  <p className="text-green-700 font-medium">- 13kg em 2 meses</p>
                 </div>
               </div>
 
@@ -721,8 +716,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Perdi 19kg em 5 meses usando Definamax. Sem efeitos colaterais, sem dietas radicais. Minha
-                    ansiedade por comida diminuiu já na primeira semana!"
+                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade, diminuiu muito! Sinto que tenho mais controle agora."
                   </p>
                   <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
                 </div>
@@ -766,8 +760,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Tentei injeções antes e tive problemas estomacais terríveis. Com Definamax, perdi 25kg em 7 meses
-                    de forma constante e sustentável, sem nenhum efeito colateral."
+                    "As injeções para emagrecer me deram dores de estômago horríveis e não consegui continuar. Com Definamax, perdi 25kg em 7 meses, de forma natural e sem sentir nada de ruim, e ainda gastei bem menos!"
                   </p>
                   <p className="text-green-700 font-medium">- 25kg em 7 meses</p>
                 </div>
@@ -805,8 +798,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Depois de duas gestações, não conseguia perder peso. Com Definamax, perdi 23kg em 5 meses e
-                    recuperei minha autoestima!"
+                    "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
                   </p>
                   <p className="text-green-700 font-medium">- 23kg em 5 meses</p>
                 </div>
@@ -853,8 +845,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Comecei a tomar o Definamax há 4 meses e já perdi 15kg! Minha disposição melhorou muito e estou
-                        conseguindo fazer exercícios sem me sentir cansada."
+                        "Comecei a tomar o Definamax há uns 2 meses e já perdi uns 12kg! Minha disposição melhorou demais e tô conseguindo fazer caminhadas sem cansar tanto"
                       </p>
                       <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                     </div>
@@ -943,8 +934,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Confesso que estava cética no início, mas decidi dar uma chance. Com o Definamax, perdi 13kg no
-                        segundo mês! Minha barriga diminuiu visivelmente e minha energia aumentou."
+                      "Eu tava bem com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 13kg no segundo mês! A diferença na minha barriga é enorme e tô me sentindo muito mais ativa."
                       </p>
                       <p className="text-green-700 font-medium">- 13kg em 2 meses</p>
                     </div>
