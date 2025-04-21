@@ -845,7 +845,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Comecei a tomar o Definamax há uns 2 meses e já perdi uns 12kg! Minha disposição melhorou demais e tô conseguindo fazer caminhadas sem cansar tanto"
+                      "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e tô conseguindo fazer caminhadas sem cansar tanto"
                       </p>
                       <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                     </div>
@@ -986,10 +986,10 @@ export default function LandingPage() {
               Benefícios Comprovados
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Elimine a Gordura Teimosa e <span className="text-green-700">Recupere a sua Autoestima!</span>
+            Gordura Teimosa? <span className="text-green-700">NUNCA MAIS!</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Definamax pode transformar seu corpo e sua vida com resultados rápidos e duradouros
+            Sinta a alegria de ver a balança baixar e suas roupas voltarem a servir
             </p>
           </div>
 
@@ -997,33 +997,30 @@ export default function LandingPage() {
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <Shield className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Emagreça com Saúde e Segurança, Sem Efeitos Indesejados</h3>
+                <h3 className="text-xl font-semibold">Emagreça TRANQUILA! Sem sustos e sem efeitos ruins.</h3>
               </div>
               <p className="text-gray-700">
-                Definamax é formulado com ingredientes 100% naturais que cuidam do seu corpo, evitando enjoos, diarreias
-                e outros riscos associados a métodos agressivos. Sua saúde em primeiro lugar!
+              Definamax cuida do seu corpo com ingredientes naturais, pra você emagrecer sem enjoos, sem dor de barriga e sem preocupações. Sua saúde é prioridade!
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <Award className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Transforme Seu Corpo e Sinta a Leveza em Semanas!</h3>
+                <h3 className="text-xl font-semibold">Menos Medidas, Mais Cintura e MUITA Energia em Semanas!</h3>
               </div>
               <p className="text-gray-700">
-                Estudos comprovam: Definamax acelera a redução de medidas, afina a cintura e aumenta sua energia.
-                Imagine-se mais leve, confiante e feliz com os resultados rápidos!
+              Sinta a transformação no seu corpo, veja sua cintura mais definida e aproveite a energia extra! Imagine a sua felicidade ao se sentir mais leve, confiante e poderosa com os resultados rápidos do Definamax!
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <ThumbsUp className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Emagrecimento Fácil e Sem Sacrifícios na Sua Rotina</h3>
+                <h3 className="text-xl font-semibold">Emagreça com a Natureza ao Seu Lado, Sem Dietas Radicais.</h3>
               </div>
               <p className="text-gray-700">
-                Sem dietas malucas ou restrições extremas! Definamax age naturalmente no seu corpo, controlando o
-                apetite e promovendo a saciedade de forma suave e eficaz. Emagrecer nunca foi tão simples!
+              Definamax usa ingredientes naturais para controlar seu apetite e te deixar satisfeita de forma suave e eficaz. Emagrecer sem sacrifícios extremos e sem sofrimento.
               </p>
             </div>
 
@@ -1031,12 +1028,11 @@ export default function LandingPage() {
               <div className="flex items-center mb-4">
                 <CheckCircle2 className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
                 <h3 className="text-xl font-semibold">
-                  Recomendado por Especialistas para um Emagrecimento Saudável e Duradouro
+                Sonha em Emagrecer e Nunca Mais Voltar ao Peso Antigo?
                 </h3>
               </div>
               <p className="text-gray-700">
-                Aprovado por médicos e nutricionistas como uma solução natural eficaz para quem busca emagrecer de forma
-                saudável e manter os resultados a longo prazo. Confie na ciência para alcançar seus objetivos!
+              Definamax é recomendado por especialistas para um emagrecimento saudável e resultados que você mantém a longo prazo. Confie na ciência e conquiste o corpo que sempre quis!
               </p>
             </div>
           </div>
