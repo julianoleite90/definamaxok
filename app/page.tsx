@@ -209,16 +209,16 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Emagreça mais{" "}
+              Emagreça{" "}
               <span className="text-green-600 relative">
-                rápido{" "}
+                Rápido{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              sem injeções perigosas ou dietas restritivas
+              e recupere sua confiança e autoestima
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-black mb-4 break-words">
-              A fórmula emagrecedora 100% natural que elimina a gordura e restaura a sua autoestima
+            Já tentou de tudo para eliminar a gordura teimosa? Descubra como Definamax te ajuda a perder peso sem dietas restritivas ou injeções perigosas
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -240,19 +240,19 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Controle Total da Compulsão Alimentar</span>
+                  <span className="font-medium">Controle Total da Compulsão</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Queima de Gordura Contínua (24 horas por dia)</span>
+                  <span className="font-medium">Queima de Gordura Acelerada (24 horas por dia)</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Natural e Segura: Sem Efeitos Colaterais</span>
+                  <span className="font-medium">100% Seguro: Sem Efeitos Colaterais</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Fácil de Usar: 2 Cápsulas Diárias</span>
+                  <span className="font-medium">Fácil de Usar: 2 Cápsulas ao Dia</span>
                 </li>
               </ul>
             </div>
@@ -297,7 +297,7 @@ export default function LandingPage() {
               </div>
               <div className="text-left">
                 <p className="font-bold">Resultados Rápidos</p>
-                <p className="text-sm">Primeiros resultados em 7 dias</p>
+                <p className="text-sm">Primeiros resultados em poucos dias</p>
               </div>
             </div>
 
@@ -307,7 +307,7 @@ export default function LandingPage() {
               </div>
               <div className="text-left">
                 <p className="font-bold">Frete Grátis</p>
-                <p className="text-sm">Para compras acima de R$300</p>
+                <p className="text-sm">Para compras acima de 3 frascos o frete é gratuito</p>
               </div>
             </div>
 
@@ -345,9 +345,9 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Resultados Reais
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Transformações Incríveis com Definamax</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Elas também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Conheça pessoas como você que alcançaram o corpo dos sonhos e recuperaram a confiança com Definamax
+            Chega de se esconder! Conheça mulheres REAIS que recuperaram a autoestima e o prazer de se olhar no espelho.
             </p>
           </div>
 
