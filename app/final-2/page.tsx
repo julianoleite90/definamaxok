@@ -1934,7 +1934,7 @@ export default function LandingPage() {
                 }`}
               >
                 <p className="text-gray-700">
-                  As injeções de emagrecimento como Ozempic foram desenvolvidas para diabéticos e causam vários efeitos
+                  As injeções de emagrecimento foram desenvolvidas para diabéticos e causam vários efeitos
                   colaterais como náuseas severas, problemas digestivos e até pancreatite. Além disso, são extremamente
                   caras e requerem acompanhamento médico. Definamax oferece emagrecimento natural, sem efeitos
                   colaterais graves, por um preço acessível e sem necessidade de receita médica.
