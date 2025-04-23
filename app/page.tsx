@@ -179,23 +179,6 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
-      {/* Barra de notificação */}
-      <div className="w-full bg-red-600 py-2 text-center text-white font-medium">
-        <div className="container mx-auto px-2 flex flex-col sm:flex-row items-center justify-center">
-          <div className="flex items-center justify-center">
-            <Clock className="h-4 w-4 mr-1 animate-pulse" />
-            <span className="text-sm sm:text-base">OFERTA ESPECIAL: 50% OFF!</span>
-          </div>
-          <div className="flex items-center mt-1 sm:mt-0 sm:ml-2">
-            <span className="text-sm sm:text-base">Encerra em </span>
-            <span className="ml-1 font-bold text-sm sm:text-base">
-              {timeLeft.hours.toString().padStart(2, "0")}:{timeLeft.minutes.toString().padStart(2, "0")}:
-              {timeLeft.seconds.toString().padStart(2, "0")}
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Header */}
       <header className="w-full bg-gradient-to-r from-green-900 via-black to-green-900 py-4 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
