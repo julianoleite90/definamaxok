@@ -289,8 +289,8 @@ export default function LandingPage() {
                 <Gift className="h-6 w-6 text-green-600" />
               </div>
               <div className="text-left">
-                <p className="font-bold">Frete Grátis</p>
-                <p className="text-sm">Para compras acima de 3 frascos o frete é gratuito</p>
+                <p className="font-bold">Desconto no PIX</p>
+                <p className="text-sm">Pagamentos via PIX ganham 10% de desconto</p>
               </div>
             </div>
 
