@@ -716,7 +716,7 @@ export default function WeightLossRecommendation() {
               <div className="bg-green-50 rounded-lg p-4 border border-green-100 mb-6">
                 <h2 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <TrendingUp className="mr-2 h-5 w-5" />
-                  Relato pessoal de consumido Definamas
+                  Relato pessoal de consumidor Definamax
                 </h2>
                 <p className="text-sm text-green-700">
                   Assista ao vídeo abaixo e veja o que uma de nossas consumidoras relatou sobre a sua experiência com o
