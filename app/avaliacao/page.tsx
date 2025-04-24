@@ -121,11 +121,8 @@ export default function WeightLossRecommendation() {
 
     // Hábitos e estilo de vida
     activityLevel: "",
-    sleepQuality: "",
     waterIntake: "",
     mealFrequency: "",
-    dietaryRestrictions: "",
-    previousDiets: "",
     stressLevel: "",
   })
 
@@ -137,11 +134,8 @@ export default function WeightLossRecommendation() {
     weight: false,
     goal: false,
     activityLevel: false,
-    sleepQuality: false,
     waterIntake: false,
     mealFrequency: false,
-    dietaryRestrictions: false,
-    previousDiets: false,
     stressLevel: false,
   })
 
@@ -211,11 +205,8 @@ export default function WeightLossRecommendation() {
     const newErrors = {
       ...errors,
       activityLevel: formData.activityLevel === "",
-      sleepQuality: formData.sleepQuality === "",
       waterIntake: formData.waterIntake === "",
       mealFrequency: formData.mealFrequency === "",
-      dietaryRestrictions: formData.dietaryRestrictions === "",
-      previousDiets: formData.previousDiets === "",
       stressLevel: formData.stressLevel === "",
     }
 
@@ -235,12 +226,53 @@ export default function WeightLossRecommendation() {
 
   const handleContinueToStep2 = () => {
     if (validateFormStep1()) {
+      // Rastrear evento de conclusão do primeiro passo
+      if (window.trackConversion) {
+        window.trackConversion("form_step_1_complete", {
+          form_name: "weight_loss_assessment",
+        })
+      }
       setStep(2)
+    }
+  }
+
+  // Função para salvar dados no Vercel KV
+  const saveDataToVercel = async () => {
+    try {
+      const response = await fetch("/api/save-assessment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userData: formData,
+          results: {
+            bmi,
+            idealWeight,
+            weeklyGoal,
+            timeToGoal,
+            recommendedKit: getRecommendation().kit,
+            timestamp: new Date().toISOString(),
+          },
+        }),
+      })
+
+      const data = await response.json()
+      return data.id // Retorna o ID do registro salvo
+    } catch (error) {
+      console.error("Erro ao salvar dados:", error)
+      return null
     }
   }
 
   const handleContinueToStep3 = () => {
     if (validateFormStep2()) {
+      // Rastrear evento de conclusão do segundo passo
+      if (window.trackConversion) {
+        window.trackConversion("form_step_2_complete", {
+          form_name: "weight_loss_assessment",
+        })
+      }
       setLoading(true)
       // Simulate loading delay
       setTimeout(() => {
@@ -250,7 +282,17 @@ export default function WeightLossRecommendation() {
     }
   }
 
-  const handleContinueToStep4 = () => {
+  const handleContinueToStep4 = async () => {
+    // Rastrear evento de visualização do vídeo
+    if (window.trackConversion) {
+      window.trackConversion("video_viewed", {
+        content_name: "weight_loss_explanation",
+      })
+    }
+
+    // Salvar dados no Vercel
+    await saveDataToVercel()
+
     setStep(4)
   }
 
@@ -319,17 +361,38 @@ export default function WeightLossRecommendation() {
       recommendations.push("Continue com seus exercícios de alta intensidade, focando em recuperação adequada")
     }
 
-    // Recomendações baseadas na qualidade do sono
-    if (formData.sleepQuality === "ruim") {
-      recommendations.push("Priorize melhorar sua qualidade de sono - tente dormir 7-8 horas por noite")
-    }
-
     // Recomendações baseadas na ingestão de água
     if (formData.waterIntake === "pouca") {
       recommendations.push("Aumente sua ingestão de água para pelo menos 2 litros por dia")
     }
 
     return recommendations
+  }
+
+  // Rastrear cliques no botão de compra
+  const handlePurchaseClick = () => {
+    if (window.trackConversion) {
+      window.trackConversion("begin_checkout", {
+        items: [
+          {
+            id: getRecommendation().kit,
+            name: `Kit ${getRecommendation().kit}`,
+            category: "weight_loss",
+            quantity: 1,
+          },
+        ],
+        value: formData.goal, // Usando o objetivo como valor para análise
+        currency: "BRL",
+      })
+
+      // Rastrear evento de conversão do Google Ads
+      window.gtag("event", "conversion", {
+        send_to: "AW-632000271/CVC-1",
+        value: formData.goal,
+        currency: "BRL",
+        transaction_id: new Date().getTime().toString(),
+      })
+    }
   }
 
   return (
@@ -553,28 +616,6 @@ export default function WeightLossRecommendation() {
                 </div>
 
                 <div>
-                  <label htmlFor="sleepQuality" className="block text-sm font-medium text-gray-700 mb-1">
-                    Qualidade do Sono
-                  </label>
-                  <select
-                    id="sleepQuality"
-                    name="sleepQuality"
-                    value={formData.sleepQuality}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-2 rounded-md bg-gray-100 border ${
-                      errors.sleepQuality ? "border-red-500" : "border-gray-300"
-                    } focus:outline-none focus:ring-2 focus:ring-green-500`}
-                  >
-                    <option value="">Selecione uma opção</option>
-                    <option value="ruim">Ruim (menos de 6 horas/noite)</option>
-                    <option value="regular">Regular (6-7 horas/noite)</option>
-                    <option value="boa">Boa (7-8 horas/noite)</option>
-                    <option value="excelente">Excelente (8+ horas/noite)</option>
-                  </select>
-                  {errors.sleepQuality && <p className="mt-1 text-sm text-red-600">Por favor, selecione uma opção.</p>}
-                </div>
-
-                <div>
                   <label htmlFor="waterIntake" className="block text-sm font-medium text-gray-700 mb-1">
                     Consumo Diário de Água
                   </label>
@@ -639,48 +680,6 @@ export default function WeightLossRecommendation() {
                   </select>
                   {errors.stressLevel && <p className="mt-1 text-sm text-red-600">Por favor, selecione uma opção.</p>}
                 </div>
-
-                <div>
-                  <label htmlFor="previousDiets" className="block text-sm font-medium text-gray-700 mb-1">
-                    Experiência com Dietas Anteriores
-                  </label>
-                  <select
-                    id="previousDiets"
-                    name="previousDiets"
-                    value={formData.previousDiets}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-2 rounded-md bg-gray-100 border ${
-                      errors.previousDiets ? "border-red-500" : "border-gray-300"
-                    } focus:outline-none focus:ring-2 focus:ring-green-500`}
-                  >
-                    <option value="">Selecione uma opção</option>
-                    <option value="nenhuma">Nenhuma experiência anterior</option>
-                    <option value="pouca">Tentei 1-2 dietas sem sucesso</option>
-                    <option value="moderada">Tentei várias dietas com sucesso temporário</option>
-                    <option value="muita">Experiência extensa com dietas</option>
-                  </select>
-                  {errors.previousDiets && <p className="mt-1 text-sm text-red-600">Por favor, selecione uma opção.</p>}
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-gray-700 mb-1">
-                  Restrições Alimentares ou Alergias
-                </label>
-                <textarea
-                  id="dietaryRestrictions"
-                  name="dietaryRestrictions"
-                  value={formData.dietaryRestrictions}
-                  onChange={handleInputChange}
-                  rows={3}
-                  className={`w-full px-4 py-2 rounded-md bg-gray-100 border ${
-                    errors.dietaryRestrictions ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-green-500`}
-                  placeholder="Descreva quaisquer restrições alimentares ou alergias que você tenha. Se não tiver, escreva 'Nenhuma'."
-                ></textarea>
-                {errors.dietaryRestrictions && (
-                  <p className="mt-1 text-sm text-red-600">Por favor, preencha este campo.</p>
-                )}
               </div>
 
               <div className="flex space-x-4">
@@ -717,10 +716,11 @@ export default function WeightLossRecommendation() {
               <div className="bg-green-50 rounded-lg p-4 border border-green-100 mb-6">
                 <h2 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <TrendingUp className="mr-2 h-5 w-5" />
-                  Relato pessoal de consumidor Definamax
+                  Relato pessoal de consumido Definamas
                 </h2>
                 <p className="text-sm text-green-700">
-                  Assista ao vídeo abaixo e veja o que uma de nossas consumidoras relatou sobre a sua experiência com o Definamax
+                  Assista ao vídeo abaixo e veja o que uma de nossas consumidoras relatou sobre a sua experiência com o
+                  Definamax
                 </p>
               </div>
 
@@ -919,12 +919,12 @@ export default function WeightLossRecommendation() {
                   Recomendação de Kit
                 </h3>
 
-                <div className="p-4 bg-green-50 rounded-lg border border-green-100 mb-4">
+                <div className="p-4 bg-green-50 rounded-lg border border-green-100 mb-4 text-center">
                   <h4 className="font-medium text-gray-800 mb-2">Kit Recomendado: {getRecommendation().kit}</h4>
                   <div className="bg-green-600 text-white p-2 rounded-md mb-3 text-center font-medium">
                     Resultados em até {timeToGoal} semanas!
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 inline-block text-left">
                     <li className="flex items-start">
                       <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
                       <span>Duração do tratamento: {getRecommendation().duration}</span>
@@ -984,6 +984,7 @@ export default function WeightLossRecommendation() {
                   href={getPurchaseLink()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handlePurchaseClick}
                   className="w-full py-4 px-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-md shadow-lg flex items-center justify-center text-lg transition-colors"
                 >
                   <ShoppingCart className="mr-2 h-6 w-6" />
