@@ -340,6 +340,19 @@ export default function WeightLossRecommendation() {
     }
   }
 
+  // Adicionar a função getKitImage logo após a função getPurchaseLink
+  function getKitImage() {
+    const goal = Number.parseInt(formData.goal)
+
+    if (goal <= 5) {
+      return "/1f.png"
+    } else if (goal <= 12) {
+      return "/3f.png"
+    } else {
+      return "/6f.png"
+    }
+  }
+
   function getBmiCategory(bmiValue: number) {
     if (bmiValue < 18.5) return { category: "Abaixo do peso", color: "text-blue-500" }
     if (bmiValue < 25) return { category: "Peso normal", color: "text-green-500" }
@@ -924,6 +937,20 @@ export default function WeightLossRecommendation() {
                   <div className="bg-green-600 text-white p-2 rounded-md mb-3 text-center font-medium">
                     Resultados em até {timeToGoal} semanas!
                   </div>
+
+                  {/* Imagem do kit */}
+                  <div className="my-4 flex justify-center">
+                    <div className="relative w-64 h-64">
+                      <Image
+                        src={getKitImage() || "/placeholder.svg"}
+                        alt={`Kit ${getRecommendation().kit}`}
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                  </div>
+
                   <ul className="space-y-2 inline-block text-left">
                     <li className="flex items-start">
                       <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
