@@ -1201,7 +1201,7 @@ export default function LandingPage() {
               <p className="text-gray-700">
                 Estamos tão confiantes na eficácia do Definamax que oferecemos uma garantia incondicional de 30 dias. Se
                 você não estiver completamente satisfeito com os resultados, basta entrar em contato conosco para
-                receber 100% do seu dinheiro de volta, sem perguntas.
+                receber 100% do seu dinheiro de volta, sem perguntas, conforme os nossos termos*.
               </p>
               <div className="mt-4 flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
@@ -2107,7 +2107,7 @@ export default function LandingPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-green-100 hover:text-white text-sm">
+                  <a href="https://www.definamaxoficial.com/termos" className="text-green-100 hover:text-white text-sm">
                     Política de devolução
                   </a>
                 </li>
