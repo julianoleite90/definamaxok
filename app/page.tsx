@@ -201,7 +201,8 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Já tentou de tudo para eliminar a gordura teimosa? Descubra como Definamax te ajuda a perder peso sem dietas restritivas ou injeções perigosas
+              Já tentou de tudo para eliminar a gordura teimosa? Descubra como Definamax te ajuda a perder peso sem
+              dietas restritivas ou injeções perigosas
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -330,7 +331,8 @@ export default function LandingPage() {
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho.
+              Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no
+              espelho.
             </p>
           </div>
 
@@ -382,7 +384,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade, diminuiu muito! Sinto que tenho mais controle agora."
+                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade,
+                    diminuiu muito! Sinto que tenho mais controle agora."
                   </p>
                   <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
                 </div>
@@ -426,7 +429,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Tentei várias dietas, fiz academia e nada funcionava. Com Definamax, perdi 36kg em 10 meses sem nenhum efeito colateral. Minha pressão normalizou e voltei a praticar esportes!"
+                    "Tentei várias dietas, fiz academia e nada funcionava. Com Definamax, perdi 36kg em 10 meses sem
+                    nenhum efeito colateral. Minha pressão normalizou e voltei a praticar esportes!"
                   </p>
                   <p className="text-green-700 font-medium">- 36kg em 10 meses</p>
                 </div>
@@ -464,7 +468,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
+                    "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com
+                    Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
                   </p>
                   <p className="text-green-700 font-medium">- 23kg em 5 meses</p>
                 </div>
@@ -515,7 +520,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e tô conseguindo fazer caminhadas sem cansar tanto"
+                    "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e
+                    tô conseguindo fazer caminhadas sem cansar tanto"
                   </p>
                   <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                 </div>
@@ -559,7 +565,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3 meses, perdi 14kg! Pra mim, foi a solução."
+                    "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3 meses,
+                    perdi 14kg! Pra mim, foi a solução."
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
@@ -603,7 +610,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses! A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
+                    "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses!
+                    A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
                   </p>
                   <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
                 </div>
@@ -698,7 +706,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade, diminuiu muito! Sinto que tenho mais controle agora."
+                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade,
+                    diminuiu muito! Sinto que tenho mais controle agora."
                   </p>
                   <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
                 </div>
@@ -742,7 +751,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Tentei várias dietas e nada funcionava. Com Definamax, perdi 36kg em 6 meses sem nenhum efeito colateral. Minha pressão normalizou e voltei a praticar esportes!"
+                    "Tentei várias dietas e nada funcionava. Com Definamax, perdi 36kg em 6 meses sem nenhum efeito
+                    colateral. Minha pressão normalizou e voltei a praticar esportes!"
                   </p>
                   <p className="text-green-700 font-medium">- 36kg em 10 meses</p>
                 </div>
@@ -780,7 +790,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
+                    "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com
+                    Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
                   </p>
                   <p className="text-green-700 font-medium">- 23kg em 5 meses</p>
                 </div>
@@ -827,7 +838,8 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                      "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e tô conseguindo fazer caminhadas sem cansar tanto"
+                        "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou
+                        demais e tô conseguindo fazer caminhadas sem cansar tanto"
                       </p>
                       <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                     </div>
@@ -871,7 +883,8 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "á tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3 meses, perdi 14kg! Pra mim, foi a solução."
+                        "á tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3
+                        meses, perdi 14kg! Pra mim, foi a solução."
                       </p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
@@ -915,7 +928,8 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                      "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses! A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
+                        "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3
+                        meses! A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
                       </p>
                       <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
                     </div>
@@ -967,10 +981,10 @@ export default function LandingPage() {
               Benefícios Comprovados
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            Gordura Teimosa? <span className="text-green-700">NUNCA MAIS!</span>
+              Gordura Teimosa? <span className="text-green-700">NUNCA MAIS!</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-            Sinta a alegria de ver a balança baixar e suas roupas voltarem a servir
+              Sinta a alegria de ver a balança baixar e suas roupas voltarem a servir
             </p>
           </div>
 
@@ -981,7 +995,8 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Emagreça TRANQUILO! Sem sustos e sem efeitos ruins.</h3>
               </div>
               <p className="text-gray-700">
-              Definamax cuida do seu corpo com ingredientes naturais, pra você emagrecer sem enjoos, sem dor de barriga e sem preocupações. Sua saúde é prioridade!
+                Definamax cuida do seu corpo com ingredientes naturais, pra você emagrecer sem enjoos, sem dor de
+                barriga e sem preocupações. Sua saúde é prioridade!
               </p>
             </div>
 
@@ -991,7 +1006,8 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Menos Medidas, Mais Cintura e MUITA Energia em Semanas!</h3>
               </div>
               <p className="text-gray-700">
-              Sinta a transformação no seu corpo, veja sua cintura mais definida e aproveite a energia extra! Imagine a sua felicidade ao se sentir mais leve, confiante e poderoso com os resultados rápidos do Definamax!
+                Sinta a transformação no seu corpo, veja sua cintura mais definida e aproveite a energia extra! Imagine
+                a sua felicidade ao se sentir mais leve, confiante e poderoso com os resultados rápidos do Definamax!
               </p>
             </div>
 
@@ -1001,19 +1017,19 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Emagreça com a Natureza ao Seu Lado, Sem Dietas Radicais.</h3>
               </div>
               <p className="text-gray-700">
-              Definamax usa ingredientes naturais para controlar seu apetite e te deixar satisfeito de forma suave e eficaz. Emagrecer sem sacrifícios extremos e sem sofrimento.
+                Definamax usa ingredientes naturais para controlar seu apetite e te deixar satisfeito de forma suave e
+                eficaz. Emagrecer sem sacrifícios extremos e sem sofrimento.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <CheckCircle2 className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">
-                Sonha em Emagrecer e Nunca Mais Voltar ao Peso Antigo?
-                </h3>
+                <h3 className="text-xl font-semibold">Sonha em Emagrecer e Nunca Mais Voltar ao Peso Antigo?</h3>
               </div>
               <p className="text-gray-700">
-              Definamax é recomendado por especialistas para um emagrecimento saudável e resultados que você mantém a longo prazo. Confie na ciência e conquiste o corpo que sempre quis!
+                Definamax é recomendado por especialistas para um emagrecimento saudável e resultados que você mantém a
+                longo prazo. Confie na ciência e conquiste o corpo que sempre quis!
               </p>
             </div>
           </div>
@@ -1039,9 +1055,12 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Sua Saúde em Primeiro Lugar: Natural É Melhor Que Químico!</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              Sua Saúde em Primeiro Lugar: Natural É Melhor Que Químico!
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-            Evite efeitos colaterais e problemas de saúde causados por injeções. Definamax oferece um emagrecimento natural, eficaz e sem preocupações.
+              Evite efeitos colaterais e problemas de saúde causados por injeções. Definamax oferece um emagrecimento
+              natural, eficaz e sem preocupações.
             </p>
           </div>
 
@@ -1225,159 +1244,196 @@ export default function LandingPage() {
       </section>
 
       {/* Área de compra */}
-<section id="comprar" ref={buyRef} className="w-full py-16 bg-gradient-to-b from-green-100 to-green-50">
-  <div className="mx-auto max-w-5xl px-4 text-center">
-    <div className="mb-10">
-      <div className="inline-block bg-yellow-400 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold mb-2">
-        OFERTA ESPECIAL POR TEMPO LIMITADO
-      </div>
-      <h2 className="text-3xl font-bold text-gray-800 mb-2">Comece Sua Transformação Hoje</h2>
-      <p className="text-gray-700 mb-2 max-w-2xl mx-auto">
-        Escolha o plano ideal para você e receba Definamax diretamente em sua casa
-      </p>
-      <div className="flex items-center justify-center text-sm text-red-600 font-medium">
-        <Clock className="h-4 w-4 mr-1" />
-        <span>
-          Promoção válida por mais {timeLeft.hours.toString().padStart(2, "0")}:
-          {timeLeft.minutes.toString().padStart(2, "0")}:{timeLeft.seconds.toString().padStart(2, "0")}
-        </span>
-      </div>
-    </div>
+      <section id="comprar" ref={buyRef} className="w-full py-16 bg-gradient-to-b from-green-100 to-green-50">
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <div className="mb-10">
+            <div className="inline-block bg-yellow-400 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold mb-2">
+              OFERTA ESPECIAL POR TEMPO LIMITADO
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Comece Sua Transformação Hoje</h2>
+            <p className="text-gray-700 mb-2 max-w-2xl mx-auto">
+              Escolha o plano ideal para você e receba Definamax diretamente em sua casa
+            </p>
+            <div className="flex items-center justify-center text-sm text-red-600 font-medium">
+              <Clock className="h-4 w-4 mr-1" />
+              <span>
+                Promoção válida por mais {timeLeft.hours.toString().padStart(2, "0")}:
+                {timeLeft.minutes.toString().padStart(2, "0")}:{timeLeft.seconds.toString().padStart(2, "0")}
+              </span>
+            </div>
+          </div>
 
-    <div className="grid gap-8 md:gap-10 md:grid-cols-3">
-      {/* Kit 6 meses */}
-      <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-        <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
-          Kit 6 Meses
-        </div>
-        <div className="flex justify-center mb-4 relative">
-          <Image src="/6f.png" alt="Kit 6 Meses" width={400} height={400} className="h-60 object-contain" />
-          <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
-            -68%
+          <div className="grid gap-8 md:gap-10 md:grid-cols-3">
+            {/* Kit 6 meses */}
+            <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
+                Kit 6 Meses
+              </div>
+              <div className="flex justify-center mb-4 relative">
+                <Image src="/6f.png" alt="Kit 6 Meses" width={400} height={400} className="h-60 object-contain" />
+                <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  -68%
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 19kg</h3>
+
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
+                <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-68%</span>
+              </div>
+
+              <div className="text-3xl font-bold text-green-700 mb-1">12x R$48,09</div>
+              <div className="text-sm text-gray-600 mb-3">ou R$479,40 à vista</div>
+
+              <div className="bg-gray-50 p-2 rounded-md mb-3">
+                <p className="text-sm text-gray-500 mb-1">6 frascos - 360 cápsulas</p>
+                <p className="text-sm text-green-700 font-medium">R$79,90 por frasco</p>
+              </div>
+
+              <div className="bg-yellow-50 border border-yellow-100 rounded-md p-2 mb-4 text-sm text-yellow-800">
+                <span className="font-medium">BÔNUS:</span> 2 Frascos de Colágeno Grátis
+              </div>
+
+              <Link
+                href={addUtmToUrl("https://full.sale/ytA47b")}
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
+              >
+                COMPRAR AGORA
+              </Link>
+              <p className="text-sm text-green-600 font-medium mt-2">Frete grátis</p>
+            </div>
+
+            {/* Kit 3 meses - MAIS POPULAR */}
+            <div className="bg-white p-6 rounded-lg border-2 border-green-500 shadow-lg relative transform scale-105 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="absolute -top-3 left-0 right-0 mx-auto w-max bg-green-500 text-white text-xs font-bold py-1 px-4 rounded-full shadow-md">
+                MAIS POPULAR
+              </div>
+              <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
+                Kit 3 Meses
+              </div>
+              <div className="flex justify-center mb-4 relative">
+                <Image src="/3f.png" alt="Kit 3 Meses" width={400} height={400} className="h-60 object-contain" />
+                <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  -50%
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 13kg</h3>
+
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-gray-400 line-through text-sm">De R$758,70</span>
+                <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-50%</span>
+              </div>
+
+              <div className="text-4xl font-bold text-green-700 mb-1">12x R$38,05</div>
+              <div className="text-sm text-gray-600 mb-3">ou R$379,00 à vista</div>
+
+              <div className="bg-gray-50 p-2 rounded-md mb-3">
+                <p className="text-sm text-gray-500 mb-1">3 frascos - 180 cápsulas</p>
+                <p className="text-sm text-green-700 font-medium">R$126,34 por frasco</p>
+              </div>
+
+              <div className="bg-yellow-50 border border-yellow-100 rounded-md p-2 mb-4 text-sm text-yellow-800">
+                <span className="font-medium">BÔNUS:</span> 1 Frasco de Colágeno Grátis
+              </div>
+
+              <Link
+                href={addUtmToUrl("https://full.sale/DmNQj1")}
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all animate-pulse-border"
+              >
+                COMPRAR AGORA
+              </Link>
+              <p className="text-sm text-green-600 font-medium mt-2">Frete grátis</p>
+              <div className="mt-2 bg-yellow-100 text-yellow-800 text-xs p-1 rounded">
+                Apenas 17 kits disponíveis neste preço!
+              </div>
+            </div>
+
+            {/* Kit 1 mês */}
+            <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
+                Kit 1 Mês
+              </div>
+              <div className="flex justify-center mb-4 relative">
+                <Image src="/1f.png" alt="Kit 1 Mês" width={400} height={400} className="h-60 object-contain" />
+                <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  -18%
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 5kg</h3>
+
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-gray-400 line-through text-sm">De R$329,90</span>
+                <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-18%</span>
+              </div>
+
+              <div className="text-3xl font-bold text-green-700 mb-1">12x R$28,01</div>
+              <div className="text-sm text-gray-600 mb-3">ou R$279,90 à vista</div>
+
+              <div className="bg-gray-50 p-2 rounded-md mb-4">
+                <p className="text-sm text-gray-500 mb-1">1 frasco - 60 cápsulas</p>
+                <p className="text-sm text-green-700 font-medium">R$279,90 por frasco</p>
+              </div>
+
+              <Link
+                href={addUtmToUrl("https://full.sale/eMbtHp")}
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
+              >
+                COMPRAR AGORA
+              </Link>
+              <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 29,00</p>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Image src="/master.png" alt="Mastercard" width={60} height={40} className="h-10" />
+            <Image src="/visa.png" alt="Visa" width={60} height={40} className="h-10" />
+            <Image src="/hiper.png" alt="Hipercard" width={60} height={40} className="h-10" />
+            <Image src="/pix.png" alt="Pix" width={60} height={40} className="h-10" />
+          </div>
+
+          <div className="mt-6 text-sm text-gray-600 flex items-center justify-center">
+            <span>Compra 100% segura • Satisfação garantida ou seu dinheiro de volta</span>
           </div>
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 19kg</h3>
-        
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
-          <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-68%</span>
-        </div>
-        
-        <div className="text-3xl font-bold text-green-700 mb-1">12x R$48,09</div>
-        <div className="text-sm text-gray-600 mb-3">ou R$479,40 à vista</div>
+      </section>
 
-        <div className="bg-gray-50 p-2 rounded-md mb-3">
-          <p className="text-sm text-gray-500 mb-1">6 frascos - 360 cápsulas</p>
-          <p className="text-sm text-green-700 font-medium">R$79,90 por frasco</p>
-        </div>
-        
-        <div className="bg-yellow-50 border border-yellow-100 rounded-md p-2 mb-4 text-sm text-yellow-800">
-          <span className="font-medium">BÔNUS:</span> 2 Frascos de Colágeno Grátis
-        </div>
-        
-        <Link
-          href={addUtmToUrl("https://full.sale/ytA47b")}
-          className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
-        >
-          COMPRAR AGORA
-        </Link>
-        <p className="text-sm text-green-600 font-medium mt-2">Frete grátis</p>
-      </div>
-
-      {/* Kit 3 meses - MAIS POPULAR */}
-      <div className="bg-white p-6 rounded-lg border-2 border-green-500 shadow-lg relative transform scale-105 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-        <div className="absolute -top-3 left-0 right-0 mx-auto w-max bg-green-500 text-white text-xs font-bold py-1 px-4 rounded-full shadow-md">
-          MAIS POPULAR
-        </div>
-        <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
-          Kit 3 Meses
-        </div>
-        <div className="flex justify-center mb-4 relative">
-          <Image src="/3f.png" alt="Kit 3 Meses" width={400} height={400} className="h-60 object-contain" />
-          <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
-            -50%
+      {/* Avaliação Gratuita Section */}
+      <section className="w-full py-16 bg-white">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl overflow-hidden shadow-lg">
+            <div className="grid md:grid-cols-2 items-center">
+              <div className="p-8 md:p-10">
+                <div className="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  Avaliação Gratuita
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  Faça uma avaliação gratuita e descubra seu IMC e o tratamento ideal para o seu emagrecimento
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Conheça seu Índice de Massa Corporal e receba recomendações personalizadas para atingir seus objetivos de emagrecimento de forma saudável e eficaz.
+                </p>
+                <a 
+                  href="https://www.definamaxoficial.com/avaliacao" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+                >
+                  FAZER MINHA AVALIAÇÃO GRATUITA <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </div>
+              <div className="hidden md:block">
+                <Image 
+                  src="/waist-measurement-assessment.png" 
+                  alt="Avaliação de IMC" 
+                  width={500} 
+                  height={400} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 13kg</h3>
-        
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="text-gray-400 line-through text-sm">De R$758,70</span>
-          <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-50%</span>
-        </div>
-        
-        <div className="text-4xl font-bold text-green-700 mb-1">12x R$38,05</div>
-        <div className="text-sm text-gray-600 mb-3">ou R$379,00 à vista</div>
-
-        <div className="bg-gray-50 p-2 rounded-md mb-3">
-          <p className="text-sm text-gray-500 mb-1">3 frascos - 180 cápsulas</p>
-          <p className="text-sm text-green-700 font-medium">R$126,34 por frasco</p>
-        </div>
-        
-        <div className="bg-yellow-50 border border-yellow-100 rounded-md p-2 mb-4 text-sm text-yellow-800">
-          <span className="font-medium">BÔNUS:</span> 1 Frasco de Colágeno Grátis
-        </div>
-        
-        <Link
-          href={addUtmToUrl("https://full.sale/DmNQj1")}
-          className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all animate-pulse-border"
-        >
-          COMPRAR AGORA
-        </Link>
-        <p className="text-sm text-green-600 font-medium mt-2">Frete grátis</p>
-        <div className="mt-2 bg-yellow-100 text-yellow-800 text-xs p-1 rounded">
-          Apenas 17 kits disponíveis neste preço!
-        </div>
-      </div>
-
-      {/* Kit 1 mês */}
-      <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-        <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
-          Kit 1 Mês
-        </div>
-        <div className="flex justify-center mb-4 relative">
-          <Image src="/1f.png" alt="Kit 1 Mês" width={400} height={400} className="h-60 object-contain" />
-          <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
-            -18%
-          </div>
-        </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 5kg</h3>
-        
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="text-gray-400 line-through text-sm">De R$329,90</span>
-          <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-18%</span>
-        </div>
-        
-        <div className="text-3xl font-bold text-green-700 mb-1">12x R$28,01</div>
-        <div className="text-sm text-gray-600 mb-3">ou R$279,90 à vista</div>
-
-        <div className="bg-gray-50 p-2 rounded-md mb-4">
-          <p className="text-sm text-gray-500 mb-1">1 frasco - 60 cápsulas</p>
-          <p className="text-sm text-green-700 font-medium">R$279,90 por frasco</p>
-        </div>
-        
-        <Link
-          href={addUtmToUrl("https://full.sale/eMbtHp")}
-          className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
-        >
-          COMPRAR AGORA
-        </Link>
-        <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 29,00</p>
-      </div>
-    </div>
-
-    <div className="mt-8 flex flex-wrap justify-center gap-4">
-      <Image src="/master.png" alt="Mastercard" width={60} height={40} className="h-10" />
-      <Image src="/visa.png" alt="Visa" width={60} height={40} className="h-10" />
-      <Image src="/hiper.png" alt="Hipercard" width={60} height={40} className="h-10" />
-      <Image src="/pix.png" alt="Pix" width={60} height={40} className="h-10" />
-    </div>
-
-    <div className="mt-6 text-sm text-gray-600 flex items-center justify-center">
-  
-      <span>Compra 100% segura • Satisfação garantida ou seu dinheiro de volta</span>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Avaliações estilo Amazon - Movido para cima */}
       <section className="w-full py-8 bg-green-50">
@@ -1505,7 +1561,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">15/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de anos tentando emagrecer sem sucesso, o Definamax mudou minha vida. Perdi 16kg em 3 meses, minha energia aumentou e voltei a praticar esportes. Minha esposa está impressionada com a mudança e minha autoestima voltou!
+                  Depois de anos tentando emagrecer sem sucesso, o Definamax mudou minha vida. Perdi 16kg em 3 meses,
+                  minha energia aumentou e voltei a praticar esportes. Minha esposa está impressionada com a mudança e
+                  minha autoestima voltou!
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1761,7 +1819,7 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                     <h4 className="font-semibold">Melhor que produtos importados!</h4>
+                      <h4 className="font-semibold">Melhor que produtos importados!</h4>
                     </div>
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
@@ -1954,10 +2012,10 @@ export default function LandingPage() {
                 }`}
               >
                 <p className="text-gray-700">
-                  As injeções de emagrecimento foram desenvolvidas para diabéticos e causam vários efeitos
-                  colaterais como náuseas severas, problemas digestivos e até pancreatite. Além disso, são extremamente
-                  caras e requerem acompanhamento médico. Definamax oferece emagrecimento natural, sem efeitos
-                  colaterais graves, por um preço acessível e sem necessidade de receita médica.
+                  As injeções de emagrecimento foram desenvolvidas para diabéticos e causam vários efeitos colaterais
+                  como náuseas severas, problemas digestivos e até pancreatite. Além disso, são extremamente caras e
+                  requerem acompanhamento médico. Definamax oferece emagrecimento natural, sem efeitos colaterais
+                  graves, por um preço acessível e sem necessidade de receita médica.
                 </p>
               </div>
             </div>
