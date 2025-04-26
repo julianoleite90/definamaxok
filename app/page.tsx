@@ -1396,45 +1396,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Avaliação Gratuita Section */}
-      <section className="w-full py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl overflow-hidden shadow-lg">
-            <div className="grid md:grid-cols-2 items-center">
-              <div className="p-8 md:p-10">
-                <div className="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
-                  Avaliação Gratuita
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                  Faça uma avaliação gratuita e descubra seu IMC e o tratamento ideal para o seu emagrecimento
-                </h2>
-                <p className="text-gray-600 mb-6">
-                  Conheça seu Índice de Massa Corporal e receba recomendações personalizadas para atingir seus objetivos de emagrecimento de forma saudável e eficaz.
-                </p>
-                <a 
-                  href="https://www.definamaxoficial.com/avaliacao" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
-                >
-                  FAZER MINHA AVALIAÇÃO GRATUITA <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </div>
-              <div className="hidden md:block">
-                <Image 
-                  src="/waist-measurement-assessment.png" 
-                  alt="Avaliação de IMC" 
-                  width={500} 
-                  height={400} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Avaliações estilo Amazon - Movido para cima */}
       <section className="w-full py-8 bg-green-50">
         <div className="mx-auto max-w-5xl px-4">
