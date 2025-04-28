@@ -1517,7 +1517,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
-                    src="/weight-loss-transformation-man.png"
+                    src="/ricardo.png"
                     alt="Foto da avaliação"
                     width={100}
                     height={100}
@@ -1527,7 +1527,7 @@ export default function LandingPage() {
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                     <Image
-                      src="/thoughtful-man-profile.png"
+                      src="/rica.png"
                       alt="Ricardo M."
                       width={32}
                       height={32}
@@ -1600,7 +1600,7 @@ export default function LandingPage() {
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                     <Image
-                      src="/placeholder.svg?key=36nqp"
+                      src="/andre.png"
                       alt="André T."
                       width={32}
                       height={32}
@@ -1636,7 +1636,7 @@ export default function LandingPage() {
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/thoughtful-mature-man.png"
+                        src="/fernando.png"
                         alt="Fernando D."
                         width={32}
                         height={32}
