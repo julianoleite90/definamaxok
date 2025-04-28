@@ -193,7 +193,7 @@ export default function LandingPage() {
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
             Emagreça de {" "}
               <span className="text-green-600 relative">
-              Forma Natural{" "}
+              Forma Rápida{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
               e Recupere Sua Autoestima
