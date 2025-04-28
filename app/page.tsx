@@ -347,7 +347,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/maria.png"
+                        src="/elizabete.png"
                         alt="Maria"
                         width={100}
                         height={100}
@@ -355,7 +355,7 @@ export default function LandingPage() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Maria S.</h4>
+                      <h4 className="font-semibold">Elizabete</h4>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -369,30 +369,29 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/1a.png"
+                        src="/depoimento01.png"
                         alt="Antes"
                         width={300}
                         height={300}
                         className="w-full h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
-                        -19kg
+                        -14kg
                       </div>
                     </div>
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade,
-                    diminuiu muito! Sinto que tenho mais controle agora."
+                  "Pra quem tá na luta pra emagrecer, digo uma coisa: Definamax funciona mesmo! Perdi 19kg em 5 meses e tô me amando mais a cada dia."
                   </p>
-                  <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 14kg em 4 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/h3p.png"
+                        src="/brenda.png"
                         alt="Carlos"
                         width={100}
                         height={100}
@@ -400,7 +399,7 @@ export default function LandingPage() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Carlos M.</h4>
+                      <h4 className="font-semibold">Brenda S.</h4>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -414,29 +413,28 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/h3.png"
+                        src="/depoimento02.png"
                         alt="Antes"
                         width={300}
                         height={300}
                         className="w-full h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
-                        -36kg
+                        -22kg
                       </div>
                     </div>
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Tentei várias dietas, fiz academia e nada funcionava. Com Definamax, perdi 36kg em 10 meses sem
-                    nenhum efeito colateral. Minha pressão normalizou e voltei a praticar esportes!"
+                  "Depois da maternidade, meu corpo mudou e a insegurança me incomodava muito. Tentei de tudo, mas foi com Definamax que, em 6 meses, perdi 22kg e finalmente recuperei a confiança em mim mesma.""
                   </p>
-                  <p className="text-green-700 font-medium">- 36kg em 10 meses</p>
+                  <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image src="/ana.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
+                      <Image src="/paula.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <h4 className="font-semibold">Ana P.</h4>
@@ -453,23 +451,22 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/3a.png"
+                        src="/depoimento03.png"
                         alt="Antes"
                         width={300}
                         height={300}
                         className="w-full h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
-                        -23kg
+                        -11kg
                       </div>
                     </div>
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com
-                    Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
+                  "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e bem-estar."
                   </p>
-                  <p className="text-green-700 font-medium">- 23kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 11kg em 3 meses</p>
                 </div>
               </div>
 
@@ -483,7 +480,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/flavia.png"
+                        src="/ju.png"
                         alt="Juliana"
                         width={100}
                         height={100}
@@ -505,7 +502,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/4a.png"
+                        src="depoimento04.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -669,7 +666,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/maria.png"
+                        src="/elizabete.png"
                         alt="Maria"
                         width={100}
                         height={100}
@@ -677,7 +674,7 @@ export default function LandingPage() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Maria S.</h4>
+                      <h4 className="font-semibold">Elizabete</h4>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -691,30 +688,29 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/1a.png"
+                        src="/depoimento01.png"
                         alt="Antes"
                         width={300}
                         height={300}
                         className="w-full h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
-                        -19kg
+                        -14kg
                       </div>
                     </div>
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Com Definamax, em 5 meses perdi 19kg e a minha ansiedade, que me fazia comer sem necessidade,
-                    diminuiu muito! Sinto que tenho mais controle agora."
+                    "Pra quem tá na luta pra emagrecer, digo uma coisa: Definamax funciona mesmo! Perdi 14kg em 4 meses e tô me amando mais a cada dia."
                   </p>
-                  <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 14kg em 4 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/h3p.png"
+                        src="/brenda.png"
                         alt="Carlos"
                         width={100}
                         height={100}
@@ -722,7 +718,7 @@ export default function LandingPage() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Carlos M.</h4>
+                      <h4 className="font-semibold">Brenda S.</h4>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -736,29 +732,28 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/h3.png"
+                        src="/depoimento02.png"
                         alt="Antes"
                         width={300}
                         height={300}
                         className="w-full h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
-                        -36kg
+                        -22kg
                       </div>
                     </div>
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Tentei várias dietas e nada funcionava. Com Definamax, perdi 36kg em 6 meses sem nenhum efeito
-                    colateral. Minha pressão normalizou e voltei a praticar esportes!"
+                  "Depois da maternidade, meu corpo mudou e a insegurança me incomodava muito. Tentei de tudo, mas foi com Definamax que, em 6 meses, perdi 22kg e finalmente recuperei a confiança em mim mesma.""
                   </p>
-                  <p className="text-green-700 font-medium">- 36kg em 10 meses</p>
+                  <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image src="/ana.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
+                      <Image src="/paula.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <h4 className="font-semibold">Ana P.</h4>
@@ -775,23 +770,22 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div className="relative">
                       <Image
-                        src="/3a.png"
+                        src="/depoimento03.png"
                         alt="Antes"
                         width={300}
                         height={300}
                         className="w-full h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
-                        -23kg
+                        -11kg
                       </div>
                     </div>
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Depois de duas gestações, meu corpo mudou muito e senti que meu marido até perdeu o interesse. Com
-                    Definamax, perdi 23kg em 5 meses e finalmente me sinto confiante e desejada novamente!"
+                  "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e bem-estar."
                   </p>
-                  <p className="text-green-700 font-medium">- 23kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 11kg em 3 meses</p>
                 </div>
 
                 {/* Additional testimonials shown when "load more" is clicked */}
@@ -801,7 +795,7 @@ export default function LandingPage() {
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
-                            src="/flavia.png"
+                            src="/ju.png"
                             alt="Juliana"
                             width={100}
                             height={100}
@@ -823,7 +817,7 @@ export default function LandingPage() {
                       <div className="mb-4">
                         <div className="relative">
                           <Image
-                            src="/4a.png"
+                            src="depoimento04.png"
                             alt="Antes"
                             width={300}
                             height={300}
@@ -881,7 +875,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "á tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3
+                        "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3
                         meses, perdi 14kg! Pra mim, foi a solução."
                       </p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
