@@ -990,44 +990,40 @@ export default function LandingPage() {
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <Shield className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Emagreça TRANQUILO! Sem sustos e sem efeitos ruins.</h3>
+                <h3 className="text-xl font-semibold">Emagreça com Tranquilidade e Segurança</h3>
               </div>
               <p className="text-gray-700">
-                Definamax cuida do seu corpo com ingredientes naturais, pra você emagrecer sem enjoos, sem dor de
-                barriga e sem preocupações. Sua saúde é prioridade!
+              Com Definamax, você emagrece sem enjoos, dores de barriga ou surpresas desagradáveis. Ingredientes naturais e sua saúde sempre em primeiro lugar!
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <Award className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Menos Medidas, Mais Cintura e MUITA Energia em Semanas!</h3>
+                <h3 className="text-xl font-semibold">Menos Medidas, Mais Energia e Autoestima</h3>
               </div>
               <p className="text-gray-700">
-                Sinta a transformação no seu corpo, veja sua cintura mais definida e aproveite a energia extra! Imagine
-                a sua felicidade ao se sentir mais leve, confiante e poderoso com os resultados rápidos do Definamax!
+              Veja sua cintura afinar, sinta-se mais leve e experimente uma disposição renovada. Com Definamax, os resultados aparecem e você recupera a confiança!
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <ThumbsUp className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Emagreça com a Natureza ao Seu Lado, Sem Dietas Radicais.</h3>
+                <h3 className="text-xl font-semibold">Emagreça com a Força da Natureza, Sem Sofrimento</h3>
               </div>
               <p className="text-gray-700">
-                Definamax usa ingredientes naturais para controlar seu apetite e te deixar satisfeito de forma suave e
-                eficaz. Emagrecer sem sacrifícios extremos e sem sofrimento.
+              Definamax controla seu apetite de forma natural e eficaz. Emagrecer sem dietas radicais ou sacrifícios é possível!
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-white to-green-50 p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <CheckCircle2 className="h-8 w-8 text-green-600 mr-3 flex-shrink-0" />
-                <h3 className="text-xl font-semibold">Sonha em Emagrecer e Nunca Mais Voltar ao Peso Antigo?</h3>
+                <h3 className="text-xl font-semibold">Emagreça de uma vez por todas, com Saúde</h3>
               </div>
               <p className="text-gray-700">
-                Definamax é recomendado por especialistas para um emagrecimento saudável e resultados que você mantém a
-                longo prazo. Confie na ciência e conquiste o corpo que sempre quis!
+              Definamax é recomendado por especialistas para quem quer emagrecer de verdade e manter o resultado. Confie na ciência e conquiste o corpo dos seus sonhos!
               </p>
             </div>
           </div>
@@ -1054,11 +1050,10 @@ export default function LandingPage() {
               Comparativo Exclusivo
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Sua Saúde em Primeiro Lugar: Natural É Melhor Que Químico!
+            Natural x Injeções Químicas
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Evite efeitos colaterais e problemas de saúde causados por injeções. Definamax oferece um emagrecimento
-              natural, eficaz e sem preocupações.
+            Sua Saúde em Primeiro Lugar: Por que escolher Definamax?
             </p>
           </div>
 
@@ -1085,27 +1080,29 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% Natural – Detox Poderoso para Resultados Rápidos!</span>
+                  <span className="font-medium">100% Natural: ingredientes seguros e eficazes</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Preço que Cabe no Bolso - A partir de R$79,90 por frasco</span>
+                  <span className="font-medium">Detox poderoso para resultados rápidos
+
+</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem Burocracia – Não Precisa de Receita!</span>
+                  <span className="font-medium">Preço acessível: a partir de R$79,90 por frasco</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Prático e Rápido – Só 2 Cápsulas por Dia!</span>
+                  <span className="font-medium">Sem burocracia: não precisa de receita</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Mais Saúde, Mais Vida – Além do Emagrecimento!</span>
+                  <span className="font-medium">Prático: apenas 2 cápsulas por dia</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Resultados muito rápidos - Já na primeira semana!</span>
+                  <span className="font-medium">Resultados visíveis em poucas semanas</span>
                 </li>
               </ul>
             </div>
@@ -1132,19 +1129,19 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Repleto de Químicos: Uma Bomba no Seu Corpo!</span>
+                  <span className="font-medium">Compostos químicos e sintéticos</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Náuseas, vômitos, problemas gastrointestinais frequentes</span>
+                  <span className="font-medium">Possíveis efeitos colaterais: náuseas, vômitos, desconfortos gastrointestinais</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Custo elevado, acima de R$1.000 mensais</span>
+                  <span className="font-medium">Custo elevado: acima de R$1.000/mês</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Necessário prescrição e acompanhamento médico</span>
+                  <span className="font-medium">Exige prescrição e acompanhamento médico</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1152,7 +1149,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Efeito rebote: recuperação do peso após suspensão</span>
+                  <span className="font-medium">Risco de efeito rebote após interrupção</span>
                 </li>
               </ul>
             </div>
