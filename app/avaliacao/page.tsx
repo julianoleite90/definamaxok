@@ -1017,6 +1017,16 @@ export default function WeightLossRecommendation() {
                   <ShoppingCart className="mr-2 h-6 w-6" />
                   Comprar Kit Recomendado
                 </a>
+                <div className="mt-3">
+                  <a
+                    href="https://definamax.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-6 bg-white border-2 border-green-600 hover:bg-green-50 text-green-600 font-bold rounded-md shadow-sm flex items-center justify-center text-lg transition-colors"
+                  >
+                    Acessar o Site Oficial Definamax
+                  </a>
+                </div>
               </div>
 
               <div className="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
