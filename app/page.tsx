@@ -2,19 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import {
-  CheckCircle2,
-  Shield,
-  Award,
-  ThumbsUp,
-  X,
-  ArrowRight,
-  Star,
-  Clock,
-  Gift,
-  BadgePercent,
-  ShieldCheck,
-} from "lucide-react"
+import { CheckCircle2, Shield, Award, ThumbsUp, X, ArrowRight, Star, Clock, Gift, ShieldCheck } from "lucide-react"
 
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
@@ -178,19 +166,6 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
-      <div className="w-full bg-yellow-100 py-3">
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <p className="text-yellow-800 font-bold text-sm sm:text-base">
-            <span className="hidden sm:inline">Primeira compra? Ganhe R$49,00 em qualquer kit! Use o cupom: </span>
-            <span className="sm:hidden">
-              Primeira compra? Ganhe R$49,00 em qualquer kit!
-              <br />
-              Use o cupom:{" "}
-            </span>
-            <span className="bg-yellow-500 text-white px-2 py-0.5 rounded-md mx-1">primeiracompra</span>
-          </p>
-        </div>
-      </div>
       {/* Header */}
       <header className="w-full bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-4 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
@@ -204,17 +179,17 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Emagreça de{" "}
+              Perca peso{" "}
               <span className="text-green-600 relative">
-                Forma Rápida{" "}
+                em poucas semanas{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              e Recupere Sua Autoestima
+              e recupere sua confiança
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Chega de dietas restritivas e métodos perigosos! Com Definamax, você perde gordura teimosa de forma
-              segura, rápida e sem sofrimento.
+              Elimine a compulsão alimentar e acelere a queima de gordura com fibras naturais e extratos
+              de algas marinhas. Perca peso rápido, de forma saudável, ganhe energia e sinta-se confiante novamente!
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -236,19 +211,19 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Controle a compulsão alimentar naturalmente</span>
+                  <span className="font-medium">Controla a compulsão alimentar</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Queima gordura 24 horas por dia</span>
+                  <span className="font-medium">Queima gordura 24h</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Fórmula 100% natural e segura, sem efeitos colaterais</span>
+                  <span className="font-medium">100% natural, sem efeitos colaterais</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Fácil de usar: apenas 2 cápsulas por dia</span>
+                  <span className="font-medium">Simples: apenas 2 cápsulas/dia</span>
                 </li>
               </ul>
             </div>
@@ -257,7 +232,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
             >
-              QUERO EMAGRECER AGORA <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+              SIM, EU QUERO COMEÇAR A EMAGRECER <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
@@ -266,17 +241,13 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative h-[350px] w-full flex justify-center">
-              <div className="absolute top-0 right-0 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold z-10 flex items-center hidden md:flex">
-                <BadgePercent className="h-4 w-4 mr-1" />
-                50% OFF HOJE
-              </div>
+            <div className="relative h-[450px] w-full flex justify-center">
               <Image
                 src="/mockup.png"
                 width={800}
                 height={900}
                 alt="Definamax - Suplemento Natural para Emagrecimento"
-                className="h-[350px] w-auto object-contain mx-auto floating"
+                className="h-[450px] w-auto object-contain mx-auto floating"
               />
             </div>
           </div>
