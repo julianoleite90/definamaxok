@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -144,6 +144,9 @@ export default function WeightLossRecommendation() {
   const [weeklyGoal, setWeeklyGoal] = useState<number | null>(null)
   const [timeToGoal, setTimeToGoal] = useState<number | null>(null)
 
+  // Adicionar uma referência para o topo do componente
+  const topRef = useRef<HTMLDivElement>(null)
+
   // Função para enviar evento ao Google Analytics
   useEffect(() => {
     if (typeof window !== "undefined" && (window as any).gtag) {
@@ -234,6 +237,7 @@ export default function WeightLossRecommendation() {
     }
   }
 
+  // Modificar os handlers de navegação entre etapas para rolar para o topo
   const handleContinueToStep2 = () => {
     if (validateFormStep1()) {
       // Rastrear evento de conclusão do primeiro passo
@@ -243,6 +247,8 @@ export default function WeightLossRecommendation() {
         })
       }
       setStep(2)
+      // Rolar para o topo da seção
+      topRef.current?.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -288,6 +294,8 @@ export default function WeightLossRecommendation() {
       setTimeout(() => {
         setLoading(false)
         setStep(3)
+        // Rolar para o topo da seção
+        topRef.current?.scrollIntoView({ behavior: "smooth" })
       }, 1500)
     }
   }
@@ -304,6 +312,8 @@ export default function WeightLossRecommendation() {
     await saveDataToVercel()
 
     setStep(4)
+    // Rolar para o topo da seção
+    topRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   const handleReset = () => {
@@ -420,9 +430,11 @@ export default function WeightLossRecommendation() {
     }
   }
 
+  // Adicionar a referência ao elemento principal do componente
+  // Modificar o início do return do componente para:
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl" ref={topRef}>
         <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
           <header className="text-center mb-6">
             <h1 className="text-2xl md:text-3xl font-bold text-green-700 mb-2">
@@ -709,7 +721,12 @@ export default function WeightLossRecommendation() {
 
               <div className="flex space-x-4">
                 <button
-                  onClick={() => setStep(1)}
+                  onClick={() => {
+                    setStep(1)
+                    // No botão de voltar para a etapa 1
+                    // Adicionar dentro da função onClick:
+                    topRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }}
                   className="w-1/2 py-3 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-md shadow-md flex items-center justify-center transition-colors"
                 >
                   <ArrowLeft className="mr-2 h-5 w-5" />
@@ -831,7 +848,12 @@ export default function WeightLossRecommendation() {
 
               <div className="flex space-x-4">
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={() => {
+                    setStep(2)
+                    // No botão de voltar para a etapa 2
+                    // Adicionar dentro da função onClick:
+                    topRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }}
                   className="w-1/2 py-3 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-md shadow-md flex items-center justify-center transition-colors"
                 >
                   <ArrowLeft className="mr-2 h-5 w-5" />

@@ -1388,8 +1388,8 @@ export default function LandingPage() {
       </section>
 
       {/* Seção de Avaliação Personalizada */}
-      <section id="avaliacao" className="w-full py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-4 text-center mb-10">
+      <section id="avaliacao" className="w-full py-6 bg-white">
+        <div className="mx-auto max-w-5xl px-4 text-center mb-4">
           <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
             AVALIAÇÃO PERSONALIZADA
           </div>
