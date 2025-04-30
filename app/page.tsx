@@ -167,7 +167,7 @@ export default function LandingPage() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
-      <header className="w-full bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-4 shadow-md relative overflow-hidden">
+      <header className="w-full bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
         <div className="mx-auto max-w-5xl px-4 flex justify-center">
           <Image src="/logo2.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
@@ -175,20 +175,20 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-green-50 to-white py-12 md:py-16">
+      <section className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8">
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Perca peso{" "}
+              Perca Peso{" "}
               <span className="text-green-600 relative">
-                em poucas semanas{" "}
+                Rápido{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              e recupere sua confiança
+              e Recupere sua Autoestima
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Elimine a compulsão alimentar e acelere a queima de gordura com fibras naturais e extratos
+              Acabe com a compulsão alimentar e acelere a queima de gordura com fibras naturais e extratos
               de algas marinhas. Perca peso rápido, de forma saudável, ganhe energia e sinta-se confiante novamente!
             </p>
 
@@ -219,11 +219,6 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Elimine a gordura teimosa (braços, coxas, bumbum, papada)</span>
-                </li>
-
-                <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">100% natural, sem efeitos colaterais</span>
                 </li>
                 <li className="flex items-start">
@@ -246,13 +241,13 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative h-[450px] w-full flex justify-center">
+            <div className="relative h-[400px] w-full flex justify-center">
               <Image
                 src="/mockup.png"
                 width={800}
                 height={900}
                 alt="Definamax - Suplemento Natural para Emagrecimento"
-                className="h-[450px] w-auto object-contain mx-auto floating"
+                className="h-[400px] w-auto object-contain mx-auto floating"
               />
             </div>
           </div>
