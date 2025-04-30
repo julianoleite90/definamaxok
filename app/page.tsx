@@ -15,7 +15,6 @@ import {
   BadgePercent,
   ShieldCheck,
 } from "lucide-react"
-import WeightLossRecommendation from "@/components/weight-loss-recommendation"
 
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
@@ -179,6 +178,19 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
+      <div className="w-full bg-yellow-100 py-3">
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <p className="text-yellow-800 font-bold text-sm sm:text-base">
+            <span className="hidden sm:inline">Primeira compra? Ganhe R$49,00 em qualquer kit! Use o cupom: </span>
+            <span className="sm:hidden">
+              Primeira compra? Ganhe R$49,00 em qualquer kit!
+              <br />
+              Use o cupom:{" "}
+            </span>
+            <span className="bg-yellow-500 text-white px-2 py-0.5 rounded-md mx-1">primeiracompra</span>
+          </p>
+        </div>
+      </div>
       {/* Header */}
       <header className="w-full bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-4 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
@@ -192,16 +204,17 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-            Emagreça de {" "}
+              Emagreça de{" "}
               <span className="text-green-600 relative">
-              Forma Rápida{" "}
+                Forma Rápida{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
               e Recupere Sua Autoestima
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-            Chega de dietas restritivas e métodos perigosos! Com Definamax, você perde gordura teimosa de forma segura, rápida e sem sofrimento.
+              Chega de dietas restritivas e métodos perigosos! Com Definamax, você perde gordura teimosa de forma
+              segura, rápida e sem sofrimento.
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -326,7 +339,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-            Veja quem já transformou a vida com Definamax
+              Veja quem já transformou a vida com Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -383,7 +396,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Pra quem tá na luta pra emagrecer, digo uma coisa: Definamax funciona mesmo! Perdi 19kg em 5 meses e tô me amando mais a cada dia."
+                    "Pra quem tá na luta pra emagrecer, digo uma coisa: Definamax funciona mesmo! Perdi 19kg em 5 meses
+                    e tô me amando mais a cada dia."
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 4 meses</p>
                 </div>
@@ -427,7 +441,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Depois da maternidade, meu corpo mudou e a insegurança me incomodava muito. Tentei de tudo, mas foi com Definamax que, em 6 meses, perdi 22kg e finalmente recuperei a confiança em mim mesma.""
+                    "Depois da maternidade, meu corpo mudou e a insegurança me incomodava muito. Tentei de tudo, mas foi
+                    com Definamax que, em 6 meses, perdi 22kg e finalmente recuperei a confiança em mim mesma.""
                   </p>
                   <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
@@ -435,7 +450,13 @@ export default function LandingPage() {
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image src="/paula.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
+                      <Image
+                        src="/paula.png"
+                        alt="Ana"
+                        width={100}
+                        height={100}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <h4 className="font-semibold">Ana P.</h4>
@@ -465,7 +486,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e bem-estar."
+                    "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
+                    bem-estar."
                   </p>
                   <p className="text-green-700 font-medium">- 11kg em 3 meses</p>
                 </div>
@@ -702,7 +724,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Pra quem tá na luta pra emagrecer, digo uma coisa: Definamax funciona mesmo! Perdi 14kg em 4 meses e tô me amando mais a cada dia."
+                    "Pra quem tá na luta pra emagrecer, digo uma coisa: Definamax funciona mesmo! Perdi 14kg em 4 meses
+                    e tô me amando mais a cada dia."
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 4 meses</p>
                 </div>
@@ -746,7 +769,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Depois da maternidade, meu corpo mudou e a insegurança me incomodava muito. Tentei de tudo, mas foi com Definamax que, em 6 meses, perdi 22kg e finalmente recuperei a confiança em mim mesma.""
+                    "Depois da maternidade, meu corpo mudou e a insegurança me incomodava muito. Tentei de tudo, mas foi
+                    com Definamax que, em 6 meses, perdi 22kg e finalmente recuperei a confiança em mim mesma.""
                   </p>
                   <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
@@ -754,7 +778,13 @@ export default function LandingPage() {
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image src="/paula.png" alt="Ana" width={100} height={100} className="w-full h-full object-cover" />
+                      <Image
+                        src="/paula.png"
+                        alt="Ana"
+                        width={100}
+                        height={100}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <h4 className="font-semibold">Ana P.</h4>
@@ -784,7 +814,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e bem-estar."
+                    "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
+                    bem-estar."
                   </p>
                   <p className="text-green-700 font-medium">- 11kg em 3 meses</p>
                 </div>
@@ -988,7 +1019,8 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Emagreça com Tranquilidade e Segurança</h3>
               </div>
               <p className="text-gray-700">
-              Com Definamax, você emagrece sem enjoos, dores de barriga ou surpresas desagradáveis. Ingredientes naturais e sua saúde sempre em primeiro lugar!
+                Com Definamax, você emagrece sem enjoos, dores de barriga ou surpresas desagradáveis. Ingredientes
+                naturais e sua saúde sempre em primeiro lugar!
               </p>
             </div>
 
@@ -998,7 +1030,8 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Menos Medidas, Mais Energia e Autoestima</h3>
               </div>
               <p className="text-gray-700">
-              Veja sua cintura afinar, sinta-se mais leve e experimente uma disposição renovada. Com Definamax, os resultados aparecem e você recupera a confiança!
+                Veja sua cintura afinar, sinta-se mais leve e experimente uma disposição renovada. Com Definamax, os
+                resultados aparecem e você recupera a confiança!
               </p>
             </div>
 
@@ -1008,7 +1041,8 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Emagreça com a Força da Natureza, Sem Sofrimento</h3>
               </div>
               <p className="text-gray-700">
-              Definamax controla seu apetite de forma natural e eficaz. Emagrecer sem dietas radicais ou sacrifícios é possível!
+                Definamax controla seu apetite de forma natural e eficaz. Emagrecer sem dietas radicais ou sacrifícios é
+                possível!
               </p>
             </div>
 
@@ -1018,7 +1052,8 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Emagreça de uma vez por todas, com Saúde</h3>
               </div>
               <p className="text-gray-700">
-              Definamax é recomendado por especialistas para quem quer emagrecer de verdade e manter o resultado. Confie na ciência e conquiste o corpo dos seus sonhos!
+                Definamax é recomendado por especialistas para quem quer emagrecer de verdade e manter o resultado.
+                Confie na ciência e conquiste o corpo dos seus sonhos!
               </p>
             </div>
           </div>
@@ -1044,12 +1079,8 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            Natural x Injeções Químicas
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-            Sua Saúde em Primeiro Lugar: Por que escolher Definamax?
-            </p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural x Injeções Químicas</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Sua Saúde em Primeiro Lugar: Por que escolher Definamax?</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -1079,9 +1110,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Detox poderoso para resultados rápidos
-
-</span>
+                  <span className="font-medium">Detox poderoso para resultados rápidos</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1128,7 +1157,9 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Possíveis efeitos colaterais: náuseas, vômitos, desconfortos gastrointestinais</span>
+                  <span className="font-medium">
+                    Possíveis efeitos colaterais: náuseas, vômitos, desconfortos gastrointestinais
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1387,42 +1418,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Seção de Avaliação Personalizada */}
-      <section id="avaliacao" className="w-full py-6 bg-white">
-        <div className="mx-auto max-w-5xl px-4 text-center mb-4">
-          <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-            AVALIAÇÃO PERSONALIZADA
-          </div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Descubra Seu Plano Ideal de Emagrecimento</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Complete nossa avaliação profissional e receba um plano personalizado para atingir seus objetivos de forma mais rápida e eficaz.
-          </p>
-        </div>
-        
-        <WeightLossRecommendation />
-        
-        {/* Script para rastrear visualização da seção de avaliação */}
-        {typeof window !== "undefined" && (
-          <script dangerouslySetInnerHTML={{
-            __html: `
-              const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                  if (entry.isIntersecting && window.gtag) {
-                    window.gtag('event', 'avaliacao-dentrosite', {
-                      'event_category': 'visualizacao',
-                      'event_label': 'secao_avaliacao'
-                    });
-                    observer.disconnect();
-                  }
-                });
-              }, { threshold: 0.5 });
-              
-              const section = document.getElementById('avaliacao');
-              if (section) observer.observe(section);
-            `
-          }} />
-        )}
-      </section>
       {/* Avaliações estilo Amazon - Movido para cima */}
       <section className="w-full py-8 bg-green-50">
         <div className="mx-auto max-w-5xl px-4">
