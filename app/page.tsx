@@ -15,6 +15,7 @@ import {
   BadgePercent,
   ShieldCheck,
 } from "lucide-react"
+import WeightLossRecommendation from "@/components/weight-loss-recommendation"
 
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
@@ -1384,6 +1385,43 @@ export default function LandingPage() {
             <span>Compra 100% segura • Satisfação garantida ou seu dinheiro de volta</span>
           </div>
         </div>
+      </section>
+
+      {/* Seção de Avaliação Personalizada */}
+      <section id="avaliacao" className="w-full py-16 bg-white">
+        <div className="mx-auto max-w-5xl px-4 text-center mb-10">
+          <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
+            AVALIAÇÃO PERSONALIZADA
+          </div>
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">Descubra Seu Plano Ideal de Emagrecimento</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Complete nossa avaliação profissional e receba um plano personalizado para atingir seus objetivos de forma mais rápida e eficaz.
+          </p>
+        </div>
+        
+        <WeightLossRecommendation />
+        
+        {/* Script para rastrear visualização da seção de avaliação */}
+        {typeof window !== "undefined" && (
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting && window.gtag) {
+                    window.gtag('event', 'avaliacao-dentrosite', {
+                      'event_category': 'visualizacao',
+                      'event_label': 'secao_avaliacao'
+                    });
+                    observer.disconnect();
+                  }
+                });
+              }, { threshold: 0.5 });
+              
+              const section = document.getElementById('avaliacao');
+              if (section) observer.observe(section);
+            `
+          }} />
+        )}
       </section>
       {/* Avaliações estilo Amazon - Movido para cima */}
       <section className="w-full py-8 bg-green-50">
