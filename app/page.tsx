@@ -167,10 +167,21 @@ export default function LandingPage() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
-      <header className="w-full bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
-        <div className="mx-auto max-w-5xl px-4 flex justify-center">
-          <Image src="/logo2.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
+      <header className="w-full relative overflow-hidden">
+        <div className="bg-amber-600 text-center py-2 text-white text-sm md:text-base relative">
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
+          <p className="max-w-4xl mx-auto">
+            O dia é do trabalhador, mas <span className="font-bold">quem ganha é você!</span> <span className="font-bold">R$50,00 de desconto</span> em qualquer kit.
+          </p>
+          <p className="text-sm">
+            Cupom: <span className="bg-green-700 text-white px-2 py-0.5 rounded font-mono inline-block mx-1">Ganhei50</span>
+          </p>
+        </div>
+        <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
+          <div className="mx-auto max-w-5xl px-4 flex justify-center">
+            <Image src="/logo2.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
+          </div>
         </div>
       </header>
 
@@ -217,6 +228,11 @@ export default function LandingPage() {
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">Queima gordura 24h</span>
                 </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Elimine a gordura teimosa (braços, coxas, bumbum e papada)</span>
+                </li>
+
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">100% natural, sem efeitos colaterais</span>
@@ -2151,7 +2167,7 @@ export default function LandingPage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
                   <span className="text-green-100 text-sm">(41) 98454-9172</span>
