@@ -219,6 +219,11 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Elimine a gordura teimosa (braços, coxas, bumbum, papada)</span>
+                </li>
+
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">100% natural, sem efeitos colaterais</span>
                 </li>
                 <li className="flex items-start">
