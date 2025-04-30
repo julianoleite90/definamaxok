@@ -6,7 +6,7 @@ import { Inter } from "next/font/google"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Definamax - Suplemento Natural para Emagrecimento",
+  title: "Definamax Site Oficial - Emagrecedor Natural",
   description:
     "Conquiste o Corpo dos Seus Sonhos e Mais Confiança com Definamax! Você Mais Leve, Saudável e Confiante em Pouco Tempo.",
 }
