@@ -171,10 +171,10 @@ export default function LandingPage() {
         <div className="bg-amber-600 text-center py-2 text-white text-sm md:text-base relative">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <p className="max-w-4xl mx-auto">
-            O dia é do trabalhador, e <span className="font-bold">quem GANHA é VOCÊ!</span> <span className="font-bold">R$50,00 de desconto</span> em qualquer kit.
+            O mês é das MÃES e <span className="font-bold">quem GANHA é VOCÊ!</span> <span className="font-bold">R$50,00 de desconto</span> em qualquer kit.
           </p>
           <p className="text-sm">
-            Cupom: <span className="bg-green-700 text-white px-2 py-0.5 rounded font-mono inline-block mx-1">Ganhei50</span>
+            Cupom: <span className="bg-green-700 text-white px-2 py-0.5 rounded font-mono inline-block mx-1">supermae</span>
           </p>
         </div>
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
