@@ -188,17 +188,16 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Perca Peso{" "}
+              Elimine {" "}
               <span className="text-green-600 relative">
-                Rápido{" "}
+            à gordura teimosa{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              e Recupere sua Autoestima
+              e recupere a sua autoestima!
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Acabe com a compulsão alimentar e acelere a queima de gordura com fibras naturais e extratos
-              de algas marinhas. Perca peso rápido, de forma saudável, ganhe energia e sinta-se confiante novamente!
+            Chega de dietas frustrantes! Com as fibras naturais e a fórmula poderosa do Definamax, controle a compulsão, elimine gordura e sinta-se leve – 100% seguro!
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
