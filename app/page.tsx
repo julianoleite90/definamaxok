@@ -188,16 +188,16 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Elimine {" "}
+            Emagreça  {" "}
               <span className="text-green-600 relative">
-            à gordura teimosa{" "}
+            Rápido{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              e recupere a sua autoestima!
+              e Conquiste o Corpo que Você Tanto Quer e Merece!
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-            Chega de dietas frustrantes! Com as fibras naturais e a fórmula poderosa do Definamax, controle a compulsão, elimine gordura e sinta-se leve – 100% seguro!
+            Já tentou de tudo para emagrecer e nada funcionou? Conheça Definamax! As fibras alimentares que ajudam o seu corpo a eliminar a gordura teimosa sem precisar de dietas restritivas nem injeções perigosas.
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
