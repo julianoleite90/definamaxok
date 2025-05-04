@@ -171,7 +171,7 @@ export default function LandingPage() {
         <div className="bg-amber-600 text-center py-2 text-white text-sm md:text-base relative">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <p className="max-w-4xl mx-auto">
-            Frete é Grátis para todo <span className="font-bold">Brasil</span> <span className="font-bold">Aproveite!</span> Restam poucos frascos em estoque.
+            Emagrecer exige mais do que vontade. Exige <span className="font-bold">ATITUDE.</span> Tome sua decisão AGORA!
           </p>
 
         </div>
