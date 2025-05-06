@@ -1281,7 +1281,7 @@ export default function LandingPage() {
                   -68%
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 19kg</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Emagreça até 19kg</h3>
 
               <div className="flex items-center justify-center gap-2 mb-2">
                 <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
@@ -1323,7 +1323,7 @@ export default function LandingPage() {
                   -50%
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 13kg</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Emagreça até 13kg</h3>
 
               <div className="flex items-center justify-center gap-2 mb-2">
                 <span className="text-gray-400 line-through text-sm">De R$758,70</span>
@@ -1360,7 +1360,7 @@ export default function LandingPage() {
                   -18%
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">Perca até 5kg</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Emagreça até 5kg</h3>
 
               <div className="flex items-center justify-center gap-2 mb-2">
                 <span className="text-gray-400 line-through text-sm">De R$329,90</span>
