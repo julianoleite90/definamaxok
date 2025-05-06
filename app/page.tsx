@@ -199,7 +199,7 @@ export default function LandingPage() {
         <div className="bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-center py-2 text-white text-sm md:text-base relative">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <p className="max-w-4xl mx-auto">
-            Comprando acima de 1 frasco ganham: <span className="font-bold">Colágeno Hidrolisado</span> para combater a
+            Comprando acima de 1 frasco você ganha: <span className="font-bold">Colágeno Hidrolisado</span> para combater a
             flacidez.
           </p>
         </div>
