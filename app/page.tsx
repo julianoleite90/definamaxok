@@ -168,10 +168,10 @@ export default function LandingPage() {
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
       <header className="w-full relative overflow-hidden">
-        <div className="bg-amber-600 text-center py-2 text-white text-sm md:text-base relative">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-center py-2 text-white text-sm md:text-base relative">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <p className="max-w-4xl mx-auto">
-            Compras acima de 1 frasco ganham: <span className="font-bold">Colágeno Hidrolisado</span> para combater a flacidez.
+            Comprando acima de 1 frasco ganham: <span className="font-bold">Colágeno Hidrolisado</span> para combater a flacidez.
           </p>
 
         </div>
@@ -188,16 +188,17 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-            Emagreça  {" "}
+            Perca peso  {" "}
               <span className="text-green-600 relative">
-            Rápido{" "}
+            sem dietas restritivas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              e Conquiste o Corpo que Você Tanto Quer e Merece!
+              ou injeções perigosas
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-            Já tentou de tudo para emagrecer e nada funcionou? Conheça Definamax! As fibras alimentares que ajudam o seu corpo a eliminar a gordura teimosa sem precisar de dietas restritivas nem injeções perigosas.
+            Definamax oferece uma fórmula inteligente com fibras alimentares poderosas que agem como verdadeiras "esponjas" capturando a gordura, acelerando o metabolismo e aumentando a saciedade. Quer perder peso de forma natural e segura?
+
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -236,7 +237,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Simples: apenas 2 cápsulas/dia</span>
+                  <span className="font-medium">Diminui a ansiedade</span>
                 </li>
               </ul>
             </div>
@@ -277,7 +278,7 @@ export default function LandingPage() {
               </div>
               <div className="text-left">
                 <p className="font-bold">Resultados Rápidos</p>
-                <p className="text-sm">Primeiros resultados em poucos dias</p>
+                <p className="text-sm">Resultados que você vê no espelho e sente na balança</p>
               </div>
             </div>
 
@@ -286,8 +287,8 @@ export default function LandingPage() {
                 <Gift className="h-6 w-6 text-green-600" />
               </div>
               <div className="text-left">
-                <p className="font-bold">Desconto no PIX</p>
-                <p className="text-sm">Pagamentos via PIX ganham 10% de desconto</p>
+                <p className="font-bold">10% de Desconto no PIX</p>
+                <p className="text-sm">Pague no PIX e ganhe + 10% de desconto</p>
               </div>
             </div>
 
@@ -296,8 +297,8 @@ export default function LandingPage() {
                 <Shield className="h-6 w-6 text-green-600" />
               </div>
               <div className="text-left">
-                <p className="font-bold">Garantia de 30 Dias</p>
-                <p className="text-sm">Satisfação ou seu dinheiro de volta</p>
+                <p className="font-bold">Frete Grátis</p>
+                <p className="text-sm">Envio imediato com frete grátis</p>
               </div>
             </div>
           </div>
@@ -1090,7 +1091,7 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% Natural: ingredientes seguros e eficazes</span>
+                  <span className="font-medium">100% Natural: Fibras poderosas que absorvem a gordura</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1270,12 +1271,12 @@ export default function LandingPage() {
 
           <div className="grid gap-8 md:gap-10 md:grid-cols-3">
             {/* Kit 6 meses */}
-            <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
               <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
                 Kit 6 Meses
               </div>
               <div className="flex justify-center mb-4 relative">
-                <Image src="/6f.png" alt="Kit 6 Meses" width={400} height={400} className="h-60 object-contain" />
+                <Image src="/6f.png" alt="Kit 6 Meses" width={400} height={400} className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300" />
                 <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                   -68%
                 </div>
@@ -1287,7 +1288,7 @@ export default function LandingPage() {
                 <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-68%</span>
               </div>
 
-              <div className="text-3xl font-bold text-green-700 mb-1">12x R$48,09</div>
+              <div className="text-3xl font-bold text-green-700 mb-1 bg-green-50 py-1 px-2 rounded-md">12x R$48,09</div>
               <div className="text-sm text-gray-600 mb-3">ou R$479,40 à vista</div>
 
               <div className="bg-gray-50 p-2 rounded-md mb-3">
@@ -1309,7 +1310,7 @@ export default function LandingPage() {
             </div>
 
             {/* Kit 3 meses - MAIS POPULAR */}
-            <div className="bg-white p-6 rounded-lg border-2 border-green-500 shadow-lg relative transform scale-105 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-white p-6 rounded-lg border-2 border-green-500 shadow-lg relative transform scale-105 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
               <div className="absolute -top-3 left-0 right-0 mx-auto w-max bg-green-500 text-white text-xs font-bold py-1 px-4 rounded-full shadow-md">
                 MAIS POPULAR
               </div>
@@ -1317,7 +1318,7 @@ export default function LandingPage() {
                 Kit 3 Meses
               </div>
               <div className="flex justify-center mb-4 relative">
-                <Image src="/3f.png" alt="Kit 3 Meses" width={400} height={400} className="h-60 object-contain" />
+                <Image src="/3f.png" alt="Kit 3 Meses" width={400} height={400} className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300" />
                 <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                   -50%
                 </div>
@@ -1329,13 +1330,8 @@ export default function LandingPage() {
                 <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-50%</span>
               </div>
 
-              <div className="text-4xl font-bold text-green-700 mb-1">12x R$38,05</div>
+              <div className="text-4xl font-bold text-green-700 mb-1 bg-green-50 py-1 px-2 rounded-md">12x R$38,05</div>
               <div className="text-sm text-gray-600 mb-3">ou R$379,00 à vista</div>
-
-              <div className="bg-gray-50 p-2 rounded-md mb-3">
-                <p className="text-sm text-gray-500 mb-1">3 frascos - 180 cápsulas</p>
-                <p className="text-sm text-green-700 font-medium">R$126,34 por frasco</p>
-              </div>
 
               <div className="bg-yellow-50 border border-yellow-100 rounded-md p-2 mb-4 text-sm text-yellow-800">
                 <span className="font-medium">BÔNUS:</span> 1 Frasco de Colágeno Grátis
@@ -1354,12 +1350,12 @@ export default function LandingPage() {
             </div>
 
             {/* Kit 1 mês */}
-            <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-white p-6 rounded-lg border border-green-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
               <div className="bg-green-600 text-white py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
                 Kit 1 Mês
               </div>
               <div className="flex justify-center mb-4 relative">
-                <Image src="/1f.png" alt="Kit 1 Mês" width={400} height={400} className="h-60 object-contain" />
+                <Image src="/1f.png" alt="Kit 1 Mês" width={400} height={400} className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300" />
                 <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                   -18%
                 </div>
@@ -1371,7 +1367,7 @@ export default function LandingPage() {
                 <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-18%</span>
               </div>
 
-              <div className="text-3xl font-bold text-green-700 mb-1">12x R$28,01</div>
+              <div className="text-3xl font-bold text-green-700 mb-1 bg-green-50 py-1 px-2 rounded-md">12x R$28,01</div>
               <div className="text-sm text-gray-600 mb-3">ou R$279,90 à vista</div>
 
               <div className="bg-gray-50 p-2 rounded-md mb-4">
