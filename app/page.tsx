@@ -159,9 +159,37 @@ export default function LandingPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonial()
-    }, 8000)
+    }, 15000)
 
     return () => clearInterval(interval)
+  }, [])
+
+  // Control fixed buy button visibility on mobile
+  useEffect(() => {
+    const handleScroll = () => {
+      const fixedButton = document.getElementById("fixedBuyButton")
+      if (!fixedButton) return
+
+      const heroSection = document.querySelector("section:first-of-type")
+      const kitsSection = document.getElementById("comprar")
+
+      if (!heroSection || !kitsSection) return
+
+      const scrollPosition = window.scrollY
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+      const kitsTop = kitsSection.offsetTop
+
+      if (scrollPosition > heroBottom && scrollPosition < kitsTop) {
+        fixedButton.style.transform = "translateY(0)"
+        fixedButton.style.opacity = "1"
+      } else {
+        fixedButton.style.transform = "translateY(100%)"
+        fixedButton.style.opacity = "0"
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
@@ -171,9 +199,9 @@ export default function LandingPage() {
         <div className="bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-center py-2 text-white text-sm md:text-base relative">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <p className="max-w-4xl mx-auto">
-            Comprando acima de 1 frasco ganham: <span className="font-bold">Colágeno Hidrolisado</span> para combater a flacidez.
+            Comprando acima de 1 frasco ganham: <span className="font-bold">Colágeno Hidrolisado</span> para combater a
+            flacidez.
           </p>
-
         </div>
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
@@ -188,17 +216,18 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-            Perca peso  {" "}
+              Perca peso{" "}
               <span className="text-green-600 relative">
-            sem dietas restritivas,{" "}
+                sem dietas restritivas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
               ou injeções perigosas
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-            Definamax oferece uma fórmula inteligente com fibras alimentares poderosas que agem como verdadeiras "esponjas" capturando a gordura, acelerando o metabolismo e aumentando a saciedade. Quer perder peso de forma natural e segura?
-
+              Definamax oferece uma fórmula inteligente com fibras alimentares poderosas que agem como verdadeiras
+              "esponjas" capturando a gordura, acelerando o metabolismo e aumentando a saciedade. Quer perder peso de
+              forma natural e segura?
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -244,7 +273,7 @@ export default function LandingPage() {
 
             <button
               onClick={scrollToBuy}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-5 sm:px-8 py-4 sm:py-5 text-base sm:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
             >
               SIM, EU QUERO COMEÇAR A EMAGRECER <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
@@ -700,7 +729,7 @@ export default function LandingPage() {
                         alt="Antes"
                         width={300}
                         height={300}
-                        className="w-full h-80 object-cover rounded-lg"
+                        className="w-full h-64 md:h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
                         -14kg
@@ -745,7 +774,7 @@ export default function LandingPage() {
                         alt="Antes"
                         width={300}
                         height={300}
-                        className="w-full h-80 object-cover rounded-lg"
+                        className="w-full h-64 md:h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
                         -22kg
@@ -790,7 +819,7 @@ export default function LandingPage() {
                         alt="Antes"
                         width={300}
                         height={300}
-                        className="w-full h-80 object-cover rounded-lg"
+                        className="w-full h-64 md:h-80 object-cover rounded-lg"
                       />
                       <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
                         -11kg
@@ -838,7 +867,7 @@ export default function LandingPage() {
                             alt="Antes"
                             width={300}
                             height={300}
-                            className="w-full h-80 object-cover rounded-lg"
+                            className="w-full h-64 md:h-80 object-cover rounded-lg"
                           />
                           <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
                             -15kg
@@ -883,7 +912,7 @@ export default function LandingPage() {
                             alt="Antes"
                             width={300}
                             height={300}
-                            className="w-full h-80 object-cover rounded-lg"
+                            className="w-full h-64 md:h-80 object-cover rounded-lg"
                           />
                           <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
                             -14kg
@@ -928,7 +957,7 @@ export default function LandingPage() {
                             alt="Antes"
                             width={300}
                             height={300}
-                            className="w-full h-80 object-cover rounded-lg"
+                            className="w-full h-64 md:h-80 object-cover rounded-lg"
                           />
                           <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-lg">
                             -16kg
@@ -1260,13 +1289,6 @@ export default function LandingPage() {
             <p className="text-gray-700 mb-2 max-w-2xl mx-auto">
               Escolha o plano ideal para você e receba Definamax diretamente em sua casa
             </p>
-            <div className="flex items-center justify-center text-sm text-red-600 font-medium">
-              <Clock className="h-4 w-4 mr-1" />
-              <span>
-                Promoção válida por mais {timeLeft.hours.toString().padStart(2, "0")}:
-                {timeLeft.minutes.toString().padStart(2, "0")}:{timeLeft.seconds.toString().padStart(2, "0")}
-              </span>
-            </div>
           </div>
 
           <div className="grid gap-8 md:gap-10 md:grid-cols-3">
@@ -1276,7 +1298,13 @@ export default function LandingPage() {
                 Kit 6 Meses
               </div>
               <div className="flex justify-center mb-4 relative">
-                <Image src="/6f.png" alt="Kit 6 Meses" width={400} height={400} className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300" />
+                <Image
+                  src="/6f.png"
+                  alt="Kit 6 Meses"
+                  width={400}
+                  height={400}
+                  className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300"
+                />
                 <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                   -68%
                 </div>
@@ -1318,7 +1346,13 @@ export default function LandingPage() {
                 Kit 3 Meses
               </div>
               <div className="flex justify-center mb-4 relative">
-                <Image src="/3f.png" alt="Kit 3 Meses" width={400} height={400} className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300" />
+                <Image
+                  src="/3f.png"
+                  alt="Kit 3 Meses"
+                  width={400}
+                  height={400}
+                  className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300"
+                />
                 <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                   -50%
                 </div>
@@ -1344,9 +1378,6 @@ export default function LandingPage() {
                 COMPRAR AGORA
               </Link>
               <p className="text-sm text-green-600 font-medium mt-2">Frete grátis</p>
-              <div className="mt-2 bg-yellow-100 text-yellow-800 text-xs p-1 rounded">
-                Apenas 17 kits disponíveis neste preço!
-              </div>
             </div>
 
             {/* Kit 1 mês */}
@@ -1355,7 +1386,13 @@ export default function LandingPage() {
                 Kit 1 Mês
               </div>
               <div className="flex justify-center mb-4 relative">
-                <Image src="/1f.png" alt="Kit 1 Mês" width={400} height={400} className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300" />
+                <Image
+                  src="/1f.png"
+                  alt="Kit 1 Mês"
+                  width={400}
+                  height={400}
+                  className="h-52 md:h-60 object-contain hover:scale-105 transition-all duration-300"
+                />
                 <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                   -18%
                 </div>
@@ -2194,19 +2231,18 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* WhatsApp Button */}
-      <a
-        href="https://wa.link/mhljyo"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-lg hover:scale-105 transition-all z-50 flex items-center justify-center px-3 py-2 text-sm sm:text-base animate-pulse-border"
-        aria-label="Contato via WhatsApp"
+      {/* Fixed Buy Now Button for Mobile */}
+      <div
+        id="fixedBuyButton"
+        className="fixed bottom-4 left-0 right-0 mx-auto w-[90%] max-w-sm z-50 transform translate-y-full opacity-0 transition-all duration-300 md:hidden"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-        Tire suas dúvidas
-      </a>
+        <button
+          onClick={scrollToBuy}
+          className="w-full inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 shadow-lg border-b-4 border-green-700"
+        >
+          COMPRAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
+        </button>
+      </div>
     </main>
   )
 }
