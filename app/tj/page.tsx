@@ -1318,7 +1318,7 @@ export default function LandingPage() {
         </div>
         
         <Link
-          href={addUtmToUrl("https://full.sale/b5H3Fe")}
+          href={addUtmToUrl("https://full.sale/qpomm0")}
           className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all animate-pulse-border"
         >
           COMPRAR AGORA
@@ -1356,7 +1356,7 @@ export default function LandingPage() {
         </div>
         
         <Link
-          href={addUtmToUrl("https://full.sale/qpomm0")}
+          href={addUtmToUrl("https://full.sale/b5H3Fe")}
           className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
         >
           COMPRAR AGORA
