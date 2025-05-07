@@ -216,7 +216,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Perca peso{" "}
+              Emagreça rápido{" "}
               <span className="text-green-600 relative">
                 sem dietas restritivas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
@@ -225,9 +225,8 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Definamax oferece uma fórmula inteligente com fibras alimentares poderosas que agem como verdadeiras
-              "esponjas" capturando a gordura, acelerando o metabolismo e aumentando a saciedade. Quer perder peso de
-              forma natural e segura?
+              Descubra as poderosas fibras alimentares que agem como verdadeiras
+              "esponjas" absorvendo a gordura, acelerando o metabolismo e aumentando a saciedade. Quer perder peso e restaurar a autoestima?
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
