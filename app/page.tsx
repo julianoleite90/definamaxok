@@ -2001,7 +2001,7 @@ playsInline
             <Link href="/privacidade" className="text-sm hover:text-green-200">
               Política de Privacidade
             </Link>
-            <Link href="/reembolso" className="text-sm hover:text-green-200">
+            <Link href="https://www.definamaxoficial.com/termos" className="text-sm hover:text-green-200">
               Política de Reembolso
             </Link>
           </div>
