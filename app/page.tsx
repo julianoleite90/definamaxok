@@ -167,33 +167,13 @@ export default function LandingPage() {
     return () => clearInterval(interval)
   }, [])
 
-  // Control fixed buttons visibility on scroll
+  // Set WhatsApp button to always be visible
   useEffect(() => {
-    const handleScroll = () => {
-      const whatsAppButton = document.getElementById("whatsAppButton")
-      if (!whatsAppButton) return
-
-      const thirdSection = document.querySelector("section:nth-of-type(3)")
-      const kitsSection = document.getElementById("comprar")
-
-      if (!thirdSection || !kitsSection) return
-
-      const scrollPosition = window.scrollY
-      const thirdSectionBottom = thirdSection.offsetTop + thirdSection.offsetHeight
-      const kitsTop = kitsSection.offsetTop
-
-      // Controle do botão do WhatsApp
-      if (scrollPosition > thirdSectionBottom && scrollPosition < kitsTop) {
-        whatsAppButton.style.transform = "translateY(0)"
-        whatsAppButton.style.opacity = "1"
-      } else {
-        whatsAppButton.style.transform = "translateY(100%)"
-        whatsAppButton.style.opacity = "0"
-      }
+    const whatsAppButton = document.getElementById("whatsAppButton")
+    if (whatsAppButton) {
+      whatsAppButton.style.transform = "translateY(0)"
+      whatsAppButton.style.opacity = "1"
     }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   // Função para abrir o WhatsApp
@@ -972,26 +952,30 @@ export default function LandingPage() {
               Ciência por trás do Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Por que o Definamax <span className="text-green-700">Realmente Funciona</span>
+             Como o Definamax <span className="text-green-700">Funciona?</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Entenda como as fibras alimentares de alta potência agem no seu corpo para reduzir a gordura
+              Entenda como as fibras alimentares agem no seu corpo para reduzir a gordura
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 items-center gap-8">
-          <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
-
+            <div className="relative w-full h-0 pb-[56.25%]">
+              {" "}
+              {/* 16:9 aspect ratio */}
               <div className="absolute inset-0 w-full h-full">
-              <img src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png" alt="" />
+                <img
+                  src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
+                  alt=""
+                />
                 <iframe
                   src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
                   className="absolute top-0 left-0 w-full h-full"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-muted
-playsInline
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  muted
+                  playsInline
                   title="Como o Definamax funciona"
                 ></iframe>
               </div>
@@ -2011,16 +1995,13 @@ playsInline
         </div>
       </footer>
       {/* Botão flutuante do WhatsApp */}
-      <div
-        id="whatsAppButton"
-        className="fixed bottom-4 right-4 z-50 transform translate-y-full opacity-0 transition-all duration-300"
-      >
+      <div id="whatsAppButton" className="fixed bottom-4 right-4 z-50 transition-all duration-300">
         <button
           onClick={openWhatsApp}
-          className="flex items-center justify-center rounded-full bg-green-500 p-3 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all"
+          className="flex items-center justify-center rounded-full bg-green-500 p-3.5 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all"
           aria-label="Compre pelo WhatsApp"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircle className="h-7 w-7" />
         </button>
         <span className="absolute bottom-full right-0 mb-2 bg-white text-green-600 text-xs font-medium py-1 px-2 rounded-lg shadow-md whitespace-nowrap">
           Compre pelo WhatsApp
