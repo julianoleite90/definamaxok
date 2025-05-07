@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { CheckCircle2, X, ArrowRight, Star, ShieldCheck } from "lucide-react"
+import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
 
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
@@ -979,24 +979,28 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex justify-center items-center relative w-full h-[400px] overflow-hidden rounded-lg">
+          <div className="grid md:grid-cols-2 items-center gap-8">
+          <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+
               <div className="absolute inset-0 w-full h-full">
                 <iframe
-                  src="https://player.vimeo.com/video/SEU_ID_DO_VIDEO?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+                  src="https://player.vimeo.com/video/1082283572?autoplay=1&loop=1&muted=1&background=1"
                   className="absolute top-0 left-0 w-full h-full"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
+        frameBorder="0"
+        allow="autoplay; fullscreen"
+        allowFullScreen
+muted
+playsInline
+Poster="url"
                   title="Como o Definamax funciona"
                 ></iframe>
               </div>
               {/* Opcional: Adicione uma camada de sobreposição para melhorar a legibilidade do texto */}
-              <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
+              <div className="absolute inset-0 z-10"></div>
             </div>
 
             <div className="space-y-6">
-              <div lassName="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
+              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
                 <p className="text-gray-700">
                   As fibras especiais do Definamax, como a Quitosana, se ligam às moléculas de gordura durante a
@@ -1707,4 +1711,321 @@ export default function LandingPage() {
                   <p className="text-gray-700 mb-4">
                     Meu casamento estava chegando e eu queria entrar no vestido dos meus sonhos! Comecei a tomar
                     Definamax e em 2 meses perdi 9kg! Consegui usar meu vestido e me senti maravilhosa no grande dia. As
-                  \
+                  </p>
+                </div>
+
+                {/* Avaliação 9 - Masculina */}
+                <div className="border border-gray-200 rounded-lg p-6 mb-6 hover:border-green-200 hover:shadow-md transition-all">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="flex mb-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                        ))}
+                      </div>
+                      <h4 className="font-semibold">Voltei a usar minhas calças!</h4>
+                    </div>
+                    <div className="text-sm text-gray-500">10/12/2024</div>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Depois de ganhar peso na pandemia, nenhuma das minhas calças servia mais. Comecei a tomar Definamax
+                    e em 1 mês já perdi 5kg! Já consigo usar minhas calças de novo e estou muito mais confiante.
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
+                      <Image
+                        src="/marcelo.png"
+                        alt="Marcelo F."
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span className="text-sm font-medium">Marcelo F. • Cliente Verificado</span>
+                  </div>
+                </div>
+
+                {/* Avaliação 10 */}
+                <div className="border border-gray-200 rounded-lg p-6 hover:border-green-200 hover:shadow-md transition-all">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="flex mb-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                        ))}
+                      </div>
+                      <h4 className="font-semibold">Recomendo para todas as amigas!</h4>
+                    </div>
+                    <div className="text-sm text-gray-500">01/12/2024</div>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Estava com dificuldades para emagrecer depois da menopausa. Com o Definamax, consegui perder 8kg em
+                    2 meses e me sinto muito mais disposta. Já indiquei para todas as minhas amigas que também estão
+                    adorando!
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
+                      <Image
+                        src="/claudia.png"
+                        alt="Claudia S."
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span className="text-sm font-medium">Claudia S. • Cliente Verificado</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Botão "Ver Mais Avaliações" */}
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={toggleMoreReviews}
+                className="inline-flex items-center justify-center rounded-lg border border-green-600 px-6 py-3 text-sm font-medium text-green-600 hover:bg-green-50"
+              >
+                {showMoreReviews ? "Ver Menos Avaliações" : "Ver Mais Avaliações"}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-4 w-4 ml-2 transition-transform ${showMoreReviews ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-10 flex-col items-center">
+            <button
+              onClick={scrollToBuy}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+            >
+              QUERO EMAGRECER AGORA! <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+              <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+              <span>30 dias de garantia ou seu dinheiro de volta</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Perguntas Frequentes (FAQ) */}
+      <section className="w-full py-16 bg-white">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="text-center mb-10">
+            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
+              Dúvidas Comuns
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Perguntas Frequentes</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Encontre respostas rápidas para as dúvidas mais comuns sobre o Definamax
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {/* FAQ 1 */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
+                onClick={() => toggleFaq("faq1")}
+                aria-expanded={openFaqs.faq1}
+              >
+                O que é Definamax e como ele funciona?
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq1 ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
+                  openFaqs.faq1 ? "block" : "hidden"
+                }`}
+              >
+                Definamax é um suplemento alimentar 100% natural que combina fibras de alta potência para absorver a
+                gordura, aumentar a saciedade e acelerar o metabolismo. Ele funciona como um detox poderoso, promovendo
+                resultados rápidos e visíveis em poucas semanas.
+              </div>
+            </div>
+
+            {/* FAQ 2 */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
+                onClick={() => toggleFaq("faq2")}
+                aria-expanded={openFaqs.faq2}
+              >
+                Quais são os principais benefícios do Definamax?
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq2 ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
+                  openFaqs.faq2 ? "block" : "hidden"
+                }`}
+              >
+                Os principais benefícios do Definamax incluem: emagrecimento rápido e natural, aumento da saciedade,
+                controle da compulsão alimentar, aceleração do metabolismo, queima da gordura teimosa, melhora da
+                disposição e bem-estar geral.
+              </div>
+            </div>
+
+            {/* FAQ 3 */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
+                onClick={() => toggleFaq("faq3")}
+                aria-expanded={openFaqs.faq3}
+              >
+                Definamax possui alguma contraindicação ou efeito colateral?
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq3 ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
+                  openFaqs.faq3 ? "block" : "hidden"
+                }`}
+              >
+                Definamax é um produto 100% natural e não possui contraindicações ou efeitos colaterais conhecidos. No
+                entanto, gestantes, lactantes e pessoas com doenças preexistentes devem consultar um médico antes de
+                iniciar o uso.
+              </div>
+            </div>
+
+            {/* FAQ 4 */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
+                onClick={() => toggleFaq("faq4")}
+                aria-expanded={openFaqs.faq4}
+              >
+                Como devo utilizar o Definamax para obter os melhores resultados?
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq4 ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
+                  openFaqs.faq4 ? "block" : "hidden"
+                }`}
+              >
+                Recomenda-se utilizar 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições,
+                com um copo de água. Para obter os melhores resultados, utilize o produto de forma contínua por pelo
+                menos 3 meses.
+              </div>
+            </div>
+
+            {/* FAQ 5 */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
+                onClick={() => toggleFaq("faq5")}
+                aria-expanded={openFaqs.faq5}
+              >
+                Qual o prazo de entrega e a política de garantia do Definamax?
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq5 ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
+                  openFaqs.faq5 ? "block" : "hidden"
+                }`}
+              >
+                O prazo de entrega do Definamax varia de acordo com a sua região, mas geralmente é de 5 a 10 dias úteis.
+                Oferecemos uma garantia de satisfação de 30 dias. Se você não estiver satisfeito com os resultados,
+                basta entrar em contato conosco para receber 100% do seu dinheiro de volta.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-10 flex-col items-center">
+            <button
+              onClick={scrollToBuy}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+            >
+              EU QUERO EXPERIMENTAR! <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+              <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+              <span>Compra 100% segura • Satisfação garantida</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full py-8 bg-green-800 text-white">
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <Image src="/logo2.png" alt="Definamax" width={150} height={45} className="h-9 w-auto mx-auto mb-4" />
+          <p className="text-sm mb-2">Definamax - O seu aliado natural para o emagrecimento saudável e eficaz.</p>
+          <p className="text-xs text-gray-300 mb-4">
+            *Resultados podem variar de pessoa para pessoa. Este produto não se destina a diagnosticar, tratar, curar ou
+            prevenir qualquer doença. Consulte sempre um profissional de saúde qualificado antes de iniciar qualquer
+            programa de emagrecimento.
+          </p>
+          <div className="flex justify-center space-x-4 mb-4">
+            <Link href="/termos" className="text-sm hover:text-green-200">
+              Termos de Uso
+            </Link>
+            <Link href="/privacidade" className="text-sm hover:text-green-200">
+              Política de Privacidade
+            </Link>
+            <Link href="/reembolso" className="text-sm hover:text-green-200">
+              Política de Reembolso
+            </Link>
+          </div>
+          <p className="text-xs text-gray-300">
+            Copyright © {new Date().getFullYear()} Definamax. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+      {/* Botão flutuante do WhatsApp */}
+      <div
+        id="whatsAppButton"
+        className="fixed bottom-4 right-4 z-50 transform translate-y-full opacity-0 transition-all duration-300"
+      >
+        <button
+          onClick={openWhatsApp}
+          className="flex items-center justify-center rounded-full bg-green-500 p-3 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all"
+          aria-label="Compre pelo WhatsApp"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </button>
+        <span className="absolute bottom-full right-0 mb-2 bg-white text-green-600 text-xs font-medium py-1 px-2 rounded-lg shadow-md whitespace-nowrap">
+          Compre pelo WhatsApp
+        </span>
+      </div>
+    </main>
+  )
+}
