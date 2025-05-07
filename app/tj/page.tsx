@@ -991,7 +991,7 @@ export default function LandingPage() {
         allowFullScreen
 muted
 playsInline
-Poster="url"
+poster="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-16.00.25.png"
                   title="Como o Definamax funciona"
                 ></iframe>
               </div>
