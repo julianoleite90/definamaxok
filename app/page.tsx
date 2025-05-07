@@ -955,7 +955,7 @@ export default function LandingPage() {
              Como o Definamax <span className="text-green-700">Funciona?</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Entenda como as fibras alimentares agem no seu corpo para reduzir a gordura
+              Entenda como as fibras alimentares do Definmamax agem no seu corpo para reduzir a gordura
             </p>
           </div>
 
