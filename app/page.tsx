@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { CheckCircle2, Shield, Award, ThumbsUp, X, ArrowRight, Star, Clock, Gift, ShieldCheck } from "lucide-react"
+import { CheckCircle2, Shield, Award, ThumbsUp, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
 
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
@@ -31,6 +31,9 @@ export default function LandingPage() {
     faq4: false,
     faq5: false,
   })
+
+  // Estado para controlar a visibilidade do botão do WhatsApp
+  const [showWhatsAppButton, setShowWhatsAppButton] = useState(false)
 
   // Função para alternar o estado de uma pergunta
   const toggleFaq = (faqId) => {
@@ -164,27 +167,28 @@ export default function LandingPage() {
     return () => clearInterval(interval)
   }, [])
 
-  // Control fixed buy button visibility on mobile
+  // Control fixed buttons visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const fixedButton = document.getElementById("fixedBuyButton")
-      if (!fixedButton) return
+      const whatsAppButton = document.getElementById("whatsAppButton")
+      if (!whatsAppButton) return
 
-      const heroSection = document.querySelector("section:first-of-type")
+      const thirdSection = document.querySelector("section:nth-of-type(3)")
       const kitsSection = document.getElementById("comprar")
 
-      if (!heroSection || !kitsSection) return
+      if (!thirdSection || !kitsSection) return
 
       const scrollPosition = window.scrollY
-      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+      const thirdSectionBottom = thirdSection.offsetTop + thirdSection.offsetHeight
       const kitsTop = kitsSection.offsetTop
 
-      if (scrollPosition > heroBottom && scrollPosition < kitsTop) {
-        fixedButton.style.transform = "translateY(0)"
-        fixedButton.style.opacity = "1"
+      // Controle do botão do WhatsApp
+      if (scrollPosition > thirdSectionBottom && scrollPosition < kitsTop) {
+        whatsAppButton.style.transform = "translateY(0)"
+        whatsAppButton.style.opacity = "1"
       } else {
-        fixedButton.style.transform = "translateY(100%)"
-        fixedButton.style.opacity = "0"
+        whatsAppButton.style.transform = "translateY(100%)"
+        whatsAppButton.style.opacity = "0"
       }
     }
 
@@ -192,17 +196,17 @@ export default function LandingPage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Função para abrir o WhatsApp
+  const openWhatsApp = () => {
+    const message = encodeURIComponent("Olá! Gostaria de saber mais sobre o Definamax.")
+    window.open(`https://wa.me/5541984549172?text=${message}`, "_blank")
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
       <header className="w-full relative overflow-hidden">
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-center py-2 text-white text-sm md:text-base relative">
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
-          <p className="max-w-4xl mx-auto">
-            Comprando acima de 1 frasco você ganha: <span className="font-bold">Colágeno Hidrolisado</span> para combater a
-            flacidez.
-          </p>
-        </div>
+        {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <div className="mx-auto max-w-5xl px-4 flex justify-center">
@@ -225,8 +229,8 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Descubra as poderosas fibras alimentares que agem como verdadeiras
-              "esponjas" absorvendo a gordura, acelerando o metabolismo e aumentando a saciedade. Quer perder peso e restaurar a autoestima?
+              Descubra o poder das fibras alimentares que  absorvem a gordura,
+              aceleram o metabolismo e aumentam a saciedade.
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -248,24 +252,24 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Controla a compulsão alimentar</span>
+                  <span className="font-medium">Saciedade prolongada</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Queima gordura 24h</span>
+                  <span className="font-medium">Controle da compulsão</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Elimine a gordura teimosa (braços, coxas, bumbum e papada)</span>
+                  <span className="font-medium">Queime a gordura teimosa (braços, coxas, e papada)</span>
                 </li>
 
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% natural, sem efeitos colaterais</span>
+                  <span className="font-medium">Resultados visíveis em semanas</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Diminui a ansiedade</span>
+                  <span className="font-medium">100% natural, sem efeitos colaterais</span>
                 </li>
               </ul>
             </div>
@@ -274,7 +278,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-5 sm:px-8 py-4 sm:py-5 text-base sm:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
             >
-              SIM, EU QUERO COMEÇAR A EMAGRECER <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+              EXPERIMENTAR DEFINAMAX <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
@@ -292,57 +296,6 @@ export default function LandingPage() {
                 className="h-[400px] w-auto object-contain mx-auto floating"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resultados Rápidos */}
-      <section className="w-full py-8 bg-green-600 text-white">
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center gap-4 md:gap-8 px-4 md:px-0">
-            <div className="flex items-center">
-              <div className="bg-white rounded-full p-2 mr-3">
-                <Clock className="h-6 w-6 text-green-600" />
-              </div>
-              <div className="text-left">
-                <p className="font-bold">Resultados Rápidos</p>
-                <p className="text-sm">Resultados que você vê no espelho e sente na balança</p>
-              </div>
-            </div>
-
-            <div className="flex items-center">
-              <div className="bg-white rounded-full p-2 mr-3">
-                <Gift className="h-6 w-6 text-green-600" />
-              </div>
-              <div className="text-left">
-                <p className="font-bold">10% de Desconto no PIX</p>
-                <p className="text-sm">Pague no PIX e ganhe + 10% de desconto</p>
-              </div>
-            </div>
-
-            <div className="flex items-center">
-              <div className="bg-white rounded-full p-2 mr-3">
-                <Shield className="h-6 w-6 text-green-600" />
-              </div>
-              <div className="text-left">
-                <p className="font-bold">Frete Grátis</p>
-                <p className="text-sm">Envio imediato com frete grátis</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mídia - Movida para logo após a primeira seção */}
-      <section className="w-full py-8 bg-white">
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <h3 className="text-xl font-bold text-gray-600 mb-6">Estamos na mídia</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-            <Image src="/agencia-globo.png" alt="Globo" width={120} height={40} className="h-8 w-auto" />
-            <Image src="/agencia-estado.png" alt="UOL" width={120} height={40} className="h-8 w-auto" />
-            <Image src="/ig.png" alt="Folha" width={120} height={40} className="h-8 w-auto" />
-            <Image src="/terra.png" alt="Exame" width={120} height={40} className="h-8 w-auto" />
-            <Image src="/valor.png" alt="Exame" width={120} height={40} className="h-8 w-auto" />
           </div>
         </div>
       </section>
@@ -1000,7 +953,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              QUERO RESULTADOS COMO ESTES <ArrowRight className="ml-2 h-5 w-5" />
+              EU TAMBÉM QUERO EMAGRECER! <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1075,7 +1028,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              QUERO EMAGRECER AGORA <ArrowRight className="ml-2 h-5 w-5" />
+              COMPRAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1198,7 +1151,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              ESCOLHER MEU KIT DE EMAGRECIMENTO <ArrowRight className="ml-2 h-5 w-5" />
+              ESCOLHER MEU TRATAMENTO <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1267,7 +1220,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              EXPERIMENTAR COM GARANTIA <ArrowRight className="ml-2 h-5 w-5" />
+              COMPRAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -2230,17 +2183,21 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* Fixed Buy Now Button for Mobile */}
+      {/* Botão flutuante do WhatsApp */}
       <div
-        id="fixedBuyButton"
-        className="fixed bottom-4 left-0 right-0 mx-auto w-[90%] max-w-sm z-50 transform translate-y-full opacity-0 transition-all duration-300 md:hidden"
+        id="whatsAppButton"
+        className="fixed bottom-4 right-4 z-50 transform translate-y-full opacity-0 transition-all duration-300"
       >
         <button
-          onClick={scrollToBuy}
-          className="w-full inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 shadow-lg border-b-4 border-green-700"
+          onClick={openWhatsApp}
+          className="flex items-center justify-center rounded-full bg-green-500 p-3 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all"
+          aria-label="Compre pelo WhatsApp"
         >
-          COMPRAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
+          <MessageCircle className="h-6 w-6" />
         </button>
+        <span className="absolute bottom-full right-0 mb-2 bg-white text-green-600 text-xs font-medium py-1 px-2 rounded-lg shadow-md whitespace-nowrap">
+          Compre pelo WhatsApp
+        </span>
       </div>
     </main>
   )
