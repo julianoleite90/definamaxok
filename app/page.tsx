@@ -952,7 +952,7 @@ export default function LandingPage() {
               Ciência por trás do Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-             Como o Definamax <span className="text-green-700">Funciona?</span>
+              Como o Definamax <span className="text-green-700">Funciona?</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Entenda como as fibras inteligentes do Definamax agem no seu corpo para reduzir a gordura
@@ -1992,19 +1992,20 @@ export default function LandingPage() {
           <p className="text-xs text-gray-300">
             Copyright © {new Date().getFullYear()} Definamax. Todos os direitos reservados.
           </p>
+          <p className="text-xs text-gray-300 mt-2">Bourjun Nature Health, Florianópolis Santa Catarina</p>
         </div>
       </footer>
       {/* Botão flutuante do WhatsApp */}
       <div id="whatsAppButton" className="fixed bottom-4 right-4 z-50 transition-all duration-300">
         <button
           onClick={openWhatsApp}
-          className="flex items-center justify-center rounded-full bg-green-500 p-3.5 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all"
+          className="flex items-center justify-center rounded-full bg-green-500 p-4 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all animate-pulse-border hover:scale-110"
           aria-label="Compre pelo WhatsApp"
         >
-          <MessageCircle className="h-7 w-7" />
+          <MessageCircle className="h-8 w-8" />
         </button>
-        <span className="absolute bottom-full right-0 mb-2 bg-white text-green-600 text-xs font-medium py-1 px-2 rounded-lg shadow-md whitespace-nowrap">
-          Compre pelo WhatsApp
+        <span className="absolute bottom-full right-0 mb-2 bg-white text-green-600 text-xs font-bold py-1.5 px-3 rounded-lg shadow-md whitespace-nowrap border border-green-200 animate-bounce">
+          Fale conosco no WhatsApp!
         </span>
       </div>
     </main>
