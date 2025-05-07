@@ -983,6 +983,7 @@ export default function LandingPage() {
           <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
 
               <div className="absolute inset-0 w-full h-full">
+              <img src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-16.00.25.png" alt="" />
                 <iframe
                   src="https://player.vimeo.com/video/1082283572?autoplay=1&loop=1&muted=1&background=1"
                   className="absolute top-0 left-0 w-full h-full"
@@ -991,7 +992,6 @@ export default function LandingPage() {
         allowFullScreen
 muted
 playsInline
-poster="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-16.00.25.png"
                   title="Como o Definamax funciona"
                 ></iframe>
               </div>
