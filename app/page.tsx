@@ -1243,7 +1243,7 @@ export default function LandingPage() {
                     alt="Kit 6 Meses"
                     width={400}
                     height={400}
-                    className="h-36 sm:h-40 object-contain hover:scale-105 transition-all duration-300"
+                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
                   />
                   <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -68%
@@ -1255,7 +1255,9 @@ export default function LandingPage() {
                     <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
                     <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-68%</span>
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">12x R$48,09</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
+                    <span className="text-sm font-normal">Por: </span>12x R$48,09
+                  </div>
                   <div className="text-sm text-gray-600">ou R$479,40 à vista</div>
                   <div className="text-sm font-medium text-green-700 mt-1">Apenas R$79,90 por frasco</div>
                 </div>
@@ -1275,15 +1277,11 @@ export default function LandingPage() {
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Tratamento prolongado para resultados duradouros</span>
                   </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Tratamento completo recomendado</span>
-                  </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-2 mb-3 sm:mb-4 text-sm">
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
-                    <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mr-1">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
                       MELHOR VALOR
                     </span>
                     Economize R$1.000,00 neste kit!
@@ -1318,7 +1316,7 @@ export default function LandingPage() {
                     alt="Kit 3 Meses"
                     width={400}
                     height={400}
-                    className="h-36 sm:h-44 object-contain hover:scale-105 transition-all duration-300"
+                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
                   />
                   <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -50%
@@ -1330,7 +1328,9 @@ export default function LandingPage() {
                     <span className="text-gray-400 line-through text-sm">De R$758,70</span>
                     <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-50%</span>
                   </div>
-                  <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">12x R$38,05</div>
+                  <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">
+                    <span className="text-sm font-normal">Por: </span>12x R$38,05
+                  </div>
                   <div className="text-sm text-gray-600">ou R$379,00 à vista</div>
                   <div className="text-sm font-medium text-green-700 mt-1">Apenas R$126,33 por frasco</div>
                 </div>
@@ -1346,19 +1346,16 @@ export default function LandingPage() {
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">3 frascos com 180 cápsulas</span>
                   </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Tratamento completo recomendado</span>
-                  </div>
+
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Tratamento mais escolhido</span>
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-2 mb-3 sm:mb-4 text-sm">
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
-                    <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mr-1">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
                       ECONOMIA
                     </span>
                     Economize R$379,70 neste kit!
@@ -1389,7 +1386,7 @@ export default function LandingPage() {
                     alt="Kit 1 Mês"
                     width={400}
                     height={400}
-                    className="h-36 sm:h-40 object-contain hover:scale-105 transition-all duration-300"
+                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
                   />
                   <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -18%
@@ -1401,7 +1398,9 @@ export default function LandingPage() {
                     <span className="text-gray-400 line-through text-sm">De R$329,90</span>
                     <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-18%</span>
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">12x R$28,01</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
+                    <span className="text-sm font-normal">Por: </span>12x R$28,01
+                  </div>
                   <div className="text-sm text-gray-600">ou R$279,90 à vista</div>
                 </div>
 
