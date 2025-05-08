@@ -167,13 +167,38 @@ export default function LandingPage() {
     return () => clearInterval(interval)
   }, [])
 
-  // Set WhatsApp button to always be visible
+  // Control WhatsApp button visibility based on scroll position
   useEffect(() => {
-    const whatsAppButton = document.getElementById("whatsAppButton")
-    if (whatsAppButton) {
-      whatsAppButton.style.transform = "translateY(0)"
-      whatsAppButton.style.opacity = "1"
+    const handleScroll = () => {
+      const whatsAppButton = document.getElementById("whatsAppButton")
+      const buySection = buyRef.current
+
+      if (whatsAppButton && buySection) {
+        const buyRect = buySection.getBoundingClientRect()
+        const windowHeight = window.innerHeight
+
+        // Check if buy section is visible in viewport
+        const isBuySectionVisible = buyRect.top < windowHeight && buyRect.bottom > 0
+
+        // Hide button when in buy section, show otherwise
+        if (isBuySectionVisible) {
+          whatsAppButton.style.transform = "translateY(100px)"
+          whatsAppButton.style.opacity = "0"
+        } else {
+          whatsAppButton.style.transform = "translateY(0)"
+          whatsAppButton.style.opacity = "1"
+        }
+      }
     }
+
+    // Initial check
+    handleScroll()
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll)
+
+    // Clean up
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   // Função para abrir o WhatsApp
