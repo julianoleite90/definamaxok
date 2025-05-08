@@ -1019,7 +1019,7 @@ export default function WeightLossRecommendation() {
                 </a>
                 <div className="mt-3">
                   <a
-                    href="https://definamax.com.br"
+                    href="https://definamaxoficial.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-3 px-6 bg-white border-2 border-green-600 hover:bg-green-50 text-green-600 font-bold rounded-md shadow-sm flex items-center justify-center text-lg transition-colors"
