@@ -1258,7 +1258,9 @@ export default function LandingPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Completo</h3>
-                <p className="text-sm opacity-90">Maior <span className="font-bold">desconto</span> nesse kit!</p>
+                <p className="text-sm opacity-90">
+                  Maior <span className="font-bold">desconto</span> nesse kit!
+                </p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1330,7 +1332,9 @@ export default function LandingPage() {
 
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 sm:py-3 px-4 text-center mt-8">
                 <h3 className="text-lg sm:text-xl font-bold">Kit Recomendado</h3>
-                <p className="text-sm opacity-90">Melhor <span className="font-bold">custo benefício</span> nesse kit!</p>
+                <p className="text-sm opacity-90">
+                  Melhor <span className="font-bold">custo benefício</span> nesse kit!
+                </p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1399,7 +1403,9 @@ export default function LandingPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Inicial</h3>
-                <p className="text-sm opacity-90"><span className="font-bold">Experimente</span></p>
+                <p className="text-sm opacity-90">
+                  <span className="font-bold">Experimente</span>
+                </p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1454,7 +1460,6 @@ export default function LandingPage() {
                     COM ESSE KIT!
                   </p>
                 </div>
-
 
                 <Link
                   href={addUtmToUrl("https://full.sale/eMbtHp")}
@@ -1529,6 +1534,87 @@ export default function LandingPage() {
           <div className="space-y-6">
             {/* Avaliações iniciais - primeiras 5 */}
             <div>
+              {/* Avaliação Nova 1 */}
+              <div className="border border-gray-200 rounded-lg p-6 mb-6 hover:border-green-200 hover:shadow-md transition-all">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <div className="flex mb-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+                    <h4 className="font-semibold">Melhor decisão que tomei!</h4>
+                  </div>
+                  <div className="text-sm text-gray-500">05/05/2025</div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Depois de tentar várias dietas sem sucesso, decidi experimentar o Definamax. Em apenas 2 meses perdi
+                  12kg! O mais incrível é que não senti fome ou ansiedade durante o processo. Minha energia aumentou e
+                  finalmente consegui voltar a praticar corrida nas ruas que eu sempre amei. Recomendo muito.
+                </p>
+                <div className="flex gap-2 mb-4">
+                  <Image
+                    src="/review5.png"
+                    alt="Foto da avaliação"
+                    width={100}
+                    height={100}
+                    className="w-32 h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
+                    <Image
+                      src="/review5.png"
+                      alt="Mariana C."
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">Mariana C. • Cliente Verificado</span>
+                </div>
+              </div>
+
+              {/* Avaliação Nova 2 */}
+              <div className="border border-gray-200 rounded-lg p-6 mb-6 hover:border-green-200 hover:shadow-md transition-all">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <div className="flex mb-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+                    <h4 className="font-semibold">Eu achei muito bom!</h4>
+                  </div>
+                  <div className="text-sm text-gray-500">28/04/2025</div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Já tinha visto a propagando do produto no ano passado quando passou a reportagem na record, mas preferi esperar. Estava em busca de algo que eu pudesse tomar sem precisar parar de tomar minha cerveja no final de semana.
+                 Praticamente a barriga que eu tinha era toda de cerveja, e o Definamax me ajudou muito com isso, perdi aquela barriga, e ainda posso tomar umas no sabádo de futebol. Aprovado.
+                </p>
+                <div className="flex gap-2 mb-4">
+                  <Image
+                    src="/review6.png"
+                    alt="Foto da avaliação"
+                    width={100}
+                    height={100}
+                    className="w-32 h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
+                    <Image
+                      src="/review6.png"
+                      alt="Lucas M."
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">Lucas M. • Cliente Verificado</span>
+                </div>
+              </div>
+
               {/* Avaliação 1 */}
               <div className="border border-gray-200 rounded-lg p-6 mb-6 hover:border-green-200 hover:shadow-md transition-all">
                 <div className="flex justify-between items-start mb-4">
@@ -1738,14 +1824,14 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Meu médico ficou impressionado!</h4>
+                      <h4 className="font-semibold">Meu nutricionista ficou impressionado!</h4>
                     </div>
                     <div className="text-sm text-gray-500">15/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Eu estava com pré-diabetes e meu médico sugeriu que eu perdesse peso urgentemente. Comecei a tomar
+                    Eu estava com pré-diabetes e meu nutricionista sugeriu que eu perdesse peso urgentemente. Comecei a tomar
                     Definamax e em 3 meses perdi 16kg! Na última consulta, meus exames voltaram ao normal e meu médico
-                    perguntou o que eu tinha feito. Recomendei para todos no consultório!
+                    perguntou o que eu tinha feito. Recomendo a todos!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -1815,14 +1901,27 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Casamento em 2 meses!</h4>
+                      <h4 className="font-semibold">Festa de formatura em 2 meses!</h4>
                     </div>
                     <div className="text-sm text-gray-500">22/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Meu casamento estava chegando e eu queria entrar no vestido dos meus sonhos! Comecei a tomar
-                    Definamax e em 2 meses perdi 9kg! Consegui usar meu vestido e me senti maravilhosa no grande dia. As
+                    Minha formatura estava chegando e eu queria entrar no vestido que eu tinha amado! Comecei a tomar
+                    Definamax e em 2 meses perdi 9kg! Consegui usar meu vestido e me senti maravilhosa. As
+                    fotos ficaram incríveis e me sinto confiante com meu corpo novamente. Ainda preciso emagrecer mais, eu sei. Mas estou bem satusfeita.
                   </p>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
+                      <Image
+                        src="/review7.png"
+                        alt="Amanda P."
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span className="text-sm font-medium">Amanda P. • Cliente Verificado</span>
+                  </div>
                 </div>
 
                 {/* Avaliação 9 - Masculina */}
@@ -1834,18 +1933,18 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Voltei a usar minhas calças!</h4>
+                      <h4 className="font-semibold">Fiz as pazes com minha esposa!</h4>
                     </div>
                     <div className="text-sm text-gray-500">10/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Depois de ganhar peso na pandemia, nenhuma das minhas calças servia mais. Comecei a tomar Definamax
-                    e em 1 mês já perdi 5kg! Já consigo usar minhas calças de novo e estou muito mais confiante.
+                    Depois de ganhar peso na pandemia, nenhuma das minhas calças servia mais. Minha esposta estava muito incomodada com isso, achei que iria me separar. Comecei a tomar Definamax
+                    e em 1 mês já perdi 5kg! As coisas começaram a melhorar em casa. É responsabilidade minha eu ter engordado tanto, e também é responsabilidade minha emagrecer.
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/marcelo.png"
+                        src="/review8.png"
                         alt="Marcelo F."
                         width={32}
                         height={32}
@@ -1870,14 +1969,14 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Estava com dificuldades para emagrecer depois da menopausa. Com o Definamax, consegui perder 8kg em
+                    Estava com dificuldades para emagrecer. Eu trabalho como gerente em uma loja de automóveis, e a aparência é fundamental nesse emprego. Com o Definamax, consegui perder 8kg em
                     2 meses e me sinto muito mais disposta. Já indiquei para todas as minhas amigas que também estão
                     adorando!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                       <Image
-                        src="/claudia.png"
+                        src="/review9.png"
                         alt="Claudia S."
                         width={32}
                         height={32}
