@@ -433,7 +433,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Ana P.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -458,10 +458,10 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
-                    bem-estar."
+                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
+                    meu corpo."
                   </p>
-                  <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
+                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
               </div>
 
@@ -761,7 +761,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Ana P.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -786,10 +786,10 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 11kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
-                    bem-estar."
+                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
+                    do meu corpo."
                   </p>
-                  <p className="text-green-700 font-medium">- 11kg em 3 meses</p>
+                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
 
                 {/* Additional testimonials shown when "load more" is clicked */}
