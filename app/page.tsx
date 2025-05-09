@@ -1258,7 +1258,7 @@ export default function LandingPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Completo</h3>
-                <p className="text-sm opacity-90">6 Meses de Tratamento</p>
+                <p className="text-sm opacity-90">Maior <span className="font-bold">desconto</span> nesse kit!</p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1278,38 +1278,37 @@ export default function LandingPage() {
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
                     <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
-                    <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-68%</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
                     <span className="text-sm font-normal">Por: </span>12x R$48,09
                   </div>
                   <div className="text-sm text-gray-600">ou R$479,40 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1">Apenas R$79,90 por frasco</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">R$79,90 por frasco</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Emagreça até <span className="font-bold">19kg</span> em 180 dias
+                      Tratamento completo de <span className="font-bold">6 meses</span>
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">6 frascos com 360 cápsulas</span>
+                    <span className="text-sm">+ 2 Frascos de Colágeno Grátis</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Tratamento prolongado para resultados duradouros</span>
+                    <span className="text-sm">Envio imediato</span>
                   </div>
                 </div>
 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      MELHOR VALOR
+                      EMAGREÇA ATÉ 19KG
                     </span>
-                    Economize R$1.000,00 neste kit!
+                    COM ESSE KIT!
                   </p>
                 </div>
 
@@ -1326,12 +1325,12 @@ export default function LandingPage() {
             {/* Kit 3 meses - MAIS POPULAR - Agora segundo */}
             <div className="bg-white rounded-2xl border-2 border-green-500 shadow-lg relative transform scale-105 md:scale-110 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden z-10">
               <div className="absolute top-0 left-0 right-0 w-full bg-yellow-500 text-center text-white font-bold py-2 px-4 z-20">
-                MAIS POPULAR
+                MAIS VENDIDO
               </div>
 
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 sm:py-3 px-4 text-center mt-8">
                 <h3 className="text-lg sm:text-xl font-bold">Kit Recomendado</h3>
-                <p className="text-sm opacity-90">3 Meses de Tratamento</p>
+                <p className="text-sm opacity-90">Melhor <span className="font-bold">custo benefício</span> nesse kit!</p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1351,7 +1350,6 @@ export default function LandingPage() {
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-2 border-green-100">
                   <div className="flex items-center justify-center gap-2 mb-1">
                     <span className="text-gray-400 line-through text-sm">De R$758,70</span>
-                    <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-50%</span>
                   </div>
                   <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">
                     <span className="text-sm font-normal">Por: </span>12x R$38,05
@@ -1364,26 +1362,26 @@ export default function LandingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Emagreça até <span className="font-bold">13kg</span> em 90 dias
+                      Tratamento de <span className="font-bold">3 meses</span>
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">3 frascos com 180 cápsulas</span>
+                    <span className="text-sm">+ 1 Frasco de Colágeno Grátis</span>
                   </div>
 
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Tratamento mais escolhido</span>
+                    <span className="text-sm">Envio imediato</span>
                   </div>
                 </div>
 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      ECONOMIA
+                      EMAGREÇA ATÉ 13KG
                     </span>
-                    Economize R$379,70 neste kit!
+                    COM ESSE KIT!
                   </p>
                 </div>
 
@@ -1401,7 +1399,7 @@ export default function LandingPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Inicial</h3>
-                <p className="text-sm opacity-90">1 Mês de Tratamento</p>
+                <p className="text-sm opacity-90"><span className="font-bold">Experimente</span></p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1411,7 +1409,7 @@ export default function LandingPage() {
                     alt="Kit 1 Mês"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-40 sm:h-[11rem] object-contain hover:scale-105 transition-all duration-300"
                   />
                   <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -18%
@@ -1421,7 +1419,6 @@ export default function LandingPage() {
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
                     <span className="text-gray-400 line-through text-sm">De R$329,90</span>
-                    <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-bold">-18%</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
                     <span className="text-sm font-normal">Por: </span>12x R$28,01
@@ -1433,22 +1430,31 @@ export default function LandingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Emagreça até <span className="font-bold">5kg</span> em 30 dias
+                      Tratamento de <span className="font-bold">1 mês</span>
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">1 frasco com 60 cápsulas</span>
+                    <span className="text-sm">60 cápsulas</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Tratamento para 30 dias</span>
+                    <span className="text-sm">Envio imediato</span>
                   </div>
                   <div className="flex items-start text-gray-400">
                     <X className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Sem bônus inclusos</span>
+                    <span className="text-sm">Sem bônus adcionais</span>
                   </div>
                 </div>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
+                  <p className="font-medium text-yellow-800">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
+                      EMAGREÇA ATÉ 5KG
+                    </span>
+                    COM ESSE KIT!
+                  </p>
+                </div>
+
 
                 <Link
                   href={addUtmToUrl("https://full.sale/eMbtHp")}
