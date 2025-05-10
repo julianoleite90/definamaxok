@@ -342,7 +342,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Joana</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-19kg</span>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -367,10 +367,10 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 5 meses de Definamax, já foram 19 kg embora!
+                    "Oi, gente! Em 7 meses de Definamax, perdi 27kg!
                      O melhor é que a fome sumiu e eu tenho uma energia incrível pra tudo. Super recomendo!"
                   </p>
-                  <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
@@ -485,7 +485,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Juliana R.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-15kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -671,7 +670,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Joana</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-19kg</span>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -696,10 +695,10 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 5 meses de Definamax, já foram 19 kg embora!
+                    "Oi, gente! Em 7 meses de Definamax, eu perdi 27 kg!
                      O melhor é que a fome sumiu e eu tenho uma energia incrível pra tudo. Super recomendo!"
                   </p>
-                  <p className="text-green-700 font-medium">- 19kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
