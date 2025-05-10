@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -18,6 +18,7 @@ import {
   TrendingUp,
   Droplets,
   Dumbbell,
+  Shield,
 } from "lucide-react"
 
 interface VimeoVideoProps {
@@ -28,13 +29,19 @@ interface VimeoVideoProps {
 function VimeoVideo({ videoId, title = "Vimeo Video" }: VimeoVideoProps) {
   return (
     <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-md">
+      <img
+        src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-10-as-12.12.24.png"
+        alt=""
+      />
       <iframe
-        src={`https://player.vimeo.com/video/1078349413`}
+        src="https://player.vimeo.com/video/1078349413?autoplay=1&loop=0&muted=0&background=1"
         className="absolute top-0 left-0 w-full h-full"
         frameBorder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
+        allow="autoplay; fullscreen"
         allowFullScreen
-        title={title}
+        muted
+        playsInline
+        title="Como o Definamax funciona"
       ></iframe>
     </div>
   )
@@ -107,6 +114,262 @@ function Timeline({ weeks, goal }: { weeks: number; goal: number }) {
   )
 }
 
+function ProductExplanation() {
+  return (
+    <div className="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
+      <h3 className="text-lg font-semibold text-green-700 mb-3">Como o Definamax Funciona</h3>
+
+      <div className="bg-green-50 p-4 rounded-lg mb-4">
+        <p className="text-gray-700 font-medium">
+          O Definamax revoluciona o processo de emagrecimento através de sua tecnologia exclusiva de tripla ação:
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
+          <div className="flex items-center mb-2">
+            <div className="bg-green-100 rounded-full p-2 mr-2">
+              <Shield className="h-5 w-5 text-green-600" />
+            </div>
+            <h4 className="font-medium text-gray-800">Bloqueio de Gorduras</h4>
+          </div>
+          <p className="text-sm text-gray-600">
+            As fibras inteligentes patenteadas do Definamax capturam e absorvem até 76% das gorduras ingeridas antes que
+            sejam absorvidas pelo organismo, impedindo seu acúmulo.
+          </p>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
+          <div className="flex items-center mb-2">
+            <div className="bg-green-100 rounded-full p-2 mr-2">
+              <Activity className="h-5 w-5 text-green-600" />
+            </div>
+            <h4 className="font-medium text-gray-800">Aceleração Metabólica</h4>
+          </div>
+          <p className="text-sm text-gray-600">
+            Seus compostos bioativos estimulam o metabolismo a trabalhar até 3x mais rápido, transformando seu corpo em
+            uma máquina de queimar calorias 24 horas por dia, mesmo durante o sono.
+          </p>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
+          <div className="flex items-center mb-2">
+            <div className="bg-green-100 rounded-full p-2 mr-2">
+              <Utensils className="h-5 w-5 text-green-600" />
+            </div>
+            <h4 className="font-medium text-gray-800">Controle da Saciedade</h4>
+          </div>
+          <p className="text-sm text-gray-600">
+            O complexo de fibras e extratos naturais promove uma sensação duradoura de saciedade, reduzindo naturalmente
+            a fome e os desejos por alimentos calóricos sem esforço.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+        <p className="text-sm text-green-700">
+          <strong>Resultado:</strong> Perda de peso rápida, eficaz e sem efeito sanfona, sem necessidade de dietas
+          restritivas ou exercícios intensos. O Definamax trabalha para você, enquanto você segue sua vida normalmente.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+// Adicionar após a função Timeline:
+
+function MetabolicProfile({
+  age,
+  gender,
+  bmi,
+  activityLevel,
+  weight,
+  height,
+}: { age: string; gender: string; bmi: number; activityLevel: string; weight: string; height: string }) {
+  let metabolicRate = "normal"
+  let burnRate = 0
+
+  const weightKg = Number.parseInt(weight)
+  const heightCm = Number.parseInt(height)
+  const ageYears = Number.parseInt(age)
+
+  // Cálculo da Taxa Metabólica Basal usando a fórmula de Harris-Benedict revisada
+  if (gender === "masculino") {
+    // Fórmula para homens: TMB = 88.362 + (13.397 × peso em kg) + (4.799 × altura em cm) - (5.677 × idade em anos)
+    burnRate = Math.round(88.362 + 13.397 * weightKg + 4.799 * heightCm - 5.677 * ageYears)
+  } else {
+    // Fórmula para mulheres: TMB = 447.593 + (9.247 × peso em kg) + (3.098 × altura em cm) - (4.330 × idade em anos)
+    burnRate = Math.round(447.593 + 9.247 * weightKg + 3.098 * heightCm - 4.33 * ageYears)
+  }
+
+  // Ajuste baseado no nível de atividade (fatores padrão de nutrição)
+  if (activityLevel === "sedentario") {
+    burnRate = Math.round(burnRate * 1.2)
+    metabolicRate = "lento"
+  } else if (activityLevel === "leve") {
+    burnRate = Math.round(burnRate * 1.375)
+    metabolicRate = "moderado"
+  } else if (activityLevel === "moderado") {
+    burnRate = Math.round(burnRate * 1.55)
+    metabolicRate = "normal"
+  } else if (activityLevel === "alto") {
+    burnRate = Math.round(burnRate * 1.725)
+    metabolicRate = "acelerado"
+  } else if (activityLevel === "muito_alto") {
+    burnRate = Math.round(burnRate * 1.9)
+    metabolicRate = "muito acelerado"
+  }
+
+  return (
+    <div className="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
+      <h3 className="text-lg font-semibold text-green-700 mb-3">Seu Perfil Metabólico</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-green-50 p-4 rounded-lg">
+          <h4 className="font-medium text-gray-800 mb-2">Taxa Metabólica</h4>
+          <p className="text-2xl font-bold text-green-600 mb-1">{metabolicRate.toUpperCase()}</p>
+          <p className="text-sm text-gray-600">
+            Seu metabolismo está {metabolicRate}, o que influencia diretamente sua capacidade de queimar calorias.
+          </p>
+        </div>
+        <div className="bg-green-50 p-4 rounded-lg">
+          <h4 className="font-medium text-gray-800 mb-2">Queima Calórica Diária</h4>
+          <p className="text-2xl font-bold text-green-600 mb-1">{burnRate} kcal</p>
+          <p className="text-sm text-gray-600">
+            Esta é uma estimativa de quantas calorias seu corpo queima diariamente em repouso, baseada na fórmula de
+            Harris-Benedict.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function HealthInsights({
+  age,
+  bmi,
+  waterIntake,
+  stressLevel,
+}: { age: string; bmi: number; waterIntake: string; stressLevel: string }) {
+  const insights = []
+
+  // Insights baseados no IMC
+  if (bmi < 18.5) {
+    insights.push("Seu IMC indica que você está abaixo do peso ideal. Foque em ganhar massa magra de forma saudável.")
+  } else if (bmi >= 25 && bmi < 30) {
+    insights.push("Seu IMC indica sobrepeso. Uma perda de peso gradual e consistente é recomendada.")
+  } else if (bmi >= 30) {
+    insights.push("Seu IMC indica obesidade. Recomendamos acompanhamento médico durante seu processo de emagrecimento.")
+  }
+
+  // Insights baseados na idade
+  const ageNum = Number.parseInt(age)
+  if (ageNum > 40) {
+    insights.push(
+      "Após os 40 anos, o metabolismo naturalmente desacelera. Nosso produto ajuda a reverter esse processo.",
+    )
+  }
+
+  // Insights baseados na ingestão de água
+  if (waterIntake === "pouca") {
+    insights.push(
+      "Sua baixa ingestão de água pode estar prejudicando seu metabolismo. Aumente para pelo menos 2L diários.",
+    )
+  }
+
+  // Insights baseados no nível de estresse
+  if (stressLevel === "alto" || stressLevel === "muito_alto") {
+    insights.push("Altos níveis de estresse aumentam o cortisol, hormônio que favorece o acúmulo de gordura abdominal.")
+  }
+
+  // Adicionar insight padrão se não houver outros
+  if (insights.length === 0) {
+    insights.push("Seu perfil indica boas condições para resultados rápidos com nosso produto.")
+  }
+
+  return (
+    <div className="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
+      <h3 className="text-lg font-semibold text-green-700 mb-3">Insights de Saúde Personalizados</h3>
+      <ul className="space-y-3">
+        {insights.map((insight, index) => (
+          <li key={index} className="flex items-start">
+            <div className="bg-green-100 rounded-full p-1 mr-3 mt-0.5 flex-shrink-0">
+              <Check className="h-4 w-4 text-green-600" />
+            </div>
+            <span className="text-gray-700">{insight}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function SuccessStories() {
+  const stories = [
+    {
+      name: "Mariana S.",
+      age: 42,
+      weightLoss: 18,
+      timeframe: "3 meses",
+      quote: "Depois de tentar várias dietas sem sucesso, o Definamax foi o único que realmente funcionou para mim.",
+    },
+    {
+      name: "Carlos R.",
+      age: 35,
+      weightLoss: 15,
+      timeframe: "2 meses",
+      quote: "Perdi 15kg em apenas 2 meses e o melhor: sem efeito sanfona! Já faz 6 meses que mantenho o peso.",
+    },
+    {
+      name: "Juliana M.",
+      age: 28,
+      weightLoss: 12,
+      timeframe: "45 dias",
+      quote: "Minha autoestima voltou! Consegui eliminar aquela gordura localizada que tanto me incomodava.",
+    },
+  ]
+
+  return (
+    <div className="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
+      <h3 className="text-lg font-semibold text-green-700 mb-3">Histórias de Sucesso</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {stories.map((story, index) => (
+          <div key={index} className="bg-green-50 p-4 rounded-lg">
+            <div className="flex items-center mb-2">
+              <div className="w-10 h-10 rounded-full bg-green-200 flex items-center justify-center mr-2">
+                {story.name.charAt(0)}
+              </div>
+              <div>
+                <p className="font-medium">
+                  {story.name}, {story.age}
+                </p>
+                <p className="text-sm text-green-700">
+                  -{story.weightLoss}kg em {story.timeframe}
+                </p>
+              </div>
+            </div>
+            <p className="text-sm italic text-gray-600">"{story.quote}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function trackEvent(eventName: string, eventProperties?: Record<string, any>) {
+  // Track with Google Analytics
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", eventName, eventProperties)
+  }
+
+  // Track with custom trackConversion function if available
+  if (typeof window !== "undefined" && window.trackConversion) {
+    window.trackConversion(eventName, eventProperties)
+  }
+
+  // Log event for debugging
+  console.log(`Analytics event tracked: ${eventName}`, eventProperties)
+}
+
 export default function WeightLossRecommendation() {
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
@@ -125,6 +388,9 @@ export default function WeightLossRecommendation() {
     mealFrequency: "",
     stressLevel: "",
   })
+
+  // Referência para o topo da página
+  const topRef = useRef<HTMLDivElement>(null)
 
   const [errors, setErrors] = useState({
     name: false,
@@ -186,6 +452,13 @@ export default function WeightLossRecommendation() {
     }
   }, [formData.goal, formData.activityLevel])
 
+  // Rolar para o topo quando mudar de etapa
+  useEffect(() => {
+    if (step === 4 && topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [step])
+
   const validateFormStep1 = () => {
     const newErrors = {
       ...errors,
@@ -226,12 +499,12 @@ export default function WeightLossRecommendation() {
 
   const handleContinueToStep2 = () => {
     if (validateFormStep1()) {
-      // Rastrear evento de conclusão do primeiro passo
-      if (window.trackConversion) {
-        window.trackConversion("form_step_1_complete", {
-          form_name: "weight_loss_assessment",
-        })
-      }
+      // Track step completion with new naming convention
+      trackEvent("botao-etapa-1-avaliacao", {
+        form_name: "weight_loss_assessment",
+        step: 1,
+      })
+
       setStep(2)
     }
   }
@@ -267,12 +540,12 @@ export default function WeightLossRecommendation() {
 
   const handleContinueToStep3 = () => {
     if (validateFormStep2()) {
-      // Rastrear evento de conclusão do segundo passo
-      if (window.trackConversion) {
-        window.trackConversion("form_step_2_complete", {
-          form_name: "weight_loss_assessment",
-        })
-      }
+      // Track step completion with new naming convention
+      trackEvent("botao-etapa-2-avaliacao", {
+        form_name: "weight_loss_assessment",
+        step: 2,
+      })
+
       setLoading(true)
       // Simulate loading delay
       setTimeout(() => {
@@ -283,12 +556,11 @@ export default function WeightLossRecommendation() {
   }
 
   const handleContinueToStep4 = async () => {
-    // Rastrear evento de visualização do vídeo
-    if (window.trackConversion) {
-      window.trackConversion("video_viewed", {
-        content_name: "weight_loss_explanation",
-      })
-    }
+    // Track video view with new naming convention
+    trackEvent("botao-etapa-3-avaliacao", {
+      content_name: "weight_loss_explanation",
+      step: 3,
+    })
 
     // Salvar dados no Vercel
     await saveDataToVercel()
@@ -311,7 +583,7 @@ export default function WeightLossRecommendation() {
         capsules: "2 cápsulas por dia",
         intensity: "leve",
       }
-    } else if (goal <= 12) {
+    } else if (goal <= 13) {
       return {
         kit: "3 frascos",
         duration: "90 dias",
@@ -333,7 +605,7 @@ export default function WeightLossRecommendation() {
 
     if (goal <= 5) {
       return "https://full.sale/aNAgTD"
-    } else if (goal <= 12) {
+    } else if (goal <= 13) {
       return "https://full.sale/fDTVWH"
     } else {
       return "https://full.sale/EgnvbQ"
@@ -346,7 +618,7 @@ export default function WeightLossRecommendation() {
 
     if (goal <= 5) {
       return "/1f.png"
-    } else if (goal <= 12) {
+    } else if (goal <= 13) {
       return "/3f.png"
     } else {
       return "/6f.png"
@@ -365,40 +637,37 @@ export default function WeightLossRecommendation() {
   function getAdditionalRecommendations() {
     const recommendations = []
 
-    // Recomendações baseadas no nível de atividade
-    if (formData.activityLevel === "sedentario") {
-      recommendations.push("Comece com caminhadas leves de 15-20 minutos, 3 vezes por semana")
-    } else if (formData.activityLevel === "moderado") {
-      recommendations.push("Mantenha sua rotina de exercícios, aumentando gradualmente a intensidade")
-    } else if (formData.activityLevel === "alto") {
-      recommendations.push("Continue com seus exercícios de alta intensidade, focando em recuperação adequada")
-    }
-
     // Recomendações baseadas na ingestão de água
     if (formData.waterIntake === "pouca") {
       recommendations.push("Aumente sua ingestão de água para pelo menos 2 litros por dia")
     }
+
+    // Adicionar recomendações padrão que não exigem esforço
+    recommendations.push("Tome as cápsulas com um copo cheio de água para potencializar a absorção")
+    recommendations.push("Para resultados ainda melhores, tome as cápsulas 30 minutos antes das principais refeições")
 
     return recommendations
   }
 
   // Rastrear cliques no botão de compra
   const handlePurchaseClick = () => {
-    if (window.trackConversion) {
-      window.trackConversion("begin_checkout", {
-        items: [
-          {
-            id: getRecommendation().kit,
-            name: `Kit ${getRecommendation().kit}`,
-            category: "weight_loss",
-            quantity: 1,
-          },
-        ],
-        value: formData.goal, // Usando o objetivo como valor para análise
-        currency: "BRL",
-      })
+    // Track purchase click with new naming convention
+    trackEvent("botao-comprar-kit", {
+      items: [
+        {
+          id: getRecommendation().kit,
+          name: `Kit ${getRecommendation().kit}`,
+          category: "weight_loss",
+          quantity: 1,
+        },
+      ],
+      value: formData.goal,
+      currency: "BRL",
+      step: 4,
+    })
 
-      // Rastrear evento de conversão do Google Ads
+    // Keep the existing Google Ads conversion tracking
+    if (window.gtag) {
       window.gtag("event", "conversion", {
         send_to: "AW-632000271/CVC-1",
         value: formData.goal,
@@ -409,15 +678,16 @@ export default function WeightLossRecommendation() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4" ref={topRef}>
       <div className="w-full max-w-2xl">
         <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
           <header className="text-center mb-6">
             <h1 className="text-2xl md:text-3xl font-bold text-green-700 mb-2">
-              Avaliação Personalizada para Emagrecimento
+              Descubra Seu Plano de Emagrecimento Personalizado <span className="text-green-500">100% Gratuito</span>
             </h1>
             <p className="text-gray-600">
-              Complete nossa avaliação profissional e receba um plano personalizado para atingir seus objetivos.
+              Complete nossa avaliação profissional, descubra seu IMC e receba um plano personalizado para atingir seus
+              objetivos de forma saudável.
             </p>
           </header>
 
@@ -585,9 +855,10 @@ export default function WeightLossRecommendation() {
                 onClick={handleContinueToStep2}
                 className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md shadow-md flex items-center justify-center transition-colors"
               >
-                Continuar para Hábitos
+                Avançar
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
+              <p className="text-center text-sm text-gray-500 mt-2">1/3 • Tempo estimado: 2 minutos</p>
             </div>
           )}
 
@@ -715,17 +986,64 @@ export default function WeightLossRecommendation() {
                     </>
                   ) : (
                     <>
-                      Continuar
+                      Avançar
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </>
                   )}
                 </button>
               </div>
+              <p className="text-center text-sm text-gray-500 mt-2">2/3 • Tempo estimado: 1 minuto</p>
             </div>
           )}
 
           {step === 3 && (
             <div className="space-y-6">
+              <div className="bg-green-50 rounded-lg p-4 border border-green-100 mb-6">
+                <h2 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
+                  <TrendingUp className="mr-2 h-5 w-5" />
+                  Análise Personalizada
+                </h2>
+                <p className="text-sm text-green-700">
+                  Com base nas suas informações, preparamos uma análise detalhada do seu perfil e potencial de
+                  emagrecimento.
+                </p>
+              </div>
+
+              {/* Novos componentes de análise */}
+              <MetabolicProfile
+                age={formData.age}
+                gender={formData.gender}
+                bmi={bmi || 0}
+                activityLevel={formData.activityLevel}
+                weight={formData.weight}
+                height={formData.height}
+              />
+
+              <HealthInsights
+                age={formData.age}
+                bmi={bmi || 0}
+                waterIntake={formData.waterIntake}
+                stressLevel={formData.stressLevel}
+              />
+
+              <ProductExplanation />
+
+              <div className="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
+                <h3 className="text-lg font-semibold text-green-700 mb-3">Seu Potencial de Emagrecimento</h3>
+                <p className="text-gray-700 mb-3">
+                  Com nosso produto avançado, você pode alcançar uma perda de peso acelerada de até {weeklyGoal} kg por
+                  semana, muito mais rápido que métodos convencionais.
+                </p>
+                <p className="text-sm text-green-700 font-medium mb-3">
+                  Nossa fórmula exclusiva potencializa seu metabolismo, permitindo resultados até 3x mais rápidos que
+                  dietas comuns.
+                </p>
+
+                <Timeline weeks={timeToGoal!} goal={Number.parseInt(formData.goal)} />
+              </div>
+
+              <SuccessStories />
+
               <div className="bg-green-50 rounded-lg p-4 border border-green-100 mb-6">
                 <h2 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <TrendingUp className="mr-2 h-5 w-5" />
@@ -810,10 +1128,12 @@ export default function WeightLossRecommendation() {
               <div className="mt-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Resultados Reais</h3>
                 <div className="bg-white rounded-lg overflow-hidden shadow-md">
-                  <div className="relative w-full h-48 md:h-64">
-                    <Image src="/antesedepoisformulario.png" alt="Antes e Depois" fill className="object-cover" />
-                  </div>
-                  <div className="p-3 text-center text-sm text-gray-600">Resultados reais após 90 dias de uso</div>
+                  <img
+                    src="/imagem-avaliacao.jpg"
+                    alt="Antes e Depois"
+                    className="w-full h-auto max-h-[600px] object-contain"
+                  />
+                  <div className="p-3 text-center text-sm text-gray-600">Resultados reais após 150 dias de uso</div>
                 </div>
               </div>
 
@@ -830,10 +1150,11 @@ export default function WeightLossRecommendation() {
                   onClick={handleContinueToStep4}
                   className="w-1/2 py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md shadow-md flex items-center justify-center transition-colors"
                 >
-                  Ver Recomendação
+                  Avançar
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
               </div>
+              <p className="text-center text-sm text-gray-500 mt-2">3/3 • Tempo estimado: menos de 1 minuto</p>
             </div>
           )}
 
@@ -1015,13 +1336,17 @@ export default function WeightLossRecommendation() {
                   className="w-full py-4 px-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-md shadow-lg flex items-center justify-center text-lg transition-colors"
                 >
                   <ShoppingCart className="mr-2 h-6 w-6" />
-                  Comprar Kit Recomendado
+                  Comprar {getRecommendation().kit} de Definamax
                 </a>
+                <p className="text-center text-sm font-medium text-green-700 mt-2">
+                  Emagreça até {formData.goal}kg com esse kit
+                </p>
                 <div className="mt-3">
                   <a
                     href="https://definamaxoficial.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("botao-site-oficial", { step: 4 })}
                     className="w-full py-3 px-6 bg-white border-2 border-green-600 hover:bg-green-50 text-green-600 font-bold rounded-md shadow-sm flex items-center justify-center text-lg transition-colors"
                   >
                     Acessar o Site Oficial Definamax
@@ -1042,20 +1367,15 @@ export default function WeightLossRecommendation() {
                       <span>{recommendation}</span>
                     </li>
                   ))}
-                  <li className="flex items-start">
-                    <ChevronRight className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Mantenha uma dieta balanceada, rica em proteínas e vegetais</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Tome as cápsulas conforme recomendado, preferencialmente 30 minutos antes das refeições</span>
-                  </li>
                 </ul>
               </div>
 
               <div className="space-y-3">
                 <button
-                  onClick={handleReset}
+                  onClick={() => {
+                    trackEvent("botao-refazer-avaliacao", { step: 4 })
+                    handleReset()
+                  }}
                   className="w-full py-3 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-md shadow-md flex items-center justify-center transition-colors"
                 >
                   <ArrowLeft className="mr-2 h-5 w-5" />
