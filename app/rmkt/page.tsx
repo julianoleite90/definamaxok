@@ -224,8 +224,7 @@ export default function LandingPage() {
     {/* Barra de Promoção Dia das Mães */}
     <div className="w-full bg-pink-500 py-2 text-white text-center font-bold px-2">
         <p className="flex flex-wrap justify-center items-center gap-1 text-sm sm:text-base">
-          <span>❤️ Promoção Exclusiva Dia das Mães: só hoje ganhe R$60,00 de bônus, use o cupom</span>
-          <span className="bg-white text-pink-500 px-2 py-0.5 rounded inline-block">MAE</span>
+          <span>❤️ Hoje é um dia muito especial! Feliz dia das Mães</span>
           <span>❤️</span>
         </p>
       </div>
