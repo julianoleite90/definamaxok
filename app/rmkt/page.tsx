@@ -220,6 +220,15 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
+
+    {/* Barra de Promoção Dia das Mães */}
+    <div className="w-full bg-pink-500 py-2 text-white text-center font-bold px-2">
+        <p className="flex flex-wrap justify-center items-center gap-1 text-sm sm:text-base">
+          <span>❤️ Promoção Exclusiva Dia das Mães: só hoje ganhe R$60,00 de bônus, use o cupom</span>
+          <span className="bg-white text-pink-500 px-2 py-0.5 rounded inline-block">MAE</span>
+          <span>❤️</span>
+        </p>
+      </div>
       {/* Header */}
       <header className="w-full bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-4 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>

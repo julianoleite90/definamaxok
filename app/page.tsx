@@ -209,7 +209,14 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
-      {/* Header */}
+    {/* Barra de Promoção Dia das Mães */}
+    <div className="w-full bg-pink-500 py-2 text-white text-center font-bold px-2">
+        <p className="flex flex-wrap justify-center items-center gap-1 text-sm sm:text-base">
+          <span>❤️ Promoção Exclusiva Dia das Mães: só hoje ganhe R$60,00 de bônus, use o cupom</span>
+          <span className="bg-white text-pink-500 px-2 py-0.5 rounded inline-block">MAE</span>
+          <span>❤️</span>
+        </p>
+      </div>      {/* Header */}
       <header className="w-full relative overflow-hidden">
         {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
@@ -367,8 +374,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 7 meses de Definamax, perdi 27kg!
-                     O melhor é que a fome sumiu e eu tenho uma energia incrível pra tudo. Super recomendo!"
+                    "Oi, gente! Em 7 meses de Definamax, perdi 27kg! O melhor é que a fome sumiu e eu tenho uma energia
+                    incrível pra tudo. Super recomendo!"
                   </p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
@@ -412,9 +419,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                  "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! 
-                  Com Definamax, perdi 22 kg e tô chocada com o resultado no meu corpo.
-                   Finalmente eu consegui, depois de anos tentando."
+                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg
+                    e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
                   </p>
                   <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
@@ -458,8 +464,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
-                    meu corpo."
+                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e meu
+                    corpo."
                   </p>
                   <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
@@ -695,8 +701,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 7 meses de Definamax, eu perdi 27 kg!
-                     O melhor é que a fome sumiu e eu tenho uma energia incrível pra tudo. Super recomendo!"
+                    "Oi, gente! Em 7 meses de Definamax, eu perdi 27 kg! O melhor é que a fome sumiu e eu tenho uma
+                    energia incrível pra tudo. Super recomendo!"
                   </p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
@@ -740,8 +746,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! 
-                    Com Definamax, perdi 22 kg e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
+                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg
+                    e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
                   </p>
                   <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
@@ -785,8 +791,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e
-                    do meu corpo."
+                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e do meu
+                    corpo."
                   </p>
                   <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
