@@ -207,6 +207,36 @@ export default function LandingPage() {
     window.open(`https://wa.me/5541984549172?text=${message}`, "_blank")
   }
 
+  // Handle video playback consistently across devices
+  useEffect(() => {
+    const handleVideoPlayback = () => {
+      const videoIframe = document.querySelector('iframe[src*="vimeo.com"]')
+      if (videoIframe) {
+        // Only attempt to play video when it's in viewport
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // When in viewport, ensure video is properly configured
+                if (!videoIframe.src.includes("autoplay=1")) {
+                  videoIframe.src = videoIframe.src + "&autoplay=1"
+                }
+              }
+            })
+          },
+          { threshold: 0.5 },
+        )
+
+        observer.observe(videoIframe)
+        return () => observer.disconnect()
+      }
+    }
+
+    // Run after a short delay to ensure DOM is fully loaded
+    const timer = setTimeout(handleVideoPlayback, 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
@@ -999,7 +1029,7 @@ export default function LandingPage() {
                   alt=""
                 />
                 <iframe
-                  src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
+                  src="https://player.vimeo.com/video/1082333298?loop=1&muted=1&background=1"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
