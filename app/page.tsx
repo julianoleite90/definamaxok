@@ -209,8 +209,8 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
- {/* Header */}
-      <header className="w-full relative overflow-hidden">
+      {/* Header */}
+      <header id="inicio" className="w-full relative overflow-hidden">
         {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
@@ -218,11 +218,10 @@ export default function LandingPage() {
             <Image src="/logo2.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
           </div>
         </div>
-        <meta name="google-site-verification" content="055Y8Zlr7CXBMOD8_TVqgFAiashS0o5vcUD8K7vxO_s" />
       </header>
 
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8">
+      <section id="beneficios" className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8">
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
@@ -307,7 +306,7 @@ export default function LandingPage() {
       </section>
 
       {/* Depoimentos - Carrossel React - Movido para cima para mostrar prova social mais cedo */}
-      <section className="w-full py-16 bg-green-50">
+      <section id="depoimentos" className="w-full py-16 bg-green-50">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
@@ -976,7 +975,7 @@ export default function LandingPage() {
 
       {/* Benefícios */}
       {/* Ciência por trás do Definamax */}
-      <section className="w-full py-16 bg-white">
+      <section id="como-funciona" className="w-full py-16 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
@@ -1055,7 +1054,7 @@ export default function LandingPage() {
       </section>
 
       {/* Comparativo */}
-      <section className="w-full py-16 bg-green-50">
+      <section id="comparativo" className="w-full py-16 bg-green-50">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
@@ -1178,7 +1177,7 @@ export default function LandingPage() {
       </section>
 
       {/* Aprovação ANVISA e Garantia */}
-      <section className="w-full py-12 bg-white">
+      <section id="garantia" className="w-full py-12 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Aprovação ANVISA */}
@@ -1511,7 +1510,7 @@ export default function LandingPage() {
       </section>
 
       {/* Avaliações estilo Amazon - Movido para cima */}
-      <section className="w-full py-8 bg-green-50">
+      <section id="avaliacoes" className="w-full py-8 bg-green-50">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
@@ -2036,7 +2035,7 @@ export default function LandingPage() {
       </section>
 
       {/* Perguntas Frequentes (FAQ) */}
-      <section className="w-full py-16 bg-white">
+      <section id="faq" className="w-full py-16 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
@@ -2099,9 +2098,9 @@ export default function LandingPage() {
                   openFaqs.faq2 ? "block" : "hidden"
                 }`}
               >
-                Os principais benefícios do Definamax incluem: emagrecimento rápido e natural, aumento da saciedade,
-                controle da compulsão alimentar, aceleração do metabolismo, queima da gordura teimosa, melhora da
-                disposição e bem-estar geral.
+                Os principais benefícios do Definamax incluem a absorção de até 76% da gordura consumida, o aumento da
+                saciedade, o controle da compulsão alimentar, a aceleração do metabolismo e a promoção de resultados
+                visíveis em poucas semanas. Além disso, ele é 100% natural e não causa efeitos colaterais.
               </div>
             </div>
 
@@ -2127,9 +2126,9 @@ export default function LandingPage() {
                   openFaqs.faq3 ? "block" : "hidden"
                 }`}
               >
-                Definamax é um produto 100% natural e não possui contraindicações ou efeitos colaterais conhecidos. No
-                entanto, gestantes, lactantes e pessoas com doenças preexistentes devem consultar um médico antes de
-                iniciar o uso.
+                Por ser um produto 100% natural, o Definamax não possui contraindicações ou efeitos colaterais
+                conhecidos. No entanto, gestantes, lactantes e pessoas com doenças preexistentes devem consultar um
+                médico antes de iniciar o uso.
               </div>
             </div>
 
@@ -2140,7 +2139,7 @@ export default function LandingPage() {
                 onClick={() => toggleFaq("faq4")}
                 aria-expanded={openFaqs.faq4}
               >
-                Como devo utilizar o Definamax para obter os melhores resultados?
+                Como devo usar o Definamax para obter os melhores resultados?
                 <svg
                   className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq4 ? "rotate-180" : ""}`}
                   fill="none"
@@ -2155,9 +2154,9 @@ export default function LandingPage() {
                   openFaqs.faq4 ? "block" : "hidden"
                 }`}
               >
-                Recomenda-se utilizar 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições,
-                com um copo de água. Para obter os melhores resultados, utilize o produto de forma contínua por pelo
-                menos 3 meses.
+                Recomenda-se o uso de 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições
+                (almoço e jantar). Para obter os melhores resultados, é importante manter uma alimentação equilibrada e
+                praticar atividades físicas regularmente.
               </div>
             </div>
 
@@ -2168,7 +2167,7 @@ export default function LandingPage() {
                 onClick={() => toggleFaq("faq5")}
                 aria-expanded={openFaqs.faq5}
               >
-                Qual o prazo de entrega e a política de garantia do Definamax?
+                Qual o prazo de entrega e como funciona a garantia de 30 dias?
                 <svg
                   className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq5 ? "rotate-180" : ""}`}
                   fill="none"
@@ -2184,29 +2183,16 @@ export default function LandingPage() {
                 }`}
               >
                 O prazo de entrega do Definamax varia de acordo com a sua região, mas geralmente é de 5 a 10 dias úteis.
-                Oferecemos uma garantia de satisfação de 30 dias. Se você não estiver satisfeito com os resultados,
-                basta entrar em contato conosco para receber 100% do seu dinheiro de volta.
+                Oferecemos uma garantia incondicional de 30 dias. Se você não estiver completamente satisfeito com os
+                resultados, basta entrar em contato conosco para receber 100% do seu dinheiro de volta, sem perguntas.
               </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-10 flex-col items-center">
-            <button
-              onClick={scrollToBuy}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
-            >
-              EU QUERO EXPERIMENTAR! <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
-              <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>Compra 100% segura • Satisfação garantida</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="w-full py-8 bg-green-800 text-white">
+      <footer id="contato" className="w-full py-8 bg-green-800 text-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <Image src="/logo2.png" alt="Definamax" width={150} height={45} className="h-9 w-auto mx-auto mb-4" />
           <p className="text-sm mb-2">Definamax - O seu aliado natural para o emagrecimento saudável e eficaz.</p>
@@ -2232,6 +2218,7 @@ export default function LandingPage() {
           <p className="text-xs text-gray-300 mt-2">Bourjun Nature Health, Florianópolis Santa Catarina</p>
         </div>
       </footer>
+
       {/* Botão flutuante do WhatsApp */}
       <div id="whatsAppButton" className="fixed bottom-4 right-4 z-50 transition-all duration-300">
         <button
