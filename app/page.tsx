@@ -999,7 +999,7 @@ export default function LandingPage() {
               {/* 16:9 aspect ratio */}
               <div className="absolute inset-0 w-full h-full">
                 <img
-                  src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
+                  src=""
                   alt="Thumbnail do vídeo"
                   className="absolute top-0 left-0 w-full h-full object-cover z-10"
                   id="videoThumbnail"
