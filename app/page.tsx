@@ -209,13 +209,7 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
-    {/* Barra de Promoção Dia das Mães */}
-    <div className="w-full bg-pink-500 py-2 text-white text-center font-bold px-2">
-        <p className="flex flex-wrap justify-center items-center gap-1 text-sm sm:text-base">
-          <span>❤️ Hoje é um dia muito especial! Feliz dia das Mães</span>
-          <span>❤️</span>
-        </p>
-      </div>      {/* Header */}
+ {/* Header */}
       <header className="w-full relative overflow-hidden">
         {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
@@ -224,6 +218,7 @@ export default function LandingPage() {
             <Image src="/logo2.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
           </div>
         </div>
+        <meta name="google-site-verification" content="055Y8Zlr7CXBMOD8_TVqgFAiashS0o5vcUD8K7vxO_s" />
       </header>
 
       {/* Hero Section */}
