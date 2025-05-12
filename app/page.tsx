@@ -212,29 +212,53 @@ export default function LandingPage() {
     const handleVideoPlayback = () => {
       const videoIframe = document.querySelector('iframe[src*="vimeo.com"]')
       if (videoIframe) {
-        // Only attempt to play video when it's in viewport
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // When in viewport, ensure video is properly configured
-                if (!videoIframe.src.includes("autoplay=1")) {
-                  videoIframe.src = videoIframe.src + "&autoplay=1"
-                }
-              }
-            })
-          },
-          { threshold: 0.5 },
-        )
+        // For iOS devices, we need to ensure these parameters are in the URL
+        if (
+          !videoIframe.src.includes("autoplay=1") ||
+          !videoIframe.src.includes("playsinline=1") ||
+          !videoIframe.src.includes("muted=1")
+        ) {
+          // Parse current URL and add missing parameters
+          const currentSrc = new URL(videoIframe.src)
+          if (!currentSrc.searchParams.has("autoplay")) currentSrc.searchParams.set("autoplay", "1")
+          if (!currentSrc.searchParams.has("playsinline")) currentSrc.searchParams.set("playsinline", "1")
+          if (!currentSrc.searchParams.has("muted")) currentSrc.searchParams.set("muted", "1")
+          if (!currentSrc.searchParams.has("loop")) currentSrc.searchParams.set("loop", "1")
+          if (!currentSrc.searchParams.has("background")) currentSrc.searchParams.set("background", "1")
 
-        observer.observe(videoIframe)
-        return () => observer.disconnect()
+          videoIframe.src = currentSrc.toString()
+        }
+
+        // Add playsinline attribute explicitly (belt and suspenders approach)
+        videoIframe.setAttribute("playsinline", "")
+        videoIframe.setAttribute("muted", "")
+
+        // For iOS, sometimes we need to manually play the video after user interaction
+        const attemptAutoplay = () => {
+          try {
+            // Try to access the Vimeo player API if available
+            if (window.Vimeo && videoIframe.id) {
+              const player = new window.Vimeo.Player(videoIframe.id)
+              player.play().catch(() => console.log("Autoplay prevented by browser"))
+            }
+          } catch (e) {
+            console.log("Vimeo API not available")
+          }
+        }
+
+        // Try to play after any user interaction
+        document.addEventListener("touchstart", attemptAutoplay, { once: true })
+        document.addEventListener("click", attemptAutoplay, { once: true })
       }
     }
 
     // Run after a short delay to ensure DOM is fully loaded
     const timer = setTimeout(handleVideoPlayback, 1000)
-    return () => clearTimeout(timer)
+    return () => {
+      clearTimeout(timer)
+      document.removeEventListener("touchstart", () => {})
+      document.removeEventListener("click", () => {})
+    }
   }, [])
 
   return (
