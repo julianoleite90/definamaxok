@@ -1062,8 +1062,8 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural x Injeções x Outros Emagrecedores</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Sua Saúde em Primeiro Lugar: Por que escolher Definamax?</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Definamax x Injeções x Outros Emagrecedores</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Por que escolher Definamax?</p>
           </div>
 
           {/* Desktop View */}
@@ -1090,27 +1090,27 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% Natural: Fibras poderosas que absorvem a gordura</span>
+                  <span className="font-medium">Natural e eficaz: Absorve a gordura sem efeitos colaterais.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Detox poderoso para resultados rápidos</span>
+                  <span className="font-medium">Detox rápido: Desinche e veja resultados rapidamente.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Preço acessível: a partir de R$79,90 por frasco</span>
+                  <span className="font-medium">Acessível: Emagreça sem pesar no bolso.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem burocracia: não precisa de receita</span>
+                  <span className="font-medium">Sem receita: Comece sua transformação hoje.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Prático: apenas 2 cápsulas por dia</span>
+                  <span className="font-medium">Fácil: Só 2 cápsulas por dia na sua rotina.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Resultados visíveis em poucas semanas</span>
+                  <span className="font-medium">Resultados rápidos: Veja a diferença em semanas.</span>
                 </li>
               </ul>
             </div>
@@ -1137,29 +1137,29 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Compostos químicos e sintéticos</span>
+                  <span className="font-medium">Químicos: Ingredientes artificiais no seu corpo.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">
-                    Possíveis efeitos colaterais: náuseas, vômitos, desconfortos gastrointestinais
+                  Efeitos colaterais: Enjoos e mal-estar.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Custo elevado: acima de R$1.000/mês</span>
+                  <span className="font-medium">Alto custo: Um investimento mensal pesado.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Exige prescrição e acompanhamento médico</span>
+                  <span className="font-medium">Dependência médica: Processo burocrático.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Aplicação dolorosa e invasiva</span>
+                  <span className="font-medium">Invasivo: Agulhas e desconforto.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Risco de efeito rebote após interrupção</span>
+                  <span className="font-medium">Efeito sanfona: Resultados podem sumir.</span>
                 </li>
               </ul>
             </div>
@@ -1186,27 +1186,27 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Fórmulas genéricas sem comprovação científica</span>
+                  <span className="font-medium">Sem garantia: Fórmulas duvidosas.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Resultados lentos ou inexistentes</span>
+                  <span className="font-medium">Lentos/ineficazes: Tempo e dinheiro perdidos.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Preço alto para pouco resultado</span>
+                  <span className="font-medium">Caro e ineficaz: Pouco resultado por alto preço.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Muitas cápsulas por dia (até 6)</span>
+                  <span className="font-medium">Difícil de seguir: Várias cápsulas ao dia.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem controle de qualidade rigoroso</span>
+                  <span className="font-medium">Sem segurança: Qualidade não garantida.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem garantia de satisfação</span>
+                  <span className="font-medium">Sem garantia: Seu risco, sem compromisso.</span>
                 </li>
               </ul>
             </div>
@@ -1239,23 +1239,23 @@ export default function LandingPage() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Fibras inteligentes que absorvem gordura</span>
+                      <span className="font-medium">Natural e eficaz: Absorve a gordura sem efeitos colaterais.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Detox poderoso</span>
+                      <span className="font-medium">Detox rápido: Desinche e veja resultados rapidamente.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">A partir de R$79,90/frasco</span>
+                      <span className="font-medium">Acessível: Emagreça sem pesar no bolso.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem receita médica</span>
+                      <span className="font-medium">Sem receita: Comece sua transformação hoje.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Apenas 2 cápsulas/dia</span>
+                      <span className="font-medium">Fácil: Só 2 cápsulas por dia na sua rotina.</span>
                     </li>
                   </ul>
                 </div>
@@ -1282,23 +1282,27 @@ export default function LandingPage() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Compostos químicos</span>
+                      <span className="font-medium">Químicos: Ingredientes artificiais no seu corpo.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Efeitos colaterais graves</span>
+                      <span className="font-medium">Efeitos colaterais: Enjoos e mal-estar.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Acima de R$1.000/mês</span>
+                      <span className="font-medium">Alto custo: Um investimento mensal pesado.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Exige receita médica</span>
+                      <span className="font-medium">Dependência médica: Processo burocrático.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Aplicação dolorosa</span>
+                      <span className="font-medium">Invasivo: Agulhas e desconforto.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Efeito sanfona: Resultados podem sumir.</span>
                     </li>
                   </ul>
                 </div>
@@ -1325,23 +1329,23 @@ export default function LandingPage() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem comprovação científica</span>
+                      <span className="font-medium">Sem garantia: Fórmulas duvidosas.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Resultados lentos</span>
+                      <span className="font-medium">Lentos/ineficazes: Tempo e dinheiro perdidos.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Preço alto para pouco resultado</span>
+                      <span className="font-medium">Difícil de seguir: Várias cápsulas ao dia.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Muitas cápsulas por dia</span>
+                      <span className="font-medium">Sem segurança: Qualidade não garantida.</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem garantia de satisfação</span>
+                      <span className="font-medium">Sem garantia: Seu risco, sem compromisso.</span>
                     </li>
                   </ul>
                 </div>
@@ -1396,13 +1400,10 @@ export default function LandingPage() {
                 </svg>
               </div>
               <div>
-                <h4 className="font-bold text-lg text-yellow-800 mb-1">Você sabia?</h4>
+                <h4 className="font-bold text-lg text-yellow-800 mb-1">92% voltam para Definamax!</h4>
                 <p className="text-yellow-700">
-                  <span className="font-bold text-yellow-800">92% das pessoas</span> que escolhem outros produtos ao
-                  invés do Definamax,
-                  <span className="font-bold text-yellow-800"> voltam até o Definamax em poucos dias</span>, pois não
-                  ficaram satisfeitos com os resultados. As fibras inteligentes do Definamax são revolucionárias na
-                  absorção de gordura, capturando até 76% da gordura consumida antes que seu corpo possa absorvê-la.
+                  <span className="font-bold text-yellow-800"></span>Não perca tempo: a experiência de quem tentou outros produtos prova que Definamax entrega os resultados que você busca. Fórmula exclusiva com fibras inteligentes que absorvem até 76% da gordura.
+              
                 </p>
               </div>
             </div>
@@ -1413,7 +1414,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              ESCOLHER MEU TRATAMENTO <ArrowRight className="ml-2 h-5 w-5" />
+              ESCOLHER MEU DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1499,9 +1500,9 @@ export default function LandingPage() {
             <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
               OFERTA ESPECIAL POR TEMPO LIMITADO
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Comece Sua Transformação Hoje</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Comece Seu Emagrecimento Hoje</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
-              Escolha o plano ideal para você e comece a ver resultados em semanas
+              Escolha o kit ideal para você acelerar o seu processo de perda de peso
             </p>
           </div>
 
