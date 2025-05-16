@@ -220,6 +220,66 @@ export default function LandingPage() {
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
       <header className="w-full relative overflow-hidden">
+        {/* Daily Motivational Phrase - Simple Version */}
+        <div className="bg-yellow-50 border-b border-yellow-100 py-2">
+          <div className="mx-auto max-w-5xl px-4">
+            <p className="text-sm md:text-base font-medium text-center">
+              {(() => {
+                const today = new Date().getDay() // 0 = Sunday, 1 = Monday, etc.
+                let phrase
+                let emoji
+
+                switch (today) {
+                  case 0: // Sunday
+                    phrase =
+                      "Domingo é dia de recomeçar! Planeje sua semana para um emagrecimento saudável e duradouro."
+                    emoji = "🌱"
+                    break
+                  case 1: // Monday
+                    phrase = "Segunda-feira: O melhor dia para iniciar novos hábitos e acelerar seu metabolismo!"
+                    emoji = "⚡"
+                    break
+                  case 2: // Tuesday
+                    phrase =
+                      "Terça-feira é dia de persistir! Cada pequena escolha saudável te aproxima do corpo dos seus sonhos."
+                    emoji = "🔝"
+                    break
+                  case 3: // Wednesday
+                    phrase =
+                      "Quarta-feira: Metade da semana e você está indo muito bem! Continue focado no seu emagrecimento."
+                    emoji = "⏱️"
+                    break
+                  case 4: // Thursday
+                    phrase =
+                      "Quinta-feira: Mantenha o foco! Você está cada vez mais perto de conquistar o corpo que deseja."
+                    emoji = "✨"
+                    break
+                  case 5: // Friday
+                    phrase =
+                      "Sexta-feira, um ótimo dia para iniciar o seu processo de emagrecimento de forma saudável e acelerada!"
+                    emoji = "🔥"
+                    break
+                  case 6: // Saturday
+                    phrase =
+                      "Sábado é dia de celebrar cada progresso! Lembre-se que pequenas mudanças trazem grandes resultados."
+                    emoji = "🎉"
+                    break
+                  default:
+                    phrase = "Cada dia é uma nova oportunidade para transformar seu corpo e sua saúde!"
+                    emoji = "💪"
+                }
+
+                return (
+                  <span className="text-green-800">
+                    <span className="font-semibold">{emoji} </span>
+                    {phrase}
+                    <span className="font-semibold"> {emoji}</span>
+                  </span>
+                )
+              })()}
+            </p>
+          </div>
+        </div>
         {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
@@ -1141,9 +1201,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">
-                  Efeitos colaterais: Enjoos e mal-estar.
-                  </span>
+                  <span className="font-medium">Efeitos colaterais: Enjoos e mal-estar.</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1379,36 +1437,6 @@ export default function LandingPage() {
               Deslize para o lado para ver mais comparações ➡️
             </div>
           </div>
-
-          {/* Estatística de retorno */}
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-8 shadow-md">
-            <div className="flex items-start">
-              <div className="bg-yellow-100 rounded-full p-2 mr-3 flex-shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-yellow-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg text-yellow-800 mb-1">92% voltam para Definamax!</h4>
-                <p className="text-yellow-700">
-                  <span className="font-bold text-yellow-800"></span>Não perca tempo: a experiência de quem tentou outros produtos prova que Definamax entrega os resultados que você busca. Fórmula exclusiva com fibras inteligentes que absorvem até 76% da gordura.
-              
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="flex justify-center mt-10 flex-col items-center">
             <button
               onClick={scrollToBuy}
