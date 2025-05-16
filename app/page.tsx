@@ -1213,6 +1213,7 @@ export default function LandingPage() {
           </div>
 
           {/* Mobile View - Carousel */}
+
           <div className="md:hidden">
             <div className="relative overflow-x-auto pb-8">
               <div className="flex space-x-4 w-max px-2 pb-4">
@@ -1251,6 +1252,49 @@ export default function LandingPage() {
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                       <span className="font-medium">Sem receita médica</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Apenas 2 cápsulas/dia</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
+                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    NÃO RECOMENDADO
+                  </div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-red-700">Injeções</h3>
+                    <X className="h-5 w-5 text-red-600" />
+                  </div>
+
+                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="/caneta1.png"
+                      width={400}
+                      height={250}
+                      alt="Efeitos colaterais de injeções"
+                      className="w-full h-36 object-cover rounded-lg"
+                    />
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Compostos químicos</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Efeitos colaterais graves</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Acima de R$1.000/mês</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Exige receita médica</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1599,7 +1643,7 @@ export default function LandingPage() {
 
                 <Link
                   href={addUtmToUrl("https://full.sale/DmNQj1")}
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-lg border-b-4 border-green-700 animate-pulse-border"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
                 >
                   COMPRAR AGORA
                 </Link>
