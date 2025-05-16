@@ -175,21 +175,27 @@ export default function LandingPage() {
     const handleScroll = () => {
       const whatsAppButton = document.getElementById("whatsAppButton")
       const buySection = buyRef.current
+      const heroSection = document.querySelector("section") // First section (hero)
 
-      if (whatsAppButton && buySection) {
+      if (whatsAppButton && buySection && heroSection) {
+        const scrollPosition = window.scrollY
+        const heroRect = heroSection.getBoundingClientRect()
         const buyRect = buySection.getBoundingClientRect()
         const windowHeight = window.innerHeight
+
+        // Check if we've scrolled past the hero section
+        const isPastHeroSection = scrollPosition > heroSection.offsetHeight
 
         // Check if buy section is visible in viewport
         const isBuySectionVisible = buyRect.top < windowHeight && buyRect.bottom > 0
 
-        // Hide button when in buy section, show otherwise
-        if (isBuySectionVisible) {
-          whatsAppButton.style.transform = "translateY(100px)"
-          whatsAppButton.style.opacity = "0"
-        } else {
+        // Show button only after scrolling past hero section AND when not in buy section
+        if (isPastHeroSection && !isBuySectionVisible) {
           whatsAppButton.style.transform = "translateY(0)"
           whatsAppButton.style.opacity = "1"
+        } else {
+          whatsAppButton.style.transform = "translateY(100px)"
+          whatsAppButton.style.opacity = "0"
         }
       }
     }
@@ -995,7 +1001,10 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 items-center gap-8">
             <div className="relative w-full overflow-hidden rounded-lg shadow-lg aspect-video">
-            <img src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png" alt="" />
+              <img
+                src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
+                alt=""
+              />
               <iframe
                 src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
                 className="absolute top-0 left-0 w-full h-full"
@@ -1242,49 +1251,6 @@ export default function LandingPage() {
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                       <span className="font-medium">Sem receita médica</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Apenas 2 cápsulas/dia</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
-                    NÃO RECOMENDADO
-                  </div>
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-red-700">Injeções</h3>
-                    <X className="h-5 w-5 text-red-600" />
-                  </div>
-
-                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
-                    <Image
-                      src="/caneta1.png"
-                      width={400}
-                      height={250}
-                      alt="Efeitos colaterais de injeções"
-                      className="w-full h-36 object-cover rounded-lg"
-                    />
-                  </div>
-
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Compostos químicos</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Efeitos colaterais graves</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Acima de R$1.000/mês</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Exige receita médica</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
