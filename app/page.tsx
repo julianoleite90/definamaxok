@@ -4,6 +4,9 @@ import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
 
+// Adicione esta imagem para o novo comparativo
+const outrosEmagrecedoresImg = "/placeholder-m1oov.png"
+
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
   const [testimonialPage, setTestimonialPage] = useState(0)
@@ -209,7 +212,7 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
- {/* Header */}
+      {/* Header */}
       <header className="w-full relative overflow-hidden">
         {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
@@ -991,27 +994,16 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 items-center gap-8">
-            <div className="relative w-full h-0 pb-[56.25%]">
-              {" "}
-              {/* 16:9 aspect ratio */}
-              <div className="absolute inset-0 w-full h-full">
-                <img
-                  src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
-                  alt=""
-                />
-                <iframe
-                  src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
-                  className="absolute top-0 left-0 w-full h-full"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  muted
-                  playsInline
-                  title="Como o Definamax funciona"
-                ></iframe>
-              </div>
-              {/* Opcional: Adicione uma camada de sobreposição para melhorar a legibilidade do texto */}
-              <div className="absolute inset-0 z-10"></div>
+            <div className="relative w-full overflow-hidden rounded-lg shadow-lg aspect-video">
+            <img src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png" alt="" />
+              <iframe
+                src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Definamax - Como funciona"
+              ></iframe>
             </div>
 
             <div className="space-y-6">
@@ -1061,11 +1053,12 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural x Injeções Químicas</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural x Injeções x Outros Emagrecedores</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Sua Saúde em Primeiro Lugar: Por que escolher Definamax?</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Desktop View */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-500 shadow-md relative overflow-hidden transform hover:scale-105 transition-duration-300">
               <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
                 RECOMENDADO
@@ -1077,11 +1070,11 @@ export default function LandingPage() {
 
               <div className="mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/natural-1.png"
+                  src="/clorela.png"
                   width={400}
                   height={250}
                   alt="Benefícios do suplemento natural"
-                  className="w-full h-48 object-contain rounded-lg"
+                  className="w-full h-48 object-cover rounded-lg"
                 />
               </div>
 
@@ -1124,11 +1117,11 @@ export default function LandingPage() {
 
               <div className="mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/perigoso-1.png"
+                  src="/caneta.png"
                   width={400}
                   height={250}
                   alt="Efeitos colaterais de injeções"
-                  className="w-full h-48 object-contain rounded-lg"
+                  className="w-full h-48 object-cover rounded-lg"
                 />
               </div>
 
@@ -1161,7 +1154,250 @@ export default function LandingPage() {
                 </li>
               </ul>
             </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200 shadow-md relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                NÃO RECOMENDADO
+              </div>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold text-orange-700">Outros Emagrecedores</h3>
+                <X className="h-6 w-6 text-orange-600" />
+              </div>
+
+              <div className="mb-6 rounded-lg overflow-hidden bg-white p-2">
+                <Image
+                  src="/outros.png"
+                  width={400}
+                  height={250}
+                  alt="Outros emagrecedores"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </div>
+
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Fórmulas genéricas sem comprovação científica</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Resultados lentos ou inexistentes</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Preço alto para pouco resultado</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Muitas cápsulas por dia (até 6)</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Sem controle de qualidade rigoroso</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Sem garantia de satisfação</span>
+                </li>
+              </ul>
+            </div>
           </div>
+
+          {/* Mobile View - Carousel */}
+          <div className="md:hidden">
+            <div className="relative overflow-x-auto pb-8">
+              <div className="flex space-x-4 w-max px-2 pb-4">
+                <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-500 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
+                  <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    RECOMENDADO
+                  </div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-green-700">Definamax</h3>
+                    <CheckCircle2 className="h-5 w-5 text-green-600" />
+                  </div>
+
+                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="/clorela1.png"
+                      width={400}
+                      height={250}
+                      alt="Benefícios do suplemento natural"
+                      className="w-full h-36 object-cover rounded-lg"
+                    />
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Fibras inteligentes que absorvem gordura</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Detox poderoso</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">A partir de R$79,90/frasco</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Sem receita médica</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Apenas 2 cápsulas/dia</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
+                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    NÃO RECOMENDADO
+                  </div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-red-700">Injeções</h3>
+                    <X className="h-5 w-5 text-red-600" />
+                  </div>
+
+                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="/caneta1.png"
+                      width={400}
+                      height={250}
+                      alt="Efeitos colaterais de injeções"
+                      className="w-full h-36 object-cover rounded-lg"
+                    />
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Compostos químicos</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Efeitos colaterais graves</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Acima de R$1.000/mês</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Exige receita médica</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Aplicação dolorosa</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
+                  <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    NÃO RECOMENDADO
+                  </div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-orange-700">Outros</h3>
+                    <X className="h-5 w-5 text-orange-600" />
+                  </div>
+
+                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="/outros1.png"
+                      width={400}
+                      height={250}
+                      alt="Outros emagrecedores"
+                      className="w-full h-36 object-cover rounded-lg"
+                    />
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Sem comprovação científica</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Resultados lentos</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Preço alto para pouco resultado</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Muitas cápsulas por dia</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Sem garantia de satisfação</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Scroll indicator */}
+              <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+                <div className="flex items-center space-x-1">
+                  <div className="w-8 h-1 bg-green-500 rounded-full"></div>
+                  <div className="w-8 h-1 bg-gray-300 rounded-full"></div>
+                  <div className="w-8 h-1 bg-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Scroll prompt */}
+              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-600 text-white rounded-full p-2 animate-pulse shadow-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Scroll instruction */}
+            <div className="text-center text-sm text-green-700 font-medium mt-2 mb-6 animate-pulse">
+              Deslize para o lado para ver mais comparações ➡️
+            </div>
+          </div>
+
+          {/* Estatística de retorno */}
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-8 shadow-md">
+            <div className="flex items-start">
+              <div className="bg-yellow-100 rounded-full p-2 mr-3 flex-shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-yellow-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-lg text-yellow-800 mb-1">Você sabia?</h4>
+                <p className="text-yellow-700">
+                  <span className="font-bold text-yellow-800">92% das pessoas</span> que escolhem outros produtos ao
+                  invés do Definamax,
+                  <span className="font-bold text-yellow-800"> voltam até o Definamax em poucos dias</span>, pois não
+                  ficaram satisfeitos com os resultados. As fibras inteligentes do Definamax são revolucionárias na
+                  absorção de gordura, capturando até 76% da gordura consumida antes que seu corpo possa absorvê-la.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex justify-center mt-10 flex-col items-center">
             <button
               onClick={scrollToBuy}
