@@ -232,40 +232,40 @@ export default function LandingPage() {
                 switch (today) {
                   case 0: // Sunday
                     phrase =
-                      "Domingo é dia de recomeçar! Planeje sua semana para um emagrecimento saudável e duradouro."
+                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "🌱"
                     break
                   case 1: // Monday
-                    phrase = "Segunda-feira: O melhor dia para iniciar novos hábitos e acelerar seu metabolismo!"
+                    phrase = "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "⚡"
                     break
                   case 2: // Tuesday
                     phrase =
-                      "Terça-feira é dia de persistir! Cada pequena escolha saudável te aproxima do corpo dos seus sonhos."
+                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "🔝"
                     break
                   case 3: // Wednesday
                     phrase =
-                      "Quarta-feira: Metade da semana e você está indo muito bem! Continue focado no seu emagrecimento."
+                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "⏱️"
                     break
                   case 4: // Thursday
                     phrase =
-                      "Quinta-feira: Mantenha o foco! Você está cada vez mais perto de conquistar o corpo que deseja."
+                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "✨"
                     break
                   case 5: // Friday
                     phrase =
-                      "Sexta-feira, um ótimo dia para iniciar o seu processo de emagrecimento de forma saudável e acelerada!"
+                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "🔥"
                     break
                   case 6: // Saturday
                     phrase =
-                      "Sábado é dia de celebrar cada progresso! Lembre-se que pequenas mudanças trazem grandes resultados."
+                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "🎉"
                     break
                   default:
-                    phrase = "Cada dia é uma nova oportunidade para transformar seu corpo e sua saúde!"
+                    phrase = "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
                     emoji = "💪"
                 }
 
