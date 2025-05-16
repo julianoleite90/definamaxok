@@ -335,7 +335,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Queime a gordura teimosa (braços, coxas, e papada)</span>
+                  <span className="font-medium">Elimine a gordura teimosa (braços, coxas, e papada)</span>
                 </li>
 
                 <li className="flex items-start">
@@ -358,7 +358,7 @@ export default function LandingPage() {
 
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
@@ -1037,7 +1037,7 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
         </div>
@@ -1446,7 +1446,7 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
         </div>
@@ -2304,7 +2304,7 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
         </div>
