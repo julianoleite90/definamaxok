@@ -232,41 +232,41 @@ export default function LandingPage() {
                 switch (today) {
                   case 0: // Sunday
                     phrase =
-                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "🌱"
+                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "🔥"
                     break
                   case 1: // Monday
-                    phrase = "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "⚡"
+                    phrase = "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "🔥"
                     break
                   case 2: // Tuesday
                     phrase =
-                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "🔝"
+                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "🔥"
                     break
                   case 3: // Wednesday
                     phrase =
-                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "⏱️"
+                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "⏱🔥"
                     break
                   case 4: // Thursday
                     phrase =
-                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "✨"
+                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "🔥"
                     break
                   case 5: // Friday
                     phrase =
-                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
+                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
                     emoji = "🔥"
                     break
                   case 6: // Saturday
                     phrase =
-                      "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "🎉"
+                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "🔥"
                     break
                   default:
-                    phrase = "Primeira compra? Use o cupom: PRIMEIRACOMPRA e ganhe 10% de desconto!"
-                    emoji = "💪"
+                    phrase = "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
+                    emoji = "🔥"
                 }
 
                 return (
