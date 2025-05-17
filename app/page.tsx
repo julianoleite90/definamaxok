@@ -1061,8 +1061,8 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Definamax x Injeções x Outros Emagrecedores</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Por que escolher Definamax?</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Definamax x Injeções de Emagrecimento</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Por que Definamax é a melhor escolha?</p>
           </div>
 
           {/* Desktop View */}
