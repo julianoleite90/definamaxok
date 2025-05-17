@@ -220,67 +220,6 @@ export default function LandingPage() {
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header */}
       <header className="w-full relative overflow-hidden">
-        {/* Daily Motivational Phrase - Simple Version */}
-        <div className="bg-yellow-50 border-b border-yellow-100 py-2">
-          <div className="mx-auto max-w-5xl px-4">
-            <p className="text-sm md:text-base font-medium text-center">
-              {(() => {
-                const today = new Date().getDay() // 0 = Sunday, 1 = Monday, etc.
-                let phrase
-                let emoji
-
-                switch (today) {
-                  case 0: // Sunday
-                    phrase =
-                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                    break
-                  case 1: // Monday
-                    phrase = "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                    break
-                  case 2: // Tuesday
-                    phrase =
-                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                    break
-                  case 3: // Wednesday
-                    phrase =
-                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "⏱🔥"
-                    break
-                  case 4: // Thursday
-                    phrase =
-                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                    break
-                  case 5: // Friday
-                    phrase =
-                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                    break
-                  case 6: // Saturday
-                    phrase =
-                      "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                    break
-                  default:
-                    phrase = "Descubra o Poder Das Fibras Inteligentes Que Absorvem a Gordura!"
-                    emoji = "🔥"
-                }
-
-                return (
-                  <span className="text-green-800">
-                    <span className="font-semibold">{emoji} </span>
-                    {phrase}
-                    <span className="font-semibold"> {emoji}</span>
-                  </span>
-                )
-              })()}
-            </p>
-          </div>
-        </div>
-        {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <div className="mx-auto max-w-5xl px-4 flex justify-center">
@@ -1127,7 +1066,7 @@ export default function LandingPage() {
           </div>
 
           {/* Desktop View */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
+          <div className="hidden md:grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-500 shadow-md relative overflow-hidden transform hover:scale-105 transition-duration-300">
               <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
                 RECOMENDADO
@@ -1218,53 +1157,6 @@ export default function LandingPage() {
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">Efeito sanfona: Resultados podem sumir.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200 shadow-md relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
-                NÃO RECOMENDADO
-              </div>
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold text-orange-700">Outros Emagrecedores</h3>
-                <X className="h-6 w-6 text-orange-600" />
-              </div>
-
-              <div className="mb-6 rounded-lg overflow-hidden bg-white p-2">
-                <Image
-                  src="/outros.png"
-                  width={400}
-                  height={250}
-                  alt="Outros emagrecedores"
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-              </div>
-
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem garantia: Fórmulas duvidosas.</span>
-                </li>
-                <li className="flex items-start">
-                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Lentos/ineficazes: Tempo e dinheiro perdidos.</span>
-                </li>
-                <li className="flex items-start">
-                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Caro e ineficaz: Pouco resultado por alto preço.</span>
-                </li>
-                <li className="flex items-start">
-                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Difícil de seguir: Várias cápsulas ao dia.</span>
-                </li>
-                <li className="flex items-start">
-                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem segurança: Qualidade não garantida.</span>
-                </li>
-                <li className="flex items-start">
-                  <X className="h-5 w-5 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem garantia: Seu risco, sem compromisso.</span>
                 </li>
               </ul>
             </div>
@@ -1364,56 +1256,12 @@ export default function LandingPage() {
                     </li>
                   </ul>
                 </div>
-
-                <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
-                  <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
-                    NÃO RECOMENDADO
-                  </div>
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-orange-700">Outros</h3>
-                    <X className="h-5 w-5 text-orange-600" />
-                  </div>
-
-                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
-                    <Image
-                      src="/outros1.png"
-                      width={400}
-                      height={250}
-                      alt="Outros emagrecedores"
-                      className="w-full h-36 object-cover rounded-lg"
-                    />
-                  </div>
-
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem garantia: Fórmulas duvidosas.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Lentos/ineficazes: Tempo e dinheiro perdidos.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Difícil de seguir: Várias cápsulas ao dia.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem segurança: Qualidade não garantida.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <X className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem garantia: Seu risco, sem compromisso.</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               {/* Scroll indicator */}
               <div className="absolute bottom-0 left-0 right-0 flex justify-center">
                 <div className="flex items-center space-x-1">
                   <div className="w-8 h-1 bg-green-500 rounded-full"></div>
-                  <div className="w-8 h-1 bg-gray-300 rounded-full"></div>
                   <div className="w-8 h-1 bg-gray-300 rounded-full"></div>
                 </div>
               </div>
