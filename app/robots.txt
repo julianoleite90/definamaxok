@@ -3,7 +3,7 @@ Allow: /
 
 # Permitir acesso a todas as páginas importantes
 Allow: /perguntas-frequentes
-Allow: /analise-imc
+Allow: /avaliacao
 Allow: /termos-garantia
 Allow: /termos
 Allow: /privacidade
