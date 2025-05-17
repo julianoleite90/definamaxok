@@ -1,11 +1,11 @@
-import type { MetadataRoute } from "next"
+User-agent: *
+Allow: /
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: "https://www.definamaxoficial.com/sitemap.xml",
-  }
-}
+# Permitir acesso a todas as páginas importantes
+Allow: /perguntas-frequentes
+Allow: /analise-imc
+Allow: /termos-garantia
+Allow: /termos
+Allow: /privacidade
+
+Sitemap: https://www.definamaxoficial.com/sitemap.xml
