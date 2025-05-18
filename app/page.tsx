@@ -2397,15 +2397,24 @@ export default function LandingPage() {
             prevenir qualquer doença. Consulte sempre um profissional de saúde qualificado antes de iniciar qualquer
             programa de emagrecimento.
           </p>
-          <div className="flex justify-center space-x-4 mb-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            <Link href="/avaliacao" className="text-sm hover:text-green-200">
+              Avaliação de IMC
+            </Link>
             <Link href="/termos" className="text-sm hover:text-green-200">
-              Termos de Uso
+              Termos de Garantia
+            </Link>
+            <Link href="/perguntas-frequentes" className="text-sm hover:text-green-200">
+              Perguntas Frequentes
+            </Link>
+            <Link href="/produto" className="text-sm hover:text-green-200">
+              Produtos
+            </Link>
+            <Link href="/Depoimentos" className="text-sm hover:text-green-200">
+              Depoimentos em Vídeo
             </Link>
             <Link href="/privacidade" className="text-sm hover:text-green-200">
               Política de Privacidade
-            </Link>
-            <Link href="https://www.definamaxoficial.com/termos" className="text-sm hover:text-green-200">
-              Política de Reembolso
             </Link>
           </div>
           <p className="text-xs text-gray-300">

@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Definamax | Emagreça rápido sem dietas restritivas ou injeções perigosas",
+  title: "Definamax | Site Oficial",
   description:
     "Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade. Resultados visíveis em semanas com Definamax.",
   icons: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://www.definamaxoficial.com",
-    title: "Definamax | Emagreça rápido sem dietas restritivas",
+    title: "Definamax | Site",
     description:
       "Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade. Resultados visíveis em semanas.",
     siteName: "Definamax",
