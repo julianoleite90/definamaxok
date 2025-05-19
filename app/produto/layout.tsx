@@ -1,12 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
+import "../globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Definamax Site Oficial - Emagrecedor N1 do Brasil",
+  title: "Definamax Site Oficial Produto - Emagrecedor N1 do Brasil",
   description:
     "Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade. Resultados visíveis em semanas com Definamax.",
   icons: {

@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
-import Head from "next/head"
 
 // Adicione esta imagem para o novo comparativo
 const outrosEmagrecedoresImg = "/placeholder-m1oov.png"
@@ -15,7 +14,7 @@ export default function LandingPage() {
 
   // Estado para controlar a exibição de mais avaliações
   const [showMoreReviews, setShowMoreReviews] = useState(false)
-  const [showMoreTestimonials, setShowMoreTestimonials] = useState(false)
+  const [showMoreTestimonials, setshowMoreTestimonials] = useState(false)
 
   // Estado para contagem regressiva
   const [timeLeft, setTimeLeft] = useState({
@@ -219,50 +218,6 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
-      <Head>
-        <title>Definamax - Suplemento Natural para Emagrecimento Rápido e Saudável</title>
-        <meta
-          name="description"
-          content="Definamax: suplemento natural que absorve gordura, acelera o metabolismo e aumenta a saciedade. Emagreça até 27kg sem dietas restritivas ou injeções perigosas."
-        />
-        <meta
-          name="keywords"
-          content="Definamax, emagrecimento, perda de peso, suplemento natural, absorção de gordura, metabolismo acelerado, saciedade, emagrecer rápido, sem dietas, sem injeções"
-        />
-        <meta name="author" content="Definamax" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.definamaxoficial.com/" />
-        <meta property="og:title" content="Definamax - Suplemento Natural para Emagrecimento Rápido e Saudável" />
-        <meta
-          property="og:description"
-          content="Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo."
-        />
-        <meta property="og:image" content="https://www.definamaxoficial.com/mockup.png" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.definamaxoficial.com/" />
-        <meta property="twitter:title" content="Definamax - Suplemento Natural para Emagrecimento" />
-        <meta
-          property="twitter:description"
-          content="Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo."
-        />
-        <meta property="twitter:image" content="https://www.definamaxoficial.com/mockup.png" />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://www.definamaxoficial.com/" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Mobile Optimization */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        {/* Language */}
-        <meta httpEquiv="content-language" content="pt-BR" />
-      </Head>
       {/* Header */}
       <header className="w-full relative overflow-hidden">
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
@@ -997,7 +952,7 @@ export default function LandingPage() {
               {/* Load More Button for Mobile */}
               <div className="flex justify-center mt-8">
                 <button
-                  onClick={() => setShowMoreTestimonials(!showMoreTestimonials)}
+                  onClick={() => setshowMoreTestimonials(!showMoreTestimonials)}
                   className="inline-flex items-center justify-center rounded-lg border border-green-600 px-6 py-3 text-sm font-medium text-green-600 hover:bg-green-50"
                 >
                   {showMoreTestimonials ? "Ver menos depoimentos" : "Ver mais depoimentos"}
@@ -1097,6 +1052,76 @@ export default function LandingPage() {
                   QUERO EXPERIMENTAR <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Processo de Fabricação */}
+      <section className="w-full py-16 bg-green-50" aria-label="Como o Definamax é fabricado">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="text-center mb-10">
+            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
+              Qualidade Garantida
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              Como o <span className="text-green-700">Definamax é Fabricado?</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Conheça o rigoroso processo de fabricação que garante a qualidade e eficácia do Definamax
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 items-center gap-8">
+            <div className="space-y-6">
+              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Matérias-Primas Selecionadas</h3>
+                <p className="text-gray-700">
+                  Utilizamos apenas ingredientes naturais da mais alta qualidade, selecionados criteriosamente por
+                  especialistas em nutrição. Cada lote de matéria-prima passa por rigorosos testes de pureza antes de
+                  entrar em nossa linha de produção.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Laboratório Certificado</h3>
+                <p className="text-gray-700">
+                  Todo o processo de fabricação ocorre em laboratório certificado pela ANVISA, seguindo as Boas Práticas
+                  de Fabricação (BPF) e os mais rigorosos padrões internacionais de qualidade e segurança.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Controle de Qualidade</h3>
+                <p className="text-gray-700">
+                  Cada lote de Definamax passa por múltiplos testes de controle de qualidade, garantindo a concentração
+                  ideal de princípios ativos e a ausência de contaminantes. Só depois de aprovado em todos os testes, o
+                  produto é liberado para comercialização.
+                </p>
+              </div>
+
+              <div className="flex justify-center mt-6">
+                <button
+                  onClick={scrollToBuy}
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+                >
+                  EXPERIMENTAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            <div
+              className="relative overflow-hidden rounded-xl shadow-lg aspect-video"
+              
+            >
+                          <iframe
+                src="https://player.vimeo.com/video/1085716849"
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Definamax - Como funciona"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -2437,114 +2462,10 @@ export default function LandingPage() {
         </span>
       </div>
       {/* Structured Data for Product */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "Product",
-            name: "Definamax",
-            image: ["https://www.definamaxoficial.com/mockup.png", "https://www.definamaxoficial.com/clorela.png"],
-            description:
-              "Definamax é um suplemento natural para emagrecimento que absorve gordura, acelera o metabolismo e aumenta a saciedade, permitindo emagrecer sem dietas restritivas ou injeções perigosas.",
-            brand: {
-              "@type": "Brand",
-              name: "Definamax",
-            },
-            offers: {
-              "@type": "AggregateOffer",
-              url: "https://www.definamaxoficial.com/",
-              priceCurrency: "BRL",
-              lowPrice: "279.90",
-              highPrice: "479.40",
-              offerCount: "3",
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "3842",
-            },
-          }),
-        }}
-      />
 
       {/* Structured Data for FAQ */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "O que é Definamax e como ele funciona?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Definamax é um suplemento alimentar 100% natural que combina fibras de alta potência para absorver a gordura, aumentar a saciedade e acelerar o metabolismo. Ele funciona como um detox poderoso, promovendo resultados rápidos e visíveis em poucas semanas.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Quais são os principais benefícios do Definamax?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Os principais benefícios do Definamax incluem: emagrecimento rápido e natural, aumento da saciedade, controle da compulsão alimentar, aceleração do metabolismo, queima da gordura teimosa, melhora da disposição e bem-estar geral.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Definamax possui alguma contraindicação ou efeito colateral?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Definamax é um produto 100% natural e não possui contraindicações ou efeitos colaterais conhecidos. No entanto, gestantes, lactantes e pessoas com doenças preexistentes devem consultar um médico antes de iniciar o uso.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Como devo utilizar o Definamax para obter os melhores resultados?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Recomenda-se utilizar 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições, com um copo de água. Para obter os melhores resultados, utilize o produto de forma contínua por pelo menos 3 meses.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Qual o prazo de entrega e a política de garantia do Definamax?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "O prazo de entrega do Definamax varia de acordo com a sua região, mas geralmente é de 5 a 10 dias úteis. Oferecemos uma garantia de satisfação de 30 dias. Se você não estiver satisfeito com os resultados, basta entrar em contato conosco para receber 100% do seu dinheiro de volta.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
 
       {/* Structured Data for Organization */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Definamax",
-            url: "https://www.definamaxoficial.com",
-            logo: "https://www.definamaxoficial.com/logo2.png",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+5541984549172",
-              contactType: "customer service",
-            },
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Florianópolis",
-              addressRegion: "Santa Catarina",
-              addressCountry: "BR",
-            },
-          }),
-        }}
-      />
     </main>
   )
 }
