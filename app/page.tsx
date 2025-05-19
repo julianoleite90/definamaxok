@@ -1115,7 +1115,7 @@ export default function LandingPage() {
               
             >
                           <iframe
-                src="https://player.vimeo.com/video/1085716849"
+                src="https://player.vimeo.com/video/1085716849?&loop=1"
                 className="absolute top-0 left-0 w-full h-full"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
