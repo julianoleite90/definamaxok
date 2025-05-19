@@ -1058,9 +1058,9 @@ export default function LandingPage() {
       </section>
 
       {/* Processo de Fabricação */}
-      <section className="w-full py-16 bg-green-50" aria-label="Como o Definamax é fabricado">
+      <section className="w-full py-8 md:py-16 bg-green-50" aria-label="Como o Definamax é fabricado">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="text-center mb-10">
+          <div className="text-center mb-6 md:mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Qualidade Garantida
             </div>
@@ -1110,11 +1110,8 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div
-              className="relative overflow-hidden rounded-xl shadow-lg aspect-video"
-              
-            >
-                          <iframe
+            <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video">
+              <iframe
                 src="https://player.vimeo.com/video/1085751637?&loop=1"
                 className="absolute top-0 left-0 w-full h-full"
                 frameBorder="0"
