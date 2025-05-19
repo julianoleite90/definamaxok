@@ -246,7 +246,7 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a
+              Descubra o poder das fibras inteligentes que capturam gordura, aceleram o metabolismo e aumentam a
               saciedade.
             </p>
 
@@ -994,10 +994,10 @@ export default function LandingPage() {
               Ciência por trás do Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Como o <span className="text-green-700">Definamax Funciona?</span>
+              Como as Fibras Inteligentes de <span className="text-green-700">Definamax Funciona?</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Entenda como as fibras inteligentes do Definamax agem no seu corpo para reduzir a gordura
+              Entenda como a fórmula de Definamax funciona no seu organismo
             </p>
           </div>
 
@@ -1021,7 +1021,7 @@ export default function LandingPage() {
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
                 <p className="text-gray-700">
-                  As fibras especiais do Definamax, como a Quitosana, se ligam às moléculas de gordura durante a
+                  As fibras inteligentes do Definamax, se ligam às moléculas de gordura durante a
                   digestão, impedindo que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são
                   eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
