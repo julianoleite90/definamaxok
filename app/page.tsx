@@ -1580,6 +1580,10 @@ export default function LandingPage() {
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Programa Emagrecimento Acelerado</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">Envio imediato</span>
                   </div>
                 </div>
