@@ -295,7 +295,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-5 sm:px-8 py-4 sm:py-5 text-base sm:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
             >
-              EXPERIMENTAR DEFINAMAX <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+              EXPERIMENTE DEFINAMAX <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
@@ -379,8 +379,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 7 meses de Definamax, perdi 27kg! O melhor é que a fome sumiu e eu tenho uma energia
-                    incrível pra tudo. Super recomendo!"
+                    "Joana, mãe de 2 filhos eliminou 27kgs em aproximadamente 210 dias (7 meses)."
                   </p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
@@ -424,8 +423,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg
-                    e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
+                    "Brenda de 31 anos conseguiu perder 22kgs após controlar a compulsão alimentar."
                   </p>
                   <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
@@ -469,8 +467,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e meu
-                    corpo."
+                    "Professora Ana Paula perdeu 17kgs em cinco meses e se sente muito mais confiante hoje."
                   </p>
                   <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
@@ -520,8 +517,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e
-                    tô conseguindo fazer umas provas de corrida sem cansar tanto"
+                    "Juliana sofria com a ansiedade e compulsão, e com 4 meses usando Definamax conseguiu eliminar 15kgs."
                   </p>
                   <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                 </div>
@@ -565,8 +561,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3 meses,
-                    perdi 14kg! Pra mim, foi a solução."
+                    "Roberto emagreceu 14kgs em 3 meses usando Definamax."
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
@@ -610,8 +605,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses!
-                    A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
+                    "Marcos secou 16kg e perdeu a barriga estufada".
                   </p>
                   <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
                 </div>
@@ -706,8 +700,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 7 meses de Definamax, eu perdi 27 kg! O melhor é que a fome sumiu e eu tenho uma
-                    energia incrível pra tudo. Super recomendo!"
+                    "Joana, mãe de 2 filhos eliminou 27kgs em aproximadamente 210 dias (7 meses)."
                   </p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
@@ -751,8 +744,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg
-                    e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
+                    "Brenda de 31 anos conseguiu perder 22kgs após controlar a compulsão alimentar."
                   </p>
                   <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
                 </div>
@@ -796,8 +788,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e do meu
-                    corpo."
+                    "Professora Ana Paula perdeu 17kgs em cinco meses e se sente muito mais confiante hoje."
                   </p>
                   <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
@@ -846,8 +837,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou
-                        demais e tô conseguindo fazer umas provas de corrida sem cansar tanto"
+                        "Juliana lutou por muitos anos contra o sobrepeso e a compulsão, e com 4 meses usando Definamax conseguiu eliminar 15kgs."
                       </p>
                       <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                     </div>
@@ -893,8 +883,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3
-                        meses, perdi 14kg! Pra mim, foi a solução."
+                      "Roberto emagreceu 14kgs em 3 meses usando Definamax."
                       </p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
@@ -940,8 +929,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3
-                        meses! A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
+                      "Marcos secou 16kg e perdeu a barriga estufada".
                       </p>
                       <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
                     </div>
@@ -994,7 +982,7 @@ export default function LandingPage() {
               Ciência por trás do Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Como as Fibras Inteligentes de <span className="text-green-700">Definamax Funciona?</span>
+              Como as fibras inteligentes de <span className="text-green-700">Definamax funcionam?</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Entenda como a fórmula de Definamax funciona no seu organismo
@@ -1021,7 +1009,7 @@ export default function LandingPage() {
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
                 <p className="text-gray-700">
-                  As fibras inteligentes do Definamax, se ligam às moléculas de gordura durante a digestão, impedindo
+                  As fibras inteligentes do Definamax, como a Quitosana se ligam às moléculas de gordura durante a digestão, impedindo
                   que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são eliminadas
                   naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
@@ -1353,9 +1341,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="text-gray-700">
-                Estamos tão confiantes na eficácia do Definamax que oferecemos uma garantia incondicional de 30 dias. Se
-                você não estiver completamente satisfeito com os resultados, basta entrar em contato conosco para
-                receber 100% do seu dinheiro de volta, sem perguntas, conforme os nossos termos*.
+              Experimente o Definamax com total confiança! Oferecemos uma garantia incondicional de 30 dias para você sentir os benefícios das fibras inteligentes na sua jornada de emagrecimento. Se, dentro de 30 dias, você não estiver 100% satisfeito com os resultados, é só entrar em contato pelo e-mail e devolvemos 100% do seu dinheiro. Conforme nossos termos*
               </p>
               <div className="mt-4 flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
@@ -1368,7 +1354,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              COMPRAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
+              EU TAMBÉM QUERO EMAGRECER COM DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1508,7 +1494,7 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>Oferta por tempo limitado • Enquanto durarem os estoques</span>
+              <span>Oferta por tempo limitado </span>
             </div>
           </div>
         </div>
@@ -1524,9 +1510,9 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4 text-center">
           <div className="mb-16">
             <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
-              OFERTA ESPECIAL POR TEMPO LIMITADO
+              DISPONÍVEL ENQUANTO DURAREM OS ESTOQUES
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Comece Seu Emagrecimento Hoje</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Tome uma decisão hoje!</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
               Escolha o kit ideal para você acelerar o seu processo de perda de peso
             </p>
@@ -1794,9 +1780,9 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Avaliações Verificadas
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">O Que Nossos Clientes Estão Dizendo</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Avaliações de consumidores</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Mais de 3.800 avaliações positivas de clientes satisfeitos com os resultados
+              
             </p>
           </div>
 
@@ -1826,14 +1812,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Melhor decisão que tomei!</h4>
+                    <h4 className="font-semibold">Valeu cada centavo!</h4>
                   </div>
                   <div className="text-sm text-gray-500">05/05/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de tentar várias dietas sem sucesso, decidi experimentar o Definamax. Em apenas 2 meses perdi
-                  12kg! O mais incrível é que não senti fome ou ansiedade durante o processo. Minha energia aumentou e
-                  finalmente consegui voltar a praticar corrida nas ruas que eu sempre amei. Recomendo muito.
+                Eu já tinha tentado de tudo, aquelas dietas malucas da internet, mas nada dava certo. Resolvi experimentar o Definamax porque vi uma propaganda e o preço cabia no bolso. Em 2 meses, perdi 8kg! Não é milagre, mas me ajudou a comer menos sem passar fome. Agora consigo correr atrás dos meus filhos sem cansar tão rápido. Tô gostando muito!
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1867,15 +1851,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Eu achei muito bom!</h4>
+                    <h4 className="font-semibold">Me ajudou a curtir meu futebol sem culpa!</h4>
                   </div>
                   <div className="text-sm text-gray-500">28/04/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Já tinha visto a propagando do produto no ano passado quando passou a reportagem na record, mas
-                  preferi esperar. Estava em busca de algo que eu pudesse tomar sem precisar parar de tomar minha
-                  cerveja no final de semana. Praticamente a barriga que eu tinha era toda de cerveja, e o Definamax me
-                  ajudou muito com isso, perdi aquela barriga, e ainda posso tomar umas no sabádo de futebol. Aprovado.
+                "Vi o Definamax numa matéria da TV e fiquei curioso, mas esperei pra ver se era verdade. Eu não queria parar com minha cervejinha de fim de semana, sabe? Minha barriga tava enorme por causa disso. Em 3 meses tomando, perdi 7kg e a barriga diminuiu bastante. Ainda tomo minha gelada no sábado de futebol, mas com moderação. Pra mim, tá aprovado!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1909,14 +1890,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Resultado incrível em pouco tempo!</h4>
+                    <h4 className="font-semibold">Tô me sentindo mais leve!</h4>
                   </div>
                   <div className="text-sm text-gray-500">12/03/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Comecei a tomar o Definamax há 4 meses e já perdi 15kg! O mais impressionante é que não sinto mais
-                  aquela fome ansiosa que me fazia comer compulsivamente. Minha disposição melhorou muito e estou
-                  conseguindo fazer exercícios sem me sentir cansada. Super recomendo!
+                "Eu sempre lutei com o peso e com vontade de comer besteira o tempo todo. Com o Definamax, em 4 meses consegui perder 10kg. Não foi fácil no começo, porque às vezes esquecia de tomar, mas depois que peguei o jeito, senti que comia menos e tinha mais energia. Tô feliz com o progresso!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1950,14 +1929,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Finalmente algo que funciona!</h4>
+                    <h4 className="font-semibold">Finalmente algo que não me deu problema!</h4>
                   </div>
                   <div className="text-sm text-gray-500">28/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Já tentei de tudo para emagrecer, inclusive injeções que me deixaram com náuseas terríveis. O
-                  Definamax foi a única coisa que realmente funcionou para mim sem efeitos colaterais. Em 3 meses perdi
-                  14kg e minha pressão arterial normalizou. Estou muito feliz com os resultados!
+                "Tentei umas injeções pra emagrecer, mas me davam náusea e dor de cabeça. O Definamax foi diferente, é natural e não senti nada ruim. Perdi 9kg em 3 meses, e minha pressão, que tava alta, tá bem melhor. Não é rápido como prometem por aí, mas funcionou pra mim!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1991,14 +1968,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Transformação completa em 3 meses</h4>
+                    <h4 className="font-semibold">Voltei a jogar bola com os amigos!</h4>
                   </div>
                   <div className="text-sm text-gray-500">15/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de anos tentando emagrecer sem sucesso, o Definamax mudou minha vida. Perdi 16kg em 3 meses,
-                  minha energia aumentou e voltei a praticar esportes. Minha esposa está impressionada com a mudança e
-                  minha autoestima voltou!
+                "Depois de engordar na pandemia, tava difícil até subir escada. O Definamax me ajudou a perder 11kg em 3 meses. Não virei atleta, mas agora consigo jogar uma pelada com os amigos sem passar vergonha. Minha esposa tá feliz com a mudança, e eu também!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2032,14 +2007,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Transformou minha vida!</h4>
+                    <h4 className="font-semibold">Me sinto muito melhor</h4>
                   </div>
                   <div className="text-sm text-gray-500">02/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de ter meu segundo filho, não conseguia mais voltar ao meu peso. Tentei várias dietas sem
-                  sucesso. Com o Definamax, perdi 10kg em 2 meses e meio! O melhor é que não sinto aquela ansiedade por
-                  comida que tinha antes. Minha autoestima voltou!
+                "Depois do meu filho, tava impossível voltar ao peso de antes. Tentei umas dietas, mas não tinha paciência. Com o Definamax, perdi 7kg em 2 meses e meio. Não fico mais tão ansiosa pra comer doce."
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2073,14 +2046,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Superou minhas expectativas</h4>
+                    <h4 className="font-semibold">Não acreditava, mas funcionou!</h4>
                   </div>
                   <div className="text-sm text-gray-500">20/01/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Confesso que estava cético no início, mas decidi dar uma chance. Já tinha tentado outros suplementos
-                  sem resultado. Com o Definamax, perdi 13kg no segundo mês! Minha barriga diminuiu visivelmente e minha
-                  energia aumentou. Já recomendei para todos os meus amigos.
+                "Tava desconfiado, achando que era só mais um suplemento caro. Mas resolvi tentar o Definamax porque o preço tava bom. Perdi 8kg em 2 meses, e minha barriga tá bem menor. Ainda tenho que tomar direitinho pra não esquecer, mas tô gostando do resultado. Já indiquei pros amigos do trampo!"
                 </p>
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2109,14 +2080,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Meu nutricionista ficou impressionado!</h4>
+                      <h4 className="font-semibold">Muito mais saúde!</h4>
                     </div>
                     <div className="text-sm text-gray-500">15/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Eu estava com pré-diabetes e meu nutricionista sugeriu que eu perdesse peso urgentemente. Comecei a
-                    tomar Definamax e em 3 meses perdi 16kg! Na última consulta, meus exames voltaram ao normal e meu
-                    médico perguntou o que eu tinha feito. Recomendo a todos!
+                  "Estava com pré-diabetes e o médico falou pra emagrecer urgente. Não tinha grana pra nutricionista particular, então comprei o Definamax. Perdi 10kg em 3 meses, e meus exames melhoraram bastante. Não é mágica, mas com um pouco de cuidado com a comida, fez diferença!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2145,14 +2114,12 @@ export default function LandingPage() {
                           ),
                         )}
                       </div>
-                      <h4 className="font-semibold">Ótimo para manter o peso</h4>
+                      <h4 className="font-semibold">Não voltei a engordar!</h4>
                     </div>
                     <div className="text-sm text-gray-500">05/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Emagreci 12kg com dieta e exercício há um ano, mas estava difícil manter o peso. Comecei a usar
-                    Definamax para ajudar e tem funcionado perfeitamente. Não recuperei nenhum kg nos últimos 3 meses e
-                    tenho me sentido muito bem!
+                  "Emagreci 10kg com dieta e academia no ano passado, mas tava difícil manter. Comecei o Definamax pra ajudar, e há 3 meses não ganhei peso nenhum. Me sinto mais leve e com menos vontade de beliscar besteira. Pra quem quer manter o peso, é uma boa!"
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
@@ -2186,15 +2153,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Festa de formatura em 2 meses!</h4>
+                      <h4 className="font-semibold">Me senti bem na festa da empresa!</h4>
                     </div>
                     <div className="text-sm text-gray-500">22/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Minha formatura estava chegando e eu queria entrar no vestido que eu tinha amado! Comecei a tomar
-                    Definamax e em 2 meses perdi 9kg! Consegui usar meu vestido e me senti maravilhosa. As fotos ficaram
-                    incríveis e me sinto confiante com meu corpo novamente. Ainda preciso emagrecer mais, eu sei. Mas
-                    estou bem satusfeita.
+                  "Queria emagrecer pra festa de fim de ano da firma. Comprei o Definamax e perdi 6kg em 2 meses. Não foi fácil, porque às vezes esquecia de tomar, mas consegui usar uma roupa mais justa e me senti linda! Tô continuando pra perder mais um pouco."
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2219,15 +2183,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Fiz as pazes com minha esposa!</h4>
+                      <h4 className="font-semibold">Melhorou minha disposição em casa!</h4>
                     </div>
                     <div className="text-sm text-gray-500">10/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Depois de ganhar peso na pandemia, nenhuma das minhas calças servia mais. Minha esposta estava muito
-                    incomodada com isso, achei que iria me separar. Comecei a tomar Definamax e em 1 mês já perdi 5kg!
-                    As coisas começaram a melhorar em casa. É responsabilidade minha eu ter engordado tanto, e também é
-                    responsabilidade minha emagrecer.
+                    "Engordei na pandemia, e tava difícil acompanhar as crianças. Minha esposa reclamava que eu tava muito parado. Com o Definamax, perdi 5kg em 1 mês e tô com mais energia. Não é milagre, mas me ajudou a comer menos e me mexer mais. Tô bem mais animado!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2252,14 +2213,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Recomendo para todas as amigas!</h4>
+                      <h4 className="font-semibold">Me deu mais confiança no trabalho!</h4>
                     </div>
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Estava com dificuldades para emagrecer. Eu trabalho como gerente em uma loja de automóveis, e a
-                    aparência é fundamental nesse emprego. Com o Definamax, consegui perder 8kg em 2 meses e me sinto
-                    muito mais disposta. Já indiquei para todas as minhas amigas que também estão adorando!
+                    "Trabalho como vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com a correria do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus colegas notaram a diferença, e já indiquei pra várias amigas!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
