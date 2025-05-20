@@ -379,7 +379,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Joana, mãe de 2 filhos eliminou 27kgs em aproximadamente 210 dias (7 meses)."
+                    "Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."
                   </p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
@@ -700,7 +700,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Joana, mãe de 2 filhos eliminou 27kgs em aproximadamente 210 dias (7 meses)."
+                    "Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."
                   </p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
