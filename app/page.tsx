@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
+import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock } from "lucide-react"
 
 // Adicione esta imagem para o novo comparativo
 const outrosEmagrecedoresImg = "/placeholder-m1oov.png"
@@ -37,6 +37,19 @@ export default function LandingPage() {
 
   // Estado para controlar a visibilidade do botão do WhatsApp
   const [showWhatsAppButton, setShowWhatsAppButton] = useState(false)
+
+  // Add the following state variables after the existing state declarations (around line 40)
+  // State for exit intent popup
+  const [showExitPopup, setShowExitPopup] = useState(false)
+
+  // State for exit popup timer
+  const [exitPopupTimer, setExitPopupTimer] = useState({
+    minutes: 3,
+    seconds: 0,
+  })
+
+  // Ref for the popup
+  const popupRef = useRef(null)
 
   // Função para alternar o estado de uma pergunta
   const toggleFaq = (faqId) => {
@@ -210,6 +223,75 @@ export default function LandingPage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Add the following useEffect for exit intent detection after the other useEffect hooks (around line 150)
+  // Exit intent detection
+  useEffect(() => {
+    const handleMouseLeave = (e) => {
+      // Only trigger when mouse leaves through the top of the page
+      if (e.clientY <= 0 && !showExitPopup) {
+        setShowExitPopup(true)
+      }
+    }
+
+    // Close popup when clicking outside
+    const handleClickOutside = (e) => {
+      if (popupRef.current && !popupRef.current.contains(e.target)) {
+        setShowExitPopup(false)
+      }
+    }
+
+    // Handle mobile back button/gesture
+    const handleMobileBackButton = (e) => {
+      // This will capture the popstate event which fires when the user navigates back
+      if (!showExitPopup) {
+        e.preventDefault()
+        setShowExitPopup(true)
+
+        // Add a new history entry to prevent the back action
+        window.history.pushState(null, document.title, window.location.href)
+      }
+    }
+
+    // Add a history entry on page load to enable back button detection
+    window.history.pushState(null, document.title, window.location.href)
+
+    // Only add the listener after 5 seconds on the page
+    const timer = setTimeout(() => {
+      document.addEventListener("mouseleave", handleMouseLeave)
+      window.addEventListener("popstate", handleMobileBackButton)
+    }, 5000)
+
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      clearTimeout(timer)
+      document.removeEventListener("mouseleave", handleMouseLeave)
+      document.removeEventListener("mousedown", handleClickOutside)
+      window.removeEventListener("popstate", handleMobileBackButton)
+    }
+  }, [showExitPopup])
+
+  // Countdown timer for exit popup
+  useEffect(() => {
+    if (!showExitPopup) return
+
+    const timer = setInterval(() => {
+      setExitPopupTimer((prev) => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 }
+        } else if (prev.minutes > 0) {
+          return { minutes: prev.minutes - 1, seconds: 59 }
+        } else {
+          // When timer reaches zero, close the popup
+          setShowExitPopup(false)
+          return { minutes: 3, seconds: 0 }
+        }
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [showExitPopup])
+
   // Função para abrir o WhatsApp
   const openWhatsApp = () => {
     const message = encodeURIComponent("Olá! Gostaria de saber mais sobre o Definamax.")
@@ -378,9 +460,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."
-                  </p>
+                  <p className="text-gray-700 mb-2">"Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."</p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
 
@@ -517,7 +597,8 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Juliana sofria com a ansiedade e compulsão, e com 4 meses usando Definamax conseguiu eliminar 15kgs."
+                    "Juliana sofria com a ansiedade e compulsão, e com 4 meses usando Definamax conseguiu eliminar
+                    15kgs."
                   </p>
                   <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                 </div>
@@ -560,9 +641,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Roberto emagreceu 14kgs em 3 meses usando Definamax."
-                  </p>
+                  <p className="text-gray-700 mb-2">"Roberto emagreceu 14kgs em 3 meses usando Definamax."</p>
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
 
@@ -604,9 +683,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Marcos secou 16kg e perdeu a barriga estufada".
-                  </p>
+                  <p className="text-gray-700 mb-2">"Marcos secou 16kg e perdeu a barriga estufada".</p>
                   <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
                 </div>
               </div>
@@ -699,9 +776,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."
-                  </p>
+                  <p className="text-gray-700 mb-2">"Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."</p>
                   <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
                 </div>
 
@@ -837,7 +912,8 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Juliana lutou por muitos anos contra o sobrepeso e a compulsão, e com 4 meses usando Definamax conseguiu eliminar 15kgs."
+                        "Juliana lutou por muitos anos contra o sobrepeso e a compulsão, e com 4 meses usando Definamax
+                        conseguiu eliminar 15kgs."
                       </p>
                       <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
                     </div>
@@ -882,9 +958,7 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">
-                      "Roberto emagreceu 14kgs em 3 meses usando Definamax."
-                      </p>
+                      <p className="text-gray-700 mb-2">"Roberto emagreceu 14kgs em 3 meses usando Definamax."</p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
 
@@ -928,9 +1002,7 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">
-                      "Marcos secou 16kg e perdeu a barriga estufada".
-                      </p>
+                      <p className="text-gray-700 mb-2">"Marcos secou 16kg e perdeu a barriga estufada".</p>
                       <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
                     </div>
                   </>
@@ -1009,9 +1081,9 @@ export default function LandingPage() {
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
                 <p className="text-gray-700">
-                  As fibras inteligentes do Definamax, como a Quitosana se ligam às moléculas de gordura durante a digestão, impedindo
-                  que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são eliminadas
-                  naturalmente, sem sobrecarregar o sistema digestivo.
+                  As fibras inteligentes do Definamax, como a Quitosana se ligam às moléculas de gordura durante a
+                  digestão, impedindo que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são
+                  eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
               </div>
 
@@ -1341,7 +1413,10 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="text-gray-700">
-              Experimente o Definamax com total confiança! Oferecemos uma garantia incondicional de 30 dias para você sentir os benefícios das fibras inteligentes na sua jornada de emagrecimento. Se, dentro de 30 dias, você não estiver 100% satisfeito com os resultados, é só entrar em contato pelo e-mail e devolvemos 100% do seu dinheiro. Conforme nossos termos*
+                Experimente o Definamax com total confiança! Oferecemos uma garantia incondicional de 30 dias para você
+                sentir os benefícios das fibras inteligentes na sua jornada de emagrecimento. Se, dentro de 30 dias,
+                você não estiver 100% satisfeito com os resultados, é só entrar em contato pelo e-mail e devolvemos 100%
+                do seu dinheiro. Conforme nossos termos*
               </p>
               <div className="mt-4 flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
@@ -1781,9 +1856,7 @@ export default function LandingPage() {
               Avaliações Verificadas
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Avaliações de consumidores</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              
-            </p>
+            <p className="text-gray-600 max-w-2xl mx-auto"></p>
           </div>
 
           <div className="mb-8 flex items-center justify-center">
@@ -1817,7 +1890,10 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">05/05/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                Eu já tinha tentado de tudo, aquelas dietas malucas da internet, mas nada dava certo. Resolvi experimentar o Definamax porque vi uma propaganda e o preço cabia no bolso. Em 2 meses, perdi 8kg! Não é milagre, mas me ajudou a comer menos sem passar fome. Agora consigo correr atrás dos meus filhos sem cansar tão rápido. Tô gostando muito!
+                  Eu já tinha tentado de tudo, aquelas dietas malucas da internet, mas nada dava certo. Resolvi
+                  experimentar o Definamax porque vi uma propaganda e o preço cabia no bolso. Em 2 meses, perdi 8kg! Não
+                  é milagre, mas me ajudou a comer menos sem passar fome. Agora consigo correr atrás dos meus filhos sem
+                  cansar tão rápido. Tô gostando muito!
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1856,7 +1932,10 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">28/04/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                "Vi o Definamax numa matéria da TV e fiquei curioso, mas esperei pra ver se era verdade. Eu não queria parar com minha cervejinha de fim de semana, sabe? Minha barriga tava enorme por causa disso. Em 3 meses tomando, perdi 7kg e a barriga diminuiu bastante. Ainda tomo minha gelada no sábado de futebol, mas com moderação. Pra mim, tá aprovado!"
+                  "Vi o Definamax numa matéria da TV e fiquei curioso, mas esperei pra ver se era verdade. Eu não queria
+                  parar com minha cervejinha de fim de semana, sabe? Minha barriga tava enorme por causa disso. Em 3
+                  meses tomando, perdi 7kg e a barriga diminuiu bastante. Ainda tomo minha gelada no sábado de futebol,
+                  mas com moderação. Pra mim, tá aprovado!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1895,7 +1974,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">12/03/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                "Eu sempre lutei com o peso e com vontade de comer besteira o tempo todo. Com o Definamax, em 4 meses consegui perder 10kg. Não foi fácil no começo, porque às vezes esquecia de tomar, mas depois que peguei o jeito, senti que comia menos e tinha mais energia. Tô feliz com o progresso!"
+                  "Eu sempre lutei com o peso e com vontade de comer besteira o tempo todo. Com o Definamax, em 4 meses
+                  consegui perder 10kg. Não foi fácil no começo, porque às vezes esquecia de tomar, mas depois que
+                  peguei o jeito, senti que comia menos e tinha mais energia. Tô feliz com o progresso!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1934,7 +2015,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">28/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                "Tentei umas injeções pra emagrecer, mas me davam náusea e dor de cabeça. O Definamax foi diferente, é natural e não senti nada ruim. Perdi 9kg em 3 meses, e minha pressão, que tava alta, tá bem melhor. Não é rápido como prometem por aí, mas funcionou pra mim!"
+                  "Tentei umas injeções pra emagrecer, mas me davam náusea e dor de cabeça. O Definamax foi diferente, é
+                  natural e não senti nada ruim. Perdi 9kg em 3 meses, e minha pressão, que tava alta, tá bem melhor.
+                  Não é rápido como prometem por aí, mas funcionou pra mim!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1973,7 +2056,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">15/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                "Depois de engordar na pandemia, tava difícil até subir escada. O Definamax me ajudou a perder 11kg em 3 meses. Não virei atleta, mas agora consigo jogar uma pelada com os amigos sem passar vergonha. Minha esposa tá feliz com a mudança, e eu também!"
+                  "Depois de engordar na pandemia, tava difícil até subir escada. O Definamax me ajudou a perder 11kg em
+                  3 meses. Não virei atleta, mas agora consigo jogar uma pelada com os amigos sem passar vergonha. Minha
+                  esposa tá feliz com a mudança, e eu também!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2012,7 +2097,8 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">02/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                "Depois do meu filho, tava impossível voltar ao peso de antes. Tentei umas dietas, mas não tinha paciência. Com o Definamax, perdi 7kg em 2 meses e meio. Não fico mais tão ansiosa pra comer doce."
+                  "Depois do meu filho, tava impossível voltar ao peso de antes. Tentei umas dietas, mas não tinha
+                  paciência. Com o Definamax, perdi 7kg em 2 meses e meio. Não fico mais tão ansiosa pra comer doce."
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2051,7 +2137,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">20/01/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                "Tava desconfiado, achando que era só mais um suplemento caro. Mas resolvi tentar o Definamax porque o preço tava bom. Perdi 8kg em 2 meses, e minha barriga tá bem menor. Ainda tenho que tomar direitinho pra não esquecer, mas tô gostando do resultado. Já indiquei pros amigos do trampo!"
+                  "Tava desconfiado, achando que era só mais um suplemento caro. Mas resolvi tentar o Definamax porque o
+                  preço tava bom. Perdi 8kg em 2 meses, e minha barriga tá bem menor. Ainda tenho que tomar direitinho
+                  pra não esquecer, mas tô gostando do resultado. Já indiquei pros amigos do trampo!"
                 </p>
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2085,7 +2173,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">15/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                  "Estava com pré-diabetes e o médico falou pra emagrecer urgente. Não tinha grana pra nutricionista particular, então comprei o Definamax. Perdi 10kg em 3 meses, e meus exames melhoraram bastante. Não é mágica, mas com um pouco de cuidado com a comida, fez diferença!"
+                    "Estava com pré-diabetes e o médico falou pra emagrecer urgente. Não tinha grana pra nutricionista
+                    particular, então comprei o Definamax. Perdi 10kg em 3 meses, e meus exames melhoraram bastante. Não
+                    é mágica, mas com um pouco de cuidado com a comida, fez diferença!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2119,7 +2209,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">05/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                  "Emagreci 10kg com dieta e academia no ano passado, mas tava difícil manter. Comecei o Definamax pra ajudar, e há 3 meses não ganhei peso nenhum. Me sinto mais leve e com menos vontade de beliscar besteira. Pra quem quer manter o peso, é uma boa!"
+                    "Emagreci 10kg com dieta e academia no ano passado, mas tava difícil manter. Comecei o Definamax pra
+                    ajudar, e há 3 meses não ganhei peso nenhum. Me sinto mais leve e com menos vontade de beliscar
+                    besteira. Pra quem quer manter o peso, é uma boa!"
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
@@ -2158,7 +2250,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">22/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                  "Queria emagrecer pra festa de fim de ano da firma. Comprei o Definamax e perdi 6kg em 2 meses. Não foi fácil, porque às vezes esquecia de tomar, mas consegui usar uma roupa mais justa e me senti linda! Tô continuando pra perder mais um pouco."
+                    "Queria emagrecer pra festa de fim de ano da firma. Comprei o Definamax e perdi 6kg em 2 meses. Não
+                    foi fácil, porque às vezes esquecia de tomar, mas consegui usar uma roupa mais justa e me senti
+                    linda! Tô continuando pra perder mais um pouco."
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2188,7 +2282,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">10/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Engordei na pandemia, e tava difícil acompanhar as crianças. Minha esposa reclamava que eu tava muito parado. Com o Definamax, perdi 5kg em 1 mês e tô com mais energia. Não é milagre, mas me ajudou a comer menos e me mexer mais. Tô bem mais animado!"
+                    "Engordei na pandemia, e tava difícil acompanhar as crianças. Minha esposa reclamava que eu tava
+                    muito parado. Com o Definamax, perdi 5kg em 1 mês e tô com mais energia. Não é milagre, mas me
+                    ajudou a comer menos e me mexer mais. Tô bem mais animado!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2218,7 +2314,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Trabalho como vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com a correria do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus colegas notaram a diferença, e já indiquei pra várias amigas!"
+                    "Trabalho como vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com
+                    a correria do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus
+                    colegas notaram a diferença, e já indiquei pra várias amigas!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2495,6 +2593,57 @@ export default function LandingPage() {
       {/* Structured Data for FAQ */}
 
       {/* Structured Data for Organization */}
+      {/* Exit Intent Popup */}
+      {showExitPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div
+            ref={popupRef}
+            className="bg-white rounded-lg max-w-md w-full p-6 relative animate-[shake_0.8s_ease-in-out]"
+          >
+            <button
+              onClick={() => setShowExitPopup(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-bold text-gray-800">Espere! Não vá embora ainda!</h3>
+              <p className="text-red-600 font-semibold">Oferta especial só para você</p>
+            </div>
+
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/mockup.png"
+                alt="Definamax - Oferta Especial"
+                width={120}
+                height={160}
+                className="h-32 object-contain"
+              />
+            </div>
+
+            <div className="bg-green-50 rounded-lg p-4 mb-4 text-center">
+              <p className="text-lg font-bold text-green-700 mb-2">+10% de DESCONTO</p>
+              <p className="text-gray-700">No kit com 3 frascos de Definamax</p>
+
+              <div className="mt-3 bg-yellow-100 rounded-lg p-2 flex items-center justify-center">
+                <Clock className="h-5 w-5 text-red-500 mr-2" />
+                <p className="font-bold text-red-600">
+                  Oferta expira em: {exitPopupTimer.minutes.toString().padStart(2, "0")}:
+                  {exitPopupTimer.seconds.toString().padStart(2, "0")}
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href={addUtmToUrl("https://checkout.fullsale.com.br/?pid=Xure9l7ypYcKclqaxtM6&coupon=saida")}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all"
+            >
+              APROVEITAR DESCONTO ADICIONAL
+            </Link>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
