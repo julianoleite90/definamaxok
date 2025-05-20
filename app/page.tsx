@@ -2565,7 +2565,7 @@ export default function LandingPage() {
             <Link href="/produto" className="text-sm hover:text-green-200">
               Produtos
             </Link>
-            <Link href="/remarketing" className="text-sm hover:text-green-200">
+            <Link href="/Depoimentos" className="text-sm hover:text-green-200">
               Depoimentos em Vídeo
             </Link>
             <Link href="/privacidade" className="text-sm hover:text-green-200">
@@ -2640,9 +2640,9 @@ export default function LandingPage() {
 
             <Link
               href={addUtmToUrl("https://checkout.fullsale.com.br/?pid=Xure9l7ypYcKclqaxtM6&coupon=saida")}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all text-center"
             >
-              APROVEITAR DESCONTO ADICIONAL
+              APROVEITAR DESCONTO ADICIONAL <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
