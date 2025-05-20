@@ -1021,9 +1021,9 @@ export default function LandingPage() {
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
                 <p className="text-gray-700">
-                  As fibras inteligentes do Definamax, se ligam às moléculas de gordura durante a
-                  digestão, impedindo que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são
-                  eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
+                  As fibras inteligentes do Definamax, se ligam às moléculas de gordura durante a digestão, impedindo
+                  que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são eliminadas
+                  naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
               </div>
 
@@ -1378,6 +1378,142 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Seção de Bônus */}
+      <section
+        className="w-full py-16 bg-gradient-to-b from-white to-green-100 border-y-4 border-dashed border-yellow-400"
+        aria-label="Bônus Exclusivos Definamax"
+      >
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="text-center mb-10">
+            <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
+              BÔNUS EXCLUSIVOS
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Pedidos Acima de 2 Frascos Ganham:</h2>
+            <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
+              Aproveite estes bônus especiais para potencializar seus resultados
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Bônus 1: Colágeno Hidrolisado */}
+            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl border-2 border-yellow-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-3 px-4 text-center">
+                <h3 className="text-xl font-bold">Colágeno Hidrolisado</h3>
+                <p className="text-sm opacity-90">Combate a flacidez durante o emagrecimento</p>
+              </div>
+
+              <div className="p-6">
+                <div className="flex justify-center mb-6 relative">
+                  <Image
+                    src="/colageno.png"
+                    alt="Colágeno Hidrolisado"
+                    width={200}
+                    height={200}
+                    className="h-48 object-contain hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                    GRÁTIS
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Previne a flacidez durante o processo de emagrecimento</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Melhora a elasticidade e firmeza da pele</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Fortalece unhas, cabelos e articulações</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Complemento perfeito para o Definamax</span>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
+                  <p className="font-medium text-yellow-800 text-center">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
+                      VALOR: R$89,90
+                    </span>
+                    <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bônus 2: Programa de Emagrecimento Acelerado */}
+
+            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl border-2 border-yellow-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-3 px-4 text-center">
+                <h3 className="text-xl font-bold">Programa De Emagrecimento Acelerado</h3>
+                <p className="text-sm opacity-90">Videoaulas com informações secretas para acelerar resultados</p>
+              </div>
+
+              <div className="p-6">
+                <div className="flex justify-center mb-6 relative">
+                  <Image
+                    src="/programa.png"
+                    alt="Programa De Emagrecimento Acelerado"
+                    width={200}
+                    height={200}
+                    className="h-48 object-contain hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                    GRÁTIS
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Videoaulas exclusivas com especialistas em emagrecimento</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Técnicas secretas para potencializar a perda de peso</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Dicas de alimentação para maximizar os resultados</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Acesso vitalício ao conteúdo exclusivo</span>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
+                  <p className="font-medium text-yellow-800 text-center">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
+                      VALOR: R$197,00
+                    </span>
+                    <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-10 flex-col items-center">
+            <button
+              onClick={scrollToBuy}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-yellow-600 to-yellow-500 px-6 py-3 text-base font-bold text-white hover:from-yellow-500 hover:to-yellow-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-yellow-700 animate-pulse-border"
+            >
+              GARANTIR MEUS BÔNUS AGORA <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+              <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+              <span>Oferta por tempo limitado </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Área de compra */}
       <section
         id="comprar"
@@ -1441,6 +1577,10 @@ export default function LandingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">+ 2 Frascos de Colágeno Grátis</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Programa Emagrecimento Acelerado</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
