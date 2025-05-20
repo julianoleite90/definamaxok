@@ -51,6 +51,9 @@ export default function LandingPage() {
   // Ref for the popup
   const popupRef = useRef(null)
 
+  // Reference to track when the page was loaded
+  const pageLoadTimeRef = useRef(Date.now())
+
   // Função para alternar o estado de uma pergunta
   const toggleFaq = (faqId) => {
     setOpenFaqs((prev) => ({
@@ -241,10 +244,10 @@ export default function LandingPage() {
     }
 
     // Handle mobile back button/gesture
-    const handleMobileBackButton = (e) => {
-      // This will capture the popstate event which fires when the user navigates back
-      if (!showExitPopup) {
-        e.preventDefault()
+    const handleMobileBackButton = () => {
+      // Only show popup if it's not already showing and user has been on page for at least 5 seconds
+      if (!showExitPopup && Date.now() - pageLoadTimeRef.current > 5000) {
+        // Show the popup
         setShowExitPopup(true)
 
         // Add a new history entry to prevent the back action
@@ -2562,7 +2565,7 @@ export default function LandingPage() {
             <Link href="/produto" className="text-sm hover:text-green-200">
               Produtos
             </Link>
-            <Link href="/Depoimentos" className="text-sm hover:text-green-200">
+            <Link href="/remarketing" className="text-sm hover:text-green-200">
               Depoimentos em Vídeo
             </Link>
             <Link href="/privacidade" className="text-sm hover:text-green-200">
