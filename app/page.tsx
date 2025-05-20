@@ -1438,7 +1438,7 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
                   <p className="font-medium text-yellow-800 text-center">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
-                      VALOR: R$89,90
+                      VALOR: <span className="line-through">R$89,90</span>
                     </span>
                     <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
                   </p>
@@ -1490,7 +1490,7 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
                   <p className="font-medium text-yellow-800 text-center">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
-                      VALOR: R$197,00
+                      VALOR: <span className="line-through">R$197,00</span>
                     </span>
                     <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
                   </p>
@@ -1508,7 +1508,7 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>Oferta por tempo limitado </span>
+              <span>Oferta por tempo limitado • Enquanto durarem os estoques</span>
             </div>
           </div>
         </div>
@@ -1577,10 +1577,6 @@ export default function LandingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">+ 2 Frascos de Colágeno Grátis</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Programa Emagrecimento Acelerado</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
