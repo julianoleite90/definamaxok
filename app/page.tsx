@@ -2565,7 +2565,7 @@ export default function LandingPage() {
             <Link href="/produto" className="text-sm hover:text-green-200">
               Produtos
             </Link>
-            <Link href="/Depoimentos" className="text-sm hover:text-green-200">
+            <Link href="/remarketing" className="text-sm hover:text-green-200">
               Depoimentos em Vídeo
             </Link>
             <Link href="/privacidade" className="text-sm hover:text-green-200">
