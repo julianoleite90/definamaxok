@@ -291,7 +291,7 @@ export default function ReMarketingPage() {
       <section className="w-full bg-gradient-to-b from-green-50 to-white py-8 md:py-12">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
-          Veja Como Clientes Emagreceram e Recuperaram a Autoestima com Definamax <span className="text-green-600">Definamax</span>
+          Veja Como Clientes Emagreceram e Recuperaram a Autoestima com <span className="text-green-600">Definamax</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-3xl mx-auto">
           Descubra como brasileiros como você perderam peso, reduziram medidas e se sentiram mais confiantes para o dia a dia com Definamax. Assista agora e inspire-se!
