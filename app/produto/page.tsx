@@ -154,7 +154,7 @@ export default function ProdutoDefinamax() {
       id: "kit1",
       name: "Kit 1 Mês",
       title: "Definamax - Kit 1 Mês (1 Frasco)",
-      description: "Kit inicial com 1 frasco de Definamax para 1 mês de tratamento (60 cápsulas)",
+      description: "Kit inicial com 1 frasco de Definamax para 1 mês de uso (60 cápsulas)",
       regularPrice: 329.9,
       salePrice: 279.9,
       discount: 18,
@@ -169,13 +169,13 @@ export default function ProdutoDefinamax() {
       gtin: "7898489348731", // Código de barras fictício
       mpn: "DEFMAX-1M", // Número de peça do fabricante fictício
       inStock: true,
-      expectedResults: "até 5kg",
+      expectedResults: "suporte inicial",
     },
     kit3: {
       id: "kit3",
       name: "Kit 3 Meses",
       title: "Definamax - Kit 3 Meses (3 Frascos)",
-      description: "Kit recomendado com 3 frascos de Definamax para 3 meses de tratamento (180 cápsulas)",
+      description: "Kit recomendado com 3 frascos de Definamax para 3 meses de uso (180 cápsulas)",
       regularPrice: 758.7,
       salePrice: 379.0,
       discount: 50,
@@ -190,14 +190,14 @@ export default function ProdutoDefinamax() {
       gtin: "7898489348748", // Código de barras fictício
       mpn: "DEFMAX-3M", // Número de peça do fabricante fictício
       inStock: true,
-      expectedResults: "até 13kg",
+      expectedResults: "suporte contínuo",
       bestSeller: true,
     },
     kit6: {
       id: "kit6",
       name: "Kit 6 Meses",
       title: "Definamax - Kit 6 Meses (6 Frascos)",
-      description: "Kit completo com 6 frascos de Definamax para 6 meses de tratamento (360 cápsulas)",
+      description: "Kit completo com 6 frascos de Definamax para 6 meses de uso (360 cápsulas)",
       regularPrice: 1479.4,
       salePrice: 479.4,
       discount: 68,
@@ -212,7 +212,7 @@ export default function ProdutoDefinamax() {
       gtin: "7898489348755", // Código de barras fictício
       mpn: "DEFMAX-6M", // Número de peça do fabricante fictício
       inStock: true,
-      expectedResults: "até 19kg",
+      expectedResults: "suporte prolongado",
     },
   }
 
@@ -222,14 +222,14 @@ export default function ProdutoDefinamax() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       <Head>
-        <title>{kit.title} | Suplemento Natural para Emagrecimento</title>
+        <title>{kit.title} | Suplemento Alimentar Natural</title>
         <meta
           name="description"
-          content="Definamax: suplemento natural que absorve gordura, acelera o metabolismo e aumenta a saciedade. Emagreça até 27kg sem dietas restritivas ou injeções perigosas."
+          content="Definamax: suplemento alimentar com fibras e ingredientes naturais. Pode auxiliar no suporte a um estilo de vida saudável quando combinado com uma alimentação equilibrada."
         />
         <meta
           name="keywords"
-          content="Definamax, emagrecimento, perda de peso, suplemento natural, absorção de gordura, metabolismo acelerado, saciedade, emagrecer rápido, sem dietas, sem injeções"
+          content="Definamax, suplemento alimentar, fibras naturais, bem-estar, saúde, estilo de vida saudável, alimentação equilibrada"
         />
         <meta name="author" content="Definamax" />
 
@@ -239,7 +239,7 @@ export default function ProdutoDefinamax() {
         <meta property="og:title" content={kit.title} />
         <meta
           property="og:description"
-          content="Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo."
+          content="Definamax é um suplemento alimentar natural que pode auxiliar no suporte a um estilo de vida saudável, promovendo bem-estar quando combinado com uma alimentação equilibrada."
         />
         <meta property="og:image" content={`https://www.definamaxoficial.com${kit.image}`} />
         <meta property="product:price:amount" content={kit.salePrice.toString()} />
@@ -254,7 +254,7 @@ export default function ProdutoDefinamax() {
         <meta property="twitter:title" content={kit.title} />
         <meta
           property="twitter:description"
-          content="Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo."
+          content="Definamax é um suplemento alimentar natural que pode auxiliar no suporte a um estilo de vida saudável, promovendo bem-estar quando combinado com uma alimentação equilibrada."
         />
         <meta property="twitter:image" content={`https://www.definamaxoficial.com${kit.image}`} />
 
@@ -415,7 +415,7 @@ export default function ProdutoDefinamax() {
                 <div className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">
-                    Tratamento {kit.id === "kit6" ? "completo" : ""} de{" "}
+                    Suplemento para{" "}
                     <span className="font-bold">
                       {kit.id === "kit1" ? "1 mês" : kit.id === "kit3" ? "3 meses" : "6 meses"}
                     </span>
@@ -451,7 +451,7 @@ export default function ProdutoDefinamax() {
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
                 <p className="font-medium text-yellow-800">
                   <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                    EMAGREÇA {kit.expectedResults.toUpperCase()}
+                    APOIE SEU BEM-ESTAR
                   </span>
                   COM ESSE KIT!
                 </p>
@@ -507,31 +507,26 @@ export default function ProdutoDefinamax() {
           <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
             <h3 className="text-xl font-semibold text-green-700 mb-4">O que é Definamax?</h3>
             <p className="mb-4">
-              <strong>Definamax</strong> é um suplemento alimentar 100% natural desenvolvido para auxiliar no processo
-              de emagrecimento de forma saudável e eficaz. Sua fórmula exclusiva combina fibras alimentares de alta
-              potência que atuam em três frentes principais:
+              <strong>Definamax</strong> é um suplemento alimentar 100% natural desenvolvido para auxiliar em um estilo de vida saudável. Sua fórmula combina fibras alimentares e ingredientes naturais que podem contribuir para o bem-estar geral quando utilizados com uma alimentação equilibrada e hábitos saudáveis.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-6">
               <div className="bg-green-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-green-700 mb-2">Absorção de Gordura</h4>
+                <h4 className="font-semibold text-green-700 mb-2">Suporte à Digestão</h4>
                 <p className="text-sm">
-                  As fibras especiais do Definamax se ligam às moléculas de gordura durante a digestão, impedindo que
-                  até 76% da gordura consumida seja absorvida pelo organismo.
+                  As fibras do Definamax podem auxiliar na digestão, contribuindo para a saúde do sistema digestivo.
                 </p>
               </div>
               <div className="bg-green-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-green-700 mb-2">Aumento da Saciedade</h4>
+                <h4 className="font-semibold text-green-700 mb-2">Controle do Apetite</h4>
                 <p className="text-sm">
-                  O Psyllium e o Agar Agar expandem-se no estômago, criando uma sensação de plenitude que reduz o
-                  apetite e controla a compulsão alimentar.
+                  Ingredientes como Psyllium e Agar Agar podem ajudar a promover uma sensação de saciedade.
                 </p>
               </div>
               <div className="bg-green-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-green-700 mb-2">Aceleração do Metabolismo</h4>
+                <h4 className="font-semibold text-green-700 mb-2">Suporte ao Metabolismo</h4>
                 <p className="text-sm">
-                  Os componentes naturais como a Espirulina e o Cromo aumentam a termogênese corporal, elevando o
-                  metabolismo basal para que seu corpo queime mais calorias naturalmente.
+                  Componentes naturais, como Espirulina e Cromo, podem apoiar o metabolismo quando combinados com uma dieta saudável.
                 </p>
               </div>
             </div>
@@ -541,82 +536,75 @@ export default function ProdutoDefinamax() {
               <li className="flex items-start">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Emagrecimento rápido e saudável:</strong> resultados visíveis em poucas semanas de uso
+                  <strong>Suporte à alimentação saudável:</strong> Pode auxiliar no bem-estar geral quando combinado com uma dieta equilibrada.
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Controle da fome e ansiedade:</strong> redução da compulsão alimentar e da vontade de comer
-                  doces
+                  <strong>Controle do apetite:</strong> Pode ajudar a reduzir a vontade de comer em excesso.
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Eliminação da gordura localizada:</strong> ação eficaz nas áreas mais difíceis como abdômen,
-                  coxas e braços
+                  <strong>Apoio ao metabolismo:</strong> Pode contribuir para o funcionamento metabólico normal.
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Aumento da energia e disposição:</strong> melhora significativa na qualidade de vida e
-                  bem-estar
+                  <strong>Mais energia:</strong> Pode promover maior disposição para as atividades diárias.
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Sem efeito sanfona:</strong> resultados duradouros com uso contínuo
+                  <strong>Ingredientes naturais:</strong> Fórmula composta por ingredientes de origem natural.
                 </span>
               </li>
             </ul>
 
             <h3 className="text-xl font-semibold text-green-700 mb-4">Ingredientes</h3>
             <p className="mb-4">
-              O Definamax é composto por ingredientes 100% naturais, cuidadosamente selecionados e combinados na
-              proporção ideal para maximizar os resultados:
+              O Definamax é composto por ingredientes 100% naturais, cuidadosamente selecionados para apoiar um estilo de vida saudável:
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">Quitosana</h4>
                 <p className="text-sm">
-                  Fibra natural derivada da quitina, capaz de se ligar às moléculas de gordura no sistema digestivo,
-                  impedindo sua absorção.
+                  Fibra natural derivada da quitina, que pode auxiliar na saúde digestiva.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">Psyllium</h4>
                 <p className="text-sm">
-                  Fibra solúvel que expande no estômago, proporcionando sensação de saciedade prolongada e auxiliando no
-                  controle do apetite.
+                  Fibra solúvel que pode contribuir para a sensação de saciedade e saúde intestinal.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">Espirulina</h4>
                 <p className="text-sm">
-                  Alga rica em nutrientes que ajuda a acelerar o metabolismo e fornecer energia para o corpo.
+                  Alga rica em nutrientes que pode apoiar a energia e o bem-estar geral.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">Cromo</h4>
                 <p className="text-sm">
-                  Mineral que auxilia no controle dos níveis de açúcar no sangue, reduzindo a vontade de comer doces.
+                  Mineral que pode ajudar no metabolismo de carboidratos.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">Agar Agar</h4>
                 <p className="text-sm">
-                  Fibra extraída de algas marinhas que expande no estômago, aumentando a sensação de saciedade.
+                  Fibra extraída de algas marinhas que pode promover a sensação de saciedade.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">Colágeno Hidrolisado</h4>
                 <p className="text-sm">
-                  Proteína que ajuda a manter a firmeza da pele durante o processo de emagrecimento, evitando a
-                  flacidez.
+                  Proteína que pode apoiar a saúde da pele e articulações.
                 </p>
               </div>
             </div>
@@ -653,7 +641,7 @@ export default function ProdutoDefinamax() {
                   <div>
                     <p className="font-medium">Use continuamente por pelo menos 3 meses</p>
                     <p className="text-sm text-gray-600 mt-1">
-                      Para resultados ótimos, recomenda-se o uso contínuo por 3 a 6 meses
+                      Para melhores resultados, recomenda-se o uso contínuo por 3 a 6 meses
                     </p>
                   </div>
                 </li>
@@ -674,7 +662,7 @@ export default function ProdutoDefinamax() {
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="py-2 px-4 bg-gray-50 font-medium">Conteúdo por Frasco</td>
-                    <td className="py-2 px-4">60 cápsulas (tratamento para 30 dias)</td>
+                    <td className="py-2 px-4">60 cápsulas (uso para 30 dias)</td>
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="py-2 px-4 bg-gray-50 font-medium">Peso do Produto</td>
@@ -682,7 +670,7 @@ export default function ProdutoDefinamax() {
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="py-2 px-4 bg-gray-50 font-medium">Registro</td>
-                    <td className="py-2 px-4">Aprovado pela ANVISA (RDC 240/2018)</td>
+                    <td className="py-2 px-4">Produzido conforme as boas práticas de fabricação (BPF)</td>
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="py-2 px-4 bg-gray-50 font-medium">Fabricação</td>
@@ -706,9 +694,7 @@ export default function ProdutoDefinamax() {
 
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
               <p className="text-sm font-medium text-yellow-800">
-                <strong>Importante:</strong> Resultados podem variar de pessoa para pessoa. O Definamax é um suplemento
-                alimentar e não substitui uma alimentação equilibrada e hábitos saudáveis. Consulte seu médico antes de
-                iniciar qualquer suplementação, especialmente se estiver grávida, amamentando ou em tratamento médico.
+                <strong>Importante:</strong> Este produto não substitui uma alimentação equilibrada e hábitos saudáveis. Consulte seu médico antes de iniciar qualquer suplementação, especialmente se estiver grávida, amamentando ou em uso de medicamentos.
               </p>
             </div>
           </div>
@@ -792,7 +778,7 @@ export default function ProdutoDefinamax() {
                   <div>
                     <p className="font-medium">Garantia de 30 dias</p>
                     <p className="text-sm text-gray-600">
-                      Se você não estiver satisfeito com os resultados, devolvemos 100% do seu dinheiro
+                      Se você não estiver satisfeito com o produto, devolvemos 100% do seu dinheiro
                     </p>
                   </div>
                 </li>
@@ -881,8 +867,7 @@ export default function ProdutoDefinamax() {
                 <span className="text-xs text-gray-500">15/04/2025</span>
               </div>
               <p className="text-sm mb-2">
-                "Em 7 meses de Definamax, perdi 27kg! O melhor é que a fome sumiu e eu tenho uma energia incrível pra
-                tudo. Super recomendo!"
+                "Após meses usando Definamax, senti mais disposição e bem-estar no meu dia a dia. O suplemento me ajudou a manter uma rotina mais saudável!"
               </p>
               <p className="text-xs text-green-700 font-medium">Compra verificada • Kit 6 Meses</p>
             </div>
@@ -911,8 +896,7 @@ export default function ProdutoDefinamax() {
                 <span className="text-xs text-gray-500">02/03/2025</span>
               </div>
               <p className="text-sm mb-2">
-                "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg e tô
-                chocada com o resultado no meu corpo."
+                "Definamax me ajudou a me sentir mais leve e com mais energia. Estou muito satisfeita com o suporte que ele oferece à minha rotina saudável."
               </p>
               <p className="text-xs text-green-700 font-medium">Compra verificada • Kit 3 Meses</p>
             </div>
@@ -941,8 +925,7 @@ export default function ProdutoDefinamax() {
                 <span className="text-xs text-gray-500">18/02/2025</span>
               </div>
               <p className="text-sm mb-2">
-                "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses! A
-                diferença na minha barriga é enorme."
+                "Comecei a usar Definamax e notei uma melhora na minha disposição diária. Me sinto mais motivado para manter hábitos saudáveis."
               </p>
               <p className="text-xs text-green-700 font-medium">Compra verificada • Kit 6 Meses</p>
             </div>
@@ -968,43 +951,35 @@ export default function ProdutoDefinamax() {
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800 mb-2">O que é Definamax e como ele funciona?</h3>
               <p className="text-sm text-gray-700">
-                Definamax é um suplemento alimentar 100% natural que combina fibras de alta potência para absorver a
-                gordura, aumentar a saciedade e acelerar o metabolismo. Ele funciona como um detox poderoso, promovendo
-                resultados rápidos e visíveis em poucas semanas.
+                Definamax é um suplemento alimentar 100% natural que combina fibras e ingredientes naturais para apoiar um estilo de vida saudável. Ele pode auxiliar na digestão, saciedade e metabolismo quando combinado com uma alimentação equilibrada.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800 mb-2">Como devo utilizar o Definamax?</h3>
               <p className="text-sm text-gray-700">
-                Recomenda-se utilizar 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições,
-                com um copo de água. Para obter os melhores resultados, utilize o produto de forma contínua por pelo
-                menos 3 meses.
+                Recomenda-se tomar 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições, com um copo de água. Consulte um médico antes de iniciar o uso.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800 mb-2">Definamax possui alguma contraindicação?</h3>
               <p className="text-sm text-gray-700">
-                Definamax é um produto 100% natural e não possui contraindicações ou efeitos colaterais conhecidos. No
-                entanto, gestantes, lactantes e pessoas com doenças preexistentes devem consultar um médico antes de
-                iniciar o uso.
+                Definamax é um suplemento alimentar natural e não possui contraindicações conhecidas. No entanto, gestantes, lactantes e pessoas com condições médicas devem consultar um profissional de saúde antes de usar.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800 mb-2">Qual o prazo de entrega do Definamax?</h3>
               <p className="text-sm text-gray-700">
-                O prazo de entrega do Definamax varia de acordo com a sua região, mas geralmente é de 3 a 7 dias úteis
-                para capitais, 5 a 12 dias úteis para interior e 7 a 15 dias úteis para regiões Norte e Nordeste.
+                O prazo de entrega do Definamax varia de acordo com a sua região, mas geralmente é de 3 a 7 dias úteis para capitais, 5 a 12 dias úteis para interior e 7 a 15 dias úteis para regiões Norte e Nordeste.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800 mb-2">O Definamax é aprovado pela ANVISA?</h3>
               <p className="text-sm text-gray-700">
-                Sim, o Definamax é um suplemento alimentar devidamente registrado na Agência Nacional de Vigilância
-                Sanitária (ANVISA) sob a RDC 240/2018, que regulamenta os suplementos alimentares no Brasil.
+                Sim, o Definamax é um suplemento alimentar devidamente registrado na Agência Nacional de Vigilância Sanitária (ANVISA) sob a RDC 240/2018, que regulamenta os suplementos alimentares no Brasil.
               </p>
             </div>
           </div>
@@ -1023,10 +998,9 @@ export default function ProdutoDefinamax() {
       {/* CTA Section */}
       <section className="w-full py-12 bg-gradient-to-r from-green-600 to-green-500 text-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Transforme seu corpo com Definamax</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Apoie seu bem-estar com Definamax</h2>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
-            Junte-se a milhares de pessoas que já conquistaram o corpo dos sonhos. Aproveite nossa oferta especial por
-            tempo limitado!
+            Junte-se a milhares de pessoas que escolheram Definamax para complementar uma rotina saudável. Aproveite nossa oferta especial por tempo limitado!
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -1104,7 +1078,7 @@ export default function ProdutoDefinamax() {
                       <div className="flex items-start">
                         <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">
-                          Tratamento de{" "}
+                          Suplemento para{" "}
                           <span className="font-bold">
                             {relatedKit.id === "kit1" ? "1 mês" : relatedKit.id === "kit3" ? "3 meses" : "6 meses"}
                           </span>
@@ -1142,11 +1116,9 @@ export default function ProdutoDefinamax() {
       <footer className="w-full py-8 bg-green-800 text-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <Image src="/logo2.png" alt="Definamax" width={150} height={45} className="h-9 w-auto mx-auto mb-4" />
-          <p className="text-sm mb-2">Definamax - O seu aliado natural para o emagrecimento saudável e eficaz.</p>
+          <p className="text-sm mb-2">Definamax - Um suplemento alimentar natural para apoiar seu estilo de vida saudável.</p>
           <p className="text-xs text-gray-300 mb-4">
-            *Resultados podem variar de pessoa para pessoa. Este produto não se destina a diagnosticar, tratar, curar ou
-            prevenir qualquer doença. Consulte sempre um profissional de saúde qualificado antes de iniciar qualquer
-            programa de emagrecimento.
+            *Este produto não substitui uma alimentação equilibrada e hábitos saudáveis. Consulte sempre um profissional de saúde qualificado antes de iniciar qualquer suplementação.
           </p>
           <div className="flex justify-center space-x-4 mb-4">
             <Link href="/termos" className="text-sm hover:text-green-200">
@@ -1190,7 +1162,7 @@ export default function ProdutoDefinamax() {
             name: kit.title,
             image: [`https://www.definamaxoficial.com${kit.image}`, "https://www.definamaxoficial.com/mockup.png"],
             description:
-              "Definamax é um suplemento natural para emagrecimento que absorve gordura, acelera o metabolismo e aumenta a saciedade, permitindo emagrecer sem dietas restritivas ou injeções perigosas.",
+              "Definamax é um suplemento alimentar natural que pode auxiliar no suporte a um estilo de vida saudável, promovendo bem-estar quando combinado com uma alimentação equilibrada.",
             brand: {
               "@type": "Brand",
               name: "Definamax",
@@ -1235,7 +1207,7 @@ export default function ProdutoDefinamax() {
                 },
                 datePublished: "2025-04-15",
                 reviewBody:
-                  "Em 7 meses de Definamax, perdi 27kg! O melhor é que a fome sumiu e eu tenho uma energia incrível pra tudo. Super recomendo!",
+                  "Após meses usando Definamax, senti mais disposição e bem-estar no meu dia a dia. O suplemento me ajudou a manter uma rotina mais saudável!",
               },
               {
                 "@type": "Review",
@@ -1251,7 +1223,7 @@ export default function ProdutoDefinamax() {
                 },
                 datePublished: "2025-03-02",
                 reviewBody:
-                  "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg e tô chocada com o resultado no meu corpo.",
+                  "Definamax me ajudou a me sentir mais leve e com mais energia. Estou muito satisfeita com o suporte que ele oferece à minha rotina saudável.",
               },
             ],
           }),

@@ -6,9 +6,9 @@ import "../globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Definamax Site Oficial Produto - Emagrecedor N1 do Brasil",
+  title: "Definamax - Suplemento Alimentar Natural",
   description:
-    "Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade. Resultados visíveis em semanas com Definamax.",
+    "Conheça as fibras alimentares de Definamax",
   icons: {
     icon: "/ico.png",
     apple: "/ico.png",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://www.definamaxoficial.com",
-    title: "Definamax Site Oficial - Emagrecedor N1 do Brasil",
+    title: "Definamax - Suplemento Alimentar Natural",
     description:
-      "Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo.",
+      "Conheça as fibras alimentares de Definamax",
     siteName: "Definamax",
     images: [
       {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Definamax Site Oficial - Emagrecedor N1 do Brasil",
+    title: "Definamax - Suplemento Alimentar Natural",
     description:
-      "Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo.",
+      "Conheça as fibras alimentares de Definamax",
     images: ["/og.png"],
   },
   alternates: {
