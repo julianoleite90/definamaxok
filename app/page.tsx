@@ -319,7 +319,7 @@ export default function LandingPage() {
   className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8"
   aria-label="Benefícios do Definamax"
 >
-  <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+  <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-5 sm:gap-8 items-center">
     <div className="order-2 md:order-1">
       <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 !mb-10 break-words leading-tight">
         Perca peso rápido,{" "}
@@ -1449,9 +1449,9 @@ export default function LandingPage() {
                     alt="Colágeno Hidrolisado"
                     width={200}
                     height={200}
-                    className="h-48 object-contain hover:scale-105 transition-all duration-300"
+                    className="h-[150px] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     GRÁTIS
                   </div>
                 </div>
@@ -1501,9 +1501,9 @@ export default function LandingPage() {
                     alt="Programa De Emagrecimento Acelerado"
                     width={200}
                     height={200}
-                    className="h-48 object-contain hover:scale-105 transition-all duration-300"
+                    className="h-[150px] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     GRÁTIS
                   </div>
                 </div>
@@ -1589,9 +1589,9 @@ export default function LandingPage() {
                     alt="Kit 6 Meses"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-42 sm:h-[12rem] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -68%
                   </div>
                 </div>
@@ -1667,9 +1667,9 @@ export default function LandingPage() {
                     alt="Kit 3 Meses"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-42 sm:h-[12rem] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -50%
                   </div>
                 </div>
@@ -1738,16 +1738,16 @@ export default function LandingPage() {
                     alt="Kit 1 Mês"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[11rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-42 sm:h-[12rem] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -18%
                   </div>
                 </div>
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">Por 12x de:S</span>
+                    <span className="text-gray-400 text-sm">Por 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
                     <span className="text-sm font-normal"></span> R$28,01
