@@ -1870,8 +1870,8 @@ export default function DefinamaxFAQ() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Joana</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-6kg</span>
+                    <h4 className="font-semibold">Débora</h4>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-23kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1894,7 +1894,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-              "Emagreceu 6kg em 30 dias, e eliminou a compulsão alimentar e diminuiu a ansiedade."
+              Menos compulsão, inchaço, mais saúde e qualidade de vida.
               </p>
             </div>
 
@@ -1911,8 +1911,8 @@ export default function DefinamaxFAQ() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Patricia</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-9kg</span>
+                    <h4 className="font-semibold">Arnaldo</h4>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-25kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1935,7 +1935,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-              "Patricia conseguiu perder 9kgs em 2 meses após a gravidez."
+              Mais disposição e energia para viver o dia a dia
               </p>
             </div>
 
@@ -1946,8 +1946,8 @@ export default function DefinamaxFAQ() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Lucas</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
+                    <h4 className="font-semibold">Rosimari</h4>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-14kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1970,7 +1970,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-              "Lucas conseguiu perder 16kg em 5 meses sem precisar parar de tomar sua cerveja no final de semana"
+              Graças a Deus eu não sinto mais aquela vontade incontrolável por comida
               </p>
             </div>
           </div>
