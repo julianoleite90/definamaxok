@@ -322,16 +322,16 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Perca peso{" "}
+              Emagreça com segurança,{" "}
               <span className="text-green-600 relative">
                 sem dietas restritivas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              ou injeções arriscadas
+              ou injeções perigosas
             </dep06>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-            Descubra o poder das fibras naturais que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade
+            Descubra o poder das fibras inteligentes que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -353,24 +353,24 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Aumenta a saciedade</span>
+                  <span className="font-medium">Mais saciedade durante o dia</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Reduz a compulsão</span>
+                  <span className="font-medium">Menos compulsão por doces e lanches</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Equilibra o metabolismo</span>
+                  <span className="font-medium">Metabolismo equilibrado </span>
                 </li>
 
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Diminui a retenção</span>
+                  <span className="font-medium">Menos retenção de líquidos (inchaço)</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Fórmula natural e segura</span>
+                  <span className="font-medium">Envio imediato para todo Brasil</span>
                 </li>
               </ul>
             </div>
@@ -406,11 +406,11 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Resultados reais
+            Veja quem já transformou a vida com Definamax
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Pessoas como você, que venceram o sobrepeso e agora vivem com um corpo mais saudável.</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Escolha você também um método  natural e eficaz para alcançar o emagrecimento saudável sem sacrifícios
+            Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho.
             </p>
           </div>
 
@@ -1050,13 +1050,13 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Fórmula em ação no organismo
+            Ciência por trás do Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            Definamax:<span className="text-green-700"> Como Ele Transforma Seu Corpo</span>
+            Como a fórmula funciona <span className="text-green-700"> no seu corpo para reduzir a absorção de gordura</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-            A fórmula exclusiva combina ingredientes naturais que trabalham juntos para promover um emagrecimento saudável e sustentável
+            Entenda como as fibras inteligentes de alta potência agem no seu corpo para reduzir a absorção de gordura
             </p>
           </div>
 
@@ -1078,25 +1078,25 @@ export default function LandingPage() {
 
             <div className="space-y-6">
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Máxima Absorção de Gordura</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Máxima absorção de gordura</h3>
                 <p className="text-gray-700">
-                  As fibras naturais do Definamax, extraidas da Quitosana se ligam às moléculas de gordura durante a
+                  As fibras inteligentes do Definamax, extraidas da Quitosana se ligam às moléculas de gordura durante a
                   digestão, impedindo que a gordura consumida seja absorvida pelo organismo. Essas gorduras são
                   eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Saciedade prolongada</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Saciedade por mais tempo</h3>
                 <p className="text-gray-700">
                   Chega de sentir aquela fome incontrolável. As fibras extraídas do Psyllium e Agar-Agar se combinam com a água no estômago, formando um gel que te deixa saciado por horas, diminuindo a fome e os desejos por lanches.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Metabolismo acelerado</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Metabolismo equilibrado</h3>
                 <p className="text-gray-700">
-                A espirulina, uma superalga rica em nutrientes, ajuda o corpo a usar carboidratos e gorduras de forma mais eficiente, liberando energia e vitalidade. O cromo regula os níveis de açúcar no sangue, otimizando o metabolismo para queimar calorias com mais potência.
+                A espirulina, rica em nutrientes, ajuda o corpo a usar carboidratos e gorduras de forma mais eficiente, liberando energia e disposição. O cromo regula os níveis de açúcar no sangue, otimizando o metabolismo para queimar calorias com mais potência.
                 </p>
               </div>
 
@@ -1444,9 +1444,9 @@ export default function LandingPage() {
             <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
               BÔNUS EXCLUSIVOS
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Compras acima de 2 Frascos Ganham:</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Levando mais de 2 frascos você ganha:</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
-              Aproveite estes bônus especiais para potencializar seus resultados
+              Bônus exclusivos para potencializar seus resultados
             </p>
           </div>
 
@@ -1647,9 +1647,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      VOCÊ ECONOMIZA
+                      KIT
                     </span>
-                    R$1.000,00
+                    MAIS VANTAJOSO
                   </p>
                 </div>
 
@@ -1722,9 +1722,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      VOCÊ ECONOMIZA
+                      KIT
                     </span>
-                    R$420,00
+                    MAIS VENDIDO
                   </p>
                 </div>
 
@@ -1794,9 +1794,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      VOCÊ ECONOMIZA
+                      KIT
                     </span>
-                    R$20,00
+                    INICIAL
                   </p>
                 </div>
 
