@@ -461,7 +461,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">31 anos - São Paulo /SP</p>
+                  <p className="text-gray-700 mb-2">Professora, 31 anos moradora de São Paulo.</p>
                   <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
                 </div>
 
@@ -503,9 +503,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    34 anos - Salvador/BA
+                    Auxiliar admnistrativo, 34 anos morador da Bahia.
                   </p>
-                  <p className="text-green-700 font-medium">- 25kg em 7 meses</p>
+                  <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
@@ -546,9 +546,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    32 anos - São Gonçalo/RJ
+                    Dona de casa, 32 anos moradora do Rio de Janeiro.
                   </p>
-                  <p className="text-green-700 font-medium">- 5kg em 30 dias</p>
+                  <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
                 </div>
               </div>
 
@@ -596,7 +596,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    37 anos - Pinhais/PR
+                    Vendedora, 37 anos moradora do Paraná.
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
@@ -638,8 +638,8 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">28 anos - Presidente prudente/SP</p>
-                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
+                  <p className="text-gray-700 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
+                  <p className="text-green-700 font-medium">- 24kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
@@ -679,8 +679,8 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">29 anos - Belo horizonte/BH</p>
-                  <p className="text-green-700 font-medium">- 26kg em 7 meses</p>
+                  <p className="text-gray-700 mb-2">Motorista de aplicativo, 29 anos morador de Belo Horizonte.</p>
+                  <p className="text-green-700 font-medium">- 31kg em 10 meses</p>
                 </div>
               </div>
 
@@ -771,7 +771,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">31 anos - São Paulo /SP</p>
+                  <p className="text-gray-700 mb-2">Professora, 31 anos - São Paulo /SP</p>
                   <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
                 </div>
 
@@ -813,9 +813,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    Menos vontade de comer, mais disposição e energia para a rótina do dia.
+                    Auxiliar admnistrativo, 34 anos morador da Bahia.
                   </p>
-                  <p className="text-green-700 font-medium">- 25 em 6 meses</p>
+                  <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
@@ -856,7 +856,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    32 anos - São Gonçalo/RJ
+                    Dona de casa, 32 anos moradora do Rio de Janeiro.
                   </p>
                   <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
                 </div>
@@ -902,7 +902,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        37 anos - Pinhais/PR
+                        Vendedora, 37 anos moradora do Paraná.
                       </p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
@@ -944,8 +944,8 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">28 anos - Presidente prudente/SP</p>
-                      <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
+                      <p className="text-gray-700 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
+                      <p className="text-green-700 font-medium">- 24kg em 6 meses</p>
                     </div>
 
                     <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
@@ -985,8 +985,8 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">29 anos - Belo horizonte/BH</p>
-                      <p className="text-green-700 font-medium">- 26kg em 7 meses</p>
+                      <p className="text-gray-700 mb-2">Motorista de aplicativo, 29 anos morador de Belo Horizonte.</p>
+                      <p className="text-green-700 font-medium">- 31kg em 10 meses</p>
                     </div>
                   </>
                 )}
