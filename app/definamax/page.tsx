@@ -2,7 +2,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
+import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock } from "lucide-react"
+
+// Adicione esta imagem para o novo comparativo
+const outrosEmagrecedoresImg = "/placeholder-m1oov.png"
 
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
@@ -11,7 +14,7 @@ export default function LandingPage() {
 
   // Estado para controlar a exibição de mais avaliações
   const [showMoreReviews, setShowMoreReviews] = useState(false)
-  const [showMoreTestimonials, setShowMoreTestimonials] = useState(false)
+  const [showMoreTestimonials, setshowMoreTestimonials] = useState(false)
 
   // Estado para contagem regressiva
   const [timeLeft, setTimeLeft] = useState({
@@ -34,6 +37,22 @@ export default function LandingPage() {
 
   // Estado para controlar a visibilidade do botão do WhatsApp
   const [showWhatsAppButton, setShowWhatsAppButton] = useState(false)
+
+  // Add the following state variables after the existing state declarations (around line 40)
+  // State for exit intent popup
+  const [showExitPopup, setShowExitPopup] = useState(false)
+
+  // State for exit popup timer
+  const [exitPopupTimer, setExitPopupTimer] = useState({
+    minutes: 3,
+    seconds: 0,
+  })
+
+  // Ref for the popup
+  const popupRef = useRef(null)
+
+  // Reference to track when the page was loaded
+  const pageLoadTimeRef = useRef(Date.now())
 
   // Função para alternar o estado de uma pergunta
   const toggleFaq = (faqId) => {
@@ -172,21 +191,27 @@ export default function LandingPage() {
     const handleScroll = () => {
       const whatsAppButton = document.getElementById("whatsAppButton")
       const buySection = buyRef.current
+      const heroSection = document.querySelector("section") // First section (hero)
 
-      if (whatsAppButton && buySection) {
+      if (whatsAppButton && buySection && heroSection) {
+        const scrollPosition = window.scrollY
+        const heroRect = heroSection.getBoundingClientRect()
         const buyRect = buySection.getBoundingClientRect()
         const windowHeight = window.innerHeight
+
+        // Check if we've scrolled past the hero section
+        const isPastHeroSection = scrollPosition > heroSection.offsetHeight
 
         // Check if buy section is visible in viewport
         const isBuySectionVisible = buyRect.top < windowHeight && buyRect.bottom > 0
 
-        // Hide button when in buy section, show otherwise
-        if (isBuySectionVisible) {
-          whatsAppButton.style.transform = "translateY(100px)"
-          whatsAppButton.style.opacity = "0"
-        } else {
+        // Show button only after scrolling past hero section AND when not in buy section
+        if (isPastHeroSection && !isBuySectionVisible) {
           whatsAppButton.style.transform = "translateY(0)"
           whatsAppButton.style.opacity = "1"
+        } else {
+          whatsAppButton.style.transform = "translateY(100px)"
+          whatsAppButton.style.opacity = "0"
         }
       }
     }
@@ -201,6 +226,75 @@ export default function LandingPage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Add the following useEffect for exit intent detection after the other useEffect hooks (around line 150)
+  // Exit intent detection
+  useEffect(() => {
+    const handleMouseLeave = (e) => {
+      // Only trigger when mouse leaves through the top of the page
+      if (e.clientY <= 0 && !showExitPopup) {
+        setShowExitPopup(true)
+      }
+    }
+
+    // Close popup when clicking outside
+    const handleClickOutside = (e) => {
+      if (popupRef.current && !popupRef.current.contains(e.target)) {
+        setShowExitPopup(false)
+      }
+    }
+
+    // Handle mobile back button/gesture
+    const handleMobileBackButton = () => {
+      // Only show popup if it's not already showing and user has been on page for at least 5 seconds
+      if (!showExitPopup && Date.now() - pageLoadTimeRef.current > 5000) {
+        // Show the popup
+        setShowExitPopup(true)
+
+        // Add a new history entry to prevent the back action
+        window.history.pushState(null, document.title, window.location.href)
+      }
+    }
+
+    // Add a history entry on page load to enable back button detection
+    window.history.pushState(null, document.title, window.location.href)
+
+    // Only add the listener after 5 seconds on the page
+    const timer = setTimeout(() => {
+      document.addEventListener("mouseleave", handleMouseLeave)
+      window.addEventListener("popstate", handleMobileBackButton)
+    }, 5000)
+
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      clearTimeout(timer)
+      document.removeEventListener("mouseleave", handleMouseLeave)
+      document.removeEventListener("mousedown", handleClickOutside)
+      window.removeEventListener("popstate", handleMobileBackButton)
+    }
+  }, [showExitPopup])
+
+  // Countdown timer for exit popup
+  useEffect(() => {
+    if (!showExitPopup) return
+
+    const timer = setInterval(() => {
+      setExitPopupTimer((prev) => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 }
+        } else if (prev.minutes > 0) {
+          return { minutes: prev.minutes - 1, seconds: 59 }
+        } else {
+          // When timer reaches zero, close the popup
+          setShowExitPopup(false)
+          return { minutes: 3, seconds: 0 }
+        }
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [showExitPopup])
+
   // Função para abrir o WhatsApp
   const openWhatsApp = () => {
     const message = encodeURIComponent("Olá! Gostaria de saber mais sobre o Definamax.")
@@ -209,9 +303,8 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
- {/* Header */}
+      {/* Header */}
       <header className="w-full relative overflow-hidden">
-        {/* Remove the gold promotional bar */}
         <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
           <div className="mx-auto max-w-5xl px-4 flex justify-center">
@@ -222,22 +315,24 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8">
-        <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Emagreça rápido{" "}
-              <span className="text-green-600 relative">
-                sem dietas restritivas,{" "}
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
-              </span>{" "}
-              ou injeções perigosas
-            </h1>
+<section
+  className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8"
+  aria-label="Benefícios do Definamax"
+>
+  <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-5 sm:gap-8 items-center">
+    <div className="order-2 md:order-1">
+      <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 !mb-10 break-words leading-tight">
+        Perca peso rápido,{" "}
+        <span className="text-green-600 relative">
+          sem dietas restritivas,{" "}
+          <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+        </span>{" "}
+        ou injeções perigosas
+      </dep06>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a
-              saciedade.
-            </p>
+      <p className="text-base sm:text-lg md:text-xl text-gray-700 mt-6 mb-4 break-words">
+        Descubra o poder das fibras inteligentes que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade
+      </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
               <div className="flex">
@@ -258,24 +353,24 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Saciedade prolongada</span>
+                  <span className="font-medium">Mais saciedade durante o dia</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Controle da compulsão</span>
+                  <span className="font-medium">Menos compulsão por doces e lanches</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Queime a gordura teimosa (braços, coxas, e papada)</span>
+                  <span className="font-medium">Metabolismo equilibrado </span>
                 </li>
 
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Resultados visíveis em semanas</span>
+                  <span className="font-medium">Menos retenção de líquidos (inchaço)</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% natural, sem efeitos colaterais</span>
+                  <span className="font-medium">Envio imediato para todo Brasil</span>
                 </li>
               </ul>
             </div>
@@ -284,39 +379,38 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-5 sm:px-8 py-4 sm:py-5 text-base sm:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 w-full sm:w-auto text-center hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
             >
-              EXPERIMENTAR DEFINAMAX <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+              EXPERIMENTE DEFINAMAX <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
-            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+            <div className="flex items-center justify-left mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>30 dias de garantia para conhecer os benefícios</span>
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative h-[400px] w-full flex justify-center">
-              <Image
-                src="/mockup.png"
-                width={800}
-                height={900}
-                alt="Definamax - Suplemento Natural para Emagrecimento"
-                className="h-[400px] w-auto object-contain mx-auto floating"
-              />
+            <Image
+              src="/mockup.png"
+              width={800}
+              height={900}
+               alt="Definamax - Suplemento Natural para Emagrecimento com Fibras Alimentares que Absorvem Gordura"
+              className="h-[370px] md:h-[400px] w-auto object-contain mx-auto floating"
+             />
             </div>
           </div>
         </div>
       </section>
 
       {/* Depoimentos - Carrossel React - Movido para cima para mostrar prova social mais cedo */}
-      <section className="w-full py-16 bg-green-50">
+      <section className="w-full py-16 bg-green-50" aria-label="Depoimentos de clientes Definamax">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Veja quem já transformou a vida com Definamax
+            Veja quem já transformou a vida com Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no
-              espelho.
+            Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho
             </p>
           </div>
 
@@ -333,7 +427,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/joana.png"
+                        src="/ava1.png"
                         alt="Maria"
                         width={100}
                         height={100}
@@ -342,8 +436,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Joana</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
+                        <h4 className="font-semibold">Débora</h4>
+                        
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -358,7 +452,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/1-min.png"
+                        src="/dep01.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -367,18 +461,15 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 7 meses de Definamax, perdi 27kg! O melhor é que a fome sumiu e eu tenho uma energia
-                    incrível pra tudo. Super recomendo!"
-                  </p>
-                  <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
+                  <p className="text-gray-700 mb-2">Professora, 31 anos moradora de São Paulo.</p>
+                  <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/fernanda.png"
+                        src="/ava2.png"
                         alt="Carlos"
                         width={100}
                         height={100}
@@ -387,8 +478,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Brenda S.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-22kg</span>
+                        <h4 className="font-semibold">Arnaldo</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -403,7 +493,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/2-min.png"
+                        src="/dep02.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -413,17 +503,16 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg
-                    e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
+                    Auxiliar administrativo, 34 anos morador da Bahia.
                   </p>
-                  <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
+                  <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/apaula.png"
+                        src="/ava3.png"
                         alt="Ana"
                         width={100}
                         height={100}
@@ -432,8 +521,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Ana P.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
+                        <h4 className="font-semibold">Sara</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -448,7 +536,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="3-min.png"
+                        src="dep03.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -458,10 +546,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e meu
-                    corpo."
+                    Dona de casa, 32 anos moradora do Rio de Janeiro.
                   </p>
-                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
                 </div>
               </div>
 
@@ -475,7 +562,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/ju.png"
+                        src="/ava4.png"
                         alt="Juliana"
                         width={100}
                         height={100}
@@ -484,7 +571,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Juliana R.</h4>
+                        <h4 className="font-semibold">Rosimari</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -499,7 +586,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="depoimento04.png"
+                        src="dep04.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -509,53 +596,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou demais e
-                    tô conseguindo fazer umas provas de corrida sem cansar tanto"
-                  </p>
-                  <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/h2p.png"
-                        alt="Roberto"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Roberto T.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-14kg</span>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/h2.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 mb-2">
-                    "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3 meses,
-                    perdi 14kg! Pra mim, foi a solução."
+                    Vendedora, 37 anos moradora do Paraná.
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
@@ -564,8 +605,8 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/h1p.png"
-                        alt="Marcos"
+                        src="/ava5.png"
+                        alt="Roberto"
                         width={100}
                         height={100}
                         className="w-full h-full object-cover"
@@ -573,8 +614,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Marcos A.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
+                        <h4 className="font-semibold">Laura</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -589,7 +629,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/h1.png"
+                        src="/dep05.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -598,11 +638,49 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses!
-                    A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
-                  </p>
-                  <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
+                  <p className="text-gray-700 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
+                  <p className="text-green-700 font-medium">- 24kg em 6 meses</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="flex items-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
+                      <Image
+                        src="/ava6.png"
+                        alt="Marcos"
+                        width={100}
+                        height={100}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h4 className="font-semibold">Victor</h4>
+                      </div>
+                      <div className="flex">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <div>
+                      <Image
+                        src="/dep06.png"
+                        alt="Antes"
+                        width={300}
+                        height={300}
+                        className="w-full h-auto object-contain rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 mb-2">Motorista de aplicativo, 29 anos morador de Belo Horizonte.</p>
+                  <p className="text-green-700 font-medium">- 31kg em 10 meses</p>
                 </div>
               </div>
 
@@ -660,7 +738,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/joana.png"
+                        src="/ava1.png"
                         alt="Maria"
                         width={100}
                         height={100}
@@ -669,8 +747,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Joana</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
+                        <h4 className="font-semibold">Débora</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -685,7 +762,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/1-min.png"
+                        src="/dep01.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -694,18 +771,15 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    "Oi, gente! Em 7 meses de Definamax, eu perdi 27 kg! O melhor é que a fome sumiu e eu tenho uma
-                    energia incrível pra tudo. Super recomendo!"
-                  </p>
-                  <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
+                  <p className="text-gray-700 mb-2">Professora, 31 anos - São Paulo /SP</p>
+                  <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/fernanda.png"
+                        src="/ava2.png"
                         alt="Carlos"
                         width={100}
                         height={100}
@@ -714,8 +788,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Fernanda.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-22kg</span>
+                        <h4 className="font-semibold">Arnaldo</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -730,7 +803,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/2-min.png"
+                        src="/dep02.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -740,17 +813,16 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg
-                    e tô chocada com o resultado no meu corpo. Finalmente eu consegui, depois de anos tentando."
+                    Auxiliar admnistrativo, 34 anos morador da Bahia.
                   </p>
-                  <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
+                  <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/apaula.png"
+                        src="/ava3.png"
                         alt="Ana"
                         width={100}
                         height={100}
@@ -759,8 +831,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Ana P.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
+                        <h4 className="font-semibold">Sara</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -775,7 +846,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="3-min.png"
+                        src="dep03.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -785,10 +856,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Menos 17kg com Definamax! Uma vitória que me motiva a continuar cuidando da minha saúde e do meu
-                    corpo."
+                    Dona de casa, 32 anos moradora do Rio de Janeiro.
                   </p>
-                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
                 </div>
 
                 {/* Additional testimonials shown when "load more" is clicked */}
@@ -798,7 +868,7 @@ export default function LandingPage() {
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
-                            src="/ju.png"
+                            src="/ava4.png"
                             alt="Juliana"
                             width={100}
                             height={100}
@@ -807,10 +877,7 @@ export default function LandingPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Juliana R.</h4>
-                            <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -15kg
-                            </span>
+                            <h4 className="font-semibold">Rosimari</h4>
                           </div>
                           <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -825,7 +892,7 @@ export default function LandingPage() {
                       <div className="mb-4">
                         <div>
                           <Image
-                            src="depoimento04.png"
+                            src="dep04.png"
                             alt="Antes"
                             width={300}
                             height={300}
@@ -835,55 +902,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Comecei a tomar o Definamax há uns 4 meses e já perdi uns 15kg! Minha disposição melhorou
-                        demais e tô conseguindo fazer umas provas de corrida sem cansar tanto"
-                      </p>
-                      <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                      <div className="flex items-center mb-4">
-                        <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                          <Image
-                            src="/h2p.png"
-                            alt="Roberto"
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Roberto T.</h4>
-                            <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -14kg
-                            </span>
-                          </div>
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                              </svg>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <div>
-                          <Image
-                            src="/h2.png"
-                            alt="Antes"
-                            width={300}
-                            height={300}
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
-                        </div>
-                      </div>
-
-                      <p className="text-gray-700 mb-2">
-                        "Já tinha tentado de tudo pra emagrecer, mas nada funcionava. Aí usei o Definamax e, em uns 3
-                        meses, perdi 14kg! Pra mim, foi a solução."
+                        Vendedora, 37 anos moradora do Paraná.
                       </p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
@@ -892,8 +911,8 @@ export default function LandingPage() {
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
-                            src="/h1p.png"
-                            alt="Marcos"
+                            src="/ava5.png"
+                            alt="Roberto"
                             width={100}
                             height={100}
                             className="w-full h-full object-cover"
@@ -901,10 +920,7 @@ export default function LandingPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Marcos A.</h4>
-                            <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -16kg
-                            </span>
+                            <h4 className="font-semibold">Laura</h4>
                           </div>
                           <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -919,7 +935,7 @@ export default function LandingPage() {
                       <div className="mb-4">
                         <div>
                           <Image
-                            src="/h1.png"
+                            src="/dep05.png"
                             alt="Antes"
                             width={300}
                             height={300}
@@ -928,11 +944,49 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">
-                        "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3
-                        meses! A diferença na minha barriga é enorme e estou me sentindo muito mais ativo."
-                      </p>
-                      <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
+                      <p className="text-gray-700 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
+                      <p className="text-green-700 font-medium">- 24kg em 6 meses</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="flex items-center mb-4">
+                        <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
+                          <Image
+                            src="/ava6.png"
+                            alt="Marcos"
+                            width={100}
+                            height={100}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h4 className="font-semibold">Victor</h4>
+                          </div>
+                          <div className="flex">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                              </svg>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-4">
+                        <div>
+                          <Image
+                            src="/dep06.png"
+                            alt="Antes"
+                            width={300}
+                            height={300}
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </div>
+                      </div>
+
+                      <p className="text-gray-700 mb-2">Motorista de aplicativo, 29 anos morador de Belo Horizonte.</p>
+                      <p className="text-green-700 font-medium">- 31kg em 10 meses</p>
                     </div>
                   </>
                 )}
@@ -941,7 +995,7 @@ export default function LandingPage() {
               {/* Load More Button for Mobile */}
               <div className="flex justify-center mt-8">
                 <button
-                  onClick={() => setShowMoreTestimonials(!showMoreTestimonials)}
+                  onClick={() => setshowMoreTestimonials(!showMoreTestimonials)}
                   className="inline-flex items-center justify-center rounded-lg border border-green-600 px-6 py-3 text-sm font-medium text-green-600 hover:bg-green-50"
                 >
                   {showMoreTestimonials ? "Ver menos depoimentos" : "Ver mais depoimentos"}
@@ -968,7 +1022,7 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
         </div>
@@ -976,68 +1030,57 @@ export default function LandingPage() {
 
       {/* Benefícios */}
       {/* Ciência por trás do Definamax */}
-      <section className="w-full py-16 bg-white">
+      <section className="w-full py-16 bg-white" aria-label="Como o Definamax funciona">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Ciência por trás do Definamax
+            Ciência por trás do Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Como o Definamax <span className="text-green-700">Funciona?</span>
+            Como a fórmula funciona <span className="text-green-700"> no seu corpo para reduzir a absorção de gordura</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Entenda como as fibras inteligentes do Definamax agem no seu corpo para reduzir a gordura
+            Entenda como as fibras inteligentes de alta potência agem no seu corpo para reduzir a absorção de gordura
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 items-center gap-8">
-            <div className="relative w-full h-0 pb-[56.25%]">
-              {" "}
-              {/* 16:9 aspect ratio */}
-              <div className="absolute inset-0 w-full h-full">
-                <img
-                  src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
-                  alt=""
-                />
-                <iframe
-                  src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
-                  className="absolute top-0 left-0 w-full h-full"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  muted
-                  playsInline
-                  title="Como o Definamax funciona"
-                ></iframe>
-              </div>
-              {/* Opcional: Adicione uma camada de sobreposição para melhorar a legibilidade do texto */}
-              <div className="absolute inset-0 z-10"></div>
+            <div className="relative w-full overflow-hidden rounded-lg shadow-lg aspect-video">
+              <img
+                src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
+                alt="Definamax - Como as fibras inteligentes absorvem gordura e aceleram o metabolismo"
+              />
+              <iframe
+                src="https://player.vimeo.com/video/1082333298?autoplay=1&loop=1&muted=1&background=1"
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Definamax - Como funciona"
+              ></iframe>
             </div>
 
             <div className="space-y-6">
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Máxima absorção de gordura</h3>
                 <p className="text-gray-700">
-                  As fibras especiais do Definamax, como a Quitosana, se ligam às moléculas de gordura durante a
-                  digestão, impedindo que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são
+                  As fibras inteligentes do Definamax, extraidas da Quitosana se ligam às moléculas de gordura durante a
+                  digestão, impedindo que a gordura consumida seja absorvida pelo organismo. Essas gorduras são
                   eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Aumento da Saciedade</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Saciedade por mais tempo</h3>
                 <p className="text-gray-700">
-                  O Psyllium e o Agar Agar expandem-se no estômago, criando uma sensação de plenitude que reduz o
-                  apetite e controla a compulsão alimentar. Isso ajuda a consumir menos calorias mesmo sem dietas
-                  restritivas.
+                  Chega de sentir aquela fome incontrolável. As fibras extraídas do Psyllium e Agar-Agar se combinam com a água no estômago, formando um gel que te deixa saciado por horas, diminuindo a fome e os desejos por lanches.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Aceleração do Metabolismo</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Metabolismo equilibrado</h3>
                 <p className="text-gray-700">
-                  Os componentes naturais como a Espirulina e o Cromo aumentam a termogênese corporal, elevando o
-                  metabolismo basal para que seu corpo queime mais calorias naturalmente, mesmo em repouso.
+                A espirulina, rica em nutrientes, ajuda o corpo a usar carboidratos e gorduras de forma mais eficiente, liberando energia e disposição. O cromo regula os níveis de açúcar no sangue, otimizando o metabolismo para queimar calorias com mais potência.
                 </p>
               </div>
 
@@ -1055,60 +1098,61 @@ export default function LandingPage() {
       </section>
 
       {/* Comparativo */}
-      <section className="w-full py-16 bg-green-50">
+      <section className="w-full py-16 bg-green-50" aria-label="Definamax vs Injeções de Emagrecimento">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural x Injeções Químicas</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Sua Saúde em Primeiro Lugar: Por que escolher Definamax?</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural vs Injeções de Emagrecimento</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Por que a fórmula natural é a melhor escolha?</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Desktop View */}
+          <div className="hidden md:grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-500 shadow-md relative overflow-hidden transform hover:scale-105 transition-duration-300">
               <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
                 RECOMENDADO
               </div>
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold text-green-700">Definamax</h3>
+                <h3 className="text-xl font-semibold text-green-700">Natural</h3>
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
               </div>
 
               <div className="mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/natural-1.png"
+                  src="/clorela.png"
                   width={400}
                   height={250}
                   alt="Benefícios do suplemento natural"
-                  className="w-full h-48 object-contain rounded-lg"
+                  className="w-full h-48 object-cover rounded-lg"
                 />
               </div>
 
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% Natural: Fibras poderosas que absorvem a gordura</span>
+                  <span className="font-medium">Fórmula natural</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Detox poderoso para resultados rápidos</span>
+                  <span className="font-medium">Sem contraindicações</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Preço acessível: a partir de R$79,90 por frasco</span>
+                  <span className="font-medium">Preço acessível</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem burocracia: não precisa de receita</span>
+                  <span className="font-medium">Não precisa de receita médica</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Prático: apenas 2 cápsulas por dia</span>
+                  <span className="font-medium">Fácil de usar</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Resultados visíveis em poucas semanas</span>
+                  <span className="font-medium">Não causa dependência</span>
                 </li>
               </ul>
             </div>
@@ -1124,42 +1168,164 @@ export default function LandingPage() {
 
               <div className="mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/perigoso-1.png"
+                  src="/caneta.png"
                   width={400}
                   height={250}
                   alt="Efeitos colaterais de injeções"
-                  className="w-full h-48 object-contain rounded-lg"
+                  className="w-full h-48 object-cover rounded-lg"
                 />
               </div>
 
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Compostos químicos e sintéticos</span>
+                  <span className="font-medium">Fórmula química</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">
-                    Possíveis efeitos colaterais: náuseas, vômitos, desconfortos gastrointestinais
-                  </span>
+                  <span className="font-medium">Efeitos colaterais</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Custo elevado: acima de R$1.000/mês</span>
+                  <span className="font-medium">Preço extremamente caro</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Exige prescrição e acompanhamento médico</span>
+                  <span className="font-medium">Necessita de receita médica</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Aplicação dolorosa e invasiva</span>
+                  <span className="font-medium">Causa náuseas e vômitos</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Risco de efeito rebote após interrupção</span>
+                  <span className="font-medium">Efeito sanfona</span>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          {/* Mobile View - Carousel */}
+
+          <div className="md:hidden">
+            <div className="relative overflow-x-auto pb-8">
+              <div className="flex space-x-4 w-max px-2 pb-4">
+                <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-500 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
+                  <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    RECOMENDADO
+                  </div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-green-700">Definamax</h3>
+                    <CheckCircle2 className="h-5 w-5 text-green-600" />
+                  </div>
+
+                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="/clorela1.png"
+                      width={400}
+                      height={250}
+                      alt="Benefícios do suplemento natural"
+                      className="w-full h-36 object-cover rounded-lg"
+                    />
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Fórmula natural</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Sem contraindicações</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Preço acessível</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Não precisa de receita médica</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Fácil de usar</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200 shadow-md relative overflow-hidden min-w-[280px] max-w-[280px]">
+                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    NÃO RECOMENDADO
+                  </div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-red-700">Injeções</h3>
+                    <X className="h-5 w-5 text-red-600" />
+                  </div>
+
+                  <div className="mb-4 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="/caneta1.png"
+                      width={400}
+                      height={250}
+                      alt="Efeitos colaterais de injeções"
+                      className="w-full h-36 object-cover rounded-lg"
+                    />
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Fórmula química</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Efeitos colaterais</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Preço extremamente caro</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Necessita de receita médica</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Causa náuseas e vômitos</span>
+                    </li>
+                    <li className="flex items-start">
+                      <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="font-medium">Efeito sanfona</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Scroll indicator */}
+              <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+                <div className="flex items-center space-x-1">
+                  <div className="w-8 h-1 bg-green-500 rounded-full"></div>
+                  <div className="w-8 h-1 bg-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Scroll prompt */}
+              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-600 text-white rounded-full p-2 animate-pulse shadow-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Scroll instruction */}
+            <div className="text-center text-sm text-green-700 font-medium mt-2 mb-6 animate-pulse">
+              Deslize para o lado para ver mais comparações ➡️
             </div>
           </div>
           <div className="flex justify-center mt-10 flex-col items-center">
@@ -1167,11 +1333,11 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              ESCOLHER MEU TRATAMENTO <ArrowRight className="ml-2 h-5 w-5" />
+              ESCOLHER MEU DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
         </div>
@@ -1185,21 +1351,26 @@ export default function LandingPage() {
             <div className="bg-green-50 p-6 rounded-lg border border-green-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="mr-4">
-                  <Image src="/anvisa.png" alt="ANVISA" width={80} height={80} className="h-16 w-16 object-contain" />
+                  <Image
+                    src="/onatural.png"
+                    alt="Definamax Aprovado pela ANVISA - Suplemento Alimentar Registrado"
+                    width={80}
+                    height={80}
+                    className="h-16 w-16 object-contain"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800">Aprovado pela ANVISA</h3>
-                  <p className="text-gray-600">RDC 240/2018.</p>
+                  <h3 className="text-xl font-semibold text-gray-800">100% Natural</h3>
+                  <p className="text-gray-600">Fabricado em laboratório certificado</p>
                 </div>
               </div>
               <p className="text-gray-700">
-                O Definamax é um suplemento alimentar devidamente registrado na Agência Nacional de Vigilância Sanitária
-                (ANVISA), garantindo que todos os ingredientes e processos de fabricação seguem os mais rigorosos
-                padrões de qualidade e segurança.
+              Definamax é composto por ingredientes 100% naturais, cuidadosamente selecionados e com seus benefícios amplamente comprovados pela ciência e por rigorosos estudos científicos no auxílio à perda de peso. Cada componente de Definamax atua de forma sinérgica para otimizar o seu metabolismo, promover a saciedade e auxiliar na queima de gordura. 
+
               </p>
               <div className="mt-4 flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
-                <span className="text-green-700 font-medium">Fabricado em laboratório certificado</span>
+                <span className="text-green-700 font-medium">Conheça os estudos científicos</span>
               </div>
             </div>
 
@@ -1221,9 +1392,10 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="text-gray-700">
-                Estamos tão confiantes na eficácia do Definamax que oferecemos uma garantia incondicional de 30 dias. Se
-                você não estiver completamente satisfeito com os resultados, basta entrar em contato conosco para
-                receber 100% do seu dinheiro de volta, sem perguntas, conforme os nossos termos*.
+                Experimente o Definamax com total confiança! Oferecemos uma garantia incondicional de 30 dias para você
+                sentir os benefícios das fibras inteligentes na sua jornada de emagrecimento. Se, dentro de 30 dias,
+                você não estiver 100% satisfeito com os resultados, é só entrar em contato pelo e-mail e devolvemos 100%
+                do seu dinheiro. Conforme nossos termos*
               </p>
               <div className="mt-4 flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
@@ -1236,7 +1408,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              COMPRAR AGORA <ArrowRight className="ml-2 h-5 w-5" />
+              EU TAMBÉM QUERO EMAGRECER COM DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1246,16 +1418,157 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Seção de Bônus */}
+      <section
+        className="w-full py-16 bg-gradient-to-b from-white to-green-100 border-y-4 border-dashed border-yellow-400"
+        aria-label="Bônus Exclusivos Definamax"
+      >
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="text-center mb-10">
+            <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
+              BÔNUS EXCLUSIVOS
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Levando mais de 2 frascos você ganha:</h2>
+            <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
+              Bônus exclusivos para potencializar seus resultados
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Bônus 1: Colágeno Hidrolisado */}
+            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl border-2 border-yellow-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-3 px-4 text-center">
+                <h3 className="text-xl font-bold">Colágeno Hidrolisado</h3>
+                <p className="text-sm opacity-90">Combate a flacidez durante o emagrecimento</p>
+              </div>
+
+              <div className="p-6">
+                <div className="flex justify-center mb-6 relative">
+                  <Image
+                    src="/colageno.png"
+                    alt="Colágeno Hidrolisado"
+                    width={200}
+                    height={200}
+                    className="h-[150px] object-contain hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                    GRÁTIS
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Previne a flacidez durante o processo de emagrecimento</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Melhora a elasticidade e firmeza da pele</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Fortalece unhas, cabelos e articulações</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Complemento perfeito para o Definamax</span>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
+                  <p className="font-medium text-yellow-800 text-center">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
+                      VALOR: <span className="line-through">R$89,90</span>
+                    </span>
+                    <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bônus 2: Programa de Emagrecimento Acelerado */}
+
+            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl border-2 border-yellow-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-3 px-4 text-center">
+                <h3 className="text-xl font-bold">Programa De Emagrecimento Acelerado</h3>
+                <p className="text-sm opacity-90">Videoaulas com informações secretas para acelerar resultados</p>
+              </div>
+
+              <div className="p-6">
+                <div className="flex justify-center mb-6 relative">
+                  <Image
+                    src="/programa.png"
+                    alt="Programa De Emagrecimento Acelerado"
+                    width={200}
+                    height={200}
+                    className="h-[150px] object-contain hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                    GRÁTIS
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Videoaulas exclusivas com especialistas em emagrecimento</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Técnicas secretas para potencializar a perda de peso</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Dicas de alimentação para maximizar os resultados</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Acesso vitalício ao conteúdo exclusivo</span>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
+                  <p className="font-medium text-yellow-800 text-center">
+                    <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
+                      VALOR: <span className="line-through">R$197,00</span>
+                    </span>
+                    <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-10 flex-col items-center">
+            <button
+              onClick={scrollToBuy}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-yellow-600 to-yellow-500 px-6 py-3 text-base font-bold text-white hover:from-yellow-500 hover:to-yellow-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-yellow-700 animate-pulse-border"
+            >
+              GARANTIR MEUS BÔNUS AGORA <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+              <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+              <span>Oferta por tempo limitado </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Área de compra */}
-      <section id="comprar" ref={buyRef} className="w-full py-16 bg-gradient-to-b from-green-100 to-green-50">
+      <section
+        id="comprar"
+        ref={buyRef}
+        className="w-full py-16 bg-gradient-to-b from-green-100 to-green-50"
+        aria-label="Comprar Definamax"
+      >
         <div className="mx-auto max-w-5xl px-4 text-center">
           <div className="mb-16">
             <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
-              OFERTA ESPECIAL POR TEMPO LIMITADO
+              DISPONÍVEL ENQUANTO DURAREM OS ESTOQUES
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Comece Sua Transformação Hoje</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Tome uma decisão hoje!</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
-              Escolha o plano ideal para você e comece a ver resultados em semanas
+              Escolha o kit ideal para você acelerar o seu processo de perda de peso
             </p>
           </div>
 
@@ -1265,7 +1578,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Completo</h3>
                 <p className="text-sm opacity-90">
-                  Maior <span className="font-bold">desconto</span> nesse kit!
+                  6 meses de tratamento
                 </p>
               </div>
 
@@ -1276,34 +1589,38 @@ export default function LandingPage() {
                     alt="Kit 6 Meses"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-42 sm:h-[12rem] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -68%
                   </div>
                 </div>
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
+                    <span className="text-gray-400 text-sm">POR 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">Por: </span>12x R$48,09
+                    <span className="text-sm font-normal"></span> R$48,09
                   </div>
-                  <div className="text-sm text-gray-600">ou R$479,40 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1">R$79,90 por frasco</div>
+                  <div className="text-sm text-gray-600">ou R$479,00 à vista no pix</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Tratamento completo de <span className="font-bold">6 meses</span>
+                      Tratamento completo
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">+ 2 Frascos de Colágeno Grátis</span>
+                    <span className="text-sm">2 Frascos de colágeno hidrolisado</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Programa emagrecimento acelerado</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1314,14 +1631,14 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 19KG
+                    APROVEITE AGORA 
                     </span>
-                    COM ESSE KIT!
+                    68% DE DESCONTO
                   </p>
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/ytA47b?src=adv2")}
+                  href={addUtmToUrl("https://full.sale/ytA47b")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
@@ -1339,7 +1656,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 sm:py-3 px-4 text-center mt-8">
                 <h3 className="text-lg sm:text-xl font-bold">Kit Recomendado</h3>
                 <p className="text-sm opacity-90">
-                  Melhor <span className="font-bold">custo benefício</span> nesse kit!
+                  3 meses de tratamento
                 </p>
               </div>
 
@@ -1350,34 +1667,34 @@ export default function LandingPage() {
                     alt="Kit 3 Meses"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-42 sm:h-[12rem] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -50%
                   </div>
                 </div>
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-2 border-green-100">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 line-through text-sm">De R$758,70</span>
+                    <span className="text-gray-400 text-sm">Por 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">Por: </span>12x R$38,05
+                    <span className="text-sm font-normal"></span>R$38,05
                   </div>
-                  <div className="text-sm text-gray-600">ou R$379,00 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1">Apenas R$126,33 por frasco</div>
+                  <div className="text-sm text-gray-600">ou R$379,00 à vista no pix</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Tratamento de <span className="font-bold">3 meses</span>
+                      Tratamento intermediário
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">+ 1 Frasco de Colágeno Grátis</span>
+                    <span className="text-sm">1 Frasco de colágeno hidrolisado</span>
                   </div>
 
                   <div className="flex items-start">
@@ -1389,15 +1706,15 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 13KG
+                    APROVEITE AGORA 
                     </span>
-                    COM ESSE KIT!
+                    50% DE DESCONTO
                   </p>
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/DmNQj1?src=adv2")}
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-lg border-b-4 border-green-700 animate-pulse-border"
+                  href={addUtmToUrl("https://full.sale/DmNQj1")}
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
                 >
                   COMPRAR AGORA
                 </Link>
@@ -1410,7 +1727,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Inicial</h3>
                 <p className="text-sm opacity-90">
-                  <span className="font-bold">Experimente</span>
+                  30 dias de tratamento
                 </p>
               </div>
 
@@ -1421,28 +1738,30 @@ export default function LandingPage() {
                     alt="Kit 1 Mês"
                     width={400}
                     height={400}
-                    className="h-40 sm:h-[11rem] object-contain hover:scale-105 transition-all duration-300"
+                    className="h-42 sm:h-[12rem] object-contain hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold py-1 px-2 rounded-full">
                     -18%
                   </div>
                 </div>
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 line-through text-sm">De R$329,90</span>
+                    <span className="text-gray-400 text-sm">Por 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">Por: </span>12x R$28,01
+                    <span className="text-sm font-normal"></span> R$28,01
                   </div>
-                  <div className="text-sm text-gray-600">ou R$279,90 à vista</div>
+                  <div className="text-sm text-gray-600">ou R$279,90 à vista no pix</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
+                  
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Tratamento de <span className="font-bold">1 mês</span>
+                      Tratamento inicial
                     </span>
                   </div>
                   <div className="flex items-start">
@@ -1461,19 +1780,19 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 5KG
+                    APROVEITE AGORA 
                     </span>
-                    COM ESSE KIT!
+                    18% DE DESCONTO
                   </p>
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/eMbtHp?src=adv2")}
+                  href={addUtmToUrl("https://full.sale/eMbtHp")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
                 </Link>
-                <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 29,00</p>
+                <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 25,00</p>
               </div>
             </div>
           </div>
@@ -1511,16 +1830,14 @@ export default function LandingPage() {
       </section>
 
       {/* Avaliações estilo Amazon - Movido para cima */}
-      <section className="w-full py-8 bg-green-50">
+      <section className="w-full py-8 bg-green-50" aria-label="Avaliações do Definamax">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Avaliações Verificadas
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">O Que Nossos Clientes Estão Dizendo</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Mais de 3.800 avaliações positivas de clientes satisfeitos com os resultados
-            </p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Avaliações de consumidores</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto"></p>
           </div>
 
           <div className="mb-8 flex items-center justify-center">
@@ -1549,14 +1866,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Melhor decisão que tomei!</h4>
+                    <h4 className="font-semibold">Valeu cada centavo!</h4>
                   </div>
                   <div className="text-sm text-gray-500">05/05/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de tentar várias dietas sem sucesso, decidi experimentar o Definamax. Em apenas 2 meses perdi
-                  12kg! O mais incrível é que não senti fome ou ansiedade durante o processo. Minha energia aumentou e
-                  finalmente consegui voltar a praticar corrida nas ruas que eu sempre amei. Recomendo muito.
+                Tava desconfiada, porque já tentei várias coisas pra emagrecer e nada dava certo. O Definamax demorou umas semanas pra fazer efeito, mas perdi 8kg em 2 meses. Não é milagre, tem que tomar direitinho e cuidar da comida, mas me ajudou a não beliscar besteira no trabalho.
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1590,15 +1905,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Eu achei muito bom!</h4>
+                    <h4 className="font-semibold">Acabou com minha barriga de churrasco e cerveja</h4>
                   </div>
                   <div className="text-sm text-gray-500">28/04/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Já tinha visto a propagando do produto no ano passado quando passou a reportagem na record, mas
-                  preferi esperar. Estava em busca de algo que eu pudesse tomar sem precisar parar de tomar minha
-                  cerveja no final de semana. Praticamente a barriga que eu tinha era toda de cerveja, e o Definamax me
-                  ajudou muito com isso, perdi aquela barriga, e ainda posso tomar umas no sabádo de futebol. Aprovado.
+                Todo fim de semana era churrasco com os amigos, e a barriga só crescia. Tava até evitando camiseta justa. Comprei o Definamax porque era mais em conta que nutricionista. Em 3 meses, perdi 9kg e agora consigo jogar uma pelada sem passar vergonha. Tô mais leve e com disposição!
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1613,13 +1925,13 @@ export default function LandingPage() {
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
                     <Image
                       src="/review6.png"
-                      alt="Lucas M."
+                      alt="Rosimari M."
                       width={32}
                       height={32}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-sm font-medium">Lucas M. • Cliente Verificado</span>
+                  <span className="text-sm font-medium">Lucas. • Cliente Verificado</span>
                 </div>
               </div>
 
@@ -1632,14 +1944,14 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Resultado incrível em pouco tempo!</h4>
+                    <h4 className="font-semibold">Tô me sentindo mais leve!</h4>
                   </div>
                   <div className="text-sm text-gray-500">12/03/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Comecei a tomar o Definamax há 4 meses e já perdi 15kg! O mais impressionante é que não sinto mais
-                  aquela fome ansiosa que me fazia comer compulsivamente. Minha disposição melhorou muito e estou
-                  conseguindo fazer exercícios sem me sentir cansada. Super recomendo!
+                  "Eu sempre lutei com o peso e com vontade de comer besteira o tempo todo. Com o Definamax, em 4 meses
+                  consegui perder 12kg. Não foi fácil no começo, porque às vezes esquecia de tomar, mas depois que
+                  peguei o jeito, senti que comia menos e tinha mais energia. Tô feliz com o progresso!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1673,14 +1985,14 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Finalmente algo que funciona!</h4>
+                    <h4 className="font-semibold">Finalmente algo que não me deu problema!</h4>
                   </div>
                   <div className="text-sm text-gray-500">28/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Já tentei de tudo para emagrecer, inclusive injeções que me deixaram com náuseas terríveis. O
-                  Definamax foi a única coisa que realmente funcionou para mim sem efeitos colaterais. Em 3 meses perdi
-                  14kg e minha pressão arterial normalizou. Estou muito feliz com os resultados!
+                  "Tentei umas injeções pra emagrecer, mas me davam náusea e dor de cabeça. O Definamax foi diferente, é
+                  natural e não senti nada ruim. Perdi 9kg em 3 meses, e minha pressão, que tava alta, tá bem melhor.
+                  Não é rápido como prometem por aí, mas funcionou pra mim!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1714,14 +2026,14 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Transformação completa em 3 meses</h4>
+                    <h4 className="font-semibold">Voltei a jogar bola com os amigos!</h4>
                   </div>
                   <div className="text-sm text-gray-500">15/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de anos tentando emagrecer sem sucesso, o Definamax mudou minha vida. Perdi 16kg em 3 meses,
-                  minha energia aumentou e voltei a praticar esportes. Minha esposa está impressionada com a mudança e
-                  minha autoestima voltou!
+                  "Depois de engordar na pandemia, tava difícil até subir escada. O Definamax me ajudou a perder 11kg em
+                  3 meses. Não virei atleta, mas agora consigo jogar uma pelada com os amigos sem passar vergonha. Minha
+                  esposa tá feliz com a mudança, e eu também!"
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1755,14 +2067,13 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Transformou minha vida!</h4>
+                    <h4 className="font-semibold">Me sinto muito melhor</h4>
                   </div>
                   <div className="text-sm text-gray-500">02/02/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Depois de ter meu segundo filho, não conseguia mais voltar ao meu peso. Tentei várias dietas sem
-                  sucesso. Com o Definamax, perdi 10kg em 2 meses e meio! O melhor é que não sinto aquela ansiedade por
-                  comida que tinha antes. Minha autoestima voltou!
+                  "Depois do meu filho, tava impossível voltar ao peso de antes. Tentei umas dietas, mas não tinha
+                  paciência. Com o Definamax, perdi 12kg em 3 meses e meio. Não fico mais tão ansiosa pra comer doce."
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1796,14 +2107,14 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Superou minhas expectativas</h4>
+                    <h4 className="font-semibold">Não acreditava, mas funcionou!</h4>
                   </div>
                   <div className="text-sm text-gray-500">20/01/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Confesso que estava cético no início, mas decidi dar uma chance. Já tinha tentado outros suplementos
-                  sem resultado. Com o Definamax, perdi 13kg no segundo mês! Minha barriga diminuiu visivelmente e minha
-                  energia aumentou. Já recomendei para todos os meus amigos.
+                  "Tava desconfiado, achando que era só mais um suplemento caro. Mas resolvi tentar o Definamax porque o
+                  preço tava bom. Perdi 8kg em 2 meses, e minha barriga tá bem menor. Ainda tenho que tomar direitinho
+                  pra não esquecer, mas tô gostando do resultado. Já indiquei pros amigos do trampo!"
                 </p>
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -1832,14 +2143,14 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Meu nutricionista ficou impressionado!</h4>
+                      <h4 className="font-semibold">Muito mais saúde!</h4>
                     </div>
                     <div className="text-sm text-gray-500">15/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Eu estava com pré-diabetes e meu nutricionista sugeriu que eu perdesse peso urgentemente. Comecei a
-                    tomar Definamax e em 3 meses perdi 16kg! Na última consulta, meus exames voltaram ao normal e meu
-                    médico perguntou o que eu tinha feito. Recomendo a todos!
+                    "Estava com pré-diabetes e o médico falou pra emagrecer urgente. Não tinha grana pra nutricionista
+                    particular, então comprei o Definamax. Perdi 10kg em 3 meses, e meus exames melhoraram bastante. Não
+                    é mágica, mas com um pouco de cuidado com a comida, fez diferença!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -1868,14 +2179,12 @@ export default function LandingPage() {
                           ),
                         )}
                       </div>
-                      <h4 className="font-semibold">Ótimo para manter o peso</h4>
+                      <h4 className="font-semibold">Deu um jeito na minha vontade de doce!</h4>
                     </div>
                     <div className="text-sm text-gray-500">05/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Emagreci 12kg com dieta e exercício há um ano, mas estava difícil manter o peso. Comecei a usar
-                    Definamax para ajudar e tem funcionado perfeitamente. Não recuperei nenhum kg nos últimos 3 meses e
-                    tenho me sentido muito bem!
+                  Sou mãe de dois, trabalho o dia todo e vivia beliscando chocolate pra aguentar o estresse. Tentei várias dietas, mas nada durava. Com o Definamax, em 2 meses perdi 9kg e quase não sinto vontade de doce. Me sinto mais leve pra correr atrás das crianças!
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
@@ -1909,15 +2218,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Festa de formatura em 2 meses!</h4>
+                      <h4 className="font-semibold">Voltei a usar minhas roupas antigas!</h4>
                     </div>
                     <div className="text-sm text-gray-500">22/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Minha formatura estava chegando e eu queria entrar no vestido que eu tinha amado! Comecei a tomar
-                    Definamax e em 2 meses perdi 9kg! Consegui usar meu vestido e me senti maravilhosa. As fotos ficaram
-                    incríveis e me sinto confiante com meu corpo novamente. Ainda preciso emagrecer mais, eu sei. Mas
-                    estou bem satusfeita.
+                  Depois da pandemia, engordei muito e tava me sentindo mal no trabalho, porque sou vendedora e a aparência conta. O Definamax me ajudou a perder 8kg em 3 meses. Agora, consigo usar as roupas que tava guardada no armário e me sinto mais confiante com os clientes!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -1942,15 +2248,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Fiz as pazes com minha esposa!</h4>
+                      <h4 className="font-semibold">Menos inchaço e mais energia!</h4>
                     </div>
                     <div className="text-sm text-gray-500">10/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Depois de ganhar peso na pandemia, nenhuma das minhas calças servia mais. Minha esposta estava muito
-                    incomodada com isso, achei que iria me separar. Comecei a tomar Definamax e em 1 mês já perdi 5kg!
-                    As coisas começaram a melhorar em casa. É responsabilidade minha eu ter engordado tanto, e também é
-                    responsabilidade minha emagrecer.
+                  Trabalho como motorista de app e passo o dia sentado. Tava sempre inchado e cansado. Comprei o Definamax porque não tinha grana pra academia ou injeções caras. Em 2 meses, perdi 7kg e o inchaço sumiu. Tô com mais energia pra trabalhar e até pra brincar com meu filho!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -1975,14 +2278,14 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Recomendo para todas as amigas!</h4>
+                      <h4 className="font-semibold">Me deu mais confiança no trabalho!</h4>
                     </div>
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Estava com dificuldades para emagrecer. Eu trabalho como gerente em uma loja de automóveis, e a
-                    aparência é fundamental nesse emprego. Com o Definamax, consegui perder 8kg em 2 meses e me sinto
-                    muito mais disposta. Já indiquei para todas as minhas amigas que também estão adorando!
+                    "Sou vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com
+                    a correria do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus
+                    colegas notaram a diferença, e já indiquei pra várias amigas!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2029,14 +2332,14 @@ export default function LandingPage() {
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>30 dias de garantia ou seu dinheiro de volta</span>
+              <span>Resultados vísiveis ou seu dinheiro de volta</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Perguntas Frequentes (FAQ) */}
-      <section className="w-full py-16 bg-white">
+      <section className="w-full py-16 bg-white" aria-label="Perguntas Frequentes sobre Definamax">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
@@ -2071,9 +2374,14 @@ export default function LandingPage() {
                   openFaqs.faq1 ? "block" : "hidden"
                 }`}
               >
-                Definamax é um suplemento alimentar 100% natural que combina fibras de alta potência para absorver a
-                gordura, aumentar a saciedade e acelerar o metabolismo. Ele funciona como um detox poderoso, promovendo
-                resultados rápidos e visíveis em poucas semanas.
+                Definamax é um Suplemento Alimentar cuidadosamente formulado com agar-agar, espirulina, psyllium e cromo para auxiliar no seu processo de emagrecimento de forma natural e eficaz.
+
+Com Definamax, você pode esperar resultados significativos na redução do peso corporal e na melhora do controle do apetite. Isso é possível devido aos ingredientes que o compõem, que fazem o seguinte:
+
+Agar-agar e psyllium são fibras que, ao entrarem em contato com a água, formam um gel no estômago, aumentando a sensação de saciedade e reduzindo a ingestão calórica nas refeições.
+A espirulina, rica em proteínas e nutrientes, também contribui para a saciedade e apoia um metabolismo saudável.
+O cromo atua na regulação dos níveis de açúcar no sangue e na redução da vontade de comer doces e carboidratos, o que é crucial para manter a dieta.
+Juntos, esses ingredientes trabalham para otimizar a digestão, promover a saciedade prolongada e auxiliar no metabolismo de gorduras e carboidratos, guiando você para uma perda de peso saudável e sustentável.
               </div>
             </div>
 
@@ -2099,9 +2407,11 @@ export default function LandingPage() {
                   openFaqs.faq2 ? "block" : "hidden"
                 }`}
               >
-                Os principais benefícios do Definamax incluem: emagrecimento rápido e natural, aumento da saciedade,
-                controle da compulsão alimentar, aceleração do metabolismo, queima da gordura teimosa, melhora da
-                disposição e bem-estar geral.
+                Auxílio na Perda de Peso: A combinação de ingredientes naturais e cientificamente comprovados atua sinergicamente para promover a redução do peso corporal.
+Controle do Apetite e da Saciedade: As fibras presentes (agar-agar e psyllium) expandem-se no estômago, proporcionando uma sensação de plenitude por mais tempo, o que ajuda a diminuir a fome e a ingestão excessiva de alimentos.
+Redução da Vontade por Doces e Carboidratos: O cromo, um dos componentes chave, contribui para a regulação dos níveis de glicose no sangue, o que pode diminuir os desejos por alimentos açucarados e ricos em carboidratos.
+Metabolismo Otimizado: Ingredientes como a espirulina e o cromo apoiam o metabolismo de gorduras e carboidratos, contribuindo para uma queima de energia mais eficiente.
+Melhora da Saúde Digestiva: As fibras do agar-agar e do psyllium também auxiliam no bom funcionamento intestinal, promovendo a regularidade e o bem-estar digestivo geral.
               </div>
             </div>
 
@@ -2215,15 +2525,24 @@ export default function LandingPage() {
             prevenir qualquer doença. Consulte sempre um profissional de saúde qualificado antes de iniciar qualquer
             programa de emagrecimento.
           </p>
-          <div className="flex justify-center space-x-4 mb-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            <Link href="/avaliacao" className="text-sm hover:text-green-200">
+              Avaliação de IMC
+            </Link>
             <Link href="/termos" className="text-sm hover:text-green-200">
-              Termos de Uso
+              Termos de Garantia
+            </Link>
+            <Link href="/perguntas-frequentes" className="text-sm hover:text-green-200">
+              Perguntas Frequentes
+            </Link>
+            <Link href="/produto" className="text-sm hover:text-green-200">
+              Produtos
+            </Link>
+            <Link href="/remarketing" className="text-sm hover:text-green-200">
+              Depoimentos em Vídeo
             </Link>
             <Link href="/privacidade" className="text-sm hover:text-green-200">
               Política de Privacidade
-            </Link>
-            <Link href="https://www.definamaxoficial.com/termos" className="text-sm hover:text-green-200">
-              Política de Reembolso
             </Link>
           </div>
           <p className="text-xs text-gray-300">
@@ -2245,6 +2564,62 @@ export default function LandingPage() {
           Fale conosco no WhatsApp!
         </span>
       </div>
+      {/* Structured Data for Product */}
+
+      {/* Structured Data for FAQ */}
+
+      {/* Structured Data for Organization */}
+      {/* Exit Intent Popup */}
+      {showExitPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div
+            ref={popupRef}
+            className="bg-white rounded-lg max-w-md w-full p-6 relative animate-[shake_0.8s_ease-in-out]"
+          >
+            <button
+              onClick={() => setShowExitPopup(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-bold text-gray-800">Espere! Não vá embora ainda!</h3>
+              <p className="text-red-600 font-semibold">Oferta especial só para você</p>
+            </div>
+
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/mockup.png"
+                alt="Definamax - Oferta Especial"
+                width={120}
+                height={160}
+                className="h-32 object-contain"
+              />
+            </div>
+
+            <div className="bg-green-50 rounded-lg p-4 mb-4 text-center">
+              <p className="text-lg font-bold text-green-700 mb-2">+10% de DESCONTO</p>
+              <p className="text-gray-700">No kit com 3 frascos de Definamax</p>
+
+              <div className="mt-3 bg-yellow-100 rounded-lg p-2 flex items-center justify-center">
+                <Clock className="h-5 w-5 text-red-500 mr-2" />
+                <p className="font-bold text-red-600">
+                  Oferta expira em: {exitPopupTimer.minutes.toString().padStart(2, "0")}:
+                  {exitPopupTimer.seconds.toString().padStart(2, "0")}
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href={addUtmToUrl("https://checkout.fullsale.com.br/?pid=Xure9l7ypYcKclqaxtM6&coupon=saida")}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all text-center"
+            >
+              APROVEITAR DESCONTO ADICIONAL <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
