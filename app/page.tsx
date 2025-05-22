@@ -382,9 +382,9 @@ export default function LandingPage() {
               EXPERIMENTE DEFINAMAX <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
-            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+            <div className="flex items-center justify-left mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>Resultados vísiveis ou seu dinheiro de volta</span>
+              <span>30 dias de garantia para conhecer os benefícios</span>
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
@@ -1789,7 +1789,7 @@ export default function LandingPage() {
                 >
                   COMPRAR AGORA
                 </Link>
-                <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 29,00</p>
+                <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 25,00</p>
               </div>
             </div>
           </div>
