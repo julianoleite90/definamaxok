@@ -315,24 +315,24 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section
-        className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8"
-        aria-label="Benefícios do Definamax"
-      >
-        <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4  break-words leading-tight">
-              Perca peso rápido,{" "}
-              <span className="text-green-600 relative">
-                sem dietas restritivas,{" "}
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
-              </span>{" "}
-              ou injeções perigosas
-            </dep06>
+<section
+  className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8"
+  aria-label="Benefícios do Definamax"
+>
+  <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+    <div className="order-2 md:order-1">
+      <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 !mb-10 break-words leading-tight">
+        Perca peso rápido,{" "}
+        <span className="text-green-600 relative">
+          sem dietas restritivas,{" "}
+          <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+        </span>{" "}
+        ou injeções perigosas
+      </dep06>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-            Descubra o poder das fibras inteligentes que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade
-            </p>
+      <p className="text-base sm:text-lg md:text-xl text-gray-700 mt-6 mb-4 break-words">
+        Descubra o poder das fibras inteligentes que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade
+      </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
               <div className="flex">
