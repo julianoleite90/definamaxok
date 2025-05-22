@@ -410,7 +410,7 @@ export default function LandingPage() {
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-            Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho.
+            Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho
             </p>
           </div>
 
