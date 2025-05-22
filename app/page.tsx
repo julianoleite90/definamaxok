@@ -321,18 +321,17 @@ export default function LandingPage() {
       >
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
-            <h1 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Emagreça rápido{" "}
+            <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
+              Perca peso{" "}
               <span className="text-green-600 relative">
-                sem dietas restritivas,{" "}
+                sem dietas drásticas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               </span>{" "}
-              ou injeções perigosas
-            </h1>
+              ou injeções arriscadas
+            </dep06>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 break-words">
-              Descubra o poder das fibras inteligentes que capturam gordura, aceleram o metabolismo e aumentam a
-              saciedade.
+            Descubra o Poder das Fibras Naturais que Reduzem a Absorção de Gordura, Aceleram o Metabolismo e Prolongam a Saciedade
             </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
@@ -354,15 +353,15 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Saciedade prolongada</span>
+                  <span className="font-medium">Saciedade por mais tempo</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Controle da compulsão</span>
+                  <span className="font-medium">Redução da compulsão alimentar</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Elimine a gordura teimosa (braços, coxas, e papada)</span>
+                  <span className="font-medium">Metabolismo equilibrado</span>
                 </li>
 
                 <li className="flex items-start">
@@ -371,7 +370,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">100% natural, sem efeitos colaterais</span>
+                  <span className="font-medium">Fórmula 100% Natural e Segura</span>
                 </li>
               </ul>
             </div>
@@ -409,9 +408,9 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Veja quem já transformou a vida com Definamax
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Pessoas normais que usaram e adoraram os benefícios...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no
+              Chega de se esconder! Conheça pessoas reais que recuperaram a autoestima e o prazer de se olhar no
               espelho.
             </p>
           </div>
@@ -429,7 +428,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/joana.png"
+                        src="/ava1.png"
                         alt="Maria"
                         width={100}
                         height={100}
@@ -439,7 +438,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Joana</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-6kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -454,7 +453,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/1-min.png"
+                        src="/dep01.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -463,15 +462,15 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">"Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."</p>
-                  <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
+                  <p className="text-gray-700 mb-2">"Emagreceu 6kg em 30 dias, e eliminou a compulsão alimentar e diminuiu a ansiedade."</p>
+                  <p className="text-green-700 font-medium">- 6kg em 1 mês</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/fernanda.png"
+                        src="/ava2.png"
                         alt="Carlos"
                         width={100}
                         height={100}
@@ -480,8 +479,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Brenda S.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-22kg</span>
+                        <h4 className="font-semibold">Patricia</h4>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-9kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -496,7 +495,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/2-min.png"
+                        src="/dep02.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -506,16 +505,16 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Brenda de 31 anos conseguiu perder 22kgs após controlar a compulsão alimentar."
+                    "Patricia conseguiu perder 9kgs em 2 meses após a gravidez."
                   </p>
-                  <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
+                  <p className="text-green-700 font-medium">- 9kg em 2 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/apaula.png"
+                        src="/ava3.png"
                         alt="Ana"
                         width={100}
                         height={100}
@@ -524,8 +523,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Ana P.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
+                        <h4 className="font-semibold">Larissa</h4>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-5kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -540,7 +539,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="3-min.png"
+                        src="dep03.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -550,9 +549,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Professora Ana Paula perdeu 17kgs em cinco meses e se sente muito mais confiante hoje."
+                    "Larissa emagreceu 5kg em apenas 30 dias usando Definamax"
                   </p>
-                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 5kg em 30 dias</p>
                 </div>
               </div>
 
@@ -566,7 +565,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/ju.png"
+                        src="/ava4.png"
                         alt="Juliana"
                         width={100}
                         height={100}
@@ -575,7 +574,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Juliana R.</h4>
+                        <h4 className="font-semibold">Lucas</h4>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -590,7 +589,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="depoimento04.png"
+                        src="dep04.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -600,17 +599,16 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Juliana sofria com a ansiedade e compulsão, e com 4 meses usando Definamax conseguiu eliminar
-                    15kgs."
+                    "Lucas conseguiu perder 16kg em 5 meses sem precisar parar de tomar sua cerveja no final de semana"
                   </p>
-                  <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
+                  <p className="text-green-700 font-medium">- 16kg em 5 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/h2p.png"
+                        src="/ava5.png"
                         alt="Roberto"
                         width={100}
                         height={100}
@@ -619,8 +617,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Roberto T.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-14kg</span>
+                        <h4 className="font-semibold">Renata</h4>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-10kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -635,7 +633,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/h2.png"
+                        src="/dep05.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -644,15 +642,15 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">"Roberto emagreceu 14kgs em 3 meses usando Definamax."</p>
-                  <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
+                  <p className="text-gray-700 mb-2">"Renata venceu a compulsão e  emagreceu 10kgs em 4 meses usando Definamax."</p>
+                  <p className="text-green-700 font-medium">- 10kg em 4 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/h1p.png"
+                        src="/ava6.png"
                         alt="Marcos"
                         width={100}
                         height={100}
@@ -661,8 +659,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Marcos A.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
+                        <h4 className="font-semibold">Mariana</h4>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-8kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -677,7 +675,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/h1.png"
+                        src="/dep06.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -686,8 +684,8 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">"Marcos secou 16kg e perdeu a barriga estufada".</p>
-                  <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
+                  <p className="text-gray-700 mb-2">"Mariana eliminou 8kg em 2 meses usando Definamax"</p>
+                  <p className="text-green-700 font-medium">- 8kg em 2 meses</p>
                 </div>
               </div>
 
@@ -745,7 +743,7 @@ export default function LandingPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/joana.png"
+                        src="/ava1.png"
                         alt="Maria"
                         width={100}
                         height={100}
@@ -755,7 +753,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Joana</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-6kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -770,7 +768,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/1-min.png"
+                        src="/dep01.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -779,15 +777,15 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">"Joana, mãe de 2 filhos eliminou 27kgs em menos de 8 meses."</p>
-                  <p className="text-green-700 font-medium">- 27kg em 7 meses</p>
+                  <p className="text-gray-700 mb-2">"Emagreceu 6kg em 30 dias, e eliminou a compulsão alimentar e diminuiu a ansiedade."</p>
+                  <p className="text-green-700 font-medium">- 6kg em 30 dias</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/fernanda.png"
+                        src="/ava2.png"
                         alt="Carlos"
                         width={100}
                         height={100}
@@ -796,8 +794,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Fernanda.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-22kg</span>
+                        <h4 className="font-semibold">Patricia</h4>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-9kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -812,7 +810,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="/2-min.png"
+                        src="/dep02.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -822,16 +820,16 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Brenda de 31 anos conseguiu perder 22kgs após controlar a compulsão alimentar."
+                    "Patricia conseguiu perder 9kgs em 2 meses após a gravidez."
                   </p>
-                  <p className="text-green-700 font-medium">- 22kg em 6 meses</p>
+                  <p className="text-green-700 font-medium">- 9kg em 2 meses</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                       <Image
-                        src="/apaula.png"
+                        src="/ava3.png"
                         alt="Ana"
                         width={100}
                         height={100}
@@ -840,8 +838,8 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Ana P.</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
+                        <h4 className="font-semibold">Larissa</h4>
+                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-5kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -856,7 +854,7 @@ export default function LandingPage() {
                   <div className="mb-4">
                     <div>
                       <Image
-                        src="3-min.png"
+                        src="dep03.png"
                         alt="Antes"
                         width={300}
                         height={300}
@@ -866,9 +864,9 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    "Professora Ana Paula perdeu 17kgs em cinco meses e se sente muito mais confiante hoje."
+                    "Larissa emagreceu 5kg em apenas 30 dias usando Definamax"
                   </p>
-                  <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
+                  <p className="text-green-700 font-medium">- 5kg em 30 dias</p>
                 </div>
 
                 {/* Additional testimonials shown when "load more" is clicked */}
@@ -878,7 +876,7 @@ export default function LandingPage() {
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
-                            src="/ju.png"
+                            src="/ava4.png"
                             alt="Juliana"
                             width={100}
                             height={100}
@@ -887,7 +885,7 @@ export default function LandingPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Juliana R.</h4>
+                            <h4 className="font-semibold">Lucas</h4>
                             <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
                               -15kg
                             </span>
@@ -905,7 +903,7 @@ export default function LandingPage() {
                       <div className="mb-4">
                         <div>
                           <Image
-                            src="depoimento04.png"
+                            src="dep04.png"
                             alt="Antes"
                             width={300}
                             height={300}
@@ -915,17 +913,16 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        "Juliana lutou por muitos anos contra o sobrepeso e a compulsão, e com 4 meses usando Definamax
-                        conseguiu eliminar 15kgs."
+                        "Lucas conseguiu perder 16kg em 5 meses sem precisar parar de tomar sua cerveja no final de semana."
                       </p>
-                      <p className="text-green-700 font-medium">- 15kg em 4 meses</p>
+                      <p className="text-green-700 font-medium">- 16g em 5 meses</p>
                     </div>
 
                     <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
-                            src="/h2p.png"
+                            src="/ava5.png"
                             alt="Roberto"
                             width={100}
                             height={100}
@@ -934,9 +931,9 @@ export default function LandingPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Roberto T.</h4>
+                            <h4 className="font-semibold">Renata</h4>
                             <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -14kg
+                              -10kg
                             </span>
                           </div>
                           <div className="flex">
@@ -952,7 +949,7 @@ export default function LandingPage() {
                       <div className="mb-4">
                         <div>
                           <Image
-                            src="/h2.png"
+                            src="/dep05.png"
                             alt="Antes"
                             width={300}
                             height={300}
@@ -961,15 +958,15 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">"Roberto emagreceu 14kgs em 3 meses usando Definamax."</p>
-                      <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
+                      <p className="text-gray-700 mb-2">"Renata venceu a compulsão e emagreceu 10kgs em 4 meses usando Definamax."</p>
+                      <p className="text-green-700 font-medium">- 10kg em 4 meses</p>
                     </div>
 
                     <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
                           <Image
-                            src="/h1p.png"
+                            src="/ava6.png"
                             alt="Marcos"
                             width={100}
                             height={100}
@@ -978,9 +975,9 @@ export default function LandingPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Marcos A.</h4>
+                            <h4 className="font-semibold">Mariana</h4>
                             <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -16kg
+                              -8kg
                             </span>
                           </div>
                           <div className="flex">
@@ -996,7 +993,7 @@ export default function LandingPage() {
                       <div className="mb-4">
                         <div>
                           <Image
-                            src="/h1.png"
+                            src="/dep06.png"
                             alt="Antes"
                             width={300}
                             height={300}
@@ -1005,8 +1002,8 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">"Marcos secou 16kg e perdeu a barriga estufada".</p>
-                      <p className="text-green-700 font-medium">- 16kg em 3 meses</p>
+                      <p className="text-gray-700 mb-2">"Mariana eliminou 8kg em 2 meses usando Definamax"</p>
+                      <p className="text-green-700 font-medium">- 8kg em 2 meses</p>
                     </div>
                   </>
                 )}
@@ -1054,13 +1051,13 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Ciência por trás do Definamax
+              Entenda por que a fórmula realmente funciona
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              Como as fibras inteligentes de <span className="text-green-700">Definamax funcionam?</span>
+            A Ciência do Definamax:<span className="text-green-700"> Como Ele Transforma Seu Corpo</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Entenda como a fórmula de Definamax funciona no seu organismo
+            A fórmula exclusiva combina ingredientes naturais que trabalham juntos para promover um emagrecimento saudável e sustentável. Veja como o Definamax age no seu organismo:
             </p>
           </div>
 
@@ -1082,28 +1079,25 @@ export default function LandingPage() {
 
             <div className="space-y-6">
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Absorção de Gordura</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Máxima Absorção de Gordura</h3>
                 <p className="text-gray-700">
-                  As fibras inteligentes do Definamax, como a Quitosana se ligam às moléculas de gordura durante a
-                  digestão, impedindo que até 76% da gordura consumida seja absorvida pelo organismo. Essas gorduras são
+                  As fibras naturais do Definamax, extraidas da Quitosana se ligam às moléculas de gordura durante a
+                  digestão, impedindo que a gordura consumida seja absorvida pelo organismo. Essas gorduras são
                   eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Aumento da Saciedade</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Saciedade prolongada</h3>
                 <p className="text-gray-700">
-                  O Psyllium e o Agar Agar expandem-se no estômago, criando uma sensação de plenitude que reduz o
-                  apetite e controla a compulsão alimentar. Isso ajuda a consumir menos calorias mesmo sem dietas
-                  restritivas.
+                  Chega de sentir aquela fome incontrolável. As fibras extraídas do Psyllium e Agar-Agar se combinam com a água no estômago, formando um gel que te deixa saciado por horas, diminuindo a fome e os desejos por lanches.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Aceleração do Metabolismo</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Metabolismo acelerado</h3>
                 <p className="text-gray-700">
-                  Os componentes naturais como a Espirulina e o Cromo aumentam a termogênese corporal, elevando o
-                  metabolismo basal para que seu corpo queime mais calorias naturalmente, mesmo em repouso.
+                A espirulina, uma superalga rica em nutrientes, ajuda o corpo a usar carboidratos e gorduras de forma mais eficiente, liberando energia e vitalidade. O cromo regula os níveis de açúcar no sangue, otimizando o metabolismo para queimar calorias com mais potência.
                 </p>
               </div>
 
@@ -1128,7 +1122,7 @@ export default function LandingPage() {
               Comparativo Exclusivo
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Definamax vs Injeções de Emagrecimento</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Por que Definamax é a melhor escolha?</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Por que a fórmula natural de Definamax é a melhor escolha?</p>
           </div>
 
           {/* Desktop View */}
@@ -1155,27 +1149,27 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Natural e eficaz: Absorve a gordura sem efeitos colaterais.</span>
+                  <span className="font-medium">Fórmula natural</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Detox rápido: Desinche e veja resultados rapidamente.</span>
+                  <span className="font-medium">Sem contraindicações</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Acessível: Emagreça sem pesar no bolso.</span>
+                  <span className="font-medium">Preço acessível</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Sem receita: Comece sua transformação hoje.</span>
+                  <span className="font-medium">Não precisa de receita médica</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Fácil: Só 2 cápsulas por dia na sua rotina.</span>
+                  <span className="font-medium">Fácil de usar</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Resultados rápidos: Veja a diferença em semanas.</span>
+                  <span className="font-medium">Não causa dependência</span>
                 </li>
               </ul>
             </div>
@@ -1202,27 +1196,27 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Químicos: Ingredientes artificiais no seu corpo.</span>
+                  <span className="font-medium">Fórmula química</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Efeitos colaterais: Enjoos e mal-estar.</span>
+                  <span className="font-medium">Efeitos colaterais</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Alto custo: Um investimento mensal pesado.</span>
+                  <span className="font-medium">Preço extremamente caro</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Dependência médica: Processo burocrático.</span>
+                  <span className="font-medium">Necessita de receita médica</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Invasivo: Agulhas e desconforto.</span>
+                  <span className="font-medium">Causa náuseas e vômitos</span>
                 </li>
                 <li className="flex items-start">
                   <X className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Efeito sanfona: Resultados podem sumir.</span>
+                  <span className="font-medium">Efeito sanfona</span>
                 </li>
               </ul>
             </div>
@@ -1255,23 +1249,23 @@ export default function LandingPage() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Natural e eficaz: Absorve a gordura sem efeitos colaterais.</span>
+                      <span className="font-medium">Fórmula natural</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Detox rápido: Desinche e veja resultados rapidamente.</span>
+                      <span className="font-medium">Sem contraindicações</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Acessível: Emagreça sem pesar no bolso.</span>
+                      <span className="font-medium">Preço acessível</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Sem receita: Comece sua transformação hoje.</span>
+                      <span className="font-medium">Não precisa de receita médica</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Fácil: Só 2 cápsulas por dia na sua rotina.</span>
+                      <span className="font-medium">Fácil de usar</span>
                     </li>
                   </ul>
                 </div>
@@ -1298,27 +1292,27 @@ export default function LandingPage() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Químicos: Ingredientes artificiais no seu corpo.</span>
+                      <span className="font-medium">Fórmula química</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Efeitos colaterais: Enjoos e mal-estar.</span>
+                      <span className="font-medium">Efeitos colaterais</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Alto custo: Um investimento mensal pesado.</span>
+                      <span className="font-medium">Preço extremamente caro</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Dependência médica: Processo burocrático.</span>
+                      <span className="font-medium">Necessita de receita médica</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Invasivo: Agulhas e desconforto.</span>
+                      <span className="font-medium">Causa náuseas e vômitos</span>
                     </li>
                     <li className="flex items-start">
                       <X className="h-4 w-4 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="font-medium">Efeito sanfona: Resultados podem sumir.</span>
+                      <span className="font-medium">Efeito sanfona</span>
                     </li>
                   </ul>
                 </div>
@@ -1375,7 +1369,7 @@ export default function LandingPage() {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <Image
-                    src="/anvisa.png"
+                    src="/onatural.png"
                     alt="Definamax Aprovado pela ANVISA - Suplemento Alimentar Registrado"
                     width={80}
                     height={80}
@@ -1383,18 +1377,17 @@ export default function LandingPage() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800">Aprovado pela ANVISA</h3>
-                  <p className="text-gray-600">RDC 240/2018.</p>
+                  <h3 className="text-xl font-semibold text-gray-800">100% Natural</h3>
+                  <p className="text-gray-600">Fabricado em laboratório certificado</p>
                 </div>
               </div>
               <p className="text-gray-700">
-                O Definamax é um suplemento alimentar devidamente registrado na Agência Nacional de Vigilância Sanitária
-                (ANVISA), garantindo que todos os ingredientes e processos de fabricação seguem os mais rigorosos
-                padrões de qualidade e segurança.
+              Definamax é composto por ingredientes 100% naturais, cuidadosamente selecionados e com seus benefícios amplamente comprovados pela ciência e por rigorosos estudos científicos no auxílio à perda de peso. Cada componente de Definamax atua de forma sinérgica para otimizar o seu metabolismo, promover a saciedade e auxiliar na queima de gordura. 
+
               </p>
               <div className="mt-4 flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
-                <span className="text-green-700 font-medium">Fabricado em laboratório certificado</span>
+                <span className="text-green-700 font-medium">Conheça os estudos científicos</span>
               </div>
             </div>
 
@@ -1452,7 +1445,7 @@ export default function LandingPage() {
             <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
               BÔNUS EXCLUSIVOS
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Pedidos Acima de 2 Frascos Ganham:</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Compras acima de 2 Frascos Ganham:</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
               Aproveite estes bônus especiais para potencializar seus resultados
             </p>
@@ -1655,9 +1648,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 19KG
+                      VOCÊ ECONOMIZA
                     </span>
-                    COM ESSE KIT!
+                    R$1.000,00
                   </p>
                 </div>
 
@@ -1730,9 +1723,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 13KG
+                      VOCÊ ECONOMIZA
                     </span>
-                    COM ESSE KIT!
+                    R$420,00
                   </p>
                 </div>
 
@@ -1802,9 +1795,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 5KG
+                      VOCÊ ECONOMIZA
                     </span>
-                    COM ESSE KIT!
+                    R$20,00
                   </p>
                 </div>
 
@@ -1936,8 +1929,8 @@ export default function LandingPage() {
                 </div>
                 <p className="text-gray-700 mb-4">
                   "Vi o Definamax numa matéria da TV e fiquei curioso, mas esperei pra ver se era verdade. Eu não queria
-                  parar com minha cervejinha de fim de semana, sabe? Minha barriga tava enorme por causa disso. Em 3
-                  meses tomando, perdi 7kg e a barriga diminuiu bastante. Ainda tomo minha gelada no sábado de futebol,
+                  parar com minha cervejinha de fim de semana, sabe? Minha barriga tava enorme por causa disso. Em 5
+                  meses tomando, perdi 16kg e a barriga diminuiu bastante. Ainda tomo minha gelada no sábado de futebol,
                   mas com moderação. Pra mim, tá aprovado!"
                 </p>
                 <div className="flex gap-2 mb-4">
@@ -2101,7 +2094,7 @@ export default function LandingPage() {
                 </div>
                 <p className="text-gray-700 mb-4">
                   "Depois do meu filho, tava impossível voltar ao peso de antes. Tentei umas dietas, mas não tinha
-                  paciência. Com o Definamax, perdi 7kg em 2 meses e meio. Não fico mais tão ansiosa pra comer doce."
+                  paciência. Com o Definamax, perdi 9kg em 2 meses e meio. Não fico mais tão ansiosa pra comer doce."
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2408,9 +2401,14 @@ export default function LandingPage() {
                   openFaqs.faq1 ? "block" : "hidden"
                 }`}
               >
-                Definamax é um suplemento alimentar 100% natural que combina fibras de alta potência para absorver a
-                gordura, aumentar a saciedade e acelerar o metabolismo. Ele funciona como um detox poderoso, promovendo
-                resultados rápidos e visíveis em poucas semanas.
+                Definamax é um Suplemento Alimentar cuidadosamente formulado com agar-agar, espirulina, psyllium e cromo para auxiliar no seu processo de emagrecimento de forma natural e eficaz.
+
+Com Definamax, você pode esperar resultados significativos na redução do peso corporal e na melhora do controle do apetite. Isso é possível devido aos ingredientes que o compõem, que fazem o seguinte:
+
+Agar-agar e psyllium são fibras que, ao entrarem em contato com a água, formam um gel no estômago, aumentando a sensação de saciedade e reduzindo a ingestão calórica nas refeições.
+A espirulina, rica em proteínas e nutrientes, também contribui para a saciedade e apoia um metabolismo saudável.
+O cromo atua na regulação dos níveis de açúcar no sangue e na redução da vontade de comer doces e carboidratos, o que é crucial para manter a dieta.
+Juntos, esses ingredientes trabalham para otimizar a digestão, promover a saciedade prolongada e auxiliar no metabolismo de gorduras e carboidratos, guiando você para uma perda de peso saudável e sustentável.
               </div>
             </div>
 
@@ -2436,9 +2434,11 @@ export default function LandingPage() {
                   openFaqs.faq2 ? "block" : "hidden"
                 }`}
               >
-                Os principais benefícios do Definamax incluem: emagrecimento rápido e natural, aumento da saciedade,
-                controle da compulsão alimentar, aceleração do metabolismo, queima da gordura teimosa, melhora da
-                disposição e bem-estar geral.
+                Auxílio na Perda de Peso: A combinação de ingredientes naturais e cientificamente comprovados atua sinergicamente para promover a redução do peso corporal.
+Controle do Apetite e da Saciedade: As fibras presentes (agar-agar e psyllium) expandem-se no estômago, proporcionando uma sensação de plenitude por mais tempo, o que ajuda a diminuir a fome e a ingestão excessiva de alimentos.
+Redução da Vontade por Doces e Carboidratos: O cromo, um dos componentes chave, contribui para a regulação dos níveis de glicose no sangue, o que pode diminuir os desejos por alimentos açucarados e ricos em carboidratos.
+Metabolismo Otimizado: Ingredientes como a espirulina e o cromo apoiam o metabolismo de gorduras e carboidratos, contribuindo para uma queima de energia mais eficiente.
+Melhora da Saúde Digestiva: As fibras do agar-agar e do psyllium também auxiliam no bom funcionamento intestinal, promovendo a regularidade e o bem-estar digestivo geral.
               </div>
             </div>
 

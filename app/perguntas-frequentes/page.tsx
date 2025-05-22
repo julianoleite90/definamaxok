@@ -468,8 +468,7 @@ export default function DefinamaxFAQ() {
 
                     <p className="mb-4">
                       Cada frasco de Definamax contém 60 cápsulas, suficientes para um mês de tratamento. O produto é
-                      fabricado em laboratório certificado e segue rigorosos padrões de qualidade, sendo aprovado pela
-                      ANVISA (Agência Nacional de Vigilância Sanitária).
+                      fabricado em laboratório certificado e segue rigorosos padrões de qualidade.
                     </p>
 
                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
@@ -1867,12 +1866,12 @@ export default function DefinamaxFAQ() {
             <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-14 h-14 rounded-full bg-green-100 overflow-hidden mr-4">
-                  <Image src="/joana.png" alt="Joana" width={100} height={100} className="w-full h-full object-cover" />
+                  <Image src="/ava1.png" alt="Joana" width={100} height={100} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
                     <h4 className="font-semibold">Joana</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-27kg</span>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-6kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1886,7 +1885,7 @@ export default function DefinamaxFAQ() {
 
               <div className="mb-4">
                 <Image
-                  src="/1-min.png"
+                  src="/dep01.png"
                   alt="Antes e depois"
                   width={300}
                   height={300}
@@ -1895,8 +1894,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-                "Em 7 meses de Definamax, perdi 27kg! O melhor é que a fome sumiu e eu tenho uma energia incrível pra
-                tudo. Super recomendo!"
+              "Emagreceu 6kg em 30 dias, e eliminou a compulsão alimentar e diminuiu a ansiedade."
               </p>
             </div>
 
@@ -1904,7 +1902,7 @@ export default function DefinamaxFAQ() {
               <div className="flex items-center mb-4">
                 <div className="w-14 h-14 rounded-full bg-green-100 overflow-hidden mr-4">
                   <Image
-                    src="/fernanda.png"
+                    src="/ava2.png"
                     alt="Brenda"
                     width={100}
                     height={100}
@@ -1913,8 +1911,8 @@ export default function DefinamaxFAQ() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Brenda S.</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-22kg</span>
+                    <h4 className="font-semibold">Patricia</h4>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-9kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1928,7 +1926,7 @@ export default function DefinamaxFAQ() {
 
               <div className="mb-4">
                 <Image
-                  src="/2-min.png"
+                  src="/dep02.png"
                   alt="Antes e depois"
                   width={300}
                   height={300}
@@ -1937,19 +1935,18 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-                "Meu sonho era emagrecer naturalmente, mas nada funcionava, nem injeção! Com Definamax, perdi 22 kg e tô
-                chocada com o resultado no meu corpo."
+              "Patricia conseguiu perder 9kgs em 2 meses após a gravidez."
               </p>
             </div>
 
             <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-14 h-14 rounded-full bg-green-100 overflow-hidden mr-4">
-                  <Image src="/h1p.png" alt="Marcos" width={100} height={100} className="w-full h-full object-cover" />
+                  <Image src="/ava4.png" alt="Marcos" width={100} height={100} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Marcos A.</h4>
+                    <h4 className="font-semibold">Lucas</h4>
                     <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
                   </div>
                   <div className="flex">
@@ -1964,7 +1961,7 @@ export default function DefinamaxFAQ() {
 
               <div className="mb-4">
                 <Image
-                  src="/h1.png"
+                  src="/dep04.png"
                   alt="Antes e depois"
                   width={300}
                   height={300}
@@ -1973,8 +1970,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-                "Eu estava com o pé atrás, achando que não ia funcionar. Mas com o Definamax perdi 16kg em 3 meses! A
-                diferença na minha barriga é enorme."
+              "Lucas conseguiu perder 16kg em 5 meses sem precisar parar de tomar sua cerveja no final de semana"
               </p>
             </div>
           </div>

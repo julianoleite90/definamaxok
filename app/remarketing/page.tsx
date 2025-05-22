@@ -489,9 +489,9 @@ export default function ReMarketingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1 sm:p-1.5 mb-2 text-xs text-center">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 5KG
+                      VOCÊ ECONOMIZA
                     </span>
-                    COM ESSE KIT!
+                    R$20,00
                   </p>
                 </div>
 
@@ -564,9 +564,9 @@ export default function ReMarketingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1 sm:p-1.5 mb-2 text-xs text-center">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 13KG
+                      VOCÊ ECONOMIZA
                     </span>
-                    COM ESSE KIT!
+                    R$420,00
                   </p>
                 </div>
 
@@ -637,9 +637,9 @@ export default function ReMarketingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1 sm:p-1.5 mb-2 text-xs text-center">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1 py-0.5 rounded text-xs font-bold mr-1">
-                      EMAGREÇA ATÉ 19KG
+                      VOCÊ ECONOMIZA
                     </span>
-                    COM ESSE KIT!
+                    R$1.000,00
                   </p>
                 </div>
 
