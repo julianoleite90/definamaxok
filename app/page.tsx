@@ -1868,10 +1868,7 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">05/05/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Eu já tinha tentado de tudo, aquelas dietas malucas da internet, mas nada dava certo. Resolvi
-                  experimentar o Definamax porque vi uma propaganda e o preço cabia no bolso. Em 2 meses, perdi 8kg! Não
-                  é milagre, mas me ajudou a comer menos sem passar fome. Agora consigo correr atrás dos meus filhos sem
-                  cansar tão rápido. Tô gostando muito!
+                Tava desconfiada, porque já tentei várias coisas pra emagrecer e nada dava certo. O Definamax demorou umas semanas pra fazer efeito, mas perdi 8kg em 2 meses. Não é milagre, tem que tomar direitinho e cuidar da comida, mas me ajudou a não beliscar besteira no trabalho.
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1905,15 +1902,12 @@ export default function LandingPage() {
                         <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <h4 className="font-semibold">Me ajudou a curtir meu futebol sem culpa!</h4>
+                    <h4 className="font-semibold">Acabou com minha barriga de churrasco e cerveja</h4>
                   </div>
                   <div className="text-sm text-gray-500">28/04/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  "Vi o Definamax numa matéria da TV e fiquei curioso, mas esperei pra ver se era verdade. Eu não queria
-                  parar com minha cervejinha de fim de semana, sabe? Minha barriga tava enorme por causa disso. Em 5
-                  meses tomando, perdi 16kg e a barriga diminuiu bastante. Ainda tomo minha gelada no sábado de futebol,
-                  mas com moderação. Pra mim, tá aprovado!"
+                Todo fim de semana era churrasco com os amigos, e a barriga só crescia. Tava até evitando camiseta justa. Comprei o Definamax porque era mais em conta que nutricionista. Em 3 meses, perdi 9kg e agora consigo jogar uma pelada sem passar vergonha. Tô mais leve e com disposição!
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1953,7 +1947,7 @@ export default function LandingPage() {
                 </div>
                 <p className="text-gray-700 mb-4">
                   "Eu sempre lutei com o peso e com vontade de comer besteira o tempo todo. Com o Definamax, em 4 meses
-                  consegui perder 10kg. Não foi fácil no começo, porque às vezes esquecia de tomar, mas depois que
+                  consegui perder 12kg. Não foi fácil no começo, porque às vezes esquecia de tomar, mas depois que
                   peguei o jeito, senti que comia menos e tinha mais energia. Tô feliz com o progresso!"
                 </p>
                 <div className="flex gap-2 mb-4">
@@ -2076,7 +2070,7 @@ export default function LandingPage() {
                 </div>
                 <p className="text-gray-700 mb-4">
                   "Depois do meu filho, tava impossível voltar ao peso de antes. Tentei umas dietas, mas não tinha
-                  paciência. Com o Definamax, perdi 25 em 6 meses e meio. Não fico mais tão ansiosa pra comer doce."
+                  paciência. Com o Definamax, perdi 12kg em 3 meses e meio. Não fico mais tão ansiosa pra comer doce."
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2182,14 +2176,12 @@ export default function LandingPage() {
                           ),
                         )}
                       </div>
-                      <h4 className="font-semibold">Não voltei a engordar!</h4>
+                      <h4 className="font-semibold">Deu um jeito na minha vontade de doce!</h4>
                     </div>
                     <div className="text-sm text-gray-500">05/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Emagreci 10kg com dieta e academia no ano passado, mas tava difícil manter. Comecei o Definamax pra
-                    ajudar, e há 3 meses não ganhei peso nenhum. Me sinto mais leve e com menos vontade de beliscar
-                    besteira. Pra quem quer manter o peso, é uma boa!"
+                  Sou mãe de dois, trabalho o dia todo e vivia beliscando chocolate pra aguentar o estresse. Tentei várias dietas, mas nada durava. Com o Definamax, em 2 meses perdi 9kg e quase não sinto vontade de doce. Me sinto mais leve pra correr atrás das crianças!
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
@@ -2223,14 +2215,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Me senti bem na festa da empresa!</h4>
+                      <h4 className="font-semibold">Voltei a usar minhas roupas antigas!</h4>
                     </div>
                     <div className="text-sm text-gray-500">22/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Queria emagrecer pra festa de fim de ano da firma. Comprei o Definamax e perdi 6kg em 2 meses. Não
-                    foi fácil, porque às vezes esquecia de tomar, mas consegui usar uma roupa mais justa e me senti
-                    linda! Tô continuando pra perder mais um pouco."
+                  Depois da pandemia, engordei muito e tava me sentindo mal no trabalho, porque sou vendedora e a aparência conta. O Definamax me ajudou a perder 8kg em 3 meses. Agora, consigo usar as roupas que tava guardada no armário e me sinto mais confiante com os clientes!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2255,14 +2245,12 @@ export default function LandingPage() {
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold">Melhorou minha disposição em casa!</h4>
+                      <h4 className="font-semibold">Menos inchaço e mais energia!</h4>
                     </div>
                     <div className="text-sm text-gray-500">10/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Engordei na pandemia, e tava difícil acompanhar as crianças. Minha esposa reclamava que eu tava
-                    muito parado. Com o Definamax, perdi 5kg em 1 mês e tô com mais energia. Não é milagre, mas me
-                    ajudou a comer menos e me mexer mais. Tô bem mais animado!"
+                  Trabalho como motorista de app e passo o dia sentado. Tava sempre inchado e cansado. Comprei o Definamax porque não tinha grana pra academia ou injeções caras. Em 2 meses, perdi 7kg e o inchaço sumiu. Tô com mais energia pra trabalhar e até pra brincar com meu filho!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2292,7 +2280,7 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Trabalho como vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com
+                    "Sou vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com
                     a correria do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus
                     colegas notaram a diferença, e já indiquei pra várias amigas!"
                   </p>
