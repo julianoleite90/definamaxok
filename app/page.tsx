@@ -437,7 +437,7 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Débora</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-23kg</span>
+                        
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -461,7 +461,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">Menos compulsão, inchaço, mais saúde e qualidade de vida.</p>
+                  <p className="text-gray-700 mb-2">31 anos - São Paulo /SP</p>
                   <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
                 </div>
 
@@ -479,7 +479,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Arnaldo</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-25kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -504,7 +503,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    Mais disposição e energia para viver o dia a dia
+                    34 anos - Salvador/BA
                   </p>
                   <p className="text-green-700 font-medium">- 25kg em 7 meses</p>
                 </div>
@@ -523,7 +522,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Sara</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-5kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -548,7 +546,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    Perdi 11kg e me sinto muito mais saudável
+                    32 anos - São Gonçalo/RJ
                   </p>
                   <p className="text-green-700 font-medium">- 5kg em 30 dias</p>
                 </div>
@@ -598,7 +596,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    Graças a Deus eu não sinto mais aquela vontade incontrolável por comida
+                    37 anos - Pinhais/PR
                   </p>
                   <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                 </div>
@@ -617,7 +615,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Laura</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-17kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -641,7 +638,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">Me sinto mais bonita, e confiante, a compulsão que eu tinha diminuiu e também não estou com retenção de liquidos</p>
+                  <p className="text-gray-700 mb-2">28 anos - Presidente prudente/SP</p>
                   <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                 </div>
 
@@ -659,7 +656,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Victor</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-26kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -683,7 +679,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">Depois de 7 meses consegui perder bastante peso, ainda preciso perder mais, mas estou contente.</p>
+                  <p className="text-gray-700 mb-2">29 anos - Belo horizonte/BH</p>
                   <p className="text-green-700 font-medium">- 26kg em 7 meses</p>
                 </div>
               </div>
@@ -752,7 +748,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Débora</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-23kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -776,7 +771,7 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-2">Menos compulsão, inchaço, mais saúde e qualidade de vida.</p>
+                  <p className="text-gray-700 mb-2">31 anos - São Paulo /SP</p>
                   <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
                 </div>
 
@@ -794,7 +789,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Arnaldo</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-25kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -838,7 +832,6 @@ export default function LandingPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold">Sara</h4>
-                        <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-11kg</span>
                       </div>
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -863,7 +856,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    Perdi 11kg e me sinto muito mais saudável
+                    32 anos - São Gonçalo/RJ
                   </p>
                   <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
                 </div>
@@ -885,9 +878,6 @@ export default function LandingPage() {
                         <div>
                           <div className="flex items-center gap-2">
                             <h4 className="font-semibold">Rosimari</h4>
-                            <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -14kg
-                            </span>
                           </div>
                           <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -912,7 +902,7 @@ export default function LandingPage() {
                       </div>
 
                       <p className="text-gray-700 mb-2">
-                        Graças a Deus eu não sinto mais aquela vontade incontrolável por comida
+                        37 anos - Pinhais/PR
                       </p>
                       <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
                     </div>
@@ -931,9 +921,6 @@ export default function LandingPage() {
                         <div>
                           <div className="flex items-center gap-2">
                             <h4 className="font-semibold">Laura</h4>
-                            <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -17kg
-                            </span>
                           </div>
                           <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -957,7 +944,7 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">Me sinto mais bonita, e confiante, a compulsão que eu tinha diminuiu e também não estou com retenção de liquidos</p>
+                      <p className="text-gray-700 mb-2">28 anos - Presidente prudente/SP</p>
                       <p className="text-green-700 font-medium">- 17kg em 5 meses</p>
                     </div>
 
@@ -975,9 +962,6 @@ export default function LandingPage() {
                         <div>
                           <div className="flex items-center gap-2">
                             <h4 className="font-semibold">Victor</h4>
-                            <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">
-                              -26kg
-                            </span>
                           </div>
                           <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -1001,7 +985,7 @@ export default function LandingPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-2">Depois de 7 meses consegui perder bastante peso, ainda preciso perder mais, mas estou contente.</p>
+                      <p className="text-gray-700 mb-2">29 anos - Belo horizonte/BH</p>
                       <p className="text-green-700 font-medium">- 26kg em 7 meses</p>
                     </div>
                   </>
@@ -1594,7 +1578,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Completo</h3>
                 <p className="text-sm opacity-90">
-                  Maior <span className="font-bold">desconto</span> nesse kit!
+                  6 meses de tratamento
                 </p>
               </div>
 
@@ -1614,29 +1598,29 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
+                    <span className="text-gray-400 text-sm">APENAS</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">Por: </span>12x R$48,09
+                    <span className="text-sm font-normal">12x de</span> R$48,09
                   </div>
-                  <div className="text-sm text-gray-600">ou R$479,40 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1">R$79,90 por frasco</div>
+                  <div className="text-sm text-gray-600">R$479 à vista</div>
+                  <div className="text-sm font-medium text-green-700 mt-1"></div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Tratamento completo de <span className="font-bold">6 meses</span>
+                      Tratamento completo
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">+ 2 Frascos de Colágeno Grátis</span>
+                    <span className="text-sm">2 Frascos de colágeno hidrolisado</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Programa Emagrecimento Acelerado</span>
+                    <span className="text-sm">Programa emagrecimento acelerado</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1647,9 +1631,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      KIT
+                      68% 
                     </span>
-                    MAIS VANTAJOSO
+                    DE DESCONTO
                   </p>
                 </div>
 
@@ -1672,7 +1656,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 sm:py-3 px-4 text-center mt-8">
                 <h3 className="text-lg sm:text-xl font-bold">Kit Recomendado</h3>
                 <p className="text-sm opacity-90">
-                  Melhor <span className="font-bold">custo benefício</span> nesse kit!
+                  3 meses de tratamento
                 </p>
               </div>
 
@@ -1692,25 +1676,24 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-2 border-green-100">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 line-through text-sm">De R$758,70</span>
+                    <span className="text-gray-400 text-sm">APENAS</span>
                   </div>
                   <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">Por: </span>12x R$38,05
+                    <span className="text-sm font-normal">12x de </span>R$38,05
                   </div>
-                  <div className="text-sm text-gray-600">ou R$379,00 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1">Apenas R$126,33 por frasco</div>
+                  <div className="text-sm text-gray-600">R$379,00 à vista</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Tratamento de <span className="font-bold">3 meses</span>
+                      Tratamento intermediário
                     </span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">+ 1 Frasco de Colágeno Grátis</span>
+                    <span className="text-sm">1 Frasco de colágeno hidrolisado</span>
                   </div>
 
                   <div className="flex items-start">
@@ -1722,9 +1705,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      KIT
+                      50%
                     </span>
-                    MAIS VENDIDO
+                    DE DESCONTO
                   </p>
                 </div>
 
@@ -1743,7 +1726,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Inicial</h3>
                 <p className="text-sm opacity-90">
-                  <span className="font-bold">Experimente</span>
+                  30 dias de tratamento
                 </p>
               </div>
 
@@ -1763,19 +1746,19 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 line-through text-sm">De R$329,90</span>
+                    <span className="text-gray-400 text-sm">APENAS</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">Por: </span>12x R$28,01
+                    <span className="text-sm font-normal">12x de </span> R$28,01
                   </div>
-                  <div className="text-sm text-gray-600">ou R$279,90 à vista</div>
+                  <div className="text-sm text-gray-600">R$279,90 à vista</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">
-                      Tratamento de <span className="font-bold">1 mês</span>
+                      Tratamento inicial
                     </span>
                   </div>
                   <div className="flex items-start">
@@ -1794,9 +1777,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      KIT
+                      18%
                     </span>
-                    INICIAL
+                    DE DESCONTO
                   </p>
                 </div>
 
