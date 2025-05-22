@@ -1598,13 +1598,13 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">APENAS</span>
+                    <span className="text-gray-400 text-sm">POR 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">12x de</span> R$48,09
+                    <span className="text-sm font-normal"></span> R$48,09
                   </div>
-                  <div className="text-sm text-gray-600">R$479 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1"></div>
+                  <div className="text-sm text-gray-600">ou R$479,00 à vista no pix</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
@@ -1631,9 +1631,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      68% 
+                    APROVEITE AGORA 
                     </span>
-                    DE DESCONTO
+                    68% DE DESCONTO
                   </p>
                 </div>
 
@@ -1676,12 +1676,13 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-2 border-green-100">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">APENAS</span>
+                    <span className="text-gray-400 text-sm">Por 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">12x de </span>R$38,05
+                    <span className="text-sm font-normal"></span>R$38,05
                   </div>
-                  <div className="text-sm text-gray-600">R$379,00 à vista</div>
+                  <div className="text-sm text-gray-600">ou R$379,00 à vista no pix</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
@@ -1705,9 +1706,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      50%
+                    APROVEITE AGORA 
                     </span>
-                    DE DESCONTO
+                    50% DE DESCONTO
                   </p>
                 </div>
 
@@ -1746,12 +1747,14 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">APENAS</span>
+                    <span className="text-gray-400 text-sm">Por 12x de:S</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">12x de </span> R$28,01
+                    <span className="text-sm font-normal"></span> R$28,01
                   </div>
-                  <div className="text-sm text-gray-600">R$279,90 à vista</div>
+                  <div className="text-sm text-gray-600">ou R$279,90 à vista no pix</div>
+                  <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
+                  
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
@@ -1777,9 +1780,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      18%
+                    APROVEITE AGORA 
                     </span>
-                    DE DESCONTO
+                    18% DE DESCONTO
                   </p>
                 </div>
 
