@@ -321,8 +321,8 @@ export default function LandingPage() {
       >
         <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
-            <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4 break-words leading-tight">
-              Emagreça com segurança,{" "}
+            <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 mb-4  break-words leading-tight">
+              Perca peso rápido,{" "}
               <span className="text-green-600 relative">
                 sem dietas restritivas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
@@ -503,7 +503,7 @@ export default function LandingPage() {
                   </div>
 
                   <p className="text-gray-700 mb-2">
-                    Auxiliar admnistrativo, 34 anos morador da Bahia.
+                    Auxiliar administrativo, 34 anos morador da Bahia.
                   </p>
                   <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
                 </div>
