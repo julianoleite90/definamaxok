@@ -389,13 +389,13 @@ export default function LandingPage() {
           </div>
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative h-[400px] w-full flex justify-center">
-              <Image
-                src="/mockup.png"
-                width={800}
-                height={900}
-                alt="Definamax - Suplemento Natural para Emagrecimento com Fibras Alimentares que Absorvem Gordura"
-                className="h-[400px] w-auto object-contain mx-auto floating"
-              />
+            <Image
+              src="/mockup.png"
+              width={800}
+              height={900}
+               alt="Definamax - Suplemento Natural para Emagrecimento com Fibras Alimentares que Absorvem Gordura"
+              className="h-[370px] md:h-[400px] w-auto object-contain mx-auto floating"
+             />
             </div>
           </div>
         </div>
