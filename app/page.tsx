@@ -436,13 +436,6 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">São Paulo, SP</p>
                     <p className="text-gray-700 mb-2">Professora</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 23kg em 7 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
                   </div>
                 </div>
 
@@ -462,13 +455,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Salvador, BA</p>
                     <p className="text-gray-700 mb-2">Auxiliar administrativo</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 25kg em 6 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
 
@@ -488,13 +475,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Rio de Janeiro, RJ</p>
                     <p className="text-gray-700 mb-2">Dona de casa</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 11kg em 2 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -521,13 +502,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Pinhais, PR</p>
                     <p className="text-gray-700 mb-2">Vendedora</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 14kg em 3 meses</p>
-                     <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+ 
                   </div>
                 </div>
 
@@ -547,13 +522,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Guarulhos, SP</p>
                     <p className="text-gray-700 mb-2">Atendente de loja</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 24kg em 6 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
 
@@ -573,13 +542,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Belo horizonte, MG</p>
                     <p className="text-gray-700 mb-2">Motorista de aplicativo</p>
                      <p className="text-green-700 font-bold text-lg mb-3">- 31kg em 10 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -650,13 +613,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">São Paulo, SP</p>
                     <p className="text-gray-700 mb-2">Professora</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 23kg em 7 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
 
@@ -676,13 +633,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Salvador, BA</p>
                     <p className="text-gray-700 mb-2">Auxiliar administrativo</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 25kg em 6 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
 
@@ -702,13 +653,7 @@ export default function LandingPage() {
                     <p className="text-sm text-gray-600 mb-2">Rio de Janeiro, RJ</p>
                     <p className="text-gray-700 mb-2">Dona de casa</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 11kg em 2 meses</p>
-                    <div className="flex justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                        </svg>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
 
@@ -782,13 +727,6 @@ export default function LandingPage() {
                         <p className="text-sm text-gray-600 mb-2">Belo horizonte, MG</p>
                     <p className="text-gray-700 mb-2">Motorista de aplicativo</p>
                         <p className="text-green-700 font-bold text-lg mb-3">- 31kg em 10 meses</p>
-                        <div className="flex justify-center">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                            </svg>
-                          ))}
-                        </div>
                       </div>
                     </div>
                   </>
@@ -871,7 +809,7 @@ export default function LandingPage() {
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-700 mb-2">Bloqueio da gordura ingerida</h3>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Bloqueio da gordura</h3>
                     <p className="text-gray-700">
                       As fibras inteligentes do Definamax, extraídas da Quitosana, formam uma barreira que se liga às
                       moléculas de gordura durante a digestão, impedindo que sejam absorvidas pelo organismo. 
@@ -886,7 +824,7 @@ export default function LandingPage() {
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-700 mb-2">Reduz a fome instantaneamente</h3>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Redução da fome</h3>
                     <p className="text-gray-700">
                       Chega de sentir aquela fome incontrolável! As fibras do Psyllium e Agar-Agar expandem seu
                       tamanho no estômago, formando um gel que te deixa saciado por até 8 horas, diminuindo a fome e os
@@ -1255,7 +1193,7 @@ export default function LandingPage() {
 
               <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                 <p className="text-sm text-green-800 font-medium text-center">
-                  Sua satisfação é nossa prioridade - risco zero para você!
+                  Sua satisfação é nossa prioridade 
                 </p>
               </div>
             </div>
