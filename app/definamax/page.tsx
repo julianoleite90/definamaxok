@@ -958,8 +958,8 @@ export default function LandingPage() {
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
               Comparativo Exclusivo
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Natural vs Injeções de Emagrecimento</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Por que a fórmula natural é a melhor escolha?</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Definamax vs Injeções de Emagrecimento</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Por que a fórmula de Definamax é a melhor escolha?</p>
           </div>
 
           {/* Desktop View */}
@@ -969,7 +969,7 @@ export default function LandingPage() {
                 RECOMENDADO
               </div>
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold text-green-700">Natural</h3>
+                <h3 className="text-xl font-semibold text-green-700">Definamax</h3>
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
               </div>
 
