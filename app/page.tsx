@@ -322,7 +322,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4 grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[1.9rem] sm:text-[2.1rem] md:text-[2.4rem] font-bold text-green-800 !mb-8 break-words leading-tight">
-              Perca peso rápido,{" "}
+              Emagreça rápido,{" "}
               <span className="text-green-600 relative">
                 sem dietas restritivas,{" "}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
@@ -844,7 +844,7 @@ export default function LandingPage() {
               <span className="text-green-700">3x mais eficaz</span> que métodos tradicionais de emagrecimento
             </h2>
             <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-              Descubra como as fibras inteligentes de alta potência agem no seu organismo para transformar seu corpo
+              Descubra como as fibras inteligentes de alta potência agem no seu organismo para absorver a gordura
             </p>
           </div>
 
