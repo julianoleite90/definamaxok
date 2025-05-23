@@ -405,9 +405,6 @@ export default function LandingPage() {
       <section className="w-full py-16 bg-green-50" aria-label="Depoimentos de clientes Definamax">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Veja quem já transformou a vida com Definamax
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho
