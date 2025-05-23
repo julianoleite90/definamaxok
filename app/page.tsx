@@ -839,9 +839,7 @@ export default function LandingPage() {
       <section className="w-full py-16 bg-gradient-to-b from-white to-green-50" aria-label="Como o Definamax funciona">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
-              A CIÊNCIA POR TRÁS DO EMAGRECIMENTO
-            </div>
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
               <span className="text-green-700">3x mais eficaz</span> que métodos tradicionais de emagrecimento
             </h2>
@@ -915,49 +913,15 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-8 bg-green-50 p-4 rounded-xl border border-green-200 flex items-center">
-                <div className="mr-4 flex-shrink-0">
-                  <Image
-                    src="/garantia.png"
-                    alt="Garantia de Resultados"
-                    width={60}
-                    height={60}
-                    className="h-14 w-14 object-contain"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold text-green-800">Garantia de Resultados em 30 Dias</h4>
-                  <p className="text-sm text-gray-700">
-                    Se você não ver resultados visíveis em 30 dias, devolvemos 100% do seu dinheiro
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex justify-center mt-10 flex-col items-center w-full">
-                <button
-                  onClick={scrollToBuy}
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-4 text-lg font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
-                >
-                  QUERO TRANSFORMAR MEU CORPO <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-                <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
-                  <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-                  <span>Resultados visíveis ou seu dinheiro de volta</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Comparativo */}
-      <section className="w-full py-16 bg-green-50" aria-label="Definamax vs Injeções de Emagrecimento">
+      <section className="w-full py-5 bg-green-50" aria-label="Definamax vs Injeções de Emagrecimento">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Comparativo Exclusivo
-            </div>
+
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Definamax vs Injeções de Emagrecimento</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Por que a fórmula de Definamax é a melhor escolha?</p>
           </div>
@@ -1187,7 +1151,7 @@ export default function LandingPage() {
               onClick={scrollToBuy}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              ESCOLHER MEU DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
+              COMPRAR MEU DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
@@ -1201,14 +1165,12 @@ export default function LandingPage() {
       <section className="w-full py-16 bg-gradient-to-b from-white to-green-50">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-12">
-            <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-3">
-              SEGURANÇA E QUALIDADE GARANTIDAS
-            </div>
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
               Por que escolher <span className="text-green-700">Definamax?</span>
             </h2>
             <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-              Conheça os diferenciais que fazem do Definamax a escolha mais segura e eficaz para seu emagrecimento
+              Fatores que fazem do Definamax a escolha mais segura e eficaz para seu emagrecimento
             </p>
           </div>
 
@@ -1324,9 +1286,6 @@ export default function LandingPage() {
       >
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
-              BÔNUS EXCLUSIVOS
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Levando mais de 2 frascos você ganha:</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
               Bônus exclusivos para potencializar seus resultados
@@ -1462,12 +1421,10 @@ export default function LandingPage() {
       >
         <div className="mx-auto max-w-5xl px-4 text-center">
           <div className="mb-16">
-            <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
-              DISPONÍVEL ENQUANTO DURAREM OS ESTOQUES
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Tome uma decisão hoje!</h2>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Escolha o kit ideal para você acelerar o seu processo de emagrecimento</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
-              Escolha o kit ideal para você acelerar o seu processo de perda de peso
+              Para melhores resultados recomendados o tratamento de 3 a 6 meses
             </p>
           </div>
 
@@ -1719,9 +1676,7 @@ export default function LandingPage() {
       <section className="w-full py-8 bg-green-50" aria-label="Avaliações do Definamax">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Avaliações Verificadas
-            </div>
+  
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Avaliações de consumidores</h2>
             <p className="text-gray-600 max-w-2xl mx-auto"></p>
           </div>
@@ -2238,9 +2193,6 @@ export default function LandingPage() {
       <section className="w-full py-16 bg-white" aria-label="Perguntas Frequentes sobre Definamax">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-              Dúvidas Comuns
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Perguntas Frequentes</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Encontre respostas rápidas para as dúvidas mais comuns sobre o Definamax
