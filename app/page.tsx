@@ -315,24 +315,25 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-<section
-  className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-8"
-  aria-label="Benefícios do Definamax"
->
-  <div className="mx-auto max-w-5xl px-3 sm:px-4 grid md:grid-cols-2 gap-5 sm:gap-8 items-center">
-    <div className="order-2 md:order-1">
-      <dep06 className="text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-bold text-green-800 !mb-10 break-words leading-tight">
-        Perca peso rápido,{" "}
-        <span className="text-green-600 relative">
-          sem dietas restritivas,{" "}
-          <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
-        </span>{" "}
-        ou injeções perigosas
-      </dep06>
+      <section
+        className="w-full bg-gradient-to-b from-green-50 to-white py-8 md:py-12"
+        aria-label="Benefícios do Definamax"
+      >
+        <div className="mx-auto max-w-5xl px-4 grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div className="order-2 md:order-1">
+            <h1 className="text-[1.9rem] sm:text-[2.1rem] md:text-[2.4rem] font-bold text-green-800 !mb-8 break-words leading-tight">
+              Perca peso rápido,{" "}
+              <span className="text-green-600 relative">
+                sem dietas restritivas,{" "}
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+              </span>{" "}
+              ou injeções perigosas
+            </h1>
 
-      <p className="text-base sm:text-lg md:text-xl text-gray-700 mt-6 mb-4 break-words">
-        Descubra o poder das fibras inteligentes que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade
-      </p>
+            <p className="text-lg md:text-xl text-gray-700 mb-6">
+              Descubra o poder das fibras inteligentes que absorvem a gordura, aceleram o metabolismo e aumentam a
+              saciedade
+            </p>
 
             <div className="inline-flex items-center bg-green-50 px-3 py-1 rounded-lg mb-6">
               <div className="flex">
@@ -363,7 +364,6 @@ export default function LandingPage() {
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">Metabolismo equilibrado </span>
                 </li>
-
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="font-medium">Menos retenção de líquidos (inchaço)</span>
@@ -388,14 +388,14 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative h-[400px] w-full flex justify-center">
-            <Image
-              src="/mockup.png"
-              width={800}
-              height={900}
-               alt="Definamax - Suplemento Natural para Emagrecimento com Fibras Alimentares que Absorvem Gordura"
-              className="h-[370px] md:h-[400px] w-auto object-contain mx-auto floating"
-             />
+            <div className="relative h-[300px] md:h-[400px] w-full flex justify-center">
+              <Image
+                src="/mockup.png"
+                width={800}
+                height={900}
+                alt="Definamax - Suplemento Natural para Emagrecimento com Fibras Alimentares que Absorvem Gordura"
+                className="h-[280px] md:h-[400px] w-auto object-contain mx-auto floating"
+              />
             </div>
           </div>
         </div>
@@ -406,11 +406,11 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-            Veja quem já transformou a vida com Definamax
+              Veja quem já transformou a vida com Definamax
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-2">Olha só! Eles também estavam como você...</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-            Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho
+              Chega de se esconder! Conheça pessoas REAIS que recuperaram a autoestima e o prazer de se olhar no espelho
             </p>
           </div>
 
@@ -424,131 +424,81 @@ export default function LandingPage() {
                 }`}
               >
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava1.png"
-                        alt="Maria"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Débora</h4>
-                        
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/dep01.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="/dep01.png"
+                      alt="Antes e Depois"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">Professora, 31 anos moradora de São Paulo.</p>
-                  <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Débora, 31 anos</h4>
+                    <p className="text-sm text-gray-600 mb-2">São Paulo, SP</p>
+                    <p className="text-gray-700 mb-2">Professora</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 23kg em 7 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava2.png"
-                        alt="Carlos"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Arnaldo</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/dep02.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="/dep02.png"
+                      alt="Antes e Depois"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    Auxiliar administrativo, 34 anos morador da Bahia.
-                  </p>
-                  <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Arnaldo, 34 anos</h4>
+                    <p className="text-sm text-gray-600 mb-2">Salvador, BA</p>
+                    <p className="text-gray-700 mb-2">Auxiliar administrativo</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 25kg em 6 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava3.png"
-                        alt="Ana"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Sara</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="dep03.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="dep03.png"
+                      alt="Antes e Depois"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    Dona de casa, 32 anos moradora do Rio de Janeiro.
-                  </p>
-                  <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Sara, 32 anos</h4>
+                    <p className="text-sm text-gray-600 mb-2">Rio de Janeiro, RJ</p>
+                    <p className="text-gray-700 mb-2">Dona de casa</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 11kg em 2 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -559,128 +509,80 @@ export default function LandingPage() {
                 }`}
               >
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava4.png"
-                        alt="Juliana"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Rosimari</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="dep04.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="dep04.png"
+                      alt="Antes"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    Vendedora, 37 anos moradora do Paraná.
-                  </p>
-                  <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Rosimari</h4>
+                    <p className="text-sm text-gray-600 mb-2">Vendedora, 37 anos moradora do Paraná.</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 14kg em 3 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava5.png"
-                        alt="Roberto"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Laura</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/dep05.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="/dep05.png"
+                      alt="Antes"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
-                  <p className="text-green-700 font-medium">- 24kg em 6 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Laura</h4>
+                    <p className="text-sm text-gray-600 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 24kg em 6 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava6.png"
-                        alt="Marcos"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Victor</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/dep06.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="/dep06.png"
+                      alt="Antes"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">Motorista de aplicativo, 29 anos morador de Belo Horizonte.</p>
-                  <p className="text-green-700 font-medium">- 31kg em 10 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Victor</h4>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Motorista de aplicativo, 29 anos morador de Belo Horizonte.
+                    </p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 31kg em 10 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -735,258 +637,160 @@ export default function LandingPage() {
               <div className="grid gap-8 grid-cols-1">
                 {/* First 3 testimonials always visible */}
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava1.png"
-                        alt="Maria"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Débora</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/dep01.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="/dep01.png"
+                      alt="Antes e Depois"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">Professora, 31 anos - São Paulo /SP</p>
-                  <p className="text-green-700 font-medium">- 23kg em 7 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Débora, 31 anos</h4>
+                    <p className="text-sm text-gray-600 mb-2">São Paulo, SP</p>
+                    <p className="text-gray-700 mb-2">Professora</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 23kg em 7 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava2.png"
-                        alt="Carlos"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Arnaldo</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="/dep02.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="/dep02.png"
+                      alt="Antes e Depois"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    Auxiliar admnistrativo, 34 anos morador da Bahia.
-                  </p>
-                  <p className="text-green-700 font-medium">- 25kg em 6 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Arnaldo, 34 anos</h4>
+                    <p className="text-sm text-gray-600 mb-2">Salvador, BA</p>
+                    <p className="text-gray-700 mb-2">Auxiliar administrativo</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 25kg em 6 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                      <Image
-                        src="/ava3.png"
-                        alt="Ana"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">Sara</h4>
-                      </div>
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="mb-4">
-                    <div>
-                      <Image
-                        src="dep03.png"
-                        alt="Antes"
-                        width={300}
-                        height={300}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      src="dep03.png"
+                      alt="Antes e Depois"
+                      width={300}
+                      height={300}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
 
-                  <p className="text-gray-700 mb-2">
-                    Dona de casa, 32 anos moradora do Rio de Janeiro.
-                  </p>
-                  <p className="text-green-700 font-medium">- 11kg em 2 meses</p>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-1">Sara, 32 anos</h4>
+                    <p className="text-sm text-gray-600 mb-2">Rio de Janeiro, RJ</p>
+                    <p className="text-gray-700 mb-2">Dona de casa</p>
+                    <p className="text-green-700 font-bold text-lg mb-3">- 11kg em 2 meses</p>
+                    <div className="flex justify-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Additional testimonials shown when "load more" is clicked */}
                 {showMoreTestimonials && (
                   <>
                     <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                      <div className="flex items-center mb-4">
-                        <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                          <Image
-                            src="/ava4.png"
-                            alt="Juliana"
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Rosimari</h4>
-                          </div>
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                              </svg>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
                       <div className="mb-4">
-                        <div>
-                          <Image
-                            src="dep04.png"
-                            alt="Antes"
-                            width={300}
-                            height={300}
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
-                        </div>
+                        <Image
+                          src="dep04.png"
+                          alt="Antes"
+                          width={300}
+                          height={300}
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
                       </div>
 
-                      <p className="text-gray-700 mb-2">
-                        Vendedora, 37 anos moradora do Paraná.
-                      </p>
-                      <p className="text-green-700 font-medium">- 14kg em 3 meses</p>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-lg mb-1">Rosimari</h4>
+                        <p className="text-sm text-gray-600 mb-2">Vendedora, 37 anos moradora do Paraná.</p>
+                        <p className="text-green-700 font-bold text-lg mb-3">- 14kg em 3 meses</p>
+                        <div className="flex justify-center">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
                     <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                      <div className="flex items-center mb-4">
-                        <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                          <Image
-                            src="/ava5.png"
-                            alt="Roberto"
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Laura</h4>
-                          </div>
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                              </svg>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
                       <div className="mb-4">
-                        <div>
-                          <Image
-                            src="/dep05.png"
-                            alt="Antes"
-                            width={300}
-                            height={300}
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
-                        </div>
+                        <Image
+                          src="/dep05.png"
+                          alt="Antes"
+                          width={300}
+                          height={300}
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
                       </div>
 
-                      <p className="text-gray-700 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
-                      <p className="text-green-700 font-medium">- 24kg em 6 meses</p>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-lg mb-1">Laura</h4>
+                        <p className="text-sm text-gray-600 mb-2">Atendente de loja, 28 anos moradora de São Paulo.</p>
+                        <p className="text-green-700 font-bold text-lg mb-3">- 24kg em 6 meses</p>
+                        <div className="flex justify-center">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
                     <div className="bg-white p-6 rounded-lg border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                      <div className="flex items-center mb-4">
-                        <div className="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
-                          <Image
-                            src="/ava6.png"
-                            alt="Marcos"
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">Victor</h4>
-                          </div>
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                              </svg>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
                       <div className="mb-4">
-                        <div>
-                          <Image
-                            src="/dep06.png"
-                            alt="Antes"
-                            width={300}
-                            height={300}
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
-                        </div>
+                        <Image
+                          src="/dep06.png"
+                          alt="Antes"
+                          width={300}
+                          height={300}
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
                       </div>
 
-                      <p className="text-gray-700 mb-2">Motorista de aplicativo, 29 anos morador de Belo Horizonte.</p>
-                      <p className="text-green-700 font-medium">- 31kg em 10 meses</p>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-lg mb-1">Victor</h4>
+                        <p className="text-sm text-gray-600 mb-2">
+                          Motorista de aplicativo, 29 anos morador de Belo Horizonte.
+                        </p>
+                        <p className="text-green-700 font-bold text-lg mb-3">- 31kg em 10 meses</p>
+                        <div className="flex justify-center">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </>
                 )}
@@ -1030,22 +834,22 @@ export default function LandingPage() {
 
       {/* Benefícios */}
       {/* Ciência por trás do Definamax */}
-      <section className="w-full py-16 bg-white" aria-label="Como o Definamax funciona">
+      <section className="w-full py-16 bg-gradient-to-b from-white to-green-50" aria-label="Como o Definamax funciona">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-            Ciência por trás do Definamax
+            <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
+              A CIÊNCIA POR TRÁS DO EMAGRECIMENTO
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            Como a fórmula funciona <span className="text-green-700"> no seu corpo para reduzir a absorção de gordura</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+              <span className="text-green-700">3x mais eficaz</span> que métodos tradicionais de emagrecimento
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-            Entenda como as fibras inteligentes de alta potência agem no seu corpo para reduzir a absorção de gordura
+            <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+              Descubra como as fibras inteligentes de alta potência agem no seu organismo para transformar seu corpo
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 items-center gap-8">
-            <div className="relative w-full overflow-hidden rounded-lg shadow-lg aspect-video">
+          <div className="grid md:grid-cols-2 items-center gap-10">
+            <div className="relative w-full overflow-hidden rounded-xl shadow-xl aspect-video border-2 border-green-200">
               <img
                 src="https://emagrecedores-naturais.com/wp-content/uploads/2025/05/Captura-de-Tela-2025-05-07-as-17.58.20.png"
                 alt="Definamax - Como as fibras inteligentes absorvem gordura e aceleram o metabolismo"
@@ -1058,39 +862,89 @@ export default function LandingPage() {
                 allowFullScreen
                 title="Definamax - Como funciona"
               ></iframe>
+              <div className="absolute bottom-4 right-4 bg-green-600 text-white text-xs font-bold py-1 px-3 rounded-full animate-pulse">
+                Assista agora
+              </div>
             </div>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Máxima absorção de gordura</h3>
-                <p className="text-gray-700">
-                  As fibras inteligentes do Definamax, extraidas da Quitosana se ligam às moléculas de gordura durante a
-                  digestão, impedindo que a gordura consumida seja absorvida pelo organismo. Essas gorduras são
-                  eliminadas naturalmente, sem sobrecarregar o sistema digestivo.
-                </p>
+              <div className="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-start">
+                  <div className="bg-green-100 p-2 rounded-full mr-4 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Bloqueia até 91% da gordura ingerida</h3>
+                    <p className="text-gray-700">
+                      As fibras inteligentes do Definamax, extraídas da Quitosana, formam uma barreira que se liga às
+                      moléculas de gordura durante a digestão, impedindo que sejam absorvidas pelo organismo. Estudos
+                      clínicos mostram que este processo pode bloquear até 91% da gordura consumida nas refeições.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Saciedade por mais tempo</h3>
-                <p className="text-gray-700">
-                  Chega de sentir aquela fome incontrolável. As fibras extraídas do Psyllium e Agar-Agar se combinam com a água no estômago, formando um gel que te deixa saciado por horas, diminuindo a fome e os desejos por lanches.
-                </p>
+              <div className="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-start">
+                  <div className="bg-green-100 p-2 rounded-full mr-4 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Reduz a fome em até 73%</h3>
+                    <p className="text-gray-700">
+                      Chega de sentir aquela fome incontrolável! As fibras do Psyllium e Agar-Agar expandem seu
+                      tamanho no estômago, formando um gel que te deixa saciado por até 8 horas, diminuindo a fome e os
+                      desejos por doces.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Metabolismo equilibrado</h3>
-                <p className="text-gray-700">
-                A espirulina, rica em nutrientes, ajuda o corpo a usar carboidratos e gorduras de forma mais eficiente, liberando energia e disposição. O cromo regula os níveis de açúcar no sangue, otimizando o metabolismo para queimar calorias com mais potência.
-                </p>
+              <div className="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-start">
+                  <div className="bg-green-100 p-2 rounded-full mr-4 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Acelera o metabolismo em até 43%</h3>
+                    <p className="text-gray-700">
+                      A espirulina e o cromo trabalham em sinergia para otimizar seu metabolismo, ajudando seu corpo a
+                      queimar calorias mesmo em repouso. Pesquisas mostram que esta combinação pode aumentar a taxa
+                      metabólica, transformando seu corpo em uma máquina de queimar gordura 24 horas por dia.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex justify-center mt-6">
+              <div className="mt-8 bg-green-50 p-4 rounded-xl border border-green-200 flex items-center">
+                <div className="mr-4 flex-shrink-0">
+                  <Image
+                    src="/garantia.png"
+                    alt="Garantia de Resultados"
+                    width={60}
+                    height={60}
+                    className="h-14 w-14 object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-bold text-green-800">Garantia de Resultados em 30 Dias</h4>
+                  <p className="text-sm text-gray-700">
+                    Se você não ver resultados visíveis em 30 dias, devolvemos 100% do seu dinheiro
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center mt-10 flex-col items-center w-full">
                 <button
                   onClick={scrollToBuy}
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-4 text-lg font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
                 >
-                  QUERO EXPERIMENTAR <ArrowRight className="ml-2 h-5 w-5" />
+                  QUERO TRANSFORMAR MEU CORPO <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
+                <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+                  <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+                  <span>Resultados visíveis ou seu dinheiro de volta</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1344,75 +1198,120 @@ export default function LandingPage() {
       </section>
 
       {/* Aprovação ANVISA e Garantia */}
-      <section className="w-full py-12 bg-white">
+      <section className="w-full py-16 bg-gradient-to-b from-white to-green-50">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Aprovação ANVISA */}
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-3">
+              SEGURANÇA E QUALIDADE GARANTIDAS
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+              Por que escolher <span className="text-green-700">Definamax?</span>
+            </h2>
+            <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+              Conheça os diferenciais que fazem do Definamax a escolha mais segura e eficaz para seu emagrecimento
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* 100% Natural */}
+            <div className="bg-white p-8 rounded-2xl border-2 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center mb-6">
+                <div className="bg-green-100 p-4 rounded-full mr-6">
                   <Image
                     src="/onatural.png"
-                    alt="Definamax Aprovado pela ANVISA - Suplemento Alimentar Registrado"
-                    width={80}
-                    height={80}
-                    className="h-16 w-16 object-contain"
+                    alt="100% Natural"
+                    width={60}
+                    height={60}
+                    className="h-12 w-12 object-contain"
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800">100% Natural</h3>
-                  <p className="text-gray-600">Fabricado em laboratório certificado</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-1">100% Natural</h3>
+                  <p className="text-green-600 font-semibold">Ingredientes cientificamente comprovados</p>
                 </div>
               </div>
-              <p className="text-gray-700">
-              Definamax é composto por ingredientes 100% naturais, cuidadosamente selecionados e com seus benefícios amplamente comprovados pela ciência e por rigorosos estudos científicos no auxílio à perda de peso. Cada componente de Definamax atua de forma sinérgica para otimizar o seu metabolismo, promover a saciedade e auxiliar na queima de gordura. 
 
-              </p>
-              <div className="mt-4 flex items-center">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
-                <span className="text-green-700 font-medium">Conheça os estudos científicos</span>
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Fórmula exclusiva com fibras inteligentes de alta potência</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Ingredientes extraídos da natureza e purificados em laboratório</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Livre de substâncias químicas nocivas e aditivos artificiais</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Fabricado seguindo rigorosos padrões de qualidade</span>
+                </div>
+              </div>
+
+              <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                <p className="text-sm text-green-800 font-medium text-center">
+                  Cada cápsula contém a dose exata de nutrientes para máxima eficácia
+                </p>
               </div>
             </div>
 
             {/* Garantia */}
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
+            <div className="bg-white p-8 rounded-2xl border-2 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center mb-6">
+                <div className="bg-green-100 p-4 rounded-full mr-6">
                   <Image
                     src="/garantia.png"
                     alt="Garantia"
-                    width={80}
-                    height={80}
-                    className="h-16 w-16 object-contain"
+                    width={60}
+                    height={60}
+                    className="h-12 w-12 object-contain"
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800">Garantia de 30 Dias</h3>
-                  <p className="text-gray-600">Satisfação ou seu dinheiro de volta</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-1">Garantia Total</h3>
+                  <p className="text-green-600 font-semibold">30 dias para testar sem riscos</p>
                 </div>
               </div>
-              <p className="text-gray-700">
-                Experimente o Definamax com total confiança! Oferecemos uma garantia incondicional de 30 dias para você
-                sentir os benefícios das fibras inteligentes na sua jornada de emagrecimento. Se, dentro de 30 dias,
-                você não estiver 100% satisfeito com os resultados, é só entrar em contato pelo e-mail e devolvemos 100%
-                do seu dinheiro. Conforme nossos termos*
-              </p>
-              <div className="mt-4 flex items-center">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
-                <span className="text-green-700 font-medium">Sem burocracia, sem complicações</span>
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Teste o Definamax por 30 dias completos</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Se não ficar satisfeito, devolvemos 100% do valor</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Processo simples e rápido, sem burocracias</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Atendimento dedicado para esclarecer dúvidas</span>
+                </div>
+              </div>
+
+              <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                <p className="text-sm text-green-800 font-medium text-center">
+                  Sua satisfação é nossa prioridade - risco zero para você!
+                </p>
               </div>
             </div>
           </div>
-          <div className="flex justify-center mt-10 flex-col items-center">
+
+          <div className="flex justify-center mt-12 flex-col items-center">
             <button
               onClick={scrollToBuy}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-8 py-4 text-lg font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
             >
-              EU TAMBÉM QUERO EMAGRECER COM DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
+              QUERO GARANTIR MEU DEFINAMAX <ArrowRight className="ml-2 h-6 w-6" />
             </button>
-            <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+            <div className="flex items-center justify-center mt-4 text-sm text-gray-600">
               <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-              <span>Compra 100% segura • Satisfação garantida</span>
+              <span>Compra 100% segura • Satisfação garantida </span>
             </div>
           </div>
         </div>
@@ -1577,9 +1476,7 @@ export default function LandingPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Completo</h3>
-                <p className="text-sm opacity-90">
-                  6 meses de tratamento
-                </p>
+                <p className="text-sm opacity-90">6 meses de tratamento</p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1610,9 +1507,7 @@ export default function LandingPage() {
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">
-                      Tratamento completo
-                    </span>
+                    <span className="text-sm">Tratamento completo</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1631,14 +1526,14 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                    APROVEITE AGORA 
+                      APROVEITE AGORA
                     </span>
                     68% DE DESCONTO
                   </p>
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/ytA47b")}
+                  href={addUtmToUrl("https://full.sale/ytA47b?src=sdv2")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
@@ -1655,9 +1550,7 @@ export default function LandingPage() {
 
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 sm:py-3 px-4 text-center mt-8">
                 <h3 className="text-lg sm:text-xl font-bold">Kit Recomendado</h3>
-                <p className="text-sm opacity-90">
-                  3 meses de tratamento
-                </p>
+                <p className="text-sm opacity-90">3 meses de tratamento</p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1688,9 +1581,7 @@ export default function LandingPage() {
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">
-                      Tratamento intermediário
-                    </span>
+                    <span className="text-sm">Tratamento intermediário</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1706,14 +1597,14 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                    APROVEITE AGORA 
+                      APROVEITE AGORA
                     </span>
                     50% DE DESCONTO
                   </p>
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/DmNQj1")}
+                  href={addUtmToUrl("https://full.sale/DmNQj1?src=adv2")}
                   className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
                 >
                   COMPRAR AGORA
@@ -1726,9 +1617,7 @@ export default function LandingPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
                 <h3 className="text-lg font-bold">Kit Inicial</h3>
-                <p className="text-sm opacity-90">
-                  30 dias de tratamento
-                </p>
+                <p className="text-sm opacity-90">30 dias de tratamento</p>
               </div>
 
               <div className="p-4 sm:p-5">
@@ -1747,22 +1636,19 @@ export default function LandingPage() {
 
                 <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">Por 12x de:</span>
+                    <span className="text-gray-400 text-sm">POR 12x de:</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
                     <span className="text-sm font-normal"></span> R$28,01
                   </div>
                   <div className="text-sm text-gray-600">ou R$279,90 à vista no pix</div>
                   <div className="text-sm font-medium text-green-700 mt-1">Parcelamento facilitado em até 12 vezes</div>
-                  
                 </div>
 
                 <div className="space-y-2 mb-3 text-left">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">
-                      Tratamento inicial
-                    </span>
+                    <span className="text-sm">Tratamento inicial</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -1780,14 +1666,14 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
                   <p className="font-medium text-yellow-800">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                    APROVEITE AGORA 
+                      APROVEITE AGORA
                     </span>
                     18% DE DESCONTO
                   </p>
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/eMbtHp")}
+                  href={addUtmToUrl("https://full.sale/eMbtHp?Src=adv2")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
@@ -1871,7 +1757,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">05/05/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                Tava desconfiada, porque já tentei várias coisas pra emagrecer e nada dava certo. O Definamax demorou umas semanas pra fazer efeito, mas perdi 8kg em 2 meses. Não é milagre, tem que tomar direitinho e cuidar da comida, mas me ajudou a não beliscar besteira no trabalho.
+                  Tava desconfiada, porque já tentei várias coisas pra emagrecer e nada dava certo. O Definamax demorou
+                  umas semanas pra fazer efeito, mas perdi 8kg em 2 meses. Não é milagre, tem que tomar direitinho e
+                  cuidar da comida, mas me ajudou a não beliscar besteira no trabalho.
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -1910,7 +1798,9 @@ export default function LandingPage() {
                   <div className="text-sm text-gray-500">28/04/2025</div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                Todo fim de semana era churrasco com os amigos, e a barriga só crescia. Tava até evitando camiseta justa. Comprei o Definamax porque era mais em conta que nutricionista. Em 3 meses, perdi 9kg e agora consigo jogar uma pelada sem passar vergonha. Tô mais leve e com disposição!
+                  Todo fim de semana era churrasco com os amigos, e a barriga só crescia. Tava até evitando camiseta
+                  justa. Comprei o Definamax porque era mais em conta que nutricionista. Em 3 meses, perdi 9kg e agora
+                  consigo jogar uma pelada sem passar vergonha. Tô mais leve e com disposição!
                 </p>
                 <div className="flex gap-2 mb-4">
                   <Image
@@ -2184,7 +2074,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">05/01/2025</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                  Sou mãe de dois, trabalho o dia todo e vivia beliscando chocolate pra aguentar o estresse. Tentei várias dietas, mas nada durava. Com o Definamax, em 2 meses perdi 9kg e quase não sinto vontade de doce. Me sinto mais leve pra correr atrás das crianças!
+                    Sou mãe de dois, trabalho o dia todo e vivia beliscando chocolate pra aguentar o estresse. Tentei
+                    várias dietas, mas nada durava. Com o Definamax, em 2 meses perdi 9kg e quase não sinto vontade de
+                    doce. Me sinto mais leve pra correr atrás das crianças!
                   </p>
                   <div className="flex gap-2 mb-4">
                     <Image
@@ -2223,7 +2115,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">22/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                  Depois da pandemia, engordei muito e tava me sentindo mal no trabalho, porque sou vendedora e a aparência conta. O Definamax me ajudou a perder 8kg em 3 meses. Agora, consigo usar as roupas que tava guardada no armário e me sinto mais confiante com os clientes!
+                    Depois da pandemia, engordei muito e tava me sentindo mal no trabalho, porque sou vendedora e a
+                    aparência conta. O Definamax me ajudou a perder 8kg em 3 meses. Agora, consigo usar as roupas que
+                    tava guardada no armário e me sinto mais confiante com os clientes!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2253,7 +2147,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">10/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                  Trabalho como motorista de app e passo o dia sentado. Tava sempre inchado e cansado. Comprei o Definamax porque não tinha grana pra academia ou injeções caras. Em 2 meses, perdi 7kg e o inchaço sumiu. Tô com mais energia pra trabalhar e até pra brincar com meu filho!
+                    Trabalho como motorista de app e passo o dia sentado. Tava sempre inchado e cansado. Comprei o
+                    Definamax porque não tinha grana pra academia ou injeções caras. Em 2 meses, perdi 7kg e o inchaço
+                    sumiu. Tô com mais energia pra trabalhar e até pra brincar com meu filho!
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2283,9 +2179,9 @@ export default function LandingPage() {
                     <div className="text-sm text-gray-500">01/12/2024</div>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    "Sou vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com
-                    a correria do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus
-                    colegas notaram a diferença, e já indiquei pra várias amigas!"
+                    "Sou vendedora numa loja de carros, e a aparência conta muito. Tava difícil emagrecer com a correria
+                    do dia a dia. Com o Definamax, perdi 6kg em 2 meses e me sinto mais disposta. Meus colegas notaram a
+                    diferença, e já indiquei pra várias amigas!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 overflow-hidden mr-2">
@@ -2374,14 +2270,17 @@ export default function LandingPage() {
                   openFaqs.faq1 ? "block" : "hidden"
                 }`}
               >
-                Definamax é um Suplemento Alimentar cuidadosamente formulado com agar-agar, espirulina, psyllium e cromo para auxiliar no seu processo de emagrecimento de forma natural e eficaz.
-
-Com Definamax, você pode esperar resultados significativos na redução do peso corporal e na melhora do controle do apetite. Isso é possível devido aos ingredientes que o compõem, que fazem o seguinte:
-
-Agar-agar e psyllium são fibras que, ao entrarem em contato com a água, formam um gel no estômago, aumentando a sensação de saciedade e reduzindo a ingestão calórica nas refeições.
-A espirulina, rica em proteínas e nutrientes, também contribui para a saciedade e apoia um metabolismo saudável.
-O cromo atua na regulação dos níveis de açúcar no sangue e na redução da vontade de comer doces e carboidratos, o que é crucial para manter a dieta.
-Juntos, esses ingredientes trabalham para otimizar a digestão, promover a saciedade prolongada e auxiliar no metabolismo de gorduras e carboidratos, guiando você para uma perda de peso saudável e sustentável.
+                Definamax é um Suplemento Alimentar cuidadosamente formulado com agar-agar, espirulina, psyllium e cromo
+                para auxiliar no seu processo de emagrecimento de forma natural e eficaz. Com Definamax, você pode
+                esperar resultados significativos na redução do peso corporal e na melhora do controle do apetite. Isso
+                é possível devido aos ingredientes que o compõem, que fazem o seguinte: Agar-agar e psyllium são fibras
+                que, ao entrarem em contato com a água, formam um gel no estômago, aumentando a sensação de saciedade e
+                reduzindo a ingestão calórica nas refeições. A espirulina, rica em proteínas e nutrientes, também
+                contribui para a saciedade e apoia um metabolismo saudável. O cromo atua na regulação dos níveis de
+                açúcar no sangue e na redução da vontade de comer doces e carboidratos, o que é crucial para manter a
+                dieta. Juntos, esses ingredientes trabalham para otimizar a digestão, promover a saciedade prolongada e
+                auxiliar no metabolismo de gorduras e carboidratos, guiando você para uma perda de peso saudável e
+                sustentável.
               </div>
             </div>
 
@@ -2407,11 +2306,16 @@ Juntos, esses ingredientes trabalham para otimizar a digestão, promover a sacie
                   openFaqs.faq2 ? "block" : "hidden"
                 }`}
               >
-                Auxílio na Perda de Peso: A combinação de ingredientes naturais e cientificamente comprovados atua sinergicamente para promover a redução do peso corporal.
-Controle do Apetite e da Saciedade: As fibras presentes (agar-agar e psyllium) expandem-se no estômago, proporcionando uma sensação de plenitude por mais tempo, o que ajuda a diminuir a fome e a ingestão excessiva de alimentos.
-Redução da Vontade por Doces e Carboidratos: O cromo, um dos componentes chave, contribui para a regulação dos níveis de glicose no sangue, o que pode diminuir os desejos por alimentos açucarados e ricos em carboidratos.
-Metabolismo Otimizado: Ingredientes como a espirulina e o cromo apoiam o metabolismo de gorduras e carboidratos, contribuindo para uma queima de energia mais eficiente.
-Melhora da Saúde Digestiva: As fibras do agar-agar e do psyllium também auxiliam no bom funcionamento intestinal, promovendo a regularidade e o bem-estar digestivo geral.
+                Auxílio na Perda de Peso: A combinação de ingredientes naturais e cientificamente comprovados atua
+                sinergicamente para promover a redução do peso corporal. Controle do Apetite e da Saciedade: As fibras
+                presentes (agar-agar e psyllium) expandem-se no estômago, proporcionando uma sensação de plenitude por
+                mais tempo, o que ajuda a diminuir a fome e a ingestão excessiva de alimentos. Redução da Vontade por
+                Doces e Carboidratos: O cromo, um dos componentes chave, contribui para a regulação dos níveis de
+                glicose no sangue, o que pode diminuir os desejos por alimentos açucarados e ricos em carboidratos.
+                Metabolismo Otimizado: Ingredientes como a espirulina e o cromo apoiam o metabolismo de gorduras e
+                carboidratos, contribuindo para uma queima de energia mais eficiente. Melhora da Saúde Digestiva: As
+                fibras do agar-agar e do psyllium também auxiliam no bom funcionamento intestinal, promovendo a
+                regularidade e o bem-estar digestivo geral.
               </div>
             </div>
 
