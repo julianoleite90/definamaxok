@@ -675,13 +675,6 @@ export default function LandingPage() {
                         <p className="text-sm text-gray-600 mb-2">Pinhais, PR</p>
                     <p className="text-gray-700 mb-2">Vendedora</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 14kg em 3 meses</p>
-                        <div className="flex justify-center">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                            </svg>
-                          ))}
-                        </div>
                       </div>
                     </div>
 
@@ -701,13 +694,6 @@ export default function LandingPage() {
                         <p className="text-sm text-gray-600 mb-2">Guarulhos, SP</p>
                     <p className="text-gray-700 mb-2">Atendente de loja</p>
                     <p className="text-green-700 font-bold text-lg mb-3">- 24kg em 6 meses</p>
-                        <div className="flex justify-center">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <svg key={star} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                            </svg>
-                          ))}
-                        </div>
                       </div>
                     </div>
 
