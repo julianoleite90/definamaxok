@@ -795,10 +795,10 @@ export default function LandingPage() {
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-700 mb-2">Bloqueio da gordura</h3>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Absorção da gordura</h3>
                     <p className="text-gray-700">
                       As fibras inteligentes do Definamax, extraídas da Quitosana, formam uma barreira que se liga às
-                      moléculas de gordura durante a digestão, impedindo que sejam absorvidas pelo organismo. 
+                      moléculas de gordura durante a digestão e as absorvem, impedindo que sejam integradas ao organismo. 
                     </p>
                   </div>
                 </div>
@@ -1099,13 +1099,13 @@ export default function LandingPage() {
             {/* 100% Natural */}
             <div className="bg-white p-8 rounded-2xl border-2 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-6">
-                <div className="bg-green-100 p-4 rounded-full mr-6">
+                <div className="bg-100 p-4 rounded-full mr-6">
                   <Image
                     src="/onatural.png"
                     alt="100% Natural"
-                    width={60}
-                    height={60}
-                    className="h-12 w-12 object-contain"
+                    width={120}
+                    height={120}
+                    className="h-22 w-22 object-contain"
                   />
                 </div>
                 <div>
@@ -1143,13 +1143,13 @@ export default function LandingPage() {
             {/* Garantia */}
             <div className="bg-white p-8 rounded-2xl border-2 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-6">
-                <div className="bg-green-100 p-4 rounded-full mr-6">
+                <div className="bg-100 p-4 rounded-full mr-6">
                   <Image
                     src="/garantia.png"
                     alt="Garantia"
-                    width={60}
-                    height={60}
-                    className="h-12 w-12 object-contain"
+                    width={120}
+                    height={120}
+                    className="h-22 w-22 object-contain"
                   />
                 </div>
                 <div>
@@ -1257,9 +1257,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
                   <p className="font-medium text-yellow-800 text-center">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
-                      VALOR: <span className="line-through">R$89,90</span>
+                      VALOR: <span className="line-through">R$189,90</span>
                     </span>
-                    <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
+                    <span className="block md:inline">VOCÊ RECEBE DE GRAÇA!</span>
                   </p>
                 </div>
               </div>
@@ -1309,9 +1309,9 @@ export default function LandingPage() {
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-sm">
                   <p className="font-medium text-yellow-800 text-center">
                     <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-bold mb-1 md:mb-0 md:mr-1">
-                      VALOR: <span className="line-through">R$197,00</span>
+                      VALOR: <span className="line-through">R$397,00</span>
                     </span>
-                    <span className="block md:inline">VOCÊ RECEBE GRATUITAMENTE!</span>
+                    <span className="block md:inline">VOCÊ RECEBE DE GRAÇA!</span>
                   </p>
                 </div>
               </div>
@@ -1343,7 +1343,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4 text-center">
           <div className="mb-16">
 
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Escolha o kit ideal para você acelerar o seu processo de emagrecimento</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Escolha o kit ideal para acelerar o seu processo de emagrecimento</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
               Para melhores resultados recomendados o tratamento de 3 a 6 meses
             </p>
@@ -1411,7 +1411,7 @@ export default function LandingPage() {
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/ytA47b?src=sdv2")}
+                  href={addUtmToUrl("https://full.sale/ytA47b?src=adv2")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
@@ -1551,7 +1551,7 @@ export default function LandingPage() {
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/eMbtHp?Src=adv2")}
+                  href={addUtmToUrl("https://full.sale/eMbtHp?src=adv2")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
