@@ -1411,7 +1411,7 @@ export default function LandingPage() {
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/ytA47b?src=sdv2")}
+                  href={addUtmToUrl("https://full.sale/ytA47b")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
@@ -1482,7 +1482,7 @@ export default function LandingPage() {
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/DmNQj1?src=adv2")}
+                  href={addUtmToUrl("https://full.sale/DmNQj1")}
                   className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
                 >
                   COMPRAR AGORA
@@ -1551,7 +1551,7 @@ export default function LandingPage() {
                 </div>
 
                 <Link
-                  href={addUtmToUrl("https://full.sale/eMbtHp?Src=adv2")}
+                  href={addUtmToUrl("https://full.sale/eMbtHp")}
                   className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
                 >
                   COMPRAR AGORA
