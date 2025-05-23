@@ -876,7 +876,7 @@ export default function LandingPage() {
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-700 mb-2">Bloqueia da gordura ingerida</h3>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">Bloqueio da gordura ingerida</h3>
                     <p className="text-gray-700">
                       As fibras inteligentes do Definamax, extraídas da Quitosana, formam uma barreira que se liga às
                       moléculas de gordura durante a digestão, impedindo que sejam absorvidas pelo organismo. 
