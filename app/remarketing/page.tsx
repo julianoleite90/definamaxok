@@ -35,7 +35,7 @@ export default function ReMarketingPage() {
     {
       id: 1,
       vimeoId: "1079845171", // Substitua pelo ID real do Vimeo
-      title: "O melhor produto que já usei, perdi 5kg em 1 mês",
+      title: "Transformou a minha vida",
       description: "Depoimento de cliente Definamax",
       thumbnail: "/alarissa.png", // Substitua pelo caminho real da thumbnail
       duration: "3:45",
@@ -43,7 +43,7 @@ export default function ReMarketingPage() {
     {
       id: 2,
       vimeoId: "1079850549", // Substitua pelo ID real do Vimeo
-      title: "Consegui eliminar mais de 5kg, controlou aquele vontade de comer docês, eu recomendo para todo mundo.",
+      title: "O melhor produto que já usei",
       description: "Depoimento de cliente Definamax",
       thumbnail: "/aandrea.png", // Substitua pelo caminho real da thumbnail
       duration: "5:12",
@@ -51,7 +51,7 @@ export default function ReMarketingPage() {
     {
       id: 3,
       vimeoId: "1079845066", // Substitua pelo ID real do Vimeo
-      title: "Simplesmente incrível, acabou com a minha compulsão.",
+      title: "Incrível, de verdade!",
       description: "Depoimento de cliente Definamax",
       thumbnail: "/arenata.png", // Substitua pelo caminho real da thumbnail
       duration: "4:30",
@@ -59,7 +59,7 @@ export default function ReMarketingPage() {
     {
       id: 4,
       vimeoId: "1079845128", // Substitua pelo ID real do Vimeo
-      title: "A melhor fórmula que já usei, sério. 10x melhor que aquelas injeções horríveis",
+      title: "Eu super recomendo!",
       description: "Depoimento de cliente Definamax",
       thumbnail: "/avanessa.png", // Substitua pelo caminho real da thumbnail
       duration: "6:18",
