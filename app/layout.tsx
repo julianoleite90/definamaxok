@@ -1,48 +1,80 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
+import { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import Script from 'next/script'
+import './globals.css'
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Definamax Site Oficial - Emagrecedor N1 do Brasil",
-  description:
-    "Descubra o poder das fibras alimentares que absorvem a gordura, aceleram o metabolismo e aumentam a saciedade. Resultados visíveis em semanas com Definamax.",
-  icons: {
-    icon: "/ico.png",
-    apple: "/ico.png",
-  },
+  metadataBase: new URL('https://www.definamaxoficial.com'),
+  title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
+  description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
+  keywords: 'definamax, emagrecedor natural, perda de peso, metabolismo, compulsão alimentar',
   openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: "https://www.definamaxoficial.com",
-    title: "Definamax Site Oficial - Emagrecedor N1 do Brasil",
-    description:
-      "Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo.",
-    siteName: "Definamax",
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://www.definamaxoficial.com',
+    title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
+    description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
+    siteName: 'Definamax',
     images: [
       {
-        url: "/og.png",
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: "Definamax - Suplemento Natural para Emagrecimento",
+        alt: 'Definamax - Emagrecedor Natural',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Definamax Site Oficial - Emagrecedor N1 do Brasil",
-    description:
-      "Emagreça rápido sem dietas restritivas ou injeções perigosas com Definamax, o suplemento natural que absorve gordura e acelera seu metabolismo.",
-    images: ["/og.png"],
+    card: 'summary_large_image',
+    title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
+    description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
+    images: ['/og-image.jpg'],
   },
-  alternates: {
-    canonical: "https://www.definamaxoficial.com/",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   verification: {
-    google: "055Y8Zlr7CXBMOD8_TVqgFAiashS0o5vcUD8K7vxO_s",
+    google: 'seu-codigo-de-verificacao',
   },
+}
+
+// Schema.org markup para Rich Snippets
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Definamax',
+  description: 'Suplemento natural para emagrecimento saudável',
+  image: 'https://www.definamaxoficial.com/mockup2.png',
+  brand: {
+    '@type': 'Brand',
+    name: 'Definamax'
+  },
+  offers: {
+    '@type': 'AggregateOffer',
+    lowPrice: '279.90',
+    highPrice: '479.40',
+    priceCurrency: 'BRL',
+    availability: 'https://schema.org/InStock',
+    seller: {
+      '@type': 'Organization',
+      name: 'Definamax'
+    }
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '3842'
+  }
 }
 
 export default function RootLayout({
@@ -53,43 +85,67 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Google Tag Manager */}
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="canonical" href="https://www.definamaxoficial.com" />
+        
+        {/* Preconnect to required origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Schema.org markup */}
         <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','G-RTEPB48RDY');`,
-          }}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
-        {/* End Google Tag Manager */}
 
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTEPB48RDY" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-RTEPB48RDY');
-            `,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=SEU-ID-DO-GA"
+          strategy="afterInteractive"
         />
-        {/* End Google Analytics */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'SEU-ID-DO-GA', {
+              page_path: window.location.pathname,
+              send_page_view: true
+            });
+          `}
+        </Script>
+
+        {/* UTM Tracking */}
+        <Script id="utm-tracking" strategy="afterInteractive">
+          {`
+            function getUTMParameters() {
+              const urlParams = new URLSearchParams(window.location.search);
+              const utmParams = {};
+              ['source', 'medium', 'campaign', 'term', 'content'].forEach(param => {
+                const value = urlParams.get('utm_' + param);
+                if (value) utmParams['utm_' + param] = value;
+              });
+              return utmParams;
+            }
+
+            function attachUTMsToLinks() {
+              const utmParams = getUTMParameters();
+              if (Object.keys(utmParams).length === 0) return;
+
+              document.querySelectorAll('a[href*="full.sale"]').forEach(link => {
+                const url = new URL(link.href);
+                Object.entries(utmParams).forEach(([key, value]) => {
+                  url.searchParams.set(key, value as string);
+                });
+                link.href = url.toString();
+              });
+            }
+
+            window.addEventListener('load', attachUTMsToLinks);
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=G-RTEPB48RDY"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         {children}
       </body>
     </html>

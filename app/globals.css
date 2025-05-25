@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animation Utilities */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

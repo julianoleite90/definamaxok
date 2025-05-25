@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.definamaxoficial.com/sitemap.xml
+
+# Disallow checkout pages
+Disallow: /checkout/
+Disallow: /carrinho/
+Disallow: /pagamento/ 
