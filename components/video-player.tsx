@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 
 export default function VideoPlayer() {
-  const iframeRef = useRef(null)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
     // Only load the iframe when this component is mounted
