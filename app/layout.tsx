@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -100,7 +101,7 @@ export default function RootLayout({
 
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=SEU-ID-DO-GA"
+          src="https://www.googletagmanager.com/gtag/js?id=G-RTEPB48RDY"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -108,7 +109,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'SEU-ID-DO-GA', {
+            gtag('config', 'G-RTEPB48RDY', {
               page_path: window.location.pathname,
               send_page_view: true
             });
@@ -144,6 +145,7 @@ export default function RootLayout({
             window.addEventListener('load', attachUTMsToLinks);
           `}
         </Script>
+        <GoogleAnalytics />
       </head>
       <body className={inter.className}>
         {children}
