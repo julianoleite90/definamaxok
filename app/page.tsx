@@ -9,6 +9,7 @@ export default function LandingPage() {
   const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes: 59, seconds: 59 })
   const [showMoreReviews, setShowMoreReviews] = useState(false)
   const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
+  const [openFaqs, setOpenFaqs] = useState<number[]>([])
   const buyRef = useRef<HTMLDivElement>(null)
 
   // Contagem regressiva
@@ -34,31 +35,67 @@ export default function LandingPage() {
     setShowMoreReviews(!showMoreReviews)
   }
 
+  // Função para adicionar UTMs aos links de compra
+  const addUtmToUrl = (baseUrl: string): string => {
+    if (typeof window === "undefined") return baseUrl
+
+    const utmSource = localStorage.getItem("utm_source")
+    const utmMedium = localStorage.getItem("utm_medium")
+    const utmCampaign = localStorage.getItem("utm_campaign")
+    const utmContent = localStorage.getItem("utm_content")
+    const utmTerm = localStorage.getItem("utm_term")
+
+    const url = new URL(baseUrl)
+
+    if (utmSource) url.searchParams.append("utm_source", utmSource)
+    if (utmMedium) url.searchParams.append("utm_medium", utmMedium)
+    if (utmCampaign) url.searchParams.append("utm_campaign", utmCampaign)
+    if (utmContent) url.searchParams.append("utm_content", utmContent)
+    if (utmTerm) url.searchParams.append("utm_term", utmTerm)
+
+    return url.toString()
+  }
+
+  // Função para alternar FAQ
+  const toggleFaq = (index: number) => {
+    setOpenFaqs(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    )
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header com CTA */}
-            <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3 shadow-md relative overflow-hidden">
+      <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
-        <div className="mx-auto max-w-5xl px-4 flex justify-between items-center">
-          <Image 
-            src="/logo2.png" 
-            alt="Definamax" 
-            width={400} 
-            height={120} 
-            className="h-10 w-auto" 
-            quality={100}
-            priority
-          />
-          <button
-            onClick={scrollToBuy}
-            className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
-          >
-            COMPRAR
-          </button>
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="flex flex-col md:flex-row md:items-center items-center gap-4 md:gap-8">
+            <div className="flex-1">
+              <Image 
+                src="/logo2.png" 
+                alt="Definamax" 
+                width={400} 
+                height={120} 
+                className="h-10 w-auto" 
+                quality={100}
+                priority
+              />
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <button
+                onClick={scrollToBuy}
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
+              >
+                COMPRAR
+              </button>
+            </div>
+          </div>
         </div>
       </header>
 
-            {/* Hero Section Otimizada */}
+      {/* Hero Section Otimizada */}
       <section className="w-full bg-gradient-to-b from-green-50 to-white py-8 md:py-12">
         <div className="mx-auto max-w-5xl px-4">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
@@ -139,7 +176,7 @@ export default function LandingPage() {
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex flex-col items-center w-full mt-3 md:mt-0">
+              <div className="flex flex-col items-center md:items-start w-full mt-3 md:mt-0">
                 <div className="w-full md:w-[320px]">
                   <div className="relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -154,7 +191,7 @@ export default function LandingPage() {
                     </Link>
                   </div>
 
-                  <div className="flex items-center justify-center mt-3 text-sm text-gray-600">
+                  <div className="flex items-center justify-center md:justify-start mt-3 text-sm text-gray-600">
                     <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
                     <span>30 dias de garantia incondicional</span>
                   </div>
@@ -210,9 +247,9 @@ export default function LandingPage() {
             {showMoreReviews && (
               <>
                 {[
-                  { name: "Marina L.", age: 28, loss: 15, months: 4, image: "/dep04.png", profession: "Designer", location: "Belo Horizonte, MG" },
-                  { name: "Carla M.", age: 39, loss: 18, months: 6, image: "/dep05.png", profession: "Advogada", location: "Salvador, BA" },
-                  { name: "Roberto C.", age: 45, loss: 20, months: 5, image: "/dep06.png", profession: "Engenheiro", location: "Porto Alegre, RS" }
+                  { name: "Marina L.", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Designer", location: "Belo Horizonte, MG" },
+                  { name: "Carla M.", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Advogada", location: "Salvador, BA" },
+                  { name: "Roberto C.", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Engenheiro", location: "Porto Alegre, RS" }
                 ].map((item, index) => (
                   <div key={index} className="w-full">
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -1322,6 +1359,83 @@ export default function LandingPage() {
               </div>
             </div>
           </section>
+        </div>
+      </section>
+
+      {/* Seção de Perguntas Frequentes */}
+      <section className="w-full py-16 bg-white">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+              Perguntas Frequentes
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Tire suas dúvidas sobre o Definamax
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: "Como devo tomar o Definamax?",
+                answer: "Recomenda-se tomar 2 cápsulas por dia, preferencialmente antes das principais refeições. Para melhores resultados, tome uma cápsula 30 minutos antes do almoço e outra 30 minutos antes do jantar, sempre com um copo de água."
+              },
+              {
+                question: "Quanto tempo demora para ver resultados?",
+                answer: "Os resultados podem variar de pessoa para pessoa, mas a maioria dos usuários começa a notar mudanças significativas após 30 dias de uso contínuo. Para resultados mais expressivos, recomendamos o tratamento completo de 3 a 6 meses."
+              },
+              {
+                question: "O Definamax tem efeitos colaterais?",
+                answer: "Por ser um produto 100% natural, o Definamax não apresenta efeitos colaterais significativos. No entanto, como todo suplemento, recomendamos consultar um profissional de saúde antes de iniciar o uso, especialmente se você estiver grávida, amamentando ou em tratamento médico."
+              },
+              {
+                question: "Preciso fazer dieta enquanto tomo Definamax?",
+                answer: "O Definamax funciona mesmo sem dietas restritivas, pois age reduzindo naturalmente seu apetite e a absorção de gorduras. No entanto, para resultados ainda melhores, recomendamos manter uma alimentação equilibrada e praticar atividades físicas regularmente."
+              },
+              {
+                question: "Como funciona a garantia de satisfação?",
+                answer: "Oferecemos 30 dias de garantia incondicional. Se você não ficar satisfeito com os resultados, basta entrar em contato com nosso atendimento e solicitar o reembolso total do seu investimento, sem questionamentos."
+              },
+              {
+                question: "Qual o prazo de entrega?",
+                answer: "O prazo médio de entrega é de 5 a 7 dias úteis para todo Brasil. Após a confirmação do pagamento, você receberá o código de rastreamento para acompanhar sua encomenda."
+              }
+            ].map((faq, index) => (
+              <div 
+                key={index} 
+                className="bg-gradient-to-r from-green-50 to-white rounded-xl border border-green-100 overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full p-6 text-left flex items-center justify-between"
+                >
+                  <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
+                  <ChevronDown 
+                    className={`h-5 w-5 text-gray-500 transition-transform ${openFaqs.includes(index) ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                <div 
+                  className={`px-6 transition-all duration-200 ease-in-out ${
+                    openFaqs.includes(index) 
+                      ? 'max-h-[500px] pb-6 opacity-100' 
+                      : 'max-h-0 overflow-hidden opacity-0'
+                  }`}
+                >
+                  <p className="text-gray-600">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA após FAQs */}
+          <div className="text-center mt-12">
+            <button
+              onClick={scrollToBuy}
+              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-lg hover:shadow-xl"
+            >
+              EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+          </div>
         </div>
       </section>
 
