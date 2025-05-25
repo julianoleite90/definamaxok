@@ -27,8 +27,8 @@ export default function DefinamaxFAQ() {
     setOpenFaqs((prev) => ({
       ...prev,
       [faqId]: !prev[faqId],
-    }))
-  }
+    }));
+  };
 
   // Função para capturar parâmetros UTM da URL
   useEffect(() => {
