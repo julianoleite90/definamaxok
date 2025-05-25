@@ -71,26 +71,24 @@ export default function LandingPage() {
       <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
         <div className="mx-auto max-w-5xl px-4">
-          <div className="flex flex-col md:flex-row md:items-center items-center gap-4 md:gap-8">
-            <div className="flex-1">
+          <div className="flex items-center justify-between">
+            <div className="w-[140px] md:w-[180px]">
               <Image 
                 src="/logo2.png" 
                 alt="Definamax" 
                 width={400} 
                 height={120} 
-                className="h-10 w-auto" 
+                className="h-auto w-full" 
                 quality={100}
                 priority
               />
             </div>
-            <div className="flex justify-center md:justify-end">
-              <button
-                onClick={scrollToBuy}
-                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
-              >
-                COMPRAR
-              </button>
-            </div>
+            <button
+              onClick={scrollToBuy}
+              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
+            >
+              COMPRAR
+            </button>
           </div>
         </div>
       </header>
@@ -176,8 +174,8 @@ export default function LandingPage() {
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex flex-col items-center md:items-start w-full mt-3 md:mt-0">
-                <div className="w-full md:w-[320px]">
+              <div className="flex justify-center md:justify-start w-full px-4">
+                <div className="w-[372px] md:w-[320px]">
                   <div className="relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <Link
