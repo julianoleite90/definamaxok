@@ -34,6 +34,27 @@ export default function LandingPage() {
     setShowMoreReviews(!showMoreReviews)
   }
 
+  // Função para adicionar UTMs aos links de compra
+  const addUtmToUrl = (baseUrl: string): string => {
+    if (typeof window === "undefined") return baseUrl
+
+    const utmSource = localStorage.getItem("utm_source")
+    const utmMedium = localStorage.getItem("utm_medium")
+    const utmCampaign = localStorage.getItem("utm_campaign")
+    const utmContent = localStorage.getItem("utm_content")
+    const utmTerm = localStorage.getItem("utm_term")
+
+    const url = new URL(baseUrl)
+
+    if (utmSource) url.searchParams.append("utm_source", utmSource)
+    if (utmMedium) url.searchParams.append("utm_medium", utmMedium)
+    if (utmCampaign) url.searchParams.append("utm_campaign", utmCampaign)
+    if (utmContent) url.searchParams.append("utm_content", utmContent)
+    if (utmTerm) url.searchParams.append("utm_term", utmTerm)
+
+    return url.toString()
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       {/* Header com CTA */}

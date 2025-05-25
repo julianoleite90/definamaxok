@@ -4,6 +4,14 @@ import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle } from "lucide-react"
 
+interface FaqState {
+  faq1: boolean;
+  faq2: boolean;
+  faq3: boolean;
+  faq4: boolean;
+  faq5: boolean;
+}
+
 export default function LandingPage() {
   // Estado para controlar o carrossel de depoimentos
   const [testimonialPage, setTestimonialPage] = useState(0)
@@ -24,22 +32,25 @@ export default function LandingPage() {
   const buyRef = useRef(null)
 
   // Estado para controlar quais perguntas estão abertas no acordeão
-  const [openFaqs, setOpenFaqs] = useState({
+  const [expandedFaqs, setExpandedFaqs] = useState<FaqState>({
     faq1: false,
     faq2: false,
     faq3: false,
     faq4: false,
-    faq5: false,
+    faq5: false
   })
 
   // Estado para controlar a visibilidade do botão do WhatsApp
   const [showWhatsAppButton, setShowWhatsAppButton] = useState(false)
 
-  // Função para alternar o estado de uma pergunta
-  const toggleFaq = (faqId) => {
-    setOpenFaqs((prev) => ({
+  // Estado para controlar a seção ativa
+  const [activeSection, setActiveSection] = useState<string>('')
+
+  // Função para alternar FAQ
+  const toggleFaq = (faqId: keyof FaqState) => {
+    setExpandedFaqs((prev) => ({
       ...prev,
-      [faqId]: !prev[faqId],
+      [faqId]: !prev[faqId]
     }))
   }
 
@@ -118,7 +129,7 @@ export default function LandingPage() {
   }, [])
 
   // Função para adicionar UTMs aos links de compra
-  const addUtmToUrl = (baseUrl) => {
+  const addUtmToUrl = (baseUrl: string): string => {
     if (typeof window === "undefined") return baseUrl
 
     const utmSource = localStorage.getItem("utm_source")
@@ -200,6 +211,20 @@ export default function LandingPage() {
   const openWhatsApp = () => {
     const message = encodeURIComponent("Olá! Gostaria de saber mais sobre o Definamax.")
     window.open(`https://wa.me/5541984549172?text=${message}`, "_blank")
+  }
+
+  // Função para calcular a posição do scroll
+  const handleScroll = () => {
+    const sections = document.querySelectorAll<HTMLElement>('section')
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        setActiveSection(section.id)
+      }
+    })
   }
 
   return (
@@ -1833,11 +1858,11 @@ playsInline
               <button
                 className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
                 onClick={() => toggleFaq("faq1")}
-                aria-expanded={openFaqs.faq1}
+                aria-expanded={expandedFaqs.faq1}
               >
                 O que é Definamax e como ele funciona?
                 <svg
-                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq1 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-500 transition-transform ${expandedFaqs.faq1 ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1847,7 +1872,7 @@ playsInline
               </button>
               <div
                 className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
-                  openFaqs.faq1 ? "block" : "hidden"
+                  expandedFaqs.faq1 ? "block" : "hidden"
                 }`}
               >
                 Definamax é um suplemento alimentar 100% natural que combina fibras de alta potência para absorver a
@@ -1861,11 +1886,11 @@ playsInline
               <button
                 className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
                 onClick={() => toggleFaq("faq2")}
-                aria-expanded={openFaqs.faq2}
+                aria-expanded={expandedFaqs.faq2}
               >
                 Quais são os principais benefícios do Definamax?
                 <svg
-                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq2 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-500 transition-transform ${expandedFaqs.faq2 ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1875,7 +1900,7 @@ playsInline
               </button>
               <div
                 className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
-                  openFaqs.faq2 ? "block" : "hidden"
+                  expandedFaqs.faq2 ? "block" : "hidden"
                 }`}
               >
                 Os principais benefícios do Definamax incluem: emagrecimento rápido e natural, aumento da saciedade,
@@ -1889,11 +1914,11 @@ playsInline
               <button
                 className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
                 onClick={() => toggleFaq("faq3")}
-                aria-expanded={openFaqs.faq3}
+                aria-expanded={expandedFaqs.faq3}
               >
                 Definamax possui alguma contraindicação ou efeito colateral?
                 <svg
-                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq3 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-500 transition-transform ${expandedFaqs.faq3 ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1903,7 +1928,7 @@ playsInline
               </button>
               <div
                 className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
-                  openFaqs.faq3 ? "block" : "hidden"
+                  expandedFaqs.faq3 ? "block" : "hidden"
                 }`}
               >
                 Definamax é um produto 100% natural e não possui contraindicações ou efeitos colaterais conhecidos. No
@@ -1917,11 +1942,11 @@ playsInline
               <button
                 className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
                 onClick={() => toggleFaq("faq4")}
-                aria-expanded={openFaqs.faq4}
+                aria-expanded={expandedFaqs.faq4}
               >
                 Como devo utilizar o Definamax para obter os melhores resultados?
                 <svg
-                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq4 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-500 transition-transform ${expandedFaqs.faq4 ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1931,7 +1956,7 @@ playsInline
               </button>
               <div
                 className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
-                  openFaqs.faq4 ? "block" : "hidden"
+                  expandedFaqs.faq4 ? "block" : "hidden"
                 }`}
               >
                 Recomenda-se utilizar 2 cápsulas de Definamax por dia, preferencialmente antes das principais refeições,
@@ -1945,11 +1970,11 @@ playsInline
               <button
                 className="w-full text-left py-4 px-6 font-semibold text-gray-800 flex justify-between items-center"
                 onClick={() => toggleFaq("faq5")}
-                aria-expanded={openFaqs.faq5}
+                aria-expanded={expandedFaqs.faq5}
               >
                 Qual o prazo de entrega e a política de garantia do Definamax?
                 <svg
-                  className={`w-5 h-5 text-gray-500 transition-transform ${openFaqs.faq5 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-500 transition-transform ${expandedFaqs.faq5 ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1959,7 +1984,7 @@ playsInline
               </button>
               <div
                 className={`px-6 pb-4 text-gray-700 transition-all duration-300 overflow-hidden ${
-                  openFaqs.faq5 ? "block" : "hidden"
+                  expandedFaqs.faq5 ? "block" : "hidden"
                 }`}
               >
                 O prazo de entrega do Definamax varia de acordo com a sua região, mas geralmente é de 5 a 10 dias úteis.
