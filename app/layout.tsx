@@ -15,12 +15,20 @@ export const metadata: Metadata = {
     title: 'Definamax - Emagrecedor Natural',
     description: 'Emagreça de forma natural e saudável com Definamax. Resultados comprovados em milhares de pessoas.',
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Definamax - Emagrecedor Natural'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
     description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
-    images: ['/og-image.jpg'],
+    images: ['/opengraph-image.jpg'],
   },
   robots: {
     index: true,
