@@ -33,12 +33,12 @@ export default function LandingPage() {
   })
 
   // Função para alternar o estado de uma pergunta
-  const toggleFaq = (faqId) => {
-    setOpenFaqs((prev) => ({
-      ...prev,
-      [faqId]: !prev[faqId],
-    }))
-  }
+const toggleFaq = (faqId: string) => {
+  setOpenFaqs((prev) => ({
+    ...prev,
+    [faqId]: !prev[faqId],
+  }))
+}
 
   // Função para capturar parâmetros UTM da URL
   useEffect(() => {
