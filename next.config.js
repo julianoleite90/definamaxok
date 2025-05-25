@@ -9,7 +9,6 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
   },
 }
