@@ -24,21 +24,22 @@ export default function LandingPage() {
   const buyRef = useRef(null)
 
   // Estado para controlar quais perguntas estão abertas no acordeão
-  const [openFaqs, setOpenFaqs] = useState({
-    faq1: false,
-    faq2: false,
-    faq3: false,
-    faq4: false,
-    faq5: false,
-  })
+const [openFaqs, setOpenFaqs] = useState<{ [key: string]: boolean }>({
+  faq1: false,
+  faq2: false,
+  faq3: false,
+  faq4: false,
+  faq5: false,
+})
 
-  // Função para alternar o estado de uma pergunta
+// Função para alternar o estado de uma pergunta
 const toggleFaq = (faqId: string) => {
   setOpenFaqs((prev) => ({
     ...prev,
     [faqId]: !prev[faqId],
   }))
 }
+
 
   // Função para capturar parâmetros UTM da URL
   useEffect(() => {
