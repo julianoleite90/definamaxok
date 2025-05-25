@@ -21,7 +21,7 @@ export default function LandingPage() {
   })
 
   // Referência para a seção de compra
-  const buyRef = useRef(null)
+  const buyRef = useRef<HTMLDivElement>(null)
 
   // Estado para controlar quais perguntas estão abertas no acordeão
 const [openFaqs, setOpenFaqs] = useState<{ [key: string]: boolean }>({
