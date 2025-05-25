@@ -39,7 +39,6 @@ function VimeoVideo({ videoId, title = "Vimeo Video" }: VimeoVideoProps) {
         frameBorder="0"
         allow="autoplay; fullscreen"
         allowFullScreen
-        playsInline
         title="Como o Definamax funciona"
       ></iframe>
     </div>
