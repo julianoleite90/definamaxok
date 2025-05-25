@@ -8,24 +8,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.definamaxoficial.com'),
-  title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
-  description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
+  title: 'Definamax - Emagrecedor Natural',
+  description: 'Emagreça de forma natural e saudável com Definamax. Resultados comprovados em milhares de pessoas.',
   keywords: 'definamax, emagrecedor natural, perda de peso, metabolismo, compulsão alimentar',
   openGraph: {
+    title: 'Definamax - Emagrecedor Natural',
+    description: 'Emagreça de forma natural e saudável com Definamax. Resultados comprovados em milhares de pessoas.',
     type: 'website',
-    locale: 'pt_BR',
-    url: 'https://www.definamaxoficial.com',
-    title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
-    description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
-    siteName: 'Definamax',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Definamax - Emagrecedor Natural',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
