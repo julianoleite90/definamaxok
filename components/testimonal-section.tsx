@@ -4,7 +4,11 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ArrowRight, ShieldCheck } from "lucide-react"
 
-export default function TestimonialSection({ scrollToBuy }) {
+interface TestimonialSectionProps {
+  scrollToBuy: () => void
+}
+
+export default function TestimonialSection({ scrollToBuy }: TestimonialSectionProps) {
   // Estado para controlar o carrossel de depoimentos
   const [testimonialPage, setTestimonialPage] = useState(0)
   const totalTestimonialPages = 2
