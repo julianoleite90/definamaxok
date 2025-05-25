@@ -174,7 +174,7 @@ export default function LandingPage() {
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex justify-center md:justify-start w-full px-4">
+              <div className="flex justify-center md:justify-start">
                 <div className="w-[372px] md:w-[320px]">
                   <div className="relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
