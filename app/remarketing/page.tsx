@@ -85,7 +85,7 @@ export default function ReMarketingPage() {
 
 
   // Função para adicionar UTMs aos links de compra
-  const addUtmToUrl = (baseUrl) => {
+  const addUtmToUrl = (baseUrl: string) => {
     if (typeof window === "undefined") return baseUrl
 
     const utmSource = localStorage.getItem("utm_source")
