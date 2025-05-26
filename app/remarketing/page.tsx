@@ -195,6 +195,9 @@ export default function ReMarketingPage() {
     }
   }, [])
 
+  // Estado para controlar a exibição de mais depoimentos
+  const [showMoreTestimonials, setShowMoreTestimonials] = useState(false)
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       <Head>
@@ -243,210 +246,192 @@ export default function ReMarketingPage() {
       </Head>
 
       {/* Header */}
-      <header className="w-full relative overflow-hidden">
-        <div className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 py-3 shadow-md">
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
-          <div className="mx-auto max-w-5xl px-4 flex justify-center">
-            <Link href="/">
-              <Image src="/logo2.png" alt="Definamax" width={200} height={60} className="h-12 w-auto" />
-            </Link>
-          </div>
+      <header className="w-full bg-green-800">
+        <div className="mx-auto max-w-7xl px-4 py-4 flex justify-between items-center">
+          <Link href="/" className="flex-shrink-0">
+            <Image src="/logo2.png" alt="Definamax" width={200} height={40} className="h-8 w-auto" />
+          </Link>
+          <Link
+            href="https://full.sale/ytA47b?rmkt1"
+            className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-2 rounded-lg transition-all duration-300"
+          >
+            COMPRAR
+          </Link>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-b from-green-50 to-white py-12 md:py-16">
         <div className="mx-auto max-w-5xl px-4 text-center">
-          <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
-            🎉 MAIS DE 127.849 PESSOAS JÁ CONQUISTARAM O CORPO DOS SONHOS
-          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Perca até <span className="text-green-600">22kg</span> de Forma Natural e Definitiva
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Assista aos depoimentos reais de quem transformou sua vida com Definamax e entenda por que somos o <span className="font-semibold">suplemento mais recomendado do Brasil</span>
-          </p>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
-            <div className="flex items-center bg-white px-4 py-2 rounded-lg shadow-md">
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map((star, index) => (
-                  <svg
-                    key={star}
-                    className={`w-5 h-5 text-yellow-400 fill-current ${index === 0 ? "animate-pulse" : ""}`}
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="ml-2 text-sm font-medium">4.9/5 (3.842 avaliações)</span>
-            </div>
-
-            <div className="flex items-center bg-white px-4 py-2 rounded-lg shadow-md">
-              <Image src="/anvisa.png" alt="Anvisa" width={24} height={24} className="mr-2" />
-              <span className="text-sm font-medium">Aprovado pela ANVISA</span>
-            </div>
-
-            <div className="flex items-center bg-white px-4 py-2 rounded-lg shadow-md">
-              <ShieldCheck className="h-5 w-5 text-green-600 mr-2" />
-              <span className="text-sm font-medium">Garantia de 30 dias</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            <div className="bg-white rounded-lg p-3 shadow-md">
-              <div className="font-bold text-2xl text-green-600">98%</div>
-              <div className="text-sm text-gray-600">Satisfação dos clientes</div>
-            </div>
-            <div className="bg-white rounded-lg p-3 shadow-md">
-              <div className="font-bold text-2xl text-green-600">7 dias</div>
-              <div className="text-sm text-gray-600">Primeiros resultados</div>
-            </div>
-            <div className="bg-white rounded-lg p-3 shadow-md">
-              <div className="font-bold text-2xl text-green-600">100%</div>
-              <div className="text-sm text-gray-600">Natural e seguro</div>
-            </div>
-            <div className="bg-white rounded-lg p-3 shadow-md">
-              <div className="font-bold text-2xl text-green-600">30 dias</div>
-              <div className="text-sm text-gray-600">Garantia de satisfação</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção de Benefícios */}
-      <section className="w-full py-12 bg-gradient-to-b from-white to-green-50">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-            Por que <span className="text-green-600">Definamax</span> é a solução que você procura?
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2">Resultados Rápidos</h3>
-              <p className="text-gray-600 text-center">Veja mudanças visíveis em apenas 7 dias de uso, com redução de até 5kg no primeiro mês.</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2">100% Natural</h3>
-              <p className="text-gray-600 text-center">Fórmula exclusiva com ingredientes naturais que aceleram seu metabolismo sem efeitos colaterais.</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2">Ação Prolongada</h3>
-              <p className="text-gray-600 text-center">Mantenha os resultados mesmo após parar o tratamento, sem efeito sanfona.</p>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <div className="inline-block bg-yellow-100 border border-yellow-200 rounded-lg p-4 max-w-2xl">
-              <p className="text-lg font-medium text-yellow-800">
-                🔥 Promoção por tempo limitado: Até <span className="font-bold">68% OFF</span> + Frete Grátis!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção Antes e Depois */}
-      <section className="w-full py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
-            Transformações Reais com Definamax
-          </h2>
-          <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Veja os resultados impressionantes de pessoas que mudaram suas vidas com Definamax
+          <p className="text-xl text-gray-600 mb-8">
+            Eles também estavam sofrendo com o sobrepeso, e todos emagreceram mais de 10kg usando a fórmula de Definamax
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-green-50 to-white rounded-xl p-6 shadow-lg">
-              <div className="mb-6">
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative">
                 <Image
                   src="/dep01.png"
-                  alt="Debora - Transformação com Definamax"
-                  width={300}
+                  alt="Débora - Antes e Depois"
+                  width={400}
                   height={400}
-                  className="rounded-lg w-full object-cover mx-auto"
+                  className="w-full object-cover"
                 />
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold mb-2">Debora, 31 anos</h3>
-                <p className="text-green-600 font-bold mb-2">-23kg em 7 meses</p>
-                <p className="text-gray-600">"Nunca imaginei que conseguiria emagrecer tanto! O Definamax mudou completamente minha vida e minha autoestima."</p>
+              <div className="p-4 text-center">
+                <h3 className="text-green-600 text-4xl font-bold mb-2">-23kg</h3>
+                <p className="text-gray-600 text-lg mb-3">em 7 meses</p>
+                <p className="text-gray-800 text-xl font-medium mb-1">Débora, 31 anos</p>
+                <p className="text-gray-500 mb-1">Professora</p>
+                <p className="text-gray-500">São Paulo, SP</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-green-50 to-white rounded-xl p-6 shadow-lg">
-              <div className="mb-6">
+            {/* Testimonial 2 */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative">
                 <Image
-                  src="/dep05.png"
-                  alt="Laura - Transformação com Definamax"
-                  width={300}
+                  src="/dep02.png"
+                  alt="Arnaldo - Antes e Depois"
+                  width={400}
                   height={400}
-                  className="rounded-lg w-full object-cover mx-auto"
+                  className="w-full object-cover"
                 />
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold mb-2">Laura de Guarulhos</h3>
-                <p className="text-green-600 font-bold mb-2">-24kg em 6 meses</p>
-                <p className="text-gray-600">"O Definamax foi a única coisa que realmente funcionou pra mim. Os resultados começaram já no primeiro mês!"</p>
+              <div className="p-4 text-center">
+                <h3 className="text-green-600 text-4xl font-bold mb-2">-25kg</h3>
+                <p className="text-gray-600 text-lg mb-3">em 6 meses</p>
+                <p className="text-gray-800 text-xl font-medium mb-1">Arnaldo, 34 anos</p>
+                <p className="text-gray-500 mb-1">Auxiliar Administrativo</p>
+                <p className="text-gray-500">Salvador, BA</p>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative">
+                <Image
+                  src="/dep03.png"
+                  alt="Sara - Antes e Depois"
+                  width={400}
+                  height={400}
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <h3 className="text-green-600 text-4xl font-bold mb-2">-11kg</h3>
+                <p className="text-gray-600 text-lg mb-3">em 2 meses</p>
+                <p className="text-gray-800 text-xl font-medium mb-1">Sara, 32 anos</p>
+                <p className="text-gray-500 mb-1">Dona de casa</p>
+                <p className="text-gray-500">Rio de Janeiro, RJ</p>
               </div>
             </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-green-800 mb-3">Garantia Tripla Definamax</h3>
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <div className="flex items-center">
-                  <ShieldCheck className="h-6 w-6 text-green-600 mr-2" />
-                  <span className="font-medium">Satisfação ou Dinheiro de Volta</span>
+          {!showMoreTestimonials && (
+            <button 
+              onClick={() => setShowMoreTestimonials(true)}
+              className="text-green-600 hover:text-green-700 font-medium text-sm hover:underline"
+            >
+              Ver mais depoimentos
+            </button>
+          )}
+
+          {/* Additional testimonials */}
+          {showMoreTestimonials && (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+                {/* Additional Testimonial 1 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <div className="relative">
+                    <Image
+                      src="/dep04.png"
+                      alt="Maria - Antes e Depois"
+                      width={400}
+                      height={400}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-green-600 text-4xl font-bold mb-2">-18kg</h3>
+                    <p className="text-gray-600 text-lg mb-3">em 5 meses</p>
+                    <p className="text-gray-800 text-xl font-medium mb-1">Maria, 28 anos</p>
+                    <p className="text-gray-500 mb-1">Vendedora</p>
+                    <p className="text-gray-500">Curitiba, PR</p>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <CheckCircle2 className="h-6 w-6 text-green-600 mr-2" />
-                  <span className="font-medium">Envio em 24h</span>
+
+                {/* Additional Testimonial 2 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <div className="relative">
+                    <Image
+                      src="/dep05.png"
+                      alt="João - Antes e Depois"
+                      width={400}
+                      height={400}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-green-600 text-4xl font-bold mb-2">-20kg</h3>
+                    <p className="text-gray-600 text-lg mb-3">em 4 meses</p>
+                    <p className="text-gray-800 text-xl font-medium mb-1">João, 45 anos</p>
+                    <p className="text-gray-500 mb-1">Empresário</p>
+                    <p className="text-gray-500">Belo Horizonte, MG</p>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <CheckCircle2 className="h-6 w-6 text-green-600 mr-2" />
-                  <span className="font-medium">Compra 100% Segura</span>
+
+                {/* Additional Testimonial 3 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <div className="relative">
+                    <Image
+                      src="/dep06.png"
+                      alt="Ana - Antes e Depois"
+                      width={400}
+                      height={400}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-green-600 text-4xl font-bold mb-2">-15kg</h3>
+                    <p className="text-gray-600 text-lg mb-3">em 3 meses</p>
+                    <p className="text-gray-800 text-xl font-medium mb-1">Ana, 39 anos</p>
+                    <p className="text-gray-500 mb-1">Enfermeira</p>
+                    <p className="text-gray-500">Recife, PE</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+              
+              <button 
+                onClick={() => setShowMoreTestimonials(false)}
+                className="text-gray-500 hover:text-gray-600 font-medium text-sm hover:underline"
+              >
+                Fechar depoimentos
+              </button>
+            </>
+          )}
         </div>
       </section>
+
+      {/* Simple Separator */}
+      <div className="w-full border-t border-gray-200">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="relative -top-3 text-center">
+            <span className="bg-white px-4 text-gray-600 text-sm">
+              Depoimentos em Vídeo
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Videos Section */}
       <section className="w-full py-12 bg-white">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
-              ⚠️ ATENÇÃO: DEPOIMENTOS REAIS E SEM FILTROS
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Veja Como o Definamax Está <span className="text-green-600">Transformando Vidas</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Assista aos depoimentos emocionantes de pessoas reais que conseguiram emagrecer de forma definitiva com Definamax
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-2 gap-8">
             {videos.map((video, index) => (
               <div key={video.id} className="bg-white rounded-2xl border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
@@ -559,290 +544,352 @@ export default function ReMarketingPage() {
               </div>
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-yellow-800 mb-3">⚡ Oferta Especial por Tempo Limitado</h3>
-              <p className="text-lg mb-4">
-                Aproveite agora mesmo e garanta até <span className="font-bold">68% de desconto</span> + Frete Grátis!
-              </p>
-              <Link
-                href={addUtmToUrl("https://full.sale/DmNQj1?src=rmkt1")}
-                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-lg font-bold text-white hover:from-green-500 hover:to-green-600 transform hover:scale-105 transition-all shadow-lg"
-              >
-                QUERO COMEÇAR AGORA →
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Área de compra */}
-      <section
-
-        className="w-full py-16 bg-gradient-to-b from-green-100 to-green-50"
-        aria-label="Comprar Definamax"
-      >
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <div className="mb-16">
-            <div className="inline-block bg-yellow-400 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
-              DISPONÍVEL ENQUANTO DURAREM OS ESTOQUES
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Tome uma decisão hoje!</h2>
-            <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
-              Escolha o kit ideal para você acelerar o seu processo de perda de peso
+      {/* Products Section */}
+      <section className="w-full py-12 bg-gradient-to-b from-white to-gray-50">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+              Escolha o kit ideal para você acelerar o seu processo de emagrecimento
+            </h2>
+            <p className="text-lg text-gray-600">
+              Para melhores resultados recomendados o tratamento de 3 a 6 meses
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3 md:gap-8">
-            {/* Kit 6 meses - Agora primeiro */}
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-              <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
-                <h3 className="text-lg font-bold">Kit Completo</h3>
-                <p className="text-sm opacity-90">
-                  6 meses de tratamento
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Kit Completo */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="bg-green-500 py-3 px-6">
+                <h3 className="text-xl font-bold text-white text-center">Kit Completo</h3>
+                <p className="text-white text-center text-sm">6 meses de tratamento</p>
               </div>
-
-              <div className="p-4 sm:p-5">
-                <div className="flex justify-center mb-4 relative">
+              <div className="p-6">
+                <div className="flex justify-center mb-6">
                   <Image
-                    src="/6f.png"
-                    alt="Kit 6 Meses"
-                    width={400}
-                    height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    src="/6frascos.png"
+                    alt="Kit 6 meses Definamax"
+                    width={300}
+                    height={300}
+                    className="w-auto h-48 object-contain"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
-                    -68%
-                  </div>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">APENAS</span>
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">12x de</span> R$48,09
-                  </div>
-                  <div className="text-sm text-gray-600">R$479 à vista</div>
-                  <div className="text-sm font-medium text-green-700 mt-1"></div>
+                <p className="text-center text-gray-600 text-sm mb-1">Em até 12x de</p>
+                <div className="text-center mb-6">
+                  <span className="text-green-500">
+                    <span className="text-lg">R$</span>
+                    <span className="text-5xl font-bold">48</span>
+                    <span className="text-xl">,09</span>
+                  </span>
                 </div>
-
-                <div className="space-y-2 mb-3 text-left">
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">
-                      Tratamento completo
-                    </span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">2 Frascos de colágeno hidrolisado</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Programa emagrecimento acelerado</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Envio imediato</span>
-                  </div>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Tratamento completo</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>2 Frascos de colágeno hidrolisado</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Programa emagrecimento acelerado</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Envio imediato</span>
+                  </li>
+                </ul>
+                <div className="text-center">
+                  <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full mb-4">
+                    MAIOR DESCONTO
+                  </span>
+                  <Link
+                    href="https://full.sale/ytA47b?rmkt1"
+                    className="relative block w-full bg-[#3BA755] text-white text-center py-4 rounded-2xl font-bold text-xl hover:bg-[#45c564] transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(59,167,85,0.6)] hover:shadow-[0_8px_24px_-6px_rgba(59,167,85,0.8)] hover:translate-y-[1px]"
+                    style={{
+                      background: "linear-gradient(180deg, #3BA755 0%, #2E8040 100%)"
+                    }}
+                  >
+                    COMPRAR AGORA
+                  </Link>
+                  <p className="text-green-500 text-xs mt-3">Frete grátis para todo Brasil</p>
                 </div>
-
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
-                  <p className="font-medium text-yellow-800">
-                    <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      68% 
-                    </span>
-                    DE DESCONTO
-                  </p>
-                </div>
-
-                <Link
-                  href={addUtmToUrl("https://full.sale/ytA47b?rmkt1")}
-                  className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
-                >
-                  COMPRAR AGORA
-                </Link>
-                <p className="text-sm text-green-600 font-medium mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
-            {/* Kit 3 meses - MAIS POPULAR - Agora segundo */}
-            <div className="bg-white rounded-2xl border-2 border-green-500 shadow-lg relative transform scale-105 md:scale-110 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden z-10">
-              <div className="absolute top-0 left-0 right-0 w-full bg-yellow-500 text-center text-white font-bold py-2 px-4 z-20">
-                MAIS VENDIDO
+            {/* Kit Recomendado */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="bg-[#CD9B4A] py-3 px-6">
+                <h3 className="text-xl font-bold text-white text-center">Kit Recomendado</h3>
+                <p className="text-white text-center text-sm">3 meses de tratamento</p>
               </div>
-
-              <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 sm:py-3 px-4 text-center mt-8">
-                <h3 className="text-lg sm:text-xl font-bold">Kit Recomendado</h3>
-                <p className="text-sm opacity-90">
-                  3 meses de tratamento
-                </p>
-              </div>
-
-              <div className="p-4 sm:p-5">
-                <div className="flex justify-center mb-4 relative">
+              <div className="p-6">
+                <div className="flex justify-center mb-6">
                   <Image
-                    src="/3f.png"
-                    alt="Kit 3 Meses"
-                    width={400}
-                    height={400}
-                    className="h-40 sm:h-[10rem] object-contain hover:scale-105 transition-all duration-300"
+                    src="/3frascos.png"
+                    alt="Kit 3 meses Definamax"
+                    width={300}
+                    height={300}
+                    className="w-auto h-48 object-contain"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
-                    -50%
-                  </div>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-2 border-green-100">
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">APENAS</span>
-                  </div>
-                  <div className="text-2xl sm:text-4xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">12x de </span>R$38,05
-                  </div>
-                  <div className="text-sm text-gray-600">R$379,00 à vista</div>
+                <p className="text-center text-gray-600 text-sm mb-1">Em até 12x de</p>
+                <div className="text-center mb-6">
+                  <span className="text-[#CD9B4A]">
+                    <span className="text-lg">R$</span>
+                    <span className="text-5xl font-bold">38</span>
+                    <span className="text-xl">,05</span>
+                  </span>
                 </div>
-
-                <div className="space-y-2 mb-3 text-left">
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">
-                      Tratamento intermediário
-                    </span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">1 Frasco de colágeno hidrolisado</span>
-                  </div>
-
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Envio imediato</span>
-                  </div>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-[#CD9B4A] mr-2 flex-shrink-0" />
+                    <span>Tratamento intermediário</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-[#CD9B4A] mr-2 flex-shrink-0" />
+                    <span>1 Frasco de colágeno hidrolisado</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-[#CD9B4A] mr-2 flex-shrink-0" />
+                    <span>Programa emagrecimento acelerado</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-[#CD9B4A] mr-2 flex-shrink-0" />
+                    <span>Envio imediato</span>
+                  </li>
+                </ul>
+                <div className="text-center">
+                  <span className="inline-block bg-[#FDF6E7] text-[#CD9B4A] text-xs font-medium px-3 py-1 rounded-full mb-4">
+                    MAIS VENDIDO
+                  </span>
+                  <Link
+                    href="https://full.sale/DmNQj1?src=rmkt1"
+                    className="relative block w-full bg-[#3BA755] text-white text-center py-4 rounded-2xl font-bold text-xl hover:bg-[#45c564] transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(59,167,85,0.6)] hover:shadow-[0_8px_24px_-6px_rgba(59,167,85,0.8)] hover:translate-y-[1px]"
+                    style={{
+                      background: "linear-gradient(180deg, #3BA755 0%, #2E8040 100%)"
+                    }}
+                  >
+                    COMPRAR AGORA
+                  </Link>
+                  <p className="text-[#CD9B4A] text-xs mt-3">Frete grátis para todo Brasil</p>
                 </div>
-
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
-                  <p className="font-medium text-yellow-800">
-                    <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      50%
-                    </span>
-                    DE DESCONTO
-                  </p>
-                </div>
-
-                <Link
-                  href={addUtmToUrl("https://full.sale/DmNQj1?src=rmkt1")}
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-4 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 w-full hover:scale-105 transition-all shadow-md hover:shadow-xl border-b-4 border-green-700 animate-pulse-border"
-                >
-                  COMPRAR AGORA
-                </Link>
-                <p className="text-sm text-green-600 font-medium mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
-            {/* Kit 1 mês - Agora terceiro */}
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-              <div className="bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 text-center">
-                <h3 className="text-lg font-bold">Kit Inicial</h3>
-                <p className="text-sm opacity-90">
-                  30 dias de tratamento
-                </p>
+            {/* Kit Inicial */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="bg-green-500 py-3 px-6">
+                <h3 className="text-xl font-bold text-white text-center">Kit Inicial</h3>
+                <p className="text-white text-center text-sm">30 dias de tratamento</p>
               </div>
-
-              <div className="p-4 sm:p-5">
-                <div className="flex justify-center mb-4 relative">
+              <div className="p-6">
+                <div className="flex justify-center mb-6">
                   <Image
-                    src="/1f.png"
-                    alt="Kit 1 Mês"
-                    width={400}
-                    height={400}
-                    className="h-40 sm:h-[11rem] object-contain hover:scale-105 transition-all duration-300"
+                    src="/1frasco.png"
+                    alt="Kit 1 mês Definamax"
+                    width={300}
+                    height={300}
+                    className="w-auto h-48 object-contain"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-full">
-                    -18%
-                  </div>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <span className="text-gray-400 text-sm">APENAS</span>
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">
-                    <span className="text-sm font-normal">12x de </span> R$28,01
-                  </div>
-                  <div className="text-sm text-gray-600">R$279,90 à vista</div>
+                <p className="text-center text-gray-600 text-sm mb-1">Em até 12x de</p>
+                <div className="text-center mb-6">
+                  <span className="text-green-500">
+                    <span className="text-lg">R$</span>
+                    <span className="text-5xl font-bold">28</span>
+                    <span className="text-xl">,01</span>
+                  </span>
                 </div>
-
-                <div className="space-y-2 mb-3 text-left">
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">
-                      Tratamento inicial
-                    </span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">60 cápsulas</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Envio imediato</span>
-                  </div>
-                  <div className="flex items-start text-gray-400">
-                    <X className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Sem bônus adcionais</span>
-                  </div>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Tratamento inicial para 30 dias</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>60 cápsulas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Envio imediato para todo Brasil</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <X className="h-4 w-4 text-gray-400 mr-2 flex-shrink-0" />
+                    <span className="text-gray-400">Sem bônus adicionais</span>
+                  </li>
+                </ul>
+                <div className="text-center">
+                  <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full mb-4">
+                    EXPERIMENTE
+                  </span>
+                  <Link
+                    href="https://full.sale/eMbtHp?rc=rmkt1"
+                    className="relative block w-full bg-[#3BA755] text-white text-center py-4 rounded-2xl font-bold text-xl hover:bg-[#45c564] transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(59,167,85,0.6)] hover:shadow-[0_8px_24px_-6px_rgba(59,167,85,0.8)] hover:translate-y-[1px]"
+                    style={{
+                      background: "linear-gradient(180deg, #3BA755 0%, #2E8040 100%)"
+                    }}
+                  >
+                    COMPRAR AGORA
+                  </Link>
+                  <p className="text-gray-500 text-xs mt-3">Frete fixo R$ 25,00</p>
                 </div>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-1.5 mb-2 sm:mb-3 text-xs">
-                  <p className="font-medium text-yellow-800">
-                    <span className="inline-block bg-yellow-200 text-yellow-800 px-1.5 py-0.5 rounded text-xs font-bold mr-1">
-                      18%
-                    </span>
-                    DE DESCONTO
-                  </p>
-                </div>
-
-                <Link
-                  href={addUtmToUrl("https://full.sale/eMbtHp?rc=rmkt1")}
-                  className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-base font-medium text-white hover:bg-green-700 w-full hover:scale-105 transition-all"
-                >
-                  COMPRAR AGORA
-                </Link>
-                <p className="text-sm text-gray-600 mt-2">Frete fixo R$ 25,00</p>
               </div>
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col items-center">
-            <div className="bg-white rounded-xl p-4 shadow-md mb-6 max-w-2xl">
-              <div className="flex items-center justify-center gap-6 flex-wrap">
-                <div className="flex items-center">
-                  <ShieldCheck className="h-5 w-5 text-green-600 mr-2" />
-                  <span className="text-sm font-medium">Garantia de 30 dias</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
-                  <span className="text-sm font-medium">Pagamento seguro</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
-                  <span className="text-sm font-medium">Entrega para todo Brasil</span>
-                </div>
+          {/* Trust Indicators and Payment Methods */}
+          <div className="mt-12">
+            {/* Trust Badges */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 text-sm">Garantia de 30 dias</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <span className="text-gray-700 text-sm">Pagamento seguro</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+                <span className="text-gray-700 text-sm">Entrega para todo Brasil</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 mb-6">
-              <Image src="/master.png" alt="Mastercard" width={60} height={40} className="h-8" />
-              <Image src="/visa.png" alt="Visa" width={60} height={40} className="h-8" />
-              <Image src="/hiper.png" alt="Hipercard" width={60} height={40} className="h-8" />
-              <Image src="/pix.png" alt="Pix" width={60} height={40} className="h-8" />
+            {/* Payment Methods */}
+            <div className="flex justify-center items-center gap-8 mb-12">
+              <Image src="/master.png" alt="Mastercard" width={48} height={32} className="h-6 w-auto" />
+              <Image src="/visa.png" alt="Visa" width={48} height={32} className="h-6 w-auto" />
+              <Image src="/hiper.png" alt="Hipercard" width={48} height={32} className="h-6 w-auto" />
+              <Image src="/pix.png" alt="Pix" width={48} height={32} className="h-6 w-auto" />
             </div>
 
-            <div className="text-sm text-gray-600 flex items-center justify-center">
-              <span>Compra 100% segura • Satisfação garantida ou seu dinheiro de volta</span>
+            {/* Guarantee Section */}
+            <div className="bg-[#F0FDF4] rounded-2xl p-8 relative overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <ShieldCheck className="h-6 w-6 text-green-500" />
+                    <h3 className="text-2xl font-bold text-gray-800">Garantia Incondicional de 30 Dias</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800 text-sm">Teste Sem Compromisso</h4>
+                        <p className="text-gray-600 text-sm">Use o Definamax por 30 dias e comprove os resultados</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800 text-sm">Devolução Integral</h4>
+                        <p className="text-gray-600 text-sm">Receba 100% do seu dinheiro de volta se não estiver satisfeito</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800 text-sm">Processo Simples</h4>
+                        <p className="text-gray-600 text-sm">Sem burocracia ou questionamentos na hora do reembolso</p>
+                      </div>
+                    </div>
+                  </div>
+
+                                      <Link
+                      href="https://full.sale/ytA47b?rmkt1"
+                      className="relative block w-full bg-[#3BA755] text-white text-center py-4 rounded-2xl font-bold text-base md:text-xl hover:bg-[#45c564] transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(59,167,85,0.6)] hover:shadow-[0_8px_24px_-6px_rgba(59,167,85,0.8)] hover:translate-y-[1px]"
+                      style={{
+                        background: "linear-gradient(180deg, #3BA755 0%, #2E8040 100%)"
+                      }}
+                    >
+                      <span className="inline-flex items-center">
+                        EXPERIMENTAR SEM RISCOS
+                        <span className="ml-1 md:ml-2">→</span>
+                      </span>
+                    </Link>
+                </div>
+
+                {/* Guarantee Seal */}
+                <div className="flex justify-center">
+                  <div className="relative w-48 h-48">
+                    <div className="absolute inset-0">
+                      {/* Outer ring with gradient and shine effect */}
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-b from-green-400 to-green-600 animate-pulse">
+                        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] animate-[shine_2s_infinite]"></div>
+                      </div>
+                      
+                      {/* White inner circle */}
+                      <div className="absolute inset-1 bg-white rounded-full shadow-inner flex items-center justify-center">
+                        {/* Content */}
+                        <div className="text-center relative z-10">
+                          {/* Shield icon with glow */}
+                          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                            <div className="relative">
+                              <ShieldCheck className="h-12 w-12 text-green-500 drop-shadow-[0_0_8px_rgba(59,167,85,0.4)]" />
+                              <div className="absolute inset-0 blur-sm bg-green-400 opacity-40 animate-pulse"></div>
+                            </div>
+                          </div>
+                          
+                          {/* Main text */}
+                          <div className="mt-8">
+                            <div className="text-4xl font-black text-green-500 leading-none" style={{ textShadow: '0 2px 4px rgba(59,167,85,0.2)' }}>
+                              30 DIAS
+                            </div>
+                            <div className="text-sm font-bold text-green-600 tracking-wider mt-1">
+                              GARANTIA TOTAL
+                            </div>
+                            <div className="mt-2 text-[11px] text-green-500 font-semibold leading-tight">
+                              SATISFAÇÃO OU<br />SEU DINHEIRO DE VOLTA
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Decorative elements */}
+                      <div className="absolute inset-0">
+                        {/* Circular dots */}
+                        {[...Array(24)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-1.5 h-1.5 bg-white rounded-full"
+                            style={{
+                              top: '50%',
+                              left: '50%',
+                              transform: `rotate(${i * 15}deg) translateY(-22px)`,
+                              transformOrigin: '50% 50%',
+                              boxShadow: '0 0 4px rgba(255,255,255,0.8)'
+                            }}
+                          ></div>
+                        ))}
+                        
+                        {/* Radial lines */}
+                        {[...Array(12)].map((_, i) => (
+                          <div
+                            key={`line-${i}`}
+                            className="absolute h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent opacity-20"
+                            style={{
+                              left: '50%',
+                              transform: `rotate(${i * 30}deg)`,
+                              transformOrigin: '50% 50%'
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1004,180 +1051,32 @@ export default function ReMarketingPage() {
               </div>
             </div>
           </div>
-
-          <div className="flex justify-center mt-6">
-            <Link
-              href="/perguntas-frequentes"
-              className="inline-flex items-center justify-center rounded-lg border border-green-600 px-6 py-3 text-sm font-medium text-green-600 hover:bg-green-50"
-            >
-              Ver Todas as Perguntas
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="w-full py-8 bg-green-800 text-white">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <Image src="/logo2.png" alt="Definamax" width={150} height={45} className="h-9 w-auto mb-4" />
-              <p className="text-sm mb-4">Definamax - O seu aliado natural para o emagrecimento saudável e eficaz.</p>
-              <div className="flex space-x-4">
-                <Link href="#" className="text-white hover:text-green-200">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </Link>
-                <Link href="#" className="text-white hover:text-green-200">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.353.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                              </svg>
-                            </Link>
-                <Link href="#" className="text-white hover:text-green-200">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Produtos</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/produto?kit=kit1" className="text-gray-300 hover:text-white">
-                    Kit 1 Mês
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/produto?kit=kit3" className="text-gray-300 hover:text-white">
-                    Kit 3 Meses
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/produto?kit=kit6" className="text-gray-300 hover:text-white">
-                    Kit 6 Meses
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/produto" className="text-gray-300 hover:text-white">
-                    Todos os Produtos
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Informações</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/perguntas-frequentes" className="text-gray-300 hover:text-white">
-                    Perguntas Frequentes
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/termos-garantia" className="text-gray-300 hover:text-white">
-                    Garantia de 30 Dias
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/analise-imc" className="text-gray-300 hover:text-white">
-                    Calculadora de IMC
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/remarketing" className="text-gray-300 hover:text-white">
-                    Vídeos Exclusivos
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contato</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-400 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span className="text-gray-300">suporte@definamaxoficial.com</span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-400 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  <span className="text-gray-300">(41) 98454-9172</span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-400 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span className="text-gray-300">Florianópolis, SC</span>
-                </li>
-              </ul>
-            </div>
+          <div className="text-center mb-4">
+            <p className="text-white text-base">Definamax - O seu aliado natural para o emagrecimento saudável e eficaz.</p>
+          </div>
+          
+          <div className="text-center text-sm text-gray-300 mb-6">
+            <p>*Resultados podem variar de pessoa para pessoa. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte sempre um profissional de saúde qualificado antes de iniciar qualquer programa de emagrecimento.</p>
           </div>
 
-          <div className="border-t border-gray-700 pt-6">
-            <p className="text-center text-gray-400 text-sm">© 2023 Definamax. Todos os direitos reservados.</p>
-            <div className="flex justify-center space-x-4 mt-4">
-              <Link href="/termos-uso" className="text-gray-400 hover:text-white text-sm">
-                Termos de Uso
-              </Link>
-              <Link href="/politica-privacidade" className="text-gray-400 hover:text-white text-sm">
-                Política de Privacidade
-              </Link>
-              <Link href="/politica-entrega" className="text-gray-400 hover:text-white text-sm">
-                Política de Entrega
-              </Link>
-            </div>
+          <div className="flex justify-center space-x-6 text-gray-300 text-sm mb-8">
+            <Link href="/analise-imc" className="hover:text-white">Avaliação de IMC</Link>
+            <Link href="/termos-garantia" className="hover:text-white">Termos de Garantia</Link>
+            <Link href="/perguntas-frequentes" className="hover:text-white">Perguntas Frequentes</Link>
+            <Link href="/produtos" className="hover:text-white">Produtos</Link>
+            <Link href="/depoimentos" className="hover:text-white">Depoimentos em Vídeo</Link>
+            <Link href="/politica-privacidade" className="hover:text-white">Política de Privacidade</Link>
+          </div>
+
+          <div className="text-center text-sm text-gray-300">
+            <p className="mb-2">Copyright © 2025 Definamax. Todos os direitos reservados.</p>
+            <p>Bourjun Nature Health, Florianópolis Santa Catarina</p>
           </div>
         </div>
       </footer>
