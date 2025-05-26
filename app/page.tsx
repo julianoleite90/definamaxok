@@ -142,7 +142,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
             {/* Título e Subtítulo */}
             <div className="md:pt-8">
-              <h1 className="text-[2.3rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-4 leading-tight">
+              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-4 leading-tight">
                 Emagreça <span className="text-green-800 relative inline-block">
                   rápido
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
@@ -774,9 +774,9 @@ export default function LandingPage() {
                   <Image
                     src="/colageno.png"
                     alt="Colágeno Hidrolisado"
-                    width={160}
-                    height={160}
-                    className="object-contain w-28 md:w-40"
+                    width={176}
+                    height={176}
+                    className="object-contain w-32 md:w-44"
                   />
                 </div>
                 <ul className="space-y-2 md:space-y-3">
@@ -815,9 +815,9 @@ export default function LandingPage() {
                   <Image
                     src="/programa.png"
                     alt="Programa De Emagrecimento Acelerado"
-                    width={160}
-                    height={160}
-                    className="object-contain w-28 md:w-40"
+                    width={176}
+                    height={176}
+                    className="object-contain w-32 md:w-44"
                   />
                 </div>
                 <ul className="space-y-2 md:space-y-3">
@@ -874,7 +874,7 @@ export default function LandingPage() {
 
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-6">
-              Escolha o kit ideal para você <span className="text-green-600 relative inline-block">
+              Escolha o kit ideal para <span className="text-green-600 relative inline-block">
                 acelerar
                 <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
                 <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
@@ -885,7 +885,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div ref={kitsRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Kit Completo */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative">
               <div className="bg-green-600 text-white p-3 md:p-4 text-center">
@@ -928,8 +928,10 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-700">Envio imediato</span>
                   </li>
                 </ul>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
-                  MAIOR DESCONTO
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
+                    MAIOR DESCONTO
+                  </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -987,8 +989,10 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-700">Envio imediato</span>
                   </li>
                 </ul>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-[#CD9B4A]/10 to-[#B07F2D]/10 text-[#B07F2D] mb-3">
-                  MAIS VENDIDO
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-[#CD9B4A]/10 to-[#B07F2D]/10 text-[#B07F2D] mb-3">
+                    MAIS VENDIDO
+                  </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#CD9B4A] to-[#B07F2D] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -1046,8 +1050,10 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-400">Sem bônus adicionais</span>
                   </li>
                 </ul>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
-                  EXPERIMENTE
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
+                    EXPERIMENTE
+                  </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -1153,12 +1159,12 @@ export default function LandingPage() {
                     </li>
                   </ul>
 
-                  <button
-                    onClick={scrollToBuy}
-                    className="w-full md:w-auto inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-md hover:shadow-lg"
-                  >
-                    EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
-                  </button>
+                                <button
+                onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
+                className="w-full md:w-auto inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-md hover:shadow-lg"
+              >
+                EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
                 </div>
 
                 {/* Coluna da Direita - Selo */}
@@ -1470,8 +1476,8 @@ export default function LandingPage() {
 
           {/* CTA após FAQs */}
           <div className="text-center mt-12">
-            <button
-              onClick={scrollToBuy}
+                          <button
+              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
               className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-lg hover:shadow-xl"
             >
               EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
