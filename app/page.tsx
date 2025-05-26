@@ -258,9 +258,9 @@ export default function LandingPage() {
           {/* Grid de Depoimentos */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
             {[
-              { name: "Débora S.", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
-              { name: "Arnaldo M.", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Empresário", location: "Rio de Janeiro, RJ" },
-              { name: "Sara O.", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Enfermeira", location: "Curitiba, PR" }
+              { name: "Débora", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
+              { name: "Arnaldo", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
+              { name: "Sara", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" }
             ].map((item, index) => (
               <div key={index} className="w-full">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -288,9 +288,9 @@ export default function LandingPage() {
             {showMoreReviews && (
               <>
                 {[
-                  { name: "Marina L.", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Designer", location: "Belo Horizonte, MG" },
-                  { name: "Carla M.", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Advogada", location: "Salvador, BA" },
-                  { name: "Roberto C.", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Engenheiro", location: "Porto Alegre, RS" }
+                  { name: "Rosimari", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
+                  { name: "Laura", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Designer", location: "Guarulhos, SP" },
+                  { name: "Victor", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Motorista de aplicativo", location: "Belo Horizonte, MG" }
                 ].map((item, index) => (
                   <div key={index} className="w-full">
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
