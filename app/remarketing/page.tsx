@@ -454,7 +454,11 @@ export default function ReMarketingPage() {
                   {activeVideo === index ? (
                     <div className="aspect-video w-full bg-black">
                       <iframe
-                        ref={(el) => (videoRefs.current[index] = el)}
+                        ref={(el) => {
+                          if (videoRefs.current) {
+                            videoRefs.current[index] = el
+                          }
+                        }}
                         src={`https://player.vimeo.com/video/${video.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
                         className="w-full h-full"
                         allow="autoplay; fullscreen; picture-in-picture"
