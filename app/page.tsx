@@ -784,12 +784,12 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-16">
             {/* Card Colágeno */}
-            <div className="bg-gradient-to-b from-[#CD9B4A] to-[#B07F2D] rounded-xl md:rounded-2xl overflow-hidden">
+            <div className="bg-gradient-to-b from-green-700 to-green-800 rounded-xl md:rounded-2xl overflow-hidden">
               <div className="p-3 md:p-4 text-white text-center">
                 <h3 className="text-xl md:text-2xl font-bold mb-1">Colágeno Hidrolisado</h3>
                 <p className="text-white/90 text-sm md:text-base">Combate a flacidez durante o emagrecimento</p>
               </div>
-              <div className="bg-[#FFF9E9] p-4 md:p-6 relative">
+              <div className="bg-white p-4 md:p-6 relative">
                 <div className="flex justify-center mb-4 md:mb-6">
                   <Image
                     src="/colageno.png"
@@ -817,7 +817,7 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-700">Complemento perfeito para o Definamax</span>
                   </li>
                 </ul>
-                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-50 rounded-lg text-center">
+                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-green-50 rounded-lg text-center">
                   <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$89,90</span>
                   <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
                 </div>
@@ -825,12 +825,12 @@ export default function LandingPage() {
             </div>
 
             {/* Card Programa */}
-            <div className="bg-gradient-to-b from-[#CD9B4A] to-[#B07F2D] rounded-xl md:rounded-2xl overflow-hidden">
+            <div className="bg-gradient-to-b from-green-700 to-green-800 rounded-xl md:rounded-2xl overflow-hidden">
               <div className="p-3 md:p-4 text-white text-center">
                 <h3 className="text-xl md:text-2xl font-bold mb-1">Programa De Emagrecimento Acelerado</h3>
                 <p className="text-white/90 text-sm md:text-base">Videoaulas com informações secretas para acelerar resultados</p>
               </div>
-              <div className="bg-[#FFF9E9] p-4 md:p-6 relative">
+              <div className="bg-white p-4 md:p-6 relative">
                 <div className="flex justify-center mb-4 md:mb-6">
                   <Image
                     src="/programa.png"
@@ -858,7 +858,7 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-700">Acesso vitalício ao conteúdo exclusivo</span>
                   </li>
                 </ul>
-                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-50 rounded-lg text-center">
+                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-green-50 rounded-lg text-center">
                   <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$197,00</span>
                   <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
                 </div>
@@ -870,7 +870,7 @@ export default function LandingPage() {
           <div className="text-center -mt-8 mb-16">
             <button
               onClick={scrollToBuy}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#CD9B4A] to-[#B07F2D] px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl font-bold text-white hover:from-[#B07F2D] hover:to-[#CD9B4A] hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
             >
               GARANTIR MEUS BÔNUS AGORA <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
             </button>
@@ -907,13 +907,14 @@ export default function LandingPage() {
 
           <div ref={kitsRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Kit Completo */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative">
-              <div className="bg-green-600 text-white p-3 md:p-4 text-center">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
+              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-4 md:p-5 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
                 <h3 className="text-lg md:text-xl font-bold">Kit Completo</h3>
                 <p className="text-sm text-white/90">6 meses de tratamento</p>
               </div>
-              <div className="p-4 md:p-6">
-                <div className="flex justify-center mb-4 md:mb-6">
+              <div className="p-6 md:p-8">
+                <div className="flex justify-center mb-6">
                   <Image
                     src="/6frascos.png"
                     alt="Kit Completo Definamax"
@@ -922,59 +923,64 @@ export default function LandingPage() {
                     className="object-contain w-40 md:w-[180px]"
                   />
                 </div>
-                <div className="text-center mb-3 md:mb-4">
-                  <p className="text-sm text-gray-500 mb-1">Em até 12x de</p>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-2xl md:text-2xl font-bold text-green-600">R$</span>
-                    <span className="text-5xl md:text-5xl font-bold text-green-600">48</span>
-                    <span className="text-2xl md:text-2xl font-bold text-green-600">,09</span>
+                <div className="text-center mb-4">
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 897,00</span> por apenas:</p>
+                  <div className="flex items-baseline justify-center gap-1 mt-1">
+                    <span className="text-xl font-semibold text-gray-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-gray-800">39</span>
+                    <span className="text-xl font-semibold text-gray-800">,91</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
+                  <div className="mt-2">
+                    <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                      Economize R$ 1.000,00
+                    </span>
                   </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Tratamento completo</span>
+                    <span className="text-sm text-gray-600">Tratamento completo de 6 meses</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">2 Frascos de colágeno hidrolisado</span>
+                    <span className="text-sm text-gray-600">2 Frascos de colágeno hidrolisado</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Programa emagrecimento acelerado</span>
+                    <span className="text-sm text-gray-600">Programa emagrecimento acelerado</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Envio imediato</span>
+                    <span className="text-sm text-gray-600">Envio imediato</span>
                   </li>
                 </ul>
-                <div className="flex justify-center">
-                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
+                <div className="flex justify-center mb-4">
+                  <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-green-700 text-white">
                     MAIOR DESCONTO
                   </div>
                 </div>
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                  <Link
-                    href="https://full.sale/ytA47b"
-                    className="relative block w-full bg-green-600 text-white font-bold py-3 md:py-4 rounded-lg hover:bg-green-500 transition-all text-center shadow-lg"
-                  >
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                    <span className="relative">COMPRAR AGORA</span>
-                  </Link>
-                </div>
-                <p className="text-center text-green-600 font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
+                <Link
+                  href="https://full.sale/ytA47b"
+                  className="block w-full bg-green-700 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                  <span className="relative">COMPRAR AGORA</span>
+                </Link>
+                <p className="text-center text-gray-600 font-medium text-sm mt-3">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
             {/* Kit Recomendado */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative md:scale-105 md:shadow-xl">
-              <div className="bg-gradient-to-r from-[#CD9B4A] to-[#B07F2D] text-white p-3 md:p-4 text-center">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100 md:scale-105">
+              <div className="absolute -top-px left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600"></div>
+              <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white p-4 md:p-5 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
                 <h3 className="text-lg md:text-xl font-bold">Kit Recomendado</h3>
                 <p className="text-sm text-white/90">3 meses de tratamento</p>
               </div>
-              <div className="p-4 md:p-6">
-                <div className="flex justify-center mb-4 md:mb-6">
+              <div className="p-6 md:p-8">
+                <div className="flex justify-center mb-6">
                   <Image
                     src="/3frascos.png"
                     alt="Kit Recomendado Definamax"
@@ -983,59 +989,63 @@ export default function LandingPage() {
                     className="object-contain w-40 md:w-48 h-auto"
                   />
                 </div>
-                <div className="text-center mb-3 md:mb-4">
-                  <p className="text-sm text-gray-500 mb-1">Em até 12x de</p>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-2xl md:text-2xl font-bold text-[#CD9B4A]">R$</span>
-                    <span className="text-5xl md:text-5xl font-bold text-[#CD9B4A]">38</span>
-                    <span className="text-2xl md:text-2xl font-bold text-[#CD9B4A]">,05</span>
+                <div className="text-center mb-4">
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 597,00</span> por apenas:</p>
+                  <div className="flex items-baseline justify-center gap-1 mt-1">
+                    <span className="text-xl font-semibold text-gray-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-gray-800">31</span>
+                    <span className="text-xl font-semibold text-gray-800">,58</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
+                  <div className="mt-2">
+                    <span className="inline-block bg-emerald-50 text-emerald-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                      Economize R$ 379,00
+                    </span>
                   </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#CD9B4A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Tratamento intermediário</span>
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Tratamento intermediário de 3 meses</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#CD9B4A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">1 Frasco de colágeno hidrolisado</span>
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">1 Frasco de colágeno hidrolisado</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#CD9B4A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Programa emagrecimento acelerado</span>
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Programa emagrecimento acelerado</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#CD9B4A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Envio imediato</span>
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Envio imediato</span>
                   </li>
                 </ul>
-                <div className="flex justify-center">
-                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-[#CD9B4A]/10 to-[#B07F2D]/10 text-[#B07F2D] mb-3">
+                <div className="flex justify-center mb-4">
+                  <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-600 text-white">
                     MAIS VENDIDO
                   </div>
                 </div>
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#CD9B4A] to-[#B07F2D] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                  <Link
-                    href="https://full.sale/DmNQj1"
-                    className="relative block w-full bg-gradient-to-r from-[#CD9B4A] to-[#B07F2D] text-white font-bold py-3 md:py-4 rounded-lg hover:from-[#B07F2D] hover:to-[#CD9B4A] transition-all text-center shadow-lg"
-                  >
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                    <span className="relative">COMPRAR AGORA</span>
-                  </Link>
-                </div>
-                <p className="text-center text-[#CD9B4A] font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
+                <Link
+                  href="https://full.sale/DmNQj1"
+                  className="block w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-500 transition-all text-center shadow-lg relative overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                  <span className="relative">COMPRAR AGORA</span>
+                </Link>
+                <p className="text-center text-gray-600 font-medium text-sm mt-3">Frete grátis para todo Brasil</p>
               </div>
-              </div>
+            </div>
 
             {/* Kit Inicial */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative">
-              <div className="bg-green-600 text-white p-3 md:p-4 text-center">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
+              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-4 md:p-5 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
                 <h3 className="text-lg md:text-xl font-bold">Kit Inicial</h3>
                 <p className="text-sm text-white/90">30 dias de tratamento</p>
               </div>
-              <div className="p-4 md:p-6">
-                <div className="flex justify-center mb-4 md:mb-6">
+              <div className="p-6 md:p-8">
+                <div className="flex justify-center mb-6">
                   <Image
                     src="/1frasco.png"
                     alt="Kit Inicial Definamax"
@@ -1044,49 +1054,90 @@ export default function LandingPage() {
                     className="object-contain w-40 md:w-48 h-auto"
                   />
                 </div>
-                <div className="text-center mb-3 md:mb-4">
-                  <p className="text-sm text-gray-500 mb-1">Em até 12x de</p>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-2xl md:text-2xl font-bold text-green-600">R$</span>
-                    <span className="text-5xl md:text-5xl font-bold text-green-600">28</span>
-                    <span className="text-2xl md:text-2xl font-bold text-green-600">,01</span>
+                <div className="text-center mb-4">
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 297,00</span> por apenas:</p>
+                  <div className="flex items-baseline justify-center gap-1 mt-1">
+                    <span className="text-xl font-semibold text-gray-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-gray-800">25</span>
+                    <span className="text-xl font-semibold text-gray-800">,33</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
+                  <div className="mt-2">
+                    <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                      Economize R$ 25,00
+                    </span>
                   </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Tratamento inicial para 30 dias</span>
+                    <span className="text-sm text-gray-600">Tratamento inicial para 30 dias</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">60 cápsulas</span>
+                    <span className="text-sm text-gray-600">60 cápsulas</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Envio imediato para todo Brasil</span>
+                    <span className="text-sm text-gray-600">Envio imediato para todo Brasil</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <X className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-400">Sem bônus adicionais</span>
+                    <span className="text-sm text-gray-400">Sem bônus adicionais</span>
                   </li>
                 </ul>
-                <div className="flex justify-center">
-                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
+                <div className="flex justify-center mb-4">
+                  <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-green-700 text-white">
                     EXPERIMENTE
                   </div>
                 </div>
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                  <Link
-                    href="https://full.sale/eMbtHp"
-                    className="relative block w-full bg-green-600 text-white font-bold py-3 md:py-4 rounded-lg hover:bg-green-500 transition-all text-center shadow-lg"
-                  >
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                    <span className="relative">COMPRAR AGORA</span>
-                  </Link>
-                </div>
-                <p className="text-center text-gray-600 font-medium text-sm mt-2">Frete fixo R$ 25,00</p>
+                <Link
+                  href="https://full.sale/eMbtHp"
+                  className="block w-full bg-green-700 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                  <span className="relative">COMPRAR AGORA</span>
+                </Link>
+                <p className="text-center text-gray-600 font-medium text-sm mt-3">Frete fixo R$ 25,00</p>
               </div>
+            </div>
+          </div>
+
+          {/* Bandeiras de Cartão e Parcelamento */}
+          <div className="mt-12 flex flex-col items-center justify-center gap-6 bg-white rounded-2xl shadow-sm py-8 px-8 mx-auto max-w-3xl">
+            <div className="text-center">
+              <p className="text-lg font-semibold text-gray-800 mb-2">Pagamento 100% Seguro</p>
+              <p className="text-gray-600">Parcele em até 12x sem juros no cartão</p>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              <Image
+                src="/master.png"
+                alt="Mastercard"
+                width={45}
+                height={30}
+                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+              <Image
+                src="/visa.png"
+                alt="Visa"
+                width={45}
+                height={30}
+                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+              <Image
+                src="/hiper.png"
+                alt="Hipercard"
+                width={45}
+                height={30}
+                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+              <Image
+                src="/pix.png"
+                alt="PIX"
+                width={45}
+                height={30}
+                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
             </div>
           </div>
 
@@ -1110,38 +1161,6 @@ export default function LandingPage() {
               </div>
               <span className="text-gray-700 font-medium">Entrega para todo Brasil</span>
             </div>
-          </div>
-
-          {/* Bandeiras de Cartão */}
-          <div className="flex justify-center items-center gap-8 mb-12 bg-white rounded-2xl shadow-sm py-5 px-8 mx-auto max-w-2xl">
-            <Image
-              src="/master.png"
-              alt="Mastercard"
-              width={45}
-              height={30}
-              className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <Image
-              src="/visa.png"
-              alt="Visa"
-              width={45}
-              height={30}
-              className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <Image
-              src="/hiper.png"
-              alt="Hipercard"
-              width={45}
-              height={30}
-              className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <Image
-              src="/pix.png"
-              alt="PIX"
-              width={45}
-              height={30}
-              className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
           </div>
 
           {/* Seção de Garantia */}
