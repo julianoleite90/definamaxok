@@ -924,7 +924,7 @@ export default function LandingPage() {
                   />
                 </div>
                 <div className="text-center mb-4">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 897,00</span> por apenas:</p>
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
                     <span className="text-xl font-semibold text-gray-800">12x</span>
                     <span className="text-4xl md:text-5xl font-bold text-gray-800">39</span>
@@ -990,7 +990,7 @@ export default function LandingPage() {
                   />
                 </div>
                 <div className="text-center mb-4">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 597,00</span> por apenas:</p>
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
                     <span className="text-xl font-semibold text-gray-800">12x</span>
                     <span className="text-4xl md:text-5xl font-bold text-gray-800">31</span>
@@ -1055,7 +1055,7 @@ export default function LandingPage() {
                   />
                 </div>
                 <div className="text-center mb-4">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 297,00</span> por apenas:</p>
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
                     <span className="text-xl font-semibold text-gray-800">12x</span>
                     <span className="text-4xl md:text-5xl font-bold text-gray-800">25</span>
