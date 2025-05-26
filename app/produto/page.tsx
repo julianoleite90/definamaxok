@@ -5,9 +5,37 @@ import { useState, useEffect } from "react"
 import { CheckCircle2, ArrowRight, MessageCircle, Star, ShieldCheck, Truck, RotateCcw, Award } from "lucide-react"
 import Head from "next/head"
 
+// Definindo a interface para os kits
+interface Kit {
+  id: string;
+  name: string;
+  title: string;
+  description: string;
+  regularPrice: number;
+  salePrice: number;
+  discount: number;
+  installments: number;
+  installmentValue: number;
+  image: string;
+  link: string;
+  shipping: number;
+  freeShipping: boolean;
+  bonus: string[];
+  weight: string;
+  gtin: string;
+  mpn: string;
+  inStock: boolean;
+  expectedResults: string;
+  bestSeller?: boolean;
+}
+
+interface Kits {
+  [key: string]: Kit;
+}
+
 export default function ProdutoDefinamax() {
   // Estado para controlar o kit selecionado
-  const [selectedKit, setSelectedKit] = useState("kit3")
+  const [selectedKit, setSelectedKit] = useState<"kit1" | "kit3" | "kit6">("kit3")
 
   // Estado para controlar a visibilidade do botão do WhatsApp
   const [showWhatsAppButton, setShowWhatsAppButton] = useState(false)
@@ -122,7 +150,7 @@ export default function ProdutoDefinamax() {
   }, [])
 
   // Função para adicionar UTMs aos links de compra
-  const addUtmToUrl = (baseUrl) => {
+  const addUtmToUrl = (baseUrl: string): string => {
     if (typeof window === "undefined") return baseUrl
 
     const utmSource = localStorage.getItem("utm_source")
@@ -149,7 +177,7 @@ export default function ProdutoDefinamax() {
   }
 
   // Dados dos kits
-  const kits = {
+  const kits: Kits = {
     kit1: {
       id: "kit1",
       name: "Kit 1 Mês",
@@ -423,7 +451,7 @@ export default function ProdutoDefinamax() {
                 </div>
 
                 {kit.bonus.length > 0 &&
-                  kit.bonus.map((bonus, index) => (
+                  kit.bonus.map((bonus: string, index: number) => (
                     <div key={index} className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                       <span className="font-medium">{bonus}</span>
@@ -1085,7 +1113,7 @@ export default function ProdutoDefinamax() {
                         </span>
                       </div>
                       {relatedKit.bonus.length > 0 &&
-                        relatedKit.bonus.map((bonus, index) => (
+                        relatedKit.bonus.map((bonus: string, index: number) => (
                           <div key={index} className="flex items-start">
                             <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-sm">{bonus}</span>
