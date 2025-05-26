@@ -1555,21 +1555,21 @@ export default function DefinamaxFAQ() {
                         <li className="flex items-start">
                           <CheckCircle2 className="h-5 w-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" />
                           <span>
-                            <strong>Kit 6 meses (6 frascos):</strong> 68% de desconto + 2 frascos de colágeno grátis +
+                            <strong>Kit 6 meses (6 frascos):</strong> Economize R$ 1.000,00 + 2 frascos de colágeno grátis +
                             frete grátis
                           </span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle2 className="h-5 w-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" />
                           <span>
-                            <strong>Kit 3 meses (3 frascos):</strong> 50% de desconto + 1 frasco de colágeno grátis +
+                            <strong>Kit 3 meses (3 frascos):</strong> Economize R$ 379,00 + 1 frasco de colágeno grátis +
                             frete grátis
                           </span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle2 className="h-5 w-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" />
                           <span>
-                            <strong>Kit 1 mês (1 frasco):</strong> 18% de desconto
+                            <strong>Kit 1 mês (1 frasco):</strong> Economize R$ 25,00
                           </span>
                         </li>
                       </ul>
@@ -1601,13 +1601,13 @@ export default function DefinamaxFAQ() {
 
                           <div className="bg-green-50 rounded-xl p-3 mb-3">
                             <div className="flex items-center justify-center gap-2 mb-1">
-                              <span className="text-gray-400 line-through text-sm">De R$1.479,40</span>
+                              <span className="text-gray-400 line-through text-sm">De R$1.497,00</span>
                             </div>
                             <div className="text-xl font-bold text-green-700 mb-1">
-                              <span className="text-sm font-normal">Por: </span>12x R$48,09
+                              <span className="text-sm font-normal">Por: </span>12x R$39,91
                             </div>
-                            <div className="text-sm text-gray-600">ou R$479,40 à vista</div>
-                            <div className="text-sm font-medium text-green-700 mt-1">R$79,90 por frasco</div>
+                            <div className="text-sm text-gray-600">ou R$497,00 à vista</div>
+                            <div className="text-sm font-medium text-green-700 mt-1">R$82,83 por frasco</div>
                           </div>
 
                           <div className="space-y-2 mb-3 text-left">
@@ -1665,10 +1665,10 @@ export default function DefinamaxFAQ() {
 
                           <div className="bg-green-50 rounded-xl p-3 mb-3 border-2 border-green-100">
                             <div className="flex items-center justify-center gap-2 mb-1">
-                              <span className="text-gray-400 line-through text-sm">De R$758,70</span>
+                              <span className="text-gray-400 line-through text-sm">De R$758,00</span>
                             </div>
                             <div className="text-xl font-bold text-green-700 mb-1">
-                              <span className="text-sm font-normal">Por: </span>12x R$38,05
+                              <span className="text-sm font-normal">Por: </span>12x R$31,58
                             </div>
                             <div className="text-sm text-gray-600">ou R$379,00 à vista</div>
                             <div className="text-sm font-medium text-green-700 mt-1">Apenas R$126,33 por frasco</div>
@@ -1725,12 +1725,13 @@ export default function DefinamaxFAQ() {
 
                           <div className="bg-green-50 rounded-xl p-3 mb-3">
                             <div className="flex items-center justify-center gap-2 mb-1">
-                              <span className="text-gray-400 line-through text-sm">De R$329,90</span>
+                              <span className="text-gray-400 line-through text-sm">De R$299,00</span>
                             </div>
                             <div className="text-xl font-bold text-green-700 mb-1">
-                              <span className="text-sm font-normal">Por: </span>12x R$28,01
+                              <span className="text-sm font-normal">Por: </span>12x R$25,33
                             </div>
                             <div className="text-sm text-gray-600">ou R$279,90 à vista</div>
+                            <div className="text-sm font-medium text-green-700 mt-1">R$279,90 por frasco</div>
                           </div>
 
                           <div className="space-y-2 mb-3 text-left">

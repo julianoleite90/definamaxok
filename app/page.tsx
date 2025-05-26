@@ -913,22 +913,22 @@ export default function LandingPage() {
                 <h3 className="text-lg md:text-xl font-bold">Kit Completo</h3>
                 <p className="text-sm text-white/90">6 meses de tratamento</p>
               </div>
-              <div className="p-6 md:p-8">
-                <div className="flex justify-center mb-6">
+              <div className="p-4 md:p-8">
+                <div className="flex justify-center mb-4 md:mb-6">
                   <Image
                     src="/6frascos.png"
                     alt="Kit Completo Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-40 md:w-[180px]"
+                    className="object-contain w-36 md:w-[200px]"
                   />
                 </div>
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-gray-800">39</span>
-                    <span className="text-xl font-semibold text-gray-800">,91</span>
+                    <span className="text-lg md:text-xl font-semibold text-gray-800">12x</span>
+                    <span className="text-3xl md:text-5xl font-bold text-gray-800">39</span>
+                    <span className="text-lg md:text-xl font-semibold text-gray-800">,91</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -937,10 +937,10 @@ export default function LandingPage() {
                     </span>
                   </div>
                 </div>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Tratamento completo de 6 meses</span>
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-gray-600">Tratamento completo de 6 meses</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -962,7 +962,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/ytA47b"
-                  className="block w-full bg-green-700 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-green-700 text-white font-bold py-3 md:py-4 text-sm md:text-base rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -979,14 +979,14 @@ export default function LandingPage() {
                 <h3 className="text-lg md:text-xl font-bold">Kit Recomendado</h3>
                 <p className="text-sm text-white/90">3 meses de tratamento</p>
               </div>
-              <div className="p-6 md:p-8">
-                <div className="flex justify-center mb-6">
+              <div className="p-4 md:p-8">
+                <div className="flex justify-center mb-4 md:mb-6">
                   <Image
                     src="/3frascos.png"
                     alt="Kit Recomendado Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-40 md:w-48 h-auto"
+                    className="object-contain w-36 md:w-52 h-auto"
                   />
                 </div>
                 <div className="text-center mb-4">
@@ -1044,14 +1044,14 @@ export default function LandingPage() {
                 <h3 className="text-lg md:text-xl font-bold">Kit Inicial</h3>
                 <p className="text-sm text-white/90">30 dias de tratamento</p>
               </div>
-              <div className="p-6 md:p-8">
-                <div className="flex justify-center mb-6">
+              <div className="p-4 md:p-8">
+                <div className="flex justify-center mb-4 md:mb-6">
                   <Image
                     src="/1frasco.png"
                     alt="Kit Inicial Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-40 md:w-48 h-auto"
+                    className="object-contain w-36 md:w-52 h-auto"
                   />
                 </div>
                 <div className="text-center mb-4">
