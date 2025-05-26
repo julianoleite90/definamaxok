@@ -137,12 +137,12 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section Otimizada */}
-      <section className="w-full bg-gradient-to-b from-green-50 to-white py-8 md:py-12">
+      <section className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-12">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 items-start">
             {/* Título e Subtítulo */}
             <div className="md:pt-8">
-              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-4 leading-tight">
+              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-3 md:mb-4 leading-tight">
                 Emagreça <span className="text-green-800 relative inline-block">
                   rápido
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
@@ -197,7 +197,7 @@ export default function LandingPage() {
             {/* Benefícios e CTA - Aparece após a imagem no mobile */}
             <div className="md:col-start-1 md:row-start-2 md:-mt-20 mt-4">
               {/* Benefícios principais */}
-              <ul className="space-y-3 mb-8 md:mb-4 -mt-7">
+              <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8 -mt-7">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span>Mais saciedade durante o dia todo</span>
@@ -217,7 +217,7 @@ export default function LandingPage() {
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex flex-col items-center md:items-start w-full mt-3 md:mt-0">
+              <div className="flex flex-col items-center md:items-start w-full mt-2 md:mt-0">
                 <div className="w-full md:w-[320px] flex justify-center">
                   <div className="relative group md:translate-x-0 translate-x-[3%] w-[110%] md:w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -244,10 +244,10 @@ export default function LandingPage() {
       </section>
 
       {/* Depoimentos Reformulados */}
-      <section className="w-full py-16 bg-green-50">
+      <section className="w-full py-12 md:py-16 bg-green-50">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-3">
               Histórias Reais de Transformação
             </h2>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
@@ -322,10 +322,10 @@ export default function LandingPage() {
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setShowMoreReviews(!showMoreReviews)}
-              className="group inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 gap-1.5 bg-white/50 hover:bg-white rounded-full shadow-sm hover:shadow transition-all duration-200"
+              className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
             >
               {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-              <ChevronDown className={`h-4 w-4 transition-transform group-hover:translate-y-0.5 ${showMoreReviews ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-y-0.5 ${showMoreReviews ? "rotate-180" : ""}`} />
             </button>
           </div>
         </div>
@@ -1201,7 +1201,7 @@ export default function LandingPage() {
                     <span className="text-xl font-bold text-gray-800">4.9 de 5</span>
                   </div>
                   <div className="h-6 w-px bg-gray-300"></div>
-                  <span className="text-sm text-gray-600">
+                  <span className="hidden md:block text-sm text-gray-600">
                     3.842 avaliações globais
                   </span>
                 </div>
