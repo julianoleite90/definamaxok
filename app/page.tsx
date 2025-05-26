@@ -321,7 +321,17 @@ export default function LandingPage() {
           {/* Botão Ver Mais */}
           <div className="flex justify-center mt-8">
             <button
-              onClick={() => setShowMoreReviews(!showMoreReviews)}
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMoreReviews(!showMoreReviews);
+                // Pequeno delay para garantir que o conteúdo foi renderizado
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: window.scrollY,
+                    behavior: 'instant'
+                  });
+                }, 0);
+              }}
               className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
             >
               {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
@@ -739,8 +749,18 @@ export default function LandingPage() {
           {/* Botão Ver Mais */}
           <div className="flex justify-center mt-8">
             <button
-              onClick={() => setShowMoreDeliveries(!showMoreDeliveries)}
-              className="group inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 gap-1.5 bg-white/50 hover:bg-white rounded-full shadow-sm hover:shadow transition-all duration-200"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMoreDeliveries(!showMoreDeliveries);
+                // Pequeno delay para garantir que o conteúdo foi renderizado
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: window.scrollY,
+                    behavior: 'instant'
+                  });
+                }, 0);
+              }}
+              className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
             >
               {showMoreDeliveries ? "Ver menos entregas" : "Ver mais entregas"}
               <ChevronDown className={`h-4 w-4 transition-transform group-hover:translate-y-0.5 ${showMoreDeliveries ? "rotate-180" : ""}`} />
