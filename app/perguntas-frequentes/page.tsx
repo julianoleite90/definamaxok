@@ -5,9 +5,17 @@ import { useState, useEffect } from "react"
 import { CheckCircle2, X, ArrowRight, MessageCircle, ChevronDown, ChevronUp } from "lucide-react"
 import Head from "next/head"
 
+// Define the type for FAQ IDs
+type FaqId = 'faq1' | 'faq2' | 'faq3' | 'faq4' | 'faq5' | 'faq6' | 'faq7' | 'faq8' | 'faq9';
+
+// Define the type for OpenFaqs state
+type OpenFaqs = {
+  [K in FaqId]: boolean;
+};
+
 export default function DefinamaxFAQ() {
   // Estado para controlar quais perguntas estão abertas no acordeão
-  const [openFaqs, setOpenFaqs] = useState({
+  const [openFaqs, setOpenFaqs] = useState<OpenFaqs>({
     faq1: true,
     faq2: false,
     faq3: false,
@@ -23,7 +31,7 @@ export default function DefinamaxFAQ() {
   const [showWhatsAppButton, setShowWhatsAppButton] = useState(false)
 
   // Função para alternar o estado de uma pergunta
-  const toggleFaq = (faqId) => {
+  const toggleFaq = (faqId: FaqId) => {
     setOpenFaqs((prev) => ({
       ...prev,
       [faqId]: !prev[faqId],
@@ -115,7 +123,7 @@ export default function DefinamaxFAQ() {
   }, [])
 
   // Função para adicionar UTMs aos links de compra
-  const addUtmToUrl = (baseUrl) => {
+  const addUtmToUrl = (baseUrl: string) => {
     if (typeof window === "undefined") return baseUrl
 
     const utmSource = localStorage.getItem("utm_source")
@@ -1866,12 +1874,12 @@ export default function DefinamaxFAQ() {
             <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-14 h-14 rounded-full bg-green-100 overflow-hidden mr-4">
-                  <Image src="/ava1.png" alt="Joana" width={100} height={100} className="w-full h-full object-cover" />
+                  <Image src="/ava1.png" alt="Débora" width={100} height={100} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Joana</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-6kg</span>
+                    <h4 className="font-semibold">Débora</h4>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-23kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1894,7 +1902,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-              "Emagreceu 6kg em 30 dias, e eliminou a compulsão alimentar e diminuiu a ansiedade."
+              "Emagreceu 23kg em 7 meses, e eliminou a compulsão alimentar e diminuiu a ansiedade."
               </p>
             </div>
 
@@ -1911,7 +1919,7 @@ export default function DefinamaxFAQ() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Patricia</h4>
+                    <h4 className="font-semibold">Arnaldo</h4>
                     <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-9kg</span>
                   </div>
                   <div className="flex">
@@ -1935,7 +1943,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-              "Patricia conseguiu perder 9kgs em 2 meses após a gravidez."
+              "Arnaldo conseguiu perder 25kg em 6 meses."
               </p>
             </div>
 
@@ -1946,8 +1954,8 @@ export default function DefinamaxFAQ() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold">Lucas</h4>
-                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-16kg</span>
+                    <h4 className="font-semibold">Rosimari</h4>
+                    <span className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded-lg">-14kg</span>
                   </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1970,7 +1978,7 @@ export default function DefinamaxFAQ() {
               </div>
 
               <p className="text-gray-700 mb-2">
-              "Lucas conseguiu perder 16kg em 5 meses sem precisar parar de tomar sua cerveja no final de semana"
+              "Rosimari conseguiu perder 14kg em 3 meses sem precisar fazer dietas restritivas."
               </p>
             </div>
           </div>
