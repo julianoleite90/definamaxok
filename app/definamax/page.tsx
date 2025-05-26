@@ -10,7 +10,9 @@ export default function LandingPage() {
   const [showMoreReviews, setShowMoreReviews] = useState(false)
   const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
+  const [showWhatsApp, setShowWhatsApp] = useState(false)
   const buyRef = useRef<HTMLDivElement>(null)
+  const kitsRef = useRef<HTMLDivElement>(null)
 
   // Contagem regressiva
   useEffect(() => {
@@ -23,6 +25,28 @@ export default function LandingPage() {
       })
     }, 1000)
     return () => clearInterval(timer)
+  }, [])
+
+  // Controle de visibilidade do botão WhatsApp
+  useEffect(() => {
+    const handleScroll = () => {
+      const secondSection = document.querySelector('section:nth-of-type(2)')
+      const kitsSection = document.querySelector('section:nth-of-type(7)')
+      
+      if (!secondSection || !kitsSection) return
+      
+      const secondSectionTop = secondSection.getBoundingClientRect().top
+      const kitsSectionTop = kitsSection.getBoundingClientRect().top
+      const kitsSectionBottom = kitsSection.getBoundingClientRect().bottom
+      
+      setShowWhatsApp(
+        secondSectionTop < 0 && // Passou da segunda seção
+        (kitsSectionTop > 0 || kitsSectionBottom < 0) // Não está na seção de kits OU já passou dela
+      )
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   // Função para rolar até a seção de compra
@@ -67,26 +91,43 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition-all transform ${
+          showWhatsApp ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+        }`}
+      >
+        <div className="relative">
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
+          <MessageCircle className="h-6 w-6" />
+        </div>
+        <span className="font-medium">Estamos Online</span>
+      </a>
+
       {/* Header com CTA */}
-      <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3 shadow-md relative overflow-hidden">
+      <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3.5 md:py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
         <div className="mx-auto max-w-5xl px-4">
-          <div className="flex flex-col md:flex-row md:items-center items-center gap-4 md:gap-8">
-            <div className="flex-1">
+          <div className="flex flex-row items-center justify-between gap-2 md:gap-8 py-0.5">
+            <div className="flex justify-start items-center">
               <Image 
                 src="/logo2.png" 
                 alt="Definamax" 
                 width={400} 
                 height={120} 
-                className="h-10 w-auto" 
+                className="h-[2.4rem] md:h-[3.2rem] w-auto" 
                 quality={100}
                 priority
               />
             </div>
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-end items-center">
               <button
                 onClick={scrollToBuy}
-                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-[1.1rem] md:px-7 py-[0.6rem] md:py-3 text-[0.95rem] md:text-[1.1rem] font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
               >
                 COMPRAR
               </button>
@@ -96,12 +137,12 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section Otimizada */}
-      <section className="w-full bg-gradient-to-b from-green-50 to-white py-8 md:py-12">
+      <section className="w-full bg-gradient-to-b from-green-50 to-white py-6 md:py-12">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 items-start">
             {/* Título e Subtítulo */}
             <div className="md:pt-8">
-              <h1 className="text-[2.3rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-4 leading-tight">
+              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-3 md:mb-4 leading-tight">
                 Emagreça <span className="text-green-800 relative inline-block">
                   rápido
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
@@ -156,7 +197,7 @@ export default function LandingPage() {
             {/* Benefícios e CTA - Aparece após a imagem no mobile */}
             <div className="md:col-start-1 md:row-start-2 md:-mt-20 mt-4">
               {/* Benefícios principais */}
-              <ul className="space-y-3 mb-8 md:mb-4 -mt-7">
+              <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8 -mt-7">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                   <span>Mais saciedade durante o dia todo</span>
@@ -176,13 +217,13 @@ export default function LandingPage() {
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex flex-col items-center md:items-start w-full mt-3 md:mt-0">
-                <div className="w-full md:w-[320px]">
-                  <div className="relative group">
+              <div className="flex flex-col items-center md:items-start w-full mt-2 md:mt-0">
+                <div className="w-full md:w-[320px] flex justify-center">
+                  <div className="relative group md:translate-x-0 translate-x-[3%] w-[110%] md:w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <Link
                       href="https://full.sale/DmNQj1"
-                      className="relative w-full inline-flex items-center justify-center rounded-lg bg-green-600 px-4 md:px-6 py-4 text-base md:text-xl font-bold text-white hover:bg-green-500 transition-all shadow-lg text-center"
+                      className="relative w-full inline-flex items-center justify-center rounded-lg bg-green-600 px-4 md:px-6 py-4 text-[1.1em] md:text-xl font-bold text-white hover:bg-green-500 transition-all shadow-lg text-center"
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                       <span className="flex items-center justify-center">
@@ -190,11 +231,11 @@ export default function LandingPage() {
                       </span>
                     </Link>
                   </div>
+                </div>
 
-                  <div className="flex items-center justify-center md:justify-start mt-3 text-sm text-gray-600">
-                    <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-                    <span>30 dias de garantia incondicional</span>
-                  </div>
+                <div className="flex items-center justify-center md:justify-start mt-3 text-sm text-gray-600">
+                  <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+                  <span>30 dias de garantia incondicional</span>
                 </div>
               </div>
             </div>
@@ -203,10 +244,10 @@ export default function LandingPage() {
       </section>
 
       {/* Depoimentos Reformulados */}
-      <section className="w-full py-16 bg-green-50">
+      <section className="w-full py-12 md:py-16 bg-green-50">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-3">
               Histórias Reais de Transformação
             </h2>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
@@ -217,9 +258,9 @@ export default function LandingPage() {
           {/* Grid de Depoimentos */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
             {[
-              { name: "Débora S.", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
-              { name: "Arnaldo M.", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Empresário", location: "Rio de Janeiro, RJ" },
-              { name: "Sara O.", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Enfermeira", location: "Curitiba, PR" }
+              { name: "Débora", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
+              { name: "Arnaldo", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
+              { name: "Sara", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" }
             ].map((item, index) => (
               <div key={index} className="w-full">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -247,9 +288,9 @@ export default function LandingPage() {
             {showMoreReviews && (
               <>
                 {[
-                  { name: "Marina L.", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Designer", location: "Belo Horizonte, MG" },
-                  { name: "Carla M.", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Advogada", location: "Salvador, BA" },
-                  { name: "Roberto C.", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Engenheiro", location: "Porto Alegre, RS" }
+                  { name: "Rosimari", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
+                  { name: "Laura", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Designer", location: "Guarulhos, SP" },
+                  { name: "Victor", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Motorista de aplicativo", location: "Belo Horizonte, MG" }
                 ].map((item, index) => (
                   <div key={index} className="w-full">
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -280,11 +321,21 @@ export default function LandingPage() {
           {/* Botão Ver Mais */}
           <div className="flex justify-center mt-8">
             <button
-              onClick={() => setShowMoreReviews(!showMoreReviews)}
-              className="group inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 gap-1.5 bg-white/50 hover:bg-white rounded-full shadow-sm hover:shadow transition-all duration-200"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMoreReviews(!showMoreReviews);
+                // Pequeno delay para garantir que o conteúdo foi renderizado
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: window.scrollY,
+                    behavior: 'instant'
+                  });
+                }, 0);
+              }}
+              className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
             >
               {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-              <ChevronDown className={`h-4 w-4 transition-transform group-hover:translate-y-0.5 ${showMoreReviews ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-y-0.5 ${showMoreReviews ? "rotate-180" : ""}`} />
             </button>
           </div>
         </div>
@@ -698,8 +749,18 @@ export default function LandingPage() {
           {/* Botão Ver Mais */}
           <div className="flex justify-center mt-8">
             <button
-              onClick={() => setShowMoreDeliveries(!showMoreDeliveries)}
-              className="group inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 gap-1.5 bg-white/50 hover:bg-white rounded-full shadow-sm hover:shadow transition-all duration-200"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMoreDeliveries(!showMoreDeliveries);
+                // Pequeno delay para garantir que o conteúdo foi renderizado
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: window.scrollY,
+                    behavior: 'instant'
+                  });
+                }, 0);
+              }}
+              className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
             >
               {showMoreDeliveries ? "Ver menos entregas" : "Ver mais entregas"}
               <ChevronDown className={`h-4 w-4 transition-transform group-hover:translate-y-0.5 ${showMoreDeliveries ? "rotate-180" : ""}`} />
@@ -733,9 +794,9 @@ export default function LandingPage() {
                   <Image
                     src="/colageno.png"
                     alt="Colágeno Hidrolisado"
-                    width={160}
-                    height={160}
-                    className="object-contain w-28 md:w-40"
+                    width={176}
+                    height={176}
+                    className="object-contain w-32 md:w-44"
                   />
                 </div>
                 <ul className="space-y-2 md:space-y-3">
@@ -774,9 +835,9 @@ export default function LandingPage() {
                   <Image
                     src="/programa.png"
                     alt="Programa De Emagrecimento Acelerado"
-                    width={160}
-                    height={160}
-                    className="object-contain w-28 md:w-40"
+                    width={176}
+                    height={176}
+                    className="object-contain w-32 md:w-44"
                   />
                 </div>
                 <ul className="space-y-2 md:space-y-3">
@@ -833,7 +894,7 @@ export default function LandingPage() {
 
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-6">
-              Escolha o kit ideal para você <span className="text-green-600 relative inline-block">
+              Escolha o kit ideal para <span className="text-green-600 relative inline-block">
                 acelerar
                 <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
                 <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
@@ -844,7 +905,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div ref={kitsRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Kit Completo */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative">
               <div className="bg-green-600 text-white p-3 md:p-4 text-center">
@@ -887,8 +948,10 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-700">Envio imediato</span>
                   </li>
                 </ul>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
-                  MAIOR DESCONTO
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
+                    MAIOR DESCONTO
+                  </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -946,8 +1009,10 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-700">Envio imediato</span>
                   </li>
                 </ul>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-[#CD9B4A]/10 to-[#B07F2D]/10 text-[#B07F2D] mb-3">
-                  MAIS VENDIDO
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-[#CD9B4A]/10 to-[#B07F2D]/10 text-[#B07F2D] mb-3">
+                    MAIS VENDIDO
+                  </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#CD9B4A] to-[#B07F2D] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -1005,8 +1070,10 @@ export default function LandingPage() {
                     <span className="text-sm md:text-base text-gray-400">Sem bônus adicionais</span>
                   </li>
                 </ul>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
-                  EXPERIMENTE
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-green-100 to-green-50 text-green-800 mb-3">
+                    EXPERIMENTE
+                  </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -1112,12 +1179,12 @@ export default function LandingPage() {
                     </li>
                   </ul>
 
-                  <button
-                    onClick={scrollToBuy}
-                    className="w-full md:w-auto inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-md hover:shadow-lg"
-                  >
-                    EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
-                  </button>
+                                <button
+                onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
+                className="w-full md:w-auto inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-md hover:shadow-lg"
+              >
+                EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
                 </div>
 
                 {/* Coluna da Direita - Selo */}
@@ -1154,7 +1221,7 @@ export default function LandingPage() {
                     <span className="text-xl font-bold text-gray-800">4.9 de 5</span>
                   </div>
                   <div className="h-6 w-px bg-gray-300"></div>
-                  <span className="text-sm text-gray-600">
+                  <span className="hidden md:block text-sm text-gray-600">
                     3.842 avaliações globais
                   </span>
                 </div>
@@ -1429,8 +1496,8 @@ export default function LandingPage() {
 
           {/* CTA após FAQs */}
           <div className="text-center mt-12">
-            <button
-              onClick={scrollToBuy}
+                          <button
+              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
               className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-lg hover:shadow-xl"
             >
               EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
