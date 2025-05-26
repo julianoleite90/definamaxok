@@ -10,32 +10,7 @@ export default function LandingPage() {
   const [showMoreReviews, setShowMoreReviews] = useState(false)
   const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
-  const [showWhatsApp, setShowWhatsApp] = useState(false)
   const buyRef = useRef<HTMLDivElement>(null)
-  const kitsRef = useRef<HTMLDivElement>(null)
-
-  // Monitorar o scroll para mostrar/ocultar o botão do WhatsApp
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      const secondSectionPosition = window.innerHeight // Aproximadamente a altura da primeira seção
-      const kitsSection = kitsRef.current?.offsetTop || 0
-      const kitsSectionEnd = kitsSection + (kitsRef.current?.offsetHeight || 0)
-
-      if (scrollPosition > secondSectionPosition && scrollPosition < kitsSection - 200) {
-        setShowWhatsApp(true)
-      } else if (scrollPosition >= kitsSection - 200 && scrollPosition <= kitsSectionEnd) {
-        setShowWhatsApp(false)
-      } else if (scrollPosition > kitsSectionEnd) {
-        setShowWhatsApp(true)
-      } else {
-        setShowWhatsApp(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   // Contagem regressiva
   useEffect(() => {
@@ -92,67 +67,30 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
-      {/* WhatsApp Button */}
-      <a
-        href="https://wa.me/5541984549172?text=olá%2C%20estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`fixed bottom-4 right-4 z-50 transition-all duration-300 ${
-          showWhatsApp ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
-        }`}
-      >
-        <div className="relative group">
-          {/* Status Online */}
-          <div className="absolute -top-8 right-0 bg-white rounded-full px-3 py-1.5 shadow-lg text-xs font-medium text-gray-700 whitespace-nowrap flex items-center gap-2">
-            <div className="relative flex">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <div className="w-2 h-2 bg-green-500 rounded-full absolute animate-ping"></div>
-            </div>
-            Estamos online
-          </div>
-
-          {/* Texto flutuante */}
-          <div className="absolute -top-20 right-0 bg-white rounded-full px-4 py-2 shadow-lg text-sm font-medium text-green-600 whitespace-nowrap transform -translate-y-1 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0 transition-all duration-200">
-            Fale conosco no WhatsApp!
-          </div>
-          
-          {/* Botão */}
-          <div className="bg-[#25D366] hover:bg-[#20BA56] rounded-full p-4 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="white"
-            >
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
-            </svg>
-          </div>
-        </div>
-      </a>
-
       {/* Header com CTA */}
       <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
         <div className="mx-auto max-w-5xl px-4">
-          <div className="flex items-center justify-between">
-            <div className="w-[140px] md:w-[180px]">
+          <div className="flex flex-col md:flex-row md:items-center items-center gap-4 md:gap-8">
+            <div className="flex-1">
               <Image 
                 src="/logo2.png" 
                 alt="Definamax" 
                 width={400} 
                 height={120} 
-                className="h-auto w-full" 
+                className="h-10 w-auto" 
                 quality={100}
                 priority
               />
             </div>
-            <button
-              onClick={scrollToBuy}
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
-            >
-              COMPRAR
-            </button>
+            <div className="flex justify-center md:justify-end">
+              <button
+                onClick={scrollToBuy}
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
+              >
+                COMPRAR
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -238,8 +176,8 @@ export default function LandingPage() {
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex justify-center md:justify-start w-full">
-                <div className="w-full max-w-[379px] md:max-w-[336px] px-4 md:px-0 translate-x-[5%] md:translate-x-0">
+              <div className="flex flex-col items-center md:items-start w-full mt-3 md:mt-0">
+                <div className="w-full md:w-[320px]">
                   <div className="relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <Link
@@ -771,96 +709,98 @@ export default function LandingPage() {
       </section>
 
       {/* Seção de Kits */}
-      <section ref={kitsRef} className="w-full py-16 bg-gradient-to-b from-white to-green-50">
-        {/* Seção de Bônus */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-            Levando mais de 2 frascos você ganha:
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Bônus exclusivos para potencializar seus resultados
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-16">
-          {/* Card Colágeno */}
-          <div className="bg-gradient-to-b from-[#CD9B4A] to-[#B07F2D] rounded-xl md:rounded-2xl overflow-hidden">
-            <div className="p-3 md:p-4 text-white text-center">
-              <h3 className="text-xl md:text-2xl font-bold mb-1">Colágeno Hidrolisado</h3>
-              <p className="text-white/90 text-sm md:text-base">Combate a flacidez durante o emagrecimento</p>
-            </div>
-            <div className="bg-[#FFF9E9] p-4 md:p-6 relative">
-              <div className="flex justify-center mb-4 md:mb-6">
-                <Image
-                  src="/colageno.png"
-                  alt="Colágeno Hidrolisado"
-                  width={160}
-                  height={160}
-                  className="object-contain w-28 md:w-40"
-                />
-              </div>
-              <ul className="space-y-2 md:space-y-3">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Previne a flacidez durante o processo de emagrecimento</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Melhora a elasticidade e firmeza da pele</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Fortalece unhas, cabelos e articulações</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Complemento perfeito para o Definamax</span>
-                </li>
-              </ul>
-              <div className="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-50 rounded-lg text-center">
-                <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$89,90</span>
-                <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
-              </div>
-            </div>
+      <section className="w-full py-16 bg-gradient-to-b from-white to-green-50">
+        <div className="mx-auto max-w-6xl px-4">
+          {/* Seção de Bônus */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+              Levando mais de 2 frascos você ganha:
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Bônus exclusivos para potencializar seus resultados
+            </p>
           </div>
 
-          {/* Card Programa */}
-          <div className="bg-gradient-to-b from-[#CD9B4A] to-[#B07F2D] rounded-xl md:rounded-2xl overflow-hidden">
-            <div className="p-3 md:p-4 text-white text-center">
-              <h3 className="text-xl md:text-2xl font-bold mb-1">Programa De Emagrecimento Acelerado</h3>
-              <p className="text-white/90 text-sm md:text-base">Videoaulas com informações secretas para acelerar resultados</p>
-            </div>
-            <div className="bg-[#FFF9E9] p-4 md:p-6 relative">
-              <div className="flex justify-center mb-4 md:mb-6">
-                <Image
-                  src="/programa.png"
-                  alt="Programa De Emagrecimento Acelerado"
-                  width={160}
-                  height={160}
-                  className="object-contain w-28 md:w-40"
-                />
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-16">
+            {/* Card Colágeno */}
+            <div className="bg-gradient-to-b from-[#CD9B4A] to-[#B07F2D] rounded-xl md:rounded-2xl overflow-hidden">
+              <div className="p-3 md:p-4 text-white text-center">
+                <h3 className="text-xl md:text-2xl font-bold mb-1">Colágeno Hidrolisado</h3>
+                <p className="text-white/90 text-sm md:text-base">Combate a flacidez durante o emagrecimento</p>
               </div>
-              <ul className="space-y-2 md:space-y-3">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Videoaulas exclusivas com especialistas em emagrecimento</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Técnicas secretas para potencializar a perda de peso</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Dicas de alimentação para maximizar os resultados</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-700">Acesso vitalício ao conteúdo exclusivo</span>
-                </li>
-              </ul>
-              <div className="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-50 rounded-lg text-center">
-                <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$197,00</span>
-                <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
+              <div className="bg-[#FFF9E9] p-4 md:p-6 relative">
+                <div className="flex justify-center mb-4 md:mb-6">
+                  <Image
+                    src="/colageno.png"
+                    alt="Colágeno Hidrolisado"
+                    width={160}
+                    height={160}
+                    className="object-contain w-28 md:w-40"
+                  />
+                </div>
+                <ul className="space-y-2 md:space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Previne a flacidez durante o processo de emagrecimento</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Melhora a elasticidade e firmeza da pele</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Fortalece unhas, cabelos e articulações</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Complemento perfeito para o Definamax</span>
+                  </li>
+                </ul>
+                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-50 rounded-lg text-center">
+                  <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$89,90</span>
+                  <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Programa */}
+            <div className="bg-gradient-to-b from-[#CD9B4A] to-[#B07F2D] rounded-xl md:rounded-2xl overflow-hidden">
+              <div className="p-3 md:p-4 text-white text-center">
+                <h3 className="text-xl md:text-2xl font-bold mb-1">Programa De Emagrecimento Acelerado</h3>
+                <p className="text-white/90 text-sm md:text-base">Videoaulas com informações secretas para acelerar resultados</p>
+              </div>
+              <div className="bg-[#FFF9E9] p-4 md:p-6 relative">
+                <div className="flex justify-center mb-4 md:mb-6">
+                  <Image
+                    src="/programa.png"
+                    alt="Programa De Emagrecimento Acelerado"
+                    width={160}
+                    height={160}
+                    className="object-contain w-28 md:w-40"
+                  />
+                </div>
+                <ul className="space-y-2 md:space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Videoaulas exclusivas com especialistas em emagrecimento</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Técnicas secretas para potencializar a perda de peso</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Dicas de alimentação para maximizar os resultados</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-gray-700">Acesso vitalício ao conteúdo exclusivo</span>
+                  </li>
+                </ul>
+                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-50 rounded-lg text-center">
+                  <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$197,00</span>
+                  <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
+                </div>
               </div>
             </div>
           </div>
