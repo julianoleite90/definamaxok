@@ -126,7 +126,7 @@ export default function LandingPage() {
             </div>
             <div className="flex justify-end items-center">
               <button
-                onClick={scrollToBuy}
+                onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center justify-center rounded-lg bg-green-600 px-[1.1rem] md:px-7 py-[0.6rem] md:py-3 text-[0.95rem] md:text-[1.1rem] font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
               >
                 COMPRAR
@@ -221,15 +221,15 @@ export default function LandingPage() {
                 <div className="w-full md:w-[320px] flex justify-center">
                   <div className="relative group md:translate-x-0 translate-x-[3%] w-[110%] md:w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                    <Link
-                      href="https://full.sale/DmNQj1"
+                    <button
+                      onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
                       className="relative w-full inline-flex items-center justify-center rounded-lg bg-green-600 px-4 md:px-6 py-4 text-[1.1em] md:text-xl font-bold text-white hover:bg-green-500 transition-all shadow-lg text-center"
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                       <span className="flex items-center justify-center">
                         QUERO EMAGRECER AGORA! <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
                       </span>
-                    </Link>
+                    </button>
                   </div>
                 </div>
 
@@ -422,12 +422,12 @@ export default function LandingPage() {
               </div>
 
               <div className="flex justify-center mt-10 flex-col items-center">
-                <Link
-                  href="https://full.sale/DmNQj1"
+                <button
+                  onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
                   className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
                 >
                   PEDIR AGORA DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -669,12 +669,12 @@ export default function LandingPage() {
 
           {/* CTA */}
           <div className="text-center mt-10">
-            <Link
-              href="https://full.sale/DmNQj1"
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-lg font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
+            <button
+              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-lg font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
             >
               PEDIR AGORA DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -869,7 +869,7 @@ export default function LandingPage() {
           {/* CTA Bônus */}
           <div className="text-center -mt-8 mb-16">
             <button
-              onClick={scrollToBuy}
+              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
             >
               GARANTIR MEUS BÔNUS AGORA <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
@@ -926,9 +926,9 @@ export default function LandingPage() {
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-lg md:text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-gray-800">39</span>
-                    <span className="text-lg md:text-xl font-semibold text-gray-800">,91</span>
+                    <span className="text-lg md:text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-3xl md:text-5xl font-bold text-green-800">39</span>
+                    <span className="text-lg md:text-xl font-semibold text-green-800">,91</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -992,9 +992,9 @@ export default function LandingPage() {
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-gray-800">31</span>
-                    <span className="text-xl font-semibold text-gray-800">,58</span>
+                    <span className="text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
+                    <span className="text-xl font-semibold text-green-800">,58</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -1057,9 +1057,9 @@ export default function LandingPage() {
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-gray-800">25</span>
-                    <span className="text-xl font-semibold text-gray-800">,33</span>
+                    <span className="text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
+                    <span className="text-xl font-semibold text-green-800">,33</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">

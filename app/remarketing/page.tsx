@@ -198,6 +198,14 @@ export default function ReMarketingPage() {
   // Estado para controlar a exibição de mais depoimentos
   const [showMoreTestimonials, setShowMoreTestimonials] = useState(false)
 
+  // Função para scroll suave
+  const scrollToKits = () => {
+    const kitsSection = document.getElementById('kits-section')
+    if (kitsSection) {
+      kitsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
       <Head>
@@ -251,304 +259,285 @@ export default function ReMarketingPage() {
           <Link href="/" className="flex-shrink-0">
             <Image src="/logo2.png" alt="Definamax" width={200} height={40} className="h-8 w-auto" />
           </Link>
-          <Link
-            href="https://full.sale/ytA47b?rmkt1"
+          <button
+            onClick={scrollToKits}
             className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-2 rounded-lg transition-all duration-300"
           >
             COMPRAR
-          </Link>
+          </button>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-green-50 to-white py-12 md:py-16">
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Perca até <span className="text-green-600">22kg</span> de Forma Natural e Definitiva
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Eles também estavam sofrendo com o sobrepeso, e todos emagreceram mais de 10kg usando a fórmula de Definamax
-          </p>
-
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/dep01.png"
-                  alt="Débora - Antes e Depois"
-                  width={400}
-                  height={400}
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-green-600 text-4xl font-bold mb-2">-23kg</h3>
-                <p className="text-gray-600 text-lg mb-3">em 7 meses</p>
-                <p className="text-gray-800 text-xl font-medium mb-1">Débora, 31 anos</p>
-                <p className="text-gray-500 mb-1">Professora</p>
-                <p className="text-gray-500">São Paulo, SP</p>
+      {/* Seção de Limite de Compra */}
+      <div className="bg-gradient-to-b from-green-50 to-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex flex-col items-center space-y-3">
+            <div className="bg-green-50 px-8 py-3 rounded-full border border-green-100 w-full md:w-auto text-center">
+              <h2 className="text-green-800 font-bold text-base md:text-lg">
+                LIMITADO A UMA COMPRA POR CLIENTE
+              </h2>
+            </div>
+            <p className="text-gray-600 text-base md:text-lg text-center max-w-3xl leading-relaxed" id="dataHoraTexto">
+              Devido a grande demanda de pedidos, a partir de hoje {new Date().toLocaleDateString('pt-BR')}, 
+              nós temos um estoque limitado e pronto para envio em 24horas.
+            </p>
+            <div className="flex flex-col md:flex-row items-center gap-3 mt-2 w-full md:w-auto">
+              <span className="text-gray-500 text-base md:text-lg font-medium text-center">FORMAS DE PAGAMENTO:</span>
+              <div className="flex justify-center gap-3 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100 w-full md:w-auto">
+                <Image src="/visa.png" alt="Visa" width={45} height={30} className="h-6 w-auto" />
+                <Image src="/master.png" alt="Mastercard" width={45} height={30} className="h-6 w-auto" />
+                <Image src="/hiper.png" alt="Hipercard" width={45} height={30} className="h-6 w-auto" />
+                <Image src="/pix.png" alt="PIX" width={45} height={30} className="h-6 w-auto" />
               </div>
             </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/dep02.png"
-                  alt="Arnaldo - Antes e Depois"
-                  width={400}
-                  height={400}
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-green-600 text-4xl font-bold mb-2">-25kg</h3>
-                <p className="text-gray-600 text-lg mb-3">em 6 meses</p>
-                <p className="text-gray-800 text-xl font-medium mb-1">Arnaldo, 34 anos</p>
-                <p className="text-gray-500 mb-1">Auxiliar Administrativo</p>
-                <p className="text-gray-500">Salvador, BA</p>
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/dep03.png"
-                  alt="Sara - Antes e Depois"
-                  width={400}
-                  height={400}
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-green-600 text-4xl font-bold mb-2">-11kg</h3>
-                <p className="text-gray-600 text-lg mb-3">em 2 meses</p>
-                <p className="text-gray-800 text-xl font-medium mb-1">Sara, 32 anos</p>
-                <p className="text-gray-500 mb-1">Dona de casa</p>
-                <p className="text-gray-500">Rio de Janeiro, RJ</p>
-              </div>
-            </div>
-          </div>
-
-          {!showMoreTestimonials && (
-            <button 
-              onClick={() => setShowMoreTestimonials(true)}
-              className="text-green-600 hover:text-green-700 font-medium text-sm hover:underline"
-            >
-              Ver mais depoimentos
-            </button>
-          )}
-
-          {/* Additional testimonials */}
-          {showMoreTestimonials && (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-                {/* Additional Testimonial 1 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative">
-                    <Image
-                      src="/dep04.png"
-                      alt="Maria - Antes e Depois"
-                      width={400}
-                      height={400}
-                      className="w-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-green-600 text-4xl font-bold mb-2">-18kg</h3>
-                    <p className="text-gray-600 text-lg mb-3">em 5 meses</p>
-                    <p className="text-gray-800 text-xl font-medium mb-1">Maria, 28 anos</p>
-                    <p className="text-gray-500 mb-1">Vendedora</p>
-                    <p className="text-gray-500">Curitiba, PR</p>
-                  </div>
-                </div>
-
-                {/* Additional Testimonial 2 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative">
-                    <Image
-                      src="/dep05.png"
-                      alt="João - Antes e Depois"
-                      width={400}
-                      height={400}
-                      className="w-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-green-600 text-4xl font-bold mb-2">-20kg</h3>
-                    <p className="text-gray-600 text-lg mb-3">em 4 meses</p>
-                    <p className="text-gray-800 text-xl font-medium mb-1">João, 45 anos</p>
-                    <p className="text-gray-500 mb-1">Empresário</p>
-                    <p className="text-gray-500">Belo Horizonte, MG</p>
-                  </div>
-                </div>
-
-                {/* Additional Testimonial 3 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative">
-                    <Image
-                      src="/dep06.png"
-                      alt="Ana - Antes e Depois"
-                      width={400}
-                      height={400}
-                      className="w-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-green-600 text-4xl font-bold mb-2">-15kg</h3>
-                    <p className="text-gray-600 text-lg mb-3">em 3 meses</p>
-                    <p className="text-gray-800 text-xl font-medium mb-1">Ana, 39 anos</p>
-                    <p className="text-gray-500 mb-1">Enfermeira</p>
-                    <p className="text-gray-500">Recife, PE</p>
-                  </div>
-                </div>
-              </div>
-              
-              <button 
-                onClick={() => setShowMoreTestimonials(false)}
-                className="text-gray-500 hover:text-gray-600 font-medium text-sm hover:underline"
-              >
-                Fechar depoimentos
-              </button>
-            </>
-          )}
-        </div>
-      </section>
-
-      {/* Simple Separator */}
-      <div className="w-full border-t border-gray-200">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="relative -top-3 text-center">
-            <span className="bg-white px-4 text-gray-600 text-sm">
-              Depoimentos em Vídeo
-            </span>
           </div>
         </div>
       </div>
 
-      {/* Videos Section */}
-      <section className="w-full py-12 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            {videos.map((video, index) => (
-              <div key={video.id} className="bg-white rounded-2xl border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                <div className="relative">
-                  {activeVideo === index ? (
-                    <div className="aspect-video w-full bg-black">
-                      <iframe
-                        ref={(el) => {
-                          if (videoRefs.current) {
-                            videoRefs.current[index] = el
-                          }
-                        }}
-                        src={`https://player.vimeo.com/video/${video.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
-                        className="w-full h-full"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        title={video.title}
-                      ></iframe>
-                    </div>
-                  ) : (
-                    <div className="aspect-video w-full relative cursor-pointer group" onClick={() => playVideo(index)}>
-                      <Image
-                        src={video.thumbnail || "/placeholder.svg"}
-                        alt={video.title}
-                        fill
-                        className="object-cover transform group-hover:scale-105 transition-all duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-30 transition-all">
-                        <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center group-hover:bg-green-500 transition-all transform group-hover:scale-110 shadow-lg">
-                          <Play className="h-10 w-10 text-white fill-white" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="bg-white bg-opacity-90 rounded-lg p-3">
-                          <h3 className="text-base font-medium text-gray-800">{video.title}</h3>
-                          <p className="text-green-600 text-xs">Depoimento exclusivo</p>
-                        </div>
-                      </div>
-                      <div className="absolute top-4 right-4 bg-black bg-opacity-70 text-white text-xs px-3 py-1.5 rounded-full">
-                        {video.duration}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-800 mb-1">{video.title}</h3>
-                      <p className="text-gray-600">{video.description}</p>
-                    </div>
-                    {videosWatched[index] && (
-                      <span className="bg-green-100 text-green-800 text-xs px-3 py-1.5 rounded-full flex items-center whitespace-nowrap">
-                        <CheckCircle2 className="h-4 w-4 mr-1" />
-                        Assistido
-                      </span>
-                    )}
+      {/* Script para atualizar data e hora */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          function atualizarDataHora() {
+            const agora = new Date();
+            const opcoes = { 
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric'
+            };
+            const dataFormatada = agora.toLocaleDateString('pt-BR', opcoes);
+            const texto = document.getElementById('dataHoraTexto');
+            if (texto) {
+              texto.innerHTML = 'Devido a grande demanda de pedidos, a partir de hoje ' + dataFormatada + 
+                               ', nós temos um estoque limitado e pronto para envio em 24horas.';
+            }
+          }
+          
+          // Atualiza imediatamente e depois a cada minuto
+          atualizarDataHora();
+          setInterval(atualizarDataHora, 60000);
+        `
+      }} />
+
+      {/* Cards Informativos - Visível apenas em desktop */}
+      <div className="hidden md:block py-6 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-4 gap-4">
+            {/* Card Entrega */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-gray-100 flex items-start gap-4">
+              <div className="bg-green-50 p-3 rounded-lg">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">ENTREGA PARA TODO O BRASIL</h3>
+                <p className="text-gray-600 text-sm">ATÉ 10 DIAS ÚTEIS</p>
+              </div>
+            </div>
+
+            {/* Card Pagamento */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-gray-100 flex items-start gap-4">
+              <div className="bg-green-50 p-3 rounded-lg">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">PAGUE COM CARTÃO DE CRÉDITO</h3>
+                <p className="text-gray-600 text-sm">EM ATÉ 12X</p>
+              </div>
+            </div>
+
+            {/* Card Site Seguro */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-gray-100 flex items-start gap-4">
+              <div className="bg-green-50 p-3 rounded-lg">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">SITE SEGURO</h3>
+                <p className="text-gray-600 text-sm">SITE OFICIAL</p>
+              </div>
+            </div>
+
+            {/* Card Suporte */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-gray-100 flex items-start gap-4">
+              <div className="bg-green-50 p-3 rounded-lg">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">DIFICULDADES NO PAGAMENTO</h3>
+                <p className="text-gray-600 text-sm">sac@bourjun.com.br</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Seção Promocional Desktop - 2 colunas */}
+      <div className="hidden md:block bg-white py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-2 gap-8 items-center">
+            {/* Coluna da Imagem */}
+            <div className="flex justify-center">
+              <Image
+                src="/potegratis.png"
+                alt="Definamax - Pote Extra Grátis"
+                width={450}
+                height={450}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Coluna do Conteúdo */}
+            <div>
+              {/* Textos Principais */}
+              <h2 className="text-4xl font-black text-gray-900 mb-3 leading-tight">
+                RECEBA 1 POTE EXTRA
+              </h2>
+              <h3 className="text-3xl font-bold text-[#CD853F] mb-6">
+                GRÁTIS
+              </h3>
+
+              {/* Texto Explicativo */}
+              <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                Na compra de qualquer kit do DEFINAMAX você receberá GRATUITAMENTE 
+                um pote extra para potencializar seus resultados com mais um mês de 
+                tratamento ou para presentear alguém que gostaria de emagrecer.
+              </p>
+
+              {/* Box de Destaque */}
+              <div className="bg-blue-50/50 border-2 border-blue-200 rounded-xl p-6 mb-6">
+                <h4 className="text-2xl font-black text-gray-800 mb-3">
+                  VOCÊ LEVA UM POTE EXTRA
+                </h4>
+                <p className="text-2xl font-bold text-red-500 line-through mb-1">
+                  DE R$ 279,00
+                </p>
+                <p className="text-3xl font-black text-green-600">
+                  TOTALMENTE GRÁTIS
+                </p>
+              </div>
+
+              {/* Botão e Selos */}
+              <div className="text-center space-y-4">
+                <Link
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToKits()
+                  }}
+                  className="inline-block w-full bg-green-600 text-white text-xl font-bold py-4 px-8 rounded-xl hover:bg-green-700 transition-all shadow-lg"
+                >
+                  APROVEITAR OFERTA AGORA
+                </Link>
+
+                {/* Selos de Segurança */}
+                <div className="flex justify-center items-center gap-6 pt-2">
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    <span className="text-sm">Compra Segura</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <button
-                      onClick={() => playVideo(index)}
-                      className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all"
-                    >
-                      <Play className="h-4 w-4 mr-2" />
-                      {activeVideo === index ? "Assistindo" : videosWatched[index] ? "Assistir novamente" : "Assistir agora"}
-                    </button>
-                    <div className="relative">
-                      <button
-                        onClick={() => shareVideo(index)}
-                        className="inline-flex items-center text-gray-600 hover:text-gray-800 px-3 py-2"
-                      >
-                        <Share2 className="h-4 w-4 mr-1" />
-                        Compartilhar
-                      </button>
-                      {showShareOptions === index && (
-                        <div className="absolute right-0 bottom-12 bg-white shadow-xl rounded-xl p-3 z-10 border border-gray-100 min-w-[140px]">
-                          <div className="flex flex-col space-y-2">
-                            <button
-                              onClick={() => shareToSocial("facebook", index)}
-                              className="flex items-center text-blue-600 hover:bg-blue-50 px-3 py-2 rounded text-sm"
-                            >
-                              <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                              </svg>
-                              Facebook
-                            </button>
-                            <button
-                              onClick={() => shareToSocial("twitter", index)}
-                              className="flex items-center text-blue-400 hover:bg-blue-50 px-3 py-2 rounded text-sm"
-                            >
-                              <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.993-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                              </svg>
-                              Twitter
-                            </button>
-                            <button
-                              onClick={() => shareToSocial("whatsapp", index)}
-                              className="flex items-center text-green-600 hover:bg-green-50 px-3 py-2 rounded text-sm"
-                            >
-                              <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                              </svg>
-                              WhatsApp
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span className="text-sm">Site Oficial</span>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Seção Promocional - Visível apenas em mobile */}
+      <div className="md:hidden bg-white py-8 px-4">
+        <div className="max-w-sm mx-auto">
+          {/* Container da Promoção */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
+            {/* Imagem dos Frascos */}
+            <div className="relative mb-4">
+              <Image
+                src="/potegratis.png"
+                alt="Definamax - Pote Extra Grátis"
+                width={280}
+                height={280}
+                className="mx-auto"
+              />
+            </div>
+
+            {/* Texto Principal */}
+            <h2 className="text-2xl font-black text-gray-900 mb-2">
+              RECEBA 1 POTE EXTRA
+            </h2>
+            <h3 className="text-xl font-bold text-[#CD853F] mb-4">
+              GRÁTIS
+            </h3>
+
+            {/* Texto Explicativo */}
+            <p className="text-gray-700 text-base mb-6 leading-relaxed">
+              Na compra de qualquer kit do DEFINAMAX você receberá GRATUITAMENTE 
+              um pote extra para potencializar seus resultados com mais um mês de 
+              tratamento ou para presentear alguém que gostaria de emagrecer.
+            </p>
+
+            {/* Box de Destaque */}
+            <div className="border-2 border-blue-200 rounded-xl p-4 mb-6 bg-blue-50/50">
+              <h4 className="text-xl font-black text-gray-800 mb-2">
+                VOCÊ LEVA UM POTE EXTRA
+              </h4>
+              <p className="text-xl font-bold text-red-500 line-through mb-1">
+                DE R$ 279,00
+              </p>
+              <p className="text-2xl font-black text-green-600">
+                TOTALMENTE GRÁTIS
+              </p>
+            </div>
+
+            {/* Botão de Ação */}
+            <div className="text-center">
+              <Link
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToKits()
+                }}
+                className="block w-full bg-green-600 text-white text-lg font-bold py-4 px-6 rounded-xl hover:bg-green-700 transition-all shadow-lg"
+              >
+                APROVEITAR OFERTA AGORA
+              </Link>
+
+              {/* Selos de Segurança */}
+              <div className="mt-4 flex justify-center items-center gap-4">
+                <div className="flex items-center text-gray-600 text-sm">
+                  <svg className="w-4 h-4 text-green-600 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  Compra Segura
+                </div>
+                <div className="flex items-center text-gray-600 text-sm">
+                  <svg className="w-4 h-4 text-green-600 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  Site Oficial
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Separador */}
+      <div className="w-full border-t border-gray-100"></div>
 
       {/* Products Section */}
-      <section className="w-full py-12 bg-gradient-to-b from-white to-gray-50">
+      <section id="kits-section" className="w-full py-12 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
@@ -580,9 +569,9 @@ export default function ReMarketingPage() {
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-lg md:text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-gray-800">39</span>
-                    <span className="text-lg md:text-xl font-semibold text-gray-800">,91</span>
+                    <span className="text-lg md:text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-3xl md:text-5xl font-bold text-green-800">39</span>
+                    <span className="text-lg md:text-xl font-semibold text-green-800">,91</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -615,7 +604,7 @@ export default function ReMarketingPage() {
                   </div>
                 </div>
                 <Link
-                  href="https://full.sale/ytA47b"
+                  href="https://full.sale/ytA47b?src=rmkt"
                   className="block w-full bg-green-700 text-white font-bold py-3 md:py-4 text-sm md:text-base rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -646,9 +635,9 @@ export default function ReMarketingPage() {
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-gray-800">31</span>
-                    <span className="text-xl font-semibold text-gray-800">,58</span>
+                    <span className="text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
+                    <span className="text-xl font-semibold text-green-800">,58</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -681,7 +670,7 @@ export default function ReMarketingPage() {
                   </div>
                 </div>
                 <Link
-                  href="https://full.sale/DmNQj1"
+                  href="https://full.sale/DmNQj1?src=rmkt"
                   className="block w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-500 transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -711,9 +700,9 @@ export default function ReMarketingPage() {
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-gray-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-gray-800">25</span>
-                    <span className="text-xl font-semibold text-gray-800">,33</span>
+                    <span className="text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
+                    <span className="text-xl font-semibold text-green-800">,33</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -746,7 +735,7 @@ export default function ReMarketingPage() {
                   </div>
                 </div>
                 <Link
-                  href="https://full.sale/eMbtHp"
+                  href="https://full.sale/eMbtHp?src=rmkt"
                   className="block w-full bg-green-700 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -823,7 +812,11 @@ export default function ReMarketingPage() {
                   </div>
 
                                       <Link
-                      href="https://full.sale/ytA47b"
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        scrollToKits()
+                      }}
                       className="relative block w-full bg-[#3BA755] text-white text-center py-4 rounded-2xl font-bold text-base md:text-xl hover:bg-[#45c564] transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(59,167,85,0.6)] hover:shadow-[0_8px_24px_-6px_rgba(59,167,85,0.8)] hover:translate-y-[1px]"
                       style={{
                         background: "linear-gradient(180deg, #3BA755 0%, #2E8040 100%)"
