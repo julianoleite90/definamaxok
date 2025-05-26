@@ -6,9 +6,11 @@ import "../globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Definamax - Suplemento Alimentar Natural",
+  title: "Definamax - Produto | Suplemento Natural para Emagrecimento",
   description:
-    "Conheça as fibras alimentares de Definamax",
+    "Conheça o Definamax, um suplemento alimentar natural que pode auxiliar no seu processo de emagrecimento quando combinado com uma alimentação equilibrada.",
+  keywords:
+    "Definamax, suplemento natural, emagrecimento saudável, perda de peso, bem-estar, saúde",
   icons: {
     icon: "/ico.png",
     apple: "/ico.png",
