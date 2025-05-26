@@ -10,7 +10,9 @@ export default function LandingPage() {
   const [showMoreReviews, setShowMoreReviews] = useState(false)
   const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
+  const [showWhatsApp, setShowWhatsApp] = useState(false)
   const buyRef = useRef<HTMLDivElement>(null)
+  const kitsRef = useRef<HTMLDivElement>(null)
 
   // Contagem regressiva
   useEffect(() => {
@@ -23,6 +25,28 @@ export default function LandingPage() {
       })
     }, 1000)
     return () => clearInterval(timer)
+  }, [])
+
+  // Controle de visibilidade do botão WhatsApp
+  useEffect(() => {
+    const handleScroll = () => {
+      const secondSection = document.querySelector('section:nth-of-type(2)')
+      const kitsSection = document.querySelector('section:nth-of-type(7)')
+      
+      if (!secondSection || !kitsSection) return
+      
+      const secondSectionTop = secondSection.getBoundingClientRect().top
+      const kitsSectionTop = kitsSection.getBoundingClientRect().top
+      const kitsSectionBottom = kitsSection.getBoundingClientRect().bottom
+      
+      setShowWhatsApp(
+        secondSectionTop < 0 && // Passou da segunda seção
+        (kitsSectionTop > 0 || kitsSectionBottom < 0) // Não está na seção de kits OU já passou dela
+      )
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   // Função para rolar até a seção de compra
@@ -67,26 +91,43 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition-all transform ${
+          showWhatsApp ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+        }`}
+      >
+        <div className="relative">
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
+          <MessageCircle className="h-6 w-6" />
+        </div>
+        <span className="font-medium">Estamos Online</span>
+      </a>
+
       {/* Header com CTA */}
-      <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3 shadow-md relative overflow-hidden">
+      <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3.5 md:py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
         <div className="mx-auto max-w-5xl px-4">
-          <div className="flex flex-col md:flex-row md:items-center items-center gap-4 md:gap-8">
-            <div className="flex-1">
+          <div className="flex flex-row items-center justify-between gap-2 md:gap-8 py-0.5">
+            <div className="flex justify-start items-center">
               <Image 
                 src="/logo2.png" 
                 alt="Definamax" 
                 width={400} 
                 height={120} 
-                className="h-10 w-auto" 
+                className="h-[2.4rem] md:h-[3.2rem] w-auto" 
                 quality={100}
                 priority
               />
             </div>
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-end items-center">
               <button
                 onClick={scrollToBuy}
-                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
+                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-[1.1rem] md:px-7 py-[0.6rem] md:py-3 text-[0.95rem] md:text-[1.1rem] font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
               >
                 COMPRAR
               </button>
@@ -177,12 +218,12 @@ export default function LandingPage() {
 
               {/* CTA Principal */}
               <div className="flex flex-col items-center md:items-start w-full mt-3 md:mt-0">
-                <div className="w-full md:w-[320px]">
-                  <div className="relative group">
+                <div className="w-full md:w-[320px] flex justify-center">
+                  <div className="relative group md:translate-x-0 translate-x-[3%] w-[110%] md:w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <Link
                       href="https://full.sale/DmNQj1"
-                      className="relative w-full inline-flex items-center justify-center rounded-lg bg-green-600 px-4 md:px-6 py-4 text-base md:text-xl font-bold text-white hover:bg-green-500 transition-all shadow-lg text-center"
+                      className="relative w-full inline-flex items-center justify-center rounded-lg bg-green-600 px-4 md:px-6 py-4 text-[1.1em] md:text-xl font-bold text-white hover:bg-green-500 transition-all shadow-lg text-center"
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                       <span className="flex items-center justify-center">
@@ -190,11 +231,11 @@ export default function LandingPage() {
                       </span>
                     </Link>
                   </div>
+                </div>
 
-                  <div className="flex items-center justify-center md:justify-start mt-3 text-sm text-gray-600">
-                    <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
-                    <span>30 dias de garantia incondicional</span>
-                  </div>
+                <div className="flex items-center justify-center md:justify-start mt-3 text-sm text-gray-600">
+                  <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+                  <span>30 dias de garantia incondicional</span>
                 </div>
               </div>
             </div>
