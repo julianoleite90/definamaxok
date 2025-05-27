@@ -1075,11 +1075,10 @@ export default function ReMarketingPage() {
           </div>
 
           <div className="flex justify-center space-x-6 text-gray-300 text-sm mb-8">
-            <Link href="/analise-imc" className="hover:text-white">Avaliação de IMC</Link>
             <Link href="/termos-garantia" className="hover:text-white">Termos de Garantia</Link>
             <Link href="/perguntas-frequentes" className="hover:text-white">Perguntas Frequentes</Link>
             <Link href="/produtos" className="hover:text-white">Produtos</Link>
-            <Link href="/depoimentos" className="hover:text-white">Depoimentos em Vídeo</Link>
+            <Link href="/depoimentos" className="hover:text-white">Depoimentos</Link>
           </div>
 
           <div className="text-center text-sm text-gray-300">
