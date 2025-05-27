@@ -1080,7 +1080,6 @@ export default function ReMarketingPage() {
             <Link href="/perguntas-frequentes" className="hover:text-white">Perguntas Frequentes</Link>
             <Link href="/produtos" className="hover:text-white">Produtos</Link>
             <Link href="/depoimentos" className="hover:text-white">Depoimentos em Vídeo</Link>
-            <Link href="/politica-privacidade" className="hover:text-white">Política de Privacidade</Link>
           </div>
 
           <div className="text-center text-sm text-gray-300">
