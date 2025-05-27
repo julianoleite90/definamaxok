@@ -4,6 +4,18 @@ import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown } from "lucide-react"
 
+// Adicione isso após os imports
+const pulseAnimation = `
+@keyframes pulseAndScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+`;
+
 export default function LandingPage() {
   // Estados necessários
   const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes: 59, seconds: 59 })
@@ -91,21 +103,22 @@ export default function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
+      <style jsx global>{pulseAnimation}</style>
+      
       {/* WhatsApp Button */}
       <a
         href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition-all transform ${
+        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:bg-[#20BD5A] transition-all transform ${
           showWhatsApp ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
         }`}
       >
         <div className="relative">
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
-          <MessageCircle className="h-6 w-6" />
+          {/* Indicador de Status */}
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 border-2 border-white rounded-full animate-pulse"></span>
+          <MessageCircle className="h-7 w-7 text-white" />
         </div>
-        <span className="font-medium">Estamos Online</span>
       </a>
 
       {/* Header com CTA */}
@@ -962,7 +975,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/ytA47b"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -1028,7 +1041,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/DmNQj1"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -1093,7 +1106,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/eMbtHp"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
