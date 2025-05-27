@@ -920,15 +920,15 @@ export default function LandingPage() {
                     alt="Kit Completo Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-36 md:w-[200px]"
+                    className="object-contain w-48 md:w-[200px]"
                   />
                 </div>
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-lg md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-green-800">39</span>
-                    <span className="text-lg md:text-xl font-semibold text-green-800">,91</span>
+                    <span className="text-xl md:text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">39</span>
+                    <span className="text-xl md:text-xl font-semibold text-green-800">,91</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -962,7 +962,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/ytA47b"
-                  className="block w-full bg-green-700 text-white font-bold py-3 md:py-4 text-sm md:text-base rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -986,7 +986,7 @@ export default function LandingPage() {
                     alt="Kit Recomendado Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-36 md:w-52 h-auto"
+                    className="object-contain w-48 md:w-52 h-auto"
                   />
                 </div>
                 <div className="text-center mb-4">
@@ -1028,7 +1028,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/DmNQj1"
-                  className="block w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-500 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -1051,7 +1051,7 @@ export default function LandingPage() {
                     alt="Kit Inicial Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-36 md:w-52 h-auto"
+                    className="object-contain w-48 md:w-52 h-auto"
                   />
                 </div>
                 <div className="text-center mb-4">
@@ -1093,7 +1093,7 @@ export default function LandingPage() {
                 </div>
                 <Link
                   href="https://full.sale/eMbtHp"
-                  className="block w-full bg-green-700 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
