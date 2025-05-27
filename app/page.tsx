@@ -918,200 +918,185 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div ref={kitsRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div ref={kitsRef} className="grid md:grid-cols-3 gap-4 md:gap-8">
             {/* Kit Completo */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
-              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-4 md:p-5 text-center relative overflow-hidden">
+              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
                 <h3 className="text-lg md:text-xl font-bold">Kit Completo</h3>
                 <p className="text-sm text-white/90">6 meses de tratamento</p>
               </div>
-              <div className="p-4 md:p-8">
-                <div className="flex justify-center mb-4 md:mb-6">
+              <div className="p-3 md:p-8">
+                <div className="flex justify-center mb-3 md:mb-6">
                   <Image
                     src="/6frascos.png"
                     alt="Kit Completo Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-48 md:w-[200px]"
+                    className="object-contain w-40 md:w-[200px]"
                   />
                 </div>
-                <div className="text-center mb-4">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
+                <div className="text-center mb-3">
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
                     <span className="text-xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">39</span>
+                    <span className="text-3xl md:text-5xl font-bold text-green-800">39</span>
                     <span className="text-xl md:text-xl font-semibold text-green-800">,91</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
-                  <div className="mt-2">
-                    <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                      Economize R$ 1.000,00
-                    </span>
-                  </div>
+                  <p className="text-sm text-gray-600 mt-1">sem juros no cartão</p>
+                                                              <div className="mt-1 text-sm font-medium text-gray-700">
+                        ou R$ 479,00 à vista
+                      </div>
+                      <div className="mt-2">
+                        <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                          10% de desconto no PIX
+                        </span>
+                      </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-gray-600">Tratamento completo de 6 meses</span>
+                    <span className="text-xs md:text-sm text-green-600 font-medium">6 Meses de tratamento</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">2 Frascos de colágeno hidrolisado</span>
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-green-600 font-medium">2 Frascos de colágeno GRÁTIS</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Programa emagrecimento acelerado</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Envio imediato</span>
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-green-600 font-medium">Programa emagrecimento acelerado GRÁTIS</span>
                   </li>
                 </ul>
-                <div className="flex justify-center mb-4">
-                  <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-green-700 text-white">
-                    MAIOR DESCONTO
-                  </div>
-                </div>
+                
                 <Link
                   href="https://full.sale/ytA47b"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-3 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
                 </Link>
-                <p className="text-center text-gray-600 font-medium text-sm mt-3">Frete grátis para todo Brasil</p>
+                <p className="text-center text-gray-600 font-medium text-xs md:text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
             {/* Kit Recomendado */}
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100 md:scale-105">
               <div className="absolute -top-px left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600"></div>
-              <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white p-4 md:p-5 text-center relative overflow-hidden">
+              <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white p-3 md:p-5 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                <h3 className="text-lg md:text-xl font-bold">Kit Recomendado</h3>
-                <p className="text-sm text-white/90">3 meses de tratamento</p>
+                                    <h3 className="text-lg md:text-xl font-bold">Kit Mais Vendido</h3>
+                    <p className="text-sm text-white/90">3 meses de tratamento</p>
               </div>
-              <div className="p-4 md:p-8">
-                <div className="flex justify-center mb-4 md:mb-6">
+              <div className="p-3 md:p-8">
+                <div className="flex justify-center mb-3 md:mb-6">
                   <Image
                     src="/3frascos.png"
                     alt="Kit Recomendado Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-48 md:w-52 h-auto"
+                    className="object-contain w-40 md:w-52 h-auto"
                   />
                 </div>
-                <div className="text-center mb-4">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por apenas:</p>
+                <div className="text-center mb-3">
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
                     <span className="text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
+                    <span className="text-3xl md:text-5xl font-bold text-green-800">31</span>
                     <span className="text-xl font-semibold text-green-800">,58</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
-                  <div className="mt-2">
-                    <span className="inline-block bg-emerald-50 text-emerald-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                      Economize R$ 379,00
-                    </span>
-                  </div>
+                  <p className="text-sm text-gray-600 mt-1">sem juros no cartão</p>
+                                                              <div className="mt-1 text-sm font-medium text-gray-700">
+                        ou R$ 379,00 à vista
+                      </div>
+                      <div className="mt-2">
+                        <span className="inline-block bg-emerald-50 text-emerald-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                          10% de desconto no PIX
+                        </span>
+                      </div>
                 </div>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Tratamento intermediário de 3 meses</span>
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-emerald-600 font-medium">3 Meses de tratamento</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">1 Frasco de colágeno hidrolisado</span>
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-emerald-600 font-medium">1 Frasco de colágeno GRÁTIS</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Programa emagrecimento acelerado</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Envio imediato</span>
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-emerald-600 font-medium">Programa emagrecimento acelerado GRÁTIS</span>
                   </li>
                 </ul>
-                <div className="flex justify-center mb-4">
-                  <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-600 text-white">
-                    MAIS VENDIDO
-                  </div>
-                </div>
+                
                 <Link
                   href="https://full.sale/DmNQj1"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  className="block w-full bg-emerald-500 text-white font-bold py-3 md:py-4 text-lg md:text-lg rounded-xl hover:bg-emerald-600 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
                 </Link>
-                <p className="text-center text-gray-600 font-medium text-sm mt-3">Frete grátis para todo Brasil</p>
+                <p className="text-center text-gray-600 font-medium text-xs md:text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
             {/* Kit Inicial */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
-              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-4 md:p-5 text-center relative overflow-hidden">
+              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
                 <h3 className="text-lg md:text-xl font-bold">Kit Inicial</h3>
                 <p className="text-sm text-white/90">30 dias de tratamento</p>
               </div>
-              <div className="p-4 md:p-8">
-                <div className="flex justify-center mb-4 md:mb-6">
+              <div className="p-3 md:p-8">
+                <div className="flex justify-center mb-3 md:mb-6">
                   <Image
                     src="/1frasco.png"
                     alt="Kit Inicial Definamax"
                     width={180}
                     height={180}
-                    className="object-contain w-48 md:w-52 h-auto"
+                    className="object-contain w-40 md:w-52 h-auto"
                   />
                 </div>
-                <div className="text-center mb-4">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por apenas:</p>
+                <div className="text-center mb-3">
+                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
                     <span className="text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
+                    <span className="text-3xl md:text-5xl font-bold text-green-800">25</span>
                     <span className="text-xl font-semibold text-green-800">,33</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
-                  <div className="mt-2">
-                    <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                      Economize R$ 25,00
-                    </span>
-                  </div>
+                  <p className="text-sm text-gray-600 mt-1">sem juros no cartão</p>
+                                                              <div className="mt-1 text-sm font-medium text-gray-700">
+                        ou R$ 279,00 à vista
+                      </div>
+                      <div className="mt-2">
+                        <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                          10% de desconto no PIX
+                        </span>
+                      </div>
                 </div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Tratamento inicial para 30 dias</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">60 cápsulas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Envio imediato para todo Brasil</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-400">Sem bônus adicionais</span>
-                  </li>
+                <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
+                                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-xs md:text-sm text-green-600 font-medium">1 Mês de tratamento</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-xs md:text-sm text-green-600 font-medium">Envio imediato</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-xs md:text-sm text-gray-400">Sem bônus adicionais</span>
+                    </li>
                 </ul>
-                <div className="flex justify-center mb-4">
-                  <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-green-700 text-white">
-                    EXPERIMENTE
-                  </div>
-                </div>
-                <Link
-                  href="https://full.sale/eMbtHp"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                >
+                
+                                    <Link
+                      href="https://full.sale/eMbtHp"
+                      className="block w-full bg-green-600 text-white font-bold py-3 md:py-4 text-lg md:text-lg rounded-xl hover:bg-green-700 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                    >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
                 </Link>
-                <p className="text-center text-gray-600 font-medium text-sm mt-3">Frete fixo R$ 25,00</p>
+                <p className="text-center text-gray-600 font-medium text-xs md:text-sm mt-2">Frete fixo R$ 25,00</p>
               </div>
             </div>
           </div>
