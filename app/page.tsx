@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown } from "lucide-react"
+import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown, Gift } from "lucide-react"
 
 // Adicione isso após os imports
 const pulseAnimation = `
@@ -785,126 +785,6 @@ export default function LandingPage() {
       {/* Seção de Kits */}
       <section className="w-full py-16 bg-gradient-to-b from-white to-green-50">
         <div className="mx-auto max-w-6xl px-4">
-          {/* Seção de Bônus */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Levando mais de 2 frascos você ganha:
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Bônus exclusivos para potencializar seus resultados
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-16">
-            {/* Card Colágeno */}
-            <div className="bg-gradient-to-b from-green-700 to-green-800 rounded-xl md:rounded-2xl overflow-hidden">
-              <div className="p-3 md:p-4 text-white text-center">
-                <h3 className="text-xl md:text-2xl font-bold mb-1">Colágeno Hidrolisado</h3>
-                <p className="text-white/90 text-sm md:text-base">Combate a flacidez durante o emagrecimento</p>
-              </div>
-              <div className="bg-white p-4 md:p-6 relative">
-                <div className="flex justify-center mb-4 md:mb-6">
-                  <Image
-                    src="/colageno.png"
-                    alt="Colágeno Hidrolisado"
-                    width={176}
-                    height={176}
-                    className="object-contain w-32 md:w-44"
-                  />
-                </div>
-                <ul className="space-y-2 md:space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Previne a flacidez durante o processo de emagrecimento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Melhora a elasticidade e firmeza da pele</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Fortalece unhas, cabelos e articulações</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Complemento perfeito para o Definamax</span>
-                  </li>
-                </ul>
-                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-green-50 rounded-lg text-center">
-                  <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$89,90</span>
-                  <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Programa */}
-            <div className="bg-gradient-to-b from-green-700 to-green-800 rounded-xl md:rounded-2xl overflow-hidden">
-              <div className="p-3 md:p-4 text-white text-center">
-                <h3 className="text-xl md:text-2xl font-bold mb-1">Programa De Emagrecimento Acelerado</h3>
-                <p className="text-white/90 text-sm md:text-base">Videoaulas com informações secretas para acelerar resultados</p>
-              </div>
-              <div className="bg-white p-4 md:p-6 relative">
-                <div className="flex justify-center mb-4 md:mb-6">
-                  <Image
-                    src="/programa.png"
-                    alt="Programa De Emagrecimento Acelerado"
-                    width={176}
-                    height={176}
-                    className="object-contain w-32 md:w-44"
-                  />
-                </div>
-                <ul className="space-y-2 md:space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Videoaulas exclusivas com especialistas em emagrecimento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Técnicas secretas para potencializar a perda de peso</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Dicas de alimentação para maximizar os resultados</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-base text-gray-700">Acesso vitalício ao conteúdo exclusivo</span>
-                  </li>
-                </ul>
-                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-green-50 rounded-lg text-center">
-                  <span className="text-gray-500 line-through text-xs md:text-sm">VALOR: R$197,00</span>
-                  <p className="text-green-700 font-semibold text-sm md:text-base">VOCÊ RECEBE GRATUITAMENTE!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Bônus */}
-          <div className="text-center -mt-8 mb-16">
-            <button
-              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
-            >
-              GARANTIR MEUS BÔNUS AGORA <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
-            </button>
-            <p className="text-gray-600 mt-3 md:mt-4 flex items-center justify-center gap-2 text-sm md:text-base">
-              <Clock className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-              Oferta por tempo limitado
-            </p>
-          </div>
-
-          {/* Divisor Visual */}
-          <div className="relative py-10 mb-12">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <div className="bg-white px-4 text-sm text-gray-500">
-                Escolha seu kit abaixo
-              </div>
-            </div>
-          </div>
-
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-6">
               Escolha o kit ideal para <span className="text-green-600 relative inline-block">
@@ -913,7 +793,7 @@ export default function LandingPage() {
                 <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
               </span> o seu processo de <span className="text-green-700">emagrecimento</span>
             </h2>
-            <p className="text-gray-600 text-lg mt-4 md:mt-0">
+            <p className="text-gray-600 text-base md:text-lg mt-4 md:mt-0">
               Para melhores resultados recomendados o tratamento de 3 a 6 meses
             </p>
           </div>
@@ -931,51 +811,54 @@ export default function LandingPage() {
                   <Image
                     src="/6frascos.png"
                     alt="Kit Completo Definamax"
-                    width={180}
-                    height={180}
-                    className="object-contain w-40 md:w-[200px]"
+                    width={220}
+                    height={220}
+                    className="object-contain w-48 md:w-[240px]"
                   />
                 </div>
                 <div className="text-center mb-3">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por:</p>
+                  <p className="text-base text-gray-500">De <span className="line-through">R$ 1497,00</span> por:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-green-800">39</span>
-                    <span className="text-xl md:text-xl font-semibold text-green-800">,91</span>
+                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">39</span>
+                    <span className="text-2xl md:text-xl font-semibold text-green-800">,91</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">sem juros no cartão</p>
-                                                              <div className="mt-1 text-sm font-medium text-gray-700">
-                        ou R$ 479,00 à vista
-                      </div>
-                      <div className="mt-2">
-                        <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                          10% de desconto no PIX
-                        </span>
-                      </div>
+                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
+                  <div className="mt-1 text-base font-medium text-gray-700">
+                    ou R$ 479,00 à vista
+                  </div>
+                  <div className="mt-2">
+                    <span className="inline-block bg-green-50 text-green-700 text-sm font-medium px-2.5 py-1 rounded-full">
+                      10% de desconto no PIX
+                    </span>
+                  </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-green-600 font-medium">6 Meses de tratamento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-green-600 font-medium">2 Frascos de colágeno GRÁTIS</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-green-600 font-medium">Programa emagrecimento acelerado GRÁTIS</span>
-                  </li>
-                </ul>
+                                  {/* Seção de Brindes */}
+                  <div className="bg-green-50 rounded-xl p-4 mb-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Gift className="h-6 w-6 text-green-600" />
+                      <span className="text-base font-semibold text-green-800">Você ganha:</span>
+                    </div>
+                    <ul className="space-y-2">
+                                          <li className="flex items-start gap-2">
+                        <Gift className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-green-700">2 Frascos de colágeno para combater a flacidez pós emagrecimento</span>
+                      </li>
+                    <li className="flex items-start gap-2">
+                      <Gift className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-green-700">Programa emagrecimento acelerado GRÁTIS</span>
+                    </li>
+                  </ul>
+                </div>
                 
                 <Link
                   href="https://full.sale/ytA47b"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-3 md:py-4 text-lg md:text-lg rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
                 </Link>
-                <p className="text-center text-gray-600 font-medium text-xs md:text-sm mt-2">Frete grátis para todo Brasil</p>
+                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
@@ -992,51 +875,54 @@ export default function LandingPage() {
                   <Image
                     src="/3frascos.png"
                     alt="Kit Recomendado Definamax"
-                    width={180}
-                    height={180}
-                    className="object-contain w-40 md:w-52 h-auto"
+                    width={220}
+                    height={220}
+                    className="object-contain w-48 md:w-64 h-auto"
                   />
                 </div>
                 <div className="text-center mb-3">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por:</p>
+                  <p className="text-base text-gray-500">De <span className="line-through">R$ 758,00</span> por:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-green-800">31</span>
-                    <span className="text-xl font-semibold text-green-800">,58</span>
+                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
+                    <span className="text-2xl md:text-xl font-semibold text-green-800">,58</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">sem juros no cartão</p>
-                                                              <div className="mt-1 text-sm font-medium text-gray-700">
-                        ou R$ 379,00 à vista
-                      </div>
-                      <div className="mt-2">
-                        <span className="inline-block bg-emerald-50 text-emerald-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                          10% de desconto no PIX
-                        </span>
-                      </div>
+                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
+                  <div className="mt-1 text-base font-medium text-gray-700">
+                    ou R$ 379,00 à vista
+                  </div>
+                  <div className="mt-2">
+                    <span className="inline-block bg-emerald-50 text-emerald-700 text-sm font-medium px-2.5 py-1 rounded-full">
+                      10% de desconto no PIX
+                    </span>
+                  </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-emerald-600 font-medium">3 Meses de tratamento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-emerald-600 font-medium">1 Frasco de colágeno GRÁTIS</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-emerald-600 font-medium">Programa emagrecimento acelerado GRÁTIS</span>
-                  </li>
-                </ul>
+                                  {/* Seção de Brindes */}
+                <div className="bg-emerald-50 rounded-xl p-4 mb-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Gift className="h-6 w-6 text-emerald-600" />
+                    <span className="text-base font-semibold text-emerald-800">Você ganha:</span>
+                  </div>
+                  <ul className="space-y-2">
+                                          <li className="flex items-start gap-2">
+                      <Gift className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-emerald-700">1 Frasco de colágeno para combater a flacidez pós emagrecimento</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Gift className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-emerald-700">Programa emagrecimento acelerado GRÁTIS</span>
+                    </li>
+                  </ul>
+                </div>
                 
                 <Link
                   href="https://full.sale/DmNQj1"
-                  className="block w-full bg-emerald-500 text-white font-bold py-3 md:py-4 text-lg md:text-lg rounded-xl hover:bg-emerald-600 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  className="block w-full bg-emerald-500 text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-emerald-600 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
                 </Link>
-                <p className="text-center text-gray-600 font-medium text-xs md:text-sm mt-2">Frete grátis para todo Brasil</p>
+                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
@@ -1052,51 +938,52 @@ export default function LandingPage() {
                   <Image
                     src="/1frasco.png"
                     alt="Kit Inicial Definamax"
-                    width={180}
-                    height={180}
-                    className="object-contain w-40 md:w-52 h-auto"
+                    width={220}
+                    height={220}
+                    className="object-contain w-48 md:w-64 h-auto"
                   />
                 </div>
                 <div className="text-center mb-3">
-                  <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por:</p>
+                  <p className="text-base text-gray-500">De <span className="line-through">R$ 299,00</span> por:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-green-800">25</span>
-                    <span className="text-xl font-semibold text-green-800">,33</span>
+                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
+                    <span className="text-2xl md:text-xl font-semibold text-green-800">,33</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">sem juros no cartão</p>
-                                                              <div className="mt-1 text-sm font-medium text-gray-700">
-                        ou R$ 279,00 à vista
-                      </div>
-                      <div className="mt-2">
-                        <span className="inline-block bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                          10% de desconto no PIX
-                        </span>
-                      </div>
+                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
+                  <div className="mt-1 text-base font-medium text-gray-700">
+                    ou R$ 279,00 à vista
+                  </div>
+                  <div className="mt-2">
+                    <span className="inline-block bg-green-50 text-green-700 text-sm font-medium px-2.5 py-1 rounded-full">
+                      10% de desconto no PIX
+                    </span>
+                  </div>
                 </div>
-                <ul className="space-y-2 md:space-y-3 mb-3 md:mb-6">
-                                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs md:text-sm text-green-600 font-medium">1 Mês de tratamento</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs md:text-sm text-green-600 font-medium">Envio imediato</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs md:text-sm text-gray-400">Sem bônus adicionais</span>
-                    </li>
+
+                <ul className="space-y-2 md:space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-sm text-green-600 font-medium">1 Mês de tratamento</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-sm text-green-600 font-medium">Envio imediato</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="h-5 w-5 md:h-5 md:w-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-sm text-gray-400">Sem bônus adicionais</span>
+                  </li>
                 </ul>
                 
-                                    <Link
+                <Link
                       href="https://full.sale/eMbtHp"
-                      className="block w-full bg-green-600 text-white font-bold py-3 md:py-4 text-lg md:text-lg rounded-xl hover:bg-green-700 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                      className="block w-full bg-green-600 text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-green-700 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                     >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
                 </Link>
-                <p className="text-center text-gray-600 font-medium text-xs md:text-sm mt-2">Frete fixo R$ 25,00</p>
+                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete fixo R$ 25,00</p>
               </div>
             </div>
           </div>
@@ -1139,27 +1026,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Garantias */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 mt-12 mb-8 bg-white rounded-2xl shadow-sm py-6 px-4 mx-auto max-w-3xl">
-            <div className="flex items-center gap-3">
-              <div className="bg-green-50 p-2 rounded-full">
-                <ShieldCheck className="h-6 w-6 text-green-600" />
-              </div>
-              <span className="text-gray-700 font-medium">Garantia de 30 dias</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="bg-green-50 p-2 rounded-full">
-                <Lock className="h-6 w-6 text-green-600" />
-              </div>
-              <span className="text-gray-700 font-medium">Pagamento seguro</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="bg-green-50 p-2 rounded-full">
-                <Truck className="h-6 w-6 text-green-600" />
-              </div>
-              <span className="text-gray-700 font-medium">Entrega para todo Brasil</span>
-            </div>
-          </div>
+
 
           {/* Seção de Garantia */}
           <div className="max-w-4xl mx-auto mb-16 px-4">
