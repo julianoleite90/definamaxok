@@ -82,7 +82,16 @@ export default function ReMarketingPage() {
     }
   }, [])
 
-
+  // Adiciona a keyframe animation para vibração
+  const vibrationKeyframes = `
+    @keyframes vibrate {
+      0% { transform: translate(0); }
+      25% { transform: translate(-1px, 1px); }
+      50% { transform: translate(1px, -1px); }
+      75% { transform: translate(-1px, -1px); }
+      100% { transform: translate(1px, 1px); }
+    }
+  `
 
   // Função para adicionar UTMs aos links de compra
   const addUtmToUrl = (baseUrl: string) => {
@@ -175,8 +184,6 @@ export default function ReMarketingPage() {
     setShowShareOptions(null)
   }
 
-
-
   // Efeito para verificar se há um vídeo específico na URL para reproduzir
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -208,6 +215,7 @@ export default function ReMarketingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-white">
+      <style jsx global>{vibrationKeyframes}</style>
       <Head>
         <title>Definamax - Vídeos Exclusivos | Descubra Como Emagrecer Naturalmente</title>
         <meta
@@ -561,17 +569,17 @@ export default function ReMarketingPage() {
                   <Image
                     src="/6frascos.png"
                     alt="Kit Completo Definamax"
-                    width={180}
-                    height={180}
-                    className="object-contain w-36 md:w-[200px]"
+                    width={280}
+                    height={280}
+                    className="object-contain w-48 md:w-[280px]"
                   />
                 </div>
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 1497,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-lg md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-3xl md:text-5xl font-bold text-green-800">39</span>
-                    <span className="text-lg md:text-xl font-semibold text-green-800">,91</span>
+                    <span className="text-xl md:text-2xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-6xl font-bold text-green-800">39</span>
+                    <span className="text-xl md:text-2xl font-semibold text-green-800">,91</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -605,7 +613,7 @@ export default function ReMarketingPage() {
                 </div>
                 <Link
                   href="https://full.sale/ytA47b?src=rmkt"
-                  className="block w-full bg-green-700 text-white font-bold py-3 md:py-4 text-sm md:text-base rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-green-700 text-white font-bold py-4 md:py-6 text-lg md:text-xl rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group hover:animate-[vibrate_0.1s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -627,17 +635,17 @@ export default function ReMarketingPage() {
                   <Image
                     src="/3frascos.png"
                     alt="Kit Recomendado Definamax"
-                    width={180}
-                    height={180}
-                    className="object-contain w-32 md:w-48 h-auto"
+                    width={280}
+                    height={280}
+                    className="object-contain w-48 md:w-[280px] h-auto"
                   />
                 </div>
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 758,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
-                    <span className="text-xl font-semibold text-green-800">,58</span>
+                    <span className="text-xl md:text-2xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-6xl font-bold text-green-800">31</span>
+                    <span className="text-xl md:text-2xl font-semibold text-green-800">,58</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -671,7 +679,7 @@ export default function ReMarketingPage() {
                 </div>
                 <Link
                   href="https://full.sale/DmNQj1?src=rmkt"
-                  className="block w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-500 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-emerald-600 text-white font-bold py-4 md:py-6 text-lg md:text-xl rounded-lg hover:bg-emerald-500 transition-all text-center shadow-lg relative overflow-hidden group hover:animate-[vibrate_0.1s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
@@ -692,17 +700,17 @@ export default function ReMarketingPage() {
                   <Image
                     src="/1frasco.png"
                     alt="Kit Inicial Definamax"
-                    width={180}
-                    height={180}
-                    className="object-contain w-32 md:w-48 h-auto"
+                    width={280}
+                    height={280}
+                    className="object-contain w-48 md:w-[280px] h-auto"
                   />
                 </div>
                 <div className="text-center mb-4">
                   <p className="text-sm text-gray-500">De <span className="line-through">R$ 299,00</span> por apenas:</p>
                   <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
-                    <span className="text-xl font-semibold text-green-800">,33</span>
+                    <span className="text-xl md:text-2xl font-semibold text-green-800">12x</span>
+                    <span className="text-4xl md:text-6xl font-bold text-green-800">25</span>
+                    <span className="text-xl md:text-2xl font-semibold text-green-800">,33</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Parcelamento sem juros</p>
                   <div className="mt-2">
@@ -736,7 +744,7 @@ export default function ReMarketingPage() {
                 </div>
                 <Link
                   href="https://full.sale/eMbtHp?src=rmkt"
-                  className="block w-full bg-green-700 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group"
+                  className="block w-full bg-green-700 text-white font-bold py-4 md:py-6 text-lg md:text-xl rounded-lg hover:bg-green-600 transition-all text-center shadow-lg relative overflow-hidden group hover:animate-[vibrate_0.1s_ease-in-out_infinite]"
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                   <span className="relative">COMPRAR AGORA</span>
