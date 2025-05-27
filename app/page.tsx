@@ -127,9 +127,9 @@ export default function LandingPage() {
             <div className="flex justify-end items-center">
               <button
                 onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-[1.1rem] md:px-7 py-[0.6rem] md:py-3 text-[0.95rem] md:text-[1.1rem] font-semibold text-white hover:bg-green-500 transition-all shadow-sm"
+                className="inline-flex items-center justify-center rounded-[12px] bg-[#4CAF50] px-6 py-2.5 text-[1rem] font-medium text-white hover:bg-[#45A049] transition-all"
               >
-                COMPRAR
+                Comprar Agora
               </button>
             </div>
           </div>

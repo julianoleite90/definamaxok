@@ -1,11 +1,19 @@
 User-agent: *
 Allow: /
-
-# Permitir acesso a todas as páginas importantes
-Allow: /perguntas-frequentes
+Allow: /produto
 Allow: /avaliacao
-Allow: /termos-garantia
+Allow: /perguntas-frequentes
 Allow: /termos
-Allow: /privacidade
+Allow: /reviews
+Allow: /remarketing
+
+Disallow: /admin/
+Disallow: /obrigado/
+Disallow: /rmkt/
+Disallow: /rmkt2/
+Disallow: /final-2/
 
 Sitemap: https://www.definamaxoficial.com/sitemap.xml
+
+# Crawl-delay: 10
+Host: https://www.definamaxoficial.com

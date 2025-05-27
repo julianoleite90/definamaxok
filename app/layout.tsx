@@ -8,27 +8,43 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.definamaxoficial.com'),
-  title: 'Definamax - Emagrecedor Natural',
-  description: 'Emagreça de forma natural e saudável com Definamax. Resultados comprovados em milhares de pessoas.',
-  keywords: 'definamax, emagrecedor natural, perda de peso, metabolismo, compulsão alimentar',
+  title: 'Definamax - Site Oficial | Emagrecedor Natural',
+  description: 'Emagreça até 10kg em 30 dias com Definamax, o emagrecedor natural mais vendido do Brasil. ✓ 100% Natural ✓ Envio Imediato ✓ Resultados Garantidos ✓ Frete Grátis',
+  keywords: 'definamax, emagrecedor natural, perda de peso, metabolismo, compulsão alimentar, emagrecer, perder peso, gordura localizada',
+  alternates: {
+    canonical: 'https://www.definamaxoficial.com'
+  },
   openGraph: {
-    title: 'Definamax - Emagrecedor Natural',
-    description: 'Emagreça de forma natural e saudável com Definamax. Resultados comprovados em milhares de pessoas.',
+    title: 'Definamax - Site Oficial | Emagrecedor Natural',
+    description: 'Emagreça até 10kg em 30 dias com Definamax, o emagrecedor natural mais vendido do Brasil. ✓ 100% Natural ✓ Envio Imediato ✓ Resultados Garantidos ✓ Frete Grátis',
+    url: 'https://www.definamaxoficial.com',
+    siteName: 'Definamax Oficial',
     type: 'website',
+    locale: 'pt_BR',
     images: [
       {
         url: '/opengraph-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Definamax - Emagrecedor Natural'
+        alt: 'Definamax - Emagrecedor Natural',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/mockup2.png',
+        width: 800,
+        height: 600,
+        alt: 'Frasco Definamax',
+        type: 'image/png',
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Definamax - Emagrecedor Natural | Resultados em 30 Dias',
-    description: 'Definamax é um suplemento 100% natural que ajuda no emagrecimento saudável. Reduza a compulsão alimentar, acelere o metabolismo e perca peso de forma eficaz.',
+    title: 'Definamax - Site Oficial | Resultados em 30 Dias',
+    description: 'Emagreça até 10kg em 30 dias com Definamax. ✓ 100% Natural ✓ Envio Imediato ✓ Resultados Garantidos ✓ Frete Grátis',
     images: ['/opengraph-image.jpg'],
+    creator: '@definamax',
+    site: '@definamax'
   },
   robots: {
     index: true,
@@ -44,6 +60,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'seu-codigo-de-verificacao',
   },
+  other: {
+    'msapplication-TileColor': '#10b981',
+    'theme-color': '#10b981',
+  }
 }
 
 // Schema.org markup para Rich Snippets
@@ -51,8 +71,11 @@ const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'Definamax',
-  description: 'Suplemento natural para emagrecimento saudável',
-  image: 'https://www.definamaxoficial.com/mockup2.png',
+  description: 'Suplemento natural para emagrecimento saudável e eficaz',
+  image: [
+    'https://www.definamaxoficial.com/mockup2.png',
+    'https://www.definamaxoficial.com/opengraph-image.jpg'
+  ],
   brand: {
     '@type': 'Brand',
     name: 'Definamax'
@@ -63,16 +86,80 @@ const productSchema = {
     highPrice: '479.40',
     priceCurrency: 'BRL',
     availability: 'https://schema.org/InStock',
+    offerCount: '3',
     seller: {
       '@type': 'Organization',
       name: 'Definamax'
-    }
+    },
+    priceValidUntil: '2025-12-31'
   },
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.9',
+    bestRating: '5',
+    worstRating: '1',
     reviewCount: '3842'
+  },
+  review: [
+    {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5'
+      },
+      author: {
+        '@type': 'Person',
+        name: 'Mariana C.'
+      },
+      datePublished: '2025-05-05',
+      reviewBody: 'Perdi 8kg em 2 meses com o Definamax. Realmente funciona!'
+    },
+    {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5'
+      },
+      author: {
+        '@type': 'Person',
+        name: 'Lucas M.'
+      },
+      datePublished: '2025-04-28',
+      reviewBody: 'Em 3 meses, perdi 9kg e agora consigo jogar uma pelada sem passar vergonha.'
+    }
+  ]
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Definamax',
+  url: 'https://www.definamaxoficial.com',
+  logo: 'https://www.definamaxoficial.com/logo2.png',
+  sameAs: [
+    'https://www.instagram.com/definamax',
+    'https://www.facebook.com/definamax'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+55-41-98454-9172',
+    contactType: 'customer service',
+    areaServed: 'BR',
+    availableLanguage: 'Portuguese'
   }
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{
+    '@type': 'ListItem',
+    position: 1,
+    name: 'Home',
+    item: 'https://www.definamaxoficial.com'
+  }]
 }
 
 export default function RootLayout({
@@ -86,6 +173,13 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <link rel="canonical" href="https://www.definamaxoficial.com" />
         
+        {/* Favicon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#10b981" />
+        
         {/* Preconnect to required origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -94,6 +188,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
 
         {/* Google Analytics */}
