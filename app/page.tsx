@@ -1067,10 +1067,10 @@ export default function LandingPage() {
                       />
                     </div>
                     <div className="bg-gradient-to-r from-green-100 to-white rounded-b-[24px] p-4 border-x border-b border-green-100 shadow-sm">
-                      <p className="text-lg md:text-xl font-bold text-white text-left relative inline-block px-3 py-1">
+                      <p className="text-lg md:text-xl font-bold text-green-800 text-left relative inline-block px-3 py-1">
                         30 DIAS DE GARANTIA
-                        <span className="absolute inset-0 bg-gradient-to-r from-green-700 via-green-600 to-green-500 rounded-lg -z-10"></span>
-                        <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gradient-to-r from-green-800 via-green-600 to-green-500 -z-10"></span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-green-200 via-green-100 to-transparent rounded-lg -z-10"></span>
+                        <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gradient-to-r from-green-600 via-green-500 to-green-400 -z-10"></span>
                       </p>
                     </div>
                   </div>
@@ -1327,36 +1327,50 @@ export default function LandingPage() {
                         helpful: 134
                       }
                     ].map((review, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 md:pb-8">
-                        <div className="flex items-start gap-3 md:gap-4">
-                          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0">
-                            <Image
-                              src={review.image}
-                              alt={review.name}
-                              width={48}
-                              height={48}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-base md:text-lg font-semibold text-gray-800">{review.name}</h3>
-                            <div className="flex items-center gap-2 mb-1 md:mb-2">
-                              <div className="flex">
-                                {[1, 2, 3, 4, 5].map((star) => (
-                                  <Star key={star} className="h-3 w-3 md:h-4 md:w-4 text-yellow-400 fill-yellow-400" />
-                                ))}
+                      <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                        <div className="p-6">
+                          <div className="flex items-start gap-4">
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-green-100">
+                              <Image
+                                src={review.image}
+                                alt={review.name}
+                                width={56}
+                                height={56}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center justify-between">
+                                <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
+                                {review.verified && (
+                                  <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-full">
+                                    <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                                    <span className="text-xs text-green-700 font-medium">Verificado</span>
+                                  </div>
+                                )}
                               </div>
-                              <span className="text-xs md:text-sm font-medium">{review.title}</span>
+                              <div className="mt-1">
+                                <div className="flex items-center gap-2">
+                                  <div className="flex">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                      <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                    ))}
+                                  </div>
+                                  <span className="text-sm text-gray-500">•</span>
+                                  <span className="text-sm text-gray-500">{review.date}</span>
+                                </div>
+                              </div>
                             </div>
-                            <div className="text-xs md:text-sm text-gray-500 mb-2 md:mb-3">
-                              Avaliado em {review.date}
-                              {review.verified && (
-                                <span className="ml-2 text-green-600 font-medium">• Cliente Verificado</span>
-                              )}
-                            </div>
-                            <div className="prose prose-sm max-w-none text-gray-600">
-                              <p className="text-sm md:text-base">{review.text}</p>
-                            </div>
+                          </div>
+                          <div className="mt-4">
+                            <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
+                            <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
+                          </div>
+                        </div>
+                        <div className="bg-gray-50 px-6 py-3 border-t border-gray-100">
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <ThumbsUp className="h-4 w-4" />
+                            <span>{review.helpful} pessoas acharam útil</span>
                           </div>
                         </div>
                       </div>
@@ -1366,13 +1380,22 @@ export default function LandingPage() {
               </div>
 
               {/* Botão Ver Mais */}
-              <div className="flex justify-center mt-8">
-                            <button
-              onClick={() => setShowMoreReviews(!showMoreReviews)}
-              className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
-            >
-              {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-              <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
+                            <div className="flex justify-center mt-8">
+                <button
+                onClick={() => {
+                  setShowMoreReviews(!showMoreReviews);
+                  // Se estiver fechando os reviews, scroll suave para o topo da seção
+                  if (showMoreReviews) {
+                    const reviewsSection = document.querySelector('section:has(.text-3xl:contains("Avaliações dos clientes"))');
+                    if (reviewsSection) {
+                      reviewsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
+                className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
+              >
+                {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
+                <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
                 </button>
               </div>
             </div>
