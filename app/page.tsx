@@ -1057,7 +1057,7 @@ export default function LandingPage() {
               <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center gap-8 p-6 md:p-12">
                 {/* Coluna da Esquerda - Imagem */}
                                   <div className="w-full max-w-md mx-auto md:max-w-none">
-                    <div className="bg-green-600 rounded-t-[24px] p-4">
+                    <div className="bg-white rounded-t-[24px] p-4">
                       <Image
                         src="/mockup2.png"
                         alt="Definamax Garantia"
@@ -1066,14 +1066,18 @@ export default function LandingPage() {
                         className="w-full h-auto object-contain max-h-[400px]"
                       />
                     </div>
-                    <div className="bg-white rounded-b-[24px] p-4 border-x border-b border-green-100 shadow-sm">
-                      <p className="text-lg md:text-xl font-bold text-green-600 text-left md:text-center">30 DIAS DE GARANTIA</p>
+                    <div className="bg-gradient-to-r from-green-100 to-white rounded-b-[24px] p-4 border-x border-b border-green-100 shadow-sm">
+                      <p className="text-lg md:text-xl font-bold text-white text-left relative inline-block px-3 py-1">
+                        30 DIAS DE GARANTIA
+                        <span className="absolute inset-0 bg-gradient-to-r from-green-700 via-green-600 to-green-500 rounded-lg -z-10"></span>
+                        <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gradient-to-r from-green-800 via-green-600 to-green-500 -z-10"></span>
+                      </p>
                     </div>
                   </div>
 
                 {/* Coluna da Direita - Texto */}
                 <div className="flex flex-col gap-4 md:gap-6">
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 text-left">
                     <div className="flex items-center gap-2">
                       <Image
                         src="/logo2.png"
@@ -1088,15 +1092,15 @@ export default function LandingPage() {
                     <h3 className="text-lg md:text-2xl font-bold text-gray-800">GARANTIA DE RESULTADOS</h3>
                   </div>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-left">
                     Investir no <span className="font-semibold">Definamax</span> é uma decisão importante para transformar sua saúde, por isso, asseguramos que nosso produto é <span className="font-semibold">desenvolvido com os mais rigorosos padrões de qualidade</span>.
                   </p>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-left">
                     Temos total confiança na eficácia do <span className="font-semibold">Definamax</span>, e por isso oferecemos uma <span className="font-semibold">garantia de 30 dias</span>.
                   </p>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-left">
                     Se você não perceber resultados visíveis na sua jornada de emagrecimento, devolveremos seu dinheiro de forma simples e rápida, sem burocracia.
                   </p>
 
@@ -1108,12 +1112,12 @@ export default function LandingPage() {
                             window.scrollBy(0, -20); // Slight offset to ensure better visibility
                           }
                         }}
-                        className="w-full md:w-auto whitespace-nowrap bg-green-600 hover:bg-green-500 text-white font-bold text-lg md:text-xl py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 relative overflow-hidden group"
+                        className="w-full md:w-auto whitespace-nowrap bg-green-600 hover:bg-green-500 text-white font-bold text-base md:text-xl py-3 md:py-4 px-6 md:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 relative overflow-hidden group"
                       >
                         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                         <span className="relative flex items-center justify-center gap-2">
                           QUERO EMAGRECER AGORA!
-                          <ArrowRight className="w-5 h-5 animate-pulse" />
+                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 animate-pulse" />
                         </span>
                       </button>
                     </div>
