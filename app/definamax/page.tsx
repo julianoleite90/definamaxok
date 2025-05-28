@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown, Gift } from "lucide-react"
+import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown, Gift, ShoppingCart, ThumbsUp } from "lucide-react"
 
 // Adicione isso após os imports
 const pulseAnimation = `
@@ -110,14 +110,14 @@ export default function LandingPage() {
         href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:bg-[#20BD5A] transition-all transform ${
-          showWhatsApp ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+        className={`fixed md:bottom-6 bottom-4 md:right-6 right-4 z-[9999] flex items-center justify-center w-[60px] h-[60px] md:w-[65px] md:h-[65px] bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 ${
+          showWhatsApp ? 'translate-y-0 opacity-100 visible' : 'translate-y-[200%] opacity-0 invisible'
         }`}
       >
-        <div className="relative">
+        <div className="relative flex items-center justify-center">
           {/* Indicador de Status */}
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 border-2 border-white rounded-full animate-pulse"></span>
-          <MessageCircle className="h-7 w-7 text-white" />
+          <span className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-red-500 border-2 border-white rounded-full animate-pulse"></span>
+          <MessageCircle className="h-8 w-8 md:h-9 md:w-9 text-white" />
         </div>
       </a>
 
@@ -231,17 +231,15 @@ export default function LandingPage() {
 
               {/* CTA Principal */}
               <div className="flex flex-col items-center md:items-start w-full mt-2 md:mt-0">
-                <div className="w-full md:w-[320px] flex justify-center">
-                  <div className="relative group md:translate-x-0 translate-x-[3%] w-[110%] md:w-full">
+                <div className="w-full md:w-auto flex justify-center translate-x-[5%] md:translate-x-0">
+                  <div className="relative group w-full md:w-auto">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <button
                       onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-                      className="relative w-full inline-flex items-center justify-center rounded-lg bg-green-600 px-4 md:px-6 py-4 text-[1.1em] md:text-xl font-bold text-white hover:bg-green-500 transition-all shadow-lg text-center"
+                      className="relative w-full md:w-auto whitespace-nowrap inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-[17px] md:text-lg font-bold text-white hover:bg-green-500 transition-all shadow-lg"
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                      <span className="flex items-center justify-center">
-                        QUERO EMAGRECER AGORA! <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
-                      </span>
+                      QUERO EMAGRECER AGORA!
                     </button>
                   </div>
                 </div>
@@ -345,10 +343,10 @@ export default function LandingPage() {
                   });
                 }, 0);
               }}
-              className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
+              className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
             >
               {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-              <ChevronDown className={`h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-y-0.5 ${showMoreReviews ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
             </button>
           </div>
         </div>
@@ -370,26 +368,26 @@ export default function LandingPage() {
             <div className="relative w-full md:-mr-12">
               {/* Desktop Video */}
               <div className="hidden md:block relative w-full h-[600px] overflow-hidden">
-                <iframe
-                  src="https://player.vimeo.com/video/1087563650?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                  className="absolute top-0 left-0 w-full h-full rounded-[20px] border border-green-100/30"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  title="Como o Definamax funciona - Desktop"
-                ></iframe>
+                  <iframe
+                    src="https://player.vimeo.com/video/1087563650?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    className="absolute top-0 left-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    title="Como o Definamax funciona - Desktop"
+                  ></iframe>
               </div>
               
               {/* Mobile Video */}
               <div className="md:hidden relative w-full aspect-video">
-                <iframe
-                  src="https://player.vimeo.com/video/1087563177?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                  className="absolute top-0 left-0 w-full h-full rounded-[16px] border border-green-100/30"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  title="Como o Definamax funciona - Mobile"
-                ></iframe>
+                  <iframe
+                    src="https://player.vimeo.com/video/1087563177?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    className="absolute top-0 left-0 w-full h-full border border-green-100 rounded-lg"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    title="Como o Definamax funciona - Mobile"
+                  ></iframe>
               </div>
             </div>
 
@@ -761,326 +759,377 @@ export default function LandingPage() {
 
           {/* Botão Ver Mais */}
           <div className="flex justify-center mt-8">
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                setShowMoreDeliveries(!showMoreDeliveries);
-                // Pequeno delay para garantir que o conteúdo foi renderizado
-                setTimeout(() => {
-                  window.scrollTo({
-                    top: window.scrollY,
-                    behavior: 'instant'
-                  });
-                }, 0);
-              }}
-              className="group inline-flex items-center justify-center px-5 py-2.5 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 gap-2 bg-white rounded-full shadow hover:shadow-md transition-all duration-200"
-            >
-              {showMoreDeliveries ? "Ver menos entregas" : "Ver mais entregas"}
-              <ChevronDown className={`h-4 w-4 transition-transform group-hover:translate-y-0.5 ${showMoreDeliveries ? "rotate-180" : ""}`} />
+                          <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowMoreDeliveries(!showMoreDeliveries);
+                  // Pequeno delay para garantir que o conteúdo foi renderizado
+                  setTimeout(() => {
+                    window.scrollTo({
+                      top: window.scrollY,
+                      behavior: 'instant'
+                    });
+                  }, 0);
+                }}
+                className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
+              >
+                {showMoreDeliveries ? "Ver menos entregas" : "Ver mais entregas"}
+                <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreDeliveries ? "rotate-180" : ""}`} />
             </button>
           </div>
         </div>
       </section>
 
       {/* Seção de Kits */}
-      <section className="w-full py-16 bg-gradient-to-b from-white to-green-50">
+      <section className="w-full py-16 relative bg-green-50">
+        <div className="absolute inset-0 bg-[radial-gradient(100%_100%_at_50%_0%,#4ade8025_0,transparent_50%)]"></div>
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-6">
-              Escolha o kit ideal para <span className="text-green-600 relative inline-block">
-                acelerar
-                <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
-                <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
-              </span> o seu processo de <span className="text-green-700">emagrecimento</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">
+              Seu corpo dos sonhos com{" "}
+              <span className="relative inline-block">
+                <span className="absolute inset-0 bg-[#E8F5E9] transform -rotate-1 rounded-2xl"></span>
+                <span className="relative text-green-800">Definamax!</span>
+              </span>
             </h2>
-            <p className="text-gray-600 text-base md:text-lg mt-4 md:mt-0">
-              Para melhores resultados recomendados o tratamento de 3 a 6 meses
-            </p>
-          </div>
-
-          <div ref={kitsRef} className="grid md:grid-cols-3 gap-4 md:gap-8">
-            {/* Kit Completo */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
-              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                <h3 className="text-lg md:text-xl font-bold">Kit Completo</h3>
-                <p className="text-sm text-white/90">6 meses de tratamento</p>
-              </div>
-              <div className="p-3 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-6">
-                  <Image
-                    src="/6frascos.png"
-                    alt="Kit Completo Definamax"
-                    width={220}
-                    height={220}
-                    className="object-contain w-48 md:w-[240px]"
-                  />
-                </div>
-                <div className="text-center mb-3">
-                  <p className="text-base text-gray-500">De <span className="line-through">R$ 1497,00</span> por:</p>
-                  <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">39</span>
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">,91</span>
-                  </div>
-                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
-                  <div className="mt-1 text-base font-medium text-gray-700">
-                    ou R$ 479,00 à vista
-                  </div>
-                  <div className="mt-2">
-                    <span className="inline-block bg-green-50 text-green-700 text-sm font-medium px-2.5 py-1 rounded-full">
-                      10% de desconto no PIX
-                    </span>
-                  </div>
-                </div>
-                                  {/* Seção de Brindes */}
-                  <div className="bg-green-50 rounded-xl p-4 mb-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Gift className="h-6 w-6 text-green-600" />
-                      <span className="text-base font-semibold text-green-800">Você ganha:</span>
-                    </div>
-                    <ul className="space-y-2">
-                                          <li className="flex items-start gap-2">
-                        <Gift className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-green-700">2 Frascos de colágeno para combater a flacidez pós emagrecimento</span>
-                      </li>
-                    <li className="flex items-start gap-2">
-                      <Gift className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-green-700">Programa emagrecimento acelerado GRÁTIS</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <Link
-                  href="https://full.sale/ytA47b?src=adv2"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                >
-                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                  <span className="relative">COMPRAR AGORA</span>
-                </Link>
-                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete grátis para todo Brasil</p>
-              </div>
-            </div>
-
-            {/* Kit Recomendado */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100 md:scale-105">
-              <div className="absolute -top-px left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600"></div>
-              <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white p-3 md:p-5 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                                    <h3 className="text-lg md:text-xl font-bold">Kit Mais Vendido</h3>
-                    <p className="text-sm text-white/90">3 meses de tratamento</p>
-              </div>
-              <div className="p-3 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-6">
-                  <Image
-                    src="/3frascos.png"
-                    alt="Kit Recomendado Definamax"
-                    width={220}
-                    height={220}
-                    className="object-contain w-48 md:w-64 h-auto"
-                  />
-                </div>
-                <div className="text-center mb-3">
-                  <p className="text-base text-gray-500">De <span className="line-through">R$ 758,00</span> por:</p>
-                  <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">,58</span>
-                  </div>
-                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
-                  <div className="mt-1 text-base font-medium text-gray-700">
-                    ou R$ 379,00 à vista
-                  </div>
-                  <div className="mt-2">
-                    <span className="inline-block bg-emerald-50 text-emerald-700 text-sm font-medium px-2.5 py-1 rounded-full">
-                      10% de desconto no PIX
-                    </span>
-                  </div>
-                </div>
-                                  {/* Seção de Brindes */}
-                <div className="bg-emerald-50 rounded-xl p-4 mb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Gift className="h-6 w-6 text-emerald-600" />
-                    <span className="text-base font-semibold text-emerald-800">Você ganha:</span>
-                  </div>
-                  <ul className="space-y-2">
-                                          <li className="flex items-start gap-2">
-                      <Gift className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-emerald-700">1 Frasco de colágeno para combater a flacidez pós emagrecimento</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Gift className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-emerald-700">Programa emagrecimento acelerado GRÁTIS</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <Link
-                  href="https://full.sale/DmNQj1?src=adv2"
-                  className="block w-full bg-emerald-500 text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-emerald-600 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                >
-                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                  <span className="relative">COMPRAR AGORA</span>
-                </Link>
-                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete grátis para todo Brasil</p>
-              </div>
-            </div>
-
-            {/* Kit Inicial */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
-              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                <h3 className="text-lg md:text-xl font-bold">Kit Inicial</h3>
-                <p className="text-sm text-white/90">30 dias de tratamento</p>
-              </div>
-              <div className="p-3 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-6">
-                  <Image
-                    src="/1frasco.png"
-                    alt="Kit Inicial Definamax"
-                    width={220}
-                    height={220}
-                    className="object-contain w-48 md:w-64 h-auto"
-                  />
-                </div>
-                <div className="text-center mb-3">
-                  <p className="text-base text-gray-500">De <span className="line-through">R$ 299,00</span> por:</p>
-                  <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">,33</span>
-                  </div>
-                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
-                  <div className="mt-1 text-base font-medium text-gray-700">
-                    ou R$ 279,00 à vista
-                  </div>
-                  <div className="mt-2">
-                    <span className="inline-block bg-green-50 text-green-700 text-sm font-medium px-2.5 py-1 rounded-full">
-                      10% de desconto no PIX
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="space-y-2 md:space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-sm text-green-600 font-medium">1 Mês de tratamento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-sm text-green-600 font-medium">Envio imediato</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="h-5 w-5 md:h-5 md:w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-sm text-gray-400">Sem bônus adicionais</span>
-                  </li>
-                </ul>
-                
-                <Link
-                      href="https://full.sale/eMbtHp?src=adv2"
-                      className="block w-full bg-green-600 text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-green-700 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                    >
-                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                  <span className="relative">COMPRAR AGORA</span>
-                </Link>
-                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete fixo R$ 25,00</p>
+            <div className="flex flex-col items-center justify-center gap-2">
+              <div className="max-w-3xl mx-auto px-4 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 my-4">
+                <p className="text-gray-700 text-lg md:text-xl">
+                  Restam poucos frascos com FRETE GRÁTIS no dia de hoje:{" "}
+                  <span className="text-red-600 font-bold">27/05/2025</span>
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Bandeiras de Cartão e Parcelamento */}
-          <div className="mt-12 flex flex-col items-center justify-center gap-6 bg-white rounded-2xl shadow-sm py-8 px-8 mx-auto max-w-3xl">
-            <div className="text-center">
-              <p className="text-lg font-semibold text-gray-800 mb-2">Pagamento 100% Seguro</p>
-              <p className="text-gray-600">Parcele em até 12x sem juros no cartão</p>
+          <div ref={kitsRef} className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-20 gap-x-0 max-w-5xl mx-auto px-4 mt-4">
+            {/* Kit 8 Frascos */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 5 LEVE 8 FRASCOS</h3>
+                <p className="text-[1.0675rem]">GANHE 2 FRASCOS DE COLÁGENO</p>
+              </div>
+              
+              <div className="bg-[#E8F5E9] py-1.5 text-center">
+                <p className="text-xl font-medium text-[#1B8E3D]">Tratamento Completo</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/8frascos.png"
+                    alt="Kit 8 Meses"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$1.079,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-green-700 text-5xl font-bold">R$45<span className="text-[70%]">,08</span></p>
+                  <p className="text-base font-medium">Ou R$449,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href={addUtmToUrl("https://full.sale/XONObQ")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+
+
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <Image
-                src="/master.png"
-                alt="Mastercard"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/visa.png"
-                alt="Visa"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/hiper.png"
-                alt="Hipercard"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/pix.png"
-                alt="PIX"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
+
+            {/* Kit 5 Frascos - Aplicar as mesmas alterações */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border-2 border-yellow-500 max-w-[460px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-yellow-500 p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 3 LEVE 5 FRASCOS</h3>
+                <p className="text-[1.0675rem]">GANHE 1 FRASCO DE COLÁGENO</p>
+              </div>
+              
+              <div className="bg-yellow-50 py-1.5 text-center">
+                <p className="text-xl font-medium text-yellow-600">Tratamento Mais Vendido</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/5frascos.png"
+                    alt="Kit 5 Meses"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$879,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-yellow-600 text-5xl font-bold">R$38<span className="text-[70%]">,05</span></p>
+                  <p className="text-base font-medium">Ou R$379,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href={addUtmToUrl("https://full.sale/ytA47b")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 3 Frascos */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 2 LEVE 3 FRASCOS</h3>
+                <p className="text-[1.0675rem]">GANHE ENVIO IMEDIATO</p>
+              </div>
+              
+              <div className="bg-[#E8F5E9] py-1.5 text-center">
+                <p className="text-xl font-medium text-[#1B8E3D]">Tratamento Inicial</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/2frascos.png"
+                    alt="Kit 3 Meses"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$579,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-green-700 text-5xl font-bold">R$28<span className="text-[70%]">,01</span></p>
+                  <p className="text-base font-medium">Ou R$279,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <button
+                    disabled
+                    className="block w-full bg-gray-400 text-white font-bold py-3 text-xl rounded-xl cursor-not-allowed text-center shadow-lg relative overflow-hidden"
+                  >
+                    <span className="relative">ESGOTADO</span>
+                  </button>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 1 Frasco */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">1 FRASCO</h3>
+                <p className="text-[1.0675rem]">GANHE ENVIO IMEDIATO</p>
+              </div>
+              
+              <div className="bg-[#E8F5E9] py-1.5 text-center">
+                <p className="text-xl font-medium text-[#1B8E3D]">Experimente</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/1fraso.png"
+                    alt="Kit 1 Mês"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$279,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-green-700 text-5xl font-bold">R$19<span className="text-[70%]">,78</span></p>
+                  <p className="text-base font-medium">Ou R$197,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href={addUtmToUrl("https://full.sale/eMbtHp")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-
+          {/* Alerta de Estoque Limitado */}
+          <div className="mt-12 mb-16 max-w-2xl mx-auto px-4">
+            <div className="bg-white rounded-[20px] shadow-lg p-5 flex items-center gap-3 relative text-center border border-red-100"
+                 style={{
+                   boxShadow: '0 4px 0 rgb(239 68 68 / 0.2)',
+                 }}>
+              <div className="flex items-start md:items-center md:justify-center w-full gap-2">
+                <div className="w-8 h-8 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center border-2 border-red-500">
+                  <span className="text-red-600 text-xl font-bold">!</span>
+                </div>
+                <div className="text-left md:text-center">
+                  <h3 className="text-red-600 text-lg md:text-xl font-bold">*Estoques limitados, não espere!</h3>
+                  <p className="text-gray-600 text-base">Garanta seu kit agora antes que acabe!</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Seção de Garantia */}
-          <div className="max-w-4xl mx-auto mb-16 px-4">
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg overflow-hidden border border-green-100">
-              <div className="grid md:grid-cols-5 items-center gap-8 p-8 md:p-12">
-                {/* Coluna da Esquerda - Texto */}
-                <div className="md:col-span-3">
-                  <div className="flex items-center gap-3 mb-6">
-                    <ShieldCheck className="h-8 w-8 text-green-600" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Garantia Incondicional de 30 Dias</h2>
+          <div className="max-w-5xl mx-auto mb-16 px-4 mt-16">
+            <div className="bg-gradient-to-br from-green-50/80 to-white rounded-[32px] shadow-lg overflow-hidden border border-green-100">
+              <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center gap-8 p-6 md:p-12">
+                {/* Coluna da Esquerda - Imagem */}
+                                  <div className="w-full max-w-md mx-auto md:max-w-none">
+                    <div className="bg-green-600 rounded-t-[24px] p-4">
+                      <Image
+                        src="/mockup2.png"
+                        alt="Definamax Garantia"
+                        width={500}
+                        height={500}
+                        className="w-full h-auto object-contain max-h-[400px]"
+                      />
+                    </div>
+                    <div className="bg-white rounded-b-[24px] p-4 border-x border-b border-green-100 shadow-sm">
+                      <p className="text-lg md:text-xl font-bold text-green-600 text-left md:text-center">30 DIAS DE GARANTIA</p>
+                    </div>
                   </div>
-                  
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <span className="font-medium text-gray-800 block mb-1">Teste Sem Compromisso</span>
-                        <span className="text-gray-600">Use o Definamax por 30 dias e comprove os resultados</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <span className="font-medium text-gray-800 block mb-1">Devolução Integral</span>
-                        <span className="text-gray-600">Receba 100% do seu dinheiro de volta se não estiver satisfeito</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <span className="font-medium text-gray-800 block mb-1">Processo Simples</span>
-                        <span className="text-gray-600">Sem burocracia ou questionamentos na hora do reembolso</span>
-                      </div>
-                    </li>
-                  </ul>
 
-                                <button
-                onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="w-full md:w-auto inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-md hover:shadow-lg"
-              >
-                EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
-                </div>
+                {/* Coluna da Direita - Texto */}
+                <div className="flex flex-col gap-4 md:gap-6">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/logo2.png"
+                        alt="Garantia"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6 object-contain"
+                      />
+                      <span className="text-green-600 font-medium">Garantia</span>
+                    </div>
+                    <h2 className="text-2xl md:text-4xl font-bold text-green-600">30 DIAS DE GARANTIA</h2>
+                    <h3 className="text-lg md:text-2xl font-bold text-gray-800">GARANTIA DE RESULTADOS</h3>
+                  </div>
 
-                {/* Coluna da Direita - Selo */}
-                <div className="relative md:col-span-2 flex justify-center items-center">
-                  <div className="relative w-48 h-48 md:w-64 md:h-64">
-                    <div className="absolute inset-0 bg-white rounded-full shadow-xl"></div>
-                    <div className="absolute inset-[2px] bg-gradient-to-br from-green-50 to-white rounded-full border-2 border-green-100 flex items-center justify-center">
-                      <div className="text-center transform">
-                        <ShieldCheck className="h-16 w-16 md:h-20 md:w-20 text-green-600 mx-auto mb-2" />
-                        <p className="text-3xl md:text-4xl font-black text-green-800 leading-none mb-1">30 DIAS</p>
-                        <p className="text-sm md:text-base font-bold text-green-600 uppercase tracking-wider">Garantia Total</p>
-                      </div>
+                  <p className="text-gray-600">
+                    Investir no <span className="font-semibold">Definamax</span> é uma decisão importante para transformar sua saúde, por isso, asseguramos que nosso produto é <span className="font-semibold">desenvolvido com os mais rigorosos padrões de qualidade</span>.
+                  </p>
+
+                  <p className="text-gray-600">
+                    Temos total confiança na eficácia do <span className="font-semibold">Definamax</span>, e por isso oferecemos uma <span className="font-semibold">garantia de 30 dias</span>.
+                  </p>
+
+                  <p className="text-gray-600">
+                    Se você não perceber resultados visíveis na sua jornada de emagrecimento, devolveremos seu dinheiro de forma simples e rápida, sem burocracia.
+                  </p>
+
+                                      <div className="flex justify-center">
+                      <button
+                        onClick={() => {
+                          if (kitsRef && kitsRef.current) {
+                            kitsRef.current.scrollIntoView({ behavior: "smooth" });
+                            window.scrollBy(0, -20); // Slight offset to ensure better visibility
+                          }
+                        }}
+                        className="w-full md:w-auto whitespace-nowrap bg-green-600 hover:bg-green-500 text-white font-bold text-lg md:text-xl py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 relative overflow-hidden group"
+                      >
+                        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                        <span className="relative flex items-center justify-center gap-2">
+                          QUERO EMAGRECER AGORA!
+                          <ArrowRight className="w-5 h-5 animate-pulse" />
+                        </span>
+                      </button>
+                    </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                    <div className="flex items-center gap-2 justify-center md:justify-start">
+                      <ShieldCheck className="h-5 w-5 text-green-600" />
+                      <span className="text-sm text-gray-600">Compra Segura</span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-center md:justify-start">
+                      <ThumbsUp className="h-5 w-5 text-green-600" />
+                      <span className="text-sm text-gray-600">Satisfação Garantida</span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-center md:justify-start">
+                      <Lock className="h-5 w-5 text-green-600" />
+                      <span className="text-sm text-gray-600">Privacidade Protegida</span>
                     </div>
                   </div>
                 </div>
@@ -1089,8 +1138,8 @@ export default function LandingPage() {
           </div>
 
           {/* Seção de Reviews */}
-          <section className="w-full py-16 bg-gradient-to-b from-green-50 to-white">
-            <div className="mx-auto max-w-6xl px-4">
+          <section className="w-full py-16 bg-white">
+            <div className="relative mx-auto max-w-6xl px-4">
               <div className="text-center mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                   Avaliações dos clientes
@@ -1184,36 +1233,50 @@ export default function LandingPage() {
                     helpful: 89
                   }
                 ].map((review, index) => (
-                  <div key={index} className="border-b border-gray-200 pb-6 md:pb-8">
-                    <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0">
-                        <Image
-                          src={review.image}
-                          alt={review.name}
-                          width={48}
-                          height={48}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-base md:text-lg font-semibold text-gray-800">{review.name}</h3>
-                        <div className="flex items-center gap-2 mb-1 md:mb-2">
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <Star key={star} className="h-3 w-3 md:h-4 md:w-4 text-yellow-400 fill-yellow-400" />
-                            ))}
+                  <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                    <div className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-green-100">
+                          <Image
+                            src={review.image}
+                            alt={review.name}
+                            width={56}
+                            height={56}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
+                            {review.verified && (
+                              <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-full">
+                                <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                                <span className="text-xs text-green-700 font-medium">Verificado</span>
+                              </div>
+                            )}
                           </div>
-                          <span className="text-xs md:text-sm font-medium">{review.title}</span>
+                          <div className="mt-1">
+                            <div className="flex items-center gap-2">
+                              <div className="flex">
+                                {[1, 2, 3, 4, 5].map((star) => (
+                                  <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                ))}
+                              </div>
+                              <span className="text-sm text-gray-500">•</span>
+                              <span className="text-sm text-gray-500">{review.date}</span>
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-xs md:text-sm text-gray-500 mb-2 md:mb-3">
-                          Avaliado em {review.date}
-                          {review.verified && (
-                            <span className="ml-2 text-green-600 font-medium">• Cliente Verificado</span>
-                          )}
-                        </div>
-                        <div className="prose prose-sm max-w-none text-gray-600">
-                          <p className="text-sm md:text-base">{review.text}</p>
-                        </div>
+                      </div>
+                      <div className="mt-4">
+                        <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
+                        <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
+                      </div>
+                    </div>
+                    <div className="bg-gray-50 px-6 py-3 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <ThumbsUp className="h-4 w-4" />
+                        <span>{review.helpful} pessoas acharam útil</span>
                       </div>
                     </div>
                   </div>
@@ -1300,12 +1363,12 @@ export default function LandingPage() {
 
               {/* Botão Ver Mais */}
               <div className="flex justify-center mt-8">
-                <button
-                  onClick={() => setShowMoreReviews(!showMoreReviews)}
-                  className="group inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 gap-1.5 bg-white/50 hover:bg-white rounded-full shadow-sm hover:shadow transition-all duration-200"
-                >
-                  {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-                  <ChevronDown className={`h-4 w-4 transition-transform group-hover:translate-y-0.5 ${showMoreReviews ? "rotate-180" : ""}`} />
+                            <button
+              onClick={() => setShowMoreReviews(!showMoreReviews)}
+              className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
+            >
+              {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
+              <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
                 </button>
               </div>
             </div>
@@ -1352,15 +1415,15 @@ export default function LandingPage() {
                 answer: "O prazo médio de entrega é de 5 a 7 dias úteis para todo Brasil. Após a confirmação do pagamento, você receberá o código de rastreamento para acompanhar sua encomenda."
               }
             ].map((faq, index) => (
-              <div 
+                              <div 
                 key={index} 
-                className="bg-gradient-to-r from-green-50 to-white rounded-xl border border-green-100 overflow-hidden"
+                className="bg-green-50 rounded-xl border border-green-100 overflow-hidden hover:bg-green-100/50 transition-colors"
               >
                 <button
                   onClick={() => toggleFaq(index)}
                   className="w-full p-6 text-left flex items-center justify-between"
                 >
-                  <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold text-green-800">{faq.question}</h3>
                   <ChevronDown 
                     className={`h-5 w-5 text-gray-500 transition-transform ${openFaqs.includes(index) ? 'rotate-180' : ''}`}
                   />
@@ -1372,7 +1435,7 @@ export default function LandingPage() {
                       : 'max-h-0 overflow-hidden opacity-0'
                   }`}
                 >
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-green-700">{faq.answer}</p>
                 </div>
               </div>
             ))}
@@ -1380,15 +1443,17 @@ export default function LandingPage() {
 
           {/* CTA após FAQs */}
           <div className="text-center mt-12">
-                          <button
-              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-500 transition-all shadow-lg hover:shadow-xl"
-            >
-              EXPERIMENTAR SEM RISCOS <ArrowRight className="ml-2 h-5 w-5" />
+                                        <button
+                onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex whitespace-nowrap items-center justify-center rounded-lg bg-green-600 px-6 md:px-[6.6rem] py-4 md:py-[1.32rem] text-base md:text-[1.1rem] font-bold text-white hover:bg-green-500 transition-all shadow-md hover:shadow-lg"
+              >
+                QUERO EMAGRECER AGORA!
             </button>
           </div>
         </div>
       </section>
+
+
 
       {/* Footer */}
       <footer className="w-full bg-green-800">

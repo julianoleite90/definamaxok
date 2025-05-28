@@ -807,7 +807,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-1 md:gap-2">
             {/* Kit Completo */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative">
               <div className="bg-green-600 text-white p-3 md:p-4 text-center">
@@ -863,7 +863,16 @@ export default function LandingPage() {
                     <span className="relative">COMPRAR AGORA</span>
                   </Link>
                 </div>
-                <p className="text-center text-green-600 font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
+                <div className="flex justify-center mt-2">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={200}
+                    height={40}
+                    className="h-auto w-full max-w-[200px]"
+                  />
+                </div>
+                <p className="text-center text-gray-600 font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
 
@@ -922,9 +931,18 @@ export default function LandingPage() {
                     <span className="relative">COMPRAR AGORA</span>
                   </Link>
                 </div>
-                <p className="text-center text-[#CD9B4A] font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
+                <div className="flex justify-center mt-2">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={200}
+                    height={40}
+                    className="h-auto w-full max-w-[200px]"
+                  />
+                </div>
+                <p className="text-center text-gray-600 font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
-              </div>
+            </div>
 
             {/* Kit Inicial */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative">
@@ -981,7 +999,16 @@ export default function LandingPage() {
                     <span className="relative">COMPRAR AGORA</span>
                   </Link>
                 </div>
-                <p className="text-center text-gray-600 font-medium text-sm mt-2">Frete fixo R$ 25,00</p>
+                <div className="flex justify-center mt-2">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={200}
+                    height={40}
+                    className="h-auto w-full max-w-[200px]"
+                  />
+                </div>
+                <p className="text-center text-gray-600 font-medium text-sm mt-2">Frete grátis para todo Brasil</p>
               </div>
             </div>
           </div>

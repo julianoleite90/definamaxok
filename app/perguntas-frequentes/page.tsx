@@ -894,7 +894,7 @@ export default function DefinamaxFAQ() {
 
                     <h3 className="text-lg font-semibold text-green-700 mb-3">Garantias de qualidade do Definamax:</h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid md:grid-cols-3 gap-4 mb-6">
                       <div className="bg-white border border-green-200 rounded-lg p-4">
                         <h4 className="font-semibold text-gray-800 mb-2">Fabricação Certificada</h4>
                         <p className="text-sm">
@@ -989,7 +989,7 @@ export default function DefinamaxFAQ() {
 
                     <h3 className="text-lg font-semibold text-green-700 mb-3">Onde comprar Definamax original:</h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div className="grid md:grid-cols-3 gap-2 mb-8">
                       <div className="bg-green-50 border border-green-200 rounded-lg p-5">
                         <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
                           <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
@@ -1190,7 +1190,7 @@ export default function DefinamaxFAQ() {
 
                     <h3 className="text-lg font-semibold text-green-700 mb-3">Principais pontos positivos:</h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid md:grid-cols-3 gap-4 mb-6">
                       <div className="bg-white border border-green-200 rounded-lg p-4">
                         <h4 className="font-semibold text-gray-800 mb-2">Atendimento ao Cliente</h4>
                         <p className="text-sm">

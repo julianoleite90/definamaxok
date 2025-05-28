@@ -686,7 +686,7 @@ export default function ReMarketingPage() {
             </p>
           </div>
 
-          <div ref={kitsRef} className="grid md:grid-cols-3 gap-4 md:gap-8">
+          <div ref={kitsRef} className="grid md:grid-cols-3 gap-1 md:gap-2">
             {/* Kit Completo */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
               <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
