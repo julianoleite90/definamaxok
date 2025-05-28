@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import GoogleAnalytics from './components/GoogleAnalytics'
+import UTMHandler from './components/UTMHandler'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -215,38 +216,79 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* UTM Tracking */}
+        {/* UTM Tracking - Improved version */}
         <Script id="utm-tracking" strategy="afterInteractive">
           {`
             function getUTMParameters() {
               const urlParams = new URLSearchParams(window.location.search);
-              const utmParams = {};
-              ['source', 'medium', 'campaign', 'term', 'content'].forEach(param => {
+              const utmParams = ['source', 'medium', 'campaign', 'term', 'content'];
+              const params = {};
+              
+              utmParams.forEach(param => {
                 const value = urlParams.get('utm_' + param);
-                if (value) utmParams['utm_' + param] = value;
+                if (value) {
+                  params['utm_' + param] = value;
+                  localStorage.setItem('utm_' + param, value);
+                }
               });
-              return utmParams;
+              
+              return params;
+            }
+
+            function getStoredUTMs() {
+              const utmParams = ['source', 'medium', 'campaign', 'term', 'content'];
+              const params = {};
+              
+              utmParams.forEach(param => {
+                const value = localStorage.getItem('utm_' + param);
+                if (value) params['utm_' + param] = value;
+              });
+              
+              return params;
             }
 
             function attachUTMsToLinks() {
-              const utmParams = getUTMParameters();
+              const urlUTMs = getUTMParameters();
+              const storedUTMs = getStoredUTMs();
+              const utmParams = { ...storedUTMs, ...urlUTMs };
+              
               if (Object.keys(utmParams).length === 0) return;
 
               document.querySelectorAll('a[href*="full.sale"]').forEach(link => {
-                const url = new URL(link.href);
-                Object.entries(utmParams).forEach(([key, value]) => {
-                  url.searchParams.set(key, value as string);
-                });
-                link.href = url.toString();
+                try {
+                  const url = new URL(link.href);
+                  Object.entries(utmParams).forEach(([key, value]) => {
+                    url.searchParams.set(key, value);
+                  });
+                  link.href = url.toString();
+                } catch (e) {
+                  console.error('Error updating UTMs for link:', link.href);
+                }
               });
             }
 
+            // Attach UTMs on page load
             window.addEventListener('load', attachUTMsToLinks);
+            
+            // Reattach UTMs when new elements are added to the DOM
+            const observer = new MutationObserver(function(mutations) {
+              mutations.forEach(function(mutation) {
+                if (mutation.addedNodes.length) {
+                  attachUTMsToLinks();
+                }
+              });
+            });
+
+            observer.observe(document.body, {
+              childList: true,
+              subtree: true
+            });
           `}
         </Script>
         <GoogleAnalytics />
       </head>
       <body className={inter.className}>
+        <UTMHandler />
         {children}
       </body>
     </html>

@@ -174,7 +174,7 @@ export default function DefinamaxFAQ() {
           property="og:description"
           content="Tire todas as suas dúvidas sobre o Definamax: o que é, como funciona, como usar, aprovação ANVISA, onde comprar, tempo de entrega e descontos disponíveis."
         />
-        <meta property="og:image" content="https://www.definamaxoficial.com/mockup.png" />
+        <meta property="og:image" content="https://www.definamaxoficial.com/mockup2.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -187,7 +187,7 @@ export default function DefinamaxFAQ() {
           property="twitter:description"
           content="Tire todas as suas dúvidas sobre o Definamax: o que é, como funciona, como usar, aprovação ANVISA, onde comprar, tempo de entrega e descontos disponíveis."
         />
-        <meta property="twitter:image" content="https://www.definamaxoficial.com/mockup.png" />
+        <meta property="twitter:image" content="https://www.definamaxoficial.com/mockup2.png" />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://www.definamaxoficial.com/perguntas-frequentes" />
@@ -343,7 +343,7 @@ export default function DefinamaxFAQ() {
                   <div className="bg-white rounded-lg border border-green-200 p-4">
                     <div className="flex items-center mb-3">
                       <Image
-                        src="/mockup.png"
+                        src="/mockup2.png"
                         alt="Definamax"
                         width={60}
                         height={100}
@@ -396,7 +396,7 @@ export default function DefinamaxFAQ() {
                     <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
                       <div className="md:w-1/3">
                         <Image
-                          src="/mockup.png"
+                          src="/mockup2.png"
                           alt="Definamax - Suplemento Natural para Emagrecimento"
                           width={300}
                           height={400}
