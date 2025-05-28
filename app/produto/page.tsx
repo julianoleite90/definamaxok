@@ -35,8 +35,8 @@ interface Kits {
 
 export default function ProdutoDefinamax() {
   // Estados para controlar o kit selecionado e a imagem
-  const [selectedKit, setSelectedKit] = useState<"kit1" | "kit3" | "kit6">("kit3")
-  const [currentImage, setCurrentImage] = useState("/3frascos.png")
+  const [selectedKit, setSelectedKit] = useState<"kit1" | "kit3" | "kit5" | "kit8">("kit5")
+  const [currentImage, setCurrentImage] = useState("/5frascos.png")
 
   // Atualiza a imagem quando o kit é alterado
   useEffect(() => {
@@ -96,15 +96,15 @@ export default function ProdutoDefinamax() {
       name: "Kit 1 Mês",
       title: "Definamax - Kit 1 Mês (1 Frasco)",
       description: "Kit inicial com 1 frasco de Definamax para 1 mês de uso (60 cápsulas). Suplemento alimentar natural com fibras e ingredientes naturais para apoiar um estilo de vida saudável.",
-      regularPrice: 299.00,
-      salePrice: 279.90,
-      discount: 25.00,
+      regularPrice: 279.00,
+      salePrice: 197.00,
+      discount: 82.00,
       installments: 12,
-      installmentValue: 23.33,
-      image: "/1frasco.png",
+      installmentValue: 19.78,
+      image: "/1fraso.png",
       link: "https://full.sale/eMbtHp?src=googleshopping",
-      shipping: 29.9,
-      freeShipping: false,
+      shipping: 0,
+      freeShipping: true,
       bonus: [],
       weight: "100g",
       gtin: "7898489348731",
@@ -117,12 +117,12 @@ export default function ProdutoDefinamax() {
       name: "Kit 3 Meses",
       title: "Definamax - Kit 3 Meses (3 Frascos)",
       description: "Kit recomendado com 3 frascos de Definamax para 3 meses de uso (180 cápsulas). Suplemento alimentar natural com fibras e ingredientes naturais para apoiar um estilo de vida saudável.",
-      regularPrice: 758.00,
-      salePrice: 379.00,
-      discount: 379.00,
+      regularPrice: 579.00,
+      salePrice: 279.00,
+      discount: 300.00,
       installments: 12,
-      installmentValue: 31.58,
-      image: "/3frascos.png",
+      installmentValue: 28.01,
+      image: "/2frascos.png",
       link: "https://full.sale/DmNQj1?src=googleshopping",
       shipping: 0,
       freeShipping: true,
@@ -130,30 +130,51 @@ export default function ProdutoDefinamax() {
       weight: "300g",
       gtin: "7898489348748",
       mpn: "DEFMAX-3M",
-      inStock: true,
+      inStock: false,
       expectedResults: "suporte contínuo",
-      bestSeller: true,
     },
-    kit6: {
-      id: "kit6",
-      name: "Kit 6 Meses",
-      title: "Definamax - Kit 6 Meses (6 Frascos)",
-      description: "Kit completo com 6 frascos de Definamax para 6 meses de uso (360 cápsulas). Suplemento alimentar natural com fibras e ingredientes naturais para apoiar um estilo de vida saudável.",
-      regularPrice: 1497.00,
-      salePrice: 479.00,
-      discount: 1018.00,
+    kit5: {
+      id: "kit5",
+      name: "Kit 5 Meses",
+      title: "Definamax - Kit 5 Meses (5 Frascos)",
+      description: "Kit avançado com 5 frascos de Definamax para 5 meses de uso (300 cápsulas). Suplemento alimentar natural com fibras e ingredientes naturais para apoiar um estilo de vida saudável.",
+      regularPrice: 879.00,
+      salePrice: 379.00,
+      discount: 500.00,
       installments: 12,
-      installmentValue: 39.92,
-      image: "/6frascos.png",
+      installmentValue: 38.05,
+      image: "/5frascos.png",
       link: "https://full.sale/ytA47b?src=googleshopping",
       shipping: 0,
       freeShipping: true,
-      bonus: ["6 Frascos Definamax"],
-      weight: "600g",
+      bonus: ["5 Frascos Definamax", "1 Frasco de Colágeno"],
+      weight: "500g",
       gtin: "7898489348755",
-      mpn: "DEFMAX-6M",
+      mpn: "DEFMAX-5M",
       inStock: true,
       expectedResults: "suporte prolongado",
+      bestSeller: true,
+    },
+    kit8: {
+      id: "kit8",
+      name: "Kit 8 Meses",
+      title: "Definamax - Kit 8 Meses (8 Frascos)",
+      description: "Kit completo com 8 frascos de Definamax para 8 meses de uso (480 cápsulas). Suplemento alimentar natural com fibras e ingredientes naturais para apoiar um estilo de vida saudável.",
+      regularPrice: 1079.00,
+      salePrice: 449.00,
+      discount: 630.00,
+      installments: 12,
+      installmentValue: 45.08,
+      image: "/8frascos.png",
+      link: "https://full.sale/XONObQ?src=googleshopping",
+      shipping: 0,
+      freeShipping: true,
+      bonus: ["8 Frascos Definamax", "2 Frascos de Colágeno"],
+      weight: "800g",
+      gtin: "7898489348762",
+      mpn: "DEFMAX-8M",
+      inStock: true,
+      expectedResults: "suporte completo",
     },
   }
 
@@ -269,7 +290,7 @@ export default function ProdutoDefinamax() {
                 )}
 
                 {/* Kit Selection Buttons */}
-                <div className="grid grid-cols-3 gap-2 mt-4">
+                <div className="grid grid-cols-4 gap-2 mt-4">
                   <button
                     onClick={() => setSelectedKit("kit1")}
                     className={`border rounded-lg p-2 ${
@@ -278,7 +299,7 @@ export default function ProdutoDefinamax() {
                   >
                     <div className="relative h-24 w-full flex items-center justify-center">
                       <Image 
-                        src="/1frasco.png" 
+                        src="/1fraso.png" 
                         alt="Kit 1 Mês" 
                         width={60} 
                         height={120} 
@@ -296,7 +317,7 @@ export default function ProdutoDefinamax() {
                   >
                     <div className="relative h-24 w-full flex items-center justify-center">
                       <Image 
-                        src="/3frascos.png" 
+                        src="/2frascos.png" 
                         alt="Kit 3 Meses" 
                         width={80} 
                         height={120} 
@@ -307,21 +328,39 @@ export default function ProdutoDefinamax() {
                   </button>
 
                   <button
-                    onClick={() => setSelectedKit("kit6")}
+                    onClick={() => setSelectedKit("kit5")}
                     className={`border rounded-lg p-2 ${
-                      selectedKit === "kit6" ? "border-green-500 bg-green-50" : "border-gray-200"
+                      selectedKit === "kit5" ? "border-green-500 bg-green-50" : "border-gray-200"
                     }`}
                   >
                     <div className="relative h-24 w-full flex items-center justify-center">
                       <Image 
-                        src="/6frascos.png" 
-                        alt="Kit 6 Meses" 
+                        src="/5frascos.png" 
+                        alt="Kit 5 Meses" 
+                        width={90} 
+                        height={120} 
+                        className="object-contain max-h-24" 
+                      />
+                    </div>
+                    <p className="text-xs font-medium text-center mt-1">5 Frascos</p>
+                  </button>
+
+                  <button
+                    onClick={() => setSelectedKit("kit8")}
+                    className={`border rounded-lg p-2 ${
+                      selectedKit === "kit8" ? "border-green-500 bg-green-50" : "border-gray-200"
+                    }`}
+                  >
+                    <div className="relative h-24 w-full flex items-center justify-center">
+                      <Image 
+                        src="/8frascos.png" 
+                        alt="Kit 8 Meses" 
                         width={100} 
                         height={120} 
                         className="object-contain max-h-24" 
                       />
                     </div>
-                    <p className="text-xs font-medium text-center mt-1">6 Frascos</p>
+                    <p className="text-xs font-medium text-center mt-1">8 Frascos</p>
                   </button>
                 </div>
               </div>
@@ -554,7 +593,7 @@ export default function ProdutoDefinamax() {
                       Conteúdo
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {kit.id === "kit1" ? "60" : kit.id === "kit3" ? "180" : "360"} cápsulas
+                      {kit.id === "kit1" ? "60" : kit.id === "kit3" ? "180" : kit.id === "kit5" ? "300" : kit.id === "kit8" ? "480" : "360"} cápsulas
                     </td>
                   </tr>
                   <tr>

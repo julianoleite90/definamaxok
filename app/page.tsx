@@ -806,7 +806,7 @@ export default function LandingPage() {
             {/* Kit 8 Frascos */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
               <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
-                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 5 LEVE 8 FRASCOS</h3>
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 5 LEVE 8 </h3>
                 <p className="text-[1.0675rem]">GANHE 2 FRASCOS DE COLÁGENO</p>
               </div>
               
@@ -865,7 +865,7 @@ export default function LandingPage() {
             {/* Kit 5 Frascos - Aplicar as mesmas alterações */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border-2 border-yellow-500 max-w-[460px] mx-auto md:scale-y-[1.07]">
               <div className="bg-yellow-500 p-2.5 text-white text-center rounded-t-[20px]">
-                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 3 LEVE 5 FRASCOS</h3>
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 3 LEVE 5 </h3>
                 <p className="text-[1.0675rem]">GANHE 1 FRASCO DE COLÁGENO</p>
               </div>
               
@@ -922,7 +922,7 @@ export default function LandingPage() {
             {/* Kit 3 Frascos */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
               <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
-                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 2 LEVE 3 FRASCOS</h3>
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 2 LEVE 3</h3>
                 <p className="text-[1.0675rem]">GANHE ENVIO IMEDIATO</p>
               </div>
               
