@@ -673,7 +673,7 @@ export default function ReMarketingPage() {
       {/* Products Section */}
       <section className="w-full py-8 bg-gradient-to-b from-white to-green-50">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center mb-4">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Seu corpo dos sonhos com <span className="text-green-700">Definamax!</span>
             </h2>
@@ -684,7 +684,7 @@ export default function ReMarketingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-12 gap-x-3 max-w-[900px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-y-24 gap-x-6 max-w-[900px] mx-auto">
             {/* Kit 8 Frascos */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[420px] mx-auto md:scale-y-[1.07]">
               <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
