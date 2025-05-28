@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Play, CheckCircle2, Share2, X, ShieldCheck, Gift, Star, ChevronDown, ArrowRight } from "lucide-react"
+import { Play, CheckCircle2, Share2, X, ShieldCheck, Gift, Star, ChevronDown, ArrowRight, Lock } from "lucide-react"
 import Head from "next/head"
 
 // Declare o tipo gtag
@@ -671,248 +671,263 @@ export default function ReMarketingPage() {
       </section>
 
       {/* Products Section */}
-      <section id="kits-section" className="w-full py-16 bg-gradient-to-b from-white to-green-50">
+      <section className="w-full py-8 bg-gradient-to-b from-white to-green-50">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-6">
-              Escolha o kit ideal para <span className="text-green-600 relative inline-block">
-                acelerar
-                <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
-                <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
-              </span> o seu processo de <span className="text-green-700">emagrecimento</span>
+          <div className="text-center mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Seu corpo dos sonhos com <span className="text-green-700">Definamax!</span>
             </h2>
-            <p className="text-gray-600 text-base md:text-lg mt-4 md:mt-0">
-              Para melhores resultados recomendados o tratamento de 3 a 6 meses
-            </p>
-          </div>
-
-          <div ref={kitsRef} className="grid md:grid-cols-3 gap-1 md:gap-2">
-            {/* Kit Completo */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
-              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                <h3 className="text-lg md:text-xl font-bold">Kit Completo</h3>
-                <p className="text-sm text-white/90">6 meses de tratamento</p>
-              </div>
-              <div className="p-3 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-6">
-                  <Image
-                    src="/6frascos.png"
-                    alt="Kit Completo Definamax"
-                    width={220}
-                    height={220}
-                    className="object-contain w-48 md:w-[240px]"
-                  />
-                </div>
-                <div className="text-center mb-3">
-                  <p className="text-base text-gray-500">De <span className="line-through">R$ 1497,00</span> por:</p>
-                  <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">39</span>
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">,91</span>
-                  </div>
-                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
-                  <div className="mt-1 text-base font-medium text-gray-700">
-                    ou R$ 479,00 à vista
-                  </div>
-                  <div className="mt-2">
-                    <span className="inline-block bg-green-50 text-green-700 text-sm font-medium px-2.5 py-1 rounded-full">
-                      10% de desconto no PIX
-                    </span>
-                  </div>
-                </div>
-
-                  {/* Seção de Brindes */}
-                  <div className="bg-green-50 rounded-xl p-4 mb-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Gift className="h-6 w-6 text-green-600" />
-                      <span className="text-base font-semibold text-green-800">Você ganha:</span>
-                    </div>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <Gift className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-green-700">2 Frascos de colágeno para combater a flacidez pós emagrecimento</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Gift className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-green-700">Programa emagrecimento acelerado GRÁTIS</span>
-                      </li>
-                    </ul>
-                  </div>
-                
-                <Link
-                  href="https://full.sale/ytA47b"
-                  className="block w-full bg-[#4CAF50] text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-[#45A049] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                >
-                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                  <span className="relative">COMPRAR AGORA</span>
-                </Link>
-                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete grátis para todo Brasil</p>
-              </div>
-            </div>
-
-            {/* Kit Recomendado */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100 md:scale-105">
-              <div className="absolute -top-px left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600"></div>
-              <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white p-3 md:p-5 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                <h3 className="text-lg md:text-xl font-bold">Kit Mais Vendido</h3>
-                <p className="text-sm text-white/90">3 meses de tratamento</p>
-              </div>
-              <div className="p-3 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-6">
-                  <Image
-                    src="/3frascos.png"
-                    alt="Kit Recomendado Definamax"
-                    width={220}
-                    height={220}
-                    className="object-contain w-48 md:w-64 h-auto"
-                  />
-                </div>
-                <div className="text-center mb-3">
-                  <p className="text-base text-gray-500">De <span className="line-through">R$ 758,00</span> por:</p>
-                  <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">31</span>
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">,58</span>
-                  </div>
-                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
-                  <div className="mt-1 text-base font-medium text-gray-700">
-                    ou R$ 379,00 à vista
-                  </div>
-                  <div className="mt-2">
-                    <span className="inline-block bg-emerald-50 text-emerald-700 text-sm font-medium px-2.5 py-1 rounded-full">
-                      10% de desconto no PIX
-                    </span>
-                  </div>
-                </div>
-
-                {/* Seção de Brindes */}
-                <div className="bg-emerald-50 rounded-xl p-4 mb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Gift className="h-6 w-6 text-emerald-600" />
-                    <span className="text-base font-semibold text-emerald-800">Você ganha:</span>
-                  </div>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Gift className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-emerald-700">1 Frasco de colágeno para combater a flacidez pós emagrecimento</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Gift className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-emerald-700">Programa emagrecimento acelerado GRÁTIS</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <Link
-                  href="https://full.sale/DmNQj1"
-                  className="block w-full bg-emerald-500 text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-emerald-600 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                >
-                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                  <span className="relative">COMPRAR AGORA</span>
-                </Link>
-                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete grátis para todo Brasil</p>
-              </div>
-            </div>
-
-            {/* Kit Inicial */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all relative border border-gray-100">
-              <div className="bg-gradient-to-r from-green-700 to-green-600 text-white p-3 md:p-5 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite]"></div>
-                <h3 className="text-lg md:text-xl font-bold">Kit Inicial</h3>
-                <p className="text-sm text-white/90">30 dias de tratamento</p>
-              </div>
-              <div className="p-3 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-6">
-                  <Image
-                    src="/1frasco.png"
-                    alt="Kit Inicial Definamax"
-                    width={220}
-                    height={220}
-                    className="object-contain w-48 md:w-64 h-auto"
-                  />
-                </div>
-                <div className="text-center mb-3">
-                  <p className="text-base text-gray-500">De <span className="line-through">R$ 299,00</span> por:</p>
-                  <div className="flex items-baseline justify-center gap-1 mt-1">
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">12x</span>
-                    <span className="text-4xl md:text-5xl font-bold text-green-800">25</span>
-                    <span className="text-2xl md:text-xl font-semibold text-green-800">,33</span>
-                  </div>
-                  <p className="text-base text-gray-600 mt-1">sem juros no cartão</p>
-                  <div className="mt-1 text-base font-medium text-gray-700">
-                    ou R$ 279,00 à vista
-                  </div>
-                  <div className="mt-2">
-                    <span className="inline-block bg-green-50 text-green-700 text-sm font-medium px-2.5 py-1 rounded-full">
-                      10% de desconto no PIX
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="space-y-2 md:space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-sm text-green-600 font-medium">1 Mês de tratamento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 md:h-5 md:w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-sm text-green-600 font-medium">Envio imediato</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="h-5 w-5 md:h-5 md:w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm md:text-sm text-gray-400">Sem bônus adicionais</span>
-                  </li>
-                </ul>
-                
-                <Link
-                  href="https://full.sale/eMbtHp"
-                  className="block w-full bg-green-600 text-white font-bold py-4 md:py-4 text-xl md:text-xl rounded-xl hover:bg-green-700 transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
-                >
-                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                  <span className="relative">COMPRAR AGORA</span>
-                </Link>
-                <p className="text-center text-gray-600 font-medium text-sm md:text-sm mt-2">Frete fixo R$ 25,00</p>
-              </div>
+            <div className="inline-block bg-white rounded-full px-6 py-2 shadow-sm">
+              <p className="text-gray-700">
+                Restam poucos frascos com FRETE GRÁTIS no dia de hoje: <span className="text-red-500 font-semibold">27/05/2025</span>
+              </p>
             </div>
           </div>
 
-          {/* Bandeiras de Cartão e Parcelamento */}
-          <div className="mt-12 flex flex-col items-center justify-center gap-6 bg-white rounded-2xl shadow-sm py-8 px-8 mx-auto max-w-3xl">
-            <div className="text-center">
-              <p className="text-lg font-semibold text-gray-800 mb-2">Pagamento 100% Seguro</p>
-              <p className="text-gray-600">Parcele em até 12x sem juros no cartão</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-12 gap-x-3 max-w-[900px] mx-auto">
+            {/* Kit 8 Frascos */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[420px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 5 LEVE 8 FRASCOS</h3>
+                <p className="text-[1.0675rem]">GANHE 2 FRASCOS DE COLÁGENO</p>
+              </div>
+              
+              <div className="bg-[#E8F5E9] py-1.5 text-center">
+                <p className="text-xl font-medium text-[#1B8E3D]">Tratamento Completo</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/8frascos.png"
+                    alt="Kit 8 Meses"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$1.079,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-green-700 text-5xl font-bold">R$45<span className="text-[70%]">,08</span></p>
+                  <p className="text-base font-medium">Ou R$449,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href={addUtmToUrl("https://full.sale/XONObQ")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <Image
-                src="/master.png"
-                alt="Mastercard"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/visa.png"
-                alt="Visa"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/hiper.png"
-                alt="Hipercard"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/pix.png"
-                alt="PIX"
-                width={45}
-                height={30}
-                className="w-auto h-8 object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
+
+            {/* Kit 5 Frascos */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border-2 border-yellow-500 max-w-[420px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-yellow-500 p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 3 LEVE 5 FRASCOS</h3>
+                <p className="text-[1.0675rem]">GANHE 1 FRASCO DE COLÁGENO</p>
+              </div>
+              
+              <div className="bg-yellow-50 py-1.5 text-center">
+                <p className="text-xl font-medium text-yellow-600">Tratamento Mais Vendido</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/5frascos.png"
+                    alt="Kit 5 Meses"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$879,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-yellow-600 text-5xl font-bold">R$38<span className="text-[70%]">,05</span></p>
+                  <p className="text-base font-medium">Ou R$379,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href={addUtmToUrl("https://full.sale/ytA47b")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 3 Frascos */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[420px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 2 LEVE 3 FRASCOS</h3>
+                <p className="text-[1.0675rem]">GANHE ENVIO IMEDIATO</p>
+              </div>
+              
+              <div className="bg-[#E8F5E9] py-1.5 text-center">
+                <p className="text-xl font-medium text-[#1B8E3D]">Tratamento Inicial</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/2frascos.png"
+                    alt="Kit 3 Meses"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$579,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-green-700 text-5xl font-bold">R$28<span className="text-[70%]">,01</span></p>
+                  <p className="text-base font-medium">Ou R$279,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <button
+                    disabled
+                    className="block w-full bg-gray-400 text-white font-bold py-3 text-xl rounded-xl cursor-not-allowed text-center shadow-lg relative overflow-hidden"
+                  >
+                    <span className="relative">ESGOTADO</span>
+                  </button>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 1 Frasco */}
+            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[420px] mx-auto md:scale-y-[1.07]">
+              <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
+                <h3 className="text-[1.425rem] font-bold tracking-wider">1 FRASCO</h3>
+                <p className="text-[1.0675rem]">GANHE ENVIO IMEDIATO</p>
+              </div>
+              
+              <div className="bg-[#E8F5E9] py-1.5 text-center">
+                <p className="text-xl font-medium text-[#1B8E3D]">Experimente</p>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/1fraso.png"
+                    alt="Kit 1 Mês"
+                    width={400}
+                    height={400}
+                    className="h-auto w-full max-w-[200px] object-contain"
+                  />
+                </div>
+
+                <div className="text-center space-y-1.5">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-gray-400 line-through text-xl">De R$279,00</span>
+                  </div>
+                  <p className="text-lg font-medium">Por apenas 12x</p>
+                  <p className="text-green-700 text-5xl font-bold">R$19<span className="text-[70%]">,78</span></p>
+                  <p className="text-base font-medium">Ou R$197,00 à vista!</p>
+                </div>
+
+                <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
+                  <span className="text-xl font-medium text-[#1B8E3D]">FRETE GRÁTIS</span>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href={addUtmToUrl("https://full.sale/eMbtHp")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
+                </div>
+
+                <div className="flex justify-center mt-4">
+                  <Image
+                    src="/privacidade.webp"
+                    alt="Selos de Segurança"
+                    width={380}
+                    height={76}
+                    className="h-auto w-full max-w-[380px]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Alerta de Estoque Limitado */}
+          <div className="mt-4 mb-4 max-w-2xl mx-auto px-4">
+            <div className="bg-white rounded-[20px] shadow-lg p-3 flex items-center gap-2 relative text-center border border-red-100"
+                 style={{
+                   boxShadow: '0 4px 0 rgb(239 68 68 / 0.2)',
+                 }}>
+              <div className="flex items-start md:items-center md:justify-center w-full gap-2">
+                <div className="w-7 h-7 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center border-2 border-red-500">
+                  <span className="text-red-600 text-lg font-bold">!</span>
+                </div>
+                <div className="text-left md:text-center">
+                  <h3 className="text-red-600 text-lg md:text-xl font-bold">*Estoques limitados, não espere!</h3>
+                  <p className="text-gray-600 text-base">Garanta seu kit agora antes que acabe!</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
