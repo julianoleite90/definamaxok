@@ -912,29 +912,31 @@ export default function ReMarketingPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Alerta de Estoque Limitado */}
-          <div className="mt-4 mb-4 max-w-2xl mx-auto px-4">
-            <div className="bg-white rounded-[20px] shadow-lg p-3 flex items-center gap-2 relative text-center border border-red-100"
-                 style={{
-                   boxShadow: '0 4px 0 rgb(239 68 68 / 0.2)',
-                 }}>
-              <div className="flex items-start md:items-center md:justify-center w-full gap-2">
-                <div className="w-7 h-7 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center border-2 border-red-500">
-                  <span className="text-red-600 text-lg font-bold">!</span>
-                </div>
-                <div className="text-left md:text-center">
-                  <h3 className="text-red-600 text-lg md:text-xl font-bold">*Estoques limitados, não espere!</h3>
-                  <p className="text-gray-600 text-base">Garanta seu kit agora antes que acabe!</p>
-                </div>
+      {/* Alerta de Estoque Limitado */}
+      <div className="w-full bg-gradient-to-b from-white to-green-50 pt-12 pb-8">
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="bg-white rounded-[20px] shadow-lg p-3 flex items-center gap-2 relative text-center border border-red-100"
+               style={{
+                 boxShadow: '0 4px 0 rgb(239 68 68 / 0.2)',
+               }}>
+            <div className="flex items-start md:items-center md:justify-center w-full gap-2">
+              <div className="w-7 h-7 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center border-2 border-red-500">
+                <span className="text-red-600 text-lg font-bold">!</span>
+              </div>
+              <div className="text-left md:text-center">
+                <h3 className="text-red-600 text-lg md:text-xl font-bold">*Estoques limitados, não espere!</h3>
+                <p className="text-gray-600 text-base">Garanta seu kit agora antes que acabe!</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Seção de Garantia */}
-      <section className="w-full py-16 bg-gradient-to-b from-green-50 to-white">
+      <section className="w-full pt-8 pb-16 bg-gradient-to-b from-green-50 to-white">
         <div className="mx-auto max-w-4xl px-4">
           <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg overflow-hidden border border-green-100">
             <div className="grid md:grid-cols-5 items-center gap-8 p-8 md:p-12">
