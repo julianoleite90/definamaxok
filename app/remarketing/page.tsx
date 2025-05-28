@@ -722,7 +722,7 @@ export default function ReMarketingPage() {
 
                 <div className="mt-8">
                   <Link
-                    href={addUtmToUrl("https://full.sale/XONObQ")}
+                    href={addUtmToUrl("https://full.sale/XONObQ?src=rmkt-1")}
                     className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -779,7 +779,7 @@ export default function ReMarketingPage() {
 
                 <div className="mt-8">
                   <Link
-                    href={addUtmToUrl("https://full.sale/ytA47b")}
+                    href={addUtmToUrl("https://full.sale/ytA47b?src=rmkt-1")}
                     className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -892,7 +892,7 @@ export default function ReMarketingPage() {
 
                 <div className="mt-8">
                   <Link
-                    href={addUtmToUrl("https://full.sale/eMbtHp")}
+                    href={addUtmToUrl("https://full.sale/eMbtHp?src=rmkt-1")}
                     className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
