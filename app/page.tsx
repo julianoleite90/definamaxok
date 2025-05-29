@@ -23,6 +23,9 @@ export default function LandingPage() {
   const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
   const [showWhatsApp, setShowWhatsApp] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [videoLoadedDesktop, setVideoLoadedDesktop] = useState(false)
+  const [videoLoadedMobile, setVideoLoadedMobile] = useState(false)
   const buyRef = useRef<HTMLDivElement>(null)
   const kitsRef = useRef<HTMLDivElement>(null)
 
@@ -382,26 +385,60 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative w-full md:-mr-12">
               {/* Desktop Video */}
-              <div className="hidden md:block relative w-full h-[600px] overflow-hidden">
+              <div className="hidden md:block relative w-full h-[600px] overflow-hidden bg-white">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                    <div className="w-[800px] h-[600px] relative">
+                      <Image
+                        src="/thumb-mob-min.png"
+                        alt="Video thumbnail desktop"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors cursor-pointer">
+                          <div className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <iframe
                     src="https://player.vimeo.com/video/1088746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                    className="absolute top-0 left-0 w-full h-full"
+                    className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${videoLoadedDesktop ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
                     allowFullScreen
                     title="Como o Definamax funciona - Desktop"
+                    onLoad={() => setVideoLoadedDesktop(true)}
                   ></iframe>
               </div>
               
               {/* Mobile Video */}
-              <div className="md:hidden relative w-full aspect-video">
+              <div className="md:hidden relative w-full aspect-video bg-white">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                    <div className="w-full h-full relative">
+                      <Image
+                        src="/thumb-desk-min.png"
+                        alt="Video thumbnail mobile"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors cursor-pointer">
+                          <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <iframe
                     src="https://player.vimeo.com/video/1088747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                    className="absolute top-0 left-0 w-full h-full border border-green-100 rounded-lg"
+                    className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${videoLoadedMobile ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
                     allowFullScreen
                     title="Como o Definamax funciona - Mobile"
+                    onLoad={() => setVideoLoadedMobile(true)}
                   ></iframe>
               </div>
             </div>
