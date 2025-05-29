@@ -826,8 +826,8 @@ export default function ReMarketingPage() {
                     <span className="text-gray-400 line-through text-xl">De R$579,00</span>
                   </div>
                   <p className="text-lg font-medium">Por apenas 12x</p>
-                  <p className="text-green-700 text-5xl font-bold">R$28<span className="text-[70%]">,01</span></p>
-                  <p className="text-base font-medium">Ou R$279,00 à vista!</p>
+                  <p className="text-green-700 text-5xl font-bold">R$33<span className="text-[70%]">,03</span></p>
+                  <p className="text-base font-medium">Ou R$329,00 à vista!</p>
                 </div>
 
                 <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
@@ -835,12 +835,13 @@ export default function ReMarketingPage() {
                 </div>
 
                 <div className="mt-8">
-                  <button
-                    disabled
-                    className="block w-full bg-gray-400 text-white font-bold py-3 text-xl rounded-xl cursor-not-allowed text-center shadow-lg relative overflow-hidden"
+                  <Link
+                    href={addUtmToUrl("https://full.sale/ytA47b?src=rmkt-1")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
-                    <span className="relative">ESGOTADO</span>
-                  </button>
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
                 </div>
 
                 <div className="flex justify-center mt-4">
