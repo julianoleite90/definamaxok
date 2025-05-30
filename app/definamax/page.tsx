@@ -23,8 +23,42 @@ export default function LandingPage() {
   const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
   const [showWhatsApp, setShowWhatsApp] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [videoLoadedDesktop, setVideoLoadedDesktop] = useState(false)
+  const [videoLoadedMobile, setVideoLoadedMobile] = useState(false)
   const buyRef = useRef<HTMLDivElement>(null)
   const kitsRef = useRef<HTMLDivElement>(null)
+
+  // Função para formatar a data no padrão brasileiro
+  const formatDate = (date: Date): string => {
+    const day = date.getDate().toString().padStart(2, '0')
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+
+  // Estado para a data atual
+  const [currentDate, setCurrentDate] = useState('')
+
+  // Atualiza a data ao montar o componente
+  useEffect(() => {
+    setCurrentDate(formatDate(new Date()))
+  }, [])
+
+  // Captura e armazena UTMs
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search)
+      const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+      
+      utmParams.forEach(param => {
+        const value = params.get(param)
+        if (value) {
+          localStorage.setItem(param, value)
+        }
+      })
+    }
+  }, [])
 
   // Contagem regressiva
   useEffect(() => {
@@ -367,26 +401,60 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative w-full md:-mr-12">
               {/* Desktop Video */}
-              <div className="hidden md:block relative w-full h-[600px] overflow-hidden">
+              <div className="hidden md:block relative w-full h-[600px] overflow-hidden bg-white">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                    <div className="w-[800px] h-[600px] relative">
+                      <Image
+                        src="/thumb-mob-min.png"
+                        alt="Video thumbnail desktop"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors cursor-pointer">
+                          <div className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <iframe
-                    src="https://player.vimeo.com/video/1087563650?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://player.vimeo.com/video/1088746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${videoLoadedDesktop ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
                     allowFullScreen
                     title="Como o Definamax funciona - Desktop"
+                    onLoad={() => setVideoLoadedDesktop(true)}
                   ></iframe>
               </div>
               
               {/* Mobile Video */}
-              <div className="md:hidden relative w-full aspect-video">
+              <div className="md:hidden relative w-full aspect-video bg-white">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                    <div className="w-full h-full relative">
+                      <Image
+                        src="/thumb-desk-min.png"
+                        alt="Video thumbnail mobile"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors cursor-pointer">
+                          <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <iframe
-                    src="https://player.vimeo.com/video/1087563177?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                    className="absolute top-0 left-0 w-full h-full border border-green-100 rounded-lg"
+                    src="https://player.vimeo.com/video/1088747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${videoLoadedMobile ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
                     allowFullScreen
                     title="Como o Definamax funciona - Mobile"
+                    onLoad={() => setVideoLoadedMobile(true)}
                   ></iframe>
               </div>
             </div>
@@ -796,7 +864,7 @@ export default function LandingPage() {
               <div className="max-w-3xl mx-auto px-4 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 my-4">
                 <p className="text-gray-700 text-lg md:text-xl">
                   Restam poucos frascos com FRETE GRÁTIS no dia de hoje:{" "}
-                  <span className="text-red-600 font-bold">27/05/2025</span>
+                  <span className="text-red-600 font-bold">{currentDate}</span>
                 </p>
               </div>
             </div>
@@ -806,7 +874,7 @@ export default function LandingPage() {
             {/* Kit 8 Frascos */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
               <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
-                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 5 LEVE 8 FRASCOS</h3>
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 5 LEVE 8 </h3>
                 <p className="text-[1.0675rem]">GANHE 2 FRASCOS DE COLÁGENO</p>
               </div>
               
@@ -840,7 +908,7 @@ export default function LandingPage() {
 
                 <div className="mt-8">
                   <Link
-                    href={addUtmToUrl("https://full.sale/XONObQ")}
+                    href={addUtmToUrl("https://full.sale/XONObQ?src=adv-2")}
                     className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -865,7 +933,7 @@ export default function LandingPage() {
             {/* Kit 5 Frascos - Aplicar as mesmas alterações */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border-2 border-yellow-500 max-w-[460px] mx-auto md:scale-y-[1.07]">
               <div className="bg-yellow-500 p-2.5 text-white text-center rounded-t-[20px]">
-                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 3 LEVE 5 FRASCOS</h3>
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 3 LEVE 5 </h3>
                 <p className="text-[1.0675rem]">GANHE 1 FRASCO DE COLÁGENO</p>
               </div>
               
@@ -899,7 +967,7 @@ export default function LandingPage() {
 
                 <div className="mt-8">
                   <Link
-                    href={addUtmToUrl("https://full.sale/ytA47b")}
+                    href={addUtmToUrl("https://full.sale/ytA47b?src=adv-2")}
                     className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -922,7 +990,7 @@ export default function LandingPage() {
             {/* Kit 3 Frascos */}
             <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border border-[#E8F5E9] max-w-[460px] mx-auto md:scale-y-[1.07]">
               <div className="bg-[#1B8E3D] p-2.5 text-white text-center rounded-t-[20px]">
-                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 2 LEVE 3 FRASCOS</h3>
+                <h3 className="text-[1.425rem] font-bold tracking-wider">COMPRE 2 LEVE 3</h3>
                 <p className="text-[1.0675rem]">GANHE ENVIO IMEDIATO</p>
               </div>
               
@@ -946,8 +1014,8 @@ export default function LandingPage() {
                     <span className="text-gray-400 line-through text-xl">De R$579,00</span>
                   </div>
                   <p className="text-lg font-medium">Por apenas 12x</p>
-                  <p className="text-green-700 text-5xl font-bold">R$28<span className="text-[70%]">,01</span></p>
-                  <p className="text-base font-medium">Ou R$279,00 à vista!</p>
+                  <p className="text-green-700 text-5xl font-bold">R$33<span className="text-[70%]">,03</span></p>
+                  <p className="text-base font-medium">Ou R$329,00 à vista!</p>
                 </div>
 
                 <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
@@ -955,12 +1023,13 @@ export default function LandingPage() {
                 </div>
 
                 <div className="mt-8">
-                  <button
-                    disabled
-                    className="block w-full bg-gray-400 text-white font-bold py-3 text-xl rounded-xl cursor-not-allowed text-center shadow-lg relative overflow-hidden"
+                  <Link
+                    href={addUtmToUrl("https://full.sale/DmNQj1?src=adv-2")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
-                    <span className="relative">ESGOTADO</span>
-                  </button>
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
                 </div>
 
                 <div className="flex justify-center mt-4">
@@ -1012,7 +1081,7 @@ export default function LandingPage() {
 
                 <div className="mt-8">
                   <Link
-                    href={addUtmToUrl("https://full.sale/eMbtHp")}
+                    href={addUtmToUrl("https://full.sale/eMbtHp?src=adv-2")}
                     className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
@@ -1057,7 +1126,7 @@ export default function LandingPage() {
               <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center gap-8 p-6 md:p-12">
                 {/* Coluna da Esquerda - Imagem */}
                                   <div className="w-full max-w-md mx-auto md:max-w-none">
-                    <div className="bg-green-600 rounded-t-[24px] p-4">
+                    <div className="bg-white rounded-t-[24px] p-4">
                       <Image
                         src="/mockup2.png"
                         alt="Definamax Garantia"
@@ -1066,14 +1135,18 @@ export default function LandingPage() {
                         className="w-full h-auto object-contain max-h-[400px]"
                       />
                     </div>
-                    <div className="bg-white rounded-b-[24px] p-4 border-x border-b border-green-100 shadow-sm">
-                      <p className="text-lg md:text-xl font-bold text-green-600 text-left md:text-center">30 DIAS DE GARANTIA</p>
+                    <div className="bg-gradient-to-r from-green-100 to-white rounded-b-[24px] p-4 border-x border-b border-green-100 shadow-sm">
+                      <p className="text-lg md:text-xl font-bold text-green-800 text-left relative inline-block px-3 py-1">
+                        30 DIAS DE GARANTIA
+                        <span className="absolute inset-0 bg-gradient-to-r from-green-200 via-green-100 to-transparent rounded-lg -z-10"></span>
+                        <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gradient-to-r from-green-600 via-green-500 to-green-400 -z-10"></span>
+                      </p>
                     </div>
                   </div>
 
                 {/* Coluna da Direita - Texto */}
                 <div className="flex flex-col gap-4 md:gap-6">
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 text-left">
                     <div className="flex items-center gap-2">
                       <Image
                         src="/logo2.png"
@@ -1088,15 +1161,15 @@ export default function LandingPage() {
                     <h3 className="text-lg md:text-2xl font-bold text-gray-800">GARANTIA DE RESULTADOS</h3>
                   </div>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-left">
                     Investir no <span className="font-semibold">Definamax</span> é uma decisão importante para transformar sua saúde, por isso, asseguramos que nosso produto é <span className="font-semibold">desenvolvido com os mais rigorosos padrões de qualidade</span>.
                   </p>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-left">
                     Temos total confiança na eficácia do <span className="font-semibold">Definamax</span>, e por isso oferecemos uma <span className="font-semibold">garantia de 30 dias</span>.
                   </p>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-left">
                     Se você não perceber resultados visíveis na sua jornada de emagrecimento, devolveremos seu dinheiro de forma simples e rápida, sem burocracia.
                   </p>
 
@@ -1108,12 +1181,12 @@ export default function LandingPage() {
                             window.scrollBy(0, -20); // Slight offset to ensure better visibility
                           }
                         }}
-                        className="w-full md:w-auto whitespace-nowrap bg-green-600 hover:bg-green-500 text-white font-bold text-lg md:text-xl py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 relative overflow-hidden group"
+                        className="w-full md:w-auto whitespace-nowrap bg-green-600 hover:bg-green-500 text-white font-bold text-base md:text-xl py-3 md:py-4 px-6 md:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 relative overflow-hidden group"
                       >
                         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
                         <span className="relative flex items-center justify-center gap-2">
                           QUERO EMAGRECER AGORA!
-                          <ArrowRight className="w-5 h-5 animate-pulse" />
+                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 animate-pulse" />
                         </span>
                       </button>
                     </div>
@@ -1323,36 +1396,50 @@ export default function LandingPage() {
                         helpful: 134
                       }
                     ].map((review, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 md:pb-8">
-                        <div className="flex items-start gap-3 md:gap-4">
-                          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0">
-                            <Image
-                              src={review.image}
-                              alt={review.name}
-                              width={48}
-                              height={48}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-base md:text-lg font-semibold text-gray-800">{review.name}</h3>
-                            <div className="flex items-center gap-2 mb-1 md:mb-2">
-                              <div className="flex">
-                                {[1, 2, 3, 4, 5].map((star) => (
-                                  <Star key={star} className="h-3 w-3 md:h-4 md:w-4 text-yellow-400 fill-yellow-400" />
-                                ))}
+                      <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                        <div className="p-6">
+                          <div className="flex items-start gap-4">
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-green-100">
+                              <Image
+                                src={review.image}
+                                alt={review.name}
+                                width={56}
+                                height={56}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center justify-between">
+                                <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
+                                {review.verified && (
+                                  <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-full">
+                                    <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                                    <span className="text-xs text-green-700 font-medium">Verificado</span>
+                                  </div>
+                                )}
                               </div>
-                              <span className="text-xs md:text-sm font-medium">{review.title}</span>
+                              <div className="mt-1">
+                                <div className="flex items-center gap-2">
+                                  <div className="flex">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                      <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                    ))}
+                                  </div>
+                                  <span className="text-sm text-gray-500">•</span>
+                                  <span className="text-sm text-gray-500">{review.date}</span>
+                                </div>
+                              </div>
                             </div>
-                            <div className="text-xs md:text-sm text-gray-500 mb-2 md:mb-3">
-                              Avaliado em {review.date}
-                              {review.verified && (
-                                <span className="ml-2 text-green-600 font-medium">• Cliente Verificado</span>
-                              )}
-                            </div>
-                            <div className="prose prose-sm max-w-none text-gray-600">
-                              <p className="text-sm md:text-base">{review.text}</p>
-                            </div>
+                          </div>
+                          <div className="mt-4">
+                            <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
+                            <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
+                          </div>
+                        </div>
+                        <div className="bg-gray-50 px-6 py-3 border-t border-gray-100">
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <ThumbsUp className="h-4 w-4" />
+                            <span>{review.helpful} pessoas acharam útil</span>
                           </div>
                         </div>
                       </div>
@@ -1362,13 +1449,22 @@ export default function LandingPage() {
               </div>
 
               {/* Botão Ver Mais */}
-              <div className="flex justify-center mt-8">
-                            <button
-              onClick={() => setShowMoreReviews(!showMoreReviews)}
-              className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
-            >
-              {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-              <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
+                            <div className="flex justify-center mt-8">
+                <button
+                onClick={() => {
+                  setShowMoreReviews(!showMoreReviews);
+                  // Se estiver fechando os reviews, scroll suave para o topo da seção
+                  if (showMoreReviews) {
+                    const reviewsSection = document.querySelector('section:has(.text-3xl:contains("Avaliações dos clientes"))');
+                    if (reviewsSection) {
+                      reviewsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
+                className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
+              >
+                {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
+                <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
                 </button>
               </div>
             </div>

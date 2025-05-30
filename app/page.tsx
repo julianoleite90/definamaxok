@@ -29,6 +29,22 @@ export default function LandingPage() {
   const buyRef = useRef<HTMLDivElement>(null)
   const kitsRef = useRef<HTMLDivElement>(null)
 
+  // Função para formatar a data no padrão brasileiro
+  const formatDate = (date: Date): string => {
+    const day = date.getDate().toString().padStart(2, '0')
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+
+  // Estado para a data atual
+  const [currentDate, setCurrentDate] = useState('')
+
+  // Atualiza a data ao montar o componente
+  useEffect(() => {
+    setCurrentDate(formatDate(new Date()))
+  }, [])
+
   // Captura e armazena UTMs
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -848,7 +864,7 @@ export default function LandingPage() {
               <div className="max-w-3xl mx-auto px-4 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 my-4">
                 <p className="text-gray-700 text-lg md:text-xl">
                   Restam poucos frascos com FRETE GRÁTIS no dia de hoje:{" "}
-                  <span className="text-red-600 font-bold">27/05/2025</span>
+                  <span className="text-red-600 font-bold">{currentDate}</span>
                 </p>
               </div>
             </div>
