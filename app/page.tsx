@@ -774,22 +774,24 @@ export default function LandingPage() {
                 <span>Prazo de entrega: até 7 dias úteis</span>
               </div>
             </div>
-            </div>
+          </div>
 
           {/* Grid de Entregas */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { image: "/revi4.jpeg", location: "São Paulo, SP", date: "Recebido em 5 dias" },
-              { image: "/revi3.jpeg", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
-              { image: "/revi2.jpeg", location: "Curitiba, PR", date: "Recebido em 6 dias" }
+              { image: "/gif1.gif", location: "São Paulo, SP", date: "Recebido em 5 dias", isGif: true },
+              { image: "/gif2.gif", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias", isGif: true },
+              { image: "/gif3.gif", location: "Curitiba, PR", date: "Recebido em 6 dias", isGif: true }
             ].map((item, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative aspect-[5/4]">
-                <Image
+                <div className="relative h-[500px]">
+                  <Image
                     src={item.image}
                     alt={`Entrega em ${item.location}`}
                     fill
-                    className="object-cover"
+                    unoptimized={item.isGif}
+                    priority
+                    className={`${item.isGif ? 'object-contain' : 'object-cover'}`}
                   />
                 </div>
                 <div className="p-4 text-center">
@@ -802,17 +804,19 @@ export default function LandingPage() {
             {showMoreDeliveries && (
               <>
                 {[
-                  { image: "/revi1.jpeg", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" },
-                  { image: "/revi5.jpeg", location: "Salvador, BA", date: "Recebido em 7 dias" },
-                  { image: "/revi6.jpeg", location: "Porto Alegre, RS", date: "Recebido em 6 dias" }
+                  { image: "/gif4.gif", location: "Belo Horizonte, MG", date: "Recebido em 5 dias", isGif: true },
+                  { image: "/revi5.jpeg", location: "Salvador, BA", date: "Recebido em 7 dias", isGif: false },
+                  { image: "/revi3.jpeg", location: "Porto Alegre, RS", date: "Recebido em 6 dias", isGif: false }
                 ].map((item, index) => (
                   <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div className="relative aspect-[5/4]">
+                    <div className="relative h-[500px]">
                       <Image
                         src={item.image}
                         alt={`Entrega em ${item.location}`}
                         fill
-                        className="object-cover"
+                        unoptimized={item.isGif}
+                        priority
+                        className={`${item.isGif ? 'object-contain' : 'object-cover'}`}
                       />
                     </div>
                     <div className="p-4 text-center">
