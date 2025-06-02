@@ -144,7 +144,7 @@ export default function LandingPage() {
         href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed md:bottom-6 bottom-4 md:right-6 right-4 z-[9999] flex items-center gap-2 md:gap-3 bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 md:px-4 md:py-2 px-3 py-1.5 group ${
+        className={`fixed md:bottom-6 bottom-10 md:right-6 right-4 z-[9999] flex items-center gap-2 md:gap-3 bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 md:px-4 md:py-2 px-3.5 py-2 group ${
           showWhatsApp ? 'translate-y-0 opacity-100 visible' : 'translate-y-[200%] opacity-0 invisible'
         }`}
       >
@@ -154,10 +154,10 @@ export default function LandingPage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 md:h-3.5 md:w-3.5 bg-red-500"></span>
           </span>
-          <MessageCircle className="h-7 w-7 md:h-9 md:w-9 text-white" />
+          <MessageCircle className="h-8 w-8 md:h-9 md:w-9 text-white" />
         </div>
         {/* Texto "Fale Conosco" */}
-        <span className="text-white font-medium text-sm md:text-lg whitespace-nowrap pr-1">Fale Conosco</span>
+        <span className="text-white font-medium text-base md:text-lg whitespace-nowrap pr-1">Fale Conosco</span>
       </a>
 
       {/* Header com CTA */}
@@ -194,20 +194,22 @@ export default function LandingPage() {
           <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 items-start">
             {/* Título e Subtítulo */}
             <div className="md:pt-8">
-              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
+              <h1 className="text-[1.9rem] md:text-[2.1rem] lg:text-[2.5rem] font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
                 <span className="text-gray-800 relative inline-block">
-                  Emagreça rápido
+                  Emagreça em poucas semanas, e
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gray-200 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-gray-50/50 -z-20 rounded-lg transform rotate-1"></span>
-                </span> e <span className="text-green-700 relative inline-block">
-                  recupere a confiança no seu corpo
+                </span>
+                <br />
+                <span className="text-green-700 relative inline-block">
+                  recupere a autoestima
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-500 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
               </h1>
 
               <p className="text-xl md:text-xl text-gray-700 mb-3">
-                Descubra o poder das <span className="font-semibold text-green-700">fibras que absorvem a gordura</span>, promovem <span className="font-semibold text-green-700">saciedade</span> e <span className="font-semibold text-green-700">aceleram o emagrecimento</span>
+                Controle sua fome, reduza a absorção de gorduras e acelere seu emagrecimento com <span className="font-semibold text-green-700">Definamax</span>
               </p>
 
               {/* Social Proof mais conciso */}
@@ -417,7 +419,7 @@ export default function LandingPage() {
       <section className="w-full py-16 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
               As <span className="text-green-700">Fibras Inteligentes</span> que<br className="hidden md:block" /> Absorvem a Gordura
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
@@ -545,10 +547,10 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Definamax X Injeções de Emagrecimento
+              <span className="text-green-700">Definamax:</span> O Poder Natural vs. Injeções de Emagrecimento
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Compare os benefícios e riscos de cada método para sua saúde
+              Descubra por que milhares de pessoas estão escolhendo o método natural e seguro para emagrecer
             </p>
           </div>
 
