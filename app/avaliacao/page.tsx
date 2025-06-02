@@ -493,7 +493,7 @@ export default function AvaliacaoPage() {
                     <p className="text-gray-700 mb-4">
                       Assista ao depoimento de alguém que também precisava perder {diagnostico.pesoPerder}kg e conseguiu com Definamax:
                     </p>
-                    <div className="relative aspect-video rounded-lg overflow-hidden">
+                    <div className="relative aspect-video rounded-lg overflow-hidden -mx-4 md:mx-0">
                       <iframe
                         src="https://player.vimeo.com/video/1078349413?autoplay=1&loop=0&muted=1&background=1"
                         className="absolute top-0 left-0 w-full h-full"
@@ -504,8 +504,8 @@ export default function AvaliacaoPage() {
                       ></iframe>
                       {!formData.videoAssistido && (
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 backdrop-blur-[2px] z-10 transition-all duration-500">
-                          <div className="bg-black/60 px-8 py-4 rounded-2xl backdrop-blur-sm">
-                            <h3 className="text-white text-2xl md:text-3xl font-bold mb-6 text-center drop-shadow-lg">
+                          <div className="bg-black/60 px-4 md:px-8 py-3 md:py-4 rounded-2xl backdrop-blur-sm w-[90%] md:w-auto">
+                            <h3 className="text-2xl md:text-3xl font-bold text-center drop-shadow-lg text-white">
                               "Eu sempre fui gorda..."
                             </h3>
                           </div>
@@ -514,12 +514,12 @@ export default function AvaliacaoPage() {
                               trackEvent('clique_assistir_video_imc')
                               setFormData({ ...formData, videoAssistido: true })
                             }}
-                            className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center transform hover:scale-110 transition-all duration-300 hover:bg-red-700 animate-pulse hover:animate-none shadow-lg hover:shadow-xl ring-4 ring-white/30"
+                            className="w-24 h-24 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center transform hover:scale-110 transition-all duration-300 hover:bg-red-700 animate-pulse hover:animate-none shadow-lg hover:shadow-xl ring-4 ring-white/30 my-8 md:my-6"
                           >
-                            <Play className="w-10 h-10 text-white ml-1" />
+                            <Play className="w-12 h-12 md:w-10 md:h-10 text-white ml-1" />
                           </button>
-                          <div className="bg-black/60 px-6 py-3 rounded-xl mt-6 backdrop-blur-sm">
-                            <p className="text-white/90 text-lg text-center drop-shadow-lg">
+                          <div className="bg-black/60 px-4 md:px-6 py-3 rounded-xl backdrop-blur-sm w-[90%] md:w-auto">
+                            <p className="text-lg md:text-lg text-center drop-shadow-lg text-white/90">
                               Clique para assistir a história completa
                             </p>
                           </div>
