@@ -285,9 +285,9 @@ export default function RootLayout({
             });
           `}
         </Script>
-        <GoogleAnalytics />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <UTMHandler />
         {children}
       </body>

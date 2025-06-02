@@ -419,7 +419,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                   <iframe
-                    src="https://player.vimeo.com/video/1088746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    src="https://player.vimeo.com/video/888746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
                     className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${videoLoadedDesktop ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
@@ -448,7 +448,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                   <iframe
-                    src="https://player.vimeo.com/video/1088747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    src="https://player.vimeo.com/video/888747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
                     className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${videoLoadedMobile ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
