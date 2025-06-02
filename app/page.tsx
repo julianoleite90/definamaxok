@@ -763,11 +763,11 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Receba o Definamax na sua Casa
+              Compre hoje e receba o Definamax na sua casa em até 7 dias úteis
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
-                Entrega rápida e segura para todo Brasil
+                Entrega rápida, segura e garantida para qualquer região do Brasil
               </p>
               <div className="flex items-center gap-2 text-green-700 font-medium">
                 <Clock className="h-5 w-5" />
@@ -779,19 +779,19 @@ export default function LandingPage() {
           {/* Grid de Entregas */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { image: "/gif1.gif", location: "São Paulo, SP", date: "Recebido em 5 dias", isGif: true },
-              { image: "/gif2.gif", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias", isGif: true },
-              { image: "/gif3.gif", location: "Curitiba, PR", date: "Recebido em 6 dias", isGif: true }
+              { image: "/d1-min.png", location: "São Paulo, SP", date: "Recebido em 5 dias" },
+              { image: "/d2-min.png", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
+              { image: "/d3-min.png", location: "Curitiba, PR", date: "Recebido em 6 dias" }
             ].map((item, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative h-[500px]">
+                <div className="relative h-[500px] flex items-center justify-center">
                   <Image
                     src={item.image}
                     alt={`Entrega em ${item.location}`}
                     fill
-                    unoptimized={item.isGif}
                     priority
-                    className={`${item.isGif ? 'object-contain' : 'object-cover'}`}
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <div className="p-4 text-center">
@@ -804,19 +804,19 @@ export default function LandingPage() {
             {showMoreDeliveries && (
               <>
                 {[
-                  { image: "/gif4.gif", location: "Belo Horizonte, MG", date: "Recebido em 5 dias", isGif: true },
-                  { image: "/revi5.jpeg", location: "Salvador, BA", date: "Recebido em 7 dias", isGif: false },
-                  { image: "/revi3.jpeg", location: "Porto Alegre, RS", date: "Recebido em 6 dias", isGif: false }
+                  { image: "/d4-min.png", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" },
+                  { image: "/d5-min.png", location: "Salvador, BA", date: "Recebido em 7 dias" },
+                  { image: "/d6-min.png", location: "Porto Alegre, RS", date: "Recebido em 6 dias" }
                 ].map((item, index) => (
                   <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div className="relative h-[500px]">
+                    <div className="relative h-[500px] flex items-center justify-center">
                       <Image
                         src={item.image}
                         alt={`Entrega em ${item.location}`}
                         fill
-                        unoptimized={item.isGif}
                         priority
-                        className={`${item.isGif ? 'object-contain' : 'object-cover'}`}
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
                     <div className="p-4 text-center">
@@ -858,10 +858,10 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">
-              Seu corpo dos sonhos com{" "}
+              Escolha o melhor kit para o seu{" "}
               <span className="relative inline-block">
                 <span className="absolute inset-0 bg-[#E8F5E9] transform -rotate-1 rounded-2xl"></span>
-                <span className="relative text-green-800">Definamax!</span>
+                <span className="relative text-green-800">Emagrecimento</span>
               </span>
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
@@ -1027,13 +1027,12 @@ export default function LandingPage() {
                 </div>
 
                 <div className="mt-8">
-                  <Link
-                    href={addUtmToUrl("https://full.sale/DmNQj1")}
-                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
+                  <button
+                    disabled
+                    className="block w-full bg-gray-400 text-white font-bold py-3 text-xl rounded-xl cursor-not-allowed transition-all text-center shadow-lg"
                   >
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                    <span className="relative">COMPRAR AGORA</span>
-                  </Link>
+                    ESGOTADO
+                  </button>
                 </div>
 
                 <div className="flex justify-center mt-4">
