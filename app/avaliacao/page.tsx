@@ -504,8 +504,8 @@ export default function AvaliacaoPage() {
                       ></iframe>
                       {!formData.videoAssistido && (
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-transparent md:bg-black/50 backdrop-blur-0 md:backdrop-blur-[2px] z-10 transition-all duration-500">
-                          <div className="hidden md:block bg-black/60 px-4 md:px-8 py-3 md:py-4 rounded-2xl backdrop-blur-sm w-[90%] md:w-auto">
-                            <h3 className="text-2xl md:text-3xl font-bold text-center drop-shadow-lg text-white">
+                          <div className="hidden md:block bg-black/80 px-4 md:px-8 py-3 md:py-4 rounded-2xl backdrop-blur-sm w-[90%] md:w-auto">
+                            <h3 className="text-2xl md:text-3xl font-bold text-center drop-shadow-lg text-red-500 animate-pulse">
                               "Eu sempre fui gorda..."
                             </h3>
                           </div>
@@ -514,12 +514,12 @@ export default function AvaliacaoPage() {
                               trackEvent('clique_assistir_video_imc')
                               setFormData({ ...formData, videoAssistido: true })
                             }}
-                            className="w-24 h-24 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center transform hover:scale-110 transition-all duration-300 hover:bg-red-700 animate-pulse hover:animate-none shadow-lg hover:shadow-xl ring-4 ring-white/30 my-8 md:my-6"
+                            className="w-24 h-24 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center transform hover:scale-110 transition-all duration-300 hover:bg-red-700 animate-bounce hover:animate-none shadow-lg hover:shadow-xl ring-8 ring-red-500/30 my-8 md:my-6"
                           >
                             <Play className="w-12 h-12 md:w-10 md:h-10 text-white ml-1" />
                           </button>
-                          <div className="hidden md:block bg-black/60 px-4 md:px-6 py-3 rounded-xl backdrop-blur-sm w-[90%] md:w-auto">
-                            <p className="text-lg md:text-lg text-center drop-shadow-lg text-white/90">
+                          <div className="hidden md:block bg-black/80 px-4 md:px-6 py-3 rounded-xl backdrop-blur-sm w-[90%] md:w-auto">
+                            <p className="text-lg md:text-lg text-center drop-shadow-lg text-red-400">
                               Clique para assistir a história completa
                             </p>
                           </div>

@@ -190,24 +190,23 @@ export default function LandingPage() {
             {/* Título e Subtítulo */}
             <div className="md:pt-8">
               <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-3 md:mb-4 leading-tight">
-                Emagreça <span className="text-green-800 relative inline-block">
-                  rápido
-                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
+                Transforme o seu <span className="text-green-600 relative inline-block">
+                  corpo
+                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-400 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
-                </span>, sem dietas <span className="text-green-600 relative inline-block">
-                  restritivas
-                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
+                </span> com as <span className="text-green-600 relative inline-block">
+                  fibras
+                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-400 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
-                </span> ou <span className="text-green-600 relative inline-block whitespace-nowrap">
-                  injeções perigosas
-                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-200 -z-10 skew-x-3"></span>
+                </span> que <span className="text-green-600 relative inline-block whitespace-nowrap">
+                  absorvem a gordura
+                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-400 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
               </h1>
 
               <p className="text-xl md:text-xl text-gray-700 mb-3">
-                Controle sua fome, <span className="font-semibold text-green-700">reduza a absorção de gorduras</span> e{" "}
-                <span className="font-semibold text-green-700">acelere seu emagrecimento</span> com Definamax
+                Absorva Menos Gordura <span className="font-semibold text-green-700">e Emagreça Rápido com as Fibras do Definamax!</span>{" "}
               </p>
 
               {/* Social Proof mais conciso */}
@@ -247,25 +246,25 @@ export default function LandingPage() {
               <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8 -mt-7">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Mais saciedade durante o dia todo</span>
+                  <span>Sinta-se Saciado o Dia Todo com Mais Controle!</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Reduz a compulsão por doces e lanches</span>
+                  <span>Diga Adeus à Compulsão por Doces e Lanches!</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Equilibra seu metabolismo</span>
+                  <span>Acelere seu Metabolismo para Emagrecer com Facilidade!</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Combate a retenção de líquidos</span>
+                  <span>Elimine a Retenção de Líquidos e Reduza o Inchaço!</span>
                 </li>
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex flex-col items-center md:items-start w-full mt-2 md:mt-0">
-                <div className="w-full md:w-auto flex justify-center translate-x-[5%] md:translate-x-0">
+              <div className="flex flex-col items-center w-full mt-2 md:mt-0">
+                <div className="w-full md:w-auto flex justify-center">
                   <div className="relative group w-full md:w-auto">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <button
@@ -296,91 +295,118 @@ export default function LandingPage() {
               Histórias Reais de Transformação
             </h2>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
-              Eles também estavam sofrendo com o sobrepeso, e todos emagreceram mais de 10kg usando a fórmula de Definamax
+              Descubra como o Definamax está transformando vidas e ajudando pessoas reais a conquistarem o corpo dos sonhos
             </p>
           </div>
 
-          {/* Grid de Depoimentos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-            {[
-              { name: "Débora", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
-              { name: "Arnaldo", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
-              { name: "Sara", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" }
-            ].map((item, index) => (
-              <div key={index} className="w-full">
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                  <div className="relative aspect-[4/5]">
-                    <Image
-                      src={item.image}
-                      alt={`Resultado ${item.name}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-5 text-center">
-                    <p className="text-4xl font-bold text-green-600 mb-1">-{item.loss}kg</p>
-                    <p className="text-gray-600">em {item.months} meses</p>
-                    <div className="mt-2">
-                      <p className="font-medium text-gray-700">{item.name}, {item.age} anos</p>
-                      <p className="text-sm text-gray-500">{item.profession}</p>
-                      <p className="text-sm text-gray-400 mt-1">{item.location}</p>
+          {/* Carrossel */}
+          <div className="relative">
+            {/* Navegação Esquerda */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.carousel-container') as HTMLElement;
+                if (container) {
+                  container.scrollLeft -= container.offsetWidth;
+                }
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-green-600 p-2 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 hidden md:block"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+
+            {/* Indicador de Swipe Mobile - Esquerda */}
+            <div className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10">
+              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
+                <ChevronLeft className="h-5 w-5 text-green-600" />
+              </div>
+            </div>
+
+            {/* Container do Carrossel */}
+            <div className="carousel-container overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
+              {[
+                { name: "Débora", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
+                { name: "Arnaldo", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
+                { name: "Sara", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" },
+                { name: "Rosimari", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
+                { name: "Laura", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Designer", location: "Guarulhos, SP" },
+                { name: "Victor", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Motorista de aplicativo", location: "Belo Horizonte, MG" }
+              ].map((item, index) => (
+                <div key={index} className="snap-start flex-none w-full md:w-[calc(33.333%-1rem)] transition-all">
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div className="relative aspect-[4/5]">
+                      <Image
+                        src={item.image}
+                        alt={`Resultado ${item.name}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-5 text-center">
+                      <p className="text-4xl font-bold text-green-600 mb-1">-{item.loss}kg</p>
+                      <p className="text-gray-600">em {item.months} meses</p>
+                      <div className="mt-2">
+                        <p className="font-medium text-gray-700">{item.name}, {item.age} anos</p>
+                        <p className="text-sm text-gray-500">{item.profession}</p>
+                        <p className="text-sm text-gray-400 mt-1">{item.location}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
 
-            {showMoreReviews && (
-              <>
-                {[
-                  { name: "Rosimari", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
-                  { name: "Laura", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Designer", location: "Guarulhos, SP" },
-                  { name: "Victor", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Motorista de aplicativo", location: "Belo Horizonte, MG" }
-                ].map((item, index) => (
-                  <div key={index} className="w-full">
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                      <div className="relative aspect-[4/5]">
-                        <Image
-                          src={item.image}
-                          alt={`Resultado ${item.name}`}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-5 text-center">
-                        <p className="text-4xl font-bold text-green-600 mb-1">-{item.loss}kg</p>
-                        <p className="text-gray-600">em {item.months} meses</p>
-                        <div className="mt-2">
-                          <p className="font-medium text-gray-700">{item.name}, {item.age} anos</p>
-                          <p className="text-sm text-gray-500">{item.profession}</p>
-                          <p className="text-sm text-gray-400 mt-1">{item.location}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </>
-            )}
+            {/* Navegação Direita */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.carousel-container') as HTMLElement;
+                if (container) {
+                  container.scrollLeft += container.offsetWidth;
+                }
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-green-600 p-2 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 hidden md:block"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
+            {/* Indicador de Swipe Mobile - Direita */}
+            <div className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10">
+              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
+                <ChevronRight className="h-5 w-5 text-green-600" />
+              </div>
+            </div>
+
+            {/* Texto indicativo de swipe para mobile */}
+            <div className="md:hidden text-center text-sm text-gray-500 mt-2 animate-pulse">
+              Arraste para o lado para ver mais
+            </div>
+
+            {/* Indicadores de Página (Dots) */}
+            <div className="flex justify-center gap-2 mt-6">
+              {[0, 1, 2].map((dot) => (
+                <button
+                  key={dot}
+                  onClick={() => {
+                    const container = document.querySelector('.carousel-container') as HTMLElement;
+                    if (container) {
+                      container.scrollLeft = container.offsetWidth * dot;
+                    }
+                  }}
+                  className="w-2 h-2 rounded-full bg-green-200 hover:bg-green-300 transition-all"
+                >
+                  <span className="sr-only">Página {dot + 1}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Botão Ver Mais */}
-          <div className="flex justify-center mt-8">
+          {/* CTA após o carrossel */}
+          <div className="text-center mt-12">
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                setShowMoreReviews(!showMoreReviews);
-                // Pequeno delay para garantir que o conteúdo foi renderizado
-                setTimeout(() => {
-                  window.scrollTo({
-                    top: window.scrollY,
-                    behavior: 'instant'
-                  });
-                }, 0);
-              }}
-              className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
+              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg"
             >
-              {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-              <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
+              QUERO COMEÇAR MINHA TRANSFORMAÇÃO
+              <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
         </div>
@@ -419,7 +445,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                   <iframe
-                    src="https://player.vimeo.com/video/888746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    src="https://player.vimeo.com/video/1088746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
                     className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${videoLoadedDesktop ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
@@ -448,7 +474,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                   <iframe
-                    src="https://player.vimeo.com/video/888747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
+                    src="https://player.vimeo.com/video/1088747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
                     className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${videoLoadedMobile ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
@@ -777,38 +803,39 @@ export default function LandingPage() {
           </div>
 
           {/* Grid de Entregas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { image: "/d1-min.png", location: "São Paulo, SP", date: "Recebido em 5 dias" },
-              { image: "/d2-min.png", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
-              { image: "/d3-min.png", location: "Curitiba, PR", date: "Recebido em 6 dias" }
-            ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative h-[500px] flex items-center justify-center">
-                  <Image
-                    src={item.image}
-                    alt={`Entrega em ${item.location}`}
-                    fill
-                    priority
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <p className="text-sm text-gray-500">{item.location}</p>
-                  <p className="text-sm text-green-600 mt-1 font-medium">{item.date}</p>
-                </div>
-              </div>
-            ))}
+          <div className="relative">
+            {/* Navegação Esquerda */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.delivery-carousel') as HTMLElement;
+                if (container) {
+                  container.scrollLeft -= container.offsetWidth;
+                }
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-green-600 p-2 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 hidden md:block"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
 
-            {showMoreDeliveries && (
-              <>
-                {[
-                  { image: "/d4-min.png", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" },
-                  { image: "/d5-min.png", location: "Salvador, BA", date: "Recebido em 7 dias" },
-                  { image: "/d6-min.png", location: "Porto Alegre, RS", date: "Recebido em 6 dias" }
-                ].map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
+            {/* Indicador de Swipe Mobile - Esquerda */}
+            <div className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10">
+              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
+                <ChevronLeft className="h-5 w-5 text-green-600" />
+              </div>
+            </div>
+
+            {/* Container do Carrossel */}
+            <div className="delivery-carousel overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
+              {[
+                { image: "/d1-min.png", location: "São Paulo, SP", date: "Recebido em 5 dias" },
+                { image: "/d2-min.png", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
+                { image: "/d3-min.png", location: "Curitiba, PR", date: "Recebido em 6 dias" },
+                { image: "/d4-min.png", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" },
+                { image: "/d5-min.png", location: "Salvador, BA", date: "Recebido em 7 dias" },
+                { image: "/d6-min.png", location: "Porto Alegre, RS", date: "Recebido em 6 dias" }
+              ].map((item, index) => (
+                <div key={index} className="snap-start flex-none w-full md:w-[calc(33.333%-1rem)] transition-all">
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative h-[500px] flex items-center justify-center">
                       <Image
                         src={item.image}
@@ -824,9 +851,52 @@ export default function LandingPage() {
                       <p className="text-sm text-green-600 mt-1 font-medium">{item.date}</p>
                     </div>
                   </div>
-                ))}
-              </>
-            )}
+                </div>
+              ))}
+            </div>
+
+            {/* Navegação Direita */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.delivery-carousel') as HTMLElement;
+                if (container) {
+                  container.scrollLeft += container.offsetWidth;
+                }
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-green-600 p-2 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 hidden md:block"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
+            {/* Indicador de Swipe Mobile - Direita */}
+            <div className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10">
+              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
+                <ChevronRight className="h-5 w-5 text-green-600" />
+              </div>
+            </div>
+
+            {/* Texto indicativo de swipe para mobile */}
+            <div className="md:hidden text-center text-sm text-gray-500 mt-2 animate-pulse">
+              Arraste para o lado para ver mais
+            </div>
+
+            {/* Indicadores de Página (Dots) */}
+            <div className="flex justify-center gap-2 mt-6">
+              {[0, 1, 2].map((dot) => (
+                <button
+                  key={dot}
+                  onClick={() => {
+                    const container = document.querySelector('.delivery-carousel') as HTMLElement;
+                    if (container) {
+                      container.scrollLeft = container.offsetWidth * dot;
+                    }
+                  }}
+                  className="w-2 h-2 rounded-full bg-green-200 hover:bg-green-300 transition-all"
+                >
+                  <span className="sr-only">Página {dot + 1}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Botão Ver Mais */}
