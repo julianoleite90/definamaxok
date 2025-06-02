@@ -20,7 +20,7 @@ export default function LandingPage() {
   // Estados necessários
   const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes: 59, seconds: 59 })
   const [showMoreReviews, setShowMoreReviews] = useState(false)
-  const [showMoreDeliveries, setShowMoreDeliveries] = useState(false)
+  const [showMoreDeliveries, setShowMoreDeliveries] = useState(false) // Remover esta linha
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
   const [showWhatsApp, setShowWhatsApp] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
@@ -189,24 +189,20 @@ export default function LandingPage() {
           <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 items-start">
             {/* Título e Subtítulo */}
             <div className="md:pt-8">
-              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-green-800 mb-3 md:mb-4 leading-tight">
-                Transforme o seu <span className="text-green-600 relative inline-block">
-                  corpo
-                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-400 -z-10 skew-x-3"></span>
-                  <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
-                </span> com as <span className="text-green-600 relative inline-block">
-                  fibras
-                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-400 -z-10 skew-x-3"></span>
-                  <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
-                </span> que <span className="text-green-600 relative inline-block whitespace-nowrap">
-                  absorvem a gordura
-                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-400 -z-10 skew-x-3"></span>
+              <h1 className="text-[2.1rem] md:text-[2.3rem] lg:text-[2.8rem] font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
+                <span className="text-gray-800 relative inline-block">
+                  Emagreça rápido
+                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gray-200 -z-10 skew-x-3"></span>
+                  <span className="absolute -inset-1 bg-gray-50/50 -z-20 rounded-lg transform rotate-1"></span>
+                </span> e <span className="text-green-700 relative inline-block">
+                  recupere a confiança no seu corpo
+                  <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-500 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
               </h1>
 
               <p className="text-xl md:text-xl text-gray-700 mb-3">
-                Absorva Menos Gordura <span className="font-semibold text-green-700">e Emagreça Rápido com as Fibras do Definamax!</span>{" "}
+                Descubra o poder das <span className="font-semibold text-green-700">fibras que absorvem a gordura</span>, promovem <span className="font-semibold text-green-700">saciedade</span> e <span className="font-semibold text-green-700">aceleram o emagrecimento</span>
               </p>
 
               {/* Social Proof mais conciso */}
@@ -246,25 +242,25 @@ export default function LandingPage() {
               <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8 -mt-7">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Sinta-se Saciado o Dia Todo com Mais Controle!</span>
+                  <span>Mais saciedade durante o dia</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Diga Adeus à Compulsão por Doces e Lanches!</span>
+                  <span>Menos compulsão por doces e lanches</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Acelere seu Metabolismo para Emagrecer com Facilidade!</span>
+                  <span>Metabolismo acelerado e equilibrado</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Elimine a Retenção de Líquidos e Reduza o Inchaço!</span>
+                  <span>Menos retenção de líquidos e inchaço no corpo</span>
                 </li>
               </ul>
 
               {/* CTA Principal */}
-              <div className="flex flex-col items-center w-full mt-2 md:mt-0">
-                <div className="w-full md:w-auto flex justify-center">
+              <div className="flex flex-col items-center md:items-start w-full mt-2 md:mt-0">
+                <div className="w-full md:w-auto flex justify-center md:justify-start">
                   <div className="relative group w-full md:w-auto">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <button
@@ -272,7 +268,7 @@ export default function LandingPage() {
                       className="relative w-full md:w-auto whitespace-nowrap inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-[17px] md:text-lg font-bold text-white hover:bg-green-500 transition-all shadow-lg"
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
-                      QUERO EMAGRECER AGORA!
+                      EXPERIMENTE DEFINAMAX HOJE
                     </button>
                   </div>
                 </div>
@@ -405,7 +401,7 @@ export default function LandingPage() {
               onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg"
             >
-              QUERO COMEÇAR MINHA TRANSFORMAÇÃO
+              EU TAMBÉM QUERO EMAGRECER
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
@@ -526,12 +522,12 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="flex justify-center mt-10 flex-col items-center">
+              <div className="flex justify-center md:justify-start mt-10 flex-col items-center md:items-start">
                 <button
                   onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
                   className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-green-500 px-6 py-3 text-base font-bold text-white hover:from-green-500 hover:to-green-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl border-b-4 border-green-700"
                 >
-                  PEDIR AGORA DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
+                  EXPERIMENTE DEFINAMAX HOJE <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -899,26 +895,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Botão Ver Mais */}
-          <div className="flex justify-center mt-8">
-                          <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowMoreDeliveries(!showMoreDeliveries);
-                  // Pequeno delay para garantir que o conteúdo foi renderizado
-                  setTimeout(() => {
-                    window.scrollTo({
-                      top: window.scrollY,
-                      behavior: 'instant'
-                    });
-                  }, 0);
-                }}
-                className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
-              >
-                {showMoreDeliveries ? "Ver menos entregas" : "Ver mais entregas"}
-                <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreDeliveries ? "rotate-180" : ""}`} />
-            </button>
-          </div>
+
+ 
         </div>
       </section>
 
@@ -1097,12 +1075,13 @@ export default function LandingPage() {
                 </div>
 
                 <div className="mt-8">
-                  <button
-                    disabled
-                    className="block w-full bg-gray-400 text-white font-bold py-3 text-xl rounded-xl cursor-not-allowed transition-all text-center shadow-lg"
+                  <Link
+                    href={addUtmToUrl("https://full.sale/DmNQj1")}
+                    className="block w-full bg-[#15803D] text-white font-bold py-3 text-xl rounded-xl hover:bg-[#166534] transition-all text-center shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
                   >
-                    ESGOTADO
-                  </button>
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] group-hover:animate-[shine_1.5s_infinite]"></div>
+                    <span className="relative">COMPRAR AGORA</span>
+                  </Link>
                 </div>
 
                 <div className="flex justify-center mt-4">
