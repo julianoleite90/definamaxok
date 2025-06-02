@@ -144,7 +144,7 @@ export default function LandingPage() {
         href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed md:bottom-6 bottom-4 md:right-6 right-4 z-[9999] flex items-center gap-2 md:gap-3 bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 md:px-4 md:py-2 px-3 py-1.5 group ${
+        className={`fixed md:bottom-6 bottom-20 md:right-6 right-4 z-[9999] flex items-center gap-2 md:gap-3 bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 md:px-4 md:py-2 px-3.5 py-2 group ${
           showWhatsApp ? 'translate-y-0 opacity-100 visible' : 'translate-y-[200%] opacity-0 invisible'
         }`}
       >
@@ -154,10 +154,10 @@ export default function LandingPage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 md:h-3.5 md:w-3.5 bg-red-500"></span>
           </span>
-          <MessageCircle className="h-7 w-7 md:h-9 md:w-9 text-white" />
+          <MessageCircle className="h-8 w-8 md:h-9 md:w-9 text-white" />
         </div>
         {/* Texto "Fale Conosco" */}
-        <span className="text-white font-medium text-sm md:text-lg whitespace-nowrap pr-1">Fale Conosco</span>
+        <span className="text-white font-medium text-base md:text-lg whitespace-nowrap pr-1">Fale Conosco</span>
       </a>
 
       {/* Header com CTA */}
