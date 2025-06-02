@@ -144,15 +144,20 @@ export default function LandingPage() {
         href="https://wa.me/5541984549172?text=Olá!%20Estou%20entrando%20em%20contato%20para%20obter%20mais%20informações%20sobre%20o%20emagrecedor%20Definamax."
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed md:bottom-6 bottom-4 md:right-6 right-4 z-[9999] flex items-center justify-center w-[60px] h-[60px] md:w-[65px] md:h-[65px] bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 ${
+        className={`fixed md:bottom-6 bottom-4 md:right-6 right-4 z-[9999] flex items-center gap-2 md:gap-3 bg-[#25D366] rounded-full shadow-xl hover:bg-[#20BD5A] transition-all transform hover:scale-105 md:px-4 md:py-2 px-3 py-1.5 group ${
           showWhatsApp ? 'translate-y-0 opacity-100 visible' : 'translate-y-[200%] opacity-0 invisible'
         }`}
       >
         <div className="relative flex items-center justify-center">
-          {/* Indicador de Status */}
-          <span className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-red-500 border-2 border-white rounded-full animate-pulse"></span>
-          <MessageCircle className="h-8 w-8 md:h-9 md:w-9 text-white" />
+          {/* Indicador de Status - Estilo "Ao Vivo" */}
+          <span className="absolute -top-1 -right-1 flex h-3 w-3 md:h-3.5 md:w-3.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 md:h-3.5 md:w-3.5 bg-red-500"></span>
+          </span>
+          <MessageCircle className="h-7 w-7 md:h-9 md:w-9 text-white" />
         </div>
+        {/* Texto "Fale Conosco" */}
+        <span className="text-white font-medium text-sm md:text-lg whitespace-nowrap pr-1">Fale Conosco</span>
       </a>
 
       {/* Header com CTA */}
@@ -785,15 +790,15 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Compre hoje e receba o Definamax na sua casa em até 7 dias úteis
+              Frete grátis com entrega expressa em até 7 dias úteis!
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
-                Entrega rápida, segura e garantida para qualquer região do Brasil
+                <span className="font-semibold text-green-700">Envio Imediato</span> para todo Brasil com <span className="font-semibold text-green-700">Rastreamento Online</span>
               </p>
-              <div className="flex items-center gap-2 text-green-700 font-medium">
+              <div className="flex items-center gap-2 text-green-700 font-medium bg-green-50 px-4 py-2 rounded-full shadow-sm">
                 <Clock className="h-5 w-5" />
-                <span>Prazo de entrega: até 7 dias úteis</span>
+                <span>Pedidos feitos hoje serão enviados em até 24h!</span>
               </div>
             </div>
           </div>
