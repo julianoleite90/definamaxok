@@ -503,8 +503,8 @@ export default function AvaliacaoPage() {
                         title="Depoimento Definamax"
                       ></iframe>
                       {!formData.videoAssistido && (
-                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 backdrop-blur-[2px] z-10 transition-all duration-500">
-                          <div className="bg-black/60 px-4 md:px-8 py-3 md:py-4 rounded-2xl backdrop-blur-sm w-[90%] md:w-auto">
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-transparent md:bg-black/50 backdrop-blur-0 md:backdrop-blur-[2px] z-10 transition-all duration-500">
+                          <div className="hidden md:block bg-black/60 px-4 md:px-8 py-3 md:py-4 rounded-2xl backdrop-blur-sm w-[90%] md:w-auto">
                             <h3 className="text-2xl md:text-3xl font-bold text-center drop-shadow-lg text-white">
                               "Eu sempre fui gorda..."
                             </h3>
@@ -518,7 +518,7 @@ export default function AvaliacaoPage() {
                           >
                             <Play className="w-12 h-12 md:w-10 md:h-10 text-white ml-1" />
                           </button>
-                          <div className="bg-black/60 px-4 md:px-6 py-3 rounded-xl backdrop-blur-sm w-[90%] md:w-auto">
+                          <div className="hidden md:block bg-black/60 px-4 md:px-6 py-3 rounded-xl backdrop-blur-sm w-[90%] md:w-auto">
                             <p className="text-lg md:text-lg text-center drop-shadow-lg text-white/90">
                               Clique para assistir a história completa
                             </p>
