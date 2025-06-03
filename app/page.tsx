@@ -803,6 +803,7 @@ export default function LandingPage() {
             {/* Container dos Vídeos */}
             <div className="delivery-videos flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
+                { videoId: "1090182162" },
                 { videoId: "1079845171" },
                 { videoId: "1079850549" },
                 { videoId: "1079845066" },

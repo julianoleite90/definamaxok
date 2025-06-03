@@ -335,7 +335,7 @@ export default function LandingPage() {
               Histórias Reais de Transformação
             </h2>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
-              Descubra como o Definamax está transformando vidas e ajudando pessoas reais a conquistarem o corpo dos sonhos
+              Definamax está transformando vidas e ajudando pessoas reais a recuperar a autoestima
             </p>
           </div>
 
@@ -438,7 +438,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              As <span className="text-green-700">Fibras Inteligentes</span> que<br className="hidden md:block" /> Absorvem a Gordura
+              As <span className="text-green-700">fibras bioativas</span> que<br className="hidden md:block" /> absorvem gordura
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Uma combinação exclusiva de fibras bioativas que aceleram seu emagrecimento de forma natural e mais rápida
@@ -476,7 +476,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">1</span>
-                  Absorção Máxima de Gorduras
+                  Absorção de Gorduras
                 </h3>
                 <p className="text-gray-700">
                   A Quitosana, uma fibra natural extraída de fontes marinhas, tem a capacidade única de se ligar às moléculas de gordura durante a digestão. Isso significa que até 30% das gorduras consumidas são naturalmente eliminadas antes de serem absorvidas pelo seu corpo.
@@ -486,7 +486,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">2</span>
-                  Controle Avançado da Compulsão Alimentar
+                  Controle da Compulsão Alimentar
                 </h3>
                 <p className="text-gray-700">
                   O Psyllium e o Agar Agar são fibras especiais que, em contato com água, formam um gel natural expansivo no estômago. Este processo proporciona uma sensação duradoura de saciedade, reduzindo naturalmente a fome e a compulsão por doces.
@@ -496,7 +496,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">3</span>
-                  Potencialização Metabólica Intensiva
+                  Potencialização Metabólica
                 </h3>
                 <p className="text-gray-700">
                   A Espirulina e o Cromo são nutrientes essenciais que ajudam a regular o metabolismo e os níveis de açúcar no sangue. Juntos, contribuem para um metabolismo mais eficiente e uma melhor queima de gordura corporal.
@@ -506,7 +506,7 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">4</span>
-                  Regulação Intestinal Avançada
+                  Regulação Intestinal
                 </h3>
                 <p className="text-gray-700">
                   O conjunto de fibras solúveis e insolúveis promove uma limpeza natural do organismo, melhorando o funcionamento intestinal e aumentando sua disposição. Você se sente mais leve e com mais energia para suas atividades diárias.
@@ -776,7 +776,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-            Clientes que venceram a compulsão e emagreceram com o Definamax
+            Clientes que venceram a <span className="text-green-700">compulsão</span> e <span className="text-green-700">emagreceram</span> com o <span className="text-green-700 font-extrabold">Definamax</span>
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
@@ -803,6 +803,7 @@ export default function LandingPage() {
             {/* Container dos Vídeos */}
             <div className="delivery-videos flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
+                { videoId: "1090182162" },
                 { videoId: "1079845171" },
                 { videoId: "1079850549" },
                 { videoId: "1079845066" },
