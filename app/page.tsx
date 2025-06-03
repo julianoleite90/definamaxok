@@ -776,7 +776,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-            Clientes que venceram a compulsão e emagreceram com o Definamax
+            Clientes que venceram a <span className="text-green-700">compulsão</span> e <span className="text-green-700">emagreceram</span> com o <span className="text-green-700 font-extrabold">Definamax</span>
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
