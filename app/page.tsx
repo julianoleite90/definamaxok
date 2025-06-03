@@ -428,7 +428,7 @@ export default function LandingPage() {
 
             {/* Indicadores de Página (Dots) */}
             <div className="flex justify-center gap-2 mt-6">
-              {[0, 1, 2].map((dot) => (
+              {[0, 1, 2, 3, 4, 5].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
@@ -449,7 +449,7 @@ export default function LandingPage() {
           <div className="text-center mt-12">
             <button
               onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               EU TAMBÉM QUERO EMAGRECER
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -807,13 +807,10 @@ export default function LandingPage() {
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
                 <span className="font-semibold text-green-700">Assista os vídeos</span> de nossos clientes
               </p>
-              <div className="flex items-center gap-2 text-green-700 font-medium bg-green-50 px-4 py-2 rounded-full shadow-sm">
-
-              </div>
             </div>
           </div>
 
-          {/* Grid de Entregas */}
+          {/* Grid de Vídeos */}
           <div className="relative">
             {/* Navegação Esquerda */}
             <button 
@@ -828,20 +825,13 @@ export default function LandingPage() {
               <ChevronLeft className="h-6 w-6" />
             </button>
 
-            {/* Indicador de Swipe Mobile - Esquerda */}
-            <div className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                <ChevronLeft className="h-5 w-5 text-green-600" />
-              </div>
-            </div>
-
             {/* Container do Carrossel */}
             <div className="delivery-carousel overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
-                { videoId: "1079845171", },
-                { videoId: "1079850549",  },
-                { videoId: "1079845066", },
-                { videoId: "1079845128", }
+                { videoId: "1079845171" },
+                { videoId: "1079850549" },
+                { videoId: "1079845066" },
+                { videoId: "1079845128" }
               ].map((item, index) => (
                 <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -852,7 +842,7 @@ export default function LandingPage() {
                         frameBorder="0"
                         allow="fullscreen"
                         allowFullScreen
-                        title={`Entrega em ${item.location}`}
+                        title={`Vídeo de depoimento ${index + 1}`}
                       ></iframe>
                       {!videoStates[`video${index + 1}`].playing && (
                         <div className="absolute inset-0 z-30 flex items-center justify-center">
@@ -872,10 +862,6 @@ export default function LandingPage() {
                         </div>
                       )}
                     </div>
-                    <div className="p-3 text-center">
-                      <p className="text-sm text-gray-500">{item.location}</p>
-                      <p className="text-sm text-green-600 mt-1 font-medium">{item.date}</p>
-                    </div>
                   </div>
                 </div>
               ))}
@@ -893,18 +879,6 @@ export default function LandingPage() {
             >
               <ChevronRight className="h-6 w-6" />
             </button>
-
-            {/* Indicador de Swipe Mobile - Direita */}
-            <div className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                <ChevronRight className="h-5 w-5 text-green-600" />
-              </div>
-            </div>
-
-            {/* Texto indicativo de swipe para mobile */}
-            <div className="md:hidden text-center text-sm text-gray-500 mt-2 animate-pulse">
-              Arraste para o lado para ver mais
-            </div>
 
             {/* Indicadores de Página (Dots) */}
             <div className="flex justify-center gap-2 mt-6">
@@ -925,8 +899,16 @@ export default function LandingPage() {
             </div>
           </div>
 
-
- 
+          {/* CTA após o carrossel */}
+          <div className="text-center mt-12">
+            <button
+              onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              EU TAMBÉM QUERO EMAGRECER
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+          </div>
         </div>
       </section>
 
