@@ -233,20 +233,20 @@ export default function LandingPage() {
             <div className="md:pt-8">
               <h1 className="text-[1.9rem] md:text-[2.1rem] lg:text-[2.5rem] font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
                 <span className="text-gray-800 relative inline-block">
-                  Emagreça mais rápido,
+                  Emagreça rápido,
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gray-200 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-gray-50/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
                 <br />
                 <span className="text-green-700 relative inline-block">
-                  recupere sua saúde e a autoestima
+                  recupere sua autoestima e renove sua confiança
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-500 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
               </h1>
 
               <p className="text-lg md:text-lg text-gray-700 mb-3">
-                Fórmula avançada com fibras naturais que reduzem gordura, controlam a fome e aceleram seu metabolismo para um emagrecimento saudável
+                Descubra o poder das fibras que absorvem gordura, controlam a compulsão, e aceleram a perda de peso.
               </p>
 
               {/* Social Proof mais conciso */}
@@ -354,13 +354,6 @@ export default function LandingPage() {
               <ChevronLeft className="h-6 w-6" />
             </button>
 
-            {/* Indicador de Swipe Mobile - Esquerda */}
-            <div className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                <ChevronLeft className="h-5 w-5 text-green-600" />
-              </div>
-            </div>
-
             {/* Container do Carrossel */}
             <div className="carousel-container overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
@@ -408,21 +401,9 @@ export default function LandingPage() {
               <ChevronRight className="h-6 w-6" />
             </button>
 
-            {/* Indicador de Swipe Mobile - Direita */}
-            <div className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                <ChevronRight className="h-5 w-5 text-green-600" />
-              </div>
-            </div>
-
-            {/* Texto indicativo de swipe para mobile */}
-            <div className="md:hidden text-center text-sm text-gray-500 mt-2 animate-pulse">
-              Arraste para o lado para ver mais
-            </div>
-
-            {/* Indicadores de Página (Dots) */}
-            <div className="flex justify-center gap-2 mt-6">
-              {[0, 1, 2].map((dot) => (
+            {/* Indicadores de Página (Dots) - Apenas Desktop */}
+            <div className="hidden md:flex justify-center gap-2 mt-6">
+              {[0, 1, 2, 3].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
@@ -443,7 +424,7 @@ export default function LandingPage() {
           <div className="text-center mt-12">
             <button
               onClick={() => kitsRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-500 transition-all transform hover:scale-105 shadow-lg relative overflow-hidden group animate-[pulseAndScale_2s_ease-in-out_infinite]"
             >
               EU TAMBÉM QUERO EMAGRECER
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -796,22 +777,20 @@ export default function LandingPage() {
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
             Clientes que venceram a compulsão e emagreceram com o Definamax
-
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
-                <span className="font-semibold text-green-700">Assista os vídeos de nossos cliente </span>
+                <span className="font-semibold text-green-700">Assista os vídeos de nossos clientes</span>
               </p>
- 
             </div>
           </div>
 
           {/* Grid de Entregas */}
           <div className="relative">
-            {/* Navegação Esquerda */}
+            {/* Navegação Esquerda - Apenas Desktop */}
             <button 
               onClick={() => {
-                const container = document.querySelector('.delivery-carousel') as HTMLElement;
+                const container = document.querySelector('.delivery-videos') as HTMLElement;
                 if (container) {
                   container.scrollLeft -= container.offsetWidth;
                 }
@@ -821,46 +800,35 @@ export default function LandingPage() {
               <ChevronLeft className="h-6 w-6" />
             </button>
 
-            {/* Indicador de Swipe Mobile - Esquerda */}
-            <div className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                <ChevronLeft className="h-5 w-5 text-green-600" />
-              </div>
-            </div>
-
-            {/* Container do Carrossel */}
-            <div className="delivery-carousel overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
+            {/* Container dos Vídeos */}
+            <div className="delivery-videos flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
-                { videoId: "1079845171", location: "São Paulo, SP", date: "Recebido em 5 dias" },
-                { videoId: "1079850549", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
-                { videoId: "1079845066", location: "Curitiba, PR", date: "Recebido em 6 dias" },
-                { videoId: "1079845128", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" }
+                { videoId: "1079845171" },
+                { videoId: "1079850549" },
+                { videoId: "1079845066" },
+                { videoId: "1079845128" }
               ].map((item, index) => (
-                <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
+                <div key={index} className="w-full md:w-[calc(50%-1rem)] md:flex-none md:snap-start">
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative aspect-video bg-black">
                       <iframe
                         src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0`}
-                        className="absolute inset-0 w-full h-full z-20"
+                        className="absolute inset-0 w-full h-full"
                         frameBorder="0"
                         allow="fullscreen"
                         allowFullScreen
-                        title={`Entrega em ${item.location}`}
+                        title={`Depoimento em vídeo ${index + 1}`}
                       ></iframe>
-                    </div>
-                    <div className="p-3 text-center">
-                      <p className="text-sm text-gray-500">{item.location}</p>
-                      <p className="text-sm text-green-600 mt-1 font-medium">{item.date}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Navegação Direita */}
+            {/* Navegação Direita - Apenas Desktop */}
             <button 
               onClick={() => {
-                const container = document.querySelector('.delivery-carousel') as HTMLElement;
+                const container = document.querySelector('.delivery-videos') as HTMLElement;
                 if (container) {
                   container.scrollLeft += container.offsetWidth;
                 }
@@ -870,25 +838,13 @@ export default function LandingPage() {
               <ChevronRight className="h-6 w-6" />
             </button>
 
-            {/* Indicador de Swipe Mobile - Direita */}
-            <div className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                <ChevronRight className="h-5 w-5 text-green-600" />
-              </div>
-            </div>
-
-            {/* Texto indicativo de swipe para mobile */}
-            <div className="md:hidden text-center text-sm text-gray-500 mt-2 animate-pulse">
-              Arraste para o lado para ver mais
-            </div>
-
-            {/* Indicadores de Página (Dots) */}
-            <div className="flex justify-center gap-2 mt-6">
-              {[0, 1, 2, 3].map((dot) => (
+            {/* Indicadores de Página (Dots) - Apenas Desktop */}
+            <div className="hidden md:flex justify-center gap-2 mt-6">
+              {[0, 1].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
-                    const container = document.querySelector('.delivery-carousel') as HTMLElement;
+                    const container = document.querySelector('.delivery-videos') as HTMLElement;
                     if (container) {
                       container.scrollLeft = container.offsetWidth * dot;
                     }
@@ -900,9 +856,6 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-
-
- 
         </div>
       </section>
 
