@@ -20,7 +20,7 @@ export default function LandingPage() {
   // Estados necessários
   const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes: 59, seconds: 59 })
   const [showMoreReviews, setShowMoreReviews] = useState(false)
-  const [showMoreDeliveries, setShowMoreDeliveries] = useState(false) // Remover esta linha
+  const [showMoreVideos, setShowMoreVideos] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
   const [showWhatsApp, setShowWhatsApp] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
@@ -810,7 +810,12 @@ export default function LandingPage() {
                 { videoId: "1079845066" },
                 { videoId: "1079845128" }
               ].map((item, index) => (
-                <div key={index} className="w-full md:w-[calc(50%-1rem)] md:flex-none md:snap-start">
+                <div 
+                  key={index} 
+                  className={`w-full md:w-[calc(50%-1rem)] md:flex-none md:snap-start ${
+                    index >= 3 && !showMoreVideos ? 'hidden md:block' : ''
+                  }`}
+                >
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative aspect-video bg-black">
                       <iframe
@@ -825,6 +830,17 @@ export default function LandingPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Botão Ver Mais Vídeos - Apenas Mobile */}
+            <div className="md:hidden flex justify-center mt-8">
+              <button
+                onClick={() => setShowMoreVideos(!showMoreVideos)}
+                className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
+              >
+                {showMoreVideos ? "Ver menos vídeos" : "Ver mais vídeos"}
+                <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreVideos ? "rotate-180" : ""}`} />
+              </button>
             </div>
 
             {/* Navegação Direita - Apenas Desktop */}
