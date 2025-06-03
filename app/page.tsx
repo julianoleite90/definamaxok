@@ -803,6 +803,7 @@ export default function LandingPage() {
             {/* Container dos Vídeos */}
             <div className="delivery-videos flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
+                { videoId: "1090220707" },
                 { videoId: "1090182162" },
                 { videoId: "1079845171" },
                 { videoId: "1079850549" },
@@ -813,7 +814,7 @@ export default function LandingPage() {
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative aspect-video bg-black">
                       <iframe
-                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0`}
+                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autopause=0&playsinline=1&title=0&byline=0&portrait=0&sidedock=0`}
                         className="absolute inset-0 w-full h-full"
                         frameBorder="0"
                         allow="fullscreen"
