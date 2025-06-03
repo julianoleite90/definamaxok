@@ -814,7 +814,7 @@ export default function LandingPage() {
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative aspect-video bg-black">
                       <iframe
-                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autopause=0&playsinline=1&title=0&byline=0&portrait=0&sidedock=0`}
+                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&autopause=1&playsinline=1&title=0&byline=0&portrait=0&sidedock=0&loop=1&autoplay=0&background=0&muted=0`}
                         className="absolute inset-0 w-full h-full"
                         frameBorder="0"
                         allow="fullscreen"
