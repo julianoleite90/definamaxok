@@ -29,6 +29,43 @@ export default function LandingPage() {
   const buyRef = useRef<HTMLDivElement>(null)
   const kitsRef = useRef<HTMLDivElement>(null)
 
+  // Adicione os estados para controle de carregamento dos vídeos
+  type VideoLoadedState = {
+    [key: string]: boolean;
+  };
+  
+  const [videosLoaded, setVideosLoaded] = useState<VideoLoadedState>({
+    video1: false,
+    video2: false,
+    video3: false,
+    video4: false
+  });
+
+  // Adicione os estados para controle de carregamento e reprodução dos vídeos
+  type VideoState = {
+    [key: string]: {
+      loaded: boolean;
+      playing: boolean;
+    }
+  };
+  
+  const [videoStates, setVideoStates] = useState<VideoState>({
+    video1: { loaded: false, playing: false },
+    video2: { loaded: false, playing: false },
+    video3: { loaded: false, playing: false },
+    video4: { loaded: false, playing: false }
+  });
+
+  const handlePlayVideo = (index: number) => {
+    setVideoStates(prev => ({
+      ...prev,
+      [`video${index + 1}`]: {
+        ...prev[`video${index + 1}`],
+        playing: true
+      }
+    }));
+  };
+
   // Função para formatar a data no padrão brasileiro
   const formatDate = (date: Date): string => {
     const day = date.getDate().toString().padStart(2, '0')
@@ -196,20 +233,20 @@ export default function LandingPage() {
             <div className="md:pt-8">
               <h1 className="text-[1.9rem] md:text-[2.1rem] lg:text-[2.5rem] font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
                 <span className="text-gray-800 relative inline-block">
-                  Emagreça em poucas semanas, e
+                  Emagreça mais rápido,
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gray-200 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-gray-50/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
                 <br />
                 <span className="text-green-700 relative inline-block">
-                  recupere a autoestima
+                  recupere sua saúde e a autoestima
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-500 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
               </h1>
 
-              <p className="text-xl md:text-xl text-gray-700 mb-3">
-                Controle sua fome, reduza a absorção de gorduras e acelere seu emagrecimento com <span className="font-semibold text-green-700">Definamax</span>
+              <p className="text-lg md:text-lg text-gray-700 mb-3">
+                Fórmula avançada com fibras naturais que reduzem gordura, controlam a fome e aceleram seu metabolismo para um emagrecimento saudável
               </p>
 
               {/* Social Proof mais conciso */}
@@ -295,11 +332,17 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-3">
-              Histórias Reais de Transformação
+              Veja quem já transformou sua vida com Definamax
             </h2>
-            <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
-              Descubra como o Definamax está transformando vidas e ajudando pessoas reais a conquistarem o corpo dos sonhos
-            </p>
+            <div className="flex flex-col items-center justify-center gap-2">
+              <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
+                <span className="font-semibold text-green-700">Resultados reais</span> de pessoas que conseguiram emagrecer de forma <span className="font-semibold text-green-700">natural e saudável</span>
+              </p>
+              <div className="flex items-center gap-2 text-green-700 font-medium bg-green-50 px-4 py-2 rounded-full shadow-sm">
+                <Star className="h-5 w-5 fill-green-700" />
+                <span>Histórias verdadeiras de transformação</span>
+              </div>
+            </div>
           </div>
 
           {/* Carrossel */}
@@ -327,31 +370,39 @@ export default function LandingPage() {
             {/* Container do Carrossel */}
             <div className="carousel-container overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
-                { name: "Débora", age: 31, loss: 23, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
-                { name: "Arnaldo", age: 34, loss: 25, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
-                { name: "Sara", age: 32, loss: 11, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" },
-                { name: "Rosimari", age: 34, loss: 14, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
-                { name: "Laura", age: 37, loss: 24, months: 6, image: "/dep05.png", profession: "Designer", location: "Guarulhos, SP" },
-                { name: "Victor", age: 29, loss: 31, months: 10, image: "/dep06.png", profession: "Motorista de aplicativo", location: "Belo Horizonte, MG" }
+                { videoId: "1079845171" },
+                { videoId: "1079850549" },
+                { videoId: "1079845066" },
+                { videoId: "1079845128" }
               ].map((item, index) => (
-                <div key={index} className="snap-start flex-none w-full md:w-[calc(33.333%-1rem)] transition-all">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="relative aspect-[4/5]">
-                      <Image
-                        src={item.image}
-                        alt={`Resultado ${item.name}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="p-5 text-center">
-                      <p className="text-4xl font-bold text-green-600 mb-1">-{item.loss}kg</p>
-                      <p className="text-gray-600">em {item.months} meses</p>
-                      <div className="mt-2">
-                        <p className="font-medium text-gray-700">{item.name}, {item.age} anos</p>
-                        <p className="text-sm text-gray-500">{item.profession}</p>
-                        <p className="text-sm text-gray-400 mt-1">{item.location}</p>
-                      </div>
+                <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div className="relative aspect-video bg-black">
+                      <iframe
+                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=0`}
+                        className="absolute inset-0 w-full h-full z-20"
+                        frameBorder="0"
+                        allow="fullscreen"
+                        allowFullScreen
+                        title="Depoimento em vídeo"
+                      ></iframe>
+                      {!videoStates[`video${index + 1}`].playing && (
+                        <div className="absolute inset-0 z-30 flex items-center justify-center">
+                          <button 
+                            onClick={() => {
+                              handlePlayVideo(index);
+                              const iframe = document.querySelector(`iframe[src*="${item.videoId}"]`) as HTMLIFrameElement;
+                              if (iframe) {
+                                iframe.src = `https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=1`;
+                              }
+                            }}
+                            className="group relative w-16 h-16 flex items-center justify-center"
+                          >
+                            <div className="absolute inset-0 bg-green-600 rounded-full opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                            <div className="relative w-0 h-0 border-l-[20px] border-l-white border-y-[12px] border-y-transparent ml-2"></div>
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -385,7 +436,7 @@ export default function LandingPage() {
 
             {/* Indicadores de Página (Dots) */}
             <div className="flex justify-center gap-2 mt-6">
-              {[0, 1, 2].map((dot) => (
+              {[0, 1, 2, 3].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
@@ -429,62 +480,28 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative w-full md:-mr-12">
-              {/* Desktop Video */}
+              {/* Desktop Video - Seção de Fibras */}
               <div className="hidden md:block relative w-full h-[600px] overflow-hidden bg-white">
-                  <div className="absolute inset-0 z-10 flex items-center justify-center">
-                    <div className="w-[800px] h-[600px] relative">
-                      <Image
-                        src="/thumb-mob-min.png"
-                        alt="Video thumbnail desktop"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors cursor-pointer">
-                          <div className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <iframe
-                    src="https://player.vimeo.com/video/1088746169?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                    className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${videoLoadedDesktop ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
-                    frameBorder="0"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    title="Como o Definamax funciona - Desktop"
-                    onLoad={() => setVideoLoadedDesktop(true)}
-                  ></iframe>
+                <iframe
+                  src="https://player.vimeo.com/video/1088746169?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
+                  className="absolute top-0 left-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title="Como o Definamax funciona - Desktop"
+                ></iframe>
               </div>
               
-              {/* Mobile Video */}
+              {/* Mobile Video - Seção de Fibras */}
               <div className="md:hidden relative w-full aspect-video bg-white">
-                  <div className="absolute inset-0 z-10 flex items-center justify-center">
-                    <div className="w-full h-full relative">
-                      <Image
-                        src="/thumb-desk-min.png"
-                        alt="Video thumbnail mobile"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors cursor-pointer">
-                          <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <iframe
-                    src="https://player.vimeo.com/video/1088747168?autoplay=1&loop=1&muted=1&background=1&transparent=1"
-                    className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${videoLoadedMobile ? 'opacity-100 z-30' : 'opacity-0 z-0'}`}
-                    frameBorder="0"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    title="Como o Definamax funciona - Mobile"
-                    onLoad={() => setVideoLoadedMobile(true)}
-                  ></iframe>
+                <iframe
+                  src="https://player.vimeo.com/video/1088747168?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title="Como o Definamax funciona - Mobile"
+                ></iframe>
               </div>
             </div>
 
@@ -792,15 +809,14 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Frete grátis com entrega expressa em até 7 dias úteis!
+              Clientes que <span className="font-semibold text-green-700">venceram a compulsão e emagreceram com o Definamax</span>
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
-                <span className="font-semibold text-green-700">Envio Imediato</span> para todo Brasil com <span className="font-semibold text-green-700">Rastreamento Online</span>
+                <span className="font-semibold text-green-700">Assista os vídeos</span> de nossos clientes
               </p>
               <div className="flex items-center gap-2 text-green-700 font-medium bg-green-50 px-4 py-2 rounded-full shadow-sm">
-                <Clock className="h-5 w-5" />
-                <span>Pedidos feitos hoje serão enviados em até 24h!</span>
+
               </div>
             </div>
           </div>
@@ -830,28 +846,39 @@ export default function LandingPage() {
             {/* Container do Carrossel */}
             <div className="delivery-carousel overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
-                { image: "/d1-min.png", location: "São Paulo, SP", date: "Recebido em 5 dias" },
-                { image: "/d2-min.png", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
-                { image: "/d3-min.png", location: "Curitiba, PR", date: "Recebido em 6 dias" },
-                { image: "/d4-min.png", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" },
-                { image: "/d5-min.png", location: "Salvador, BA", date: "Recebido em 7 dias" },
-                { image: "/d6-min.png", location: "Porto Alegre, RS", date: "Recebido em 6 dias" }
+                { videoId: "1079845171" },
+                { videoId: "1079850549" },
+                { videoId: "1079845066" },
+                { videoId: "1079845128" }
               ].map((item, index) => (
-                <div key={index} className="snap-start flex-none w-full md:w-[calc(33.333%-1rem)] transition-all">
+                <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="relative h-[500px] flex items-center justify-center">
-                      <Image
-                        src={item.image}
-                        alt={`Entrega em ${item.location}`}
-                        fill
-                        priority
-                        className="object-contain"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                    <div className="p-4 text-center">
-                      <p className="text-sm text-gray-500">{item.location}</p>
-                      <p className="text-sm text-green-600 mt-1 font-medium">{item.date}</p>
+                    <div className="relative aspect-video bg-black">
+                      <iframe
+                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=0`}
+                        className="absolute inset-0 w-full h-full z-20"
+                        frameBorder="0"
+                        allow="fullscreen"
+                        allowFullScreen
+                        title="Depoimento em vídeo"
+                      ></iframe>
+                      {!videoStates[`video${index + 1}`].playing && (
+                        <div className="absolute inset-0 z-30 flex items-center justify-center">
+                          <button 
+                            onClick={() => {
+                              handlePlayVideo(index);
+                              const iframe = document.querySelector(`iframe[src*="${item.videoId}"]`) as HTMLIFrameElement;
+                              if (iframe) {
+                                iframe.src = `https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=1`;
+                              }
+                            }}
+                            className="group relative w-16 h-16 flex items-center justify-center"
+                          >
+                            <div className="absolute inset-0 bg-green-600 rounded-full opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                            <div className="relative w-0 h-0 border-l-[20px] border-l-white border-y-[12px] border-y-transparent ml-2"></div>
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -885,7 +912,7 @@ export default function LandingPage() {
 
             {/* Indicadores de Página (Dots) */}
             <div className="flex justify-center gap-2 mt-6">
-              {[0, 1, 2].map((dot) => (
+              {[0, 1, 2, 3].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
@@ -1388,7 +1415,7 @@ export default function LandingPage() {
                             )}
                           </div>
                           <div className="mt-1">
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center justify-center md:justify-start gap-2">
                               <div className="flex">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
@@ -1400,7 +1427,7 @@ export default function LandingPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="mt-4">
+                      <div className="mt-4 text-center md:text-left">
                         <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
                         <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
                       </div>
@@ -1478,7 +1505,7 @@ export default function LandingPage() {
                                 )}
                               </div>
                               <div className="mt-1">
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center justify-center md:justify-start gap-2">
                                   <div className="flex">
                                     {[1, 2, 3, 4, 5].map((star) => (
                                       <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
@@ -1490,7 +1517,7 @@ export default function LandingPage() {
                               </div>
                             </div>
                           </div>
-                          <div className="mt-4">
+                          <div className="mt-4 text-center md:text-left">
                             <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
                             <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
                           </div>
