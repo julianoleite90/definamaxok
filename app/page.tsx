@@ -370,39 +370,31 @@ export default function LandingPage() {
             {/* Container do Carrossel */}
             <div className="carousel-container overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
-                { videoId: "1079845171" },
-                { videoId: "1079850549" },
-                { videoId: "1079845066" },
-                { videoId: "1079845128" }
+                { name: "Débora", age: 31, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
+                { name: "Arnaldo", age: 34, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
+                { name: "Sara", age: 32, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" },
+                { name: "Rosimari", age: 34, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
+                { name: "Laura", age: 37, months: 6, image: "/dep05.png", profession: "Designer", location: "Guarulhos, SP" },
+                { name: "Victor", age: 29, months: 10, image: "/dep06.png", profession: "Motorista de aplicativo", location: "Belo Horizonte, MG" }
               ].map((item, index) => (
-                <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="relative aspect-video bg-black">
-                      <iframe
-                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=0`}
-                        className="absolute inset-0 w-full h-full z-20"
-                        frameBorder="0"
-                        allow="fullscreen"
-                        allowFullScreen
-                        title="Depoimento em vídeo"
-                      ></iframe>
-                      {!videoStates[`video${index + 1}`].playing && (
-                        <div className="absolute inset-0 z-30 flex items-center justify-center">
-                          <button 
-                            onClick={() => {
-                              handlePlayVideo(index);
-                              const iframe = document.querySelector(`iframe[src*="${item.videoId}"]`) as HTMLIFrameElement;
-                              if (iframe) {
-                                iframe.src = `https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=1`;
-                              }
-                            }}
-                            className="group relative w-16 h-16 flex items-center justify-center"
-                          >
-                            <div className="absolute inset-0 bg-green-600 rounded-full opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                            <div className="relative w-0 h-0 border-l-[20px] border-l-white border-y-[12px] border-y-transparent ml-2"></div>
-                          </button>
-                        </div>
-                      )}
+                <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(30%-1rem)] transition-all">
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div className="relative aspect-[4/5]">
+                      <Image
+                        src={item.image}
+                        alt={`Resultado ${item.name}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4 text-center">
+                      <p className="text-3xl font-bold text-green-600 mb-1">{item.months} meses</p>
+                      <p className="text-sm text-gray-600">de tratamento</p>
+                      <div className="mt-2">
+                        <p className="font-medium text-gray-700 text-sm">{item.name}, {item.age} anos</p>
+                        <p className="text-xs text-gray-500">{item.profession}</p>
+                        <p className="text-xs text-gray-400 mt-1">{item.location}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -436,7 +428,7 @@ export default function LandingPage() {
 
             {/* Indicadores de Página (Dots) */}
             <div className="flex justify-center gap-2 mt-6">
-              {[0, 1, 2, 3].map((dot) => (
+              {[0, 1, 2].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
@@ -846,10 +838,10 @@ export default function LandingPage() {
             {/* Container do Carrossel */}
             <div className="delivery-carousel overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
-                { videoId: "1079845171" },
-                { videoId: "1079850549" },
-                { videoId: "1079845066" },
-                { videoId: "1079845128" }
+                { videoId: "1079845171", },
+                { videoId: "1079850549",  },
+                { videoId: "1079845066", },
+                { videoId: "1079845128", }
               ].map((item, index) => (
                 <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -860,7 +852,7 @@ export default function LandingPage() {
                         frameBorder="0"
                         allow="fullscreen"
                         allowFullScreen
-                        title="Depoimento em vídeo"
+                        title={`Entrega em ${item.location}`}
                       ></iframe>
                       {!videoStates[`video${index + 1}`].playing && (
                         <div className="absolute inset-0 z-30 flex items-center justify-center">
@@ -879,6 +871,10 @@ export default function LandingPage() {
                           </button>
                         </div>
                       )}
+                    </div>
+                    <div className="p-3 text-center">
+                      <p className="text-sm text-gray-500">{item.location}</p>
+                      <p className="text-sm text-green-600 mt-1 font-medium">{item.date}</p>
                     </div>
                   </div>
                 </div>
