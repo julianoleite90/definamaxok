@@ -332,17 +332,11 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-3">
-              Veja quem já transformou sua vida com Definamax
+              Histórias Reais de Transformação
             </h2>
-            <div className="flex flex-col items-center justify-center gap-2">
-              <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
-                <span className="font-semibold text-green-700">Resultados reais</span> de pessoas que conseguiram emagrecer de forma <span className="font-semibold text-green-700">natural e saudável</span>
-              </p>
-              <div className="flex items-center gap-2 text-green-700 font-medium bg-green-50 px-4 py-2 rounded-full shadow-sm">
-                <Star className="h-5 w-5 fill-green-700" />
-                <span>Histórias verdadeiras de transformação</span>
-              </div>
-            </div>
+            <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
+              Descubra como o Definamax está transformando vidas e ajudando pessoas reais a conquistarem o corpo dos sonhos
+            </p>
           </div>
 
           {/* Carrossel */}
@@ -472,7 +466,7 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative w-full md:-mr-12">
-              {/* Desktop Video - Seção de Fibras */}
+              {/* Desktop Video */}
               <div className="hidden md:block relative w-full h-[600px] overflow-hidden bg-white">
                 <iframe
                   src="https://player.vimeo.com/video/1088746169?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
@@ -484,7 +478,7 @@ export default function LandingPage() {
                 ></iframe>
               </div>
               
-              {/* Mobile Video - Seção de Fibras */}
+              {/* Mobile Video */}
               <div className="md:hidden relative w-full aspect-video bg-white">
                 <iframe
                   src="https://player.vimeo.com/video/1088747168?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
@@ -801,15 +795,14 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Clientes que <span className="font-semibold text-green-700">venceram a compulsão e emagreceram com o Definamax</span>
+            Clientes que venceram a compulsão e emagreceram com o Definamax
+
             </h2>
             <div className="flex flex-col items-center justify-center gap-2">
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl">
-                <span className="font-semibold text-green-700">Assista os vídeos</span> de nossos clientes
+                <span className="font-semibold text-green-700">Assista os vídeos de nossos cliente </span>
               </p>
-              <div className="flex items-center gap-2 text-green-700 font-medium bg-green-50 px-4 py-2 rounded-full shadow-sm">
-
-              </div>
+ 
             </div>
           </div>
 
@@ -838,39 +831,22 @@ export default function LandingPage() {
             {/* Container do Carrossel */}
             <div className="delivery-carousel overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
-                { videoId: "1079845171", },
-                { videoId: "1079850549",  },
-                { videoId: "1079845066", },
-                { videoId: "1079845128", }
+                { videoId: "1079845171", location: "São Paulo, SP", date: "Recebido em 5 dias" },
+                { videoId: "1079850549", location: "Rio de Janeiro, RJ", date: "Recebido em 4 dias" },
+                { videoId: "1079845066", location: "Curitiba, PR", date: "Recebido em 6 dias" },
+                { videoId: "1079845128", location: "Belo Horizonte, MG", date: "Recebido em 5 dias" }
               ].map((item, index) => (
                 <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(45%-1rem)] transition-all">
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative aspect-video bg-black">
                       <iframe
-                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=0`}
+                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0`}
                         className="absolute inset-0 w-full h-full z-20"
                         frameBorder="0"
                         allow="fullscreen"
                         allowFullScreen
                         title={`Entrega em ${item.location}`}
                       ></iframe>
-                      {!videoStates[`video${index + 1}`].playing && (
-                        <div className="absolute inset-0 z-30 flex items-center justify-center">
-                          <button 
-                            onClick={() => {
-                              handlePlayVideo(index);
-                              const iframe = document.querySelector(`iframe[src*="${item.videoId}"]`) as HTMLIFrameElement;
-                              if (iframe) {
-                                iframe.src = `https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&background=0&autoplay=1`;
-                              }
-                            }}
-                            className="group relative w-16 h-16 flex items-center justify-center"
-                          >
-                            <div className="absolute inset-0 bg-green-600 rounded-full opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                            <div className="relative w-0 h-0 border-l-[20px] border-l-white border-y-[12px] border-y-transparent ml-2"></div>
-                          </button>
-                        </div>
-                      )}
                     </div>
                     <div className="p-3 text-center">
                       <p className="text-sm text-gray-500">{item.location}</p>
@@ -1411,7 +1387,7 @@ export default function LandingPage() {
                             )}
                           </div>
                           <div className="mt-1">
-                            <div className="flex items-center justify-center md:justify-start gap-2">
+                            <div className="flex items-center gap-2">
                               <div className="flex">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
@@ -1423,7 +1399,7 @@ export default function LandingPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="mt-4 text-center md:text-left">
+                      <div className="mt-4">
                         <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
                         <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
                       </div>
@@ -1501,7 +1477,7 @@ export default function LandingPage() {
                                 )}
                               </div>
                               <div className="mt-1">
-                                <div className="flex items-center justify-center md:justify-start gap-2">
+                                <div className="flex items-center gap-2">
                                   <div className="flex">
                                     {[1, 2, 3, 4, 5].map((star) => (
                                       <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
@@ -1513,7 +1489,7 @@ export default function LandingPage() {
                               </div>
                             </div>
                           </div>
-                          <div className="mt-4 text-center md:text-left">
+                          <div className="mt-4">
                             <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
                             <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
                           </div>
