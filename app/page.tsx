@@ -197,6 +197,19 @@ export default function LandingPage() {
         <span className="text-white font-medium text-base md:text-lg whitespace-nowrap pr-1">Fale Conosco</span>
       </a>
 
+      {/* Anúncio IOF */}
+      <div className="w-full bg-gradient-to-r from-red-600 to-red-700 py-2.5 md:py-3 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_2s_infinite] pointer-events-none"></div>
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="text-center">
+            <p className="text-white text-sm md:text-base font-medium">
+              <span className="font-bold text-yellow-300">⚠️ ATENÇÃO:</span> Devido ao aumento do IOF, nossos produtos terão reajuste de preço nos próximos dias. 
+              <span className="font-bold"> Aproveite enquanto os preços não são atualizados!</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Header com CTA */}
       <header className="w-full bg-gradient-to-r from-green-800 to-green-700 py-3.5 md:py-3 shadow-md relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-[shine_1.5s_infinite] pointer-events-none"></div>
