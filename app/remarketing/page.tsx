@@ -823,11 +823,11 @@ export default function ReMarketingPage() {
 
                 <div className="text-center space-y-1.5">
                   <div className="flex items-center justify-center gap-2">
-                    <span className="text-gray-400 line-through text-xl">De R$579,00</span>
+                    <span className="text-gray-400 line-through text-xl">De R$589,00</span>
                   </div>
                   <p className="text-lg font-medium">Por apenas 12x</p>
-                  <p className="text-green-700 text-5xl font-bold">R$33<span className="text-[70%]">,03</span></p>
-                  <p className="text-base font-medium">Ou R$329,00 à vista!</p>
+                  <p className="text-green-700 text-5xl font-bold">R$35<span className="text-[70%]">,04</span></p>
+                  <p className="text-base font-medium">Ou R$349,00 à vista!</p>
                 </div>
 
                 <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
@@ -880,11 +880,11 @@ export default function ReMarketingPage() {
 
                 <div className="text-center space-y-1.5">
                   <div className="flex items-center justify-center gap-2">
-                    <span className="text-gray-400 line-through text-xl">De R$279,00</span>
+                    <span className="text-gray-400 line-through text-xl">De R$289,00</span>
                   </div>
                   <p className="text-lg font-medium">Por apenas 12x</p>
-                  <p className="text-green-700 text-5xl font-bold">R$19<span className="text-[70%]">,78</span></p>
-                  <p className="text-base font-medium">Ou R$197,00 à vista!</p>
+                  <p className="text-green-700 text-5xl font-bold">R$23<span className="text-[70%]">,79</span></p>
+                  <p className="text-base font-medium">Ou R$237,00 à vista!</p>
                 </div>
 
                 <div className="bg-[#E8F5E9] py-1.5 text-center -mx-4 mt-3">
