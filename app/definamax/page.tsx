@@ -18,7 +18,7 @@ const pulseAnimation = `
 
 export default function LandingPage() {
   // Estados necessários
-  const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes: 59, seconds: 59 })
+  const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes:59, seconds: 59 })
   const [showMoreReviews, setShowMoreReviews] = useState(false)
   const [showMoreVideos, setShowMoreVideos] = useState(false)
   const [openFaqs, setOpenFaqs] = useState<number[]>([])
@@ -26,6 +26,8 @@ export default function LandingPage() {
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoLoadedDesktop, setVideoLoadedDesktop] = useState(false)
   const [videoLoadedMobile, setVideoLoadedMobile] = useState(false)
+  const [viewersCount, setViewersCount] = useState(79)
+  const [stockCount, setStockCount] = useState(231)
   const buyRef = useRef<HTMLDivElement>(null)
   const kitsRef = useRef<HTMLDivElement>(null)
 
@@ -95,6 +97,63 @@ export default function LandingPage() {
         }
       })
     }
+  }, [])
+
+  // Inicializa e gerencia contadores de visualizações e estoque
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Carrega valores salvos ou usa valores padrão
+      const savedViewers = localStorage.getItem("viewersCount")
+      const savedStock = localStorage.getItem("stockCount")
+      const lastUpdate = localStorage.getItem("lastUpdate")
+      
+      const now = new Date().getTime()
+      const oneDay = 24 * 60 * 60 * 1000 // 24 horas em milissegundos
+      
+      // Se passou mais de 24 horas, reseta os contadores
+      if (!lastUpdate || (now - parseInt(lastUpdate)) > oneDay) {
+        setViewersCount(79)
+        setStockCount(231)
+        localStorage.setItem("viewersCount", "79")
+        localStorage.setItem("stockCount", "231")
+        localStorage.setItem("lastUpdate", now.toString())
+      } else {
+        // Usa valores salvos
+        setViewersCount(savedViewers ? parseInt(savedViewers) : 79)
+        setStockCount(savedStock ? parseInt(savedStock) : 231)
+      }
+    }
+  }, [])
+
+  // Atualiza contador de visualizações (aumenta)
+  useEffect(() => {
+    const viewersInterval = setInterval(() => {
+      setViewersCount(prev => {
+        const newCount = prev + Math.floor(Math.random() * 3) + 1 // Aumenta entre 1-3
+        if (typeof window !== "undefined") {
+          localStorage.setItem("viewersCount", newCount.toString())
+        }
+        return newCount
+      })
+    }, Math.random() * 8000 + 5000) // Entre 5-13 segundos
+
+    return () => clearInterval(viewersInterval)
+  }, [])
+
+  // Atualiza contador de estoque (diminui)
+  useEffect(() => {
+    const stockInterval = setInterval(() => {
+      setStockCount(prev => {
+        const decrease = Math.floor(Math.random() * 2) + 1 // Diminui entre 1-2
+        const newCount = Math.max(prev - decrease, 15) // Não deixa passar de 15
+        if (typeof window !== "undefined") {
+          localStorage.setItem("stockCount", newCount.toString())
+        }
+        return newCount
+      })
+    }, Math.random() * 15000 + 10000) // Entre 10-25 segundos
+
+    return () => clearInterval(stockInterval)
   }, [])
 
   // Contagem regressiva
@@ -891,8 +950,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center gap-2">
               <div className="max-w-3xl mx-auto px-4 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 my-4">
                 <p className="text-gray-700 text-lg md:text-xl">
-                  Restam poucos frascos com FRETE GRÁTIS no dia de hoje:{" "}
-                  <span className="text-red-600 font-bold">{currentDate}</span>
+                  <span className="text-green-600 font-bold">{viewersCount} pessoas</span> estão vendo essa promoção agora
                 </p>
               </div>
             </div>
@@ -1141,7 +1199,7 @@ export default function LandingPage() {
                   <span className="text-red-600 text-xl font-bold">!</span>
                 </div>
                 <div className="text-left md:text-center">
-                  <h3 className="text-red-600 text-lg md:text-xl font-bold">*Estoques limitados, não espere!</h3>
+                  <h3 className="text-red-600 text-lg md:text-xl font-bold">Temos apenas {stockCount} frascos no estoque hoje!</h3>
                   <p className="text-gray-600 text-base">Garanta seu kit agora antes que acabe!</p>
                 </div>
               </div>
