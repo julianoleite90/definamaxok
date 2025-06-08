@@ -292,20 +292,20 @@ export default function LandingPage() {
             <div className="md:pt-8">
               <h1 className="text-[1.9rem] md:text-[2.1rem] lg:text-[2.5rem] font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
                 <span className="text-gray-800 relative inline-block">
-                  Emagreça rápido,
+                  Transforme seu corpo e sua vida:
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-gray-200 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-gray-50/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
                 <br />
                 <span className="text-green-700 relative inline-block">
-                  recupere sua autoestima e renove sua confiança
+                  Emagreça rápido e com saúde!
                   <span className="absolute bottom-0 left-0 w-full h-[6px] bg-green-500 -z-10 skew-x-3"></span>
                   <span className="absolute -inset-1 bg-green-100/50 -z-20 rounded-lg transform rotate-1"></span>
                 </span>
               </h1>
 
               <p className="text-lg md:text-lg text-gray-700 mb-3">
-                Descubra o poder das fibras que absorvem gordura, controlam a compulsão, e aceleram a perda de peso.
+                Imagine perder peso de forma natural, eliminando gordura acumulada, controlando a fome emocional e recuperando sua autoestima em poucas semanas.
               </p>
 
               {/* Social Proof mais conciso */}
@@ -394,7 +394,7 @@ export default function LandingPage() {
               Histórias Reais de Transformação
             </h2>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto">
-              Definamax está transformando vidas e ajudando pessoas reais a recuperar a autoestima
+              Definamax está mudando vidas todos os dias, ajudando pessoas comuns a recuperar a autoestima, redescobrir a confiança e conquistar o corpo dos sonhos.
             </p>
           </div>
 
@@ -497,10 +497,10 @@ export default function LandingPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              As <span className="text-green-700">fibras bioativas</span> que<br className="hidden md:block" /> absorvem gordura
+              <span className="text-green-700">Fibras Bioativas</span> que Absorvem Gordura e<br className="hidden md:block" /> Potencializam Seu Emagrecimento
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Uma combinação exclusiva de fibras bioativas que aceleram seu emagrecimento de forma natural e mais rápida
+            <p className="text-gray-600 max-w-4xl mx-auto text-lg">
+              Uma fórmula exclusiva com fibras bioativas que agem como uma esponja no seu organismo, absorvendo gorduras e açúcares para reduzir a absorção calórica, controlar a fome e acelerar a perda de peso de forma natural e eficaz.
             </p>
           </div>
 
@@ -535,30 +535,33 @@ export default function LandingPage() {
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">1</span>
-                  Absorção de Gorduras
+                  Absorção de Gorduras com Quitosana
                 </h3>
                 <p className="text-gray-700">
-                  A Quitosana, uma fibra natural extraída de fontes marinhas, tem a capacidade única de se ligar às moléculas de gordura durante a digestão. Isso significa que até 30% das gorduras consumidas são naturalmente eliminadas antes de serem absorvidas pelo seu corpo.
+                  <strong>Diga Adeus às Gordurinhas Indesejadas!</strong><br />
+                  A Quitosana, uma fibra natural extraída do mar, tem um poder incrível: ela se liga às gorduras que você consome, impedindo que até 30% delas sejam absorvidas pelo seu corpo. Ou seja, essas gorduras são eliminadas naturalmente, ajudando você a emagrecer de forma rápida e saudável, sem passar fome ou fazer dietas malucas.
                 </p>
               </div>
 
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">2</span>
-                  Controle da Compulsão Alimentar
+                  Controle da Compulsão Alimentar com Psyllium e Agar Agar
                 </h3>
                 <p className="text-gray-700">
-                  O Psyllium e o Agar Agar são fibras especiais que, em contato com água, formam um gel natural expansivo no estômago. Este processo proporciona uma sensação duradoura de saciedade, reduzindo naturalmente a fome e a compulsão por doces.
+                  <strong>Chega de Vontade Incontrolável de Comer!</strong><br />
+                  Imagine sentir aquela sensação de saciedade que dura horas, fazendo você comer menos e esquecer os desejos por doces e lanches fora de hora. O Psyllium e o Agar Agar formam um gel natural no seu estômago que preenche e acalma sua fome, ajudando você a controlar a compulsão alimentar e manter o foco no seu objetivo.
                 </p>
               </div>
 
               <div className="bg-gradient-to-r from-green-50 to-white p-4 rounded-lg border border-green-100">
                 <h3 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                   <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2 text-green-600">3</span>
-                  Potencialização Metabólica
+                  Potencialização do Metabolismo com Espirulina e Cromo
                 </h3>
                 <p className="text-gray-700">
-                  A Espirulina e o Cromo são nutrientes essenciais que ajudam a regular o metabolismo e os níveis de açúcar no sangue. Juntos, contribuem para um metabolismo mais eficiente e uma melhor queima de gordura corporal.
+                  <strong>Queime Gordura Mesmo em Repouso!</strong><br />
+                  Com a combinação poderosa da Espirulina e do Cromo, seu metabolismo vai funcionar no ritmo certo, queimando gordura de forma mais eficiente e equilibrando o açúcar no sangue para evitar picos de fome. Isso significa mais energia, menos cansaço e resultados visíveis no espelho em menos tempo.
                 </p>
               </div>
 
@@ -568,7 +571,8 @@ export default function LandingPage() {
                   Regulação Intestinal
                 </h3>
                 <p className="text-gray-700">
-                  O conjunto de fibras solúveis e insolúveis promove uma limpeza natural do organismo, melhorando o funcionamento intestinal e aumentando sua disposição. Você se sente mais leve e com mais energia para suas atividades diárias.
+                  <strong>Sinta-se Leve, Disposto e Renovado Todos os Dias!</strong><br />
+                  Além de ajudar no emagrecimento, as fibras solúveis e insolúveis da fórmula promovem uma limpeza natural do seu organismo, melhorando o funcionamento do intestino. Resultado? Você se sente mais leve, com mais disposição e pronto para encarar qualquer desafio do dia a dia com energia renovada.
                 </p>
               </div>
 
@@ -831,7 +835,7 @@ export default function LandingPage() {
       </section>
 
       {/* Seção de Entregas */}
-      <section className="w-full py-16 bg-gradient-to-b from-green-50 via-white to-green-50">
+      <section className="hidden w-full py-16 bg-gradient-to-b from-green-50 via-white to-green-50">
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
@@ -941,7 +945,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">
-              Escolha o melhor kit para o seu{" "}
+              Encontre o Kit Perfeito para Acelerar Seu{" "}
               <span className="relative inline-block">
                 <span className="absolute inset-0 bg-[#E8F5E9] transform -rotate-1 rounded-2xl"></span>
                 <span className="relative text-green-800">Emagrecimento</span>
@@ -950,7 +954,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center gap-2">
               <div className="max-w-3xl mx-auto px-4 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 my-4">
                 <p className="text-gray-700 text-lg md:text-xl">
-                  <span className="text-green-600 font-bold">{viewersCount} pessoas</span> estão vendo essa promoção agora
+                  Para melhores resultados de emagrecimento recomendamos o tratamento de <strong>5 a 8 meses</strong>
                 </p>
               </div>
             </div>
@@ -1195,12 +1199,12 @@ export default function LandingPage() {
                    boxShadow: '0 4px 0 rgb(239 68 68 / 0.2)',
                  }}>
               <div className="flex items-start md:items-center md:justify-center w-full gap-2">
-                <div className="w-8 h-8 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center border-2 border-red-500">
-                  <span className="text-red-600 text-xl font-bold">!</span>
+                <div className="w-8 h-8 flex-shrink-0 rounded-full bg-green-50 flex items-center justify-center border-2 border-green-500">
+                  <span className="text-green-600 text-xl font-bold">✓</span>
                 </div>
                 <div className="text-left md:text-center">
-                  <h3 className="text-red-600 text-lg md:text-xl font-bold">Temos apenas {stockCount} frascos no estoque hoje!</h3>
-                  <p className="text-gray-600 text-base">Garanta seu kit agora antes que acabe!</p>
+                  <h3 className="text-green-600 text-lg md:text-xl font-bold">Compre hoje e ganhe envio imediato!</h3>
+                  <p className="text-gray-600 text-base">Receba ainda essa semana em sua casa.</p>
                 </div>
               </div>
             </div>
