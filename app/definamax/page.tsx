@@ -37,8 +37,8 @@ export default function LandingPage() {
   
   // Array com sequência aleatória das imagens (8 das 9 disponíveis)
   const sliderImages = [
-    { src: '/foto3.png', alt: 'Resultado 3', text: 'Transformação incrível' },
-    { src: '/foto7.png', alt: 'Resultado 7', text: 'Resultados em 30 dias' },
+    { src: '/foto3.png', alt: 'Resultado 3', text: 'A melhor decisão que tomei' },
+    { src: '/foto7.png', alt: 'Resultado 7', text: 'Acabei de receber meu kit' },
     { src: '/foto1.png', alt: 'Resultado 1', text: 'Eu uso todos os dias' },
     { src: '/foto9.png', alt: 'Resultado 9', text: 'Não fico um dia sem tomar' },
     { src: '/foto4.png', alt: 'Resultado 4', text: 'Adorando os resultados' },
