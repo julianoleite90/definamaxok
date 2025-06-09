@@ -30,6 +30,22 @@ export default function LandingPage() {
   const [stockCount, setStockCount] = useState(231)
   const buyRef = useRef<HTMLDivElement>(null)
   const kitsRef = useRef<HTMLDivElement>(null)
+  
+  // Estados para o slider de fotos
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [slidesToShow, setSlidesToShow] = useState(1)
+  
+  // Array com sequência aleatória das imagens (8 das 9 disponíveis)
+  const sliderImages = [
+    { src: '/foto3.png', alt: 'Resultado 3', text: 'Transformação incrível' },
+    { src: '/foto7.png', alt: 'Resultado 7', text: 'Resultados em 30 dias' },
+    { src: '/foto1.png', alt: 'Resultado 1', text: 'Eu uso todos os dias' },
+    { src: '/foto9.png', alt: 'Resultado 9', text: 'Não fico um dia sem tomar' },
+    { src: '/foto4.png', alt: 'Resultado 4', text: 'Adorando os resultados' },
+    { src: '/foto6.png', alt: 'Resultado 6', text: 'Já recebi a minha compra' },
+    { src: '/foto2.png', alt: 'Resultado 2', text: 'Eu realmente estou adorando' },
+    { src: '/foto8.png', alt: 'Resultado 8', text: 'Meu aliado de todos os dias' }
+  ]
 
   // Adicione os estados para controle de carregamento dos vídeos
   type VideoLoadedState = {
@@ -191,6 +207,39 @@ export default function LandingPage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // useEffect para o slider responsivo
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      const newSlidesToShow = window.innerWidth >= 1280 ? 4 : // xl: 4 imagens
+                             window.innerWidth >= 1024 ? 3 : // lg: 3 imagens
+                             window.innerWidth >= 640 ? 2 : // sm: 2 imagens
+                             1 // mobile: 1 imagem
+      
+      setSlidesToShow(newSlidesToShow)
+      // Reset currentSlide if it's beyond the new limit
+      setCurrentSlide(prev => {
+        const maxSlide = Math.max(0, sliderImages.length - newSlidesToShow)
+        return Math.min(prev, maxSlide)
+      })
+    }
+
+    updateSlidesToShow()
+    window.addEventListener('resize', updateSlidesToShow)
+    return () => window.removeEventListener('resize', updateSlidesToShow)
+  }, [sliderImages.length])
+
+  // Auto-play do slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => {
+        const maxSlide = Math.max(0, sliderImages.length - slidesToShow)
+        return prev < maxSlide ? prev + 1 : 0
+      })
+    }, 4000) // Troca a cada 4 segundos
+
+    return () => clearInterval(interval)
+  }, [slidesToShow, sliderImages.length])
+
   // Função para rolar até a seção de compra
   const scrollToBuy = () => {
     buyRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -199,6 +248,22 @@ export default function LandingPage() {
   // Função para alternar a exibição de mais avaliações
   const toggleMoreReviews = () => {
     setShowMoreReviews(!showMoreReviews)
+  }
+
+  // Funções do slider
+  const nextSlide = () => {
+    const maxSlide = Math.max(0, sliderImages.length - slidesToShow)
+    setCurrentSlide(prev => prev < maxSlide ? prev + 1 : 0)
+  }
+
+  const prevSlide = () => {
+    const maxSlide = Math.max(0, sliderImages.length - slidesToShow)
+    setCurrentSlide(prev => prev > 0 ? prev - 1 : maxSlide)
+  }
+
+  const goToSlide = (index: number) => {
+    const maxSlide = Math.max(0, sliderImages.length - slidesToShow)
+    setCurrentSlide(Math.min(index, maxSlide))
   }
 
   // Função para adicionar UTMs aos links de compra
@@ -939,6 +1004,82 @@ export default function LandingPage() {
         </div>
       </section>
 
+            {/* Slider de Fotos Section */}
+      <section className="w-full py-16 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Pessoas no Brasil inteiro estão aproveitando os <span className="text-green-600">benefícios do Definamax</span></h2>
+          </div>
+
+          {/* Slider Container */}
+          <div className="relative overflow-hidden rounded-lg shadow-lg bg-white p-2 md:p-4">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ 
+                transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
+              }}
+            >
+              {sliderImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 px-1 md:px-2"
+                  style={{
+                    width: `calc(${100 / slidesToShow}% - ${slidesToShow === 1 ? '8px' : '16px'})`
+                  }}
+                >
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div className="aspect-[4/3] relative">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-700 text-center font-medium">{image.text}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+              aria-label="Foto anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+              aria-label="Próxima foto"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {Array.from({ length: Math.max(1, sliderImages.length - slidesToShow + 1) }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  currentSlide === index
+                    ? 'bg-green-500'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Ir para posição ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Seção de Kits */}
       <section className="w-full py-16 relative bg-green-50">
         <div className="absolute inset-0 bg-[radial-gradient(100%_100%_at_50%_0%,#4ade8025_0,transparent_50%)]"></div>
@@ -1300,8 +1441,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Seção de Reviews */}
-          <section className="w-full py-16 bg-white">
+          {/* Seção de Reviews - OCULTA */}
+          <section className="w-full py-16 bg-white hidden">
             <div className="relative mx-auto max-w-6xl px-4">
               <div className="text-center mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
