@@ -1441,8 +1441,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Seção de Reviews - OCULTA */}
-          <section className="w-full py-16 bg-white hidden">
+          {/* Seção de Reviews */}
+          <section className="w-full py-16 bg-white">
             <div className="relative mx-auto max-w-6xl px-4">
               <div className="text-center mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -1502,37 +1502,37 @@ export default function LandingPage() {
                 {[
                   {
                     name: "Mariana Santos",
-                    title: "Finalmente consegui emagrecer depois de ter filho",
+                    title: "Depois da gravidez foi difícil emagrecer",
                     date: "05/05/2025",
                     verified: true,
-                    text: "Depois que tive meu segundo filho, tentei de tudo pra emagrecer. Fiz dieta da sopa, shake, até aquela do ovo... nada funcionava. Vivia cansada e desanimada, me sentindo culpada cada vez que comia um pedacinho de pão. Uma amiga me indicou o Definamax e resolvi tentar. Em 2 meses perdi 8kg, mas o mais importante: não fico mais com aquela fome absurda e consigo cuidar das crianças com mais disposição. Até voltei a usar minhas roupas antigas!",
+                    text: "Consegui perder 14kg após a gravidez graças a deus",
                     image: "/review5.png",
                     helpful: 152
                   },
                   {
                     name: "Carlos Eduardo",
-                    title: "Consegui controlar a compulsão por doce depois do trabalho",
+                    title: "Depois do trabalho eu sempre corria para comer um chocolate",
                     date: "28/04/2025",
                     verified: true,
-                    text: "Trabalho como motorista de aplicativo, 12 horas por dia. Era só chegar em casa e atacava a geladeira, principalmente doces. Já tava com pré-diabetes e pressão alta, mas não conseguia parar de comer. Com o Definamax, a ansiedade diminuiu muito e aquela fome descontrolada passou. Em 3 meses, perdi 9kg e meus exames melhoraram. O médico até diminuiu meus remédios. Agora consigo fazer minhas corridas sem ficar ofegante.",
+                    text: "Minha compulsão por doces diminuiu uns 80%",
                     image: "/review6.png",
                     helpful: 98
                   },
                   {
                     name: "Renata Silva",
-                    title: "Não precisei fazer dieta maluca pra emagrecer",
+                    title: "Eu não aguentava mais fazer dietas",
                     date: "12/03/2025",
                     verified: true,
-                    text: "Já gastei uma fortuna com nutricionista e remédios caros, mas sempre desistia porque as dietas eram muito restritivas. Como trabalho em loja, não dava pra ficar pesando comida ou fazendo várias refeições. O Definamax me ajudou a controlar a fome sem precisar de cardápio complicado. Perdi 5kg em 30 dias, e o melhor: consigo manter o peso mesmo comendo um docinho de vez em quando. Não é milagre, mas funciona de verdade!",
+                    text: "Perdi 5kg em 30 dias e não precisei continuar na dieta",
                     image: "/revi1.jpeg",
                     helpful: 76
                   },
                   {
                     name: "Daniela Torres",
-                    title: "Voltei a me sentir bonita depois dos 40",
+                    title: "Foi muito difícil emagrecer na menopausa",
                     date: "28/02/2025",
                     verified: true,
-                    text: "A menopausa acabou comigo, engordei 15kg em um ano e nada que eu fazia resolvia. Me sentia péssima, sem energia e com vergonha de sair de casa. Uma cliente da minha loja me falou do Definamax. No começo fiquei com medo de ser furada, mas decidi tentar. Foi a melhor decisão! Perdi 9kg em 3 meses, minhas ondas de calor diminuíram e voltei a ter disposição pra fazer hidroginástica. Minha autoestima voltou!",
+                    text: "perdi 9kg em 3 meses mesmo com 40 e poucos anos rsrsrs",
                     image: "/revi2.png",
                     helpful: 89
                   }
@@ -1592,37 +1592,37 @@ export default function LandingPage() {
                     {[
                       {
                         name: "Ricardo Mendes",
-                        title: "Recuperei minha saúde e disposição",
+                        title: "Me sinto mais disposto e com mais saúde",
                         date: "15/02/2025",
                         verified: true,
-                        text: "Sou vendedor, passo o dia todo na rua e só comia besteira. Tava com 108kg, colesterol alto e dormia mal por causa da apneia. Comecei a tomar Definamax junto com uma alimentação mais regrada, nada muito radical. Em 3 meses perdi 11kg e minha vida mudou completamente. Durmo melhor, tenho mais energia pra trabalhar e até voltei a jogar futebol com meus filhos no fim de semana. Vale cada centavo!",
+                        text: "Sai de 108kg para 96kg em 3 meses",
                         image: "/rica.png",
                         helpful: 187
                       },
                       {
                         name: "Patricia Lima",
-                        title: "Emagreci sem passar fome ou ficar irritada",
+                        title: "Mais magra e menos irritada",
                         date: "02/02/2025",
                         verified: true,
-                        text: "Sou professora e mãe solo, não tenho tempo nem dinheiro pra academia. Já tinha tentado vários remédios pra emagrecer, mas ficava muito nervosa e com insônia. O Definamax foi diferente, me ajudou a controlar a ansiedade e aquela fome emocional que vinha sempre à noite. Perdi 12kg em 3 meses e meio, sem efeitos colaterais. O melhor é que consigo manter minha rotina normal, só que mais leve e disposta.",
+                        text: "Já tinha tentado vários métodos e produtos e nada funcionou tão bem igual o Definamax",
                         image: "/revi3.png",
                         helpful: 143
                       },
                       {
                         name: "André Teixeira",
-                        title: "Resolvi meu problema com a compulsão alimentar",
+                        title: "Menos compulsão alimentar",
                         date: "20/01/2025",
                         verified: true,
-                        text: "Trabalho em home office na área de TI, e a ansiedade me fazia comer o dia todo na frente do computador. Já tinha perdido as esperanças quando um amigo me indicou o Definamax. Nos primeiros dias já senti diferença na fome e na vontade de beliscar. Perdi 8kg em 2 meses, mas o principal foi ter me livrado daquela necessidade de estar sempre comendo. Agora consigo me concentrar melhor no trabalho e não fico mais com aquela sensação de culpa.",
+                        text: "Em 2 meses perdi 8kg e sinto que a compulsão diminuiu também",
                         image: "/andre.png",
                         helpful: 165
                       },
                       {
                         name: "Fernanda Duarte",
-                        title: "Me livrei do efeito sanfona",
+                        title: "10kg em 90 dias",
                         date: "15/01/2025",
                         verified: true,
-                        text: "Sempre fui aquela pessoa que fazia dieta, perdia peso e depois engordava tudo de novo. Era um ciclo sem fim de frustração. Com o Definamax, pela primeira vez consegui emagrecer de forma equilibrada. Perdi 10kg em 3 meses e, o mais importante, já faz 6 meses que mantenho o peso. Não preciso mais ficar contando caloria ou me privando de tudo. Aprendi a ter uma relação melhor com a comida.",
+                        text: "Usei definamax por 3 meses e consegui emagrecer 10kg, fiquei muito animada",
                         image: "/fernando.png",
                         helpful: 134
                       }
