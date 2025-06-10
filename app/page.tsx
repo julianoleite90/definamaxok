@@ -896,11 +896,11 @@ export default function LandingPage() {
               PEDIR AGORA DEFINAMAX <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
-        </div>
-      </section>
+                    </div>
+          </section>
 
-      {/* Seção de Entregas */}
-      <section className="hidden w-full py-16 bg-gradient-to-b from-green-50 via-white to-green-50">
+      {/* Seção de Videos */}
+      <section className="w-full py-16 bg-gradient-to-b from-green-50 via-white to-green-50">
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
@@ -913,12 +913,12 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Grid de Entregas */}
+          {/* Carrossel de Vídeos */}
           <div className="relative">
             {/* Navegação Esquerda - Apenas Desktop */}
             <button 
               onClick={() => {
-                const container = document.querySelector('.delivery-videos') as HTMLElement;
+                const container = document.querySelector('.video-carousel') as HTMLElement;
                 if (container) {
                   container.scrollLeft -= container.offsetWidth;
                 }
@@ -929,24 +929,23 @@ export default function LandingPage() {
             </button>
 
             {/* Container dos Vídeos */}
-            <div className="delivery-videos flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
+            <div className="video-carousel flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
-                { videoId: "1090182162" },
-                { videoId: "1079845171" },
-                { videoId: "1079850549" },
-                { videoId: "1079845066" },
-                { videoId: "1079845128" }
+                { videoId: "1092257512" }, // Video 1
+                { videoId: "1092256712" }, // Video 2
+                { videoId: "1092258409" }, // Video 3
+                { videoId: "1092258819" }  // Video 4
               ].map((item, index) => (
                 <div 
                   key={index} 
                   className={`w-full md:w-[calc(50%-1rem)] md:flex-none md:snap-start ${
-                    index >= 3 && !showMoreVideos ? 'hidden md:block' : ''
+                    index >= 2 && !showMoreVideos ? 'hidden md:block' : ''
                   }`}
                 >
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                     <div className="relative aspect-video bg-black">
                       <iframe
-                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&autopause=1&playsinline=1&title=0&byline=0&portrait=0&sidedock=0&loop=1&autoplay=0&background=0&muted=0`}
+                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&autopause=1&playsinline=1&title=0&byline=0&portrait=0&sidedock=0&loop=0&autoplay=0&background=0&muted=0`}
                         className="absolute inset-0 w-full h-full"
                         frameBorder="0"
                         allow="fullscreen"
@@ -973,7 +972,7 @@ export default function LandingPage() {
             {/* Navegação Direita - Apenas Desktop */}
             <button 
               onClick={() => {
-                const container = document.querySelector('.delivery-videos') as HTMLElement;
+                const container = document.querySelector('.video-carousel') as HTMLElement;
                 if (container) {
                   container.scrollLeft += container.offsetWidth;
                 }
@@ -989,7 +988,7 @@ export default function LandingPage() {
                 <button
                   key={dot}
                   onClick={() => {
-                    const container = document.querySelector('.delivery-videos') as HTMLElement;
+                    const container = document.querySelector('.video-carousel') as HTMLElement;
                     if (container) {
                       container.scrollLeft = container.offsetWidth * dot;
                     }
@@ -1000,82 +999,6 @@ export default function LandingPage() {
                 </button>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-            {/* Slider de Fotos Section */}
-      <section className="w-full py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Pessoas no Brasil inteiro estão aproveitando os <span className="text-green-600">benefícios do Definamax</span></h2>
-          </div>
-
-          {/* Slider Container */}
-          <div className="relative overflow-hidden rounded-lg shadow-lg bg-white p-2 md:p-4">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ 
-                transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
-              }}
-            >
-              {sliderImages.map((image, index) => (
-                <div 
-                  key={index} 
-                  className="flex-shrink-0 px-1 md:px-2"
-                  style={{
-                    width: `calc(${100 / slidesToShow}% - ${slidesToShow === 1 ? '8px' : '16px'})`
-                  }}
-                >
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-                    <div className="aspect-[4/3] relative">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <p className="text-sm text-gray-700 text-center font-medium">{image.text}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
-              aria-label="Foto anterior"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
-              aria-label="Próxima foto"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {Array.from({ length: Math.max(1, sliderImages.length - slidesToShow + 1) }, (_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  currentSlide === index
-                    ? 'bg-green-500'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Ir para posição ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </section>
@@ -1441,262 +1364,78 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Seção de Reviews */}
-          <section className="w-full py-16 bg-white">
-            <div className="relative mx-auto max-w-6xl px-4">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Avaliações dos clientes
-                </h2>
-                <div className="flex items-center justify-center gap-4 mb-2">
-                  <div className="flex items-center gap-2">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-6 w-6 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
-                    <span className="text-xl font-bold text-gray-800">4.9 de 5</span>
-                  </div>
-                  <div className="h-6 w-px bg-gray-300"></div>
-                  <span className="hidden md:block text-sm text-gray-600">
-                    3.842 avaliações globais
-                  </span>
-                </div>
+          {/* Slider de Fotos Section */}
+          <section className="w-full py-16 bg-gray-50">
+            <div className="mx-auto max-w-7xl px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Pessoas no Brasil inteiro estão aproveitando os <span className="text-green-600">benefícios do Definamax</span></h2>
               </div>
 
-              {/* Barra de Avaliações */}
-              <div className="max-w-xl mx-auto mb-12 px-4">
-                <div className="space-y-2">
-                  {[5, 4, 3, 2, 1].map((rating) => (
-                    <div key={rating} className="flex items-center gap-4">
-                      <div className="flex items-center gap-1 w-24">
-                        <span className="text-sm text-gray-600">{rating} estrelas</span>
-                      </div>
-                      <div className="flex-1 h-4 bg-gray-100 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-yellow-400 rounded-full" 
-                          style={{ 
-                            width: rating === 5 ? '85%' : 
-                                   rating === 4 ? '10%' : 
-                                   rating === 3 ? '3%' : 
-                                   rating === 2 ? '1%' : '1%' 
-                          }}
-                        ></div>
-                      </div>
-                      <div className="w-16 text-right">
-                        <span className="text-sm text-gray-600">
-                          {rating === 5 ? '85%' : 
-                           rating === 4 ? '10%' : 
-                           rating === 3 ? '3%' : 
-                           rating === 2 ? '1%' : '1%'}
-                        </span>
+              {/* Slider Container */}
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-white p-2 md:p-4">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ 
+                    transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
+                  }}
+                >
+                  {sliderImages.map((image, index) => (
+                    <div 
+                      key={index} 
+                      className="flex-shrink-0 px-1 md:px-2"
+                      style={{
+                        width: `calc(${100 / slidesToShow}% - ${slidesToShow === 1 ? '8px' : '16px'})`
+                      }}
+                    >
+                      <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <div className="aspect-[4/3] relative">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <p className="text-sm text-gray-700 text-center font-medium">{image.text}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
 
-              {/* Reviews */}
-              <div className="grid grid-cols-1 gap-8">
-                {/* Primeiros 4 Reviews */}
-                {[
-                  {
-                    name: "Mariana Santos",
-                    title: "Depois da gravidez foi difícil emagrecer",
-                    date: "05/05/2025",
-                    verified: true,
-                    text: "Consegui perder 14kg após a gravidez graças a deus",
-                    image: "/review5.png",
-                    helpful: 152
-                  },
-                  {
-                    name: "Carlos Eduardo",
-                    title: "Depois do trabalho eu sempre corria para comer um chocolate",
-                    date: "28/04/2025",
-                    verified: true,
-                    text: "Minha compulsão por doces diminuiu uns 80%",
-                    image: "/review6.png",
-                    helpful: 98
-                  },
-                  {
-                    name: "Renata Silva",
-                    title: "Eu não aguentava mais fazer dietas",
-                    date: "12/03/2025",
-                    verified: true,
-                    text: "Perdi 5kg em 30 dias e não precisei continuar na dieta",
-                    image: "/revi1.jpeg",
-                    helpful: 76
-                  },
-                  {
-                    name: "Daniela Torres",
-                    title: "Foi muito difícil emagrecer na menopausa",
-                    date: "28/02/2025",
-                    verified: true,
-                    text: "perdi 9kg em 3 meses mesmo com 40 e poucos anos rsrsrs",
-                    image: "/revi2.png",
-                    helpful: 89
-                  }
-                ].map((review, index) => (
-                  <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                    <div className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-green-100">
-                          <Image
-                            src={review.image}
-                            alt={review.name}
-                            width={56}
-                            height={56}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between">
-                            <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
-                            {review.verified && (
-                              <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-full">
-                                <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
-                                <span className="text-xs text-green-700 font-medium">Verificado</span>
-                              </div>
-                            )}
-                          </div>
-                          <div className="mt-1">
-                            <div className="flex items-center gap-2">
-                              <div className="flex">
-                                {[1, 2, 3, 4, 5].map((star) => (
-                                  <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                                ))}
-                              </div>
-                              <span className="text-sm text-gray-500">•</span>
-                              <span className="text-sm text-gray-500">{review.date}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-4">
-                        <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
-                        <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 px-6 py-3 border-t border-gray-100">
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
-                        <ThumbsUp className="h-4 w-4" />
-                        <span>{review.helpful} pessoas acharam útil</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-
-                {/* Reviews adicionais */}
-                {showMoreReviews && (
-                  <>
-                    {[
-                      {
-                        name: "Ricardo Mendes",
-                        title: "Me sinto mais disposto e com mais saúde",
-                        date: "15/02/2025",
-                        verified: true,
-                        text: "Sai de 108kg para 96kg em 3 meses",
-                        image: "/rica.png",
-                        helpful: 187
-                      },
-                      {
-                        name: "Patricia Lima",
-                        title: "Mais magra e menos irritada",
-                        date: "02/02/2025",
-                        verified: true,
-                        text: "Já tinha tentado vários métodos e produtos e nada funcionou tão bem igual o Definamax",
-                        image: "/revi3.png",
-                        helpful: 143
-                      },
-                      {
-                        name: "André Teixeira",
-                        title: "Menos compulsão alimentar",
-                        date: "20/01/2025",
-                        verified: true,
-                        text: "Em 2 meses perdi 8kg e sinto que a compulsão diminuiu também",
-                        image: "/andre.png",
-                        helpful: 165
-                      },
-                      {
-                        name: "Fernanda Duarte",
-                        title: "10kg em 90 dias",
-                        date: "15/01/2025",
-                        verified: true,
-                        text: "Usei definamax por 3 meses e consegui emagrecer 10kg, fiquei muito animada",
-                        image: "/fernando.png",
-                        helpful: 134
-                      }
-                    ].map((review, index) => (
-                      <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                        <div className="p-6">
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-green-100">
-                              <Image
-                                src={review.image}
-                                alt={review.name}
-                                width={56}
-                                height={56}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center justify-between">
-                                <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
-                                {review.verified && (
-                                  <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-full">
-                                    <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
-                                    <span className="text-xs text-green-700 font-medium">Verificado</span>
-                                  </div>
-                                )}
-                              </div>
-                              <div className="mt-1">
-                                <div className="flex items-center gap-2">
-                                  <div className="flex">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                      <Star key={star} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                                    ))}
-                                  </div>
-                                  <span className="text-sm text-gray-500">•</span>
-                                  <span className="text-sm text-gray-500">{review.date}</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="mt-4">
-                            <h4 className="font-medium text-green-800 mb-2">{review.title}</h4>
-                            <p className="text-gray-600 text-[15px] leading-relaxed">{review.text}</p>
-                          </div>
-                        </div>
-                        <div className="bg-gray-50 px-6 py-3 border-t border-gray-100">
-                          <div className="flex items-center gap-2 text-sm text-gray-500">
-                            <ThumbsUp className="h-4 w-4" />
-                            <span>{review.helpful} pessoas acharam útil</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </>
-                )}
-              </div>
-
-              {/* Botão Ver Mais */}
-                            <div className="flex justify-center mt-8">
+                {/* Navigation Buttons */}
                 <button
-                onClick={() => {
-                  setShowMoreReviews(!showMoreReviews);
-                  // Se estiver fechando os reviews, scroll suave para o topo da seção
-                  if (showMoreReviews) {
-                    const reviewsSection = document.querySelector('section:has(.text-3xl:contains("Avaliações dos clientes"))');
-                    if (reviewsSection) {
-                      reviewsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }
-                }}
-                className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-600 hover:text-gray-900 gap-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md active:shadow-inner active:translate-y-[1px] transition-all duration-200"
-              >
-                {showMoreReviews ? "Ver menos depoimentos" : "Ver mais depoimentos"}
-                <ChevronDown className={`h-5 w-5 transition-transform animate-pulse group-hover:animate-none group-hover:translate-y-1 ${showMoreReviews ? "rotate-180" : ""}`} />
+                  onClick={prevSlide}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+                  aria-label="Foto anterior"
+                >
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
+                
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+                  aria-label="Próxima foto"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Dots Indicator */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {Array.from({ length: Math.max(1, sliderImages.length - slidesToShow + 1) }, (_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      currentSlide === index
+                        ? 'bg-green-500'
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Ir para posição ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </section>
