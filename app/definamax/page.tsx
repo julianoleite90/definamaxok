@@ -932,14 +932,15 @@ export default function LandingPage() {
             <div className="video-carousel flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
                 { videoId: "1092257512" }, // Video 1
-                { videoId: "1092256712" }, // Video 2
-                { videoId: "1092258409" }, // Video 3
-                { videoId: "1092258819" }  // Video 4
+                { videoId: "1092280228" }, // Video 2 (NOVO)
+                { videoId: "1092256712" }, // Video 3
+                { videoId: "1092258409" }, // Video 4
+                { videoId: "1092258819" }  // Video 5
               ].map((item, index) => (
                 <div 
                   key={index} 
                   className={`w-full md:w-[calc(50%-1rem)] md:flex-none md:snap-start ${
-                    index >= 2 && !showMoreVideos ? 'hidden md:block' : ''
+                    index >= 3 && !showMoreVideos ? 'hidden md:block' : ''
                   }`}
                 >
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
@@ -984,7 +985,7 @@ export default function LandingPage() {
 
             {/* Indicadores de Página (Dots) - Apenas Desktop */}
             <div className="hidden md:flex justify-center gap-2 mt-6">
-              {[0, 1].map((dot) => (
+              {[0, 1, 2].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
