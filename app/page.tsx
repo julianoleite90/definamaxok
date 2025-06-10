@@ -932,7 +932,7 @@ export default function LandingPage() {
             <div className="video-carousel flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
                 { videoId: "1092257512" }, // Video 1
-                { videoId: "1092280228" }, // Video 2 (NOVO)
+                { videoId: "1092294827" }, // Video 2 (ATUALIZADO)
                 { videoId: "1092256712" }, // Video 3
                 { videoId: "1092258409" }, // Video 4
                 { videoId: "1092258819" }  // Video 5
