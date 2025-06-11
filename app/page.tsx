@@ -963,8 +963,8 @@ export default function LandingPage() {
                           title={`Depoimento em vídeo ${index + 1}`}
                         ></iframe>
                         
-                        {/* Modern Play Button Overlay */}
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {/* Modern Play Button Overlay - Hidden on Mobile */}
+                        <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
                             <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
                           </div>
