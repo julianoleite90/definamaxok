@@ -482,6 +482,7 @@ export default function LandingPage() {
             <div className="carousel-container overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
                 { name: "Débora", age: 31, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
+                { name: "Cinthia", age: 49, months: 6, image: "/chintia.png", profession: "Manicure", location: "Canoas, RS" },
                 { name: "Arnaldo", age: 34, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
                 { name: "Sara", age: 32, months: 2, image: "/dep03.png", profession: "Dona de casa", location: "Rio de Janeiro, RJ" },
                 { name: "Rosimari", age: 34, months: 3, image: "/dep04.png", profession: "Vendedora", location: "Pinhais, PR" },
