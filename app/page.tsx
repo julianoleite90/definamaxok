@@ -933,6 +933,7 @@ export default function LandingPage() {
             {/* Container dos Vídeos */}
             <div className="video-carousel flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
+                { videoId: "1092606215" }, // Video Novo - Primeiro lugar
                 { videoId: "1092323500" }, // Video 1
                 { videoId: "1092323530" }, // Video 2
                 { videoId: "1092323542" }, // Video 3
