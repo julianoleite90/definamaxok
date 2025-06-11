@@ -574,7 +574,7 @@ export default function LandingPage() {
               {/* Desktop Video */}
               <div className="hidden md:block relative w-full h-[600px] overflow-hidden bg-white">
                 <iframe
-                  src="https://player.vimeo.com/video/1088746169?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
+                  src="https://player.vimeo.com/video/1092325858?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
@@ -586,7 +586,7 @@ export default function LandingPage() {
               {/* Mobile Video */}
               <div className="md:hidden relative w-full aspect-video bg-white">
                 <iframe
-                  src="https://player.vimeo.com/video/1088747168?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
+                  src="https://player.vimeo.com/video/1092325775?controls=0&transparent=1&background=1&autoplay=1&loop=1&muted=1"
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
@@ -931,11 +931,12 @@ export default function LandingPage() {
             {/* Container dos Vídeos */}
             <div className="video-carousel flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory gap-6 md:pb-8">
               {[
-                { videoId: "1092257512" }, // Video 1
-                { videoId: "1092294827" }, // Video 2 (ATUALIZADO)
-                { videoId: "1092256712" }, // Video 3
-                { videoId: "1092258409" }, // Video 4
-                { videoId: "1092258819" }  // Video 5
+                { videoId: "1092323500" }, // Video 1
+                { videoId: "1092323530" }, // Video 2
+                { videoId: "1092323542" }, // Video 3
+                { videoId: "1092323559" }, // Video 4
+                { videoId: "1092323577" }, // Video 5
+                { videoId: "1092258819" }  // Video 6
               ].map((item, index) => (
                 <div 
                   key={index} 
@@ -943,16 +944,48 @@ export default function LandingPage() {
                     index >= 3 && !showMoreVideos ? 'hidden md:block' : ''
                   }`}
                 >
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="relative aspect-video bg-black">
-                      <iframe
-                        src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&autopause=1&playsinline=1&title=0&byline=0&portrait=0&sidedock=0&loop=0&autoplay=0&background=0&muted=0`}
-                        className="absolute inset-0 w-full h-full"
-                        frameBorder="0"
-                        allow="fullscreen"
-                        allowFullScreen
-                        title={`Depoimento em vídeo ${index + 1}`}
-                      ></iframe>
+                  <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:rotate-1">
+                    {/* Gradient Border Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-400 to-green-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                    
+                    <div className="relative bg-white rounded-2xl m-1">
+                      {/* Video Container with Modern Frame */}
+                      <div className="relative aspect-video bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden">
+                        {/* Subtle Inner Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none z-10"></div>
+                        
+                        <iframe
+                          src={`https://player.vimeo.com/video/${item.videoId}?controls=1&transparent=1&autopause=1&playsinline=1&title=0&byline=0&portrait=0&sidedock=0&loop=1&autoplay=0&background=0&muted=0`}
+                          className="absolute inset-0 w-full h-full rounded-xl"
+                          frameBorder="0"
+                          allow="fullscreen"
+                          allowFullScreen
+                          title={`Depoimento em vídeo ${index + 1}`}
+                        ></iframe>
+                        
+                        {/* Modern Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
+                            <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Bottom Info Bar */}
+                      <div className="p-4">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-sm font-medium text-gray-700">Depoimento Real</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <span className="text-xs text-gray-500">Verificado</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -985,7 +1018,7 @@ export default function LandingPage() {
 
             {/* Indicadores de Página (Dots) - Apenas Desktop */}
             <div className="hidden md:flex justify-center gap-2 mt-6">
-              {[0, 1, 2].map((dot) => (
+              {[0, 1, 2, 3].map((dot) => (
                 <button
                   key={dot}
                   onClick={() => {
