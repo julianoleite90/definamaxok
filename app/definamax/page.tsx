@@ -482,6 +482,7 @@ export default function LandingPage() {
             <div className="carousel-container overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory flex gap-6 pb-8 -mx-4 px-4">
               {[
                 { name: "Paula", age: 34, months: 5, image: "/apaula2.png", profession: "Gerente de loja", location: "Colombo, PR" },
+                { name: "Luana", age: 25, months: 9, image: "/luana.png", profession: "Vendedora", location: "Tijucas, SC" },
                 { name: "Cinthia", age: 49, months: 6, image: "/chintia.png", profession: "Manicure", location: "Canoas, RS" },
                 { name: "Débora", age: 31, months: 7, image: "/dep01.png", profession: "Professora", location: "São Paulo, SP" },
                 { name: "Arnaldo", age: 34, months: 6, image: "/dep02.png", profession: "Auxiliar Administrativo", location: "Salvador, BA" },
@@ -492,21 +493,21 @@ export default function LandingPage() {
               ].map((item, index) => (
                 <div key={index} className="snap-start flex-none w-[90%] md:w-[calc(30%-1rem)] transition-all">
                   <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="relative aspect-[4/5]">
+                    <div className="relative aspect-[3/4] bg-gray-50">
                       <Image
                         src={item.image}
                         alt={`Resultado ${item.name}`}
                         fill
-                        className="object-cover"
+                        className="object-contain p-2"
                       />
                     </div>
-                    <div className="p-4 text-center">
-                      <p className="text-3xl font-bold text-green-600 mb-1">{item.months} meses</p>
-                      <p className="text-sm text-gray-600">de tratamento</p>
-                      <div className="mt-2">
-                        <p className="font-medium text-gray-700 text-sm">{item.name}, {item.age} anos</p>
-                        <p className="text-xs text-gray-500">{item.profession}</p>
-                        <p className="text-xs text-gray-400 mt-1">{item.location}</p>
+                    <div className="pt-1 px-3 pb-3 text-center">
+                      <p className="text-2xl font-bold text-green-600 mb-0.5">{item.months} meses</p>
+                      <p className="text-xs text-gray-600 mb-2">de tratamento</p>
+                      <div>
+                        <p className="font-medium text-gray-700 text-sm leading-tight">{item.name}, {item.age} anos</p>
+                        <p className="text-xs text-gray-500 leading-tight">{item.profession}</p>
+                        <p className="text-xs text-gray-400 leading-tight">{item.location}</p>
                       </div>
                     </div>
                   </div>
