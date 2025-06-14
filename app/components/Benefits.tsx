@@ -39,7 +39,7 @@ export default function Benefits() {
   ]
 
   return (
-    <section className="w-full py-4 bg-white border-t border-b border-gray-200">
+    <section className="w-full py-4 bg-white border-t border-b border-gray-200 hidden md:block">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           {benefits.map((benefit, index) => (
