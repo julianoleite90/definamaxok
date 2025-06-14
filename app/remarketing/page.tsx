@@ -5,6 +5,15 @@ import Link from "next/link"
 import { Play, CheckCircle2, Share2, X, ShieldCheck, Gift, Star, ChevronDown, ArrowRight, Lock } from "lucide-react"
 import Head from "next/head"
 
+// Função para obter a data atual formatada
+const getCurrentDate = () => {
+  const today = new Date()
+  const day = today.getDate().toString().padStart(2, '0')
+  const month = (today.getMonth() + 1).toString().padStart(2, '0')
+  const year = today.getFullYear()
+  return `${day}/${month}/${year}`
+}
+
 // Declare o tipo gtag
 declare global {
   interface Window {
@@ -679,7 +688,7 @@ export default function ReMarketingPage() {
             </h2>
             <div className="inline-block bg-white rounded-full px-6 py-2 shadow-sm">
               <p className="text-gray-700">
-                Restam poucos frascos com FRETE GRÁTIS no dia de hoje: <span className="text-red-500 font-semibold">27/05/2025</span>
+                Restam poucos frascos com FRETE GRÁTIS no dia de hoje: <span className="text-red-500 font-semibold">{getCurrentDate()}</span>
               </p>
             </div>
           </div>

@@ -4,6 +4,15 @@ import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown, Gift, ShoppingCart, ThumbsUp } from "lucide-react"
 
+// Função para obter a data atual formatada
+const getCurrentDate = () => {
+  const today = new Date()
+  const day = today.getDate().toString().padStart(2, '0')
+  const month = (today.getMonth() + 1).toString().padStart(2, '0')
+  const year = today.getFullYear()
+  return `${day}/${month}/${year}`
+}
+
 // Adicione isso após os imports
 const pulseAnimation = `
 @keyframes pulseAndScale {
@@ -796,7 +805,7 @@ export default function LandingPage() {
               <div className="max-w-3xl mx-auto px-4 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 my-4">
                 <p className="text-gray-700 text-lg md:text-xl">
                   Restam poucos frascos com FRETE GRÁTIS no dia de hoje:{" "}
-                  <span className="text-red-600 font-bold">27/05/2025</span>
+                  <span className="text-red-600 font-bold">{getCurrentDate()}</span>
                 </p>
               </div>
             </div>

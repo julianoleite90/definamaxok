@@ -2,6 +2,15 @@
 
 import { useUTMTracking } from '../hooks/useUTMTracking'
 
+// Função para obter a data atual formatada
+const getCurrentDate = () => {
+  const today = new Date()
+  const day = today.getDate().toString().padStart(2, '0')
+  const month = (today.getMonth() + 1).toString().padStart(2, '0')
+  const year = today.getFullYear()
+  return `${day}/${month}/${year}`
+}
+
 export default function PricingSection() {
   const { addUTMsToURL } = useUTMTracking()
   const packages = [
@@ -88,7 +97,7 @@ export default function PricingSection() {
             Escolha o kit perfeito para você
           </h2>
           <p className="text-lg text-gray-600">
-            Restam <span className="underline font-semibold">poucos frascos</span> com <span className="font-bold text-red-600">FRETE GRÁTIS</span> no dia de hoje: <span className="font-bold text-red-600">14/06/2025</span>
+            Restam <span className="underline font-semibold">poucos frascos</span> com <span className="font-bold text-red-600">FRETE GRÁTIS</span> no dia de hoje: <span className="font-bold text-red-600">{getCurrentDate()}</span>
           </p>
         </div>
 
