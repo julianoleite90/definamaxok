@@ -3,42 +3,42 @@ export default function FormulationSection() {
     {
       id: 1,
       name: "Quitosana",
-      image: "/Ing-2.png",
+      image: "/ing-2.png",
       benefits: ["Combate Hipertensão", "Bloqueador de Gordura"],
       position: "top-left"
     },
     {
       id: 2,
       name: "Espirulina",
-      image: "/Ing-4.png", 
+      image: "/ing-4.png", 
       benefits: ["Reduz Colesterol", "Fortalece Imunidade"],
       position: "left"
     },
     {
       id: 3,
       name: "Psyllium",
-      image: "/Ing-3.png",
+      image: "/ing-3.png",
       benefits: ["Reduz Triglicerídeos", "Promove a Saciedade"],
       position: "bottom-left"
     },
     {
       id: 4,
       name: "Fibras bioativas",
-      image: "/Ing-1.png",
+      image: "/ing-1.png",
       benefits: ["Fortalece Sistema Imune", "Aumenta Energia"],
       position: "top-right"
     },
     {
       id: 5,
       name: "Agar Agar",
-      image: "/Ing-6.png",
+      image: "/ing-6.png",
       benefits: ["Reduz Gordura Corporal", "Reduz a Fadiga"],
       position: "right"
     },
     {
       id: 6,
       name: "Cromo",
-      image: "/Ing-5.png",
+      image: "/ing-5.png",
       benefits: ["Controla Glicemia", "Acelera Metabolismo"],
       position: "bottom-right"
     }
