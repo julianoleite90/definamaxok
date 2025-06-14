@@ -45,7 +45,7 @@ export default function FormulationSection() {
   ]
 
   return (
-    <section className="bg-white pt-16 md:pt-24 pb-2 md:pb-4 relative overflow-hidden">
+    <section className="hidden bg-white pt-16 md:pt-24 pb-2 md:pb-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-8">

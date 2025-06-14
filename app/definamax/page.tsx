@@ -70,6 +70,12 @@ export default function LandingPage() {
       <section aria-label="Formulação do produto">
         <FormulationSection />
       </section>
+      {/* Linha divisória antes da seção de kits */}
+      <div className="w-full bg-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <hr className="border-gray-300 border-t-2" />
+        </div>
+      </div>
       <section ref={kitsRef} id="kits-section" aria-label="Pacotes e preços">
         <PricingSection />
       </section>

@@ -26,13 +26,13 @@ export default function ProductShowcase() {
           <div className="space-y-6 order-1 lg:order-2 text-white px-4 sm:px-6 lg:px-8 py-8 md:py-12 text-center lg:text-left">
             {/* Main Headline */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-              Recupere a sua autoestima e conquiste o corpo que você merece
+              Com Definamax, a perda de peso se torna uma realidade ao seu alcance.
             </h2>
 
             {/* Description Paragraphs */}
             <div className="space-y-4">
               <p className="text-lg md:text-xl leading-relaxed opacity-95">
-                Definamax revoluciona sua jornada de transformação corporal, convertendo seu organismo em um sistema eficiente de queima de gordura 24 horas por dia. Com fibras bioativas avançadas, ele captura parte da gordura dos alimentos antes da absorção, regula o apetite de forma natural e potencializa seu metabolismo. O resultado? Emagrecimento saudável e sustentável, sem dietas restritivas ou efeito rebote.
+                Definamax acelera o seu processo de emagrecimento com fibras bioativas avançadas que capturam parte da gordura dos alimentos antes da absorção, regula o apetite de forma natural e potencializa seu metabolismo. O resultado? Emagrecimento saudável e sustentável, sem dietas restritivas ou efeito rebote.
               </p>
             </div>
 

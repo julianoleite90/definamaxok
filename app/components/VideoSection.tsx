@@ -7,7 +7,7 @@ export default function VideoSection() {
         <div className="lg:hidden">
           {/* Mobile Title */}
           <h2 className="text-3xl font-bold text-gray-900 leading-tight text-center pt-8 pb-4">
-            O poder das{" "}
+            Conheça o poder das{" "}
             <span className="text-green-700">fibras bioativas</span>{" "}
             que absorvem a gordura.
           </h2>
@@ -40,7 +40,7 @@ export default function VideoSection() {
           <div className="space-y-6">
             {/* Main Headline */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              O poder das{" "}
+              Conheça o poder das{" "}
               <span className="text-green-700">fibras bioativas</span>{" "}
               que absorvem a gordura.
             </h2>
