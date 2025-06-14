@@ -44,13 +44,18 @@ export default function VideoSection() {
             que absorvem a gordura.
           </h2>
           
-          {/* Mobile Image Container - apenas imagem fixa */}
-          <div className="relative w-full aspect-video overflow-hidden rounded-lg">
-            <img 
-              src="/thumb-mob-min.png" 
-              alt="Fibras Bioativas"
-              className="w-full h-full object-cover"
-            />
+          {/* Mobile Video Container */}
+          <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg">
+            {isVisible && (
+              <iframe
+                src="https://player.vimeo.com/video/1092325775?autoplay=1&loop=1&muted=1&controls=0&background=1"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                title="Fibras Bioativas - Mobile"
+              ></iframe>
+            )}
           </div>
           
           {/* Mobile Description */}
@@ -86,7 +91,7 @@ export default function VideoSection() {
 
           {/* Right Side - Video */}
           <div className="relative">
-            {/* Desktop Video Container - apenas vídeo, sem imagem fixa */}
+            {/* Desktop Video Container */}
             <div className="relative w-full h-[540px] overflow-hidden rounded-lg">
               {isVisible && (
                 <iframe

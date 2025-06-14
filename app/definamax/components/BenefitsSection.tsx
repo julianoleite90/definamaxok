@@ -39,7 +39,7 @@ export default function BenefitsSection() {
   ]
 
   return (
-    <section className="bg-white pt-8 md:pt-12 pb-16 md:pb-24">
+    <section className="bg-white pt-4 md:pt-6 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
