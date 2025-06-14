@@ -1,17 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-  compress: true,
-  poweredByHeader: false,
+  // Configurações básicas para desenvolvimento
   reactStrictMode: true,
-  typescript: {
-    ignoreBuildErrors: false,
+  poweredByHeader: false,
+  
+  // Compressão de imagens básica
+  images: {
+    formats: ['image/webp', 'image/avif'],
   },
-  eslint: {
-    ignoreDuringBuilds: false,
+  
+  // Redirects para SEO
+  async redirects() {
+    return [
+      {
+        source: '/landing-page-vencedora',
+        destination: '/',
+        permanent: true,
+      },
+    ]
   },
 }
 
