@@ -423,6 +423,18 @@ export default function ThankYouClientPage() {
           });
         `}
       </Script>
+
+      {/* Google Ads Conversion Tracking - Segunda Tag */}
+      <Script id="google-ads-conversion-2" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+            'send_to': 'AW-632014157/_W8oCKrGhtsaEM2Kr60C',
+            'value': 1.0,
+            'currency': 'BRL',
+            'transaction_id': ''
+          });
+        `}
+      </Script>
     </div>
   )
 }
