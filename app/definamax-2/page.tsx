@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { CheckCircle2, X, ArrowRight, Star, ShieldCheck, MessageCircle, Clock, ChevronLeft, ChevronRight, Lock, Truck, ChevronDown, Gift, ShoppingCart, ThumbsUp } from "lucide-react"
+import WhatsAppButton from "../components/WhatsAppButton"
 
 // Função para obter a data atual formatada
 const getCurrentDate = () => {

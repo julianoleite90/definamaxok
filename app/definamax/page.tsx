@@ -16,6 +16,7 @@ import PricingSection from './components/PricingSection'
 import GuaranteeSection from './components/GuaranteeSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
+import WhatsAppButton from '../components/WhatsAppButton'
 
 export default function LandingPage() {
   const kitsRef = useRef<HTMLDivElement>(null)
@@ -82,6 +83,9 @@ export default function LandingPage() {
       <footer>
         <Footer />
       </footer>
+      
+      {/* Botão WhatsApp fixo */}
+      <WhatsAppButton />
     </div>
   )
 }

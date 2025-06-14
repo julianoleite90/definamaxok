@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, CheckCircle2, Share2, X, ShieldCheck, Gift, Star, ChevronDown, ArrowRight, Lock } from "lucide-react"
 import Head from "next/head"
+import WhatsAppButton from "../components/WhatsAppButton"
 
 // Função para obter a data atual formatada
 const getCurrentDate = () => {
@@ -1413,6 +1414,9 @@ export default function ReMarketingPage() {
           </div>
         </div>
       </footer>
+      
+      {/* Botão WhatsApp fixo */}
+      <WhatsAppButton />
 
     </main>
   )
