@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'seu-codigo-de-verificacao',
+    google: '055Y8Zlr7CXBMOD8_TVqgFAiashS0o5vcUD8K7vxO_s',
   },
   other: {
     'msapplication-TileColor': '#10b981',

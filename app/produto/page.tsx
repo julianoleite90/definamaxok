@@ -195,6 +195,7 @@ export default function ProdutoDefinamax() {
         />
         <meta name="author" content="Definamax" />
         <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="055Y8Zlr7CXBMOD8_TVqgFAiashS0o5vcUD8K7vxO_s" />
 
         {/* Preço para Rich Snippets */}
         <meta name="price" content={kit.salePrice.toFixed(2)} />
