@@ -30,7 +30,7 @@ export default function LandingPage() {
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
-        page_title: 'Definamax - Landing Page Vencedora',
+        page_title: 'Definamax - Página Alternativa',
         page_location: window.location.href,
         utm_source: utmParams.utm_source,
         utm_medium: utmParams.utm_medium,
