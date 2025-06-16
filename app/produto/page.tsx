@@ -206,9 +206,9 @@ export default function ProdutoDefinamax() {
         <meta property="og:url" content={`https://www.definamaxoficial.com/produto?kit=${kit.id}`} />
         <meta property="og:title" content={kit.title} />
         <meta property="og:description" content={kit.description} />
-        <meta property="og:image" content={`https://www.definamaxoficial.com${kit.image}`} />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
+        <meta property="og:image" content="https://www.definamaxoficial.com/definamax-estruturada.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Definamax Oficial" />
         <meta property="og:locale" content="pt_BR" />
 
@@ -227,11 +227,15 @@ export default function ProdutoDefinamax() {
         <meta name="twitter:card" content="product" />
         <meta name="twitter:title" content={kit.title} />
         <meta name="twitter:description" content={kit.description} />
-        <meta name="twitter:image" content={`https://www.definamaxoficial.com${kit.image}`} />
+        <meta name="twitter:image" content="https://www.definamaxoficial.com/definamax-estruturada.png" />
         <meta name="twitter:label1" content="Preço" />
         <meta name="twitter:data1" content={`R$ ${kit.salePrice.toFixed(2)}`} />
         <meta name="twitter:label2" content="Disponibilidade" />
         <meta name="twitter:data2" content="Em estoque" />
+
+        {/* Google Rich Snippets */}
+        <meta name="image" content="https://www.definamaxoficial.com/definamax-estruturada.png" />
+        <meta name="thumbnail" content="https://www.definamaxoficial.com/definamax-estruturada.png" />
 
         {/* Canonical URL */}
         <link rel="canonical" href={`https://www.definamaxoficial.com/produto?kit=${kit.id}`} />
@@ -952,7 +956,7 @@ export default function ProdutoDefinamax() {
             "@type": "Product",
             name: kit.title,
             description: kit.description,
-            image: [`https://www.definamaxoficial.com${kit.image}`],
+            image: ["https://www.definamaxoficial.com/definamax-estruturada.png"],
             brand: {
               "@type": "Brand",
               name: "Definamax"
