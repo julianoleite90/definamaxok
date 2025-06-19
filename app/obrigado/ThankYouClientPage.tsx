@@ -5,6 +5,21 @@ import Image from "next/image"
 import { CheckCircle2, ShieldCheck, ArrowRight, Clock, Package, Smartphone, FileText } from "lucide-react"
 
 export default function ThankYouClientPage() {
+  // Função para obter parâmetros da URL
+  const getUrlParams = () => {
+    if (typeof window === 'undefined') return {};
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      value: urlParams.get('value') || '379.00', // Valor padrão Kit 5 Meses
+      transaction_id: urlParams.get('transaction_id') || `TX-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      product_name: urlParams.get('product') || 'Definamax - Kit 5 Meses',
+      quantity: urlParams.get('quantity') || '1'
+    };
+  };
+
+  const purchaseData = getUrlParams();
+
   return (
     <div className="flex min-h-screen flex-col items-center bg-white">
       {/* Header - Same as landing page */}
@@ -423,14 +438,46 @@ export default function ThankYouClientPage() {
         `}
       </Script>
 
+      {/* Enhanced Ecommerce - Purchase Event */}
+      <Script id="ga4-purchase-event" strategy="afterInteractive">
+        {`
+          // Aguarda o carregamento do gtag
+          window.addEventListener('load', function() {
+            if (typeof gtag !== 'undefined') {
+              const purchaseData = ${JSON.stringify(purchaseData)};
+              
+              // GA4 Enhanced Ecommerce Purchase
+              gtag('event', 'purchase', {
+                transaction_id: purchaseData.transaction_id,
+                value: parseFloat(purchaseData.value),
+                currency: 'BRL',
+                items: [{
+                  item_id: 'definamax-kit',
+                  item_name: purchaseData.product_name,
+                  category: 'Suplementos',
+                  quantity: parseInt(purchaseData.quantity),
+                  price: parseFloat(purchaseData.value)
+                }]
+              });
+            }
+          });
+        `}
+      </Script>
+
       {/* Google Ads Conversion Tracking */}
       <Script id="google-ads-conversion" strategy="afterInteractive">
         {`
-          gtag('event', 'conversion', {
-            'send_to': 'AW-632000271/jO6vCIOx2NQBEI-erq0C',
-            'value': 1.0,
-            'currency': 'BRL',
-            'transaction_id': ''
+          window.addEventListener('load', function() {
+            if (typeof gtag !== 'undefined') {
+              const purchaseData = ${JSON.stringify(purchaseData)};
+              
+              gtag('event', 'conversion', {
+                'send_to': 'AW-632000271/jO6vCIOx2NQBEI-erq0C',
+                'value': parseFloat(purchaseData.value),
+                'currency': 'BRL',
+                'transaction_id': purchaseData.transaction_id
+              });
+            }
           });
         `}
       </Script>
@@ -438,11 +485,38 @@ export default function ThankYouClientPage() {
       {/* Google Ads Conversion Tracking - Segunda Tag */}
       <Script id="google-ads-conversion-2" strategy="afterInteractive">
         {`
-          gtag('event', 'conversion', {
-            'send_to': 'AW-632014157/_W8oCKrGhtsaEM2Kr60C',
-            'value': 1.0,
-            'currency': 'BRL',
-            'transaction_id': ''
+          window.addEventListener('load', function() {
+            if (typeof gtag !== 'undefined') {
+              const purchaseData = ${JSON.stringify(purchaseData)};
+              
+              gtag('event', 'conversion', {
+                'send_to': 'AW-632014157/_W8oCKrGhtsaEM2Kr60C',
+                'value': parseFloat(purchaseData.value),
+                'currency': 'BRL',
+                'transaction_id': purchaseData.transaction_id
+              });
+            }
+          });
+        `}
+      </Script>
+
+      {/* Facebook Pixel - Purchase Event */}
+      <Script id="facebook-pixel-purchase" strategy="afterInteractive">
+        {`
+          window.addEventListener('load', function() {
+            if (typeof fbq !== 'undefined') {
+              const purchaseData = ${JSON.stringify(purchaseData)};
+              
+              fbq('track', 'Purchase', {
+                value: parseFloat(purchaseData.value),
+                currency: 'BRL',
+                content_name: purchaseData.product_name,
+                content_category: 'Suplementos',
+                content_ids: ['definamax-kit'],
+                content_type: 'product',
+                num_items: parseInt(purchaseData.quantity)
+              });
+            }
           });
         `}
       </Script>
