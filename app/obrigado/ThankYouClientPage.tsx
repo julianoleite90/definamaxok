@@ -412,6 +412,17 @@ export default function ThankYouClientPage() {
         `}
       </Script>
 
+      {/* Google Analytics - Adicional */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-E7W8NMCRJ6" strategy="afterInteractive" />
+      <Script id="google-analytics-adicional" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-E7W8NMCRJ6');
+        `}
+      </Script>
+
       {/* Google Ads Conversion Tracking */}
       <Script id="google-ads-conversion" strategy="afterInteractive">
         {`
