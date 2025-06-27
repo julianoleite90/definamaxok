@@ -201,6 +201,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
 
+
+      </head>
+      <body className={inter.className}>
+        <GoogleAnalytics />
+        <UTMHandler />
+        {children}
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CD0S84C9NN"
@@ -284,11 +291,6 @@ export default function RootLayout({
             });
           `}
         </Script>
-      </head>
-      <body className={inter.className}>
-        <GoogleAnalytics />
-        <UTMHandler />
-        {children}
       </body>
     </html>
   )
