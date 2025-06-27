@@ -208,9 +208,9 @@ export default function RootLayout({
         <UTMHandler />
         {children}
 
-        {/* Google Analytics - G-CD0S84C9NN - Tracking Universal */}
+        {/* Google Analytics - G-GEJ71JEFEM - Tracking Universal */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-CD0S84C9NN"
+          src="https://www.googletagmanager.com/gtag/js?id=G-GEJ71JEFEM"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -218,7 +218,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-CD0S84C9NN');
+            gtag('config', 'G-GEJ71JEFEM');
           `}
         </Script>
 
