@@ -1,81 +1,116 @@
 export default function BenefitsSection() {
   const benefits = [
     {
-      image: "/benefit-1.png",
-      title: "Deseja emagrecer",
-      subtitle: "sem recorrer a dietas extremas ou exercícios exaustivos.",
-      highlight: "emagrecer"
+      icon: "🎯",
+      title: "Emagrecimento Inteligente",
+      description: "Perca peso de forma natural sem dietas restritivas ou exercícios extremos. O Definamax trabalha 24h por dia para acelerar seu metabolismo.",
+      highlight: "Resultados em 15 dias"
     },
     {
-      image: "/benefit-2.png",
-      title: "Busca um método natural e",
-      subtitle: "seguro para perder peso, sem efeitos colaterais.",
-      highlight: "método natural"
+      icon: "🛡️",
+      title: "100% Natural e Seguro",
+      description: "Fórmula desenvolvida com ingredientes naturais clinicamente testados. Sem efeitos colaterais, aprovado pela ANVISA.",
+      highlight: "Zero efeitos colaterais"
     },
     {
-      image: "/benefit-3.png",
-      title: "Luta contra a compulsão alimentar e",
-      subtitle: "procura uma forma eficaz de controlar o apetite.",
-      highlight: "compulsão alimentar"
+      icon: "🧠",
+      title: "Controle da Compulsão",
+      description: "Reduza a ansiedade por comida e controle a fome emocional. Sinta-se satisfeito com porções menores naturalmente.",
+      highlight: "Fim da compulsão alimentar"
     },
     {
-      image: "/benefit-4.png",
-      title: "Quer aumentar seu metabolismo de",
-      subtitle: "forma saudável, mesmo enquanto está em repouso.",
-      highlight: "aumentar seu metabolismo"
+      icon: "⚡",
+      title: "Metabolismo Acelerado",
+      description: "Queime gordura mesmo em repouso. Aumente sua energia e disposição enquanto elimina medidas de forma eficaz.",
+      highlight: "Queima gordura 24h"
     },
     {
-      image: "/benefit-5.png",
-      title: "Precisa de uma solução prática",
-      subtitle: "que se encaixe na sua rotina agitada.",
-      highlight: "solução prática"
+      icon: "⏰",
+      title: "Praticidade Total",
+      description: "Apenas 2 cápsulas por dia. Encaixe facilmente na sua rotina sem complicações ou mudanças drásticas no seu dia a dia.",
+      highlight: "Só 2 cápsulas/dia"
     },
     {
-      image: "/benefit-6.png",
-      title: "Quer ver resultados rápidos e",
-      subtitle: "duradouros que também melhorem sua saúde geral.",
-      highlight: "resultados rápidos"
+      icon: "📈",
+      title: "Resultados Duradouros",
+      description: "Não é só perda de peso temporária. Melhore sua saúde geral, autoestima e qualidade de vida de forma permanente.",
+      highlight: "Transformação completa"
     }
   ]
 
   return (
-    <section className="bg-white pt-4 md:pt-6 pb-16 md:pb-24">
+    <section className="bg-gradient-to-br from-gray-50 to-white pt-4 md:pt-6 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            O <span className="text-green-700">Definamax</span> é a solução perfeita para você que...
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            Por que milhares de pessoas escolhem o{" "}
+            <span className="text-green-700 relative">
+              Definamax
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-green-200 rounded-full"></div>
+            </span>
+            ?
           </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Descubra os benefícios únicos que fazem do Definamax a escolha #1 para quem busca resultados reais
+          </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="text-center group">
-              {/* Image Container */}
-              <div className="relative mb-4 md:mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-4 border-green-700">
-                  <img
-                    src={benefit.image}
-                    alt={benefit.title}
-                    className="w-full h-full object-cover"
-                  />
+            <div key={index} className="group">
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full">
+                {/* Icon */}
+                <div className="text-4xl md:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {benefit.icon}
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="space-y-1 md:space-y-2">
-                <h3 className="text-sm md:text-lg lg:text-xl font-semibold text-gray-900 leading-tight">
-                  {benefit.title.split(benefit.highlight)[0]}
-                  <span className="text-green-700 font-bold">{benefit.highlight}</span>
-                  {benefit.title.split(benefit.highlight)[1]}
-                </h3>
-                <p className="text-gray-600 text-xs md:text-base lg:text-lg leading-relaxed">
-                  {benefit.subtitle}
-                </p>
+                {/* Content */}
+                <div className="space-y-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+                    {benefit.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    {benefit.description}
+                  </p>
+
+                  {/* Highlight Badge */}
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-semibold">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                    {benefit.highlight}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12 md:mt-16">
+          <div className="bg-green-700 rounded-2xl p-6 md:p-8 text-white">
+            <h3 className="text-xl md:text-2xl font-bold mb-3">
+              Mais de 50.000 pessoas já transformaram suas vidas
+            </h3>
+            <p className="text-green-100 text-lg mb-4">
+              Junte-se a elas e descubra por que o Definamax é considerado o método mais eficaz do Brasil
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-4 text-sm md:text-base">
+              <div className="flex items-center">
+                <span className="text-yellow-400 mr-1">⭐⭐⭐⭐⭐</span>
+                <span>4.9/5 estrelas</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-green-300 mr-1">✓</span>
+                <span>Aprovado pela ANVISA</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-green-300 mr-1">🏆</span>
+                <span>Produto do Ano 2024</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
