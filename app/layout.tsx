@@ -187,6 +187,19 @@ export default function RootLayout({
         
 
 
+        {/* Google Analytics - G-GEJ71JEFEM */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEJ71JEFEM"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GEJ71JEFEM');
+            `
+          }}
+        />
+
         {/* Schema.org markup */}
         <script
           type="application/ld+json"
@@ -201,26 +214,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
 
-
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
         <UTMHandler />
         {children}
 
-        {/* Google Analytics - G-GEJ71JEFEM - Tracking Universal */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-GEJ71JEFEM"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GEJ71JEFEM');
-          `}
-        </Script>
+
 
         {/* UTM Tracking - Improved version */}
         <Script id="utm-tracking" strategy="afterInteractive">
