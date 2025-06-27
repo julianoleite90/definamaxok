@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.definamaxoficial.com'),
-  title: 'Definamax - Site Oficial | Emagrecedor Natural',
+  title: 'Definamax - Site Oficial | Emagrecedor Natural #1 do Brasil',
   description: 'Emagreça até 10kg em 30 dias com Definamax, o emagrecedor natural mais vendido do Brasil. ✓ 100% Natural ✓ Envio Imediato ✓ Resultados Garantidos ✓ Frete Grátis',
   keywords: 'definamax, emagrecedor natural, perda de peso, metabolismo, compulsão alimentar, emagrecer, perder peso, gordura localizada',
   alternates: {
@@ -208,7 +208,7 @@ export default function RootLayout({
         <UTMHandler />
         {children}
 
-        {/* Google Analytics */}
+        {/* Google Analytics - G-CD0S84C9NN - Tracking Universal */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CD0S84C9NN"
           strategy="afterInteractive"
