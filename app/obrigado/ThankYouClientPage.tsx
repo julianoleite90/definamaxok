@@ -416,27 +416,7 @@ export default function ThankYouClientPage() {
         </div>
       </footer>
 
-      {/* Google Analytics */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-RTEPB48RDY" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RTEPB48RDY');
-        `}
-      </Script>
 
-      {/* Google Analytics - Adicional */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-E7W8NMCRJ6" strategy="afterInteractive" />
-      <Script id="google-analytics-adicional" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-E7W8NMCRJ6');
-        `}
-      </Script>
 
       {/* Enhanced Ecommerce - Purchase Event */}
       <Script id="ga4-purchase-event" strategy="afterInteractive">
