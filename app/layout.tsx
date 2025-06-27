@@ -185,18 +185,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Google Analytics - Rastreamento Geral */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CD0S84C9NN"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-CD0S84C9NN');
-            `
-          }}
-        />
+
 
         {/* Schema.org markup */}
         <script
@@ -214,7 +203,7 @@ export default function RootLayout({
 
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RTEPB48RDY"
+          src="https://www.googletagmanager.com/gtag/js?id=G-CD0S84C9NN"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -222,10 +211,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-RTEPB48RDY', {
-              page_path: window.location.pathname,
-              send_page_view: true
-            });
+            gtag('config', 'G-CD0S84C9NN');
           `}
         </Script>
 
