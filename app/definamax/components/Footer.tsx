@@ -30,7 +30,7 @@ export default function Footer() {
             Avaliação do IMC
           </a>
           <span className="text-green-300">|</span>
-          <a href="#" className="text-green-100 hover:text-white transition-colors">
+          <a href="https://www.definamaxoficial.com/termos" className="text-green-100 hover:text-white transition-colors">
             Termos de Garantia
           </a>
           <span className="text-green-300">|</span>
