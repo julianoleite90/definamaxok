@@ -1,33 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage -->
   <url>
-    <loc>https://www.definamaxoficial.com</loc>
-    <lastmod>2025-05-24</lastmod>
+    <loc>https://www.definamaxoficial.com/</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Images -->
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/logo-definamax.png</image:loc>
+      <image:title>Logo Definamax - Emagrecedor Natural</image:title>
+      <image:caption>Logo oficial do Definamax, emagrecedor natural aprovado pela ANVISA</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/luana.png</image:loc>
+      <image:title>Luana - Resultado Definamax -30kg</image:title>
+      <image:caption>Depoimento de Luana que perdeu 30kg com Definamax em 6 meses</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/dep01.png</image:loc>
+      <image:title>Fernanda Costa - Resultado Definamax -20kg</image:title>
+      <image:caption>Depoimento de Fernanda Costa que perdeu 20kg com Definamax</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/dep03.png</image:loc>
+      <image:title>Renatha Almeida - Resultado Definamax -12kg</image:title>
+      <image:caption>Depoimento de Renatha Almeida que perdeu 12kg com Definamax</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/kit-promo.png</image:loc>
+      <image:title>Kit Promocional Definamax</image:title>
+      <image:caption>Kit promocional do Definamax com desconto especial</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/1frasco.png</image:loc>
+      <image:title>Definamax 1 Frasco - Tratamento 1 Mês</image:title>
+      <image:caption>Kit Definamax de 1 frasco para tratamento de 1 mês</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/2frascos.png</image:loc>
+      <image:title>Definamax 2 Frascos - Tratamento 2 Meses</image:title>
+      <image:caption>Kit Definamax de 2 frascos para tratamento de 2 meses</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/5frascos.png</image:loc>
+      <image:title>Definamax 5 Frascos - Tratamento 5 Meses</image:title>
+      <image:caption>Kit Definamax de 5 frascos para tratamento completo de 5 meses</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://www.definamaxoficial.com/garantia-definamax.png</image:loc>
+      <image:title>Garantia Definamax</image:title>
+      <image:caption>Selo de garantia do Definamax com 100% de satisfação garantida</image:caption>
+    </image:image>
+    
+    <!-- Videos -->
+    <video:video>
+      <video:thumbnail_loc>https://www.definamaxoficial.com/logo-definamax.png</video:thumbnail_loc>
+      <video:title>Processo de Fabricação Definamax</video:title>
+      <video:description>Vídeo exclusivo mostrando o processo de fabricação do Definamax em laboratório certificado</video:description>
+      <video:content_loc>https://www.definamaxoficial.com/fabricacao.mp4</video:content_loc>
+      <video:duration>120</video:duration>
+    </video:video>
   </url>
-  <url>
-    <loc>https://www.definamaxoficial.com/avaliacao</loc>
-    <lastmod>2025-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
+  <!-- External important pages -->
   <url>
     <loc>https://www.definamaxoficial.com/termos</loc>
-    <lastmod>2025-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.definamaxoficial.com/perguntas-frequentes</loc>
-    <lastmod>2025-05-24</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://www.definamaxoficial.com/produto</loc>
-    <lastmod>2025-05-24</lastmod>
+    <loc>https://www.definamaxoficial.com/privacidade</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.definamaxoficial.com/faq</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.definamaxoficial.com/produtos</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <url>
+    <loc>https://www.definamaxoficial.com/depoimentos</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.definamaxoficial.com/avaliacao-imc</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset> 

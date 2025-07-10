@@ -1,27 +1,50 @@
 {
-  "name": "Definamax - Site Oficial",
+  "name": "Definamax - Emagrecedor Natural",
   "short_name": "Definamax",
-  "description": "Emagreça até 10kg em 30 dias com Definamax, o emagrecedor natural mais vendido do Brasil.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#10b981",
+  "description": "Emagrecedor natural mais vendido do Brasil. Perca até 30kg em 5 meses com segurança.",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/maskable_icon.png",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-definamax.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1a4d2e",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["health", "lifestyle", "wellness"],
+  "screenshots": [
+    {
+      "src": "/kit-promo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 } 
