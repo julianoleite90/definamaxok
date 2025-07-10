@@ -1,39 +1,34 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
 
-# dependencies
-/node_modules
-
-# Next.js build output
-/.next/
-/out/
+# Testing
+/coverage
 
 # Production build
 /build
 
-# misc
+# Misc
 .DS_Store
-*.env.local
-*.env.development.local
-*.env.test.local
-*.env.production.local
-.env.production
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# debug log
+# Logs
 npm-debug.log*
 yarn-debug.log*
-lerna-debug.log*
+yarn-error.log*
 
-# local env files
-.env*
-!.env.example
-!.env.local.example
+# IDE
+.vscode/
+.idea/
 
-# vercel
-.vercel
+# OS
+Thumbs.db
 
-# Typescript cache
-.tsbuildinfo
-
-# Optional: If you are using a package-lock.json or yarn.lock, you might want to keep them
-# !package-lock.json
-# !yarn.lock
+# Large video files (>50MB)
+public/video*.mp4
+public/fabricacao.mp4
+*.mp4
