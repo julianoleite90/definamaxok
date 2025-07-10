@@ -109,21 +109,6 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
-  &::-webkit-media-controls-volume-slider,
-  &::-webkit-media-controls-mute-button {
-    display: none !important;
-  }
-  
-  &::-webkit-media-controls-fullscreen-button {
-    display: none !important;
-  }
-`;
-
 const VideoTitle = styled.div`
   margin-top: 20px;
   font-size: 1.1rem;
@@ -144,24 +129,20 @@ const VideoTitle = styled.div`
 const VideoSection = () => {
   const videos = [
     {
-      src: "/video1.mp4",
-      title: "Perdi 15kg em 3 meses",
-      poster: "/video1-poster.jpg"
+      vimeoId: "1100433801",
+      title: "Perdi 15kg em 3 meses"
     },
     {
-      src: "/video2.mp4", 
-      title: "Voltei a usar M novamente",
-      poster: "/video2-poster.jpg"
+      vimeoId: "1100433922", 
+      title: "Voltei a usar M novamente"
     },
     {
-      src: "/video3.mp4",
-      title: "Minha autoestima voltou", 
-      poster: "/video3-poster.jpg"
+      vimeoId: "1100433861",
+      title: "Minha autoestima voltou"
     },
     {
-      src: "/video4.mp4",
-      title: "Resultado em 30 dias",
-      poster: "/video4-poster.jpg"
+      vimeoId: "1100433969",
+      title: "Resultado em 30 dias"
     }
   ];
 
@@ -196,20 +177,17 @@ const VideoSection = () => {
               viewport={{ once: true }}
             >
               <VideoContainer>
-                <Video
-                  src={video.src}
-                  controls
-                  controlsList="nodownload nofullscreen noremoteplayback"
-                  muted
-                  playsInline
-                  preload="metadata"
-                  disablePictureInPicture
-                  onLoadedMetadata={(e) => {
-                    e.target.currentTime = 0;
+                <iframe
+                  src={`https://player.vimeo.com/video/${video.vimeoId}?badge=0&autopause=0&muted=1&controls=1&title=0&byline=0&portrait=0`}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    border: 'none'
                   }}
-                >
-                  Seu navegador não suporta o elemento de vídeo.
-                </Video>
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title={video.title}
+                />
               </VideoContainer>
               <VideoTitle>{video.title}</VideoTitle>
             </PhoneMockup>

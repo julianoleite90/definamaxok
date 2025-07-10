@@ -141,16 +141,24 @@ const DevicesVideo = styled.div`
   position: relative;
   text-align: center;
   width: 100%;
+  height: 500px;
+  background: white;
+  border-radius: 12px;
   
-  video {
+  iframe, video {
     max-width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     object-fit: cover;
+    background: white;
     
     @media (min-width: 769px) {
-      max-width: 70%;
+      max-width: 90%;
+      height: 500px;
+    }
+    
+    @media (max-width: 768px) {
+      height: 350px;
     }
   }
 `;
@@ -250,22 +258,29 @@ const ResponsiveVideo = () => {
     return () => window.removeEventListener('resize', checkDevice);
   }, []);
 
-  const videoSrc = isMobile ? '/mobile.mp4' : '/desktop.mp4';
+  // Vimeo IDs: mobile = 1100433009, desktop = 1100432285
+  const vimeoId = isMobile ? '1100433009' : '1100432285';
+  const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&autoplay=1&muted=1&controls=0&loop=1&background=1`;
 
   return (
     <DevicesVideo>
-      <motion.video
-        key={videoSrc} // Força re-render quando muda o vídeo
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
+      <motion.iframe
+        key={vimeoId} // Força re-render quando muda o vídeo
+        src={vimeoSrc}
+        style={{
+          width: '100%',
+          border: 'none',
+          borderRadius: '12px',
+          boxShadow: 'none',
+          background: 'white'
+        }}
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+        title={isMobile ? "Vídeo Mobile DEFINAMAX" : "Vídeo Desktop DEFINAMAX"}
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: true }}
-        src={videoSrc}
       />
     </DevicesVideo>
   );

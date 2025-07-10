@@ -36,10 +36,10 @@ const VideoContainer = styled.div`
   cursor: pointer;
 `;
 
-const Video = styled.video`
+const VimeoIframe = styled.iframe`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
   border-radius: 0;
 `;
 
@@ -62,6 +62,7 @@ const ThumbnailContainer = styled.div`
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10;
   
   &:hover {
     background: linear-gradient(
@@ -125,6 +126,7 @@ const PlayerOverlay = styled.div`
   justify-content: center;
   transition: all 0.3s ease;
   border-radius: 0;
+  z-index: 5;
   
   ${props => props.isPlaying && `
     opacity: 0;
@@ -188,55 +190,57 @@ const ProgressFill = styled.div`
 
 const VideoPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [showThumbnail, setShowThumbnail] = useState(true);
-  const videoRef = useRef(null);
+  const iframeRef = useRef(null);
+  const playerRef = useRef(null);
 
+  // Vimeo Player API para controlar o vídeo
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const updateProgress = () => {
-      if (video.duration) {
-        const progressPercent = (video.currentTime / video.duration) * 100;
-        setProgress(progressPercent);
-      }
-    };
-
-    const handleEnded = () => {
-      setIsPlaying(false);
-      setProgress(0);
-      setShowThumbnail(true);
-    };
-
-    video.addEventListener('timeupdate', updateProgress);
-    video.addEventListener('ended', handleEnded);
-
-    return () => {
-      video.removeEventListener('timeupdate', updateProgress);
-      video.removeEventListener('ended', handleEnded);
-    };
+    // Carrega o Vimeo Player API
+    if (!window.Vimeo) {
+      const script = document.createElement('script');
+      script.src = 'https://player.vimeo.com/api/player.js';
+      script.async = true;
+      script.onload = initializePlayer;
+      document.head.appendChild(script);
+    } else {
+      initializePlayer();
+    }
   }, []);
 
-  const togglePlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
+  const initializePlayer = () => {
+    if (window.Vimeo && iframeRef.current && !playerRef.current) {
+      playerRef.current = new window.Vimeo.Player(iframeRef.current);
+      
+      // Escuta quando o vídeo termina
+      playerRef.current.on('ended', () => {
+        setIsPlaying(false);
+        setShowThumbnail(true);
+        // Volta o vídeo para o início
+        playerRef.current.setCurrentTime(0);
+      });
+    }
+  };
 
+  const togglePlay = () => {
+    if (!playerRef.current) return;
+    
     if (isPlaying) {
-      video.pause();
+      playerRef.current.pause();
+      setIsPlaying(false);
     } else {
-      // Desmuta o vídeo quando começa a reproduzir
-      video.muted = false;
-      video.play();
+      playerRef.current.play();
+      setIsPlaying(true);
       setShowThumbnail(false);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleVideoClick = (e) => {
     e.stopPropagation();
     togglePlay();
   };
+
+  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&controls=0&loop=0`;
 
   return (
     <PlayerContainer
@@ -245,20 +249,14 @@ const VideoPlayer = () => {
       transition={{ duration: 0.8, delay: 0.7 }}
     >
       <PlayerContent>
-        <VideoContainer
-          onClick={handleVideoClick}
-        >
-          <Video
-            ref={videoRef}
-            playsInline
-            preload="auto"
-            muted
-            poster=""
-            crossOrigin="anonymous"
-          >
-            <source src="/fabricacao.mp4" type="video/mp4" />
-            Seu navegador não suporta o elemento de vídeo.
-          </Video>
+        <VideoContainer onClick={handleVideoClick}>
+          <VimeoIframe
+            ref={iframeRef}
+            src={vimeoSrc}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Vídeo de Fabricação DEFINAMAX"
+          />
           
           {showThumbnail ? (
             <ThumbnailContainer onClick={togglePlay}>
@@ -280,11 +278,6 @@ const VideoPlayer = () => {
               />
             </PlayerOverlay>
           )}
-
-          <ProgressBar>
-            <ProgressFill progress={progress} />
-          </ProgressBar>
-
         </VideoContainer>
       </PlayerContent>
     </PlayerContainer>
