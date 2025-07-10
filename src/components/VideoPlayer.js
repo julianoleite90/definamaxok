@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -150,19 +150,7 @@ const ThumbnailText = styled.div`
   }
 `;
 
-const ThumbnailSubtext = styled.div`
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-`;
+
 
 const PlayButton = styled(motion.button)`
   width: 70px;
@@ -200,58 +188,17 @@ const PlayButton = styled(motion.button)`
 
 
 const VideoPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [showThumbnail, setShowThumbnail] = useState(true);
-  const iframeRef = useRef(null);
-  const playerRef = useRef(null);
+  const [videoSrc, setVideoSrc] = useState('');
 
-  // Vimeo Player API para controlar o vídeo
-  useEffect(() => {
-    // Carrega o Vimeo Player API
-    if (!window.Vimeo) {
-      const script = document.createElement('script');
-      script.src = 'https://player.vimeo.com/api/player.js';
-      script.async = true;
-      script.onload = initializePlayer;
-      document.head.appendChild(script);
-    } else {
-      initializePlayer();
-    }
-  }, []);
-
-  const initializePlayer = () => {
-    if (window.Vimeo && iframeRef.current && !playerRef.current) {
-      playerRef.current = new window.Vimeo.Player(iframeRef.current);
-      
-      // Escuta quando o vídeo termina
-      playerRef.current.on('ended', () => {
-        setIsPlaying(false);
-        setShowThumbnail(true);
-        // Volta o vídeo para o início
-        playerRef.current.setCurrentTime(0);
-      });
-    }
-  };
-
-  const togglePlay = () => {
-    if (!playerRef.current) return;
-    
-    if (isPlaying) {
-      playerRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      playerRef.current.play();
-      setIsPlaying(true);
-      setShowThumbnail(false);
-    }
-  };
-
-  const handleVideoClick = (e) => {
+  const handlePlayClick = (e) => {
+    e.preventDefault();
     e.stopPropagation();
-    togglePlay();
+    // Quando clica, carrega o vídeo com autoplay
+    const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=1&muted=0&controls=1&loop=0&responsive=1&title=0&byline=0&portrait=0`;
+    setVideoSrc(vimeoSrc);
+    setShowThumbnail(false);
   };
-
-  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=0&muted=0&controls=0&loop=0&responsive=1&title=0&byline=0&portrait=0`;
 
   return (
     <PlayerContainer
@@ -260,21 +207,21 @@ const VideoPlayer = () => {
       transition={{ duration: 0.8, delay: 0.7 }}
     >
       <PlayerContent>
-        <VideoContainer onClick={handleVideoClick}>
-          <VimeoIframe
-            ref={iframeRef}
-            src={vimeoSrc}
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            title="Vídeo de Fabricação DEFINAMAX"
-          />
+        <VideoContainer>
+          {!showThumbnail && (
+            <VimeoIframe
+              src={videoSrc}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Vídeo de Fabricação DEFINAMAX"
+            />
+          )}
           
           {showThumbnail && (
-            <ThumbnailContainer onClick={togglePlay}>
+            <ThumbnailContainer onClick={handlePlayClick}>
               <ThumbnailText>APERTE O PLAY</ThumbnailText>
               <PlayButton
-                isPlaying={false}
-                onClick={togglePlay}
+                onClick={handlePlayClick}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               />
