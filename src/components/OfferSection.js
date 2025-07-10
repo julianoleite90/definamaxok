@@ -144,6 +144,7 @@ const DevicesVideo = styled.div`
   height: 500px;
   background: white;
   border-radius: 12px;
+  overflow: hidden;
   
   iframe, video {
     max-width: 100%;
@@ -158,8 +159,16 @@ const DevicesVideo = styled.div`
     }
     
     @media (max-width: 768px) {
-      height: 350px;
+      height: 200px;
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
     }
+  }
+  
+  @media (max-width: 768px) {
+    height: 200px;
+    background: white;
   }
 `;
 
@@ -260,7 +269,7 @@ const ResponsiveVideo = () => {
 
   // Vimeo IDs: mobile = 1100433009, desktop = 1100432285
   const vimeoId = isMobile ? '1100433009' : '1100432285';
-  const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&autoplay=1&muted=1&controls=0&loop=1&background=1`;
+  const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&autoplay=1&muted=1&controls=0&loop=1&responsive=1`;
 
   return (
     <DevicesVideo>
@@ -269,10 +278,15 @@ const ResponsiveVideo = () => {
         src={vimeoSrc}
         style={{
           width: '100%',
+          height: '100%',
           border: 'none',
           borderRadius: '12px',
           boxShadow: 'none',
-          background: 'white'
+          background: 'white',
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          objectFit: 'cover'
         }}
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen

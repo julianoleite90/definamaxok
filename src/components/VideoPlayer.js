@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const PlayerContainer = styled(motion.div)`
-  background: var(--gradient-primary);
+  background: transparent;
   border-radius: 0;
   padding: 0;
   margin: 10px 0;
@@ -15,7 +15,18 @@ const PlayerContainer = styled(motion.div)`
   
   @media (max-width: 768px) {
     margin: 15px 0;
-    max-width: 400px;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+  }
+  
+  @media (max-width: 390px) and (max-height: 844px) {
+    /* iPhone 12 Pro específico */
+    overflow: hidden;
+    background: transparent;
+    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -23,9 +34,17 @@ const PlayerContent = styled.div`
   position: relative;
   width: 100%;
   height: 405px;
+  overflow: hidden;
   
   @media (max-width: 768px) {
     height: 240px;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 390px) and (max-height: 844px) {
+    /* iPhone 12 Pro específico */
+    height: 220px;
+    overflow: hidden;
   }
 `;
 
@@ -34,13 +53,44 @@ const VideoContainer = styled.div`
   height: 100%;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    overflow: hidden;
+  }
+  
+  @media (max-width: 390px) and (max-height: 844px) {
+    /* iPhone 12 Pro específico */
+    overflow: hidden;
+  }
 `;
 
 const VimeoIframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 0;
+  object-fit: cover;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 390px) and (max-height: 844px) {
+    /* iPhone 12 Pro específico - força o preenchimento completo */
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    object-fit: cover;
+  }
 `;
 
 const ThumbnailContainer = styled.div`
@@ -240,7 +290,7 @@ const VideoPlayer = () => {
     togglePlay();
   };
 
-  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&controls=0&loop=0`;
+  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=0&controls=0&loop=0&background=1&responsive=1&title=0&byline=0&portrait=0`;
 
   return (
     <PlayerContainer

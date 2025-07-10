@@ -61,12 +61,14 @@ const VideosGrid = styled.div`
   
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
+    padding: 0 10px;
   }
   
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
+    padding: 0 20px;
   }
 `;
 
@@ -74,17 +76,24 @@ const PhoneMockup = styled(motion.div)`
   position: relative;
   width: 280px;
   transition: all 0.3s ease;
+  background: white;
   
   &:hover {
     transform: translateY(-10px);
   }
   
   @media (max-width: 768px) {
-    width: 220px;
+    width: 100%;
+    max-width: 350px;
+    background: white;
+    border-radius: 0;
   }
   
   @media (max-width: 480px) {
-    width: 260px;
+    width: 100%;
+    max-width: 100%;
+    background: white;
+    border-radius: 0;
   }
 `;
 
@@ -94,35 +103,25 @@ const VideoContainer = styled.div`
   height: 500px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  background: transparent;
+  box-shadow: none;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   
   @media (max-width: 768px) {
     height: 400px;
+    border-radius: 0;
+    background: white;
+    box-shadow: none;
   }
   
   @media (max-width: 480px) {
     height: 450px;
-  }
-`;
-
-const VideoTitle = styled.div`
-  margin-top: 20px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-  background: #f8f9fa;
-  padding: 12px 20px;
-  border-radius: 25px;
-  border: 1px solid #e9ecef;
-  
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 10px 16px;
+    border-radius: 0;
+    width: 100%;
+    background: white;
+    box-shadow: none;
   }
 `;
 
@@ -189,7 +188,6 @@ const VideoSection = () => {
                   title={video.title}
                 />
               </VideoContainer>
-              <VideoTitle>{video.title}</VideoTitle>
             </PhoneMockup>
           ))}
         </VideosGrid>
@@ -198,4 +196,4 @@ const VideoSection = () => {
   );
 };
 
-export default VideoSection; 
+export default VideoSection;
