@@ -269,7 +269,7 @@ const ResponsiveVideo = () => {
 
   // Vimeo IDs: mobile = 1100433009, desktop = 1100432285
   const vimeoId = isMobile ? '1100433009' : '1100432285';
-  const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&autoplay=1&muted=1&controls=0&loop=1&responsive=1`;
+  const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&autoplay=1&controls=0&loop=1&responsive=1`;
 
   return (
     <DevicesVideo>

@@ -290,7 +290,7 @@ const VideoPlayer = () => {
     togglePlay();
   };
 
-  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=0&controls=0&loop=0&background=1&responsive=1&title=0&byline=0&portrait=0`;
+  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=0&controls=0&loop=0&responsive=1&title=0&byline=0&portrait=0`;
 
   return (
     <PlayerContainer
