@@ -101,10 +101,10 @@ const ThumbnailContainer = styled.div`
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(26, 77, 46, 0.6) 30%,
-    rgba(22, 197, 94, 0.4) 70%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(26, 77, 46, 0.3) 30%,
+    rgba(22, 197, 94, 0.2) 70%,
+    rgba(0, 0, 0, 0.4) 100%
   );
   display: flex;
   flex-direction: column;
@@ -117,10 +117,10 @@ const ThumbnailContainer = styled.div`
   &:hover {
     background: linear-gradient(
       135deg,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(26, 77, 46, 0.7) 30%,
-      rgba(22, 197, 94, 0.5) 70%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(26, 77, 46, 0.4) 30%,
+      rgba(22, 197, 94, 0.3) 70%,
+      rgba(0, 0, 0, 0.5) 100%
     );
   }
 `;
@@ -189,16 +189,18 @@ const PlayButton = styled(motion.button)`
 
 const VideoPlayer = () => {
   const [showThumbnail, setShowThumbnail] = useState(true);
-  const [videoSrc, setVideoSrc] = useState('');
+  const [shouldAutoplay, setShouldAutoplay] = useState(false);
 
   const handlePlayClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    // Quando clica, carrega o vídeo com autoplay
-    const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=1&muted=0&controls=1&loop=0&responsive=1&title=0&byline=0&portrait=0`;
-    setVideoSrc(vimeoSrc);
+    // Ativa autoplay e remove a máscara
+    setShouldAutoplay(true);
     setShowThumbnail(false);
   };
+
+  // Vídeo sempre carregado, com autoplay ativado após clique
+  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=${shouldAutoplay ? 1 : 0}&muted=0&controls=1&loop=0&responsive=1&title=0&byline=0&portrait=0`;
 
   return (
     <PlayerContainer
@@ -208,15 +210,16 @@ const VideoPlayer = () => {
     >
       <PlayerContent>
         <VideoContainer>
-          {!showThumbnail && (
-            <VimeoIframe
-              src={videoSrc}
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title="Vídeo de Fabricação DEFINAMAX"
-            />
-          )}
+          {/* Vídeo sempre presente, carregado no fundo */}
+          <VimeoIframe
+            key={shouldAutoplay ? 'autoplay' : 'paused'}
+            src={vimeoSrc}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Vídeo de Fabricação DEFINAMAX"
+          />
           
+          {/* Máscara que some quando clica no play */}
           {showThumbnail && (
             <ThumbnailContainer onClick={handlePlayClick}>
               <ThumbnailText>APERTE O PLAY</ThumbnailText>
