@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -190,6 +190,34 @@ const PlayButton = styled(motion.button)`
 const VideoPlayer = () => {
   const [showThumbnail, setShowThumbnail] = useState(true);
   const [shouldAutoplay, setShouldAutoplay] = useState(false);
+  const iframeRef = useRef(null);
+  const playerRef = useRef(null);
+
+  // Carrega API do Vimeo e força unmute
+  useEffect(() => {
+    if (shouldAutoplay && !window.Vimeo) {
+      const script = document.createElement('script');
+      script.src = 'https://player.vimeo.com/api/player.js';
+      script.async = true;
+      script.onload = () => initializePlayer();
+      document.head.appendChild(script);
+    } else if (shouldAutoplay && window.Vimeo) {
+      initializePlayer();
+    }
+  }, [shouldAutoplay]);
+
+  const initializePlayer = () => {
+    if (window.Vimeo && iframeRef.current && !playerRef.current) {
+      try {
+        playerRef.current = new window.Vimeo.Player(iframeRef.current);
+        // FORÇA O SOM ATIVO
+        playerRef.current.setVolume(1);
+        playerRef.current.play();
+      } catch (e) {
+        console.log('Vimeo player error:', e);
+      }
+    }
+  };
 
   const handlePlayClick = (e) => {
     e.preventDefault();
@@ -199,8 +227,8 @@ const VideoPlayer = () => {
     setShowThumbnail(false);
   };
 
-  // Vídeo sempre carregado, com autoplay ativado após clique
-  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=${shouldAutoplay ? 1 : 0}&muted=0&controls=1&loop=0&responsive=1&title=0&byline=0&portrait=0`;
+  // Vídeo sempre carregado, SOM FORÇADO ATIVO
+  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=${shouldAutoplay ? 1 : 0}&muted=0&unmute=1&controls=${shouldAutoplay ? 1 : 0}&loop=0&responsive=1&title=0&byline=0&portrait=0&playsinline=1`;
 
   return (
     <PlayerContainer
@@ -212,6 +240,7 @@ const VideoPlayer = () => {
         <VideoContainer>
           {/* Vídeo sempre presente, carregado no fundo */}
           <VimeoIframe
+            ref={iframeRef}
             key={shouldAutoplay ? 'autoplay' : 'paused'}
             src={vimeoSrc}
             allow="autoplay; fullscreen; picture-in-picture"
