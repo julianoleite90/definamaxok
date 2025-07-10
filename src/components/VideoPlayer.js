@@ -164,29 +164,6 @@ const ThumbnailSubtext = styled.div`
   }
 `;
 
-const PlayerOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: ${props => props.isPlaying ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.5)'};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  border-radius: 0;
-  z-index: 5;
-  
-  ${props => props.isPlaying && `
-    opacity: 0;
-    
-    &:hover {
-      opacity: 1;
-    }
-  `}
-`;
-
 const PlayButton = styled(motion.button)`
   width: 70px;
   height: 70px;
@@ -209,8 +186,8 @@ const PlayButton = styled(motion.button)`
   }
   
   &::before {
-    content: '${props => props.isPlaying ? '⏸' : '▶'}';
-    margin-left: ${props => props.isPlaying ? '0' : '3px'};
+    content: '▶';
+    margin-left: 3px;
   }
   
   @media (max-width: 768px) {
@@ -220,23 +197,7 @@ const PlayButton = styled(motion.button)`
   }
 `;
 
-const ProgressBar = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 0;
-`;
 
-const ProgressFill = styled.div`
-  height: 100%;
-  background: white;
-  border-radius: 0;
-  width: ${props => props.progress}%;
-  transition: width 0.3s ease;
-`;
 
 const VideoPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -290,7 +251,7 @@ const VideoPlayer = () => {
     togglePlay();
   };
 
-  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=0&controls=0&loop=0&responsive=1&title=0&byline=0&portrait=0`;
+  const vimeoSrc = `https://player.vimeo.com/video/1100433386?badge=0&autopause=0&autoplay=0&muted=0&controls=0&loop=0&responsive=1&title=0&byline=0&portrait=0`;
 
   return (
     <PlayerContainer
@@ -308,7 +269,7 @@ const VideoPlayer = () => {
             title="Vídeo de Fabricação DEFINAMAX"
           />
           
-          {showThumbnail ? (
+          {showThumbnail && (
             <ThumbnailContainer onClick={togglePlay}>
               <ThumbnailText>APERTE O PLAY</ThumbnailText>
               <PlayButton
@@ -318,15 +279,6 @@ const VideoPlayer = () => {
                 whileTap={{ scale: 0.9 }}
               />
             </ThumbnailContainer>
-          ) : (
-            <PlayerOverlay isPlaying={isPlaying}>
-              <PlayButton
-                isPlaying={isPlaying}
-                onClick={togglePlay}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            </PlayerOverlay>
           )}
         </VideoContainer>
       </PlayerContent>
