@@ -198,7 +198,7 @@ const VideoPlayer = () => {
   };
 
   // Vídeo COM SOM ATIVO - MESMO PADRÃO DOS DEPOIMENTOS QUE FUNCIONAM
-  const vimeoSrc = `https://player.vimeo.com/video/1100646765?badge=0&autopause=0&muted=0&controls=1&title=0&byline=0&portrait=0`;
+  const vimeoSrc = `https://player.vimeo.com/video/1100728997?badge=0&autopause=0&muted=0&controls=1&title=0&byline=0&portrait=0`;
 
   return (
     <PlayerContainer
