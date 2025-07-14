@@ -10,7 +10,7 @@ const PlayerContainer = styled(motion.div)`
   max-width: 720px;
   width: 100%;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   
   @media (max-width: 768px) {

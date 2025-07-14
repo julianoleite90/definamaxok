@@ -1028,7 +1028,7 @@ const ProductPage = () => {
           <a href="/">
             <Logo src="/logo-definamax.png" alt="Definamax - Suplemento Natural" />
           </a>
-          <CTAButton href={addUtmToUrl('https://go.hotmart.com/your-link')}>
+          <CTAButton href={addUtmToUrl('https://full.sale/ytA47b')}>
             Comprar Agora
           </CTAButton>
         </HeaderContent>
@@ -1176,7 +1176,7 @@ const ProductPage = () => {
               </BenefitsContainer>
 
               <ActionButtons>
-                <BuyButton href={addUtmToUrl('https://go.hotmart.com/your-link')}>
+                <BuyButton href={addUtmToUrl('https://full.sale/ytA47b')}>
                   <FaShoppingCart /> Comprar Agora <FaArrowRight />
                 </BuyButton>
 
