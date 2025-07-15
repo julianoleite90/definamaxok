@@ -193,7 +193,7 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.87) 0%, rgba(0, 0, 0, 0.85) 30%, rgba(5, 5, 5, 0.87) 60%, rgba(2, 15, 2, 0.89) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.88) 30%, rgba(5, 5, 5, 0.9) 60%, rgba(2, 15, 2, 0.91) 100%);
     z-index: 1;
   }
 `;
