@@ -74,6 +74,7 @@ const PhotoContainer = styled.div`
 const PersonInfo = styled.div`
   font-size: 0.95rem;
   color: #555;
+  text-align: center;
   
   .name {
     font-weight: 600;
@@ -82,6 +83,14 @@ const PersonInfo = styled.div`
   
   .details {
     font-weight: 400;
+  }
+  
+  .city {
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    display: block;
   }
 `;
 
@@ -127,19 +136,43 @@ const Results = () => {
       name: "Luana",
       age: "26 anos",
       weight: "-30kg",
+      city: "São Paulo - SP",
       image: "/luana.png"
     },
     {
       name: "Renatha Almeida", 
       age: "34 anos",
       weight: "-12Kg",
+      city: "Rio de Janeiro - RJ",
       image: "/dep03.png"
     },
     {
       name: "Fernanda Costa",
       age: "39 anos", 
       weight: "-20Kg",
+      city: "Belo Horizonte - MG",
       image: "/dep01.png"
+    },
+    {
+      name: "Maria Silva",
+      age: "28 anos",
+      weight: "-15kg",
+      city: "Porto Alegre - RS",
+      image: "/a.png"
+    },
+    {
+      name: "Ana Paula",
+      age: "32 anos",
+      weight: "-18kg",
+      city: "Salvador - BA",
+      image: "/b.png"
+    },
+    {
+      name: "Carlos Santos",
+      age: "35 anos",
+      weight: "-28kg",
+      city: "Recife - PE",
+      image: "/c.png"
     }
   ];
 
@@ -167,22 +200,24 @@ const Results = () => {
 
         <ResultsGrid>
           {results.map((result, index) => (
-                         <ResultItem
-               key={index}
-               initial={{ opacity: 0, y: 50 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.8, delay: index * 0.2 }}
-               viewport={{ once: true }}
-             >
-               <PhotoContainer>
-                 <img src={result.image} alt={`${result.name} resultado`} />
-               </PhotoContainer>
-               
-               <PersonInfo>
-                 <span className="name">{result.name}</span>
-                 <span className="details">| {result.age} | {result.weight}</span>
-               </PersonInfo>
-             </ResultItem>
+            <ResultItem
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <PhotoContainer>
+                <img src={result.image} alt={`${result.name} resultado`} />
+              </PhotoContainer>
+              
+              <PersonInfo>
+                <span className="name">{result.name}</span>
+                <span className="details">| {result.age} | {result.weight}</span>
+                <br />
+                <span className="city">{result.city}</span>
+              </PersonInfo>
+            </ResultItem>
           ))}
         </ResultsGrid>
 
