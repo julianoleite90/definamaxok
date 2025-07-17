@@ -447,7 +447,7 @@ const OfferSection = () => {
 
       <WhatsAppFloat isVisible={isWhatsAppVisible}>
         <a href="https://wa.me/5541984549172?text=Olá,%20eu%20estava%20no%20site%20do%20Definamax,%20e%20quero%20mais%20informações." target="_blank" rel="noopener noreferrer">
-          COMPRE NO WHATSAPP
+          TIRE SUAS DÚVIDAS
         </a>
       </WhatsAppFloat>
     </>
