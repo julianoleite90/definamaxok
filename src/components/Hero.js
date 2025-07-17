@@ -9,10 +9,7 @@ const TopBanner = styled.div`
   color: white;
   padding: 8px 0;
   text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 1001;
   font-weight: 600;
   display: flex;
@@ -502,9 +499,7 @@ const Hero = () => {
       </TopBanner>
 
       <HeroSection>
-        <HeaderSection style={{ 
-          paddingTop: window.innerWidth <= 768 ? '140px' : '140px'
-        }}>
+        <HeaderSection>
           <Logo>
             <img src="/logo-definamax.png" alt="Definamax - Emagrecedor Natural Aprovado pela ANVISA" />
           </Logo>
