@@ -517,7 +517,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <h1>
-              <TitleMain>TRANSFORME O SEU CORPO</TitleMain>
+              <TitleMain>EMAGREÇA MAIS RÁPIDO</TitleMain>
               <TitleSub>E RECUPERE A AUTOESTIMA</TitleSub>
             </h1>
           </MainTitle>
@@ -527,7 +527,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            A forma mais prática e eficiente de emagrecer a qualquer hora, em qualquer lugar — mais de 45 mil pessoas já transformaram suas vidas com o DEFINAMAX®
+            A forma mais rápida e fácil de emagrecer a qualquer hora, em qualquer lugar — mais de 45 mil pessoas já transformaram suas vidas com o DEFINAMAX®
           </Subtitle>
 
           <VideoPlayer />

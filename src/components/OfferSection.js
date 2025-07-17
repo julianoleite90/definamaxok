@@ -224,6 +224,10 @@ const WhatsAppFloat = styled.div`
   bottom: 20px;
   right: 20px;
   z-index: 1001;
+  opacity: ${props => props.isVisible ? 1 : 0};
+  transform: ${props => props.isVisible ? 'translateY(0)' : 'translateY(100px)'};
+  transition: all 0.3s ease;
+  pointer-events: ${props => props.isVisible ? 'auto' : 'none'};
   
   a {
     display: flex;
@@ -301,6 +305,38 @@ const ResponsiveVideo = () => {
 };
 
 const OfferSection = () => {
+  const [isWhatsAppVisible, setIsWhatsAppVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Se o botão já está visível, não verificar mais
+      if (isWhatsAppVisible) return;
+      
+      // Buscar a seção de kits "ESCOLHA SEU TRATAMENTO IDEAL"
+      const kitsSection = document.getElementById('kits');
+      
+      if (kitsSection) {
+        const kitsSectionRect = kitsSection.getBoundingClientRect();
+        const kitsSectionTop = kitsSectionRect.top;
+        
+        // Mostrar o botão quando a seção de kits estiver visível na tela
+        // Uma vez que aparecer, permanece visível para sempre
+        if (kitsSectionTop <= window.innerHeight) {
+          setIsWhatsAppVisible(true);
+        }
+      }
+    };
+
+    // Adicionar listener de scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Verificar posição inicial
+    handleScroll();
+    
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isWhatsAppVisible]);
+
   const benefits = [
     {
       text: "Emagreça sem recorrer a dietas extremas ou exercícios exaustivos."
@@ -329,7 +365,7 @@ const OfferSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            DESCUBRA O PODER DAS<br />
+            CONHEÇA O PODER DAS<br />
             <span className="highlight">FIBRAS QUE ABSORVEM GORDURA</span> ✨
           </MainTitle>
           
@@ -339,7 +375,7 @@ const OfferSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Seu novo capítulo começa agora.
+            Seu novo corpo começa agora.
           </Subtitle>
 
           <ContentGrid>
@@ -351,8 +387,8 @@ const OfferSection = () => {
                 viewport={{ once: true }}
               >
                 <DiscountBanner>
-                  <DiscountTitle>MAIS ABSORÇÃO =</DiscountTitle>
-                  <DiscountSubtitle>MAIOR PERDA DE PESO</DiscountSubtitle>
+                  <DiscountTitle>MENOS GORDURA</DiscountTitle>
+                  <DiscountSubtitle>MAIS EMAGRECIMENTO</DiscountSubtitle>
                 </DiscountBanner>
                 
                 <BenefitsList>
@@ -409,7 +445,7 @@ const OfferSection = () => {
         </Container>
       </OfferSectionWrapper>
 
-      <WhatsAppFloat>
+      <WhatsAppFloat isVisible={isWhatsAppVisible}>
         <a href="https://wa.me/5541984549172?text=Olá,%20eu%20estava%20no%20site%20do%20Definamax,%20e%20quero%20mais%20informações." target="_blank" rel="noopener noreferrer">
           COMPRE NO WHATSAPP
         </a>

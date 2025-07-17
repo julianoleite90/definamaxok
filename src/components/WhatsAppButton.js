@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaWhatsapp } from 'react-icons/fa';
 
@@ -20,6 +20,10 @@ const WhatsAppContainer = styled.div`
   right: 20px;
   z-index: 1000;
   animation: ${float} 3s ease-in-out infinite;
+  opacity: ${props => props.isVisible ? 1 : 0};
+  transform: ${props => props.isVisible ? 'translateY(0)' : 'translateY(100px)'};
+  transition: all 0.3s ease;
+  pointer-events: ${props => props.isVisible ? 'auto' : 'none'};
 `;
 
 const WhatsAppLink = styled.a`
@@ -58,10 +62,25 @@ const WhatsAppIcon = styled(FaWhatsapp)`
 `;
 
 const WhatsAppButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const message = encodeURIComponent('Olá! Gostaria de saber mais sobre o Definamax.');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Mostrar o botão apenas quando o usuário scrollou mais de 2000px para baixo
+      const scrollY = window.scrollY || window.pageYOffset;
+      setIsVisible(scrollY > 2000);
+    };
+
+    // Adicionar listener de scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   return (
-    <WhatsAppContainer>
+    <WhatsAppContainer isVisible={isVisible}>
       <WhatsAppLink
         href={`https://wa.me/5541984549172?text=${message}`}
         target="_blank"
