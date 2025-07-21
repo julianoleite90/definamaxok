@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -118,6 +118,38 @@ const CTAButton = styled(motion.button)`
   }
 `;
 
+const ExpandButton = styled(motion.button)`
+  background: none;
+  border: 2px solid #1a4d2e;
+  color: #1a4d2e;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 30px auto 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #1a4d2e;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+    transform: ${props => props.expanded ? 'rotate(180deg)' : 'rotate(0deg)'};
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+  }
+`;
+
 const Disclaimer = styled.p`
   font-size: 0.85rem;
   color: #666;
@@ -131,7 +163,9 @@ const Disclaimer = styled.p`
 `;
 
 const Results = () => {
-  const results = [
+  const [expanded, setExpanded] = useState(false);
+  
+  const allResults = [
     {
       name: "Luana",
       age: "26 anos",
@@ -176,6 +210,9 @@ const Results = () => {
     }
   ];
 
+  // Mostrar apenas 3 inicialmente, ou todos se expandido
+  const resultsToShow = expanded ? allResults : allResults.slice(0, 3);
+
   return (
     <ResultsSection>
       <Container>
@@ -199,7 +236,7 @@ const Results = () => {
         </Subtitle>
 
         <ResultsGrid>
-          {results.map((result, index) => (
+          {resultsToShow.map((result, index) => (
             <ResultItem
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -220,6 +257,17 @@ const Results = () => {
             </ResultItem>
           ))}
         </ResultsGrid>
+
+        {/* Botão para expandir/contrair */}
+        <ExpandButton
+          expanded={expanded}
+          onClick={() => setExpanded(!expanded)}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {expanded ? 'Ver Menos' : 'Ver Mais Resultados'}
+          <span className="arrow">▼</span>
+        </ExpandButton>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
