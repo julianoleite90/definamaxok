@@ -365,7 +365,7 @@ const OfferSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            CONHEÇA O PODER DAS<br />
+            DESCUBRA O PODER DAS<br />
             <span className="highlight">FIBRAS QUE ABSORVEM GORDURA</span> ✨
           </MainTitle>
           
