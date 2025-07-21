@@ -788,7 +788,7 @@ const RemarketingPage = () => {
             {/* Coluna da Imagem */}
             <PromoImageContainer>
               <PromoImage
-                src="/potegratis.png"
+                src="/1gratis.png"
                 alt="Definamax - Pote Extra Grátis"
                 width={450}
                 height={450}
@@ -854,7 +854,7 @@ const RemarketingPage = () => {
           <PromoCard>
             <PromoImageMobile>
               <img
-                src="/potegratis.png"
+                src="/1gratis.png"
                 alt="Definamax - Pote Extra Grátis"
                 width={280}
                 height={280}

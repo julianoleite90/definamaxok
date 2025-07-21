@@ -423,7 +423,7 @@ export default function ReMarketingPage() {
             {/* Coluna da Imagem */}
             <div className="flex justify-center">
               <Image
-                src="/potegratis.png"
+                src="/1gratis.png"
                 alt="Definamax - Pote Extra Grátis"
                 width={450}
                 height={450}
@@ -503,7 +503,7 @@ export default function ReMarketingPage() {
             {/* Imagem dos Frascos */}
             <div className="relative mb-4">
               <Image
-                src="/potegratis.png"
+                src="/1gratis.png"
                 alt="Definamax - Pote Extra Grátis"
                 width={280}
                 height={280}
@@ -880,7 +880,7 @@ export default function ReMarketingPage() {
               <div className="p-4">
                 <div className="flex justify-center mb-4">
                   <Image
-                    src="/1fraso.png"
+                    src="/1frasco.png"
                     alt="Kit 1 Mês"
                     width={400}
                     height={400}
