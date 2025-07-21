@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { FaPlay, FaCheckCircle, FaShare, FaStar, FaLock, FaGift, FaChevronDown, FaArrowRight } from 'react-icons/fa';
+import { FaStar, FaLock, FaGift, FaChevronDown, FaArrowRight } from 'react-icons/fa';
+import Footer from '../components/Footer';
 
 
 const RemarketingContainer = styled.div`
@@ -261,6 +262,7 @@ const PromoBox = styled.div`
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 `;
 
 const PromoBoxTitle = styled.h4`
@@ -268,10 +270,12 @@ const PromoBoxTitle = styled.h4`
   font-weight: 900;
   color: #1f2937;
   margin-bottom: 0.75rem;
+  text-align: center;
 `;
 
 const PromoBoxPrice = styled.div`
   margin-bottom: 0.25rem;
+  text-align: center;
 `;
 
 const PromoBoxOldPrice = styled.p`
@@ -279,12 +283,24 @@ const PromoBoxOldPrice = styled.p`
   font-weight: bold;
   color: #ef4444;
   text-decoration: line-through;
+  text-align: center;
+  margin: 0.5rem 0;
 `;
 
 const PromoBoxNewPrice = styled.p`
   font-size: 1.875rem;
   font-weight: 900;
   color: #059669;
+  text-align: center;
+  margin: 0.5rem 0;
+`;
+
+const PromoBoxCashPrice = styled.p`
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0.5rem 0;
+  text-align: center;
 `;
 
 const PromoButton = styled.button`
@@ -378,6 +394,7 @@ const PromoBoxMobile = styled.div`
   padding: 1rem;
   margin-bottom: 1.5rem;
   background: rgba(239, 246, 255, 0.5);
+  text-align: center;
 `;
 
 const PromoBoxTitleMobile = styled.h4`
@@ -385,6 +402,7 @@ const PromoBoxTitleMobile = styled.h4`
   font-weight: 900;
   color: #1f2937;
   margin-bottom: 0.5rem;
+  text-align: center;
 `;
 
 const PromoBoxOldPriceMobile = styled.p`
@@ -392,13 +410,24 @@ const PromoBoxOldPriceMobile = styled.p`
   font-weight: bold;
   color: #ef4444;
   text-decoration: line-through;
-  margin-bottom: 0.25rem;
+  margin: 0.25rem 0;
+  text-align: center;
 `;
 
 const PromoBoxNewPriceMobile = styled.p`
   font-size: 1.5rem;
   font-weight: 900;
   color: #059669;
+  text-align: center;
+  margin: 0.25rem 0;
+`;
+
+const PromoBoxCashPriceMobile = styled.p`
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0.25rem 0;
+  text-align: center;
 `;
 
 const PromoButtonMobile = styled.button`
@@ -447,184 +476,209 @@ const Separator = styled.div`
   border-top: 1px solid #e5e7eb;
 `;
 
-const VideoSection = styled.section`
+const AttentionSection = styled.section`
   width: 100%;
-  padding: 4rem 0;
-  background: linear-gradient(to bottom, #f0fdf4, white);
+  padding: 2rem 0;
+  background: #fef2f2;
 `;
 
-const VideoContent = styled.div`
-  max-width: 1536px;
+const AttentionContainer = styled.div`
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 `;
 
-const VideoHeader = styled.div`
-  text-center;
-  margin-bottom: 3rem;
+const AttentionBanner = styled.div`
+  background: #fff;
+  border: 2px solid #fecaca;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 `;
 
-const VideoTitle = styled.h2`
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: #1f2937;
-  margin-bottom: 1rem;
-
-  @media (min-width: 768px) {
-    font-size: 2.25rem;
-  }
-`;
-
-const VideoSubtitle = styled.p`
-  color: #6b7280;
-  font-size: 1.125rem;
-`;
-
-const VideoGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`;
-
-const VideoCard = styled.div`
-  position: relative;
-`;
-
-const VideoContainer = styled.div`
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  background: black;
-`;
-
-const VideoThumbnail = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-`;
-
-const ThumbnailImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const PlayOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+const AttentionTitle = styled.h3`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const PlayButton = styled.button`
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  transform: scale(1);
-
-  &:hover {
-    background: white;
-    transform: scale(1.1);
-  }
-`;
-
-const PlayIcon = styled(FaPlay)`
-  height: 2rem;
-  width: 2rem;
-  color: #059669;
-`;
-
-const VideoDuration = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  color: white;
-  font-size: 0.875rem;
-`;
-
-const VideoIframe = styled.iframe`
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-`;
-
-const VideoInfo = styled.div`
-  margin-top: 1rem;
-`;
-
-const VideoInfoTitle = styled.h3`
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1f2937;
-`;
-
-const VideoInfoDescription = styled.p`
-  color: #6b7280;
-`;
-
-const VideoMeta = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-`;
-
-const VideoStatus = styled.div`
-  display: flex;
-  align-items: center;
   gap: 0.5rem;
-`;
-
-const StatusIcon = styled(FaCheckCircle)`
-  height: 1.25rem;
-  width: 1.25rem;
-  color: ${props => props.watched ? '#059669' : '#9ca3af'};
-`;
-
-const StatusText = styled.span`
-  font-size: 0.875rem;
-  color: ${props => props.watched ? '#059669' : '#9ca3af'};
-`;
-
-const ShareButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  color: #6b7280;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.875rem;
-
-  &:hover {
-    color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #dc2626;
+  margin-bottom: 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
   }
 `;
 
-const ShareIcon = styled(FaShare)`
-  height: 1.25rem;
-  width: 1.25rem;
+const AttentionText = styled.p`
+  color: #374151;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
+
+const AttentionIcon = styled.span`
+  font-size: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const GuaranteeSection = styled.section`
+  background: white;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+`;
+
+const GuaranteeContainer = styled.div`
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 40px;
+  align-items: center;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+`;
+
+const GuaranteeContent = styled.div`
+  color: #333;
+  text-align: left;
+  
+  .mobile-image {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    .mobile-image {
+      display: flex;
+      justify-content: center;
+      order: 1;
+    }
+    
+    .text-content {
+      order: 0;
+    }
+    
+    button {
+      order: 2;
+    }
+  }
+`;
+
+const GuaranteeTitle = styled.h2`
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  
+  .highlight {
+    color: #1a4d2e;
+    font-size: 0.7em;
+  }
+`;
+
+const GuaranteeDescription = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #555;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+`;
+
+const GuaranteeCTAButton = styled.button`
+  background: #1a4d2e;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(26, 77, 46, 0.4);
+  
+  &:hover {
+    background: #0f2c1a;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(26, 77, 46, 0.6);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 16px 35px;
+    font-size: 1.1rem;
+  }
+`;
+
+const GuaranteeBadgeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const GuaranteeBadge = styled.div`
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 350px;
+    height: 350px;
+    
+    img {
+      max-width: 350px;
+    }
+  }
+`;
+
+
 
 const RemarketingPage = () => {
-  const [activeVideo, setActiveVideo] = useState(null);
-  const [videosWatched, setVideosWatched] = useState([false, false, false, false]);
-  const [showShareOptions, setShowShareOptions] = useState(null);
-  const videoRefs = useRef([null, null, null, null]);
 
   const getCurrentDate = () => {
     const today = new Date();
@@ -635,8 +689,15 @@ const RemarketingPage = () => {
   };
 
   const scrollToKits = () => {
-    // Implementar scroll para seção de kits ou redirecionar
-    window.location.href = '#kits';
+    // Redirecionar para o link de compra principal com UTMs preservados
+    const finalUrl = addUtmToUrl('https://full.sale/45BmdK?src=rmkt');
+    window.open(finalUrl, '_blank');
+  };
+
+  const scrollToKitsSmooth = () => {
+    // Redirecionar para o link de compra principal com UTMs preservados
+    const finalUrl = addUtmToUrl('https://full.sale/45BmdK?src=rmkt');
+    window.open(finalUrl, '_blank');
   };
 
   // Função para capturar parâmetros UTM da URL
@@ -675,74 +736,10 @@ const RemarketingPage = () => {
     return url.toString();
   };
 
-  // Dados dos vídeos
-  const videos = [
-    {
-      id: 1,
-      vimeoId: "1079845171",
-      title: "Eu sempre fui gorda, com Definamax a minha vida mudou",
-      description: "Depoimento de cliente Definamax",
-      thumbnail: "/alarissa.png",
-      duration: "3:45",
-    },
-    {
-      id: 2,
-      vimeoId: "1079850549",
-      title: "Definamax acabou com a minha compulsão alimentar",
-      description: "Depoimento de cliente Definamax",
-      thumbnail: "/aandrea.png",
-      duration: "5:12",
-    },
-    {
-      id: 3,
-      vimeoId: "1079845066",
-      title: "Em 30 dias perdi 5 kg, incrível",
-      description: "Depoimento de cliente Definamax",
-      thumbnail: "/arenata.png",
-      duration: "4:30",
-    },
-    {
-      id: 4,
-      vimeoId: "1079845128",
-      title: "Recuperou muito a minha autoestima",
-      description: "Depoimento de cliente Definamax",
-      thumbnail: "/avanessa.png",
-      duration: "6:18",
-    },
-  ];
 
-  // Função para reproduzir vídeo
-  const playVideo = (index) => {
-    // Se já estiver reproduzindo este vídeo, não faz nada
-    if (activeVideo === index) return;
-
-    // Se estiver reproduzindo outro vídeo, para ele primeiro
-    if (activeVideo !== null && videoRefs.current[activeVideo]) {
-      const iframe = videoRefs.current[activeVideo];
-      if (iframe && iframe.contentWindow) {
-        iframe.contentWindow.postMessage('{"method":"pause"}', "*");
-      }
-    }
-
-    // Ativa o novo vídeo
-    setActiveVideo(index);
-
-    // Marca o vídeo como assistido
-    const newVideosWatched = [...videosWatched];
-    newVideosWatched[index] = true;
-    setVideosWatched(newVideosWatched);
-  };
-
-  // Função para compartilhar vídeo
-  const shareVideo = (index) => {
-    if (showShareOptions === index) {
-      setShowShareOptions(null);
-    } else {
-      setShowShareOptions(index);
-    }
-  };
 
   return (
+    <>
     <RemarketingContainer>
       {/* Header */}
       <Header>
@@ -808,9 +805,9 @@ const RemarketingPage = () => {
               </PromoSubtitle>
 
               <PromoText>
-                Na compra de qualquer kit do DEFINAMAX você receberá GRATUITAMENTE 
+                Na compra do kit de 3 frascos de Definamax você receberá GRATUITAMENTE 
                 um pote extra para potencializar seus resultados com mais um mês de 
-                tratamento ou para presentear alguém que gostaria de emagrecer.
+                tratamento ou para presentear alguém que gostaria de perder peso.
               </PromoText>
 
               <PromoBox>
@@ -818,12 +815,15 @@ const RemarketingPage = () => {
                   VOCÊ LEVA UM POTE EXTRA
                 </PromoBoxTitle>
                 <PromoBoxPrice>
-                  <PromoBoxOldPrice>
-                    DE R$ 279,00
+                  <PromoBoxOldPrice style={{textDecoration: 'line-through'}}>
+                    De R$589,00
                   </PromoBoxOldPrice>
                   <PromoBoxNewPrice>
-                    TOTALMENTE GRÁTIS
+                    12x R$35,04
                   </PromoBoxNewPrice>
+                  <PromoBoxCashPrice>
+                    ou R$349,00 à vista
+                  </PromoBoxCashPrice>
                 </PromoBoxPrice>
               </PromoBox>
 
@@ -870,21 +870,24 @@ const RemarketingPage = () => {
             </PromoSubtitleMobile>
 
             <PromoTextMobile>
-              Na compra de qualquer kit do DEFINAMAX você receberá GRATUITAMENTE 
+              Na compra do kit de 3 frascos de Definamax você receberá GRATUITAMENTE 
               um pote extra para potencializar seus resultados com mais um mês de 
-              tratamento ou para presentear alguém que gostaria de emagrecer.
+              tratamento ou para presentear alguém que gostaria de perder peso.
             </PromoTextMobile>
 
             <PromoBoxMobile>
               <PromoBoxTitleMobile>
                 VOCÊ LEVA UM POTE EXTRA
               </PromoBoxTitleMobile>
-              <PromoBoxOldPriceMobile>
-                DE R$ 279,00
+              <PromoBoxOldPriceMobile style={{textDecoration: 'line-through'}}>
+                De R$589,00
               </PromoBoxOldPriceMobile>
               <PromoBoxNewPriceMobile>
-                TOTALMENTE GRÁTIS
+                12x R$35,04
               </PromoBoxNewPriceMobile>
+              <PromoBoxCashPriceMobile>
+                ou R$349,00 à vista
+              </PromoBoxCashPriceMobile>
             </PromoBoxMobile>
 
             <div style={{textAlign: 'center'}}>
@@ -909,70 +912,69 @@ const RemarketingPage = () => {
 
       <Separator />
 
-      {/* Seção de Vídeos */}
-      <VideoSection>
-        <VideoContent>
-          <VideoHeader>
-            <VideoTitle>
-              Veja os resultados reais
-            </VideoTitle>
-            <VideoSubtitle>
-              Depoimentos de pessoas que transformaram suas vidas com Definamax
-            </VideoSubtitle>
-          </VideoHeader>
+      {/* Seção de Atenção */}
+      <AttentionSection>
+        <AttentionContainer>
+          <AttentionBanner>
+            <AttentionTitle>
+              <AttentionIcon>⚠️</AttentionIcon>
+              ATENÇÃO: OFERTA POR TEMPO LIMITADO
+            </AttentionTitle>
+            <AttentionText>
+              Esta promoção especial é válida apenas para os primeiros <strong>100 pedidos</strong> do dia. Não perca esta 
+              oportunidade única de receber um pote extra totalmente grátis!
+            </AttentionText>
+          </AttentionBanner>
+        </AttentionContainer>
+      </AttentionSection>
 
-          <VideoGrid>
-            {videos.map((video, index) => (
-              <VideoCard key={index}>
-                <VideoContainer>
-                  {activeVideo === index ? (
-                    <VideoIframe
-                      ref={el => { videoRefs.current[index] = el }}
-                      src={`https://player.vimeo.com/video/${video.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
-                      allow="autoplay; fullscreen"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <VideoThumbnail>
-                      <ThumbnailImage
-                        src={video.thumbnail}
-                        alt={video.title}
-                      />
-                      <PlayOverlay>
-                        <PlayButton onClick={() => playVideo(index)}>
-                          <PlayIcon />
-                        </PlayButton>
-                      </PlayOverlay>
-                      <VideoDuration>
-                        {video.duration}
-                      </VideoDuration>
-                    </VideoThumbnail>
-                  )}
-                </VideoContainer>
-                <VideoInfo>
-                  <VideoInfoTitle>{video.title}</VideoInfoTitle>
-                  <VideoInfoDescription>{video.description}</VideoInfoDescription>
-                  <VideoMeta>
-                    <VideoStatus>
-                      <StatusIcon watched={videosWatched[index]} />
-                      <StatusText watched={videosWatched[index]}>
-                        {videosWatched[index] ? "Assistido" : "Não assistido"}
-                      </StatusText>
-                    </VideoStatus>
-                    <ShareButton onClick={() => shareVideo(index)}>
-                      <ShareIcon />
-                      <span>Compartilhar</span>
-                    </ShareButton>
-                  </VideoMeta>
-                </VideoInfo>
-              </VideoCard>
-            ))}
-          </VideoGrid>
-        </VideoContent>
-      </VideoSection>
-      
+      {/* Seção de Garantia */}
+      <GuaranteeSection>
+        <GuaranteeContainer>
+          <GuaranteeContent>
+            <div className="text-content">
+              <GuaranteeTitle>
+                30 DIAS DE GARANTIA<br />
+                <span className="highlight">EXPERIMENTE SEM RISCOS</span>
+              </GuaranteeTitle>
+              
+              <GuaranteeDescription>
+                Fazer o uso do Definamax® é uma experiência única que só vivenciando você conseguirá entender 
+                porque mais de 45 mil pessoas tiveram suas vidas transformadas. Por isso, após a sua compra, você 
+                terá 30 dias para experimentar. Você poderá testar sem riscos e se por qualquer 
+                razão não gostar ou se adaptar, basta enviar um simples email para nossa atenciosa equipe de atendimento 
+                dentro desse período, que reembolsaremos 100% do valor pago. É super simples. Conforme nossos termos de garantia*.
+              </GuaranteeDescription>
+            </div>
+            
+            <div className="mobile-image">
+              <div style={{ width: '300px', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img 
+                  src="/garantia-definamax.png" 
+                  alt="30 Dias de Garantia Incondicional Definamax - 100% Satisfação Garantida ou Dinheiro de Volta" 
+                  style={{ width: '100%', height: 'auto', maxWidth: '300px' }}
+                />
+              </div>
+            </div>
+            
+            <GuaranteeCTAButton onClick={scrollToKitsSmooth}>
+              Quero experimentar por 30 dias
+            </GuaranteeCTAButton>
+          </GuaranteeContent>
+          
+          <GuaranteeBadgeContainer>
+            <GuaranteeBadge>
+              <img src="/garantia-definamax.png" alt="30 Dias de Garantia" />
+            </GuaranteeBadge>
+          </GuaranteeBadgeContainer>
+        </GuaranteeContainer>
+      </GuaranteeSection>
 
     </RemarketingContainer>
+
+    {/* Rodapé Fullscreen */}
+    <Footer />
+    </>
   );
 };
 
