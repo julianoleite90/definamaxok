@@ -48,7 +48,7 @@ export default function VideoSection() {
           <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg">
             {isVisible && (
               <iframe
-                src="https://player.vimeo.com/video/1092325775?autoplay=1&loop=1&muted=1&controls=0&background=1"
+                src="https://player.vimeo.com/video/1103301355?autoplay=1&loop=1&muted=1&controls=0&background=1"
                 className="w-full h-full"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
@@ -95,7 +95,7 @@ export default function VideoSection() {
             <div className="relative w-full h-[540px] overflow-hidden rounded-lg">
               {isVisible && (
                 <iframe
-                  src="https://player.vimeo.com/video/1092325858?autoplay=1&loop=1&muted=1&controls=0&transparent=1"
+                  src="https://player.vimeo.com/video/1103301355?autoplay=1&loop=1&muted=1&controls=0&transparent=1"
                   className="w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
