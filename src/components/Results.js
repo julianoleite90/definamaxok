@@ -118,35 +118,31 @@ const CTAButton = styled(motion.button)`
   }
 `;
 
-const ExpandButton = styled(motion.button)`
+const ExpandButton = styled.button`
   background: none;
-  border: 2px solid #1a4d2e;
+  border: none;
   color: #1a4d2e;
   font-size: 1rem;
-  font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 8px;
+  font-weight: 500;
   cursor: pointer;
-  margin: 30px auto 20px;
+  margin: 20px auto;
   display: flex;
   align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
+  gap: 6px;
+  text-decoration: underline;
   
   &:hover {
-    background: #1a4d2e;
-    color: white;
-    transform: translateY(-2px);
+    color: #0f3a1f;
   }
   
   .arrow {
-    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
     transform: ${props => props.expanded ? 'rotate(180deg)' : 'rotate(0deg)'};
   }
   
   @media (max-width: 768px) {
     font-size: 0.9rem;
-    padding: 10px 24px;
   }
 `;
 
@@ -262,10 +258,8 @@ const Results = () => {
         <ExpandButton
           expanded={expanded}
           onClick={() => setExpanded(!expanded)}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
         >
-          {expanded ? 'Ver Menos' : 'Ver Mais Resultados'}
+          {expanded ? 'Ver menos' : 'Ver mais resultados'}
           <span className="arrow">▼</span>
         </ExpandButton>
 
