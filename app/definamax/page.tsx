@@ -16,7 +16,7 @@ import PricingSection from './components/PricingSection'
 import GuaranteeSection from './components/GuaranteeSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
-import WhatsAppButton from '../components/WhatsAppButton'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function LandingPage() {
   const kitsRef = useRef<HTMLDivElement>(null)
@@ -30,7 +30,7 @@ export default function LandingPage() {
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
-        page_title: 'Definamax - Página Alternativa',
+        page_title: 'Alt Definamax - Página Definamax',
         page_location: window.location.href,
         utm_source: utmParams.utm_source,
         utm_medium: utmParams.utm_medium,

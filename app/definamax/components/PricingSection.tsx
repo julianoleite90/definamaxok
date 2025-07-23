@@ -31,7 +31,7 @@ export default function PricingSection() {
       badges: ["Compra Segura", "Satisfação Garantida", "Privacidade Protegida"],
       highlight: true,
       highlightColor: "border-green-700",
-      url: "https://full.sale/XONObQ"
+      url: "https://full.sale/XONObQ?src=adv-2"
     },
     {
       id: 2,
@@ -50,7 +50,7 @@ export default function PricingSection() {
       badges: ["Compra Segura", "Satisfação Garantida", "Privacidade Protegida"],
       highlight: true,
       highlightColor: "border-orange-400",
-      url: "https://full.sale/ytA47b"
+      url: "https://full.sale/ytA47b?src=adv-2"
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ export default function PricingSection() {
       cardColor: "bg-white",
       shipping: "FRETE GRÁTIS",
       badges: ["Compra Segura", "Satisfação Garantida", "Privacidade Protegida"],
-      url: "https://full.sale/DmNQj1"
+      url: "https://full.sale/DmNQj1?src=adv-2"
     },
     {
       id: 4,
@@ -84,7 +84,7 @@ export default function PricingSection() {
       cardColor: "bg-white",
       shipping: "FRETE GRÁTIS",
       badges: ["Compra Segura", "Satisfação Garantida", "Privacidade Protegida"],
-      url: "https://full.sale/eMbtHp"
+      url: "https://full.sale/eMbtHp?src=adv-2"
     }
   ]
 
