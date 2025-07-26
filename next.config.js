@@ -13,6 +13,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/',
+        destination: '/produto',
+        permanent: false,
+      },
+      {
         source: '/landing-page-vencedora',
         destination: '/',
         permanent: true,
